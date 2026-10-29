@@ -149,6 +149,12 @@ export default function NewShow() {
     };
     try {
       const show = await api.createShow(input);
+      try {
+        const mine = JSON.parse(localStorage.getItem("hm-my-shows") ?? "[]") as string[];
+        localStorage.setItem("hm-my-shows", JSON.stringify([show.id, ...mine.filter((x) => x !== show.id)].slice(0, 20)));
+      } catch {
+        // storage unavailable (private mode): the show still opens; it just won't be listed on the landing page
+      }
       toast.success(show.status === "needs_confirmation" ? "Qloo needs you to confirm a few names." : "Every name resolved with Qloo.");
       router.push(`/shows/${show.id}`);
     } catch (err) {

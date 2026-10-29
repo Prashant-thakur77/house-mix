@@ -20,6 +20,14 @@ const STATUS_LABEL: Record<string, string> = {
   failed: "Failed",
 };
 
+function myShowIds(): string[] {
+  try {
+    return JSON.parse(localStorage.getItem("hm-my-shows") ?? "[]") as string[];
+  } catch {
+    return [];
+  }
+}
+
 function DemoCard({ s }: { s: ShowSummary }) {
   const date = new Date(`${s.date}T00:00:00`);
   return (
@@ -42,7 +50,7 @@ function DemoCard({ s }: { s: ShowSummary }) {
         </div>
         <div className="text-right text-small text-muted-foreground">
           {s.items > 0 ? `${s.items} plan items` : "No plan yet"}
-          <div className="mt-1 inline-flex items-center gap-1 font-medium text-primary">
+          <div className="mt-1 flex items-center justify-end gap-1 font-medium text-primary">
             Open console <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
           </div>
         </div>
@@ -119,8 +127,11 @@ export default function Home() {
       .then(setShows)
       .catch((e: Error) => setError(e.message));
   }, []);
-  const seeds = shows?.filter((s) => s.seed) ?? [];
-  const recent = shows?.filter((s) => !s.seed).slice(0, 6) ?? [];
+  const ORDER = ["concert", "comedy", "sports", "festival"];
+  const seeds = (shows?.filter((s) => s.seed) ?? []).sort((a, b) => ORDER.indexOf(a.mode) - ORDER.indexOf(b.mode));
+  // The demo has no accounts, so "Your shows" means shows created in this browser.
+  const mine = typeof window === "undefined" ? [] : myShowIds();
+  const recent = shows?.filter((s) => !s.seed && mine.includes(s.id)).slice(0, 6) ?? [];
 
   return (
     <>
