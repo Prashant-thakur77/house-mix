@@ -6,6 +6,7 @@ const GLYPHS: Record<Mode, string[]> = {
   concert: ["...XXXXXR", "...XXXXXX", "...X....X", "...X....X", "...X....X", ".XXX..XXX", "XXXX.XXXX", "XXX..XXX.", "........."],
   comedy: ["...XRX...", "..XXXXX..", "..XXXXX..", "..XXXXX..", "X.XXXXX.X", "X..XXX..X", ".X..X..X.", "....X....", "..XXXXX.."],
   sports: ["..XXXXX..", ".X..X..X.", "X..XXX..X", "X.XXRXX.X", "XX.XXX.XX", "X...X...X", "X.X...X.X", ".XXX.XXX.", "..XXXXX.."],
+  dining: ["X.X.X.X.X", "X.X.X.X.X", "XXXXX.XRX", ".XXX..XRX", "..X....X.", "..X....X.", "..X....X.", "..X...XXX", "..X......"],
   festival: ["....XRR..", "....XR...", "....X....", "...XXX...", "..XX.XX..", "..X.X.X..", ".XX.X.XX.", ".X..X..X.", "XXXXXXXXX"],
 };
 

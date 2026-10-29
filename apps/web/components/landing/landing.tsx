@@ -2,11 +2,11 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import type { Show } from "@housemix/shared";
+import { BRAND_MARK, type Show } from "@housemix/shared";
 import { cn } from "cn";
 import type { ShowSummary } from "@/lib/api";
 import { sponsorUrl } from "@/lib/api";
@@ -276,10 +276,13 @@ export function SignalHero({ show }: { show?: Show }) {
         </div>
 
         {/* Headline */}
-        <motion.div style={desktop ? { opacity: headOpacity, y: headY } : undefined} className="absolute inset-x-3 bottom-14 md:bottom-16 md:left-[min(5vw,64px)] md:right-auto md:max-w-[min(640px,44vw)]">
+        <motion.div
+          style={desktop ? { opacity: headOpacity, y: headY } : undefined}
+          className="absolute inset-x-3 bottom-14 md:bottom-16 md:left-[min(5vw,64px)] md:right-auto md:max-w-[min(640px,44vw)]"
+        >
           <Hud className="mb-4 flex flex-wrap items-center gap-2 text-sig-mid">
             <span className="size-1.5 animate-blink bg-sig-red" aria-hidden />
-            <span className="text-white">House Mix</span> // crowd programming for venues, promoters and sponsors
+            <span className="text-white">House Mix</span> // crowd programming for venues, restaurants, promoters and sponsors
           </Hud>
           <h1 id="hero-title" className="font-display text-[clamp(2.7rem,4.9vw,4.9rem)] font-bold uppercase leading-[0.88] tracking-[-0.01em]">
             <span className="block overflow-hidden">
@@ -297,7 +300,8 @@ export function SignalHero({ show }: { show?: Show }) {
             </span>
           </h1>
           <p className="mt-5 max-w-[54ch] text-[15px] leading-relaxed text-[#BDBDBD]">
-            Give House Mix tonight&apos;s bill and city. Claude agents read the crowd with Qloo taste data and program the walk-in music, openers, food and drink, sponsor activations and the after-party, with the Qloo evidence behind every pick.
+            Give House Mix tonight&apos;s bill and city. Claude agents read the crowd with Qloo taste data and program the walk-in music, openers, food and drink, sponsor activations and the
+            after-party, with the Qloo evidence behind every pick.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <Link href="/new" className="hud flex h-10 items-center bg-white px-4 text-[12px] font-semibold text-sig-black hover:bg-sig-red hover:text-sig-black">
@@ -339,13 +343,16 @@ export function SignalHero({ show }: { show?: Show }) {
 
 const STEPS = [
   { n: "01", t: "Resolve", b: "Every name becomes a confirmed Qloo ID. An ambiguous one stops and asks you; nothing is auto-picked.", q: "describe · find_tags" },
-  { n: "02", t: "Read the crowd", b: "Shared and distinct taste between the two sides, aggregate age skew, the crowd's vocabulary and momentum.", q: "compare_audiences · audience_demographics · entity_tags · trends" },
+  {
+    n: "02",
+    t: "Read the crowd",
+    b: "Shared and distinct taste between the two sides, aggregate age skew, the crowd's vocabulary and momentum.",
+    q: "compare_audiences · audience_demographics · entity_tags · trends",
+  },
   { n: "03", t: "Program", b: "One agent per slot: walk-in, openers, food and drink, sponsor activations, after-party, plus a stretch pick.", q: "recommend · rank · where_popular" },
   { n: "04", t: "Cut", b: "The Critic removes any pick or sentence the cited Qloo call doesn't support. The trace shows why.", q: "call ledger" },
   { n: "05", t: "Lock", b: "Approve, swap or reject line by line. Lock a version, export the run-of-show, brief the crew.", q: "rank (swap) · briefing" },
 ];
-
-const HEAD = "M0 900 C40 820 180 770 290 745 C335 735 345 705 343 668 L340 600 C305 585 282 545 276 500 C262 498 255 470 258 440 C260 415 268 405 276 410 C270 230 320 95 400 95 C480 95 530 230 524 410 C532 405 540 415 542 440 C545 470 538 498 524 500 C518 545 495 585 460 600 L457 668 C455 705 465 735 510 745 C620 770 760 820 800 900 Z";
 
 function Scramble({ text, run }: { text: string; run: boolean }) {
   const [out, setOut] = useState(text.replace(/[^ ]/g, " "));
@@ -368,53 +375,127 @@ function Scramble({ text, run }: { text: string; run: boolean }) {
   return <span aria-label={text}>{run ? out : ""}</span>;
 }
 
+/** An outlined limb: a thick grey stroke under a slightly thinner paper stroke. */
+function Limb({ d, w = 34 }: { d: string; w?: number }) {
+  return (
+    <>
+      <path d={d} fill="none" stroke="#B3B3B3" strokeWidth={w} strokeLinecap="round" />
+      <path d={d} fill="none" stroke="#FAFAFA" strokeWidth={w - 3} strokeLinecap="round" />
+    </>
+  );
+}
+
+/** One turntable seen from the front: platter, label and a marker that circles as the record spins. */
+function Deck({ cx, flip }: { cx: number; flip?: boolean }) {
+  const ring = `M${cx - 92} 616 a92 14 0 1 0 184 0 a92 14 0 1 0 -184 0`;
+  return (
+    <g>
+      <ellipse cx={cx} cy={618} rx={118} ry={19} fill="#EDEDED" stroke="#B3B3B3" strokeWidth="1.5" />
+      <ellipse cx={cx} cy={616} rx={96} ry={15} fill="#151515" />
+      {[80, 64, 48].map((r) => (
+        <ellipse key={r} cx={cx} cy={616} rx={r} ry={r * 0.155} fill="none" stroke="#3A3A3A" strokeWidth="1" />
+      ))}
+      <ellipse cx={cx} cy={616} rx={24} ry={4.2} fill="#6A3DF5" />
+      <circle r="3.2" fill="#FAFAFA">
+        <animateMotion dur={flip ? "1.9s" : "1.8s"} repeatCount="indefinite" path={ring} />
+      </circle>
+      <path d={flip ? `M${cx - 104} 604 L${cx - 58} 612` : `M${cx + 104} 604 L${cx + 58} 612`} stroke="#0A0A0A" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  );
+}
+
+/** The DJ at the decks, in the same thin line style as the rest of the page. */
+function DjBooth() {
+  return (
+    <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMax meet" className="absolute inset-x-0 bottom-0 mx-auto h-[92%]" aria-hidden>
+      {/* DJ: head and shoulders behind the booth */}
+      <path
+        d="M150 640 C160 560 240 505 330 492 C346 489 352 470 350 448 L348 420 C320 402 304 368 300 330 C290 250 330 170 400 170 C470 170 510 250 500 330 C496 368 480 402 452 420 L450 448 C448 470 454 489 470 492 C560 505 640 560 650 640 Z"
+        fill="#FAFAFA"
+        stroke="#B3B3B3"
+        strokeWidth="1.5"
+      />
+      {/* headphones: band over the head, one cup on, one held off the ear */}
+      <path d="M314 292 C310 182 490 182 486 292" fill="none" stroke="#0A0A0A" strokeWidth="9" strokeLinecap="round" />
+      <rect x="292" y="266" width="34" height="64" rx="13" fill="#0A0A0A" />
+      <rect x="298" y="276" width="22" height="44" rx="9" fill="#6A3DF5" />
+      <rect x="492" y="250" width="34" height="64" rx="13" fill="#0A0A0A" transform="rotate(14 509 282)" />
+      {/* right arm up, hand on the loose cup; left arm down to the deck */}
+      <Limb d="M590 560 C640 500 610 410 548 318" />
+      <circle cx="540" cy="306" r="20" fill="#FAFAFA" stroke="#B3B3B3" strokeWidth="1.5" />
+      <Limb d="M250 548 C205 575 188 600 196 616" w={30} />
+      {/* the booth */}
+      <path d="M70 640 L120 598 L680 598 L730 640 Z" fill="#FFFFFF" stroke="#B3B3B3" strokeWidth="1.5" />
+      <Deck cx={238} />
+      <Deck cx={562} flip />
+      <rect x="352" y="600" width="96" height="30" rx="4" fill="#151515" />
+      {[368, 388, 408, 428].map((x, i) => (
+        <circle key={x} cx={x} cy={611} r="4" fill={i === 1 ? "#6A3DF5" : "#5A5A5A"} />
+      ))}
+      <rect x="364" y="620" width="72" height="3" rx="1.5" fill="#6A3DF5" />
+      <circle cx="196" cy="616" r="15" fill="#FAFAFA" stroke="#B3B3B3" strokeWidth="1.5" />
+      <rect x="70" y="640" width="660" height="260" fill="#FAFAFA" stroke="#B3B3B3" strokeWidth="1.5" />
+      <line x1="70" y1="652" x2="730" y2="652" stroke="#D4D4D4" />
+      {/* the mark on the booth front */}
+      {BRAND_MARK.flatMap((row, y) =>
+        row.split("").map((c, x) => (c === "." ? null : <rect key={`${x}-${y}`} x={381 + x * 4.4} y={668 + y * 4.4} width="3.6" height="3.6" fill={c === "R" ? "#E8271C" : "#0A0A0A"} />)),
+      )}
+    </svg>
+  );
+}
+
 export function Dossier({ show }: { show?: Show }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  // The red bars start as a cross behind the head, swing down onto the shoulders, then close into a "locked" square.
-  const barA = { x: useTransform(scrollYProgress, [0, 0.45, 0.9], ["-34%", "-26%", "0%"]), y: useTransform(scrollYProgress, [0, 0.45, 0.9], ["-4%", "30%", "4%"]), rotate: useTransform(scrollYProgress, [0, 0.45, 0.9], [0, 42, 0]), scaleX: useTransform(scrollYProgress, [0.75, 0.9], [1, 0.08]) };
-  const barB = { x: useTransform(scrollYProgress, [0, 0.45, 0.9], ["0%", "26%", "0%"]), y: useTransform(scrollYProgress, [0, 0.45, 0.9], ["-34%", "26%", "4%"]), rotate: useTransform(scrollYProgress, [0, 0.45, 0.9], [90, 138, 90]), scaleX: useTransform(scrollYProgress, [0.75, 0.9], [1, 0.08]) };
-  const numX = useTransform(scrollYProgress, [0, 0.55, 1], ["-150%", "48%", "48%"]);
+  // Two violet beams from the lighting truss sweep the room as you scroll, then both land on the DJ.
+  const beamL = useTransform(scrollYProgress, [0, 0.45, 0.9], [38, -18, -9]);
+  const beamR = useTransform(scrollYProgress, [0, 0.45, 0.9], [-38, 18, 9]);
+  const beamO = useTransform(scrollYProgress, [0, 0.15, 0.9, 1], [0.5, 0.85, 1, 1]);
+  const numX = useTransform(scrollYProgress, [0, 0.55, 1], ["-150%", "36%", "36%"]);
   const [step, setStep] = useState(-1);
   const [claim, setClaim] = useState(false);
   useMotionValueEvent(scrollYProgress, "change", (p) => {
     setStep(Math.min(STEPS.length - 1, Math.floor(p * 6.2) - 1));
     setClaim(p > 0.9);
   });
-  const tags = [...new Set([...(show?.plan?.crowd.tags ?? []).map((t) => t.name), ...(show?.plan?.crowd.compare ?? []).map((c) => c.name)])].slice(0, 12);
+  const tags = [...new Set([...(show?.plan?.crowd.tags ?? []).map((t) => t.name), ...(show?.plan?.crowd.compare ?? []).map((c) => c.name)])].slice(0, 6);
   const picks = show?.plan?.slots.reduce((n, s) => n + s.items.length, 0) ?? 26;
+  const beam = "absolute top-[7%] h-[78%] w-[24vw] origin-top [clip-path:polygon(46%_0,54%_0,100%_100%,0_100%)] [background:linear-gradient(to_bottom,rgba(106,61,245,0.55),rgba(106,61,245,0.06))]";
 
   return (
     <section ref={ref} aria-labelledby="how-title" className="sig-paper relative md:h-[340vh]">
       <div className="relative overflow-hidden md:sticky md:top-0 md:h-svh">
-        <DotField color="#C2C2C2" step={5} seed={3} rise={0.38} className="hidden md:block" />
+        <DotField color="#C9C2E6" step={5} seed={3} rise={0.38} className="hidden md:block" />
         <Hud className="absolute left-3 top-3 hidden md:block">
           Venue GMs
           <br />
-          Promoters
+          Restaurants & bars
           <br />
-          Sponsorship teams
+          Promoters // sponsors
         </Hud>
         <Hud className="absolute right-3 top-3 hidden text-right md:block">
           Concert // Comedy
           <br />
           Sports // Festival
           <br />
-          Four modes
+          Dining // five modes
         </Hud>
 
-        {/* Desktop: the head, the bars, the steps */}
+        {/* Desktop: the truss, the beams, the DJ, the steps */}
         <div className="absolute inset-0 hidden md:block" aria-hidden>
-          <motion.div className="absolute left-1/2 top-[44%] h-[13%] w-[62%] -translate-x-1/2 -translate-y-1/2 bg-sig-hot" style={barA} />
-          <motion.div className="absolute left-1/2 top-[44%] h-[13%] w-[40%] -translate-x-1/2 -translate-y-1/2 bg-sig-hot" style={barB} />
-          <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMax meet" className="absolute inset-x-0 bottom-0 mx-auto h-[94%]">
-            <path d={HEAD} fill="#FAFAFA" stroke="#B3B3B3" strokeWidth="1.5" />
-          </svg>
+          <div className="absolute left-1/2 top-[5%] flex h-3 w-[54%] -translate-x-1/2 items-center justify-between rounded-sm bg-sig-violet-ink px-[6%]">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <span key={i} className={cn("size-2 rounded-full", i === 1 || i === 4 ? "bg-white" : "bg-sig-lilac/60")} />
+            ))}
+          </div>
+          <motion.div className={cn(beam, "left-[calc(50%-27%+3%)] -translate-x-1/2")} style={{ rotate: beamL, opacity: beamO }} />
+          <motion.div className={cn(beam, "right-[calc(50%-27%+3%)] translate-x-1/2")} style={{ rotate: beamR, opacity: beamO }} />
+          <DjBooth />
           <motion.div className="absolute left-1/2 top-[38%] font-dot text-[clamp(4rem,9vw,8.5rem)] font-black leading-none text-sig-black" style={{ x: numX, rotate: 90 }}>
             {String(picks).padStart(4, "0")}
           </motion.div>
-          {/* The crowd's taste vocabulary, and its mirror */}
-          <div className="absolute left-1/2 top-[46%] flex -translate-x-1/2 gap-10">
+          {/* The crowd's taste vocabulary on the booth front, and its reflection in the glossy panel */}
+          <div className="absolute bottom-[4%] left-1/2 flex -translate-x-1/2 gap-16">
             <ul className="grid justify-items-end gap-0.5">
               {tags.map((t) => (
                 <li key={t} className="hud text-[10px]">
@@ -422,7 +503,7 @@ export function Dossier({ show }: { show?: Show }) {
                 </li>
               ))}
             </ul>
-            <ul className="grid -scale-y-100 gap-0.5 opacity-60">
+            <ul className="grid -scale-x-100 gap-0.5 text-sig-violet-ink/70">
               {tags.map((t) => (
                 <li key={t} className="hud text-[10px]">
                   {t}
@@ -430,11 +511,7 @@ export function Dossier({ show }: { show?: Show }) {
               ))}
             </ul>
           </div>
-          <div className="absolute bottom-[8%] left-[38%] flex flex-col items-center gap-1">
-            <span className="block h-16 w-6 [background:repeating-linear-gradient(0deg,#0A0A0A_0_1px,transparent_1px_3px,#0A0A0A_3px_5px,transparent_5px_6px)]" />
-            <span className="hud text-[10px]">{String(picks).padStart(3, "0")}</span>
-          </div>
-          <p className="absolute inset-x-0 top-[9%] text-center font-display text-[clamp(2.2rem,4.6vw,4.4rem)] font-bold uppercase leading-[0.9] text-sig-red-ink">
+          <p className="absolute inset-x-0 top-[10%] text-center font-display text-[clamp(2.2rem,4.6vw,4.4rem)] font-bold uppercase leading-[0.9] text-sig-violet-ink">
             <Scramble text="We read crowds." run={claim} />
             <br />
             <Scramble text="Never people." run={claim} />
@@ -443,7 +520,7 @@ export function Dossier({ show }: { show?: Show }) {
 
         <div className="relative px-4 pt-16 md:pointer-events-none md:absolute md:inset-0 md:p-0 [&_li]:pointer-events-auto">
           <h2 id="how-title" className="font-display text-[2.4rem] font-bold uppercase leading-[0.9] md:absolute md:left-3 md:top-[12%] md:text-[2rem]">
-            How it works<span className="text-sig-red-ink">.</span>
+            How it works<span className="text-sig-violet-ink">.</span>
           </h2>
           <ol className="mt-6 grid gap-3 pb-16 md:contents">
             {STEPS.map((s, i) => (
@@ -457,7 +534,7 @@ export function Dossier({ show }: { show?: Show }) {
                 )}
               >
                 <Brackets className="text-sig-black" />
-                <Hud className="text-sig-red-ink">
+                <Hud className="text-sig-violet-ink">
                   {s.n} // {s.q}
                 </Hud>
                 <div className="mt-1 font-display text-[1.5rem] font-bold uppercase leading-none">{s.t}</div>
@@ -485,7 +562,10 @@ function Big({ value, label }: { value: string; label: string }) {
 export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
   const pick = concert?.plan?.slots.flatMap((s) => s.items).find((i) => !i.isWildcard && i.evidence.some((e) => e.tool === "qloo_rank"));
   const slot = concert?.plan?.slots.find((s) => s.items.some((i) => i.id === pick?.id));
-  const brand = (concert?.plan?.slots ?? []).flatMap((s) => s.items).filter((i) => i.fitScore !== undefined).sort((a, b) => b.fitScore! - a.fitScore!)[0];
+  const brand = (concert?.plan?.slots ?? [])
+    .flatMap((s) => s.items)
+    .filter((i) => i.fitScore !== undefined)
+    .sort((a, b) => b.fitScore! - a.fitScore!)[0];
   const cf = sports?.counterfactual;
   const items = sports?.plan?.slots.flatMap((s) => s.items.filter((i) => i.approval.state !== "swapped")) ?? [];
   const ask = concert?.asks[0];
@@ -544,7 +624,8 @@ export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
           <Brackets className="text-white/40" />
           <Hud className="text-[#FF6B60]">// Powered by Qloo</Hud>
           <p className="mt-2 text-[14px] leading-relaxed text-[#D0D0D0]">
-            Qloo&apos;s taste AI maps what audiences love across music, film, TV, podcasts, books, brands, dining and places, as anonymised aggregate affinities. House Mix chains all ten of its tools through the <span className="font-mono text-white">qloo mcp</span> harness. Without Qloo there is no plan: no IDs, no crowd read, no candidates, no ranking.
+            Qloo&apos;s taste AI maps what audiences love across music, film, TV, podcasts, books, brands, dining and places, as anonymised aggregate affinities. House Mix chains all ten of its tools
+            through the <span className="font-mono text-white">qloo mcp</span> harness. Without Qloo there is no plan: no IDs, no crowd read, no candidates, no ranking.
           </p>
         </div>
         <div className="relative p-5">
@@ -611,7 +692,10 @@ export function ShowIndex({ seeds, recent }: { seeds: ShowSummary[]; recent: Sho
           const d = new Date(`${s.date}T00:00:00Z`);
           return (
             <li key={s.id} className="border-b border-sig-black/80">
-              <Link href={`/shows/${s.id}`} className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 px-2 py-4 transition-colors hover:bg-sig-black hover:text-sig-paper md:grid-cols-[3rem_7rem_1fr_14rem_6rem_6rem]">
+              <Link
+                href={`/shows/${s.id}`}
+                className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 px-2 py-4 transition-colors hover:bg-sig-black hover:text-sig-paper md:grid-cols-[3rem_7rem_1fr_14rem_6rem_6rem]"
+              >
                 <span className="hud tabular text-sig-soft group-hover:text-sig-mid">{String(i + 1).padStart(3, "0")}</span>
                 <span className="hud hidden md:block">{s.mode}</span>
                 <span className="font-display text-[1.5rem] font-bold uppercase leading-none md:text-[1.9rem]">
@@ -639,19 +723,19 @@ export function ShowIndex({ seeds, recent }: { seeds: ShowSummary[]; recent: Sho
   );
 }
 
-/* ------------------------------------------------------------------ red flood + finale */
+/* ------------------------------------------------------------------ violet flood + finale */
 
-/** A stepped, pixel-edged red horizon that rises as you scroll into the finale. */
+/** A stepped, pixel-edged violet horizon that rises as you scroll into the finale. */
 export function Flood() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
   const y = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
   const edge = useMemo(() => {
+    // A bar-graph skyline: the edge is an EQ, not a horizon.
     const pts: string[] = ["0,40"];
-    let h = 20;
-    for (let x = 0; x <= 100; x += 2.5) {
-      h = Math.max(4, Math.min(38, h + (Math.sin(x * 1.7) * 9 + Math.cos(x * 0.7) * 7)));
-      pts.push(`${x},${h}`, `${x + 2.5},${h}`);
+    for (let x = 0; x < 100; x += 2.5) {
+      const h = 6 + Math.abs(Math.sin(x * 0.9) * 18 + Math.cos(x * 0.31) * 12);
+      pts.push(`${x},${(40 - h).toFixed(1)}`, `${(x + 2.1).toFixed(1)},${(40 - h).toFixed(1)}`, `${(x + 2.1).toFixed(1)},40`, `${(x + 2.5).toFixed(1)},40`);
     }
     pts.push("100,40");
     return pts.join(" ");
@@ -660,10 +744,118 @@ export function Flood() {
     <div ref={ref} className="sig-paper relative h-[70vh] overflow-hidden" aria-hidden>
       <motion.div className="absolute inset-0" style={{ y }}>
         <svg viewBox="0 0 100 40" preserveAspectRatio="none" className="absolute inset-x-0 -top-[14vh] h-[14vh] w-full">
-          <polygon points={edge} fill="#F0140F" />
+          <polygon points={edge} fill="#5B2BE0" />
         </svg>
-        <div className="absolute inset-0 bg-sig-hot" />
+        <div className="absolute inset-0 bg-sig-violet-ink" />
       </motion.div>
+    </div>
+  );
+}
+
+/* 5×7 LED glyphs for the wordmark. */
+const LED: Record<string, string[]> = {
+  H: ["X...X", "X...X", "X...X", "XXXXX", "X...X", "X...X", "X...X"],
+  O: [".XXX.", "X...X", "X...X", "X...X", "X...X", "X...X", ".XXX."],
+  U: ["X...X", "X...X", "X...X", "X...X", "X...X", "X...X", ".XXX."],
+  S: [".XXXX", "X....", "X....", ".XXX.", "....X", "....X", "XXXX."],
+  E: ["XXXXX", "X....", "X....", "XXXX.", "X....", "X....", "XXXXX"],
+  M: ["X...X", "XX.XX", "X.X.X", "X.X.X", "X...X", "X...X", "X...X"],
+  I: ["XXX", ".X.", ".X.", ".X.", ".X.", ".X.", "XXX"],
+  X: ["X...X", "X...X", ".X.X.", "..X..", ".X.X.", "X...X", "X...X"],
+  " ": ["..", "..", "..", "..", "..", "..", ".."],
+};
+
+/** "HOUSE MIX" as a dot-matrix LED sign whose columns carry bouncing peak meters, like an EQ. */
+function LedWordmark() {
+  const cols: (boolean[] | null)[] = [];
+  for (const ch of "HOUSE MIX") {
+    const g = LED[ch]!;
+    for (let x = 0; x < g[0]!.length; x++) cols.push(g.map((row) => row[x] === "X"));
+    cols.push(null);
+  }
+  cols.pop();
+  const C = 10;
+  const top = 4;
+  return (
+    <svg viewBox={`0 0 ${cols.length * C} ${(7 + top) * C}`} className="h-auto w-full" role="img" aria-label="House Mix">
+      {cols.map((col, x) =>
+        col === null ? null : col.map((on, y) => <rect key={`${x}-${y}`} x={x * C + 1} y={(y + top) * C + 1} width={C - 2} height={C - 2} rx="1.5" fill={on ? "#FFFFFF" : "#262626"} />),
+      )}
+      {cols.map((col, x) => {
+        if (!col) return null;
+        if (!col.includes(true)) return null;
+        // One peak pixel per column in a row just above the word, jumping like a spectrum analyser.
+        const seed = (x * 37) % 11;
+        return (
+          <rect
+            key={`p${x}`}
+            x={x * C + 1}
+            y={(top - 1) * C + 1}
+            width={C - 2}
+            height={C - 2}
+            rx="1.5"
+            fill={x % 9 === 4 ? "#E8271C" : "#A893FF"}
+            className="sig-peak"
+            style={{ ["--h" as string]: 8 + seed * 2, animationDelay: `${(seed * 0.12) % 1.3}s` }}
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+/** A record on the platter: the mark on the label, the site's name running round it. */
+function SignatureRecord() {
+  const id = `rec${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  return (
+    <svg viewBox="0 0 200 200" className="size-full" aria-hidden>
+      <defs>
+        <path id={id} d="M100,100 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0" />
+      </defs>
+      <g className="sig-spin">
+        <circle cx="100" cy="100" r="98" fill="#111111" />
+        {[90, 84, 78, 72, 66, 60, 54].map((r) => (
+          <circle key={r} cx="100" cy="100" r={r + 26} fill="none" stroke="#2C2C2C" strokeWidth="0.8" />
+        ))}
+        <circle cx="100" cy="100" r="44" fill="#5B2BE0" />
+        <text fontFamily="var(--font-mono)" fontSize="9" letterSpacing="1.6" fill="#FFFFFF">
+          <textPath href={`#${id}`}>HOUSE MIX · HOUSE-MIX.VERCEL.APP · SIDE A · 33⅓ ·</textPath>
+        </text>
+        {BRAND_MARK.flatMap((row, y) =>
+          row.split("").map((c, x) => (c === "." ? null : <rect key={`${x}-${y}`} x={84 + x * 3.6} y={84 + y * 3.6} width="3" height="3" fill={c === "R" ? "#E8271C" : "#FFFFFF"} />)),
+        )}
+        <circle cx="100" cy="100" r="2.5" fill="#0A0A0A" />
+      </g>
+      <path d="M190 18 L150 70" stroke="#A893FF" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="190" cy="18" r="6" fill="#A893FF" />
+    </svg>
+  );
+}
+
+function NowPlaying() {
+  const [t, setT] = useState(86);
+  useEffect(() => {
+    const id = setInterval(() => setT((x) => (x >= 210 ? 0 : x + 1)), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const mm = (n: number) => `${String(Math.floor(n / 60)).padStart(2, "0")}:${String(n % 60).padStart(2, "0")}`;
+  return (
+    <div className="grid gap-2">
+      <Hud className="flex items-center gap-2 text-sig-violet-tint">
+        <span className="size-1.5 animate-blink bg-sig-red" aria-hidden /> Now playing
+      </Hud>
+      <div className="font-display text-[clamp(1.4rem,2.4vw,2.2rem)] font-bold uppercase leading-none text-white">
+        House Mix <span className="text-sig-violet-tint">— Find your crowd (Original Mix)</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <Hud className="tabular text-sig-violet-tint">{mm(t)}</Hud>
+        <span className="relative h-1 flex-1 rounded bg-white/15" aria-hidden>
+          <span className="absolute inset-y-0 left-0 rounded bg-white" style={{ width: `${(t / 210) * 100}%` }} />
+          <span className="absolute top-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sig-red" style={{ left: `${(t / 210) * 100}%` }} />
+        </span>
+        <Hud className="tabular text-sig-violet-tint">03:30</Hud>
+      </div>
+      <Hud className="text-sig-violet-tint">house-mix.vercel.app · side A · track 01</Hud>
     </div>
   );
 }
@@ -677,48 +869,49 @@ const PRINCIPLES = [
 
 export function Finale() {
   return (
-    <footer className="sig-red relative overflow-hidden px-3 pb-14 pt-6">
-      <DotField color="#C70F0B" step={5} seed={21} rise={0.5} />
+    <footer className="sig-violet relative overflow-hidden px-3 pb-14 pt-6">
+      <DotField color="#4C21C2" step={5} seed={21} rise={0.5} />
       <div className="relative">
         <h2 className="mx-auto max-w-[12ch] text-center font-display text-[clamp(3rem,9.5vw,9rem)] font-bold uppercase leading-[0.84] tracking-[-0.01em]">Find your crowd before the doors open</h2>
-        <div className="relative mt-10 bg-sig-black p-2 text-sig-hot">
-          <span className="absolute left-2 top-2 size-1.5 bg-sig-hot" aria-hidden />
-          <span className="absolute right-2 top-2 size-1.5 bg-sig-hot" aria-hidden />
-          <span className="absolute bottom-2 left-2 size-1.5 bg-sig-hot" aria-hidden />
-          <nav aria-label="Footer" className="hud flex gap-5 px-6 py-1 text-[#FF6B60]">
-            <Link href="/" className="hover:text-white">
-              Index
-              <Plus />
-            </Link>
-            <Link href="/new" className="hover:text-white">
-              Plan
-              <Plus />
-            </Link>
-            <Link href="/compare" className="hover:text-white">
-              Compare
-              <Plus />
-            </Link>
-            <Link href="/rate" className="hover:text-white">
-              Rate
-              <Plus />
-            </Link>
-          </nav>
-          <svg viewBox="0 0 1000 120" className="block h-[clamp(70px,11vw,150px)] w-full" aria-hidden>
-            <g transform="rotate(-2 500 62)">
-              <ellipse cx="500" cy="62" rx="492" ry="38" fill="#F0140F" className="sig-breathe" />
-            </g>
-            <polyline points={Array.from({ length: 80 }, (_, i) => `${20 + i * 12},${62 + Math.sin(i * 0.9) * (6 + (i % 7))}`).join(" ")} fill="none" stroke="#0A0A0A" strokeWidth="2" opacity="0.55" />
-          </svg>
-          <div className="flex justify-end px-2 pb-1">
-            <Link href="/new" className="hud flex h-7 items-center bg-sig-hot px-3 font-semibold text-sig-black hover:bg-white">
-              Plan a show
-              <Plus />
-            </Link>
+        <div className="relative mt-10 grid gap-6 bg-sig-black p-5 md:grid-cols-[minmax(180px,260px)_1fr] md:items-center md:p-8">
+          <span className="absolute left-2 top-2 size-1.5 bg-sig-violet-tint" aria-hidden />
+          <span className="absolute right-2 top-2 size-1.5 bg-sig-violet-tint" aria-hidden />
+          <span className="absolute bottom-2 left-2 size-1.5 bg-sig-violet-tint" aria-hidden />
+          <div className="mx-auto aspect-square w-[min(260px,60vw)]">
+            <SignatureRecord />
+          </div>
+          <div className="grid gap-6">
+            <LedWordmark />
+            <NowPlaying />
+            <div className="flex flex-wrap items-center gap-5">
+              <nav aria-label="Footer" className="hud flex gap-5 text-sig-violet-tint">
+                <Link href="/" className="hover:text-white">
+                  Index
+                  <Plus />
+                </Link>
+                <Link href="/new" className="hover:text-white">
+                  Plan
+                  <Plus />
+                </Link>
+                <Link href="/compare" className="hover:text-white">
+                  Compare
+                  <Plus />
+                </Link>
+                <Link href="/rate" className="hover:text-white">
+                  Rate
+                  <Plus />
+                </Link>
+              </nav>
+              <Link href="/new" className="hud ml-auto flex h-8 items-center bg-sig-violet-ink px-3 font-semibold text-white hover:bg-white hover:text-sig-black">
+                Plan a show
+                <Plus />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="mt-1.5 grid gap-1.5 md:grid-cols-2">
-          <Hud className="bg-sig-black px-3 py-1 text-[#FF6B60]">Powered by Qloo taste AI // ten tools in every plan</Hud>
-          <Hud className="bg-sig-black px-3 py-1 text-[#FF6B60]">For sponsors // fit scores and one-pagers</Hud>
+          <Hud className="bg-sig-black px-3 py-1 text-sig-violet-tint">Powered by Qloo taste AI // ten tools in every plan</Hud>
+          <Hud className="bg-sig-black px-3 py-1 text-sig-violet-tint">For sponsors // fit scores and one-pagers</Hud>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1fr_1.4fr]">
           <Hud>
@@ -726,7 +919,7 @@ export function Finale() {
             <br />
             House Mix // 0026
           </Hud>
-          <Hud>
+          <Hud className="text-sig-lilac">
             // Qloo results describe aggregate audience affinities.
             <br />
             House Mix makes no eligibility decisions.
@@ -737,13 +930,13 @@ export function Finale() {
                 <Hud>{i + 1}</Hud>
                 <div>
                   <Hud className="font-semibold">{h}</Hud>
-                  <p className="mt-1 max-w-[46ch] text-[13px] leading-snug">{b}</p>
+                  <p className="mt-1 max-w-[46ch] text-[13px] leading-snug text-sig-lilac">{b}</p>
                 </div>
               </li>
             ))}
           </ol>
         </div>
-        <Hud className="mt-12">© 2026 House Mix // MIT licensed</Hud>
+        <Hud className="mt-12 text-sig-lilac">© 2026 House Mix // MIT licensed</Hud>
       </div>
     </footer>
   );

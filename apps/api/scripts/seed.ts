@@ -2,7 +2,7 @@
  * Builds the seeded demo shows by running the real pipeline (resolution → agent plan) and saves
  * each show with its ledger and run events to fixtures/seed/<qloo mode>/<key>.json.
  * Seed confirmations are an operator's documented choices (`choose`), not automatic picks.
- * Usage: tsx scripts/seed.ts [key ...]   (keys: concert comedy sports festival)
+ * Usage: tsx scripts/seed.ts [key ...]   (keys: concert comedy sports festival dining)
  *        tsx scripts/seed.ts --extras [--ask] [key ...]   re-runs only the crowd map and "Without Qloo" (and the sample question) on stored seeds
  */
 import fs from "node:fs";
@@ -96,6 +96,23 @@ const SEEDS: SeedDef[] = [
       doorsTime: "12:00",
       capacityTier: "stadium",
       houseRules: { budgetBand: "standard", ageRating: "all_ages", vibeWords: [], localActs: [], sponsorExclusivities: [], localOnlyVendors: false, notes: "" },
+    },
+  },
+  {
+    key: "dining",
+    ask: "Which drinks brand fits the jazz-night crowd best, and what should we pour with it?",
+    input: {
+      mode: "dining",
+      sides: [
+        { role: "house", name: "Dishoom Shoreditch" },
+        { role: "theme", name: "Ezra Collective" },
+      ],
+      venue: "Dishoom Shoreditch",
+      city: "London",
+      date: "2026-11-21",
+      doorsTime: "18:00",
+      capacityTier: "club",
+      houseRules: { budgetBand: "standard", ageRating: "18_plus", vibeWords: ["late night"], localActs: [], sponsorExclusivities: [], localOnlyVendors: false, notes: "Jazz supper: two seatings, the bar stays open late." },
     },
   },
 ];

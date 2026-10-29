@@ -31,7 +31,8 @@ export function profileFor(tags: string[], mode: string): Profile {
   tags.forEach((tag, i) => {
     for (const [p, re] of PROFILE_WORDS) if (re.test(tag.toLowerCase())) score.set(p, (score.get(p) ?? 0) + 1 / (i + 1));
   });
-  return [...score.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "groove";
+  // A dining room defaults to lounge unless its crowd clearly leans somewhere else.
+  return [...score.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? (mode === "dining" ? "lounge" : "groove");
 }
 
 function hash(s: string) {

@@ -85,8 +85,8 @@ ${RULES}
 
 Your job: read tonight's aggregate crowd from Qloo, then submit it.
 Steps (use the qloo_id values from the CONTEXT you were given):
-1. mcp__qloo__qloo_compare_audiences: group_a = the headliner / home side IDs, group_b = the support / away side IDs. If there is only one side, use group_b = [venue qloo_id] (the act's audience vs the venue's audience). Skip the comparison if neither exists.
-2. mcp__qloo__qloo_audience_demographics on the headliner / home side (entity_type = its type).
+1. mcp__qloo__qloo_compare_audiences: group_a = the headliner / home / house side IDs, group_b = the support / away / theme side IDs. If there is only one side, use group_b = [venue qloo_id] (the act's audience vs the venue's audience). Skip the comparison if neither exists.
+2. mcp__qloo__qloo_audience_demographics on the headliner / home / house side (entity_type = its type).
 3. mcp__qloo__qloo_entity_tags on all bill IDs (entity_type = their type when they share one).
 4. mcp__qloo__qloo_trends on the bill IDs (1–5 entities, entity_type = their type, trend_window dates).
 5. mcp__housemix__submit_crowd_read with interpretation (2–4 short lines of programming judgement grounded in the results) and the call_ids you used. The server derives the demographic phrase from the demographics result and returns it.
@@ -97,7 +97,7 @@ ${RULES}
 
 Follow the slot's qloo_chain from the CONTEXT:
 - music / act slots: mcp__qloo__qloo_recommend (target_type from the slot; signals = bill IDs; signal_tags = vibe tag URNs and/or the crowd's top tag URNs, signal_tags_operator "union"; signal_location = the city), then mcp__qloo__qloo_rank over ≤ 10 option IDs (the best recommendations plus any local_acts IDs of the right type) with option_type, signals = bill IDs, signal_location and the crowd's demographic phrase. For opener / halftime / discovery slots also call mcp__qloo__qloo_trends on your top 3–5 picks to flag rising acts.
-- food / local slots: mcp__qloo__qloo_where_popular (entity = headliner or home ID, within = the city) to see where the crowd's taste concentrates, then mcp__qloo__qloo_recommend with target_type "place", signals = bill IDs, signal_location and filter_location = the city, then mcp__qloo__qloo_rank over the best ≤ 10 place IDs. Respect local_only_vendors and the age rating.
+- food / local slots: mcp__qloo__qloo_where_popular (entity = headliner, home or house ID, within = the city) to see where the crowd's taste concentrates, then mcp__qloo__qloo_recommend with target_type "place", signals = bill IDs, signal_location and filter_location = the city, then mcp__qloo__qloo_rank over the best ≤ 10 place IDs. Respect local_only_vendors and the age rating.
 - comedy interval slot: qloo_recommend with target_type "podcast", then qloo_rank.
 Other programmers fill other slots at the same time and an entity may appear in only one slot: right before submitting, call mcp__housemix__get_plan_state and leave out anything already used (take the next-best from your rank call instead).
 Then call mcp__housemix__submit_slot once with slot_key and the slot's number of picks (best first). For a music slot order the picks so energy builds toward the next act and say where each fits in "action". "action" is one concrete instruction for the crew (when, where, how). If the submission is rejected, fix the cited call_ids/entity_ids and submit again.

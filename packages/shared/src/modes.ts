@@ -191,6 +191,61 @@ export const MODES: Record<Mode, ModeTemplate> = {
       local("after_party", "After-parties", 600, 180),
     ],
   },
+  dining: {
+    mode: "dining",
+    label: "Dining",
+    tagline: "Restaurants and bars, service by service",
+    sideRoles: [
+      { role: "house", label: "Your restaurant or bar", required: true, max: 1 },
+      { role: "theme", label: "Theme or guest (artist, film, brand)", required: false, max: 2 },
+    ],
+    compareLabel: (a, b) => `${a} regulars vs ${b} fans`,
+    slots: [
+      {
+        ...walkIn("Arrivals & early seating", 0, 90),
+        picks: 5,
+        brief: "Dining-room playlist for arrivals and the first seating: warm, talk-over-able artists that fit the room's crowd. Keep the volume low and the energy gentle.",
+      },
+      {
+        key: "peak",
+        label: "Peak service",
+        offsetMin: 90,
+        lengthMin: 120,
+        kind: "music",
+        brief: "Playlist for the busiest part of service: a lift in energy that still sits under conversation. Order the artists so the room warms up.",
+        chain: ["qloo_recommend", "qloo_rank"],
+        targetType: "artist",
+        picks: 5,
+      },
+      {
+        ...sponsors("Drinks & pairings", 0, 300),
+        brief: "Wine, spirits, beer and soft-drink brands to pour or feature tonight, with a sponsor-fit score against the room's crowd. Respect the age rating.",
+      },
+      {
+        key: "collab",
+        label: "Guest collab & pop-up",
+        offsetMin: 0,
+        lengthMin: 300,
+        kind: "food",
+        brief: "Other restaurants, bakeries or bars in the city whose audience overlaps tonight's: candidates for a guest dish, a pop-up or a cross-promotion.",
+        chain: ["qloo_where_popular", "qloo_recommend", "qloo_rank"],
+        targetType: "place",
+        picks: 4,
+      },
+      {
+        key: "late",
+        label: "Late lounge set",
+        offsetMin: 210,
+        lengthMin: 90,
+        kind: "music",
+        brief: "Late-evening lounge playlist for dessert, the bar and the last orders: slower, deeper picks that fit the crowd.",
+        chain: ["qloo_recommend", "qloo_rank"],
+        targetType: "artist",
+        picks: 4,
+      },
+      local("after_party", "After-dinner guide", 270, 90),
+    ],
+  },
 };
 
 export const LIMITATIONS: string[] = [

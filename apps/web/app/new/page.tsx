@@ -35,6 +35,7 @@ interface SideRow {
 function defaultSides(mode: Mode): SideRow[] {
   if (mode === "sports") return [{ role: "home", name: "" }, { role: "away", name: "" }];
   if (mode === "festival") return [{ role: "stage_act", name: "", stage: "Main stage" }, { role: "stage_act", name: "", stage: "Second stage" }];
+  if (mode === "dining") return [{ role: "house", name: "" }];
   return [{ role: "headliner", name: "" }];
 }
 
@@ -181,7 +182,7 @@ export default function NewShow() {
             <fieldset className="grid gap-3 rounded-lg border bg-card p-4">
               <legend className="sr-only">Mode</legend>
               <Kicker>Mode</Kicker>
-              <div role="radiogroup" aria-label="Event mode" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <div role="radiogroup" aria-label="Event mode" className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
                 {(Object.keys(MODES) as Mode[]).map((m) => {
                   return (
                     <button
@@ -210,7 +211,7 @@ export default function NewShow() {
 
             <fieldset className="grid gap-4 rounded-lg border bg-card p-4">
               <legend className="sr-only">The bill</legend>
-              <Kicker>{mode === "sports" ? "The fixture" : mode === "festival" ? "Stage acts" : "The bill"}</Kicker>
+              <Kicker>{mode === "sports" ? "The fixture" : mode === "festival" ? "Stage acts" : mode === "dining" ? "The room" : "The bill"}</Kicker>
               {mode === "sports" ? (
                 <div className="grid items-end gap-3 sm:grid-cols-[1fr_auto_1fr]">
                   {(["home", "away"] as const).map((role, n) => (
@@ -255,7 +256,7 @@ export default function NewShow() {
                             id={`side-${i}`}
                             value={s.name}
                             onChange={(e) => setSides((ss) => ss.map((x, j) => (j === i ? { ...x, name: e.target.value } : x)))}
-                            placeholder={r.role === "headliner" ? (mode === "comedy" ? "e.g. headlining comedian" : "e.g. Khruangbin") : mode === "comedy" ? "e.g. opener" : "e.g. Men I Trust"}
+                            placeholder={r.role === "house" ? "e.g. Dishoom Shoreditch" : r.role === "theme" ? "e.g. Ezra Collective (jazz night)" : r.role === "headliner" ? (mode === "comedy" ? "e.g. headlining comedian" : "e.g. Khruangbin") : mode === "comedy" ? "e.g. opener" : "e.g. Men I Trust"}
                             aria-invalid={Boolean(n === 0 && show(`side_${r.role}`))}
                           />
                           {(r.role !== "headliner" || n > 0) && roleRows(r.role).length > (r.required ? 1 : 0) ? (
@@ -282,7 +283,7 @@ export default function NewShow() {
               <Kicker className="sm:col-span-2">Where and when</Kicker>
               <div className="grid gap-1.5">
                 <Label htmlFor="venue">Venue</Label>
-                <Input id="venue" value={venue} onChange={(e) => setVenue(e.target.value)} placeholder="e.g. Hollywood Bowl" aria-invalid={Boolean(show("venue"))} />
+                <Input id="venue" value={venue} onChange={(e) => setVenue(e.target.value)} placeholder={mode === "dining" ? "e.g. Dishoom Shoreditch" : "e.g. Hollywood Bowl"} aria-invalid={Boolean(show("venue"))} />
                 {show("venue") ? <p className="text-small text-destructive">{problems.venue}</p> : null}
               </div>
               <div className="grid gap-1.5">

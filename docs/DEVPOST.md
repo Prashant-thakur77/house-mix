@@ -8,7 +8,7 @@ Every night, someone at a venue decides the walk-in music, the opener, the halft
 
 ## What House Mix does
 
-1. **Intake.** Pick a mode (Concert, Comedy, Sports, Festival) and enter the bill, venue, city, date, capacity tier and house rules: budget band, age rating, exclusive sponsors, local-only vendors, vibe words and local acts to consider.
+1. **Intake.** Pick a mode (Concert, Comedy, Sports, Festival, Dining) and enter the bill, venue, city, date, capacity tier and house rules: budget band, age rating, exclusive sponsors, local-only vendors, vibe words and local acts to consider.
 2. **Resolve and confirm.** Every name is resolved with `qloo_describe` (vibe words with `qloo_find_tags`). When Qloo returns `needs_input` (type "Genesis"), the console shows a confirm card with the candidates. The operator picks one, and the choice is re-checked by ID. Nothing is auto-picked.
 3. **Watch the agents plan.** A Claude Agent SDK Planner sends out a CrowdReader, one Programmer per slot (in parallel), SponsorFit and a Wildcard agent. Every Qloo call streams into a live trace: tool, status chip, timing, cache hits and retries.
 4. **Crowd read.** Shared vs distinct taste between the two sides (`qloo_compare_audiences`), aggregate age skew (`qloo_audience_demographics`), the crowd's taste vocabulary (`qloo_entity_tags`) and 90-day momentum (`qloo_trends`). "Qloo says" lines are generated from the data; "Our interpretation" lines are written by the agent and checked by the Critic.
@@ -21,7 +21,8 @@ Every night, someone at a venue decides the walk-in music, the opener, the halft
 11. **Without Qloo.** The headline comparison, inside the product. Claude plans the same brief with no tools. Qloo then looks up each of those picks by name (`qloo_describe`) and ranks both plans' top picks per slot for tonight's bill, city and crowd (`qloo_rank`). The panel shows citation coverage (House Mix 100%, Claude alone 0%), how many knowledge-only picks Qloo can't find or can't disambiguate, and where they land for this crowd. It says plainly that Qloo grading its own picks is not a quality test; the blind A/B is.
 12. **Ask House Mix.** "If the support act cancels, who opens?" A tool-using Claude loop over the same Qloo tools answers from the plan's calls plus new ones. Every line cites call IDs, the Critic removes lines that don't hold up, and any suggested change arrives as a pending item in the approval queue, with its evidence built from the ledger like every other pick.
 13. **Run the night.** The plan played out on a show clock: a timeline with a playhead, what's on stage now with a synthesized audio cue styled on the crowd's Qloo tags (never the recording, and labelled so), what's next, a crew cue sheet by role that can be called and re-timed when the night runs late, and a full-screen display for the venue's own screens.
-14. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
+14. **Dining mode.** Restaurants and bars plan a service the same way: the house (resolved as a Qloo place) plus an optional theme night or guest. The plan covers the arrivals and peak-service playlists, drinks and pairings with sponsor fit, guest collabs and pop-ups from places whose audience overlaps, a late lounge set and an after-dinner guide.
+15. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
 
 ## How we use Qloo
 

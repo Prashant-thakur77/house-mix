@@ -14,7 +14,7 @@ function myShowIds(): string[] {
   }
 }
 
-const ORDER = ["concert", "comedy", "sports", "festival"];
+const ORDER = ["concert", "comedy", "sports", "festival", "dining"];
 
 export default function Home() {
   const [shows, setShows] = useState<ShowSummary[]>();

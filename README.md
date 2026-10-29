@@ -4,11 +4,11 @@
 
 **House Mix turns tonight's lineup into a run-of-show programmed for the crowd you actually have.** A venue GM or promoter enters the event (headliner and support, or home vs away) and the city. A team of Claude agents uses Qloo taste data to pick the walk-in playlist, openers and interval acts, food and drink partners, merch and sponsor activations, and a local guide, plus one labelled "stretch" pick per slot. Every pick carries its evidence. The operator approves, swaps or rejects each line, locks a version, exports it and plays a two-voice briefing to the crew.
 
-Built for the Qloo Agentic Hackathon ("Agents, but with taste"). Four modes: **Concert, Comedy, Sports, Festival**.
+Built for the Qloo Agentic Hackathon ("Agents, but with taste"). Five modes: **Concert, Comedy, Sports, Festival, Dining** (restaurants and bars).
 
 **Live demo (no login):** https://house-mix.vercel.app · API: https://house-mix-api-120659974854.us-central1.run.app/health
 
-Open a seeded show (concert, comedy night, football fixture, festival day) to see a full plan instantly, or plan a new one. Until the live Qloo key is connected the demo runs on the schema-identical mock and says **MOCK DATA** on every screen.
+Open a seeded show (concert, comedy night, football fixture, festival day, restaurant jazz night) to see a full plan instantly, or plan a new one. Until the live Qloo key is connected the demo runs on the schema-identical mock and says **MOCK DATA** on every screen.
 
 ![Landing: a point-cloud figure in a black HUD that crumbles into a crowd as you scroll](design/app/landing/hero-desktop.png)
 
@@ -38,6 +38,7 @@ Open a seeded show (concert, comedy night, football fixture, festival day) to se
 | Crowd map | Where each side's taste concentrates in the show city, the areas that are strong for every side, and the top three for street teams and flyering (tile-free SVG with a table view) | `qloo_where_popular` |
 | Without Qloo | Claude plans the same brief with no tools; Qloo looks up every one of those picks by name and ranks both plans' top picks per slot for tonight's crowd. Ambiguous names are reported, never auto-picked | `qloo_describe`, `qloo_rank` |
 | Ask House Mix | Questions about the plan ("if the support act cancels, who opens?") answered by a tool-using Claude loop over the real Qloo tools. Every line cites call IDs, the Critic removes the rest, and suggested changes go to the approval queue as pending items | all nine query tools |
+| Dining mode | For restaurants and bars: the house (a Qloo place) and an optional theme or guest (an artist, film or brand). The crowd read compares the room's regulars with the theme's fans; the service gets an arrivals playlist, a peak-service playlist, drinks and pairings with sponsor fit, guest collabs and pop-ups, a late lounge set and an after-dinner guide | `qloo_describe` (place), `qloo_compare_audiences`, `qloo_recommend`, `qloo_rank`, `qloo_where_popular` |
 | Run the night | The plan played out on a show clock (real time, 60× or 300×): a timeline with a playhead, "now playing / on stage" with a synthesized audio cue styled on the crowd's Qloo tags, up next, a crew cue sheet by role (sound, stage, F&B, partnerships, front of house) that can be called and re-timed ("+5 min late"), and a full-screen venue display | (plan evidence) |
 | Compare | Tonight vs last night: one comparison across the two bills plus a plan diff | `qloo_compare_audiences` |
 | Health | Readiness badge and the MOCK DATA banner | `qloo_capabilities` |

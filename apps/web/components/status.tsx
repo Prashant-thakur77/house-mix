@@ -1,4 +1,4 @@
-import { CircleCheck, CircleDashed, CircleHelp, CircleX, Contrast, LoaderCircle, Mic, Music, Sparkles, Tent, TrendingUp, TriangleAlert, Trophy } from "lucide-react";
+import { CircleCheck, CircleDashed, CircleHelp, CircleX, Contrast, LoaderCircle, Mic, Music, Sparkles, Tent, TrendingUp, TriangleAlert, Trophy, UtensilsCrossed } from "lucide-react";
 import type { Mode, QlooStatus } from "@housemix/shared";
 import { cn } from "cn";
 import { PixelGlyph } from "@/components/pixel-glyph";
@@ -72,6 +72,7 @@ export const MODE_META: Record<Mode, { label: string; icon: typeof Music }> = {
   comedy: { label: "Comedy", icon: Mic },
   sports: { label: "Sports", icon: Trophy },
   festival: { label: "Festival", icon: Tent },
+  dining: { label: "Dining", icon: UtensilsCrossed },
 };
 
 export function ModeChip({ mode, className }: { mode: Mode; className?: string }) {

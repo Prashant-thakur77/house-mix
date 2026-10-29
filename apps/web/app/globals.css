@@ -210,6 +210,11 @@
   --color-sig-red: #E8271C;
   --color-sig-hot: #F0140F;
   --color-sig-red-ink: #C8160D;
+  /* Violet for the dossier and the finale: white text on --sig-violet-ink 7.3:1, violet-ink on paper 6.5:1, tint on ink 7.8:1. */
+  --color-sig-violet: #6A3DF5;
+  --color-sig-violet-ink: #5B2BE0;
+  --color-sig-violet-tint: #A893FF;
+  --color-sig-lilac: #E4DBFF;
 
   --text-display: 2.75rem;  --text-display--line-height: 3rem;     --text-display--letter-spacing: -0.03em;
   --text-h1: 1.5rem;        --text-h1--line-height: 2rem;          --text-h1--letter-spacing: -0.015em;
@@ -247,6 +252,13 @@
   --background: #F1F1F1; --foreground: #0A0A0A; --muted-foreground: #5E5E5E; --border: #CFCFCF; --ring: #C8160D;
   background: #F1F1F1; color: #0A0A0A; color-scheme: light;
 }
+.sig-violet {
+  --background: #5B2BE0; --foreground: #FFFFFF; --muted-foreground: #E4DBFF; --border: #FFFFFF; --ring: #FFFFFF;
+  background: #5B2BE0; color: #FFFFFF;
+}
+.sig-spin { transform-box: fill-box; transform-origin: center; animation: spin 9s linear infinite; }
+.sig-peak { animation: sig-peak 1.3s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+@keyframes sig-peak { 0%, 100% { transform: translateY(0); } 35% { transform: translateY(calc(var(--h, 10) * -1px)); } }
 .sig-red {
   --background: #F0140F; --foreground: #0A0A0A; --muted-foreground: #0A0A0A; --border: #0A0A0A; --ring: #0A0A0A;
   background: #F0140F; color: #0A0A0A;

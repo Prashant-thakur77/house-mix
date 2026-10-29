@@ -143,3 +143,16 @@ Owner's asks: an icon used everywhere; a live simulation of the night so it's cl
 | 5 | Every synthesized track threw on some IDs | Signed shift gave a negative index | Unsigned shifts |
 
 19 API, 6 eval and 42 e2e + axe tests pass (two new: the live view flow, and axe on it in both themes).
+
+## Round 9
+
+Owner's asks: a different centrepiece and colour for the landing's "How it works", a music-made logo and site name in the finale, and a mode for restaurants and bars.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | "How it works" still showed the reference's head and red bars | Head silhouette, red bars | A DJ at the decks (headphones, spinning platters, the mark on the booth, the crowd's Qloo tags and their reflection on the booth front) under a violet lighting truss whose beams sweep and land on the DJ |
+| 2 | The finale was the reference's red ellipse panel | Red band, ellipse | Violet band: a spinning record with the mark on the label and "HOUSE MIX · HOUSE-MIX.VERCEL.APP · SIDE A" around it, "HOUSE MIX" as a dot-matrix LED sign with peak meters bouncing above it, and a now-playing bar for "House Mix: Find your crowd (Original Mix)"; the flood edge is an EQ skyline |
+| 3 | Only live-event venues were covered | Four modes | Dining mode: house + theme roles, a six-slot dinner service, lounge-leaning audio, intake copy, glyph, and a seeded demo (Dishoom Shoreditch, Ezra Collective jazz night) |
+| 4 | Dev server served stale shared code after a schema change | Hydration mismatch in dev | Restart with a clean build dir (dev only; production builds are fresh) |
+
+Violet pairs: white on #5B2BE0 7.3:1, #5B2BE0 on paper 6.5:1, #A893FF on ink 7.8:1, lilac #E4DBFF on violet 5.5:1.

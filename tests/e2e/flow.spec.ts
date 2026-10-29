@@ -156,3 +156,17 @@ test("run the night: the clock plays the plan, cues can be called, the venue scr
   await page.getByRole("button", { name: /venue screen/i }).click();
   await expect(page.getByRole("dialog", { name: "Venue screen" })).toBeVisible();
 });
+
+test("dining mode: a restaurant and its theme resolve, and the seeded dinner service runs", async ({ page }) => {
+  await page.goto("/new");
+  await page.getByRole("radio", { name: /dining/i }).click();
+  await page.getByLabel("Your restaurant or bar", { exact: true }).fill("Dishoom Shoreditch");
+  await page.getByLabel("Venue", { exact: true }).fill("Dishoom Shoreditch");
+  await page.getByLabel("City", { exact: true }).fill("London");
+  await page.getByRole("button", { name: /resolve and continue/i }).click();
+  await expect(page).toHaveURL(/\/shows\/s_/);
+  await expect(page.getByRole("heading", { level: 1, name: /dishoom shoreditch: dinner service/i })).toBeVisible();
+  await page.goto("/shows/seed-dining/live");
+  await expect(page.getByText(/arrivals & early seating/i).first()).toBeVisible();
+  await expect(page.getByRole("radio", { name: "F&B" })).toBeVisible();
+});

@@ -14,7 +14,7 @@
     }
   ],
   "maxHeight": 6000,
-  "updatedAt": "2026-10-29T19:49:53.545Z",
+  "updatedAt": "2026-10-29T20:21:24.530Z",
   "summary": {
     "captured": 18,
     "skipped": [],
@@ -80,7 +80,7 @@
       "slug": "landing",
       "url": "http://localhost:3000/",
       "status": "captured",
-      "capturedAt": "2026-10-29T17:12:12.316Z",
+      "capturedAt": "2026-10-29T20:21:13.166Z",
       "meta": {
         "path": "/"
       },
@@ -95,9 +95,9 @@
           "file": "design/app/landing/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 10234,
-          "bytes": 1389640,
-          "brightness": 0.269
+          "fullHeight": 8838,
+          "bytes": 462658,
+          "brightness": 0.508
         },
         {
           "viewport": "desktop",
@@ -105,9 +105,9 @@
           "file": "design/app/landing/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 10234,
-          "bytes": 1387304,
-          "brightness": 0.094
+          "fullHeight": 8838,
+          "bytes": 462805,
+          "brightness": 0.508
         },
         {
           "viewport": "mobile",
@@ -115,9 +115,9 @@
           "file": "design/app/landing/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12531,
-          "bytes": 541145,
-          "brightness": 0.504
+          "fullHeight": 6404,
+          "bytes": 276833,
+          "brightness": 0.412
         },
         {
           "viewport": "mobile",
@@ -125,9 +125,9 @@
           "file": "design/app/landing/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12531,
-          "bytes": 540505,
-          "brightness": 0.118
+          "fullHeight": 6404,
+          "bytes": 276867,
+          "brightness": 0.412
         }
       ]
     },
@@ -190,7 +190,7 @@
       "slug": "new-concert",
       "url": "http://localhost:3000/new",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:49:24.156Z",
+      "capturedAt": "2026-10-29T20:21:13.166Z",
       "meta": {
         "path": "/new"
       },
@@ -204,19 +204,19 @@
           "scheme": "light",
           "file": "design/app/new-concert/desktop-light.png",
           "width": 1440,
-          "height": 1683,
-          "fullHeight": 1683,
-          "bytes": 167142,
-          "brightness": 0.905
+          "height": 1701,
+          "fullHeight": 1701,
+          "bytes": 172356,
+          "brightness": 0.906
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/new-concert/desktop-dark.png",
           "width": 1440,
-          "height": 1683,
-          "fullHeight": 1683,
-          "bytes": 168033,
+          "height": 1701,
+          "fullHeight": 1701,
+          "bytes": 173417,
           "brightness": 0.079
         },
         {
@@ -224,20 +224,20 @@
           "scheme": "light",
           "file": "design/app/new-concert/mobile-light.png",
           "width": 390,
-          "height": 2801,
-          "fullHeight": 2801,
-          "bytes": 159194,
-          "brightness": 0.9
+          "height": 2923,
+          "fullHeight": 2923,
+          "bytes": 163061,
+          "brightness": 0.902
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/new-concert/mobile-dark.png",
           "width": 390,
-          "height": 2801,
-          "fullHeight": 2801,
-          "bytes": 160942,
-          "brightness": 0.114
+          "height": 2923,
+          "fullHeight": 2923,
+          "bytes": 164720,
+          "brightness": 0.113
         }
       ]
     },

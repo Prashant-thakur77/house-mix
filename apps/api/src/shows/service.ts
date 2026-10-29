@@ -30,6 +30,8 @@ const norm = (s: string) => s.normalize("NFKC").toLowerCase().trim();
 function sideType(mode: Mode, role: SideRole): string | undefined {
   if (mode === "comedy") return "person";
   if (mode === "sports") return undefined;
+  // Dining: the house is a place in Qloo; a theme can be anything (an artist, a film, a brand).
+  if (mode === "dining") return role === "house" ? "place" : undefined;
   return role === "stage_act" || role === "headliner" || role === "support" ? "artist" : undefined;
 }
 
@@ -41,6 +43,10 @@ export function showTitle(i: ShowInputParsed): string {
       return `${by("home")[0] ?? "Home"} vs ${by("away")[0] ?? "Away"}`;
     case "festival":
       return `${i.venue} festival day`;
+    case "dining": {
+      const theme = by("theme");
+      return `${by("house")[0] ?? i.venue}${theme.length ? `: ${theme.join(" & ")} night` : ": dinner service"}`;
+    }
     default: {
       const support = by("support");
       return `${by("headliner")[0] ?? "Headliner"}${support.length ? ` with ${support.join(", ")}` : ""}`;

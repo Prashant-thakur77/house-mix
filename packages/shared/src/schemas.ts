@@ -18,7 +18,7 @@ export type QlooToolName = z.infer<typeof QlooToolName>;
 export const QlooStatus = z.enum(["ok", "empty", "needs_input", "partial", "degraded", "error"]);
 export type QlooStatus = z.infer<typeof QlooStatus>;
 
-export const Mode = z.enum(["concert", "comedy", "sports", "festival"]);
+export const Mode = z.enum(["concert", "comedy", "sports", "festival", "dining"]);
 export type Mode = z.infer<typeof Mode>;
 
 export const CapacityTier = z.enum(["club", "theatre", "arena", "stadium"]);
@@ -38,8 +38,8 @@ export const HouseRules = z.object({
 });
 export type HouseRules = z.infer<typeof HouseRules>;
 
-/** Who is on the bill. Concert/comedy: headliner + support; sports: home + away; festival: stages. */
-export const SideRole = z.enum(["headliner", "support", "home", "away", "stage_act"]);
+/** Who is on the bill. Concert/comedy: headliner + support; sports: home + away; festival: stages; dining: the house + an optional theme or guest. */
+export const SideRole = z.enum(["headliner", "support", "home", "away", "stage_act", "house", "theme"]);
 export type SideRole = z.infer<typeof SideRole>;
 
 export const SideInput = z.object({
