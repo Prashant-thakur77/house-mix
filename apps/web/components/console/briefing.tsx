@@ -53,11 +53,11 @@ export function BriefingSheet({ show, onBriefing }: { show: Show; onBriefing: (b
   const b = show.briefing && show.briefing.planVersion === show.version ? show.briefing : undefined;
   const device = useDeviceVoices(b?.lines ?? [], setActive);
 
-  const generate = async () => {
+  const generate = async (force = false) => {
     setBusy(true);
     setError(undefined);
     try {
-      onBriefing(await api.briefing(show.id));
+      onBriefing(await api.briefing(show.id, force));
     } catch (e) {
       setError((e as ApiError).message);
     } finally {
@@ -104,7 +104,7 @@ export function BriefingSheet({ show, onBriefing }: { show: Show; onBriefing: (b
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               ) : null}
-              <Button onClick={generate} disabled={busy} size="lg">
+              <Button onClick={() => generate()} disabled={busy} size="lg">
                 {busy ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <AudioLines data-icon="inline-start" />}
                 {busy ? "Writing, judging and voicing…" : `Write the briefing for plan v${show.version}`}
               </Button>
@@ -156,7 +156,7 @@ export function BriefingSheet({ show, onBriefing }: { show: Show; onBriefing: (b
                     </Button>
                   </>
                 ) : null}
-                <Button size="icon-sm" variant="ghost" aria-label="Write again" onClick={generate} disabled={busy}>
+                <Button size="icon-sm" variant="ghost" aria-label="Write again" onClick={() => generate(true)} disabled={busy}>
                   {busy ? <Loader2 className="animate-spin" /> : <RotateCcw />}
                 </Button>
               </div>

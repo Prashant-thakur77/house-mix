@@ -101,3 +101,14 @@ describe("mock qloo mcp over real stdio", () => {
     expect(cmp.call.inputIds).toEqual(expect.arrayContaining([h, s]));
   });
 });
+
+import { mp3Kbps } from "../src/briefing/tts.ts";
+describe("briefing audio timing", () => {
+  it("reads the MP3 bitrate from the frame header", () => {
+    // MPEG-2 Layer III, 64 kbps, 24 kHz: FF F3 84 xx
+    expect(mp3Kbps(Buffer.from([0x00, 0xff, 0xf3, 0x84, 0xc4, 0, 0]))).toBe(64);
+    // MPEG-1 Layer III, 128 kbps: FF FB 90 xx
+    expect(mp3Kbps(Buffer.from([0xff, 0xfb, 0x90, 0x64]))).toBe(128);
+    expect(mp3Kbps(Buffer.from([1, 2, 3, 4]))).toBe(32);
+  });
+});

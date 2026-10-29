@@ -8,8 +8,20 @@ const VOICES: Record<"A" | "B", { languageCode: string; name: string }> = {
   A: { languageCode: "en-US", name: process.env.HM_TTS_VOICE_A ?? "en-US-Neural2-D" },
   B: { languageCode: "en-US", name: process.env.HM_TTS_VOICE_B ?? "en-US-Neural2-F" },
 };
-/** Cloud TTS MP3 output is 32 kbps; used to place each line on the audio timeline. */
-const MP3_BYTES_PER_MS = 32000 / 8 / 1000;
+/** Reads the bitrate from the first MPEG audio frame header (Cloud TTS MP3 is constant bitrate). */
+export function mp3Kbps(buf: Buffer): number {
+  for (let i = 0; i + 3 < Math.min(buf.length, 8192); i++) {
+    if (buf[i] === 0xff && (buf[i + 1]! & 0xe0) === 0xe0) {
+      const version = (buf[i + 1]! >> 3) & 3; // 3 = MPEG-1, 2 = MPEG-2, 0 = MPEG-2.5
+      const idx = buf[i + 2]! >> 4;
+      const v1 = [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320];
+      const v2 = [0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160];
+      const kbps = (version === 3 ? v1 : v2)[idx];
+      if (kbps) return kbps;
+    }
+  }
+  return 32;
+}
 
 export function audioPath(showId: string, version: number) {
   return path.join(config.dataDir, "audio", `${showId}_v${version}.mp3`);
@@ -36,7 +48,7 @@ export async function synthesize(showId: string, version: number, lines: Briefin
       });
       const buf = Buffer.from(res.audioContent as Uint8Array);
       chunks.push(buf);
-      const ms = Math.round(buf.length / MP3_BYTES_PER_MS);
+      const ms = Math.round((buf.length * 8) / mp3Kbps(buf));
       timed.push({ ...line, startMs: t, endMs: t + ms });
       t += ms;
     }

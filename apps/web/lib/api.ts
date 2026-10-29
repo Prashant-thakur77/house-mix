@@ -89,7 +89,7 @@ export const api = {
   swap: (id: string, itemId: string) => post<Show>(`/shows/${id}/items/${itemId}/swap`),
   lock: (id: string) => post<Show>(`/shows/${id}/lock`),
   unlock: (id: string) => post<Show>(`/shows/${id}/unlock`),
-  briefing: (id: string) => post<Briefing>(`/shows/${id}/briefing`),
+  briefing: (id: string, force = false) => post<Briefing>(`/shows/${id}/briefing`, { force }),
   compare: (a: string, b: string) => req<CompareResult>(`/compare?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`),
   pairs: () => req<{ pairs: BlindPair[]; note?: string }>("/eval/pairs"),
   rate: (rating: unknown) => post<{ ok: true }>("/eval/ratings", rating),

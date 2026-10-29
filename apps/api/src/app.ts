@@ -137,10 +137,10 @@ export async function buildApp(): Promise<FastifyInstance> {
     return sendFile(reply, "application/pdf", `sponsor-${slug(item.pick.name)}.pdf`, await sponsorPdf(show, item));
   });
 
-  app.post<{ Params: { id: string } }>("/shows/:id/briefing", { config: { rateLimit: { max: 4, timeWindow: "1 minute" } } }, async (req) => {
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/briefing", { config: { rateLimit: { max: 4, timeWindow: "1 minute" } } }, async (req) => {
     const show = await getShow(req.params.id);
     if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
-    if (show.briefing && show.briefing.planVersion === show.version && show.briefing.audio.available) return show.briefing;
+    if (!req.body?.force && show.briefing && show.briefing.planVersion === show.version && show.briefing.audio.available) return show.briefing;
     const { briefing } = await buildBriefing(show);
     const fresh = await getShow(show.id);
     fresh.briefing = briefing;

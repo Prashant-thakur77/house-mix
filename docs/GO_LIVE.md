@@ -1,0 +1,35 @@
+# Switching House Mix to live Qloo
+
+Run these from the repo root once the event Qloo key arrives. The key goes only in `.env.local` (gitignored) and Secret Manager.
+
+```sh
+# 1. Key: local only, never committed
+echo 'QLOO_API_KEY=<paste>' >> .env.local          # and SETLISTFM_API_KEY=<paste> if you have it
+
+# 2. Verify the live contract against the mock (installs @qloo/qloo-harness >= 0.1.26 if needed)
+npm run qloo:verify                                  # writes fixtures/live/, docs/QLOO_VERIFY.md; sets QLOO_MODE=live in .env.local
+#    Exit 1 means an adapter in apps/api/src/qloo/normalize.ts needs a fix against fixtures/live/*.json.
+
+# 3. Re-seed the demo shows from live data (Sonnet planner, Haiku workers; about 0.5 USD each)
+QLOO_MODE=live HM_WORKER_MODEL=claude-haiku-5-5 npx tsx --env-file=.env.local apps/api/scripts/seed.ts
+npx tsx scripts/walkthrough.ts live sports         # regenerates docs/QLOO_WALKTHROUGH.md from live calls
+
+# 4. Evals (live only; they refuse mock mode)
+npm run eval:fetch                                   # setlist.fm cases (needs SETLISTFM_API_KEY)
+npm run eval:backtest
+#    Mark the A/B shows "verified": true in eval/data/ab_shows.json after checking each listing, then:
+npm run eval:ab:pairs                                # writes eval/data/choices.pending.json if a name is ambiguous
+npm run eval:evidence
+#    Share https://house-mix.vercel.app/rate with 20+ raters, then:
+npm run eval:ab:score && npm run eval:report
+
+# 5. Tests in live mode
+QLOO_MODE=live npm run test:e2e
+
+# 6. Redeploy
+GCP_PROJECT=house-mix-qloo-1029 infra/secrets.sh
+GCP_PROJECT=house-mix-qloo-1029 REGION=us-central1 QLOO_MODE=live LOCAL_BUILD=1 WEB_ORIGIN=https://house-mix.vercel.app infra/deploy-api.sh
+API_URL=https://house-mix-api-120659974854.us-central1.run.app infra/deploy-web.sh
+```
+
+Budget: the hosted API refuses new plans after `HM_SPEND_LIMIT_USD` (6 USD by default in `infra/deploy-api.sh`). A live plan costs about 0.5 USD; the full eval (10 A/B plans + L0 + backtest ranking) about 6–8 USD with Haiku workers.

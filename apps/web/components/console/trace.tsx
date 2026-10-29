@@ -49,8 +49,9 @@ export function TraceRow({ e, highlight }: { e: ToolEvent; highlight?: boolean }
         data-call-id={e.callId}
       >
         <StatusChip status={e.status} compact />
-        <span className="truncate font-mono">{e.tool}</span>
-        <span className="hidden truncate text-muted-foreground xl:inline">{AGENT_LABEL[e.agent] ?? e.agent}</span>
+        <span className="truncate font-mono" title={`${e.tool} · ${AGENT_LABEL[e.agent] ?? e.agent}`}>
+          {e.tool.replace(/^qloo_/, "")}
+        </span>
         <span className="ml-auto shrink-0 font-mono tabular text-subtle-foreground">
           {e.cached ? "cache" : `${e.durationMs}ms`}
           {e.attempts > 1 ? ` ·${e.attempts}×` : ""}
@@ -68,6 +69,8 @@ export function TraceRow({ e, highlight }: { e: ToolEvent; highlight?: boolean }
             ))}
             <dt className="text-muted-foreground">results</dt>
             <dd>{e.resultCount}</dd>
+            <dt className="text-muted-foreground">agent</dt>
+            <dd>{AGENT_LABEL[e.agent] ?? e.agent}</dd>
             <dt className="text-muted-foreground">call</dt>
             <dd>{e.callId}</dd>
           </dl>
