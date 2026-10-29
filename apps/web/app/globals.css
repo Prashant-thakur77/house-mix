@@ -270,7 +270,7 @@
 @keyframes intro-lift { to { transform: translateY(-100%); } }
 @keyframes intro-out { to { opacity: 0; } }
 .hm-intro-seen .intro-curtain { display: none; }
-@media (prefers-reduced-motion: reduce) { .intro-curtain { display: none; } }
+@media (prefers-reduced-motion: reduce), (max-width: 767px) { .intro-curtain { display: none; } }
 
 /* Hero entrance runs in CSS so it plays from first paint, before any script. */
 .hero-rise { animation: hero-rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }

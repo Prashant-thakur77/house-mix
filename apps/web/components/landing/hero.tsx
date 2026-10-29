@@ -140,9 +140,8 @@ export function Hero({ demo, show }: { demo?: string; show?: Show }) {
           </h1>
           <div className="grid items-end gap-8 lg:grid-cols-[1fr_360px]">
             <div>
-              <p
-                style={{ animationDelay: "0.45s" }}
-                className="hero-fade max-w-[58ch] text-[1.05rem] leading-relaxed text-muted-foreground [text-shadow:0_1px_12px_rgba(11,10,18,0.9)]"
+              {/* No entrance on the paragraph: it is the largest paint, so it shows at first paint. */}
+              <p className="max-w-[58ch] text-[1.05rem] leading-relaxed text-muted-foreground [text-shadow:0_1px_12px_rgba(11,10,18,0.9)]"
               >
                 House Mix is an agent team for venue GMs, promoters and sponsorship teams. Give it tonight&apos;s bill and city. It reads the crowd with Qloo taste data and programs the walk-in music,
                 openers, food and drink, sponsor activations and the after-party, with the evidence behind every pick.
