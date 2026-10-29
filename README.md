@@ -1,3 +1,5 @@
+<img src="design/brand/house-mix-mark.svg" width="56" alt="House Mix mark: a dot-matrix house with EQ bars and one red pixel">
+
 # House Mix
 
 **House Mix turns tonight's lineup into a run-of-show programmed for the crowd you actually have.** A venue GM or promoter enters the event (headliner and support, or home vs away) and the city. A team of Claude agents uses Qloo taste data to pick the walk-in playlist, openers and interval acts, food and drink partners, merch and sponsor activations, and a local guide, plus one labelled "stretch" pick per slot. Every pick carries its evidence. The operator approves, swaps or rejects each line, locks a version, exports it and plays a two-voice briefing to the crew.
@@ -14,6 +16,8 @@ Open a seeded show (concert, comedy night, football fixture, festival day) to se
 | --- | --- |
 | ![Console](design/app/show-concert-full/desktop-light.png) | ![Evidence](design/app/show-concert-evidence/desktop-dark.png) |
 | ![Agent planning live](design/app/show-live-run/desktop-dark.png) | ![Confirm card for an ambiguous name](design/app/show-confirm/desktop-light.png) |
+| Run the night: show clock, now playing with a synthesized cue, crew cues by role | The venue screen |
+| ![Run the night](design/app/run-the-night/desktop-dark.png) | ![Venue screen](design/app/run-the-night/venue-screen.png) |
 | Ask House Mix: cited answer, Critic, proposals into the queue | Without Qloo: Claude-alone picks checked and ranked by Qloo |
 | ![Ask House Mix](design/app/show-concert-ask/viewport-light.png) | ![Without Qloo](design/app/show-sports-without-qloo/viewport-dark.png) |
 
@@ -34,6 +38,7 @@ Open a seeded show (concert, comedy night, football fixture, festival day) to se
 | Crowd map | Where each side's taste concentrates in the show city, the areas that are strong for every side, and the top three for street teams and flyering (tile-free SVG with a table view) | `qloo_where_popular` |
 | Without Qloo | Claude plans the same brief with no tools; Qloo looks up every one of those picks by name and ranks both plans' top picks per slot for tonight's crowd. Ambiguous names are reported, never auto-picked | `qloo_describe`, `qloo_rank` |
 | Ask House Mix | Questions about the plan ("if the support act cancels, who opens?") answered by a tool-using Claude loop over the real Qloo tools. Every line cites call IDs, the Critic removes the rest, and suggested changes go to the approval queue as pending items | all nine query tools |
+| Run the night | The plan played out on a show clock (real time, 60× or 300×): a timeline with a playhead, "now playing / on stage" with a synthesized audio cue styled on the crowd's Qloo tags, up next, a crew cue sheet by role (sound, stage, F&B, partnerships, front of house) that can be called and re-timed ("+5 min late"), and a full-screen venue display | (plan evidence) |
 | Compare | Tonight vs last night: one comparison across the two bills plus a plan diff | `qloo_compare_audiences` |
 | Health | Readiness badge and the MOCK DATA banner | `qloo_capabilities` |
 
@@ -120,6 +125,7 @@ Deploy: `infra/secrets.sh`, `infra/deploy-api.sh` (Cloud Run, min instances 1, s
 - In mock mode every Qloo result is fictional, and the UI says so on every screen.
 - "Without Qloo" has Qloo rank House Mix's own picks against Claude-alone picks, so a House Mix lead there is expected and is not an independent quality test. The blind human A/B in `eval/` is the quality test.
 - The crowd map shows where an act's taste concentrates by area (Qloo heatmap cells), centred on the returned areas rather than the venue; it is not a map of where attendees live.
+- Run the night's audio is synthesized in the browser (Web Audio) in a style chosen from the crowd's Qloo tags; it is never the actual recording, and the page says so.
 - Ask House Mix answers only from Qloo calls, so questions Qloo can't speak to (prices, opening hours, walking distance) come back as "check this yourself" rather than a guess.
 
 ## Licence

@@ -11,6 +11,7 @@ import { cn } from "cn";
 import type { ShowSummary } from "@/lib/api";
 import { sponsorUrl } from "@/lib/api";
 import { useHealth, useMediaQuery } from "@/lib/hooks";
+import { BrandMark } from "@/components/brand-mark";
 import { DotField } from "./dots";
 
 const FigureScene = dynamic(() => import("./figure-scene"), { ssr: false });
@@ -65,7 +66,8 @@ export function StatusBar() {
   const dark = mounted && resolvedTheme === "dark";
   return (
     <nav aria-label="Site" className="hud fixed inset-x-0 bottom-0 z-50 flex h-8 items-center gap-3 whitespace-nowrap bg-sig-grey px-3 text-[11px] text-[#D9D9D9] sm:gap-4">
-      <Link href="/" className="font-semibold text-white">
+      <Link href="/" className="flex items-center gap-1.5 font-semibold text-white">
+        <BrandMark className="size-4" />
         House Mix
         <Plus />
       </Link>

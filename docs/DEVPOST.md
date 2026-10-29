@@ -20,7 +20,8 @@ Every night, someone at a venue decides the walk-in music, the opener, the halft
 10. **Crowd map.** One `qloo_where_popular` call per side shows where each side's taste concentrates in the city, which areas are strong for every side, and the top three for street teams, flyering and pre-show partner bars. It goes into the PDF too.
 11. **Without Qloo.** The headline comparison, inside the product. Claude plans the same brief with no tools. Qloo then looks up each of those picks by name (`qloo_describe`) and ranks both plans' top picks per slot for tonight's bill, city and crowd (`qloo_rank`). The panel shows citation coverage (House Mix 100%, Claude alone 0%), how many knowledge-only picks Qloo can't find or can't disambiguate, and where they land for this crowd. It says plainly that Qloo grading its own picks is not a quality test; the blind A/B is.
 12. **Ask House Mix.** "If the support act cancels, who opens?" A tool-using Claude loop over the same Qloo tools answers from the plan's calls plus new ones. Every line cites call IDs, the Critic removes lines that don't hold up, and any suggested change arrives as a pending item in the approval queue, with its evidence built from the ledger like every other pick.
-13. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
+13. **Run the night.** The plan played out on a show clock: a timeline with a playhead, what's on stage now with a synthesized audio cue styled on the crowd's Qloo tags (never the recording, and labelled so), what's next, a crew cue sheet by role that can be called and re-timed when the night runs late, and a full-screen display for the venue's own screens.
+14. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
 
 ## How we use Qloo
 

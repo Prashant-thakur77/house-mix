@@ -802,3 +802,9 @@ The console, intake, compare, rating and share pages keep their layout and fonts
 - **Colour.** Paper #F1F1F1 / near-black #0A0A0A canvases; primary actions in ink (paper-white in dark); signal red for focus rings, selected states and the live indicator (#E8271C for marks; #B3170E / #FF8A80 for red text, ≥ 5.8:1). Chart, status and evidence colours are unchanged because they carry meaning.
 - **Texture.** A faint 14 px dot grid behind the app; cards stay solid.
 - **Art.** 9×9 pixel glyphs per mode (a beamed note, a mic on a stand, a ball, a tent with a flag), each with one red pixel, in mode chips, the intake picker and the console header; section labels carry a red "//"; the header has a short red tick on its bottom edge.
+
+### Mark, ink chrome and Run the night (30 Oct 2026)
+
+- **Mark.** A 9×9 dot-matrix house on an ink tile whose inside is an EQ meter (three bars), with one red pixel at the peak (`design/brand/`, `apps/web/app/icon.svg`, `apple-icon.png`). Used in the browser tab, both headers, the landing status bar and the PDF exports; the grid lives in `packages/shared/src/brand.ts`.
+- **Ink chrome.** The app header and the console's trace pane are ink HUD surfaces in both themes (the `dark` token scope on just those subtrees, so every pair inside them keeps its validated dark-mode contrast), with a red tick under the header.
+- **Run the night.** A dark show-control view in the landing's Signal language: dot-matrix clock, a timeline with a red playhead, a dot-matrix visualizer, a crew cue sheet by role, and a full-screen venue display in black with Saira type.

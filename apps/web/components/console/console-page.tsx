@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { GitCompareArrows, Keyboard, ListChecks, Loader2, PanelLeft, Play, RefreshCw, Rows3 } from "lucide-react";
+import { GitCompareArrows, Keyboard, ListChecks, Loader2, PanelLeft, Play, Radio, RefreshCw, Rows3 } from "lucide-react";
 import { toast } from "sonner";
 import { MODES, slotTime, type CrowdRead, type PlanItem, type RunEvent, type Show, type Slot } from "@housemix/shared";
 import { cn } from "cn";
@@ -266,6 +266,11 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           <Button variant="ghost" size="icon" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" onClick={() => setHelpOpen(true)} className="hidden md:inline-flex">
             <Keyboard />
           </Button>
+          {show.plan && !streaming ? (
+            <Button nativeButton={false} variant="outline" render={<Link href={`/shows/${show.id}/live`} />} title="Play the night out: what's on, what's next and every crew cue">
+              <Radio data-icon="inline-start" /> Run the night
+            </Button>
+          ) : null}
           <AskSheet show={show} onShow={setShow} />
           <BriefingSheet show={show} onBriefing={(b) => setShow({ ...show, briefing: b })} />
           <ExportsMenu show={show} />
@@ -408,7 +413,8 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         </main>
       ) : desktop ? (
         <main id="main" className="mx-auto grid h-[calc(100vh-8.5rem)] max-w-[1600px] grid-cols-[320px_1fr_400px] gap-0 xl:min-h-[640px]">
-          <div className="min-h-0 border-r bg-card">{trace}</div>
+          {/* The trace is an ink HUD pane in both themes. */}
+          <div className="dark min-h-0 border-r bg-card text-foreground">{trace}</div>
           <div className="min-h-0 overflow-y-auto p-4">{center}</div>
           <aside className="min-h-0 overflow-y-auto border-l bg-card p-4" aria-label={selected ? "Evidence" : "Approval queue"}>
             {right}

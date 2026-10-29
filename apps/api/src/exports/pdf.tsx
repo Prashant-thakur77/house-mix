@@ -1,6 +1,6 @@
-import { Document, Page, StyleSheet, Text, View, renderToBuffer } from "@react-pdf/renderer";
+import { Document, Page, Rect, StyleSheet, Svg, Text, View, renderToBuffer } from "@react-pdf/renderer";
 import type { PlanItem, Show } from "@housemix/shared";
-import { MODES } from "@housemix/shared";
+import { BRAND_COLORS, BRAND_MARK, MODES } from "@housemix/shared";
 import { topAreas } from "../insights/heatmap.ts";
 
 const C = {
@@ -38,6 +38,16 @@ const label = (it: PlanItem) =>
     .filter(Boolean)
     .join(" · ");
 
+/** The House Mix mark, top right of every page. */
+function Mark() {
+  return (
+    <Svg viewBox="0 0 32 32" style={{ position: "absolute", top: 30, right: 36, width: 26, height: 26 }} fixed>
+      <Rect x={0} y={0} width={32} height={32} rx={6} fill={BRAND_COLORS.ink} />
+      {BRAND_MARK.flatMap((row, y) => row.split("").map((c, x) => (c === "." ? null : <Rect key={`${x}-${y}`} x={4.6 + x * 2.6} y={4.6 + y * 2.6} width={2.2} height={2.2} fill={c === "R" ? BRAND_COLORS.red : BRAND_COLORS.paper} />)))}
+    </Svg>
+  );
+}
+
 function Footer({ show }: { show: Show }) {
   return (
     <View style={s.foot} fixed>
@@ -56,6 +66,7 @@ function RunOfShow({ show }: { show: Show }) {
   return (
     <Document title={`Run of show: ${show.title}`} author="House Mix">
       <Page size="A4" style={s.page}>
+        <Mark />
         <Text style={s.eyebrow}>{MODES[i.mode].label} · run of show</Text>
         <Text style={s.h1}>{show.title}</Text>
         <Text style={s.meta}>
@@ -144,6 +155,7 @@ function SponsorOnePager({ show, item }: { show: Show; item: PlanItem }) {
   return (
     <Document title={`Sponsor fit: ${item.pick.name}`} author="House Mix">
       <Page size="A4" style={s.page}>
+        <Mark />
         <Text style={s.eyebrow}>Sponsor one-pager · {MODES[show.input.mode].label}</Text>
         <Text style={s.h1}>
           {item.pick.name} × {show.title}

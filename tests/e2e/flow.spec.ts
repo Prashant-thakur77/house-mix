@@ -136,3 +136,23 @@ test("console: crowd map, Without Qloo comparison and a cited Ask answer", async
   await sheet.getByRole("button", { name: /^ask$/i }).click();
   await expect(page.getByText(/personal data/i).first()).toBeVisible();
 });
+
+test("run the night: the clock plays the plan, cues can be called, the venue screen opens", async ({ page }) => {
+  await page.goto("/shows/seed-concert");
+  await page.getByRole("button", { name: /run the night/i }).click();
+  await expect(page).toHaveURL(/\/shows\/seed-concert\/live$/);
+  await expect(page.getByRole("heading", { name: /crew cues/i })).toBeVisible();
+  await page.getByRole("radio", { name: "300×" }).click();
+  await page.getByRole("button", { name: /start the show/i }).click();
+  const stage = page.getByRole("region", { name: "On stage now" });
+  await expect(stage.getByText(/now playing/i)).toBeVisible({ timeout: 10_000 });
+  await expect(stage.getByText(/synthesized cue/i)).toBeVisible();
+  await page.getByRole("button", { name: /^pause$/i }).click();
+  const first = page.getByRole("button", { name: /^mark called:/i }).first();
+  await first.click();
+  await expect(page.getByText(/1\/\d+ called/i)).toBeVisible();
+  await page.getByRole("button", { name: /\+5 min late/i }).click();
+  await expect(page.getByText(/running 5 min late/i)).toBeVisible();
+  await page.getByRole("button", { name: /venue screen/i }).click();
+  await expect(page.getByRole("dialog", { name: "Venue screen" })).toBeVisible();
+});

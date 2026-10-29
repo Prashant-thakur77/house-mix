@@ -14,7 +14,7 @@
     }
   ],
   "maxHeight": 6000,
-  "updatedAt": "2026-10-29T19:30:37.080Z",
+  "updatedAt": "2026-10-29T19:49:53.545Z",
   "summary": {
     "captured": 18,
     "skipped": [],
@@ -190,7 +190,7 @@
       "slug": "new-concert",
       "url": "http://localhost:3000/new",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:29:36.019Z",
+      "capturedAt": "2026-10-29T19:49:24.156Z",
       "meta": {
         "path": "/new"
       },
@@ -206,8 +206,8 @@
           "width": 1440,
           "height": 1683,
           "fullHeight": 1683,
-          "bytes": 167519,
-          "brightness": 0.945
+          "bytes": 167142,
+          "brightness": 0.905
         },
         {
           "viewport": "desktop",
@@ -216,7 +216,7 @@
           "width": 1440,
           "height": 1683,
           "fullHeight": 1683,
-          "bytes": 168302,
+          "bytes": 168033,
           "brightness": 0.079
         },
         {
@@ -226,8 +226,8 @@
           "width": 390,
           "height": 2801,
           "fullHeight": 2801,
-          "bytes": 159495,
-          "brightness": 0.93
+          "bytes": 159194,
+          "brightness": 0.9
         },
         {
           "viewport": "mobile",
@@ -236,7 +236,7 @@
           "width": 390,
           "height": 2801,
           "fullHeight": 2801,
-          "bytes": 161112,
+          "bytes": 160942,
           "brightness": 0.114
         }
       ]
@@ -300,7 +300,7 @@
       "slug": "new-sports",
       "url": "http://localhost:3000/new",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:29:36.019Z",
+      "capturedAt": "2026-10-29T19:49:24.156Z",
       "meta": {
         "path": "/new"
       },
@@ -316,8 +316,8 @@
           "width": 1440,
           "height": 1639,
           "fullHeight": 1639,
-          "bytes": 168048,
-          "brightness": 0.943
+          "bytes": 167666,
+          "brightness": 0.903
         },
         {
           "viewport": "desktop",
@@ -326,7 +326,7 @@
           "width": 1440,
           "height": 1639,
           "fullHeight": 1639,
-          "bytes": 168397,
+          "bytes": 168133,
           "brightness": 0.08
         },
         {
@@ -336,8 +336,8 @@
           "width": 390,
           "height": 2865,
           "fullHeight": 2865,
-          "bytes": 164593,
-          "brightness": 0.93
+          "bytes": 164299,
+          "brightness": 0.901
         },
         {
           "viewport": "mobile",
@@ -346,7 +346,7 @@
           "width": 390,
           "height": 2865,
           "fullHeight": 2865,
-          "bytes": 166365,
+          "bytes": 166197,
           "brightness": 0.115
         }
       ]
@@ -520,7 +520,7 @@
       "slug": "show-concert",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:29:47.868Z",
+      "capturedAt": "2026-10-29T19:49:24.156Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -536,8 +536,8 @@
           "width": 1440,
           "height": 6000,
           "fullHeight": 6794,
-          "bytes": 296705,
-          "brightness": 0.94
+          "bytes": 297107,
+          "brightness": 0.905
         },
         {
           "viewport": "desktop",
@@ -546,7 +546,7 @@
           "width": 1440,
           "height": 6000,
           "fullHeight": 6794,
-          "bytes": 297401,
+          "bytes": 298718,
           "brightness": 0.05
         },
         {
@@ -556,8 +556,8 @@
           "width": 390,
           "height": 6000,
           "fullHeight": 12398,
-          "bytes": 446665,
-          "brightness": 0.931
+          "bytes": 444928,
+          "brightness": 0.917
         },
         {
           "viewport": "mobile",
@@ -566,7 +566,7 @@
           "width": 390,
           "height": 6000,
           "fullHeight": 12398,
-          "bytes": 459468,
+          "bytes": 457883,
           "brightness": 0.11
         }
       ]
@@ -685,7 +685,7 @@
       "slug": "show-concert-full",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:29:47.874Z",
+      "capturedAt": "2026-10-29T19:49:34.856Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -701,8 +701,8 @@
           "width": 1440,
           "height": 6000,
           "fullHeight": 6794,
-          "bytes": 297241,
-          "brightness": 0.94
+          "bytes": 297107,
+          "brightness": 0.905
         },
         {
           "viewport": "desktop",
@@ -711,7 +711,7 @@
           "width": 1440,
           "height": 6000,
           "fullHeight": 6794,
-          "bytes": 297401,
+          "bytes": 298718,
           "brightness": 0.05
         },
         {
@@ -721,8 +721,8 @@
           "width": 390,
           "height": 6000,
           "fullHeight": 12398,
-          "bytes": 446665,
-          "brightness": 0.931
+          "bytes": 444928,
+          "brightness": 0.917
         },
         {
           "viewport": "mobile",
@@ -731,7 +731,7 @@
           "width": 390,
           "height": 6000,
           "fullHeight": 12398,
-          "bytes": 459468,
+          "bytes": 457883,
           "brightness": 0.11
         }
       ]

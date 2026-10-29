@@ -8,15 +8,12 @@ import { cn } from "cn";
 import { useHealth } from "@/lib/hooks";
 import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { BrandMark } from "@/components/brand-mark";
 
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2 rounded-md font-semibold tracking-tight" aria-label="House Mix home">
-      <span className="grid size-7 place-items-center rounded-md bg-primary text-primary-foreground" aria-hidden>
-        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-          <path d="M4 18V9M9 18V5M14 18v-7M19 18V8" />
-        </svg>
-      </span>
+      <BrandMark className="size-7" />
       <span className="text-h3">House Mix</span>
     </Link>
   );
@@ -92,7 +89,8 @@ export function MockBanner() {
 
 export function TopBar({ children }: { children?: React.ReactNode }) {
   return (
-    <header className="no-print sticky top-0 z-30 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
+    <header className="dark no-print sticky top-0 z-30 border-b bg-background/95 text-foreground backdrop-blur supports-[backdrop-filter]:bg-background/85">
+      {/* Always an ink bar: "dark" scopes the dark tokens to the header, like the landing's status bar. */}
       <span className="pointer-events-none absolute -bottom-px left-0 h-[2px] w-16 bg-ring" aria-hidden />
       <MockBanner />
       <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-3 px-4 md:px-6">

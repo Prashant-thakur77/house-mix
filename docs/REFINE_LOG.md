@@ -129,3 +129,17 @@ Owner's call: keep the round-6 landing as it is; refresh the other pages a littl
 | 4 | Labels had no character | Plain uppercase | A red "//" prefix (CSS only, so names and tests are unchanged) and a red tick under the header |
 
 19 API, 6 eval and 37 e2e + axe tests pass (light and dark, desktop and mobile).
+
+## Round 8
+
+Owner's asks: an icon used everywhere; a live simulation of the night so it's clear how the plan is used; a more visible change to the app pages. Research: run-of-show tools centre on clock time, duration, an owner per cue, status, per-role views, show callers and re-timing (Ticket Fairy, Guidebook, Taskade, Goldcast); browser audio that keeps time uses a lookahead scheduler on the Web Audio clock (web.dev, "A tale of two clocks").
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | No mark | Generic bars icon | Dot-matrix house with EQ bars and one red pixel: tab icon, Apple icon, headers, landing status bar, PDFs |
+| 2 | A plan was a document; nothing showed it in use | Console only | Run the night: show clock (real time, 60×, 300×), timeline and playhead, now playing / on stage, up next, open-on-the-floor, crew cues by role with call-off and "+5 min late" re-timing, venue screen |
+| 3 | No sound | Silent | A synthesized cue per track (Web Audio: drums, bass, chords; six styles chosen from the crowd's Qloo tags, seeded by the pick's ID; crossfades between tracks), clearly labelled as not the recording |
+| 4 | App pages still looked unchanged | Light header and trace | Ink header and ink trace pane in both themes, red tick |
+| 5 | Every synthesized track threw on some IDs | Signed shift gave a negative index | Unsigned shifts |
+
+19 API, 6 eval and 42 e2e + axe tests pass (two new: the live view flow, and axe on it in both themes).
