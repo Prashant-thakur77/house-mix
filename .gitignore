@@ -1,0 +1,13 @@
+.env.local
+.env*.local
+node_modules/
+house-mix-plan.md
+.next/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+.turbo/
+.vercel/
