@@ -69,8 +69,12 @@ export function canonical(value: unknown): string {
   return JSON.stringify(value);
 }
 
+/** Bump when the mock's behaviour changes, so cached mock envelopes are not reused. */
+export const MOCK_VERSION = "mock-2";
+
 export function cacheKey(mode: string, tool: string, args: unknown): string {
-  return createHash("sha256").update(`${mode}|${tool}|${canonical(args)}`).digest("hex");
+  const ns = mode === "mock" ? MOCK_VERSION : mode;
+  return createHash("sha256").update(`${ns}|${tool}|${canonical(args)}`).digest("hex");
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

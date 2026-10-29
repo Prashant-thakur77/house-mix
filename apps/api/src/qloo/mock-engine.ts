@@ -685,9 +685,14 @@ function compare(a: Rec, started: number): Rec {
   const qi = { signals: { groups: [a.group_a, a.group_b] }, output: { limit }, ...(a.target_type ? { target: { type: a.target_type } } : {}) };
   const issues = [...ga.issues, ...gb.issues];
   if (issues.length) return needsInput("compare_audiences", issues, started, undefined, qi);
+  // Audiences overlap: a concept carried by the group scores high, and a concept from the same
+  // family (music genre/keyword, brand category…) still scores in the middle, as real fan bases do.
+  const family = (k: string) => TAG_BY_KEY.get(k)?.type ?? "";
   const weight = (group: typeof ga.ok, key: string) => {
-    const hits = group.filter((r) => r.entity.tags.includes(key)).length;
-    return round(Math.min(0.98, 0.1 + 0.8 * (hits / Math.max(1, group.length)) + (rand(`${key}|${group.map((g) => g.entity.id).join()}`) - 0.5) * 0.15));
+    const hits = group.filter((r) => r.entity.tags.includes(key)).length / Math.max(1, group.length);
+    const near = group.some((r) => r.entity.tags.some((t) => family(t) === family(key))) ? 0.35 : 0;
+    const jitter = (rand(`${key}|${group.map((g) => g.entity.id).join()}`) - 0.5) * 0.2;
+    return round(Math.max(0.03, Math.min(0.98, 0.12 + near + 0.5 * hits + jitter)));
   };
   const keys = [...new Set([...ga.ok, ...gb.ok].flatMap((r) => r.entity.tags))];
   const extra = MUSIC_TAGS.filter((k) => !keys.includes(k)).slice(0, 3);

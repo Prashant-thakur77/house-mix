@@ -12,7 +12,9 @@ export async function importSeeds(): Promise<number> {
   let n = 0;
   for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json"))) {
     const seed = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) as { show: Show; ledger: LedgerCall[]; run: RunState };
-    if (await store.get("shows", seed.show.id)) continue;
+    const existing = await store.get<Show>("shows", seed.show.id);
+    // A re-generated seed replaces the stored copy (and any demo edits made to it).
+    if (existing && existing.createdAt >= seed.show.createdAt) continue;
     for (const c of seed.ledger) await store.put("ledger", c.callId, c);
     await store.put("runs", seed.run.runId, seed.run);
     await store.put("shows", seed.show.id, seed.show);
