@@ -1,6 +1,7 @@
 import Fastify, { type FastifyInstance, type FastifyReply } from "fastify";
 import cors from "@fastify/cors";
 import rateLimit from "@fastify/rate-limit";
+import compress from "@fastify/compress";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { Rating, type Health, type Show } from "@housemix/shared";
@@ -35,6 +36,8 @@ export async function buildApp(): Promise<FastifyInstance> {
     },
   });
   await app.register(rateLimit, { global: false });
+  // JSON plans and stored traces compress ~10×; the SSE route writes to the raw socket and is not compressed.
+  await app.register(compress, { global: true, threshold: 1024, encodings: ["br", "gzip"] });
 
   app.setErrorHandler((err, _req, reply) => {
     if (err instanceof HttpError) return reply.status(err.status).send({ error: err.code, message: err.message });
