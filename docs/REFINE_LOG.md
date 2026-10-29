@@ -78,3 +78,10 @@ Review: House Mix set against the patterns that won past taste and data hackatho
 | 10 | Ask answered a replacement question with an act already in the plan, and proposed a #8-of-10 result | Weak answer on the concert seed | Prompt: direct answer first; replacements come from recommend → drop what's in the plan → `qloo_rank`, proposals cite the rank call |
 | 11 | A malformed `final_answer` line crashed Ask | 500 on the seed run | Lines are normalised; malformed ones are dropped as uncited |
 | 12 | Same-millisecond writes of one key collided in the file store (double-mounted effect in dev) | 500 on the map's first load | Unique temp names; one in-flight build per show for the map and the comparison |
+| 13 | Seed ledgers carried every earlier seeding's calls (run IDs are reused), so Ask read a plan digest several times too big | Concert: 349 ledger calls for a 22-call plan; $0.25 a question | Seeds export only referenced calls (61); Ask reads only the calls in the plan run's own trace |
+| 14 | The theme toggle's label differed between server and client when a theme was stored | Hydration error in the dev overlay | Label renders "system" until mounted |
+| 15 | The mock recommended its "Giants"/"Genesis" disambiguation fixtures (a sports brand slot ranked "New York Giants") | Disambiguation entities in candidate pools | Excluded from pools; stored seeds keep their picks until the live re-seed |
+
+Verification after round 4: 19 API tests, 6 eval tests, 37 Playwright e2e + axe tests (desktop and mobile, light and dark, including the Ask sheet) pass in mock mode. Production: all four seeds serve the map, the comparison and a sample answer; a live Ask streamed its Qloo call and Critic step through Cloud Run in 27 s for $0.09; personal data in a question is refused before any call.
+
+Remaining items that would move a judge's score are still external: live Qloo data, measured results and the video.

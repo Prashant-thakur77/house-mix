@@ -97,8 +97,11 @@ for (const p of POOL.persons) add({ ...p, type: "person" });
 for (const p of POOL.podcasts) add({ ...p, type: "podcast" });
 for (const b of POOL.brands) add({ ...b, type: "brand" });
 const AMBIGUOUS_IDS = new Map<string, string[]>();
+/** The disambiguation fixtures ("Giants", "Genesis") exist to exercise needs_input; they are never recommended. */
+const AMBIGUOUS_MEMBERS = new Set<string>();
 for (const [key, cands] of Object.entries(POOL.ambiguous)) {
   AMBIGUOUS_IDS.set(key, cands.map((_, i) => mockUuid(`ambiguous|${key}|${i}`)));
+  cands.forEach((_, i) => AMBIGUOUS_MEMBERS.add(mockUuid(`ambiguous|${key}|${i}`)));
   cands.forEach((c, i) =>
     add({ id: mockUuid(`ambiguous|${key}|${i}`), name: c.name, type: c.type.split(":").pop()!, tags: tagsFor(`${key}|${i}`, c.type), popularity: c.popularity, description: c.description, release_year: c.release_year, address: c.address }),
   );
@@ -554,7 +557,7 @@ function recommend(a: Rec, started: number): Rec {
   const included = new Set(inc.ok.map((r) => r.tag.key));
   const signalIds = new Set(sig.ok.map((r) => r.entity.id));
   const loc = (a.filter_location ?? a.signal_location) as string | undefined;
-  const pool = target === "place" ? placesIn(loc ?? "unknown city") : [...ENTITIES.values()].filter((e) => e.type === target && !e.thin && !e.lookupOnly);
+  const pool = target === "place" ? placesIn(loc ?? "unknown city") : [...ENTITIES.values()].filter((e) => e.type === target && !e.thin && !e.lookupOnly && !AMBIGUOUS_MEMBERS.has(e.id));
   const seed = JSON.stringify([...signalIds, ...signalTags, a.signal_location, a.demographic]);
   const scored = pool
     .filter((e) => !signalIds.has(e.id))

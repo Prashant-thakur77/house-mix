@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import type Anthropic from "@anthropic-ai/sdk";
-import { checkText, checkValue, type AskAnswer, type AskProposal, type LedgerCall, type QlooToolName, type Show } from "@housemix/shared";
+import { checkText, checkValue, type AskAnswer, type AskProposal, type LedgerCall, type QlooToolName, type RunState, type Show } from "@housemix/shared";
 import { RunContext } from "../agent/context.ts";
 import { buildItems, checkLines, claimCheck, evidenceFrom, gateItems, type SubmittedItem } from "../agent/critic.ts";
 import { contextBlock } from "../agent/prompts.ts";
@@ -132,7 +132,10 @@ export async function askShow(showId: string, question: string, emit: (e: AskEve
   const runId = `ask_${show.id}_${askId}`;
   const ctx = new RunContext(show, runId, () => {});
   for (const s of show.plan.slots) ctx.slots.set(s.key, structuredClone(s));
-  for (const c of await getStore().list<LedgerCall>("ledger", { where: ["runId", show.plan.runId] })) ctx.ledger.set(c.callId, c);
+  // Only this plan's calls: the run's own trace lists them (a re-run under the same run ID leaves older copies in the store).
+  const run = await getStore().get<RunState>("runs", show.plan.runId);
+  const traced = run ? new Set(run.events.flatMap((e) => (e.type === "tool_call" ? [e.callId] : []))) : undefined;
+  for (const c of await getStore().list<LedgerCall>("ledger", { where: ["runId", show.plan.runId] })) if (!traced || traced.has(c.callId)) ctx.ledger.set(c.callId, c);
   const planCallIds = new Set(ctx.ledger.keys());
   const budget = new Budget(MAX_QLOO_CALLS);
 
