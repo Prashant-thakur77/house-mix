@@ -71,7 +71,7 @@ function CompareView() {
   return (
     <main id="main" className="mx-auto max-w-[1280px] px-4 pb-20 pt-8 md:px-6">
       <Kicker>Tonight vs last night</Kicker>
-      <h1 className="mt-1 text-h1 font-semibold">Compare two shows</h1>
+      <h1 className="mt-1 font-display text-[2rem] font-extrabold leading-tight tracking-[-0.02em]">Compare two shows</h1>
       <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end">
         <Picker id="a" label="Tonight" value={a} shows={shows} onChange={setA} />
         <Button

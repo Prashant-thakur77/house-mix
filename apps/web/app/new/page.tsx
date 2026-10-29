@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { PosterArt } from "@/components/landing/poster-art";
 
 const TIERS: { id: CapacityTier; label: string; hint: string }[] = [
   { id: "club", label: "Club", hint: "< 500" },
@@ -172,7 +173,7 @@ export default function NewShow() {
       <TopBar />
       <main id="main" className="mx-auto max-w-[1280px] px-4 pb-20 pt-8 md:px-6">
         <Kicker>New show</Kicker>
-        <h1 className="mt-1 text-h1 font-semibold">Describe tonight</h1>
+        <h1 className="mt-1 font-display text-[2rem] font-extrabold leading-tight tracking-[-0.02em]">Describe tonight</h1>
         <p className="mt-1 max-w-[70ch] text-muted-foreground">Use public names only: acts, teams, venues, brands and places. Qloo resolves each one, and you confirm any that are ambiguous before the agent plans.</p>
 
         <form onSubmit={submit} noValidate className="mt-6 grid gap-6 lg:grid-cols-12">
@@ -191,14 +192,17 @@ export default function NewShow() {
                       aria-checked={mode === m}
                       onClick={() => switchMode(m)}
                       className={cn(
-                        "flex items-center gap-2 rounded-md border px-3 py-2.5 text-left transition-colors",
-                        mode === m ? "border-primary bg-accent text-accent-foreground" : "border-input hover:bg-muted",
+                        "group overflow-hidden rounded-lg border text-left transition-[colors,box-shadow,transform] hover:-translate-y-0.5",
+                        mode === m ? "border-primary bg-accent text-accent-foreground ring-2 ring-primary" : "border-input hover:bg-muted",
                       )}
                     >
-                      <Icon className="size-4 shrink-0" aria-hidden />
-                      <span>
-                        <span className="block font-medium">{MODES[m].label}</span>
-                        <span className="block text-small text-muted-foreground">{MODES[m].tagline}</span>
+                      <PosterArt mode={m} className={cn("h-16 transition-[filter]", mode === m ? "" : "saturate-[0.55] group-hover:saturate-100")} />
+                      <span className="flex items-center gap-2 px-3 py-2.5">
+                        <Icon className="size-4 shrink-0" aria-hidden />
+                        <span>
+                          <span className="block font-medium">{MODES[m].label}</span>
+                          <span className="block text-small text-muted-foreground">{MODES[m].tagline}</span>
+                        </span>
                       </span>
                     </button>
                   );

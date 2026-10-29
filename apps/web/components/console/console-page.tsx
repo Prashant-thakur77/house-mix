@@ -18,6 +18,7 @@ import { ApprovalQueue } from "@/components/console/queue";
 import { EntityConfirmCard, ResolvedStrip } from "@/components/console/confirm";
 import { ExportsMenu, LimitationsPanel } from "@/components/console/extras";
 import { BriefingSheet } from "@/components/console/briefing";
+import { PosterArt } from "@/components/landing/poster-art";
 import { CrowdMap } from "@/components/console/crowd-map";
 import { CounterfactualPanel } from "@/components/console/counterfactual";
 import { AskSheet } from "@/components/console/ask";
@@ -233,6 +234,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   const header = (
     <div className="border-b bg-background">
       <div className="mx-auto flex max-w-[1600px] flex-col gap-x-4 gap-y-2 px-4 py-3 md:flex-row md:flex-wrap md:items-center md:px-6">
+        <PosterArt mode={i.mode} className="hidden h-16 w-24 shrink-0 rounded-lg md:block" />
         <div className="min-w-0 md:flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <ModeChip mode={i.mode} />
@@ -242,7 +244,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
             </span>
             {show.version ? <span className="font-mono text-small text-muted-foreground">v{show.version}</span> : null}
           </div>
-          <h1 className="mt-1 text-h1 font-semibold md:truncate" title={show.title}>
+          <h1 className="mt-1 font-display text-[1.6rem] font-bold leading-tight tracking-[-0.02em] md:truncate" title={show.title}>
             {show.title}
           </h1>
           {show.plan?.headline ? <p className="mt-1 max-w-[90ch] text-body text-foreground">{show.plan.headline}</p> : null}

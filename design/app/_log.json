@@ -14,7 +14,7 @@
     }
   ],
   "maxHeight": 6000,
-  "updatedAt": "2026-10-29T15:45:45.061Z",
+  "updatedAt": "2026-10-29T17:12:43.213Z",
   "summary": {
     "captured": 18,
     "skipped": [],
@@ -80,7 +80,7 @@
       "slug": "landing",
       "url": "http://localhost:3000/",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:44:52.703Z",
+      "capturedAt": "2026-10-29T17:12:12.316Z",
       "meta": {
         "path": "/"
       },
@@ -94,40 +94,40 @@
           "scheme": "light",
           "file": "design/app/landing/desktop-light.png",
           "width": 1440,
-          "height": 1919,
-          "fullHeight": 1919,
-          "bytes": 221968,
-          "brightness": 0.943
+          "height": 6000,
+          "fullHeight": 10234,
+          "bytes": 1389640,
+          "brightness": 0.269
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/landing/desktop-dark.png",
           "width": 1440,
-          "height": 1919,
-          "fullHeight": 1919,
-          "bytes": 223765,
-          "brightness": 0.092
+          "height": 6000,
+          "fullHeight": 10234,
+          "bytes": 1387304,
+          "brightness": 0.094
         },
         {
           "viewport": "mobile",
           "scheme": "light",
           "file": "design/app/landing/mobile-light.png",
           "width": 390,
-          "height": 3935,
-          "fullHeight": 3935,
-          "bytes": 244900,
-          "brightness": 0.935
+          "height": 6000,
+          "fullHeight": 12531,
+          "bytes": 541145,
+          "brightness": 0.504
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/landing/mobile-dark.png",
           "width": 390,
-          "height": 3935,
-          "fullHeight": 3935,
-          "bytes": 248572,
-          "brightness": 0.115
+          "height": 6000,
+          "fullHeight": 12531,
+          "bytes": 540505,
+          "brightness": 0.118
         }
       ]
     },
@@ -190,7 +190,7 @@
       "slug": "new-concert",
       "url": "http://localhost:3000/new",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:50:32.412Z",
+      "capturedAt": "2026-10-29T17:12:12.316Z",
       "meta": {
         "path": "/new"
       },
@@ -204,40 +204,40 @@
           "scheme": "light",
           "file": "design/app/new-concert/desktop-light.png",
           "width": 1440,
-          "height": 1675,
-          "fullHeight": 1675,
-          "bytes": 164518,
-          "brightness": 0.955
+          "height": 1750,
+          "fullHeight": 1750,
+          "bytes": 182987,
+          "brightness": 0.951
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/new-concert/desktop-dark.png",
           "width": 1440,
-          "height": 1675,
-          "fullHeight": 1675,
-          "bytes": 165323,
-          "brightness": 0.093
+          "height": 1750,
+          "fullHeight": 1750,
+          "bytes": 183756,
+          "brightness": 0.094
         },
         {
           "viewport": "mobile",
           "scheme": "light",
           "file": "design/app/new-concert/mobile-light.png",
           "width": 390,
-          "height": 2793,
-          "fullHeight": 2793,
-          "bytes": 159770,
-          "brightness": 0.939
+          "height": 2932,
+          "fullHeight": 2932,
+          "bytes": 178064,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/new-concert/mobile-dark.png",
           "width": 390,
-          "height": 2793,
-          "fullHeight": 2793,
-          "bytes": 161063,
-          "brightness": 0.122
+          "height": 2932,
+          "fullHeight": 2932,
+          "bytes": 179150,
+          "brightness": 0.128
         }
       ]
     },
@@ -300,7 +300,7 @@
       "slug": "new-sports",
       "url": "http://localhost:3000/new",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:50:42.572Z",
+      "capturedAt": "2026-10-29T17:12:12.316Z",
       "meta": {
         "path": "/new"
       },
@@ -314,40 +314,40 @@
           "scheme": "light",
           "file": "design/app/new-sports/desktop-light.png",
           "width": 1440,
-          "height": 1631,
-          "fullHeight": 1631,
-          "bytes": 164996,
-          "brightness": 0.955
+          "height": 1706,
+          "fullHeight": 1706,
+          "bytes": 183899,
+          "brightness": 0.948
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/new-sports/desktop-dark.png",
           "width": 1440,
-          "height": 1631,
-          "fullHeight": 1631,
-          "bytes": 165490,
-          "brightness": 0.092
+          "height": 1706,
+          "fullHeight": 1706,
+          "bytes": 184705,
+          "brightness": 0.097
         },
         {
           "viewport": "mobile",
           "scheme": "light",
           "file": "design/app/new-sports/mobile-light.png",
           "width": 390,
-          "height": 2857,
-          "fullHeight": 2857,
-          "bytes": 165620,
-          "brightness": 0.939
+          "height": 2996,
+          "fullHeight": 2996,
+          "bytes": 183340,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/new-sports/mobile-dark.png",
           "width": 390,
-          "height": 2857,
-          "fullHeight": 2857,
-          "bytes": 166847,
-          "brightness": 0.123
+          "height": 2996,
+          "fullHeight": 2996,
+          "bytes": 184964,
+          "brightness": 0.129
         }
       ]
     },
@@ -520,7 +520,7 @@
       "slug": "show-concert",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:44:52.704Z",
+      "capturedAt": "2026-10-29T17:12:22.972Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -535,9 +535,9 @@
           "file": "design/app/show-concert/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 273381,
-          "brightness": 0.958
+          "fullHeight": 6797,
+          "bytes": 290600,
+          "brightness": 0.957
         },
         {
           "viewport": "desktop",
@@ -545,8 +545,8 @@
           "file": "design/app/show-concert/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 274093,
+          "fullHeight": 6797,
+          "bytes": 290974,
           "brightness": 0.066
         },
         {
@@ -555,8 +555,8 @@
           "file": "design/app/show-concert/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 446650,
+          "fullHeight": 12401,
+          "bytes": 447246,
           "brightness": 0.938
         },
         {
@@ -565,8 +565,8 @@
           "file": "design/app/show-concert/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 458224,
+          "fullHeight": 12401,
+          "bytes": 458690,
           "brightness": 0.121
         }
       ]
@@ -685,7 +685,7 @@
       "slug": "show-concert-full",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:44:52.704Z",
+      "capturedAt": "2026-10-29T17:12:24.660Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -700,9 +700,9 @@
           "file": "design/app/show-concert-full/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 273381,
-          "brightness": 0.958
+          "fullHeight": 6797,
+          "bytes": 290600,
+          "brightness": 0.957
         },
         {
           "viewport": "desktop",
@@ -710,8 +710,8 @@
           "file": "design/app/show-concert-full/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 274093,
+          "fullHeight": 6797,
+          "bytes": 290974,
           "brightness": 0.066
         },
         {
@@ -720,8 +720,8 @@
           "file": "design/app/show-concert-full/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 446650,
+          "fullHeight": 12401,
+          "bytes": 447246,
           "brightness": 0.938
         },
         {
@@ -730,8 +730,8 @@
           "file": "design/app/show-concert-full/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 458224,
+          "fullHeight": 12401,
+          "bytes": 458690,
           "brightness": 0.121
         }
       ]

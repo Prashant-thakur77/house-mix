@@ -4,10 +4,14 @@ const API = "http://localhost:8788";
 
 test("landing lists the seeded demo shows and the mode banner", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: /program tonight/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /program the night/i })).toBeVisible();
   for (const t of [/Khruangbin/, /Taylor Tomlinson/, /Chelsea FC vs Arsenal FC/]) await expect(page.getByRole("link", { name: t }).first()).toBeVisible();
-  if ((process.env.QLOO_MODE ?? "mock") === "mock") await expect(page.getByText("MOCK DATA")).toBeVisible();
-  await expect(page.getByText("qloo_where_popular")).toBeVisible();
+  if ((process.env.QLOO_MODE ?? "mock") === "mock") await expect(page.getByText("MOCK DATA").first()).toBeVisible();
+  // The landing explains every Qloo tool it uses, and how it works.
+  await expect(page.getByRole("heading", { name: /taste data is the engine/i })).toBeVisible();
+  await expect(page.getByText("where_popular", { exact: true }).first()).toBeAttached();
+  await expect(page.getByRole("heading", { name: /from a lineup to a locked run-of-show/i }).first()).toBeAttached();
+  await expect(page.getByRole("heading", { name: /activations that fit the crowd/i })).toBeVisible();
 });
 
 test("intake resolves names, Genesis needs confirmation, and nothing is auto-picked", async ({ page }) => {

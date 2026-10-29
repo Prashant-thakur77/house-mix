@@ -85,3 +85,18 @@ Review: House Mix set against the patterns that won past taste and data hackatho
 Verification after round 4: 19 API tests, 6 eval tests, 37 Playwright e2e + axe tests (desktop and mobile, light and dark, including the Ask sheet) pass in mock mode. Production: all four seeds serve the map, the comparison and a sample answer; a live Ask streamed its Qloo call and Critic step through Cloud Run in 27 s for $0.09; personal data in a question is refused before any call.
 
 Remaining items that would move a judge's score are still external: live Qloo data, measured results and the video.
+
+## Round 5
+
+Review: design, against current award-winning sites. Eighteen references were captured frame by frame (intro, wheel-driven scroll, hover, mobile) and summarised in `design/REFERENCES-AWWWARDS.md`; the new register is in the `design/DIRECTION.md` addendum.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | The landing page looked like the console: correct, quiet, forgettable | Grey cards, one accent | "House lights" landing: night stage, gig-poster stripes, Bricolage display type, ribbons, intro curtain |
+| 2 | Nothing showed the product moving before you opened a show | Static text | 3D stage-eye crowd that jumps in a wave from the pointer, light beams, vinyl; a live trace panel replaying real Qloo calls from a seeded plan |
+| 3 | "How it works" was four text cards | Text only | A pinned five-step section that assembles a show as you scroll (confirm card, crowd bars, slots, Critic stamp, approvals and briefing waveform), stacked on mobile |
+| 4 | Qloo's role (the sponsor) was a list of tool names | Ten grey chips | "Powered by Qloo": what Qloo is, why the product fails without it, and a fanned deck of the ten tools with what each does here |
+| 5 | Sponsors and brand partners had no page of their own | Mentioned in a step | A section with an animated fit dial, a one-pager mock from a real seeded brand, and a link to the actual PDF |
+| 6 | No art anywhere | Icons only | Four poster illustrations (concert, comedy, sports, festival) on demo cards, the intake mode picker and the console header |
+| 7 | First build of the new landing scored 54 for mobile performance | LCP 6.9 s, TBT 650 ms | Hero entrance in CSS; WebGL only on desktop after idle, CSS crowd on phones; curtain is static CSS. 94 mobile, 98 desktop; accessibility 100 |
+| 8 | Inactive steps, an orange eyebrow and the mobile tool row failed axe | 3 violations | Contrast-safe colours; the scroll row is focusable and labelled |

@@ -781,3 +781,16 @@ and what still works), **partial/degraded** (content plus a `StatusChip` and a o
 - Focus is visible (2px ring + offset) and trapped in sheets/dialogs; Escape closes; focus returns
   to the trigger.
 - Keyboard shortcuts are listed in a `?` dialog and never steal focus from inputs.
+
+
+## Addendum (29 Oct 2026): "House lights" for the landing page
+
+The console stays the quiet ops console above. The landing page and brand moments get a second register, researched in `REFERENCES-AWWWARDS.md`:
+
+- **Stage.** The hero, "how it works", the Qloo deck, the Ask demo and the footer sit on a fixed night stage (`.stage`, #0B0A12) in both themes; the bands between follow the theme.
+- **Gig-poster stripes.** Crimson #C4133C, tangerine #F2501E, amber #FF9F1C, sun #FFC83D, teal #17A398, plus violet #6B4CF6 and pink #FF4F9A. Ink pairs: white on crimson and violet, #160A12 on the rest (all ≥ 4.5:1). The stripe bar under the header carries the motif into every page.
+- **Type.** Bricolage Grotesque (800) for display, Geist for UI, Geist Mono for Qloo data.
+- **3D.** The hero is a stage-eye view of the crowd (three.js via React Three Fiber): instanced figures in the stripe colours jumping in a wave that starts at the pointer, four additive light beams, a spinning vinyl and two floating knots. It loads after the page is idle on desktop, pauses off-screen, renders one still frame for reduced motion, and phones get a CSS crowd instead.
+- **Art.** Four poster illustrations, one per mode (vinyl and EQ bars, mic under a spotlight, a pitch with a ball arc, tents under a spinning sun), as inline SVG with small looping details. They appear on the demo cards, the intake mode picker and the console header.
+- **Motion.** Entrance in CSS (plays from first paint); scroll-linked pieces with Motion: the pinned five-step assembly, the fanned tool deck, bars and sparklines that draw on view, count-ups, a typed Ask exchange. `MotionConfig reducedMotion="user"` throughout.
+- **Budget.** Lighthouse on the production build: landing 98 / 100 / 100 desktop, 94 / 100 / 100 mobile (performance / accessibility / best practices).
