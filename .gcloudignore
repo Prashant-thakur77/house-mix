@@ -1,0 +1,13 @@
+.git
+**/node_modules
+**/.next
+**/.next-e2e
+design/
+docs/
+data/
+.qloo-harness/
+test-results/
+playwright-report/
+.env*
+!.env.example
+house-mix-plan.md

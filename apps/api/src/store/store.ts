@@ -83,15 +83,27 @@ export class FirestoreStore implements Store {
     return `hm_${col}`;
   }
 
+  /**
+   * Documents are stored as a JSON string: Qloo envelopes contain nested arrays, which Firestore
+   * rejects. Only the string fields we filter on are kept as real Firestore fields.
+   */
+  private static readonly INDEXED = ["shareId", "runId", "showId", "pairId"];
+
+  private decode<T>(data: Record<string, unknown> | undefined): T | undefined {
+    if (!data) return undefined;
+    return typeof data._json === "string" ? (JSON.parse(data._json) as T) : (data as T);
+  }
+
   async get<T>(col: Collection, id: string): Promise<T | undefined> {
     const snap = await (await this.fs()).collection(this.colName(col)).doc(safeId(id)).get();
-    return snap.exists ? (snap.data() as T) : undefined;
+    return snap.exists ? this.decode<T>(snap.data()) : undefined;
   }
 
   async put<T>(col: Collection, id: string, doc: T): Promise<void> {
-    // Firestore rejects nested arrays and undefined; a JSON round-trip normalises the document.
-    const plain = JSON.parse(JSON.stringify(doc)) as Record<string, unknown>;
-    await (await this.fs()).collection(this.colName(col)).doc(safeId(id)).set(plain);
+    const json = JSON.stringify(doc);
+    const rec = doc as Record<string, unknown>;
+    const indexed = Object.fromEntries(FirestoreStore.INDEXED.filter((k) => typeof rec[k] === "string").map((k) => [k, rec[k]]));
+    await (await this.fs()).collection(this.colName(col)).doc(safeId(id)).set({ ...indexed, _json: json });
   }
 
   async delete(col: Collection, id: string): Promise<void> {
@@ -103,7 +115,7 @@ export class FirestoreStore implements Store {
     if (opts.where) q = q.where(opts.where[0], "==", opts.where[1]);
     if (opts.limit) q = q.limit(opts.limit);
     const snap = await q.get();
-    return snap.docs.map((d) => d.data() as T);
+    return snap.docs.map((d) => this.decode<T>(d.data())!);
   }
 }
 

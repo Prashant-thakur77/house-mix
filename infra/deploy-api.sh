@@ -20,7 +20,14 @@ gcloud storage buckets describe "gs://${BUCKET}" --project "$GCP_PROJECT" >/dev/
   || gcloud storage buckets create "gs://${BUCKET}" --location "$REGION" --project "$GCP_PROJECT" --uniform-bucket-level-access
 
 IMAGE="${REGION}-docker.pkg.dev/${GCP_PROJECT}/house-mix/api:$(git rev-parse --short HEAD)"
-gcloud builds submit --project "$GCP_PROJECT" --config infra/cloudbuild.yaml --substitutions "_IMAGE=${IMAGE}" .
+if [ "${LOCAL_BUILD:-0}" = "1" ]; then
+  # Build with the local Docker daemon and push (useful when Cloud Build is not yet usable on a new project).
+  docker build -f apps/api/Dockerfile -t "$IMAGE" .
+  gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin "https://${REGION}-docker.pkg.dev" >/dev/null
+  docker push "$IMAGE"
+else
+  gcloud builds submit --project "$GCP_PROJECT" --config infra/cloudbuild.yaml --substitutions "_IMAGE=${IMAGE}" .
+fi
 
 SA="$(gcloud projects describe "$GCP_PROJECT" --format='value(projectNumber)')-compute@developer.gserviceaccount.com"
 for role in roles/secretmanager.secretAccessor roles/datastore.user roles/storage.objectAdmin; do
@@ -30,8 +37,8 @@ done
 SECRETS="ANTHROPIC_API_KEY=anthropic-api-key:latest"
 gcloud secrets describe qloo-api-key --project "$GCP_PROJECT" >/dev/null 2>&1 && SECRETS="${SECRETS},QLOO_API_KEY=qloo-api-key:latest"
 gcloud run deploy "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --image "$IMAGE" \
-  --allow-unauthenticated --min-instances 1 --max-instances 3 --cpu 2 --memory 2Gi --timeout 900 \
+  --allow-unauthenticated --min-instances 1 --max-instances 3 --cpu 1 --memory 2Gi --timeout 900 \
   --no-cpu-throttling --concurrency 40 \
   --set-secrets "$SECRETS" \
-  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}"
+  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_SPEND_LIMIT_USD=${HM_SPEND_LIMIT_USD:-8},HM_MAX_CONCURRENT_RUNS=1,HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}"
 gcloud run services describe "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --format 'value(status.url)'

@@ -25,10 +25,10 @@ function factSheet(show: Show) {
 }
 
 const Script = z.object({
-  lines: z.array(z.object({ speaker: z.enum(["A", "B"]), text: z.string(), fact_ids: z.array(z.string()) })).min(4).max(18),
+  lines: z.array(z.object({ speaker: z.enum(["A", "B"]), text: z.string(), fact_ids: z.array(z.string()) })).min(4).max(10),
 });
 
-const WRITER = `You write a pre-show audio briefing for venue staff (doors, bar, stage crew): two voices, A (the show caller) and B (the floor lead), about 90 seconds (~220 words total).
+const WRITER = `You write a pre-show audio briefing for venue staff (doors, bar, stage crew): two voices, A (the show caller) and B (the floor lead), at most 90 seconds when read aloud: 8 to 10 short lines, 190 words in total at most. Pick the highlights; do not list every item.
 Cover: who tonight's crowd is (aggregate taste only), what will land in each slot, the stretch picks, and what to avoid.
 Every line must cite the fact_ids it is based on, and may only say what those facts say. Do not add facts, numbers, names or claims that are not in the cited facts. Never describe individual people or sensitive traits; talk about "the crowd" in aggregate.
 Natural, spoken, concise. No stage directions.`;

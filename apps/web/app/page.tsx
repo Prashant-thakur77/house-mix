@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, ClipboardCheck, Radio, ScanSearch } from "lucide-react";
-import { MODES, QLOO_TOOLS } from "@housemix/shared";
+import { MODES, QLOO_TOOLS, type Show } from "@housemix/shared";
 import { api, type ShowSummary } from "@/lib/api";
 import { TopBar } from "@/components/app-shell";
 import { Kicker, ModeChip } from "@/components/status";
@@ -57,6 +57,58 @@ const STEPS = [
   { icon: Radio, title: "Watch the agent plan", body: "Subagents read the crowd and fill each slot from its own Qloo chain. Every call streams into the trace as it happens." },
   { icon: ClipboardCheck, title: "Approve, then brief the crew", body: "Approve, swap or reject line by line, lock a version, export the run-of-show and play the two-voice briefing." },
 ];
+
+function SamplePick({ id }: { id?: string }) {
+  const [show, setShow] = useState<Show>();
+  useEffect(() => {
+    if (id) api.show(id).then(setShow).catch(() => setShow(undefined));
+  }, [id]);
+  const slot = show?.plan?.slots.find((s) => s.items.some((i) => i.evidence.some((e) => e.tool === "qloo_rank")));
+  const item = slot?.items.find((i) => !i.isWildcard && i.evidence.some((e) => e.tool === "qloo_rank"));
+  if (!show || !slot || !item) return null;
+  return (
+    <section className="mt-14 grid gap-4 md:grid-cols-12" aria-labelledby="sample">
+      <div className="md:col-span-4">
+        <Kicker>What a pick looks like</Kicker>
+        <h2 id="sample" className="mt-1 text-h2 font-semibold">
+          Evidence first, opinion second
+        </h2>
+        <p className="mt-2 text-small text-muted-foreground">
+          Every pick cites the Qloo calls it came from. The server builds that evidence from its own call log, so the model can&apos;t invent it, and a Critic removes any claim the evidence doesn&apos;t support. From{" "}
+          <Link className="font-medium text-primary hover:underline" href={`/shows/${show.id}`}>
+            {show.title}
+          </Link>
+          .
+        </p>
+      </div>
+      <div className="grid gap-2 rounded-lg border bg-card p-4 md:col-span-8">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <Kicker>
+              {slot.label} · {slot.timeRange}
+            </Kicker>
+            <div className="mt-1 text-h2 font-semibold">{item.pick.name}</div>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {item.evidence.map((e) => (
+              <span key={e.callId} className="rounded-md bg-muted px-2 py-0.5 font-mono text-label">
+                {e.tool} · {e.status}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="border-l-3 border-qloo-border bg-qloo-bg/60 py-1.5 pl-3 pr-2">
+          <div className="text-label font-medium uppercase text-qloo">Qloo says</div>
+          <p className="font-mono text-small">{item.qlooSays}</p>
+        </div>
+        <div className="border-l-3 border-interp-border bg-interp-bg/60 py-1.5 pl-3 pr-2">
+          <div className="text-label font-medium uppercase text-interp">Our interpretation</div>
+          <p className="text-small">{item.interpretation}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const [shows, setShows] = useState<ShowSummary[]>();
@@ -132,6 +184,8 @@ export default function Home() {
             ) : null}
           </div>
         </section>
+
+        <SamplePick id={seeds.find((x) => x.mode === "sports")?.id ?? seeds[0]?.id} />
 
         <section className="mt-14" aria-labelledby="how">
           <Kicker>How it works</Kicker>

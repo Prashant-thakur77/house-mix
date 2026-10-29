@@ -4,6 +4,10 @@
 
 Built for the Qloo Agentic Hackathon ("Agents, but with taste"). Four modes: **Concert, Comedy, Sports, Festival**.
 
+**Live demo (no login):** https://house-mix.vercel.app · API: https://house-mix-api-120659974854.us-central1.run.app/health
+
+Open a seeded show (concert, comedy night, football fixture, festival day) to see a full plan instantly, or plan a new one. Until the live Qloo key is connected the demo runs on the schema-identical mock and says **MOCK DATA** on every screen.
+
 ![House Mix architecture](docs/architecture.svg)
 
 ## What it does

@@ -1,0 +1,12 @@
+design/
+docs/
+data/
+fixtures/
+eval/results/
+.qloo-harness/
+**/node_modules
+**/.next
+**/.next-e2e
+test-results/
+playwright-report/
+house-mix-plan.md

@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import type { RunEvent, RunState } from "@housemix/shared";
 import { runPlan } from "../agent/run.ts";
 import { getStore } from "../store/store.ts";
+import { SPEND_LIMIT_USD, spendSoFar } from "../llm.ts";
 import { getShow, HttpError, saveShow } from "./service.ts";
 
 type Listener = (e: RunEvent) => void;
@@ -27,6 +28,9 @@ export async function startRun(showId: string, runner: typeof runPlan = runPlan)
   const show = await getShow(showId);
   if (show.status === "needs_confirmation") throw new HttpError(409, "Confirm every entity before planning.", "needs_confirmation");
   if (show.status === "planning" && show.lastRunId && live.get(show.lastRunId)?.state.status === "running") return live.get(show.lastRunId)!.state;
+  if ((await spendSoFar()) >= SPEND_LIMIT_USD) {
+    throw new HttpError(429, "This demo has used its Claude budget for the hackathon. Open a seeded show to explore a full plan.", "budget");
+  }
   const running = [...live.values()].filter((r) => r.state.status === "running").length;
   if (running >= MAX_CONCURRENT) throw new HttpError(429, "Other plans are running right now. Try again in a minute, or open a seeded show.", "busy");
 
