@@ -12,6 +12,8 @@ Open a seeded show (concert, comedy night, football fixture, festival day) to se
 | --- | --- |
 | ![Console](design/app/show-concert-full/desktop-light.png) | ![Evidence](design/app/show-concert-evidence/desktop-dark.png) |
 | ![Agent planning live](design/app/show-live-run/desktop-dark.png) | ![Confirm card for an ambiguous name](design/app/show-confirm/desktop-light.png) |
+| Ask House Mix: cited answer, Critic, proposals into the queue | Without Qloo: Claude-alone picks checked and ranked by Qloo |
+| ![Ask House Mix](design/app/show-concert-ask/viewport-light.png) | ![Without Qloo](design/app/show-sports-without-qloo/viewport-dark.png) |
 
 ![House Mix architecture](docs/architecture.svg)
 
@@ -27,6 +29,9 @@ Open a seeded show (concert, comedy night, football fixture, festival day) to se
 | Approvals | Approve, swap (re-ranks the slot's remaining alternatives with a fresh `qloo_rank`), reject with a reason (a negative signal for the next plan), lock with version + timestamp | `qloo_rank` |
 | Exports | Run-of-show PDF, ops CSV, read-only share link, sponsor one-pager PDF per brand | – |
 | Briefing | ~90 s two-voice script; an evidence judge drops any line it cannot support; Cloud TTS voices it (device voices as a fallback) | (evidence) |
+| Crowd map | Where each side's taste concentrates in the show city, the areas that are strong for every side, and the top three for street teams and flyering (tile-free SVG with a table view) | `qloo_where_popular` |
+| Without Qloo | Claude plans the same brief with no tools; Qloo looks up every one of those picks by name and ranks both plans' top picks per slot for tonight's crowd. Ambiguous names are reported, never auto-picked | `qloo_describe`, `qloo_rank` |
+| Ask House Mix | Questions about the plan ("if the support act cancels, who opens?") answered by a tool-using Claude loop over the real Qloo tools. Every line cites call IDs, the Critic removes the rest, and suggested changes go to the approval queue as pending items | all nine query tools |
 | Compare | Tonight vs last night: one comparison across the two bills plus a plan diff | `qloo_compare_audiences` |
 | Health | Readiness badge and the MOCK DATA banner | `qloo_capabilities` |
 
@@ -38,13 +43,13 @@ All 10 tools of `qloo mcp` do load-bearing work. The backend starts `qloo mcp` a
 | --- | --- | --- | --- |
 | `qloo_capabilities` | Boot and the health badge | `{}` | No readiness check; the UI can't warn about a missing key |
 | `qloo_find_tags` | Intake vibe words | `query`, `limit` | Free-text vibes can't become tag URNs |
-| `qloo_describe` | Intake names; confirming a choice by ID | `entity`, `type` | No confirmed IDs; every later call would hit `needs_input` |
+| `qloo_describe` | Intake names; confirming a choice by ID; checking "Without Qloo" picks | `entity`, `type` | No confirmed IDs; every later call would hit `needs_input`; no way to tell which knowledge-only picks Qloo even knows |
 | `qloo_compare_audiences` | Crowd read; sponsor fit; compare page | `group_a`, `group_b` (IDs), `target_type`, `limit` | No home-vs-away split, no sponsor-fit score |
 | `qloo_audience_demographics` | Crowd read (aggregate only) | `entity`, `entity_type` | No age skew; no demographic phrase for ranking |
 | `qloo_entity_tags` | Crowd vocabulary | `entities`, `entity_type` | No "why" vocabulary for the crowd |
 | `qloo_recommend` | Every slot's candidates; wildcards | `target_type`, `signals` (IDs), `signal_tags` (URNs), `signal_location`, `filter_location`, `exclude_tags` | No candidates beyond what the operator already knows |
-| `qloo_rank` | Ordering each slot; local acts; swap | `options` (≤10 IDs), `option_type`, `signals`, `signal_location`, `demographic` | Shortlists stay unordered; swap has nothing to re-rank with |
-| `qloo_where_popular` | Food & drink and local guide | `entity`, `within` (city) | The plan isn't specific to the city |
+| `qloo_rank` | Ordering each slot; local acts; swap; ranking House Mix vs Claude-alone picks | `options` (≤10 IDs), `option_type`, `signals`, `signal_location`, `demographic` | Shortlists stay unordered; swap has nothing to re-rank with |
+| `qloo_where_popular` | Food & drink and local guide; the crowd map (one call per side) | `entity`, `entity_type`, `within` (city), `limit` | The plan isn't specific to the city; no street-team areas |
 | `qloo_trends` | Rising flags on acts; momentum chart | `entities` (1–5), `entity_type`, 90-day `start_date`/`end_date` | No momentum signal for booking risk |
 
 Status handling follows the kit. `ok`: use the results. `empty`: "no Qloo signal", never invented. `needs_input`: a confirm card at intake, and the agents are told never to pick a candidate. `partial`/`degraded`: used with a "reduced confidence" chip and the summary. `error`: retried only when retryable; otherwise the recovery text is shown and the slot is marked "needs manual input". The demographic phrase sent back to Qloo is derived from Qloo's own age distribution, and it is age-only.
@@ -111,6 +116,9 @@ Deploy: `infra/secrets.sh`, `infra/deploy-api.sh` (Cloud Run, min instances 1, s
 - Demographic charts are aggregate distributions, used only for tone and pricing, never to admit, exclude or target anyone. House Mix refuses eligibility-type requests and rejects personal data at intake and before every Qloo call.
 - The sponsor-fit number is our formula over Qloo's crowd-vs-brand comparison, not a Qloo score.
 - In mock mode every Qloo result is fictional, and the UI says so on every screen.
+- "Without Qloo" has Qloo rank House Mix's own picks against Claude-alone picks, so a House Mix lead there is expected and is not an independent quality test. The blind human A/B in `eval/` is the quality test.
+- The crowd map shows where an act's taste concentrates by area (Qloo heatmap cells), centred on the returned areas rather than the venue; it is not a map of where attendees live.
+- Ask House Mix answers only from Qloo calls, so questions Qloo can't speak to (prices, opening hours, walking distance) come back as "check this yourself" rather than a guess.
 
 ## Licence
 

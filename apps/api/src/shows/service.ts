@@ -148,6 +148,7 @@ export async function createShow(raw: unknown, opts: { seed?: boolean; qloo?: Ql
     input,
     title: showTitle(input),
     entities,
+    asks: [],
     status: statusFor(entities),
     version: 0,
     negativeSignals: [],

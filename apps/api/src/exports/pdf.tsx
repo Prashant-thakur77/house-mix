@@ -1,6 +1,7 @@
 import { Document, Page, StyleSheet, Text, View, renderToBuffer } from "@react-pdf/renderer";
 import type { PlanItem, Show } from "@housemix/shared";
 import { MODES } from "@housemix/shared";
+import { topAreas } from "../insights/heatmap.ts";
 
 const C = {
   ink: "#14161a",
@@ -100,6 +101,28 @@ function RunOfShow({ show }: { show: Show }) {
               ))}
           </View>
         ))}
+
+        {show.heatmap?.layers.length ? (
+          <View wrap={false}>
+            <Text style={s.h2}>Street teams &amp; flyering · {show.heatmap.within}</Text>
+            {topAreas(show.heatmap).map((a, n) => (
+              <Text key={a.id} style={s.qloo}>
+                {n + 1}. {a.km.toFixed(1)} km {a.bearing} of centre (area {a.id}){a.overlap ? ", strong for every side" : ""}: {a.values.map((v) => `${v.label} ${v.affinity === undefined ? "n/a" : v.affinity.toFixed(2)}`).join(", ")}
+              </Text>
+            ))}
+            <Text style={s.chip}>Qloo where_popular, one call per side. Aggregate taste by area, not where individuals live.</Text>
+          </View>
+        ) : null}
+
+        {show.counterfactual && show.counterfactual.planVersion === show.version ? (
+          <View wrap={false}>
+            <Text style={s.h2}>Without Qloo</Text>
+            <Text>
+              The same brief planned by {show.counterfactual.model} with no tools: {show.counterfactual.summary.llmResolved} of {show.counterfactual.summary.llmPicks} picks found in Qloo ({show.counterfactual.summary.llmAmbiguous} ambiguous, {show.counterfactual.summary.llmNotFound} not found), none with a Qloo citation. Qloo ranked a House Mix pick first in {show.counterfactual.summary.slotsQlooLed} of {show.counterfactual.summary.rankedSlots} slots.
+            </Text>
+            <Text style={s.chip}>Qloo is ranking House Mix&apos;s own picks here, so this is not an independent quality test; the blind A/B in eval/ is.</Text>
+          </View>
+        ) : null}
 
         <View style={s.box} wrap={false}>
           <Text style={{ fontFamily: "Helvetica-Bold", marginBottom: 3 }}>Limitations</Text>

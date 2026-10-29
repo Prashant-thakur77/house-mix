@@ -11,11 +11,14 @@ import { compareOf } from "./qloo/normalize.ts";
 import { getStore } from "./store/store.ts";
 import { confirmEntity, createShow, getShow, HttpError, listShows, refineEntity, saveShow } from "./shows/service.ts";
 import { getRun, isEndMarker, startRun, subscribe } from "./shows/runs.ts";
-import { approveConfident, approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
+import { addProposal, approveConfident, approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
 import { planCsv } from "./exports/csv.ts";
 import { runOfShowPdf, sponsorPdf } from "./exports/pdf.tsx";
 import { buildBriefing } from "./briefing/briefing.ts";
 import { readAudio, ttsStatus } from "./briefing/tts.ts";
+import { heatmapFor } from "./insights/heatmap.ts";
+import { counterfactualFor } from "./insights/counterfactual.ts";
+import { askShow } from "./insights/ask.ts";
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
 
@@ -158,6 +161,35 @@ export async function buildApp(): Promise<FastifyInstance> {
     if (!audio) throw new HttpError(404, "No audio for this briefing.", "not_found");
     return reply.header("Content-Type", "audio/mpeg").header("Cache-Control", "public, max-age=3600").send(audio);
   });
+
+  /** Crowd map: where each side's taste concentrates in the show city (qloo_where_popular). */
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/heatmap", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (req) => heatmapFor(req.params.id, Boolean(req.body?.force)));
+
+  /** "Without Qloo": Claude alone plans the same brief; Qloo checks and ranks those picks against the plan's. */
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/counterfactual", { config: { rateLimit: { max: 3, timeWindow: "1 minute" } } }, async (req) => counterfactualFor(req.params.id, Boolean(req.body?.force)));
+
+  /** Ask House Mix: a grounded answer streamed as NDJSON (tool calls as they happen, then the checked answer). */
+  app.post<{ Params: { id: string }; Body: { question?: string } }>("/shows/:id/ask", { config: { rateLimit: { max: 6, timeWindow: "1 minute" } } }, async (req, reply) => {
+    const question = String(req.body?.question ?? "");
+    reply.raw.writeHead(200, {
+      "Content-Type": "application/x-ndjson; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+      "X-Accel-Buffering": "no",
+      "Access-Control-Allow-Origin": (req.headers.origin as string) ?? "*",
+    });
+    const write = (o: unknown) => reply.raw.write(`${JSON.stringify(o)}\n`);
+    try {
+      const answer = await askShow(req.params.id, question, (e) => write(e));
+      write({ type: "answer", answer });
+    } catch (e) {
+      const err = e as HttpError;
+      if (!(e instanceof HttpError)) app.log.error(e);
+      write({ type: "error", code: err.code ?? "server_error", message: e instanceof HttpError ? err.message : "House Mix could not answer that right now." });
+    }
+    reply.raw.end();
+    return reply;
+  });
+  app.post<{ Params: { id: string; askId: string; proposalId: string } }>("/shows/:id/asks/:askId/proposals/:proposalId/add", async (req) => addProposal(req.params.id, req.params.askId, req.params.proposalId));
 
   app.get<{ Params: { shareId: string } }>("/share/:shareId", async (req) => {
     const shows = await getStore().list<Show>("shows", { where: ["shareId", req.params.shareId], limit: 1 });

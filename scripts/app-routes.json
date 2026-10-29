@@ -146,6 +146,72 @@
     {
       "slug": "rate",
       "path": "/rate"
+    },
+    {
+      "slug": "show-concert-ask",
+      "path": "/shows/seed-concert",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1200
+        },
+        {
+          "type": "click",
+          "role": "button",
+          "name": "/^ask$/i"
+        },
+        {
+          "type": "wait",
+          "ms": 600
+        },
+        {
+          "type": "click",
+          "role": "button",
+          "name": "/qloo evidence/i"
+        },
+        {
+          "type": "wait",
+          "ms": 400
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-map",
+      "path": "/shows/seed-concert",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1200
+        },
+        {
+          "type": "hover",
+          "role": "heading",
+          "name": "/taste concentrates/i"
+        },
+        {
+          "type": "wait",
+          "ms": 400
+        }
+      ]
+    },
+    {
+      "slug": "show-sports-without-qloo",
+      "path": "/shows/seed-sports",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1200
+        },
+        {
+          "type": "hover",
+          "role": "heading",
+          "name": "Without Qloo"
+        },
+        {
+          "type": "wait",
+          "ms": 400
+        }
+      ]
     }
   ]
 }

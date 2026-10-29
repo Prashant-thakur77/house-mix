@@ -132,6 +132,27 @@ export async function swapItem(showId: string, itemId: string, qloo: QlooClient 
   return { show: await saveShow(show), replacement };
 }
 
+/** Adds an "Ask House Mix" proposal to its slot as a pending item; its evidence was checked when it was proposed. */
+export async function addProposal(showId: string, askId: string, proposalId: string): Promise<Show> {
+  const show = await getShow(showId);
+  assertEditable(show);
+  if (!show.plan) throw new HttpError(409, "This show has no plan yet.", "no_plan");
+  const ask = show.asks.find((a) => a.id === askId);
+  const proposal = ask?.proposals.find((p) => p.id === proposalId);
+  if (!ask || !proposal) throw new HttpError(404, "Proposal not found.", "not_found");
+  if (proposal.state === "added") return show;
+  if (ask.planVersion !== show.version) throw new HttpError(409, "This proposal was made for an earlier version of the plan. Ask again.", "stale");
+  const slot = show.plan.slots.find((s) => s.key === proposal.slotKey);
+  if (!slot) throw new HttpError(404, "Slot not found.", "not_found");
+  const live = show.plan.slots.flatMap((s) => s.items).filter((i) => i.approval.state !== "swapped" && i.approval.state !== "rejected");
+  if (live.some((i) => i.pick.qlooId === proposal.item.pick.qlooId)) throw new HttpError(409, `${proposal.item.pick.name} is already in the plan.`, "conflict");
+  if (show.negativeSignals.some((n) => n.qlooId === proposal.item.pick.qlooId)) throw new HttpError(409, `${proposal.item.pick.name} was rejected earlier.`, "conflict");
+  slot.items.push({ ...proposal.item, id: `i_${randomUUID().slice(0, 10)}`, approval: { state: "pending" } });
+  if (slot.status === "needs_manual_input") slot.status = "ready";
+  proposal.state = "added";
+  return saveShow(show);
+}
+
 export async function lockPlan(showId: string): Promise<Show> {
   const show = await getShow(showId);
   if (!show.plan) throw new HttpError(409, "Nothing to lock yet.", "no_plan");

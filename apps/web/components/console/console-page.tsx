@@ -18,6 +18,9 @@ import { ApprovalQueue } from "@/components/console/queue";
 import { EntityConfirmCard, ResolvedStrip } from "@/components/console/confirm";
 import { ExportsMenu, LimitationsPanel } from "@/components/console/extras";
 import { BriefingSheet } from "@/components/console/briefing";
+import { CrowdMap } from "@/components/console/crowd-map";
+import { CounterfactualPanel } from "@/components/console/counterfactual";
+import { AskSheet } from "@/components/console/ask";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -259,6 +262,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           <Button variant="ghost" size="icon" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" onClick={() => setHelpOpen(true)} className="hidden md:inline-flex">
             <Keyboard />
           </Button>
+          <AskSheet show={show} onShow={setShow} />
           <BriefingSheet show={show} onBriefing={(b) => setShow({ ...show, briefing: b })} />
           <ExportsMenu show={show} />
         </div>
@@ -331,6 +335,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         </Alert>
       ) : null}
       {streaming || show.plan ? <CrowdReadPanel crowd={crowd} streaming={streaming} /> : null}
+      {show.plan && !streaming ? <CrowdMap show={show} onHeatmap={(h) => setShow((cur) => (cur ? { ...cur, heatmap: h } : cur))} /> : null}
       {slots.length ? (
         <section aria-labelledby="ros-title" className="grid gap-3">
           <div className="flex items-baseline justify-between gap-2">
@@ -346,6 +351,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           </div>
         </section>
       ) : null}
+      {show.plan && !streaming ? <CounterfactualPanel show={show} onResult={(c) => setShow((cur) => (cur ? { ...cur, counterfactual: c } : cur))} /> : null}
       {!streaming ? <LimitationsPanel show={show} /> : null}
     </div>
   );

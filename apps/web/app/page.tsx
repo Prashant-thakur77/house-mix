@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, ClipboardCheck, Radio, ScanSearch } from "lucide-react";
+import { ArrowRight, ClipboardCheck, MessageSquareText, Radio, ScanSearch } from "lucide-react";
 import { MODES, QLOO_TOOLS, type Show } from "@housemix/shared";
 import { api, type ShowSummary } from "@/lib/api";
 import { TopBar } from "@/components/app-shell";
@@ -64,6 +64,7 @@ const STEPS = [
   { icon: ScanSearch, title: "Describe tonight", body: "Lineup or home vs away, venue, city and house rules. Every name is resolved with Qloo, and you confirm anything ambiguous." },
   { icon: Radio, title: "Watch the agent plan", body: "Subagents read the crowd and fill each slot from its own Qloo chain. Every call streams into the trace as it happens." },
   { icon: ClipboardCheck, title: "Approve, then brief the crew", body: "Approve, swap or reject line by line, lock a version, export the run-of-show and play the two-voice briefing." },
+  { icon: MessageSquareText, title: "Ask, map and check", body: "Ask follow-ups answered only from Qloo, see where the crowd's taste concentrates in the city, and set the plan beside what Claude alone would pick." },
 ];
 
 function SamplePick({ id }: { id?: string }) {
@@ -203,7 +204,7 @@ export default function Home() {
           <h2 id="how" className="mt-1 text-h2 font-semibold">
             One flow, four modes
           </h2>
-          <ol className="mt-4 grid gap-4 md:grid-cols-3">
+          <ol className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={s.title} className="rounded-lg border bg-card p-4">
                 <div className="flex items-center gap-2">

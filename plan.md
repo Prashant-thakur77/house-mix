@@ -212,9 +212,10 @@ Hook → sports intake (home vs away) → "Genesis" triggers `needs_input` confi
 - [x] **P10 Eval kit** — A/B, backtest, evidence-rate, report generator. *Done when* unit tests pass and `REPORT.md` renders with "pending live Qloo key" where data is missing.
 - [x] **P11 Docs** — README, DEVPOST, VIDEO_SCRIPT, QLOO_WALKTHROUGH (template until live), FRICTION_LOG, LIMITATIONS. *Done when* every deliverable file exists.
 - [x] **P12 Deploy** — Cloud Run + Vercel. *Done when* hosted URLs work without login (needs GCP project from the user).
+- [x] **P14 Round-4 features** — crowd map (`qloo_where_popular` per side, overlap, street-team areas), "Without Qloo" (Claude-alone plan checked by `qloo_describe` and ranked by `qloo_rank` against House Mix), "Ask House Mix" (tool loop over the Qloo tools, cited lines, Critic, proposals into the queue). *Done when* each renders on every seed, has API or e2e coverage, and appears in the PDF/README/Devpost.
 - [ ] **P13 Refine loop** (in progress; rounds logged in docs/REFINE_LOG.md) — rounds logged in docs/REFINE_LOG.md until nothing would change a judge's score.
 
-## Status (29 Oct 2026, 18:30 IST)
+## Status (29 Oct 2026, 21:30 IST)
 
 - Live: https://house-mix.vercel.app (web) · https://house-mix-api-120659974854.us-central1.run.app (API, GCP project `house-mix-qloo-1029`).
 - Waiting on external inputs: `QLOO_API_KEY` (then `npm run qloo:verify`, live re-seed, evals), `SETLISTFM_API_KEY` (backtest), human raters (A/B). See docs/GO_LIVE.md.

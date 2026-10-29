@@ -233,6 +233,91 @@ export const Briefing = z.object({
 });
 export type Briefing = z.infer<typeof Briefing>;
 
+/** Where tonight's taste concentrates (qloo_where_popular per bill side), built server-side from the ledger. */
+export const HeatLayer = z.object({
+  label: z.string(),
+  role: SideRole.optional(),
+  entityId: z.string(),
+  points: z.array(z.object({ id: z.string(), lat: z.number(), lon: z.number(), affinity: z.number(), popularity: z.number().optional() })),
+  evidence: Evidence,
+});
+export type HeatLayer = z.infer<typeof HeatLayer>;
+
+export const Heatmap = z.object({
+  within: z.string(),
+  layers: z.array(HeatLayer),
+  /** Areas where every layer is above its own median affinity: where the whole bill's crowd overlaps. */
+  overlap: z.array(z.string()).default([]),
+  notes: z.array(z.string()).default([]),
+  createdAt: z.string(),
+});
+export type Heatmap = z.infer<typeof Heatmap>;
+
+export const CounterfactualRow = z.object({
+  name: z.string(),
+  source: z.enum(["qloo", "llm"]),
+  /** For LLM-only picks: whether Qloo could resolve the name (never auto-picked when ambiguous). */
+  status: z.enum(["resolved", "not_found", "ambiguous", "error"]),
+  qlooId: z.string().optional(),
+  rank: z.number().optional(),
+  score: z.number().optional(),
+  why: z.string().default(""),
+  candidates: z.array(Candidate).default([]),
+  callId: z.string().optional(),
+});
+export type CounterfactualRow = z.infer<typeof CounterfactualRow>;
+
+/** "Without Qloo": the same brief planned by Claude alone, then checked and ranked by Qloo for tonight's crowd. */
+export const Counterfactual = z.object({
+  planVersion: z.number(),
+  model: z.string(),
+  headline: z.string().default(""),
+  slots: z.array(
+    z.object({
+      key: z.string(),
+      label: z.string(),
+      rows: z.array(CounterfactualRow),
+      rankEvidence: Evidence.optional(),
+      note: z.string().optional(),
+    }),
+  ),
+  summary: z.object({
+    llmPicks: z.number(),
+    llmResolved: z.number(),
+    llmAmbiguous: z.number(),
+    llmNotFound: z.number(),
+    /** Ranked slots where Qloo put a House Mix pick above every LLM-only pick. */
+    slotsQlooLed: z.number(),
+    rankedSlots: z.number(),
+  }),
+  costUsd: z.number().default(0),
+  createdAt: z.string(),
+});
+export type Counterfactual = z.infer<typeof Counterfactual>;
+
+export const AskLine = z.object({ text: z.string(), callIds: z.array(z.string()).default([]) });
+export const AskProposal = z.object({
+  id: z.string(),
+  slotKey: z.string(),
+  item: PlanItem,
+  state: z.enum(["open", "added"]).default("open"),
+});
+export type AskProposal = z.infer<typeof AskProposal>;
+
+/** One grounded answer from "Ask House Mix": every line cites Qloo calls; the Critic removes unsupported lines. */
+export const AskAnswer = z.object({
+  id: z.string(),
+  question: z.string(),
+  lines: z.array(AskLine),
+  dropped: z.array(z.object({ text: z.string(), reason: z.string() })).default([]),
+  calls: z.array(Evidence).default([]),
+  proposals: z.array(AskProposal).default([]),
+  planVersion: z.number(),
+  costUsd: z.number().default(0),
+  at: z.string(),
+});
+export type AskAnswer = z.infer<typeof AskAnswer>;
+
 export const Show = z.object({
   id: z.string(),
   shareId: z.string(),
@@ -246,6 +331,9 @@ export const Show = z.object({
   lockedAt: z.string().optional(),
   negativeSignals: z.array(NegativeSignal).default([]),
   briefing: Briefing.optional(),
+  heatmap: Heatmap.optional(),
+  counterfactual: Counterfactual.optional(),
+  asks: z.array(AskAnswer).default([]),
   lastRunId: z.string().optional(),
   qlooMode: z.enum(["mock", "live"]),
   createdAt: z.string(),

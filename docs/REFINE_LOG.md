@@ -59,3 +59,22 @@ Review: the headline demo show as a judge would open it.
 | 3 | Re-generated seeds never reached production (import skipped existing IDs) | Old seed kept in Firestore | Seeds with a newer `createdAt` replace the stored copy |
 
 Remaining items that would move a judge's score are external: live Qloo data (key), measured results (key, setlist.fm key, raters), and the video. Nothing else found in this round changes a score.
+
+## Round 4
+
+Review: House Mix set against the patterns that won past taste and data hackathons (an in-product Qloo-on vs Qloo-off comparison, a map, and an analyst who answers follow-ups and produces a decision). A judge scoring "depth of Qloo use" and "does the demo solve the problem" would look for all three.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | The Qloo-on vs Qloo-off comparison lived only in `eval/`, so a judge had to take it on trust | No in-product baseline | **Without Qloo** panel: Claude plans the same brief with no tools; `qloo_describe` looks up each pick; one `qloo_rank` per slot orders both plans' top picks for the crowd. Shows citation coverage, picks Qloo can't find or disambiguate, and where they land, with a plain caveat that this is not the quality test |
+| 2 | `qloo_where_popular` results were buried inside food-slot evidence | No geographic view | **Crowd map**: one call per side, overlap areas computed server-side, top three street-team areas, SVG with hover tooltips and a table view; in the PDF too |
+| 3 | Any follow-up ("who opens if the support act cancels?") needed a full re-plan | Re-plan only | **Ask House Mix**: tool loop over the real Qloo tools, NDJSON stream of calls, cited lines, Critic check, proposals land as pending queue items built from the ledger |
+| 4 | Every seed had the same entity in two slots (parallel programmers both passed the duplicate check while the claim check ran) | 2–7 duplicate entities per seed | Duplicates re-checked after the claim check, before items are stored; seeds regenerated |
+| 5 | Mock place IDs from a stored plan stopped resolving after a restart, so swap and rank failed on food slots | `needs_input` (not_found) | Mock materialises every fixture city's places before an ID lookup, as real IDs persist |
+| 6 | Mock heatmap points were random per entity, so two acts could never share an area | 0 overlap | Mock cells sit on a fixed per-city grid like geohash cells |
+| 7 | Ask cost $0.17 a question | Full tool descriptions and schemas | Two-sentence descriptions, no per-field prose: $0.07–0.14 including the Critic |
+| 8 | Looked-up names leaked into mock recommendations: after the "Without Qloo" lookups, the sports plan recommended "Spotify (sponsor-fit 8/10)" and the festival "Lido Pimienta (stretch)" | Every name ever looked up joined the candidate pools | Names created at runtime resolve but are never candidates; only the committed registry and fixture pool are; registry reset and all four seeds regenerated |
+| 9 | Mock search found descriptions as if they were entities ("Natural wine and spritz bar") | 15/15 Claude-alone picks "found" | Descriptive phrases and "X or Y" alternatives return not_found, as a catalogue search would |
+| 10 | Ask answered a replacement question with an act already in the plan, and proposed a #8-of-10 result | Weak answer on the concert seed | Prompt: direct answer first; replacements come from recommend → drop what's in the plan → `qloo_rank`, proposals cite the rank call |
+| 11 | A malformed `final_answer` line crashed Ask | 500 on the seed run | Lines are normalised; malformed ones are dropped as uncited |
+| 12 | Same-millisecond writes of one key collided in the file store (double-mounted effect in dev) | 500 on the map's first load | Unique temp names; one in-flight build per show for the map and the comparison |

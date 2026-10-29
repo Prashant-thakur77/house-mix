@@ -143,7 +143,7 @@ describe("approvals, exports and share", () => {
       { ...base, id: "b2", confidence: "reduced" as const, isWildcard: false, approval: { state: "pending" as const } },
       { ...base, id: "b3", confidence: "high" as const, isWildcard: true, approval: { state: "pending" as const } },
     ];
-    const copy: Show = { ...show, id: "s_bulk", lockedAt: undefined, status: "planned", plan: { ...show.plan!, slots: [{ ...show.plan!.slots[0]!, items }] } };
+    const copy: Show = { ...show, id: "s_bulk", shareId: "share_bulk", lockedAt: undefined, status: "planned", plan: { ...show.plan!, slots: [{ ...show.plan!.slots[0]!, items }] } };
     await getStore().put("shows", copy.id, copy);
     const s = (await post<Show>(`/shows/${copy.id}/approve-confident`)).body;
     expect(s.plan!.slots[0]!.items.map((i) => i.approval.state)).toEqual(["approved", "pending", "pending"]);
@@ -162,9 +162,48 @@ describe("approvals, exports and share", () => {
     expect(share.json().id).toBe(show.id);
   });
 
+  it("adds an Ask proposal to its slot as a pending item, once, and only for the current plan", async () => {
+    const base = show.plan!.slots[0]!.items[0]!;
+    const alt = show.plan!.slots[0]!.alternatives[3]!;
+    const proposal = (id: string, qlooId: string) => ({ id, slotKey: "walk_in", item: { ...base, id: `x_${id}`, pick: { ...base.pick, qlooId, name: "alt" } }, state: "open" as const });
+    const ask = (id: string, planVersion: number, proposals: ReturnType<typeof proposal>[]) => ({ id, question: "q", lines: [], dropped: [], calls: [], proposals, planVersion, costUsd: 0, at: new Date().toISOString() });
+    const copy: Show = { ...show, id: "s_ask", shareId: "share_ask", lockedAt: undefined, status: "planned", asks: [ask("a1", 1, [proposal("p1", alt.qlooId), proposal("p2", base.pick.qlooId)]), ask("a0", 0, [proposal("p3", alt.qlooId)])] };
+    await getStore().put("shows", copy.id, copy);
+    const added = await post<Show>(`/shows/${copy.id}/asks/a1/proposals/p1/add`);
+    expect(added.status).toBe(200);
+    const slot = added.body.plan!.slots[0]!;
+    expect(slot.items.filter((i) => i.pick.qlooId === alt.qlooId).map((i) => i.approval.state)).toEqual(["pending"]);
+    expect(added.body.asks[0]!.proposals[0]!.state).toBe("added");
+    const again = await post<Show>(`/shows/${copy.id}/asks/a1/proposals/p1/add`);
+    expect(again.body.plan!.slots[0]!.items.length).toBe(slot.items.length);
+    expect((await post(`/shows/${copy.id}/asks/a1/proposals/p2/add`)).status).toBe(409);
+    expect((await post(`/shows/${copy.id}/asks/a0/proposals/p3/add`)).status).toBe(409);
+  });
+
+  it("Ask refuses personal data before any model or Qloo call", async () => {
+    const res = await app.inject({ method: "POST", url: `/shows/${show.id}/ask`, payload: { question: "email the plan to booker@example.com" } });
+    const lines = res.body.trim().split("\n").map((l) => JSON.parse(l) as { type: string; code?: string });
+    expect(lines.at(-1)).toMatchObject({ type: "error", code: "guardrail" });
+  });
+
   it("health reports mock mode and readiness", async () => {
     const h = (await app.inject({ url: "/health" })).json();
     expect(h.qlooMode).toBe("mock");
     expect(h.qlooReady).toBe(true);
+  });
+});
+
+describe("crowd map", () => {
+  it("builds one where_popular layer per side and finds areas strong for both", async () => {
+    const created = (await post<Show>("/shows", { ...concert, sides: [{ role: "headliner", name: "Khruangbin" }, { role: "support", name: "Men I Trust" }], houseRules: {} })).body;
+    const { status, body } = await post<NonNullable<Show["heatmap"]>>(`/shows/${created.id}/heatmap`);
+    expect(status).toBe(200);
+    expect(body.layers.map((l) => l.evidence.tool)).toEqual(["qloo_where_popular", "qloo_where_popular"]);
+    expect(body.layers.every((l) => l.points.length > 0)).toBe(true);
+    const ids = body.layers.map((l) => new Set(l.points.map((p) => p.id)));
+    expect(body.overlap.every((id) => ids.every((set) => set.has(id)))).toBe(true);
+    expect(body.overlap.length).toBeGreaterThan(0);
+    const stored = (await app.inject({ url: `/shows/${created.id}` })).json() as Show;
+    expect(stored.heatmap?.layers.length).toBe(2);
   });
 });

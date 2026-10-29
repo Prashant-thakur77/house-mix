@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { config } from "../config.ts";
@@ -35,7 +36,8 @@ export class FileStore implements Store {
   async put<T>(col: Collection, id: string, doc: T): Promise<void> {
     const f = this.file(col, id);
     await fs.mkdir(path.dirname(f), { recursive: true });
-    const tmp = `${f}.${process.pid}.${Date.now()}.tmp`;
+    // Unique per write: two writes of the same key in the same millisecond must not share a temp file.
+    const tmp = `${f}.${process.pid}.${randomUUID().slice(0, 8)}.tmp`;
     await fs.writeFile(tmp, JSON.stringify(doc, null, 1));
     await fs.rename(tmp, f);
   }

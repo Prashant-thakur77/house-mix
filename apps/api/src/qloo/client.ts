@@ -70,7 +70,7 @@ export function canonical(value: unknown): string {
 }
 
 /** Bump when the mock's behaviour changes, so cached mock envelopes are not reused. */
-export const MOCK_VERSION = "mock-2";
+export const MOCK_VERSION = "mock-6";
 
 export function cacheKey(mode: string, tool: string, args: unknown): string {
   const ns = mode === "mock" ? MOCK_VERSION : mode;

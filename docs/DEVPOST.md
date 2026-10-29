@@ -17,7 +17,10 @@ Every night, someone at a venue decides the walk-in music, the opener, the halft
 7. **Approval queue.** Approve, swap (a fresh `qloo_rank` over the slot's remaining alternatives) or reject with a reason, which becomes a negative signal the next plan excludes. Lock the plan to version and timestamp it.
 8. **Exports.** Run-of-show PDF, ops CSV, a read-only share link, and a sponsor one-pager per brand with its fit score and evidence.
 9. **Pre-show briefing.** A two-voice script for door, bar and stage staff. Every line cites plan facts, and an evidence judge drops lines it can't support. Voiced with Cloud Text-to-Speech.
-10. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
+10. **Crowd map.** One `qloo_where_popular` call per side shows where each side's taste concentrates in the city, which areas are strong for every side, and the top three for street teams, flyering and pre-show partner bars. It goes into the PDF too.
+11. **Without Qloo.** The headline comparison, inside the product. Claude plans the same brief with no tools. Qloo then looks up each of those picks by name (`qloo_describe`) and ranks both plans' top picks per slot for tonight's bill, city and crowd (`qloo_rank`). The panel shows citation coverage (House Mix 100%, Claude alone 0%), how many knowledge-only picks Qloo can't find or can't disambiguate, and where they land for this crowd. It says plainly that Qloo grading its own picks is not a quality test; the blind A/B is.
+12. **Ask House Mix.** "If the support act cancels, who opens?" A tool-using Claude loop over the same Qloo tools answers from the plan's calls plus new ones. Every line cites call IDs, the Critic removes lines that don't hold up, and any suggested change arrives as a pending item in the approval queue, with its evidence built from the ledger like every other pick.
+13. **Tonight vs last night.** Two shows side by side with one Qloo comparison across both bills.
 
 ## How we use Qloo
 
@@ -27,13 +30,13 @@ All 10 `qloo mcp` tools do load-bearing work, and no plan item can exist without
 | --- | --- |
 | `qloo_capabilities` | Readiness at boot and in the health badge |
 | `qloo_find_tags` | Turns vibe words into tag URNs (the operator picks when the match isn't exact) |
-| `qloo_describe` | Turns every name into a confirmed ID, so every later call passes IDs, never names |
+| `qloo_describe` | Turns every name into a confirmed ID, so every later call passes IDs, never names; checks whether Claude-alone picks exist in Qloo at all |
 | `qloo_compare_audiences` | Home vs away, headliner vs support, act vs venue; crowd vs brand for sponsor fit; tonight vs last night |
 | `qloo_audience_demographics` | Aggregate age skew for tone and pricing; the age-only phrase we pass back to `qloo_rank` |
 | `qloo_entity_tags` | The crowd's taste vocabulary |
 | `qloo_recommend` | Candidates for every slot, and the wildcard (recommend with the crowd's top tags excluded) |
-| `qloo_rank` | Orders each shortlist (≤10 options) including the venue's own local acts; powers swap |
-| `qloo_where_popular` | Where the crowd's taste concentrates in the city, for food, drink and the after-party guide |
+| `qloo_rank` | Orders each shortlist (≤10 options) including the venue's own local acts; powers swap; ranks House Mix vs Claude-alone picks for the same crowd |
+| `qloo_where_popular` | Where the crowd's taste concentrates in the city, for food, drink, the after-party guide and the crowd map's street-team areas |
 | `qloo_trends` | Rising flags on opener candidates and the momentum chart |
 
 **Evidence that can't be faked.** Agents submit picks as `{entity_id, call_id}` pairs. A PreToolUse hook (the Critic's first step) rejects a submission when the cited call isn't in this run's ledger, its status carries no results, or the entity isn't in its results. The server then builds each item's evidence from the ledger itself: tool, inputs, status, scores and endpoint. A Claude claim check removes or trims any interpretation that asserts something the evidence doesn't show. Every removal shows in the trace.
@@ -76,7 +79,8 @@ The report generator also writes one honest negative result: the comparison Hous
 - Local acts, small vendors and comedians can have thin or no Qloo coverage. Those are labelled "no Qloo signal", never filled in by the model.
 - Demographics are used only for tone and pricing; House Mix refuses eligibility-type requests and personal data.
 - Sponsor fit is our formula (mean affinity similarity) over Qloo's comparison, not a Qloo score.
+- "Without Qloo" is a per-show illustration, not a metric: Qloo is ranking House Mix's own picks there. The blind A/B is the quality claim.
 
 ## Built with
 
-TypeScript, Claude Agent SDK (Planner + subagents + hooks), Anthropic SDK (Critic, briefing writer and judge, eval baselines), MCP TypeScript SDK, `@qloo/qloo-harness` (`qloo mcp`), Fastify, Firestore, Cloud Storage, Cloud Text-to-Speech, Cloud Run, Next.js 16, shadcn/ui, Tailwind v4, Recharts, react-pdf, Playwright, axe-core.
+TypeScript, Claude Agent SDK (Planner + subagents + hooks), Anthropic SDK (Ask House Mix tool loop, Critic, briefing writer and judge, Claude-alone baseline), MCP TypeScript SDK, `@qloo/qloo-harness` (`qloo mcp`), Fastify, Firestore, Cloud Storage, Cloud Text-to-Speech, Cloud Run, Next.js 16, shadcn/ui, Tailwind v4, Recharts, react-pdf, Playwright, axe-core.

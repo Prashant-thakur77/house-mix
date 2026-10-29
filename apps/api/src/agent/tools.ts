@@ -204,6 +204,17 @@ export function houseMixServer(ctx: RunContext) {
             ctx.criticDrops++;
             ctx.emit({ type: "critic", at: ctx.now(), slotKey: args.slot_key, pick: d.pick, reason: d.reason });
           }
+          // Re-check after the (async) claim check: a parallel programmer may have taken the same entity meanwhile.
+          const takenElsewhere = new Map([...ctx.slots].filter(([k]) => k !== args.slot_key).flatMap(([k, s]) => s.items.map((i) => [i.pick.qlooId, k] as const)));
+          verdict.kept = verdict.kept.filter((k) => {
+            const other = takenElsewhere.get(k.pick.qlooId);
+            if (!other) return true;
+            ctx.criticDrops++;
+            const reason = `already used in slot ${other}; pick a different entity`;
+            verdict.dropped.push({ pick: k.pick.name, reason });
+            ctx.emit({ type: "critic", at: ctx.now(), slotKey: args.slot_key, pick: k.pick.name, reason });
+            return false;
+          });
           const replaced = new Set(verdict.kept.map((k) => k.pick.qlooId));
           slot.items = [...slot.items.filter((x) => !replaced.has(x.pick.qlooId)), ...verdict.kept].sort((a, b) => Number(a.isWildcard) - Number(b.isWildcard));
           // Alternatives for "swap": everything else the cited rank/recommend calls returned.

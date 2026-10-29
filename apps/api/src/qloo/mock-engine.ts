@@ -38,6 +38,8 @@ interface PoolEntity {
   address?: string;
   geocode?: { latitude: number; longitude: number };
   thin?: boolean;
+  /** Created at runtime from a looked-up name: resolvable by name and ID, but never a recommendation candidate. */
+  lookupOnly?: boolean;
 }
 
 interface PoolTag {
@@ -104,7 +106,7 @@ for (const [key, cands] of Object.entries(POOL.ambiguous)) {
 
 
 function loadSynthetics() {
-  for (const v of Object.values(syntheticSeen)) makeSynthetic(v.name, v.type);
+  for (const [id, v] of Object.entries(syntheticSeen)) makeSynthetic(v.name, v.type, !(id in COMMITTED_SYNTHETICS));
 }
 
 function tagsFor(seed: string, type: string): string[] {
@@ -168,13 +170,16 @@ const readJsonFile = (f: string): Record<string, { name: string; type: string }>
     return {};
   }
 };
-// The committed registry keeps the seeded demo shows' IDs resolvable on a fresh deployment.
+// The committed registry keeps the seeded demo shows' IDs resolvable on a fresh deployment. Only these
+// join the recommendation pools; names looked up at runtime (e.g. the "Without Qloo" picks) never do,
+// so one lookup can't turn "Spotify (sponsor-fit 8/10)" into a candidate for every later plan.
+const COMMITTED_SYNTHETICS = readJsonFile(path.join(REPO_ROOT, "fixtures/mock/synthetic.json"));
 const syntheticSeen: Record<string, { name: string; type: string }> = {
-  ...readJsonFile(path.join(REPO_ROOT, "fixtures/mock/synthetic.json")),
+  ...COMMITTED_SYNTHETICS,
   ...readJsonFile(SYNTHETIC_FILE),
 };
 
-function makeSynthetic(name: string, type: string): PoolEntity {
+function makeSynthetic(name: string, type: string, lookupOnly = true): PoolEntity {
   const id = mockUuid(`${type}|${norm(name)}`);
   return (
     ENTITIES.get(id) ??
@@ -186,6 +191,7 @@ function makeSynthetic(name: string, type: string): PoolEntity {
       popularity: 0.5 + rand(`${id}|pop`) * 0.45,
       description: `Mock entity for "${name.trim()}" (fictional profile)`,
       thin: type !== "brand" && rand(`${id}|thin`) < 0.25,
+      lookupOnly,
     })
   );
 }
@@ -246,6 +252,9 @@ function candidate(e: PoolEntity) {
 
 function resolveEntity(input: string, field: string, scope?: string): Resolution {
   if (UUID_RE.test(input)) {
+    // Places are generated per city on first use; make sure every fixture city's places exist
+    // so place IDs from an earlier process (stored plans) still resolve, as real Qloo IDs do.
+    if (!ENTITIES.has(input)) for (const c of Object.keys(POOL.cities)) placesIn(c);
     const e = ENTITIES.get(input);
     if (e) return { ok: true, entity: e, match: "identifier", input };
     return { ok: false, issue: { input, kind: "not_found", input_kind: "entity", field, ...(scope ? { scope: `urn:entity:${scope}` } : {}), provenance: resProv("/entities", "identifier_lookup") } };
@@ -253,6 +262,13 @@ function resolveEntity(input: string, field: string, scope?: string): Resolution
   const n = norm(input);
   const prov = resProv("/search", "exact_name_context_or_choice");
   if (POOL.notFoundPrefixes.some((p) => n.startsWith(p))) {
+    return { ok: false, issue: { input, kind: "not_found", input_kind: "entity", field, ...(scope ? { scope: `urn:entity:${scope}` } : {}), provenance: prov } };
+  }
+  // Search finds named things, not descriptions: "Natural wine and spritz bar" or
+  // "Patagonia / outdoor apparel collab" is not an entity in the catalogue.
+  const words = input.trim().split(/\s+/);
+  const lower = words.filter((w) => /^[a-z]/.test(w)).length;
+  if ((words.length >= 4 && lower / words.length > 0.5) || /\(e\.g\.|\s\/\s|\s+or\s+/i.test(input)) {
     return { ok: false, issue: { input, kind: "not_found", input_kind: "entity", field, ...(scope ? { scope: `urn:entity:${scope}` } : {}), provenance: prov } };
   }
   const amb = POOL.ambiguous[n];
@@ -538,7 +554,7 @@ function recommend(a: Rec, started: number): Rec {
   const included = new Set(inc.ok.map((r) => r.tag.key));
   const signalIds = new Set(sig.ok.map((r) => r.entity.id));
   const loc = (a.filter_location ?? a.signal_location) as string | undefined;
-  const pool = target === "place" ? placesIn(loc ?? "unknown city") : [...ENTITIES.values()].filter((e) => e.type === target && !e.thin);
+  const pool = target === "place" ? placesIn(loc ?? "unknown city") : [...ENTITIES.values()].filter((e) => e.type === target && !e.thin && !e.lookupOnly);
   const seed = JSON.stringify([...signalIds, ...signalTags, a.signal_location, a.demographic]);
   const scored = pool
     .filter((e) => !signalIds.has(e.id))
@@ -656,12 +672,26 @@ function wherePopular(a: Rec, started: number): Rec {
   const centre = key ? POOL.cities[key]! : undefined;
   const count = nowhere ? 0 : centre ? limit : Math.min(3, limit);
   const [lat, lon] = centre ?? [rand(`${within}|lat`) * 100 - 50, rand(`${within}|lon`) * 300 - 150];
-  const results = Array.from({ length: count }, (_, i) => {
-    const seed = `${r.entity.id}|${within}|${i}`;
-    const la = round(lat + (rand(`${seed}|a`) - 0.5) * 0.16, 4);
-    const lo = round(lon + (rand(`${seed}|o`) - 0.5) * 0.16, 4);
-    return { location: { latitude: la, longitude: lo, geohash: createHash("md5").update(`${la},${lo}`).digest("hex").slice(0, 6) }, query: { affinity: round(0.35 + rand(`${seed}|f`) * 0.6), affinity_rank: round(0.5 + rand(`${seed}|r`) * 0.5), popularity: round(rand(`${seed}|p`)) } };
-  }).sort((x, y) => y.query.affinity - x.query.affinity);
+  // Heatmap cells sit on a fixed grid per city (like geohash cells), so two entities can share areas.
+  // Each entity draws its cells from the grid, weighted towards its own hot corner of the city.
+  const STEP = 0.022;
+  const grid = Array.from({ length: 49 }, (_, k) => [lat + (Math.floor(k / 7) - 3) * STEP, lon + ((k % 7) - 3) * STEP * 1.3] as const);
+  const hot = [Math.floor(rand(`${r.entity.id}|hx`) * 7), Math.floor(rand(`${r.entity.id}|hy`) * 7)];
+  const scored = grid
+    .map(([la, lo], k) => {
+      const d = Math.hypot(Math.floor(k / 7) - hot[0]!, (k % 7) - hot[1]!);
+      return { la, lo, k, w: 1 / (1 + d) + rand(`${r.entity.id}|${within}|${k}`) * 0.55 };
+    })
+    .sort((x, y) => y.w - x.w)
+    .slice(0, count);
+  const top = scored[0]?.w ?? 1;
+  const results = scored
+    .map(({ la, lo, k, w }) => {
+      const seed = `${r.entity.id}|${within}|${k}`;
+      const cell = `${round(la, 4)},${round(lo, 4)}`;
+      return { location: { latitude: round(la, 4), longitude: round(lo, 4), geohash: createHash("md5").update(`${within}|${cell}`).digest("hex").slice(0, 6) }, query: { affinity: round(0.3 + 0.65 * (w / top)), affinity_rank: round(0.5 + rand(`${seed}|r`) * 0.5), popularity: round(rand(`${seed}|p`)) } };
+    })
+    .sort((x, y) => y.query.affinity - x.query.affinity);
   const status = count === 0 ? "empty" : centre ? "ok" : "partial";
   return {
     schema_version: "1.0-preview.1",

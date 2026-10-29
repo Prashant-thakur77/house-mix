@@ -26,10 +26,12 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  const next = theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
-  const Icon = !mounted ? SunMoon : theme === "light" ? Sun : theme === "dark" ? Moon : SunMoon;
+  // The stored theme is only known after mount; render "system" until then so server and client HTML match.
+  const current = mounted ? (theme ?? "system") : "system";
+  const next = current === "light" ? "dark" : current === "dark" ? "system" : "light";
+  const Icon = current === "light" ? Sun : current === "dark" ? Moon : SunMoon;
   return (
-    <Button variant="ghost" size="icon" onClick={() => setTheme(next)} aria-label={`Theme: ${mounted ? theme : "system"}. Switch to ${next}.`} title={`Theme: ${mounted ? theme : "system"}`}>
+    <Button variant="ghost" size="icon" onClick={() => setTheme(next)} aria-label={`Theme: ${current}. Switch to ${next}.`} title={`Theme: ${current}`}>
       <Icon />
     </Button>
   );

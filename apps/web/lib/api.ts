@@ -1,4 +1,4 @@
-import type { Briefing, Health, Show, ShowInput, RunState } from "@housemix/shared";
+import type { AskAnswer, Briefing, Counterfactual, Heatmap, Health, QlooToolName, Show, ShowInput, RunState } from "@housemix/shared";
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787").replace(/\/$/, "");
 
@@ -91,6 +91,9 @@ export const api = {
   lock: (id: string) => post<Show>(`/shows/${id}/lock`),
   unlock: (id: string) => post<Show>(`/shows/${id}/unlock`),
   briefing: (id: string, force = false) => post<Briefing>(`/shows/${id}/briefing`, { force }),
+  heatmap: (id: string, force = false) => post<Heatmap>(`/shows/${id}/heatmap`, { force }),
+  counterfactual: (id: string, force = false) => post<Counterfactual>(`/shows/${id}/counterfactual`, { force }),
+  addProposal: (id: string, askId: string, proposalId: string) => post<Show>(`/shows/${id}/asks/${askId}/proposals/${proposalId}/add`),
   compare: (a: string, b: string) => req<CompareResult>(`/compare?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`),
   pairs: () => req<{ pairs: BlindPair[]; note?: string }>("/eval/pairs"),
   rate: (rating: unknown) => post<{ ok: true }>("/eval/ratings", rating),
@@ -100,3 +103,49 @@ export const exportUrl = (id: string, kind: "pdf" | "csv") => `${API_URL}/shows/
 export const sponsorUrl = (id: string, itemId: string) => `${API_URL}/shows/${id}/items/${itemId}/sponsor.pdf`;
 export const audioUrl = (path: string) => `${API_URL}${path}`;
 export const eventsUrl = (runId: string) => `${API_URL}/runs/${runId}/events`;
+
+export type AskStreamEvent =
+  | { type: "status"; text: string }
+  | { type: "tool"; callId: string; tool: QlooToolName; args: Record<string, unknown>; status: string; summary: string; resultCount: number; cached: boolean }
+  | { type: "answer"; answer: AskAnswer }
+  | { type: "error"; code: string; message: string };
+
+/** Ask House Mix: the server streams NDJSON (Qloo calls as they happen, then the checked answer). */
+export async function askStream(id: string, question: string, onEvent: (e: AskStreamEvent) => void, signal?: AbortSignal): Promise<AskAnswer> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_URL}/shows/${id}/ask`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question }), signal });
+  } catch {
+    throw new ApiError(0, "network", "Can't reach the House Mix API. Check your connection and try again.");
+  }
+  if (!res.ok || !res.body) {
+    let body: { error?: string; message?: string } = {};
+    try {
+      body = await res.json();
+    } catch {
+      // non-JSON error body
+    }
+    throw new ApiError(res.status, body.error ?? "error", body.message ?? `Request failed (${res.status}).`);
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = "";
+  let answer: AskAnswer | undefined;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (value) buf += decoder.decode(value, { stream: true });
+    let nl: number;
+    while ((nl = buf.indexOf("\n")) >= 0) {
+      const line = buf.slice(0, nl).trim();
+      buf = buf.slice(nl + 1);
+      if (!line) continue;
+      const e = JSON.parse(line) as AskStreamEvent;
+      if (e.type === "error") throw new ApiError(422, e.code, e.message);
+      if (e.type === "answer") answer = e.answer;
+      onEvent(e);
+    }
+    if (done) break;
+  }
+  if (!answer) throw new ApiError(502, "no_answer", "The answer stream ended early. Try again.");
+  return answer;
+}

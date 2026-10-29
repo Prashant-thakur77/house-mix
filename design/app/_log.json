@@ -14,9 +14,9 @@
     }
   ],
   "maxHeight": 6000,
-  "updatedAt": "2026-10-29T11:04:37.524Z",
+  "updatedAt": "2026-10-29T15:45:45.061Z",
   "summary": {
-    "captured": 15,
+    "captured": 18,
     "skipped": [],
     "errors": []
   },
@@ -80,7 +80,7 @@
       "slug": "landing",
       "url": "http://localhost:3000/",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:50:32.412Z",
+      "capturedAt": "2026-10-29T15:44:52.703Z",
       "meta": {
         "path": "/"
       },
@@ -94,40 +94,40 @@
           "scheme": "light",
           "file": "design/app/landing/desktop-light.png",
           "width": 1440,
-          "height": 1967,
-          "fullHeight": 1967,
-          "bytes": 202564,
-          "brightness": 0.947
+          "height": 1919,
+          "fullHeight": 1919,
+          "bytes": 221968,
+          "brightness": 0.943
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/landing/desktop-dark.png",
           "width": 1440,
-          "height": 1967,
-          "fullHeight": 1967,
-          "bytes": 202636,
-          "brightness": 0.086
+          "height": 1919,
+          "fullHeight": 1919,
+          "bytes": 223765,
+          "brightness": 0.092
         },
         {
           "viewport": "mobile",
           "scheme": "light",
           "file": "design/app/landing/mobile-light.png",
           "width": 390,
-          "height": 3603,
-          "fullHeight": 3603,
-          "bytes": 223190,
-          "brightness": 0.936
+          "height": 3935,
+          "fullHeight": 3935,
+          "bytes": 244900,
+          "brightness": 0.935
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/landing/mobile-dark.png",
           "width": 390,
-          "height": 3603,
-          "fullHeight": 3603,
-          "bytes": 224303,
-          "brightness": 0.113
+          "height": 3935,
+          "fullHeight": 3935,
+          "bytes": 248572,
+          "brightness": 0.115
         }
       ]
     },
@@ -520,34 +520,34 @@
       "slug": "show-concert",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:59:37.499Z",
+      "capturedAt": "2026-10-29T15:44:52.704Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
       "hasDarkVariant": true,
       "renderedScheme": "both",
       "consent": "skipped (own app)",
-      "title": "House Mix",
+      "title": "Khruangbin with Men I Trust · House Mix",
       "files": [
         {
           "viewport": "desktop",
           "scheme": "light",
           "file": "design/app/show-concert/desktop-light.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 248099,
-          "brightness": 0.943
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 273381,
+          "brightness": 0.958
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/show-concert/desktop-dark.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 248145,
-          "brightness": 0.116
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 274093,
+          "brightness": 0.066
         },
         {
           "viewport": "mobile",
@@ -555,9 +555,9 @@
           "file": "design/app/show-concert/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 461861,
-          "brightness": 0.935
+          "fullHeight": 12398,
+          "bytes": 446650,
+          "brightness": 0.938
         },
         {
           "viewport": "mobile",
@@ -565,9 +565,64 @@
           "file": "design/app/show-concert/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 474254,
-          "brightness": 0.123
+          "fullHeight": 12398,
+          "bytes": 458224,
+          "brightness": 0.121
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-ask",
+      "url": "http://localhost:3000/shows/seed-concert",
+      "status": "captured",
+      "capturedAt": "2026-10-29T15:45:09.844Z",
+      "meta": {
+        "path": "/shows/seed-concert"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "Khruangbin with Men I Trust · House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-concert-ask/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 439696,
+          "brightness": 0.946
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-concert-ask/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 430377,
+          "brightness": 0.065
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-concert-ask/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12398,
+          "bytes": 485549,
+          "brightness": 0.937
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-concert-ask/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12398,
+          "bytes": 497758,
+          "brightness": 0.122
         }
       ]
     },
@@ -630,34 +685,34 @@
       "slug": "show-concert-full",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:59:37.499Z",
+      "capturedAt": "2026-10-29T15:44:52.704Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
       "hasDarkVariant": true,
       "renderedScheme": "both",
       "consent": "skipped (own app)",
-      "title": "House Mix",
+      "title": "Khruangbin with Men I Trust · House Mix",
       "files": [
         {
           "viewport": "desktop",
           "scheme": "light",
           "file": "design/app/show-concert-full/desktop-light.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 248099,
-          "brightness": 0.943
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 273381,
+          "brightness": 0.958
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/show-concert-full/desktop-dark.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 248145,
-          "brightness": 0.116
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 274093,
+          "brightness": 0.066
         },
         {
           "viewport": "mobile",
@@ -665,9 +720,9 @@
           "file": "design/app/show-concert-full/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 461861,
-          "brightness": 0.935
+          "fullHeight": 12398,
+          "bytes": 446650,
+          "brightness": 0.938
         },
         {
           "viewport": "mobile",
@@ -675,9 +730,64 @@
           "file": "design/app/show-concert-full/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 474254,
-          "brightness": 0.123
+          "fullHeight": 12398,
+          "bytes": 458224,
+          "brightness": 0.121
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-map",
+      "url": "http://localhost:3000/shows/seed-concert",
+      "status": "captured",
+      "capturedAt": "2026-10-29T15:45:22.106Z",
+      "meta": {
+        "path": "/shows/seed-concert"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "Khruangbin with Men I Trust · House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-concert-map/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 273381,
+          "brightness": 0.958
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-concert-map/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6775,
+          "bytes": 318080,
+          "brightness": 0.066
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-concert-map/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12398,
+          "bytes": 446645,
+          "brightness": 0.938
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-concert-map/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12398,
+          "bytes": 458106,
+          "brightness": 0.121
         }
       ]
     },
@@ -843,6 +953,61 @@
           "fullHeight": 8853,
           "bytes": 460218,
           "brightness": 0.121
+        }
+      ]
+    },
+    {
+      "slug": "show-sports-without-qloo",
+      "url": "http://localhost:3000/shows/seed-sports",
+      "status": "captured",
+      "capturedAt": "2026-10-29T15:45:22.142Z",
+      "meta": {
+        "path": "/shows/seed-sports"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "Chelsea FC vs Arsenal FC · House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-sports-without-qloo/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6797,
+          "bytes": 269665,
+          "brightness": 0.958
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-sports-without-qloo/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6797,
+          "bytes": 302231,
+          "brightness": 0.065
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-sports-without-qloo/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12226,
+          "bytes": 436883,
+          "brightness": 0.94
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-sports-without-qloo/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12226,
+          "bytes": 449030,
+          "brightness": 0.12
         }
       ]
     }

@@ -102,3 +102,32 @@ test("every mode has its own intake fields", async ({ page }) => {
   await page.getByRole("radio", { name: /festival/i }).click();
   await expect(page.getByLabel("Stage for act 1")).toBeVisible();
 });
+
+test("console: crowd map, Without Qloo comparison and a cited Ask answer", async ({ page }) => {
+  await page.goto("/shows/seed-concert");
+  const map = page.getByRole("region", { name: /taste concentrates/i });
+  await expect(map).toBeVisible();
+  await expect(map.getByRole("img", { name: /qloo heatmap of los angeles/i })).toBeVisible();
+  await expect(map.getByText("Street teams & flyering")).toBeVisible();
+  await map.getByText(/areas as a table/i).click();
+  await expect(map.getByRole("table")).toBeVisible();
+
+  const cf = page.getByRole("region", { name: "Without Qloo" });
+  await expect(cf).toBeVisible();
+  await expect(cf.getByText(/claude-alone picks qloo could find/i)).toBeVisible();
+  await expect(cf.getByText("Claude alone").first()).toBeVisible();
+  await expect(cf.getByText(/not an independent quality test/i)).toBeVisible();
+
+  await page.getByRole("button", { name: /^ask$/i }).click();
+  const sheet = page.getByRole("dialog", { name: "Ask House Mix" });
+  await expect(sheet).toBeVisible();
+  const answer = sheet.locator("article").first();
+  await expect(answer.getByText("House Mix, from Qloo")).toBeVisible();
+  await answer.getByRole("button", { name: /qloo evidence/i }).first().click();
+  await expect(answer.getByText(/^qloo_/).first()).toBeVisible();
+
+  // Personal data is refused before anything reaches Claude or Qloo.
+  await sheet.getByLabel("Your question").fill("email the plan to booker@example.com");
+  await sheet.getByRole("button", { name: /^ask$/i }).click();
+  await expect(page.getByText(/personal data/i).first()).toBeVisible();
+});

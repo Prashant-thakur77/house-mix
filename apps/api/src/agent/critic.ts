@@ -47,14 +47,14 @@ export function gateItems(ctx: RunContext, slotKey: string, items: SubmittedItem
   return problems;
 }
 
-function evidenceFrom(call: LedgerCall, entityId: string): Evidence {
+export function evidenceFrom(call: LedgerCall, entityId?: string): Evidence {
   return {
     callId: call.callId,
     tool: call.tool,
     inputs: call.args,
     status: call.status,
     summary: call.summary,
-    scores: scoresFor(call, entityId),
+    scores: entityId ? scoresFor(call, entityId) : {},
     entityId,
     endpoint: call.endpoint,
     source: call.cached ? "cache" : call.source,
@@ -149,8 +149,8 @@ export async function claimCheck(items: PlanItem[]): Promise<CriticOutcome & { c
 }
 
 /** Claude check for free-text lines (crowd read interpretation, briefing lines). */
-export async function checkLines(lines: string[], evidence: unknown): Promise<{ kept: string[]; dropped: { text: string; reason: string }[]; costUsd: number }> {
-  if (lines.length === 0) return { kept: [], dropped: [], costUsd: 0 };
+export async function checkLines(lines: string[], evidence: unknown): Promise<{ kept: string[]; keptIndex: number[]; dropped: { text: string; reason: string }[]; costUsd: number }> {
+  if (lines.length === 0) return { kept: [], keptIndex: [], dropped: [], costUsd: 0 };
   const { data, costUsd } = await structured({
     purpose: "critic",
     schema: Verdicts,
@@ -163,12 +163,14 @@ export async function checkLines(lines: string[], evidence: unknown): Promise<{ 
   });
   const byIndex = new Map(data.verdicts.map((v) => [v.index, v]));
   const kept: string[] = [];
+  const keptIndex: number[] = [];
   const dropped: { text: string; reason: string }[] = [];
   lines.forEach((text, i) => {
     const v = byIndex.get(i);
-    if (!v || v.verdict === "keep") kept.push(text);
-    else if (v.verdict === "revise" && v.revised_interpretation.trim()) kept.push(v.revised_interpretation.trim());
-    else dropped.push({ text, reason: v.reason });
+    if (!v || v.verdict === "keep" || (v.verdict === "revise" && v.revised_interpretation.trim())) {
+      kept.push(v?.verdict === "revise" ? v.revised_interpretation.trim() : text);
+      keptIndex.push(i);
+    } else dropped.push({ text, reason: v.reason });
   });
-  return { kept, dropped, costUsd };
+  return { kept, keptIndex, dropped, costUsd };
 }
