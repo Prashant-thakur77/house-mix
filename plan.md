@@ -205,10 +205,10 @@ Hook → sports intake (home vs away) → "Genesis" triggers `needs_input` confi
 - [x] **P3 Store + shows + resolution** — FileStore/FirestoreStore, `POST /shows`, confirm flow, guardrails. *Done when* "Genesis" returns a pending confirmation and confirm resolves it (API test).
 - [x] **P4 Agent pipeline** — Planner + subagents, proxy MCP, hooks, Critic, SSE run events, slot templates for 4 modes. *Done when* a mock-mode run produces a full plan where 100% of items have valid evidence and the trace shows every call.
 - [x] **P5 Approvals, exports, share, compare** — approve/swap/reject/lock, PDF/CSV/sponsor PDF, share, compare. *Done when* API tests cover each and the PDF opens.
-- [ ] **P6 Briefing** — script, judge, TTS, MP3. *Done when* a briefing with ≥1 judged-out line is produced and audio plays (or the TTS reason is shown).
-- [ ] **P7 UI research** — screenshots, REFERENCES.md, DIRECTION.md. *Done when* both docs exist with scores and tokens.
-- [ ] **P8 Web app** — all screens, states, a11y; screenshots to design/app. *Done when* Playwright e2e + axe pass in mock mode and screenshots are reviewed against references.
-- [ ] **P9 Seeds** — 3 seeded shows (+ festival). *Done when* `/` shows them and each opens a full plan instantly.
+- [x] **P6 Briefing** — script, judge, TTS, MP3. *Done when* a briefing with ≥1 judged-out line is produced and audio plays (or the TTS reason is shown).
+- [x] **P7 UI research** — screenshots, REFERENCES.md, DIRECTION.md. *Done when* both docs exist with scores and tokens.
+- [x] **P8 Web app** — all screens, states, a11y; screenshots to design/app. *Done when* Playwright e2e + axe pass in mock mode and screenshots are reviewed against references.
+- [x] **P9 Seeds** — 3 seeded shows (+ festival). *Done when* `/` shows them and each opens a full plan instantly.
 - [ ] **P10 Eval kit** — A/B, backtest, evidence-rate, report generator. *Done when* unit tests pass and `REPORT.md` renders with "pending live Qloo key" where data is missing.
 - [ ] **P11 Docs** — README, DEVPOST, VIDEO_SCRIPT, QLOO_WALKTHROUGH (template until live), FRICTION_LOG, LIMITATIONS. *Done when* every deliverable file exists.
 - [ ] **P12 Deploy** — Cloud Run + Vercel. *Done when* hosted URLs work without login (needs GCP project from the user).

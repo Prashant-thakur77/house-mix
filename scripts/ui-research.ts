@@ -19,8 +19,14 @@
  *   --viewports d,m     desktop and/or mobile (default both)
  *   --max-height 6000   clip full-page captures at this CSS-pixel height
  *   --format png|jpeg   default png; refs fall back to jpeg (q82) when a png exceeds 4 MB
- *   --reduced-motion    emulate prefers-reduced-motion: reduce (default on in app mode for stable shots)
+ *   --reduced-motion    refs mode: emulate prefers-reduced-motion: reduce
+ *   --motion            app mode: keep motion on (app mode emulates reduced motion by default for stable shots)
  *   --concurrency 3     sites captured in parallel
+ *   UI_DEBUG=1          print per-step timings
+ *
+ * Config: per-site `actions` / `settleMs` in ui-refs.json (sound gates, intro animations); per-route
+ * `actions` (click/fill/press/hover/waitFor/wait/scroll by selector or role+name, name may be "/regex/i"),
+ * `waitFor` and `unlockScroll` in app-routes.json.
  */
 import { chromium, devices, type Browser, type BrowserContext, type Frame, type Locator, type Page } from "playwright";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -59,6 +65,8 @@ interface AppRoute {
   actions?: AppAction[];
   /** selector that must be visible before capture; overrides the config-level default */
   waitFor?: string;
+  /** release an inner scroll container so a full-page capture shows everything (off for viewport-fitted consoles) */
+  unlockScroll?: boolean;
 }
 
 interface AppRoutesConfig {
@@ -76,6 +84,7 @@ interface Target {
   actions?: AppAction[];
   waitFor?: string;
   settleMs?: number;
+  unlockScroll?: boolean;
   meta?: Record<string, string | undefined>;
 }
 
@@ -87,6 +96,7 @@ interface CaptureFile {
   height: number;
   fullHeight: number;
   bytes: number;
+  brightness: number;
 }
 
 interface LogEntry {
@@ -115,15 +125,6 @@ interface Options {
   concurrency: number;
 }
 
-interface PageAppearance {
-  /** mean relative luminance of the page background sampled at several points */
-  bgLuminance: number;
-  /** mean relative luminance of text colour across sampled elements */
-  textLuminance: number;
-  /** colour/background triples for the first visible elements, used to diff light vs dark */
-  signature: string[];
-}
-
 /* ----------------------------------------------------------------------------- config */
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -146,7 +147,7 @@ const BLOCK_PATTERNS = [
   /just a moment/i,
   /attention required/i,
   /access denied/i,
-  /verify you are (a )?human/i,
+  /verif(y|ying) (that )?you are (a )?human/i,
   /are you a robot/i,
   /captcha/i,
   /request unsuccessful/i,
@@ -375,91 +376,41 @@ async function warmScroll(page: Page, maxHeight: number): Promise<void> {
   await page.waitForTimeout(700);
 }
 
-async function readAppearance(page: Page): Promise<PageAppearance> {
-  return page.evaluate(() => {
-    // Resolve any CSS colour (rgb, lab, oklch, color()) to sRGB by painting it on a 1x1 canvas.
-    const canvas = document.createElement("canvas");
-    canvas.width = canvas.height = 1;
-    const g = canvas.getContext("2d", { willReadFrequently: true });
-    const cache = new Map<string, [number, number, number, number] | null>();
-    const parse = (c: string): [number, number, number, number] | null => {
-      if (cache.has(c)) return cache.get(c)!;
-      let out: [number, number, number, number] | null = null;
-      if (g && c && c !== "transparent") {
-        g.clearRect(0, 0, 1, 1);
-        g.fillStyle = "rgba(0,0,0,0)";
-        g.fillStyle = c;
-        g.fillRect(0, 0, 1, 1);
-        const [r, gr, b, a] = g.getImageData(0, 0, 1, 1).data;
-        out = [r, gr, b, a / 255];
-      }
-      cache.set(c, out);
-      return out;
-    };
-    const lum = ([r, g, b]: number[]) => {
-      const ch = (v: number) => {
-        const s = v / 255;
-        return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-      };
-      return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b);
-    };
-    /** luminance of the first opaque background behind a point, or -1 when nothing opaque is found */
-    const bgAt = (x: number, y: number): number => {
-      let el: Element | null = document.elementFromPoint(x, y);
-      while (el) {
-        const c = parse(getComputedStyle(el).backgroundColor);
-        if (c && c[3] > 0.5) return lum(c);
-        el = el.parentElement;
-      }
-      const root = parse(getComputedStyle(document.documentElement).backgroundColor);
-      const body = document.body ? parse(getComputedStyle(document.body).backgroundColor) : null;
-      const c = [body, root].find((v) => v && v[3] > 0.5);
-      return c ? lum(c) : -1;
-    };
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const pts: [number, number][] = [
-      [w * 0.05, h * 0.5],
-      [w * 0.5, h * 0.95],
-      [w * 0.95, h * 0.5],
-      [w * 0.5, h * 0.15],
-      [w * 0.25, h * 0.75],
-    ];
-    const signature: string[] = [];
-    let textSum = 0;
-    for (const el of Array.from(document.querySelectorAll("body *")).slice(0, 1500)) {
-      const r = el.getBoundingClientRect();
-      if (r.width < 4 || r.height < 4 || r.top > h * 3) continue;
-      const s = getComputedStyle(el);
-      signature.push(`${s.color}|${s.backgroundColor}|${s.borderTopColor}`);
-      textSum += lum(parse(s.color) ?? [0, 0, 0, 1]);
-      if (signature.length >= 300) break;
-    }
-    const textLuminance = signature.length ? textSum / signature.length : 0;
-    const found = pts.map(([x, y]) => bgAt(x, y)).filter((v) => v >= 0);
-    // No opaque background anywhere (canvas/gradient/image pages): infer from text colour.
-    const bgLuminance = found.length
-      ? found.reduce((a, b) => a + b, 0) / found.length
-      : textLuminance > 0.4
-        ? 0
-        : 1;
-    return { bgLuminance, textLuminance, signature };
-  });
+/**
+ * Mean perceived brightness (0 = black, 1 = white) of a captured image, computed by decoding it on a
+ * blank page (no site CSP) and averaging a 48px-wide downscale. Used to tell whether a site really
+ * changes under dark emulation and which scheme a single-scheme site renders.
+ */
+async function imageBrightness(ctx: BrowserContext, buffer: Buffer, mime: string): Promise<number> {
+  const scratch = await ctx.newPage();
+  try {
+    return await scratch.evaluate(
+      async ({ b64, type }) => {
+        const img = new Image();
+        img.src = `data:${type};base64,${b64}`;
+        await img.decode();
+        const w = 48;
+        const h = Math.max(1, Math.round((img.height * w) / img.width));
+        const canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        const g = canvas.getContext("2d")!;
+        g.drawImage(img, 0, 0, w, h);
+        const px = g.getImageData(0, 0, w, h).data;
+        let sum = 0;
+        for (let i = 0; i < px.length; i += 4) sum += (0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2]) / 255;
+        return sum / (px.length / 4);
+      },
+      { b64: buffer.toString("base64"), type: mime },
+    );
+  } finally {
+    await scratch.close();
+  }
 }
 
-function darkDiffers(light: PageAppearance, dark: PageAppearance): boolean {
-  const n = Math.min(light.signature.length, dark.signature.length);
-  let diff = 0;
-  for (let i = 0; i < n; i++) if (light.signature[i] !== dark.signature[i]) diff++;
-  const ratio = n ? diff / n : 0;
-  // Entry animations change colours between loads, so a colour diff alone is not enough:
-  // a real dark variant moves the background or the text luminance.
-  if (Math.abs(light.bgLuminance - dark.bgLuminance) > 0.15) return true;
-  return ratio > 0.3 && Math.abs(light.textLuminance - dark.textLuminance) > 0.2;
-}
-
-const schemeOf = (a: PageAppearance): Scheme =>
-  a.bgLuminance < 0.25 || (a.textLuminance > 0.4 && a.textLuminance > a.bgLuminance) ? "dark" : "light";
+/** A real dark variant moves overall brightness a lot; reloads with different imagery do not. */
+const DARK_DELTA = 0.12;
+const schemeOf = (brightness: number): Scheme => (brightness < 0.4 ? "dark" : "light");
 
 async function detectBlock(page: Page, status: number | undefined): Promise<string | null> {
   const title = await page.title().catch(() => "");
@@ -477,7 +428,8 @@ async function detectBlock(page: Page, status: number | undefined): Promise<stri
 /* ----------------------------------------------------------------------------- capture */
 
 interface Shot {
-  appearance: PageAppearance;
+  /** mean perceived brightness of the capture, 0..1 */
+  brightness: number;
   buffer: Buffer;
   ext: "png" | "jpg";
   width: number;
@@ -534,7 +486,10 @@ async function shoot(
   const step = (name: string) => DEBUG && console.log(`    [${target.slug} ${viewport}-${scheme}] ${name} +${Date.now() - t0}ms`);
   try {
     const page = await ctx.newPage();
-    const res = await page.goto(target.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
+    // one retry: slow CDNs occasionally miss the first domcontentloaded deadline
+    const res = await page
+      .goto(target.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT })
+      .catch(() => page.goto(target.url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT }));
     await page.waitForLoadState("networkidle", { timeout: IDLE_TIMEOUT }).catch(() => undefined);
     await page.waitForTimeout(1_500); // late consent banners, fonts, entry animations
 
@@ -542,21 +497,19 @@ async function shoot(
     const blocked = await detectBlock(page, res?.status());
     if (blocked) throw new BlockedError(blocked);
 
-    const consent = await dismissConsent(page);
+    // Never auto-click banners in our own app: a "Reject" there is a real plan action.
+    const consent = opts.mode === "refs" ? await dismissConsent(page) : "skipped (own app)";
     step(`consent: ${consent}`);
     if (target.waitFor) {
       await page.locator(target.waitFor).first().waitFor({ state: "visible", timeout: 15_000 });
     }
     await runActions(page, target.actions);
     if (target.settleMs) await page.waitForTimeout(target.settleMs);
-    if (opts.mode === "refs") {
-      await unlockInnerScroll(page);
-      await warmScroll(page, opts.maxHeight);
-    }
+    if (opts.mode === "refs" || target.unlockScroll) await unlockInnerScroll(page);
+    if (opts.mode === "refs") await warmScroll(page, opts.maxHeight);
     step("scrolled");
     await page.waitForLoadState("networkidle", { timeout: 5_000 }).catch(() => undefined);
 
-    const appearance = await readAppearance(page);
     const fullHeight = await page.evaluate(() =>
       Math.max(document.documentElement.scrollHeight, document.body?.scrollHeight ?? 0),
     );
@@ -573,8 +526,9 @@ async function shoot(
       buffer = await page.screenshot({ fullPage: true, clip, type: "jpeg", quality: 82, timeout: 60_000 });
       ext = "jpg";
     }
-    step(`shot ${ext} ${buffer.byteLength}B`);
-    return { appearance, buffer, ext, width, height, fullHeight, consent, title: await page.title() };
+    const brightness = await imageBrightness(ctx, buffer, ext === "png" ? "image/png" : "image/jpeg");
+    step(`shot ${ext} ${buffer.byteLength}B brightness=${brightness.toFixed(2)}`);
+    return { brightness, buffer, ext, width, height, fullHeight, consent, title: await page.title() };
   } finally {
     await ctx.close();
   }
@@ -593,6 +547,7 @@ async function save(dir: string, viewport: ViewportName, scheme: Scheme, shot: S
     height: shot.height,
     fullHeight: shot.fullHeight,
     bytes: shot.buffer.byteLength,
+    brightness: Number(shot.brightness.toFixed(3)),
   };
 }
 
@@ -618,8 +573,17 @@ async function captureTarget(
     let consent = "none";
     let title = "";
 
+    const blockedViewports: string[] = [];
     for (const viewport of opts.viewports) {
-      const light = await shoot(browser, target, viewport, "light", opts, themeStorageKey);
+      // A wall on one viewport (e.g. mobile only) keeps the other viewport's captures.
+      const light = await shoot(browser, target, viewport, "light", opts, themeStorageKey).catch((e: unknown) => {
+        if (e instanceof BlockedError && files.length) {
+          blockedViewports.push(`${viewport}: ${e.message}`);
+          return null;
+        }
+        throw e;
+      });
+      if (!light) continue;
       consent = consent === "none" ? light.consent : consent;
       title ||= light.title;
       if (hasDark === false) {
@@ -628,8 +592,8 @@ async function captureTarget(
       }
       const dark = await shoot(browser, target, viewport, "dark", opts, themeStorageKey);
       if (hasDark === undefined) {
-        hasDark = opts.mode === "app" || darkDiffers(light.appearance, dark.appearance);
-        rendered = hasDark ? "both" : schemeOf(light.appearance);
+        hasDark = opts.mode === "app" || Math.abs(light.brightness - dark.brightness) > DARK_DELTA;
+        rendered = hasDark ? "both" : schemeOf(light.brightness);
       }
       if (hasDark) {
         files.push(await save(dir, viewport, "light", light));
@@ -638,7 +602,15 @@ async function captureTarget(
         files.push(await save(dir, viewport, rendered as Scheme, light));
       }
     }
-    return { ...base, hasDarkVariant: hasDark, renderedScheme: rendered, consent, title, files };
+    return {
+      ...base,
+      hasDarkVariant: hasDark,
+      renderedScheme: rendered,
+      consent,
+      title,
+      files,
+      ...(blockedViewports.length ? { reason: `partially blocked: ${blockedViewports.join("; ")}` } : {}),
+    };
   } catch (err) {
     await rm(dir, { recursive: true, force: true }).catch(() => undefined);
     const message = err instanceof Error ? err.message.split("\n")[0] : String(err);
@@ -684,6 +656,7 @@ async function main(): Promise<void> {
       url: `${opts.baseUrl}${r.path}`,
       actions: r.actions,
       waitFor: r.waitFor ?? cfg.waitFor,
+      unlockScroll: r.unlockScroll,
       meta: { path: r.path },
     }));
   } else {
@@ -712,7 +685,7 @@ async function main(): Promise<void> {
       },
     );
     const secs = ((Date.now() - started) / 1000).toFixed(1);
-    const detail = entry.status === "captured" ? `${entry.files?.length} file(s), scheme=${entry.renderedScheme}, consent=${entry.consent}` : entry.reason;
+    const detail = entry.status === "captured" ? `${entry.files?.length} file(s), scheme=${entry.renderedScheme}, consent=${entry.consent}${entry.reason ? `, ${entry.reason}` : ""}` : entry.reason;
     console.log(`  ${entry.status.padEnd(8)} ${t.slug.padEnd(22)} ${secs}s  ${detail}`);
     return entry;
   });

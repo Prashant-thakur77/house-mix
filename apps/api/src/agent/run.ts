@@ -57,7 +57,7 @@ export async function runPlan(show: Show, runId: string, emit: (e: RunEvent) => 
       const items = ti.items ?? [];
       const problems = gateItems(ctx, ti.slot_key, items);
       if (items.length > 0 && problems.length === items.length) {
-        for (const p of problems) emit({ type: "critic", at: ctx.now(), slotKey: ti.slot_key, pick: p.entity_id, reason: p.reason });
+        for (const p of problems) emit({ type: "critic", at: ctx.now(), slotKey: ti.slot_key, pick: ctx.nameOf(p.entity_id), reason: p.reason.replace(p.entity_id, ctx.nameOf(p.entity_id)) });
         ctx.criticDrops += problems.length;
         return {
           hookSpecificOutput: {
@@ -108,6 +108,8 @@ export async function runPlan(show: Show, runId: string, emit: (e: RunEvent) => 
       effort: "medium",
       persistSession: false,
       agentProgressSummaries: false,
+      // A plan finishes in a few minutes, so the 5-minute cache is enough and writes cost 1.25× instead of 2×.
+      env: { ...process.env, CLAUDE_CODE_PROMPT_CACHE_TTL: "5m", CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL: "5m" },
       abortController: abort,
       stderr: (d) => {
         if (process.env.HM_DEBUG) process.stderr.write(d);
@@ -182,6 +184,7 @@ export function finalisePlan(ctx: RunContext): Plan {
       distinctB: [],
       labelA: "",
       labelB: "",
+      compare: [],
       demographics: { age: [], gender: [] },
       tags: [],
       trends: [],

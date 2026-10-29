@@ -1,26 +1,151 @@
 {
-  "$comment": "Routes for `npx tsx scripts/ui-research.ts --app <baseUrl>`. Each route is captured at desktop + mobile in light + dark into design/app/<slug>/. Actions run in order after load. Update the paths once the seeded demo show ids exist.",
+  "$comment": "Routes for `npx tsx scripts/ui-research.ts --app <baseUrl>`. Each route is captured at desktop + mobile in light + dark into design/app/<slug>/.",
   "themeStorageKey": "theme",
   "waitFor": "main",
   "routes": [
-    { "slug": "landing", "path": "/" },
-    { "slug": "new-concert", "path": "/new" },
-    { "slug": "new-comedy", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/comedy/i" }] },
-    { "slug": "new-sports", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/sports/i" }] },
-    { "slug": "new-festival", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/festival/i" }] },
-    { "slug": "show-concert", "path": "/shows/demo-concert" },
-    { "slug": "show-comedy", "path": "/shows/demo-comedy" },
-    { "slug": "show-sports", "path": "/shows/demo-football" },
     {
-      "slug": "show-concert-evidence",
-      "path": "/shows/demo-concert",
+      "slug": "landing",
+      "path": "/"
+    },
+    {
+      "slug": "new-concert",
+      "path": "/new"
+    },
+    {
+      "slug": "new-comedy",
+      "path": "/new",
       "actions": [
-        { "type": "click", "selector": "[data-testid=plan-item] >> nth=0" },
-        { "type": "waitFor", "role": "dialog" }
+        {
+          "type": "click",
+          "role": "radio",
+          "name": "/comedy/i"
+        }
       ]
     },
-    { "slug": "compare", "path": "/compare" },
-    { "slug": "share-concert", "path": "/shows/demo-concert/share" },
-    { "slug": "eval-rater", "path": "/eval" }
+    {
+      "slug": "new-sports",
+      "path": "/new",
+      "actions": [
+        {
+          "type": "click",
+          "role": "radio",
+          "name": "/sports/i"
+        }
+      ]
+    },
+    {
+      "slug": "new-festival",
+      "path": "/new",
+      "actions": [
+        {
+          "type": "click",
+          "role": "radio",
+          "name": "/festival/i"
+        }
+      ]
+    },
+    {
+      "slug": "show-confirm",
+      "path": "/shows/s_64637f13-9",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 800
+        }
+      ]
+    },
+    {
+      "slug": "show-concert",
+      "path": "/shows/seed-concert",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-full",
+      "path": "/shows/seed-concert",
+      "unlockScroll": true,
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "show-comedy",
+      "path": "/shows/seed-comedy",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "show-sports",
+      "path": "/shows/seed-sports",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "show-festival",
+      "path": "/shows/seed-festival",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-evidence",
+      "path": "/shows/seed-concert",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1200
+        },
+        {
+          "type": "click",
+          "selector": "button[aria-label^='Open evidence'] >> nth=0"
+        },
+        {
+          "type": "wait",
+          "ms": 600
+        }
+      ]
+    },
+    {
+      "slug": "compare",
+      "path": "/compare?a=seed-concert&b=seed-festival",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "slug": "share-concert",
+      "path": "/shows/seed-concert/share?k=d7b67c5cced14167",
+      "actions": [
+        {
+          "type": "wait",
+          "ms": 1000
+        }
+      ]
+    },
+    {
+      "slug": "rate",
+      "path": "/rate"
+    }
   ]
 }

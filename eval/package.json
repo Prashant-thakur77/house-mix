@@ -3,7 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": { "typecheck": "tsc -p tsconfig.json", "test": "vitest run" },
-  "dependencies": { "@housemix/shared": "*", "@anthropic-ai/sdk": "^1.3.0", "zod": "^4.6.7" },
-  "devDependencies": { "vitest": "^5.0.5" }
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "fetch": "tsx --env-file-if-exists=../.env.local backtest/fetch-setlists.ts",
+    "backtest": "tsx --env-file-if-exists=../.env.local backtest/run.ts",
+    "ab:pairs": "tsx --env-file-if-exists=../.env.local ab_blind/generate-pairs.ts",
+    "ab:score": "tsx --env-file-if-exists=../.env.local ab_blind/score.ts",
+    "evidence": "tsx --env-file-if-exists=../.env.local evidence/run.ts",
+    "report": "tsx report.ts",
+    "all": "npm run fetch && npm run backtest && npm run ab:pairs && npm run evidence && npm run ab:score; npm run report"
+  },
+  "dependencies": {
+    "@housemix/shared": "*",
+    "@anthropic-ai/sdk": "^1.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5",
+    "tsx": "^4.23.15"
+  }
 }

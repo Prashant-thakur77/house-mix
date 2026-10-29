@@ -134,10 +134,10 @@ export function validateInput(raw: unknown): ShowInputParsed {
   return input;
 }
 
-export async function createShow(raw: unknown, opts: { seed?: boolean; qloo?: QlooClient } = {}): Promise<Show> {
+export async function createShow(raw: unknown, opts: { seed?: boolean; qloo?: QlooClient; id?: string } = {}): Promise<Show> {
   const input = validateInput(raw);
   const qloo = opts.qloo ?? getQloo();
-  const id = `s_${randomUUID().slice(0, 10)}`;
+  const id = opts.id ?? `s_${randomUUID().slice(0, 10)}`;
   const runId = `resolve_${id}`;
   const entities = await Promise.all(pendingEntities(input).map((p) => resolveOne(p, runId, qloo)));
   const now = new Date().toISOString();

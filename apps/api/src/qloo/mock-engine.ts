@@ -161,13 +161,18 @@ function guessType(name: string, scope?: string): string {
  * resolving after the mock server restarts, exactly as real Qloo IDs would.
  */
 const SYNTHETIC_FILE = path.join(process.env.HM_DATA_DIR ?? path.join(REPO_ROOT, "data"), "mock-synthetic.json");
-const syntheticSeen: Record<string, { name: string; type: string }> = (() => {
+const readJsonFile = (f: string): Record<string, { name: string; type: string }> => {
   try {
-    return JSON.parse(fs.readFileSync(SYNTHETIC_FILE, "utf8")) as Record<string, { name: string; type: string }>;
+    return JSON.parse(fs.readFileSync(f, "utf8")) as Record<string, { name: string; type: string }>;
   } catch {
     return {};
   }
-})();
+};
+// The committed registry keeps the seeded demo shows' IDs resolvable on a fresh deployment.
+const syntheticSeen: Record<string, { name: string; type: string }> = {
+  ...readJsonFile(path.join(REPO_ROOT, "fixtures/mock/synthetic.json")),
+  ...readJsonFile(SYNTHETIC_FILE),
+};
 
 function makeSynthetic(name: string, type: string): PoolEntity {
   const id = mockUuid(`${type}|${norm(name)}`);

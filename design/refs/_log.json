@@ -1,0 +1,1174 @@
+{
+  "mode": "refs",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "maxHeight": 6000,
+  "updatedAt": "2026-10-29T10:33:05.684Z",
+  "summary": {
+    "captured": 29,
+    "skipped": [
+      "resident-advisor: HTTP 403",
+      "strikal-move: unreachable (HTTP 404)"
+    ],
+    "errors": []
+  },
+  "entries": [
+    {
+      "slug": "axiom",
+      "url": "https://axiom.co",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:21:47.437Z",
+      "meta": {
+        "category": "observability / logs",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "Axiom - The modern machine data platform",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/axiom/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 11621,
+          "bytes": 534051,
+          "brightness": 0.05
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/axiom/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 14355,
+          "bytes": 268338,
+          "brightness": 0.066
+        }
+      ]
+    },
+    {
+      "slug": "bandsintown",
+      "url": "https://www.bandsintown.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:24:12.426Z",
+      "meta": {
+        "category": "concert listings",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Live Music, Concert Tickets & Tour Dates Near You | Bandsintown",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/bandsintown/desktop-light.png",
+          "width": 1440,
+          "height": 3885,
+          "fullHeight": 3885,
+          "bytes": 1319405,
+          "brightness": 0.796
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/bandsintown/mobile-light.png",
+          "width": 390,
+          "height": 4194,
+          "fullHeight": 4194,
+          "bytes": 625981,
+          "brightness": 0.645
+        }
+      ]
+    },
+    {
+      "slug": "betterstack",
+      "url": "https://betterstack.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:21:28.337Z",
+      "meta": {
+        "category": "uptime / incident ops",
+        "source": "product site, Godly / Land-book regular"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "necessary only",
+      "title": "OpenTelemetry-native log management by Better Stack",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/betterstack/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 11681,
+          "bytes": 1884412,
+          "brightness": 0.069
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/betterstack/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 15982,
+          "bytes": 736183,
+          "brightness": 0.091
+        }
+      ]
+    },
+    {
+      "slug": "campus",
+      "url": "http://localhost:3100",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:36.643Z",
+      "meta": {
+        "category": "saved reference (live-ops sim)",
+        "source": "user saved reference, github.com/AfreenInnovates/campus run locally"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "CampusEvac: Two views. One safe exit.",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/campus/desktop-light.png",
+          "width": 1440,
+          "height": 3081,
+          "fullHeight": 3081,
+          "bytes": 574390,
+          "brightness": 0.747
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/campus/mobile-light.png",
+          "width": 390,
+          "height": 5860,
+          "fullHeight": 5860,
+          "bytes": 363237,
+          "brightness": 0.653
+        }
+      ]
+    },
+    {
+      "slug": "campus-play",
+      "url": "http://localhost:3100/simulation/play",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:36.643Z",
+      "meta": {
+        "category": "saved reference (live drill HUD)",
+        "source": "user saved reference, run locally"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "CampusEvac: Two views. One safe exit.",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/campus-play/desktop-dark.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 313205,
+          "brightness": 0.322
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/campus-play/mobile-dark.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 13320,
+          "brightness": 0.102
+        }
+      ]
+    },
+    {
+      "slug": "campus-rooms",
+      "url": "http://localhost:3100/simulation/rooms",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:36.643Z",
+      "meta": {
+        "category": "saved reference (lobby screen)",
+        "source": "user saved reference, run locally"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "CampusEvac: Two views. One safe exit.",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/campus-rooms/desktop-light.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 81339,
+          "brightness": 0.837
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/campus-rooms/mobile-light.png",
+          "width": 390,
+          "height": 1412,
+          "fullHeight": 1412,
+          "bytes": 67011,
+          "brightness": 0.767
+        }
+      ]
+    },
+    {
+      "slug": "chartmetric",
+      "url": "https://chartmetric.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:24:29.624Z",
+      "meta": {
+        "category": "music analytics",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Music Data Intelligence for the Music Industry | Chartmetric",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/chartmetric/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7420,
+          "bytes": 881189,
+          "brightness": 0.637
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/chartmetric/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 13357,
+          "bytes": 443689,
+          "brightness": 0.807
+        }
+      ]
+    },
+    {
+      "slug": "dice",
+      "url": "https://dice.fm",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:23:24.767Z",
+      "meta": {
+        "category": "ticketing / music events",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "settings -> reject all",
+      "title": "DICE | Tickets for your kind of shows",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/dice/desktop-light.png",
+          "width": 1440,
+          "height": 5675,
+          "fullHeight": 5675,
+          "bytes": 397663,
+          "brightness": 0.819
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/dice/mobile-light.png",
+          "width": 390,
+          "height": 5417,
+          "fullHeight": 5417,
+          "bytes": 193055,
+          "brightness": 0.707
+        }
+      ]
+    },
+    {
+      "slug": "fotmob",
+      "url": "https://www.fotmob.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:25:18.753Z",
+      "meta": {
+        "category": "live sports data",
+        "source": "product site"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "none",
+      "title": "FotMob - Football Live Scores",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/fotmob/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 14015,
+          "bytes": 538029,
+          "brightness": 0.976
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/fotmob/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 14015,
+          "bytes": 545195,
+          "brightness": 0.073
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/fotmob/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 13763,
+          "bytes": 257869,
+          "brightness": 0.969
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/fotmob/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 13763,
+          "bytes": 263661,
+          "brightness": 0.116
+        }
+      ]
+    },
+    {
+      "slug": "grafana",
+      "url": "https://grafana.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:21:19.652Z",
+      "meta": {
+        "category": "observability dashboards",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Full-stack observability for the agentic era | Grafana Labs",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/grafana/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 9265,
+          "bytes": 1705580,
+          "brightness": 0.759
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/grafana/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12774,
+          "bytes": 588285,
+          "brightness": 0.801
+        }
+      ]
+    },
+    {
+      "slug": "incident-io",
+      "url": "https://incident.io",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:38.939Z",
+      "meta": {
+        "category": "operator console / incident ops",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "AI software reliability platform | incident.io",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/incident-io/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 10621,
+          "bytes": 772580,
+          "brightness": 0.913
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/incident-io/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 10339,
+          "bytes": 362156,
+          "brightness": 0.823
+        }
+      ]
+    },
+    {
+      "slug": "linear",
+      "url": "https://linear.app",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:51.046Z",
+      "meta": {
+        "category": "operator console / product",
+        "source": "product site, Godly / Land-book regular"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "Linear – The system for product development",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/linear/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 9960,
+          "bytes": 1819376,
+          "brightness": 0.062
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/linear/mobile-dark.png",
+          "width": 390,
+          "height": 5876,
+          "fullHeight": 5876,
+          "bytes": 461140,
+          "brightness": 0.117
+        }
+      ]
+    },
+    {
+      "slug": "nickho-motorsports",
+      "url": "https://nickho-motorsports.nl/",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:26:46.366Z",
+      "meta": {
+        "category": "sports (award)",
+        "source": "Awwwards Site of the Day, Oct 2026"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Nick Ho - Dutch Racing Driver | Porsche Carrera Cup",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/nickho-motorsports/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 11667,
+          "bytes": 1029376,
+          "brightness": 0.453
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/nickho-motorsports/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 11861,
+          "bytes": 1052071,
+          "brightness": 0.494
+        }
+      ]
+    },
+    {
+      "slug": "nyphil-gustavo",
+      "url": "https://www.nyphil.org/discover/gustavo",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:27:30.884Z",
+      "meta": {
+        "category": "concert (award)",
+        "source": "Awwwards Honorable Mention, Oct 2026"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "banner left visible (accept-only)",
+      "title": "Welcome Gustavo : New York Philharmonic",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/nyphil-gustavo/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 30978,
+          "bytes": 1166509,
+          "brightness": 0.185
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/nyphil-gustavo/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 25449,
+          "bytes": 292453,
+          "brightness": 0.106
+        }
+      ]
+    },
+    {
+      "slug": "opta-analyst",
+      "url": "https://theanalyst.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:25:31.374Z",
+      "meta": {
+        "category": "sports data editorial",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Opta Analyst | Data-Driven Storytelling",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/opta-analyst/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 6089,
+          "bytes": 2909409,
+          "brightness": 0.614
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/opta-analyst/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 11690,
+          "bytes": 439140,
+          "brightness": 0.887
+        }
+      ]
+    },
+    {
+      "slug": "overworld-audio",
+      "url": "https://overworldaudio.com/",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:26:45.338Z",
+      "meta": {
+        "category": "music (award)",
+        "source": "Awwwards Site of the Day, Oct 2026"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "Overworld Audio",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/overworld-audio/desktop-dark.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 1664151,
+          "brightness": 0.22
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/overworld-audio/mobile-dark.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 566489,
+          "brightness": 0.238
+        }
+      ]
+    },
+    {
+      "slug": "posthog",
+      "url": "https://posthog.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:22:21.755Z",
+      "meta": {
+        "category": "product analytics",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "PostHog – Your product’s context layer",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/posthog/desktop-light.png",
+          "width": 1440,
+          "height": 4525,
+          "fullHeight": 4525,
+          "bytes": 1443029,
+          "brightness": 0.794
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/posthog/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 8593,
+          "bytes": 447366,
+          "brightness": 0.816
+        }
+      ]
+    },
+    {
+      "slug": "raycast",
+      "url": "https://www.raycast.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:22:28.986Z",
+      "meta": {
+        "category": "tool UI",
+        "source": "product site, Awwwards / Godly regular"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "Raycast - Your shortcut to everything",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/raycast/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 16029,
+          "bytes": 1794364,
+          "brightness": 0.065
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/raycast/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 16012,
+          "bytes": 749235,
+          "brightness": 0.073
+        }
+      ]
+    },
+    {
+      "slug": "resident-advisor",
+      "url": "https://ra.co/events",
+      "status": "skipped",
+      "capturedAt": "2026-10-29T10:23:53.602Z",
+      "meta": {
+        "category": "events listings / music",
+        "source": "product site"
+      },
+      "reason": "HTTP 403"
+    },
+    {
+      "slug": "sentry",
+      "url": "https://sentry.io",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:21:25.555Z",
+      "meta": {
+        "category": "observability / error ops",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "none",
+      "title": "Application Performance Monitoring & Error Tracking Software | Sentry",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/sentry/desktop-dark.jpg",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 8809,
+          "bytes": 774415,
+          "brightness": 0.138
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/sentry/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 10746,
+          "bytes": 1731260,
+          "brightness": 0.17
+        }
+      ]
+    },
+    {
+      "slug": "shadcn-dashboard",
+      "url": "https://ui.shadcn.com/examples/dashboard",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:23:10.469Z",
+      "meta": {
+        "category": "dashboard example (shadcn)",
+        "source": "dashboard gallery"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "none",
+      "title": "The Foundation for your Design System - shadcn/ui",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/shadcn-dashboard/desktop-light.png",
+          "width": 1440,
+          "height": 2049,
+          "fullHeight": 2049,
+          "bytes": 244696,
+          "brightness": 0.965
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/shadcn-dashboard/desktop-dark.png",
+          "width": 1440,
+          "height": 2049,
+          "fullHeight": 2049,
+          "bytes": 235610,
+          "brightness": 0.08
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/shadcn-dashboard/mobile-light.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 77225,
+          "brightness": 0.936
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/shadcn-dashboard/mobile-dark.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 77539,
+          "brightness": 0.108
+        }
+      ]
+    },
+    {
+      "slug": "sofascore",
+      "url": "https://www.sofascore.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:31:42.673Z",
+      "meta": {
+        "category": "live sports data",
+        "source": "product site"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "none",
+      "title": "Football Live Scores, Fixtures & Odds | Sofascore | Championship League, Premier League",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/sofascore/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 8169,
+          "bytes": 1097950,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/sofascore/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 9982,
+          "bytes": 1143204,
+          "brightness": 0.075
+        }
+      ],
+      "reason": "partially blocked: mobile: challenge page (body: \"Verifying you are human…\")"
+    },
+    {
+      "slug": "songkick",
+      "url": "https://www.songkick.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:23:56.714Z",
+      "meta": {
+        "category": "concert listings",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "onetrust reject",
+      "title": "Find the Best Concerts Near You, Tour Dates & Tickets Worldwide | Songkick",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/songkick/desktop-dark.png",
+          "width": 1440,
+          "height": 3286,
+          "fullHeight": 3286,
+          "bytes": 1371545,
+          "brightness": 0.18
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/songkick/mobile-dark.png",
+          "width": 390,
+          "height": 3778,
+          "fullHeight": 3778,
+          "bytes": 627073,
+          "brightness": 0.146
+        }
+      ]
+    },
+    {
+      "slug": "soundcharts",
+      "url": "https://soundcharts.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:24:57.007Z",
+      "meta": {
+        "category": "music analytics",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "settings -> cookiebot decline",
+      "title": "Soundcharts: Music Analytics Tool | Analyze All the Music Industry Data",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/soundcharts/desktop-dark.png",
+          "width": 1440,
+          "height": 4479,
+          "fullHeight": 4479,
+          "bytes": 910036,
+          "brightness": 0.073
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/soundcharts/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 6930,
+          "bytes": 517987,
+          "brightness": 0.105
+        }
+      ]
+    },
+    {
+      "slug": "statsbomb",
+      "url": "https://statsbomb.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:26:00.951Z",
+      "meta": {
+        "category": "sports data",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Hudl Statsbomb - The World’s Most Advanced Football Data",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/statsbomb/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7814,
+          "bytes": 2963619,
+          "brightness": 0.552
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/statsbomb/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12929,
+          "bytes": 1035882,
+          "brightness": 0.444
+        }
+      ]
+    },
+    {
+      "slug": "strikal-move",
+      "url": "https://strikal-move.vercel.app",
+      "status": "skipped",
+      "capturedAt": "2026-10-29T10:20:36.643Z",
+      "meta": {
+        "category": "saved reference",
+        "source": "user saved reference"
+      },
+      "reason": "unreachable (HTTP 404)"
+    },
+    {
+      "slug": "supabase",
+      "url": "https://supabase.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:22:22.436Z",
+      "meta": {
+        "category": "dev platform / dashboard",
+        "source": "product site"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "none",
+      "title": "Supabase | The Postgres Development Platform",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/supabase/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7691,
+          "bytes": 758726,
+          "brightness": 0.94
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/supabase/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7691,
+          "bytes": 745099,
+          "brightness": 0.108
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/supabase/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9885,
+          "bytes": 279638,
+          "brightness": 0.908
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/supabase/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9885,
+          "bytes": 289610,
+          "brightness": 0.125
+        }
+      ]
+    },
+    {
+      "slug": "the-immortals",
+      "url": "https://theimmortals.world/",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:27:11.549Z",
+      "meta": {
+        "category": "football (award)",
+        "source": "Awwwards Honorable Mention, Aug 2026"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "The Immortals",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/the-immortals/desktop-light.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 15412,
+          "brightness": 0.943
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/the-immortals/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12099,
+          "bytes": 2046730,
+          "brightness": 0.714
+        }
+      ]
+    },
+    {
+      "slug": "tinybird",
+      "url": "https://www.tinybird.co",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:22:08.542Z",
+      "meta": {
+        "category": "real-time analytics",
+        "source": "product site"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "dark",
+      "consent": "reject all",
+      "title": "Tinybird · Ship fast over a Managed ClickHouse®",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/tinybird/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 10241,
+          "bytes": 561876,
+          "brightness": 0.071
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/tinybird/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 12797,
+          "bytes": 287614,
+          "brightness": 0.108
+        }
+      ]
+    },
+    {
+      "slug": "tremor",
+      "url": "https://tremor.so",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:23:01.740Z",
+      "meta": {
+        "category": "dashboard components (Tailwind)",
+        "source": "dashboard gallery / component kit"
+      },
+      "hasDarkVariant": false,
+      "renderedScheme": "light",
+      "consent": "none",
+      "title": "Tremor – Copy-and-Paste Tailwind CSS UI Components for Charts and Dashboards",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/tremor/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7419,
+          "bytes": 1242754,
+          "brightness": 0.934
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/tremor/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 10519,
+          "bytes": 550569,
+          "brightness": 0.935
+        }
+      ]
+    },
+    {
+      "slug": "vercel",
+      "url": "https://vercel.com",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:20:54.087Z",
+      "meta": {
+        "category": "observability / dev platform",
+        "source": "product site"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "none",
+      "title": "Agentic Infrastructure - Vercel",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/refs/vercel/desktop-light.png",
+          "width": 1440,
+          "height": 5986,
+          "fullHeight": 5986,
+          "bytes": 272052,
+          "brightness": 0.971
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/refs/vercel/desktop-dark.png",
+          "width": 1440,
+          "height": 5986,
+          "fullHeight": 5986,
+          "bytes": 482859,
+          "brightness": 0.012
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/refs/vercel/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 6945,
+          "bytes": 152173,
+          "brightness": 0.957
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/refs/vercel/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 6945,
+          "bytes": 195468,
+          "brightness": 0.023
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,8 @@ import { synthesize } from "./tts.ts";
 function factSheet(show: Show) {
   const plan = show.plan!;
   const facts: { id: string; text: string; evidence: Evidence[] }[] = [];
+  const i = show.input;
+  facts.push({ id: "show", text: `Show details (from the operator's intake, not Qloo): ${show.title} at ${i.venue}, ${i.city}, ${i.date}; ${i.mode === "sports" ? "gates" : "doors"} ${i.doorsTime}; bill: ${i.sides.map((s) => `${s.name} (${s.role})`).join(", ")}.`, evidence: [] });
   plan.crowd.qlooSays.forEach((t, n) => facts.push({ id: `crowd_${n}`, text: `Qloo says: ${t}`, evidence: plan.crowd.evidence }));
   plan.crowd.interpretation.forEach((t, n) => facts.push({ id: `crowdi_${n}`, text: `Our interpretation of the crowd: ${t}`, evidence: plan.crowd.evidence }));
   for (const slot of plan.slots) {
@@ -70,6 +72,7 @@ export async function buildBriefing(show: Show): Promise<{ briefing: Briefing; c
       return;
     }
     const evidence = l.fact_ids.flatMap((id) => byId.get(id)!.evidence);
+    // A line that only restates the intake (title, doors) is allowed but carries no Qloo citation.
     const seen = new Set<string>();
     lines.push({ speaker: l.speaker, text: l.text, evidence: evidence.filter((e) => !seen.has(e.callId) && seen.add(e.callId)).slice(0, 4) });
   });

@@ -165,6 +165,8 @@ export const CrowdRead = z.object({
   distinctB: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number() })).default([]),
   labelA: z.string().default(""),
   labelB: z.string().default(""),
+  /** Raw group-A / group-B affinities per concept from qloo_compare_audiences. */
+  compare: z.array(z.object({ name: z.string(), id: z.string(), a: z.number(), b: z.number() })).default([]),
   demographics: z
     .object({
       age: z.array(z.object({ bucket: z.string(), value: z.number() })).default([]),

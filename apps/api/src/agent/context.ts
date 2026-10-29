@@ -77,6 +77,15 @@ export class RunContext {
     return [...this.ledger.values()].filter((c) => c.resultIds.includes(entityId));
   }
 
+  /** Human name for an entity ID seen in this run (for trace messages). */
+  nameOf(id: string): string {
+    for (const c of this.ledger.values()) {
+      const r = c.results.find((x) => x.entity_id === id || x.id === id);
+      if (r && typeof r.name === "string") return r.name;
+    }
+    return this.show.entities.find((e) => e.qlooId === id)?.name ?? id;
+  }
+
   sideEntities() {
     return this.show.entities.filter((e) => e.kind === "side" && e.status === "resolved" && e.qlooId);
   }

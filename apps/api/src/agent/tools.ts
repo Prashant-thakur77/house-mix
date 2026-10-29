@@ -140,6 +140,7 @@ export function buildCrowd(ctx: RunContext, phrase: string, interpretation: stri
     distinctB: distinctB.slice(0, 6).map((r) => toRow(r, -r.delta)),
     labelA: nameOf(groupA),
     labelB: nameOf(groupB),
+    compare: [...rows].sort((x, y) => Math.max(y.a, y.b) - Math.max(x.a, x.b)).slice(0, 10).map((r) => ({ name: r.name, id: r.id, a: Number(r.a.toFixed(3)), b: Number(r.b.toFixed(3)) })),
     demographics: d,
     tags: tagList,
     trends,
@@ -194,7 +195,7 @@ export function houseMixServer(ctx: RunContext) {
           const bad = new Set(problems.map((p) => p.index));
           for (const p of problems) {
             ctx.criticDrops++;
-            ctx.emit({ type: "critic", at: ctx.now(), slotKey: args.slot_key, pick: p.entity_id, reason: p.reason });
+            ctx.emit({ type: "critic", at: ctx.now(), slotKey: args.slot_key, pick: ctx.nameOf(p.entity_id), reason: p.reason.replace(p.entity_id, ctx.nameOf(p.entity_id)) });
           }
           const built = buildItems(ctx, args.slot_key, items.filter((_, i) => !bad.has(i)));
           const verdict = await claimCheck(built);

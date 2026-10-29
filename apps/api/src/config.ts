@@ -54,7 +54,7 @@ export const config = {
   /** Qloo calls allowed per plan run (cache hits are free). */
   qlooCallCap: Number(env("HM_QLOO_CALL_CAP", "40")),
   /** Hard ceiling on Claude spend per plan run. */
-  runBudgetUsd: Number(env("HM_RUN_BUDGET_USD", "0.9")),
+  runBudgetUsd: Number(env("HM_RUN_BUDGET_USD", "1.5")),
   cacheTtlMs: 24 * 60 * 60 * 1000,
   maxRetries: 2,
   get hasAnthropicKey(): boolean {

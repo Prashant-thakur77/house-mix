@@ -1,0 +1,850 @@
+{
+  "mode": "app",
+  "baseUrl": "http://localhost:3000",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "maxHeight": 6000,
+  "updatedAt": "2026-10-29T11:04:37.524Z",
+  "summary": {
+    "captured": 15,
+    "skipped": [],
+    "errors": []
+  },
+  "entries": [
+    {
+      "slug": "compare",
+      "url": "http://localhost:3000/compare?a=seed-concert&b=seed-festival",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:51:32.511Z",
+      "meta": {
+        "path": "/compare?a=seed-concert&b=seed-festival"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/compare/desktop-light.png",
+          "width": 1440,
+          "height": 2411,
+          "fullHeight": 2411,
+          "bytes": 243785,
+          "brightness": 0.97
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/compare/desktop-dark.png",
+          "width": 1440,
+          "height": 2411,
+          "fullHeight": 2411,
+          "bytes": 244512,
+          "brightness": 0.09
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/compare/mobile-light.png",
+          "width": 390,
+          "height": 3679,
+          "fullHeight": 3679,
+          "bytes": 213364,
+          "brightness": 0.953
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/compare/mobile-dark.png",
+          "width": 390,
+          "height": 3679,
+          "fullHeight": 3679,
+          "bytes": 217297,
+          "brightness": 0.112
+        }
+      ]
+    },
+    {
+      "slug": "landing",
+      "url": "http://localhost:3000/",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:32.412Z",
+      "meta": {
+        "path": "/"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/landing/desktop-light.png",
+          "width": 1440,
+          "height": 1967,
+          "fullHeight": 1967,
+          "bytes": 202564,
+          "brightness": 0.947
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/landing/desktop-dark.png",
+          "width": 1440,
+          "height": 1967,
+          "fullHeight": 1967,
+          "bytes": 202636,
+          "brightness": 0.086
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/landing/mobile-light.png",
+          "width": 390,
+          "height": 3603,
+          "fullHeight": 3603,
+          "bytes": 223190,
+          "brightness": 0.936
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/landing/mobile-dark.png",
+          "width": 390,
+          "height": 3603,
+          "fullHeight": 3603,
+          "bytes": 224303,
+          "brightness": 0.113
+        }
+      ]
+    },
+    {
+      "slug": "new-comedy",
+      "url": "http://localhost:3000/new",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:32.412Z",
+      "meta": {
+        "path": "/new"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/new-comedy/desktop-light.png",
+          "width": 1440,
+          "height": 1675,
+          "fullHeight": 1675,
+          "bytes": 167440,
+          "brightness": 0.955
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/new-comedy/desktop-dark.png",
+          "width": 1440,
+          "height": 1675,
+          "fullHeight": 1675,
+          "bytes": 168031,
+          "brightness": 0.094
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/new-comedy/mobile-light.png",
+          "width": 390,
+          "height": 2855,
+          "fullHeight": 2855,
+          "bytes": 162366,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/new-comedy/mobile-dark.png",
+          "width": 390,
+          "height": 2855,
+          "fullHeight": 2855,
+          "bytes": 164049,
+          "brightness": 0.122
+        }
+      ]
+    },
+    {
+      "slug": "new-concert",
+      "url": "http://localhost:3000/new",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:32.412Z",
+      "meta": {
+        "path": "/new"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/new-concert/desktop-light.png",
+          "width": 1440,
+          "height": 1675,
+          "fullHeight": 1675,
+          "bytes": 164518,
+          "brightness": 0.955
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/new-concert/desktop-dark.png",
+          "width": 1440,
+          "height": 1675,
+          "fullHeight": 1675,
+          "bytes": 165323,
+          "brightness": 0.093
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/new-concert/mobile-light.png",
+          "width": 390,
+          "height": 2793,
+          "fullHeight": 2793,
+          "bytes": 159770,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/new-concert/mobile-dark.png",
+          "width": 390,
+          "height": 2793,
+          "fullHeight": 2793,
+          "bytes": 161063,
+          "brightness": 0.122
+        }
+      ]
+    },
+    {
+      "slug": "new-festival",
+      "url": "http://localhost:3000/new",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:42.692Z",
+      "meta": {
+        "path": "/new"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/new-festival/desktop-light.png",
+          "width": 1440,
+          "height": 1727,
+          "fullHeight": 1727,
+          "bytes": 172359,
+          "brightness": 0.955
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/new-festival/desktop-dark.png",
+          "width": 1440,
+          "height": 1727,
+          "fullHeight": 1727,
+          "bytes": 173693,
+          "brightness": 0.093
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/new-festival/mobile-light.png",
+          "width": 390,
+          "height": 2845,
+          "fullHeight": 2845,
+          "bytes": 168665,
+          "brightness": 0.938
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/new-festival/mobile-dark.png",
+          "width": 390,
+          "height": 2845,
+          "fullHeight": 2845,
+          "bytes": 170520,
+          "brightness": 0.124
+        }
+      ]
+    },
+    {
+      "slug": "new-sports",
+      "url": "http://localhost:3000/new",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:42.572Z",
+      "meta": {
+        "path": "/new"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/new-sports/desktop-light.png",
+          "width": 1440,
+          "height": 1631,
+          "fullHeight": 1631,
+          "bytes": 164996,
+          "brightness": 0.955
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/new-sports/desktop-dark.png",
+          "width": 1440,
+          "height": 1631,
+          "fullHeight": 1631,
+          "bytes": 165490,
+          "brightness": 0.092
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/new-sports/mobile-light.png",
+          "width": 390,
+          "height": 2857,
+          "fullHeight": 2857,
+          "bytes": 165620,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/new-sports/mobile-dark.png",
+          "width": 390,
+          "height": 2857,
+          "fullHeight": 2857,
+          "bytes": 166847,
+          "brightness": 0.123
+        }
+      ]
+    },
+    {
+      "slug": "rate",
+      "url": "http://localhost:3000/rate",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:51:39.563Z",
+      "meta": {
+        "path": "/rate"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/rate/desktop-light.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 22044,
+          "brightness": 0.955
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/rate/desktop-dark.png",
+          "width": 1440,
+          "height": 900,
+          "fullHeight": 900,
+          "bytes": 21116,
+          "brightness": 0.06
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/rate/mobile-light.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 18238,
+          "brightness": 0.943
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/rate/mobile-dark.png",
+          "width": 390,
+          "height": 844,
+          "fullHeight": 844,
+          "bytes": 17446,
+          "brightness": 0.069
+        }
+      ]
+    },
+    {
+      "slug": "share-concert",
+      "url": "http://localhost:3000/shows/seed-concert/share?k=d7b67c5cced14167",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:51:32.524Z",
+      "meta": {
+        "path": "/shows/seed-concert/share?k=d7b67c5cced14167"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/share-concert/desktop-light.png",
+          "width": 1440,
+          "height": 2315,
+          "fullHeight": 2315,
+          "bytes": 272765,
+          "brightness": 0.943
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/share-concert/desktop-dark.png",
+          "width": 1440,
+          "height": 2315,
+          "fullHeight": 2315,
+          "bytes": 269978,
+          "brightness": 0.072
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/share-concert/mobile-light.png",
+          "width": 390,
+          "height": 2967,
+          "fullHeight": 2967,
+          "bytes": 250355,
+          "brightness": 0.909
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/share-concert/mobile-dark.png",
+          "width": 390,
+          "height": 2967,
+          "fullHeight": 2967,
+          "bytes": 249262,
+          "brightness": 0.104
+        }
+      ]
+    },
+    {
+      "slug": "show-comedy",
+      "url": "http://localhost:3000/shows/seed-comedy",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:50:58.216Z",
+      "meta": {
+        "path": "/shows/seed-comedy"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-comedy/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 283361,
+          "brightness": 0.935
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-comedy/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 284098,
+          "brightness": 0.121
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-comedy/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9482,
+          "bytes": 449036,
+          "brightness": 0.934
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-comedy/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9482,
+          "bytes": 463121,
+          "brightness": 0.124
+        }
+      ]
+    },
+    {
+      "slug": "show-concert",
+      "url": "http://localhost:3000/shows/seed-concert",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:59:37.499Z",
+      "meta": {
+        "path": "/shows/seed-concert"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-concert/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 248099,
+          "brightness": 0.943
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-concert/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 248145,
+          "brightness": 0.116
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-concert/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 461861,
+          "brightness": 0.935
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-concert/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 474254,
+          "brightness": 0.123
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-evidence",
+      "url": "http://localhost:3000/shows/seed-concert",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:59:52.230Z",
+      "meta": {
+        "path": "/shows/seed-concert"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-concert-evidence/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 266849,
+          "brightness": 0.934
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-concert-evidence/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 269735,
+          "brightness": 0.121
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-concert-evidence/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 462879,
+          "brightness": 0.936
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-concert-evidence/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 476261,
+          "brightness": 0.123
+        }
+      ]
+    },
+    {
+      "slug": "show-concert-full",
+      "url": "http://localhost:3000/shows/seed-concert",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:59:37.499Z",
+      "meta": {
+        "path": "/shows/seed-concert"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-concert-full/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 248099,
+          "brightness": 0.943
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-concert-full/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 248145,
+          "brightness": 0.116
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-concert-full/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 461861,
+          "brightness": 0.935
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-concert-full/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9133,
+          "bytes": 474254,
+          "brightness": 0.123
+        }
+      ]
+    },
+    {
+      "slug": "show-confirm",
+      "url": "http://localhost:3000/shows/s_64637f13-9",
+      "status": "captured",
+      "capturedAt": "2026-10-29T11:04:19.483Z",
+      "meta": {
+        "path": "/shows/s_64637f13-9"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-confirm/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 141741,
+          "brightness": 0.963
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-confirm/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 142247,
+          "brightness": 0.096
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-confirm/mobile-light.png",
+          "width": 390,
+          "height": 1506,
+          "fullHeight": 1506,
+          "bytes": 115174,
+          "brightness": 0.932
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-confirm/mobile-dark.png",
+          "width": 390,
+          "height": 1506,
+          "fullHeight": 1506,
+          "bytes": 116715,
+          "brightness": 0.122
+        }
+      ]
+    },
+    {
+      "slug": "show-festival",
+      "url": "http://localhost:3000/shows/seed-festival",
+      "status": "captured",
+      "capturedAt": "2026-10-29T10:51:13.123Z",
+      "meta": {
+        "path": "/shows/seed-festival"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-festival/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 271406,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-festival/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 271588,
+          "brightness": 0.119
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-festival/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9422,
+          "bytes": 430500,
+          "brightness": 0.939
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-festival/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 9422,
+          "bytes": 442892,
+          "brightness": 0.122
+        }
+      ]
+    },
+    {
+      "slug": "show-sports",
+      "url": "http://localhost:3000/shows/seed-sports",
+      "status": "captured",
+      "capturedAt": "2026-10-29T11:04:19.483Z",
+      "meta": {
+        "path": "/shows/seed-sports"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-sports/desktop-light.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 240923,
+          "brightness": 0.945
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-sports/desktop-dark.png",
+          "width": 1440,
+          "height": 956,
+          "fullHeight": 956,
+          "bytes": 241312,
+          "brightness": 0.114
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-sports/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 8853,
+          "bytes": 446490,
+          "brightness": 0.936
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-sports/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 8853,
+          "bytes": 460218,
+          "brightness": 0.121
+        }
+      ]
+    }
+  ]
+}

@@ -107,7 +107,7 @@ describe("approvals, exports and share", () => {
     const plan: Plan = {
       runId: "r_test",
       headline: "test",
-      crowd: { sharedGround: [], distinctA: [], distinctB: [], labelA: "", labelB: "", demographics: { age: [], gender: [] }, tags: [], trends: [], demographicPhrase: "adults 25-34", qlooSays: ["x"], interpretation: [], evidence: [], confidence: "high" },
+      crowd: { sharedGround: [], distinctA: [], distinctB: [], labelA: "", labelB: "", compare: [], demographics: { age: [], gender: [] }, tags: [], trends: [], demographicPhrase: "adults 25-34", qlooSays: ["x"], interpretation: [], evidence: [], confidence: "high" },
       slots: [{ key: "walk_in", label: "Doors & walk-in", timeRange: "18:30–19:30", kind: "music", status: "ready", items: [item(ranked[0]!, 1), item(ranked[1]!, 2), item(ranked[2]!, 3)], alternatives: ranked.slice(3).map((id) => ({ qlooId: id, name: id, type: "artist", callId: rank.call.callId })) }],
       limitations: ["l"],
       stats: { qlooCalls: 2, cacheHits: 0, retries: 0, criticDrops: 0, durationMs: 1, costUsd: 0, model: "x", toolsUsed: ["qloo_recommend", "qloo_rank"] },
