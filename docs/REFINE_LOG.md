@@ -28,3 +28,22 @@ Review: hosted demo on Cloud Run + Vercel, one real production plan (Phoebe Brid
 | 8 | Cost: a full Sonnet plan cost 0.96 USD (1-hour cache writes) | 0.96 USD, 84 s | 0.51 USD, 106 s on production (5-minute cache) |
 | 9 | Production smoke | Untested on Cloud Run | Plan, PDF/CSV, briefing MP3 from Cloud Storage, Firestore seeds verified |
 | 10 | Trace readability | Critic removals showed raw UUIDs | Names (round 0) |
+
+## Round 2
+
+Review: Lighthouse (mobile, throttled) on the production site, a live-run capture, production briefings, the mobile landing page.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | Design/performance: the console was the slowest page | Lighthouse performance 71, LCP 4.8 s (headline waited for JS boot and a browser-side fetch) | 84–90, LCP 1.3–3.1 s: the show is server-rendered and API JSON is brotli-compressed (121 KB → 11 KB) |
+| 2 | Impact: approving 20–30 picks one by one | One click per item | "Approve N high-confidence picks" in one step; stretch and reduced-confidence picks stay in the queue |
+| 3 | Briefing transcript sync was off by 2× | Duration estimated at 32 kbps; Cloud TTS returns 64 kbps (MP3 header) | Bitrate read from the frame header; briefings re-voiced: 80–81 s, transcript highlights the spoken line |
+| 4 | Briefing could not be re-voiced after a fix | Cached result returned | "Write again" forces a new script, judge pass and audio |
+| 5 | Trace tool names truncated at 320 px | "qloo_compare_a…" | Short tool names; agent shown in the expanded row |
+| 6 | Landing on a shared demo listed every visitor's shows | All non-seed shows | Only shows created in this browser |
+| 7 | Seed order and a card wrap glitch | Festival first; "26 plan itemsOpen console" | Concert, comedy, sports, festival; fixed wrap |
+| 8 | Hydration warning after server rendering | Locale-dependent date | Fixed locale + UTC |
+| 9 | README had no product images | Architecture only | Four console screenshots |
+| 10 | No capture of the agent working | Only finished plans | `design/app/show-live-run/` (desktop light/dark, mobile) |
+
+Lighthouse after round 2 (production): landing 93 / 100 / 100, intake 91 / 100 / 100, console 84–90 / 100 / 100 (performance / accessibility / best practices).
