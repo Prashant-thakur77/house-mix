@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Inter, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">House Mix architecture</title>
+  <desc id="d">Browser console on Vercel talks to a Fastify API on Cloud Run. The API runs a Claude Agent SDK planner with subagents, routes every Qloo call through one MCP client that starts qloo mcp over stdio, and stores shows in Firestore.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5C5866"/></marker>
+    <style>
+      .box{fill:#fff;stroke:#DEDAD2;stroke-width:1.5}
+      .agent{fill:#EEEBFC;stroke:#7C68E6;stroke-width:1.5}
+      .qloo{fill:#E1F3F0;stroke:#1C9488;stroke-width:1.5}
+      .ext{fill:#F6F5F2;stroke:#8A847A;stroke-width:1.2;stroke-dasharray:5 4}
+      .h{font-size:17px;font-weight:700;fill:#18171C}
+      .s{font-size:13px;fill:#5C5866}
+      .m{font-size:12.5px;font-family:ui-monospace,Menlo,monospace;fill:#18171C}
+      .k{font-size:11px;font-weight:600;letter-spacing:.08em;fill:#5C5866}
+      .l{stroke:#5C5866;stroke-width:1.6;fill:none}
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#F6F5F2"/>
+
+  <rect class="box" x="30" y="40" width="300" height="250" rx="10"/>
+  <text class="k" x="50" y="68">BROWSER · VERCEL</text>
+  <text class="h" x="50" y="94">Operator console</text>
+  <text class="s" x="50" y="118">Next.js 16 · shadcn · Recharts</text>
+  <text class="m" x="50" y="150">/new        intake + confirm cards</text>
+  <text class="m" x="50" y="172">/shows/[id] trace · crowd · run of show</text>
+  <text class="m" x="50" y="194">            evidence · approvals · exports</text>
+  <text class="m" x="50" y="216">            two-voice briefing</text>
+  <text class="m" x="50" y="238">/compare    tonight vs last night</text>
+  <text class="m" x="50" y="260">/share · /rate (blind A/B)</text>
+
+  <path class="l" d="M330 165 H400" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text class="s" x="338" y="152">JSON + SSE</text>
+
+  <rect class="box" x="400" y="30" width="770" height="430" rx="10"/>
+  <text class="k" x="420" y="58">API · FASTIFY ON CLOUD RUN (NODE 22, MIN INSTANCES 1)</text>
+
+  <rect class="agent" x="420" y="74" width="420" height="230" rx="8"/>
+  <text class="h" x="440" y="100">Claude Agent SDK · one query() per plan</text>
+  <text class="m" x="440" y="128">Planner ──► CrowdReader</text>
+  <text class="m" x="440" y="150">        ──► Programmer × slot  (parallel)</text>
+  <text class="m" x="440" y="172">        ──► SponsorFit</text>
+  <text class="m" x="440" y="194">        ──► Wildcard (one stretch per slot)</text>
+  <text class="s" x="440" y="222">Critic: PreToolUse hook gates citations,</text>
+  <text class="s" x="440" y="241">then a Claude claim check drops or trims items.</text>
+  <text class="s" x="440" y="264">Evidence is built server-side from the call ledger,</text>
+  <text class="s" x="440" y="283">never from model text.</text>
+
+  <rect class="qloo" x="860" y="74" width="290" height="230" rx="8"/>
+  <text class="h" x="880" y="100">QlooClient</text>
+  <text class="s" x="880" y="124">one pooled MCP stdio client</text>
+  <text class="m" x="880" y="152">env: process.env</text>
+  <text class="m" x="880" y="174">24 h cache (sha256 args)</text>
+  <text class="m" x="880" y="196">retry iff error.retryable</text>
+  <text class="m" x="880" y="218">40-call budget per plan</text>
+  <text class="m" x="880" y="240">PII guard · call ledger</text>
+  <text class="s" x="880" y="270">In-process proxy gives agents</text>
+  <text class="s" x="880" y="288">the same 10 tool names/schemas.</text>
+  <path class="l" d="M840 190 H860" marker-end="url(#a)"/>
+
+  <rect class="box" x="420" y="320" width="230" height="122" rx="8"/>
+  <text class="h" x="440" y="346">Shows API</text>
+  <text class="s" x="440" y="370">intake · confirm · approve</text>
+  <text class="s" x="440" y="389">swap (qloo_rank) · reject · lock</text>
+  <text class="s" x="440" y="408">PDF · CSV · share · compare</text>
+  <text class="s" x="440" y="427">eval ratings</text>
+
+  <rect class="box" x="665" y="320" width="230" height="122" rx="8"/>
+  <text class="h" x="685" y="346">Briefing</text>
+  <text class="s" x="685" y="370">script (Claude) → judge</text>
+  <text class="s" x="685" y="389">drops unsupported lines</text>
+  <text class="s" x="685" y="408">→ Cloud TTS, two voices</text>
+  <text class="s" x="685" y="427">→ MP3 in Cloud Storage</text>
+
+  <rect class="qloo" x="910" y="320" width="240" height="122" rx="8"/>
+  <text class="h" x="930" y="346">qloo mcp (child)</text>
+  <text class="m" x="930" y="372">QLOO_MODE=live</text>
+  <text class="s" x="930" y="392">@qloo/qloo-harness ≥ 0.1.26</text>
+  <text class="m" x="930" y="416">QLOO_MODE=mock</text>
+  <text class="s" x="930" y="434">schema-identical mock server</text>
+  <path class="l" d="M1005 304 V320" marker-end="url(#a)"/>
+
+  <rect class="ext" x="400" y="500" width="180" height="90" rx="8"/>
+  <text class="h" x="418" y="530">Claude API</text>
+  <text class="s" x="418" y="554">Sonnet 5.5 planner</text>
+  <text class="s" x="418" y="573">+ worker subagents</text>
+  <rect class="ext" x="600" y="500" width="180" height="90" rx="8"/>
+  <text class="h" x="618" y="530">Firestore</text>
+  <text class="s" x="618" y="554">shows · runs · ledger</text>
+  <text class="s" x="618" y="573">cache · ratings</text>
+  <rect class="ext" x="800" y="500" width="180" height="90" rx="8"/>
+  <text class="h" x="818" y="530">Secret Manager</text>
+  <text class="s" x="818" y="554">ANTHROPIC / QLOO /</text>
+  <text class="s" x="818" y="573">SETLISTFM keys</text>
+  <rect class="ext" x="1000" y="500" width="170" height="90" rx="8"/>
+  <text class="h" x="1018" y="530">Qloo API</text>
+  <text class="s" x="1018" y="554">only via qloo mcp,</text>
+  <text class="s" x="1018" y="573">key server-side</text>
+  <path class="l" d="M630 304 V320" />
+  <path class="l" d="M490 460 V500" marker-end="url(#a)"/>
+  <path class="l" d="M690 460 V500" marker-end="url(#a)"/>
+  <path class="l" d="M890 460 V500" marker-end="url(#a)"/>
+  <path class="l" d="M1085 442 V500" marker-end="url(#a)"/>
+
+  <rect class="box" x="30" y="330" width="300" height="260" rx="10"/>
+  <text class="k" x="50" y="358">EVAL (eval/)</text>
+  <text class="s" x="50" y="386">Blind A/B: House Mix vs LLM-only,</text>
+  <text class="s" x="50" y="405">rated on /rate, Wilson CI, Fleiss κ</text>
+  <text class="s" x="50" y="436">hit@10 backtest on setlist.fm</text>
+  <text class="s" x="50" y="455">support acts: qloo_rank vs P0 vs L0</text>
+  <text class="s" x="50" y="486">Evidence rate: valid citations</text>
+  <text class="s" x="50" y="505">and unresolvable LLM picks</text>
+  <text class="s" x="50" y="540">Scripts refuse mock data; REPORT.md</text>
+  <text class="s" x="50" y="559">is regenerated from results/*.json</text>
+  <text class="s" x="30" y="660">Every plan item: tool · inputs (IDs only) · status · scores, with "Qloo says" kept apart from "Our interpretation".</text>
+</svg>
