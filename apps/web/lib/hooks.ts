@@ -55,10 +55,10 @@ export function useHealth() {
   return { health, error };
 }
 
-export function useShow(id: string | undefined) {
-  const [show, setShow] = useState<Show>();
+export function useShow(id: string | undefined, initial?: Show) {
+  const [show, setShow] = useState<Show | undefined>(initial);
   const [error, setError] = useState<ApiError>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initial);
   const reload = useCallback(async () => {
     if (!id) return;
     try {
@@ -73,8 +73,9 @@ export function useShow(id: string | undefined) {
     }
   }, [id]);
   useEffect(() => {
-    void reload();
-  }, [reload]);
+    // Server-rendered shows are fresh enough unless a plan is still running.
+    if (!initial || initial.status === "planning") void reload();
+  }, [reload]); // eslint-disable-line react-hooks/exhaustive-deps
   return { show, setShow, error, loading, reload };
 }
 

@@ -209,7 +209,13 @@ Hook → sports intake (home vs away) → "Genesis" triggers `needs_input` confi
 - [x] **P7 UI research** — screenshots, REFERENCES.md, DIRECTION.md. *Done when* both docs exist with scores and tokens.
 - [x] **P8 Web app** — all screens, states, a11y; screenshots to design/app. *Done when* Playwright e2e + axe pass in mock mode and screenshots are reviewed against references.
 - [x] **P9 Seeds** — 3 seeded shows (+ festival). *Done when* `/` shows them and each opens a full plan instantly.
-- [ ] **P10 Eval kit** — A/B, backtest, evidence-rate, report generator. *Done when* unit tests pass and `REPORT.md` renders with "pending live Qloo key" where data is missing.
-- [ ] **P11 Docs** — README, DEVPOST, VIDEO_SCRIPT, QLOO_WALKTHROUGH (template until live), FRICTION_LOG, LIMITATIONS. *Done when* every deliverable file exists.
-- [ ] **P12 Deploy** — Cloud Run + Vercel. *Done when* hosted URLs work without login (needs GCP project from the user).
-- [ ] **P13 Refine loop** — rounds logged in docs/REFINE_LOG.md until nothing would change a judge's score.
+- [x] **P10 Eval kit** — A/B, backtest, evidence-rate, report generator. *Done when* unit tests pass and `REPORT.md` renders with "pending live Qloo key" where data is missing.
+- [x] **P11 Docs** — README, DEVPOST, VIDEO_SCRIPT, QLOO_WALKTHROUGH (template until live), FRICTION_LOG, LIMITATIONS. *Done when* every deliverable file exists.
+- [x] **P12 Deploy** — Cloud Run + Vercel. *Done when* hosted URLs work without login (needs GCP project from the user).
+- [ ] **P13 Refine loop** (in progress; rounds logged in docs/REFINE_LOG.md) — rounds logged in docs/REFINE_LOG.md until nothing would change a judge's score.
+
+## Status (29 Oct 2026, 18:30 IST)
+
+- Live: https://house-mix.vercel.app (web) · https://house-mix-api-120659974854.us-central1.run.app (API, GCP project `house-mix-qloo-1029`).
+- Waiting on external inputs: `QLOO_API_KEY` (then `npm run qloo:verify`, live re-seed, evals), `SETLISTFM_API_KEY` (backtest), human raters (A/B). See docs/GO_LIVE.md.
+- Stack changes made during the build: subagent workers can run on a cheaper model (`HM_WORKER_MODEL`) to keep plans near 0.5 USD; plan runs use the 5-minute prompt cache; Firestore stores JSON strings; images can be built locally and pushed when Cloud Build is unavailable.
