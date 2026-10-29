@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import { MotionConfig } from "motion/react";
 import type { Show } from "@housemix/shared";
 import { api, type ShowSummary } from "@/lib/api";
-import { TopBar } from "@/components/app-shell";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Hero } from "@/components/landing/hero";
-import { FooterCta, HowItWorks, IntroCurtain, Ribbons, Trust } from "@/components/landing/sections";
-import { AskDemo, CrowdShowcase, Posters, QlooDeck, Sponsors, WithoutQloo } from "@/components/landing/showcase";
+import { Dossier, Finale, Flood, Record, ShowIndex, SignalHero, StatusBar } from "@/components/landing/landing";
 
 function myShowIds(): string[] {
   try {
@@ -23,7 +19,7 @@ const ORDER = ["concert", "comedy", "sports", "festival"];
 export default function Home() {
   const [shows, setShows] = useState<ShowSummary[]>();
   const [error, setError] = useState<string>();
-  // Two seeded plans feed the landing: the fixture (two crowds, the comparison) and the concert (steps, sponsors, Ask).
+  // Seeded plans feed the page: the concert (figure HUD, steps, the record, sponsors, Ask) and the fixture (Without Qloo).
   const [sports, setSports] = useState<Show>();
   const [concert, setConcert] = useState<Show>();
   const [mine, setMine] = useState<string[]>([]);
@@ -33,47 +29,29 @@ export default function Home() {
       .shows()
       .then(setShows)
       .catch((e: Error) => setError(e.message));
-    api
-      .show("seed-sports")
-      .then(setSports)
-      .catch(() => undefined);
-    api
-      .show("seed-concert")
-      .then(setConcert)
-      .catch(() => undefined);
+    api.show("seed-sports").then(setSports).catch(() => undefined);
+    api.show("seed-concert").then(setConcert).catch(() => undefined);
   }, []);
   const seeds = (shows?.filter((s) => s.seed) ?? []).sort((a, b) => ORDER.indexOf(a.mode) - ORDER.indexOf(b.mode));
-  // The demo has no accounts, so "Your shows" means shows created in this browser.
-  const recent = shows?.filter((s) => !s.seed && mine.includes(s.id)).slice(0, 8) ?? [];
+  // The demo has no accounts, so "your shows" means shows created in this browser.
+  const recent = shows?.filter((s) => !s.seed && mine.includes(s.id)).slice(0, 6) ?? [];
 
   return (
     <MotionConfig reducedMotion="user">
-      <IntroCurtain />
-      {/* "display: contents" keeps the header sticky to the page while it takes the stage colours. */}
-      <div className="stage contents">
-        <TopBar />
-      </div>
-      <main id="main" className="overflow-x-clip">
-        <Hero demo={sports ? "seed-sports" : seeds[0]?.id} show={sports} />
-        <Ribbons />
+      <main id="main" className="overflow-x-clip pb-8">
+        <SignalHero show={concert} />
+        <Dossier show={concert} />
+        <Record sports={sports} concert={concert} />
+        <ShowIndex seeds={seeds} recent={recent} />
         {error ? (
-          <div className="mx-auto max-w-[1280px] px-4 pt-10 md:px-6">
-            <Alert variant="destructive">
-              <AlertTitle>Could not load the demo shows</AlertTitle>
-              <AlertDescription>{error} You can still plan a new show.</AlertDescription>
-            </Alert>
-          </div>
+          <p role="alert" className="sig-paper hud px-4 pb-10 text-sig-red-ink md:px-10">
+            Could not load the demo shows: {error}. You can still plan a new show.
+          </p>
         ) : null}
-        <Posters seeds={seeds} recent={recent} />
-        <HowItWorks show={concert ?? sports} />
-        <CrowdShowcase show={sports} />
-        <QlooDeck />
-        <Sponsors show={concert ?? sports} />
-        <AskDemo show={concert} />
-        <WithoutQloo show={sports} />
-        <Trust />
+        <Flood />
+        <Finale />
       </main>
-      <FooterCta />
+      <StatusBar />
     </MotionConfig>
   );
 }

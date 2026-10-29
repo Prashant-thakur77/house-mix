@@ -8,7 +8,7 @@ Built for the Qloo Agentic Hackathon ("Agents, but with taste"). Four modes: **C
 
 Open a seeded show (concert, comedy night, football fixture, festival day) to see a full plan instantly, or plan a new one. Until the live Qloo key is connected the demo runs on the schema-identical mock and says **MOCK DATA** on every screen.
 
-![Landing: a stage-eye 3D crowd, the live Qloo trace and gig-poster stripes](design/app/landing/hero-desktop.png)
+![Landing: a point-cloud figure in a black HUD that crumbles into a crowd as you scroll](design/app/landing/hero-desktop.png)
 
 | Console: live trace, crowd read, approval queue | Evidence drawer: "Qloo says" vs "Our interpretation" |
 | --- | --- |

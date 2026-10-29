@@ -7,11 +7,12 @@ test("landing lists the seeded demo shows and the mode banner", async ({ page })
   await expect(page.getByRole("heading", { level: 1, name: /program the night/i })).toBeVisible();
   for (const t of [/Khruangbin/, /Taylor Tomlinson/, /Chelsea FC vs Arsenal FC/]) await expect(page.getByRole("link", { name: t }).first()).toBeVisible();
   if ((process.env.QLOO_MODE ?? "mock") === "mock") await expect(page.getByText("MOCK DATA").first()).toBeVisible();
-  // The landing explains every Qloo tool it uses, and how it works.
-  await expect(page.getByRole("heading", { name: /taste data is the engine/i })).toBeVisible();
-  await expect(page.getByText("where_popular", { exact: true }).first()).toBeAttached();
-  await expect(page.getByRole("heading", { name: /from a lineup to a locked run-of-show/i }).first()).toBeAttached();
-  await expect(page.getByRole("heading", { name: /activations that fit the crowd/i })).toBeVisible();
+  // The landing explains how it works, Qloo's role, the sponsor tools and the safety rules.
+  await expect(page.getByRole("heading", { name: /how it works/i })).toBeAttached();
+  await expect(page.getByRole("heading", { name: /every pick is on file/i })).toBeVisible();
+  await expect(page.getByText(/powered by qloo/i).first()).toBeVisible();
+  await expect(page.getByText(/for sponsors and brand partners/i)).toBeVisible();
+  await expect(page.getByRole("heading", { name: /find your crowd before the doors open/i })).toBeVisible();
 });
 
 test("intake resolves names, Genesis needs confirmation, and nothing is auto-picked", async ({ page }) => {

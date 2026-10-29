@@ -198,19 +198,18 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   --font-heading: var(--font-sans);
-  --font-display: var(--font-bricolage), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-saira), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-dot: var(--font-doto), var(--font-geist-mono), ui-monospace, monospace;
 
-  /* Gig-poster stripes (landing + art). Ink pairs: white on crimson/violet, --stage-ink on the rest (≥ 4.5:1). */
-  --color-stripe-crimson: #C4133C;
-  --color-stripe-tangerine: #F2501E;
-  --color-stripe-amber: #FF9F1C;
-  --color-stripe-sun: #FFC83D;
-  --color-stripe-teal: #17A398;
-  --color-stripe-violet: #6B4CF6;
-  --color-stripe-pink: #FF4F9A;
-  --color-stage: #0B0A12;
-  --color-stage-2: #15131F;
-  --color-stage-ink: #160A12;
+  /* "Signal": black, paper and one red. Red text on paper uses --sig-red-ink (≥ 4.5:1); on red, ink is black. */
+  --color-sig-black: #0A0A0A;
+  --color-sig-paper: #F1F1F1;
+  --color-sig-grey: #393939;
+  --color-sig-mid: #8C8C8C;
+  --color-sig-soft: #5E5E5E;
+  --color-sig-red: #E8271C;
+  --color-sig-hot: #F0140F;
+  --color-sig-red-ink: #C8160D;
 
   --text-display: 2.75rem;  --text-display--line-height: 3rem;     --text-display--letter-spacing: -0.03em;
   --text-h1: 1.5rem;        --text-h1--line-height: 2rem;          --text-h1--letter-spacing: -0.015em;
@@ -235,53 +234,29 @@
   @keyframes flash  { from { box-shadow: 0 0 0 2px var(--signal); } to { box-shadow: 0 0 0 2px transparent; } }
   @keyframes live   { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
-  --animate-marquee: marquee 38s linear infinite;
-  --animate-marquee-rev: marquee 46s linear infinite reverse;
-  --animate-float: float 7s ease-in-out infinite;
-  --animate-spin-slow: spin 18s linear infinite;
-  --animate-eq: eq 1.1s ease-in-out infinite;
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @keyframes float   { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-10px) rotate(var(--r, 0deg)); } }
-  @keyframes eq      { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+  --animate-blink: blink 1.1s steps(2, jump-none) infinite;
+  @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 }
 
-/* The stage: the landing hero and dark bands stay "house lights down" in both themes. */
-.stage {
-  --background: #0B0A12;
-  --foreground: #F4F1FA;
-  --card: #15131F;
-  --card-foreground: #F4F1FA;
-  --muted: #1D1A2A;
-  --muted-foreground: #B9B3C9;
-  --subtle-foreground: #9C95AE;
-  --border: #2E2A3E;
-  --primary: #9D8CFF;
-  --primary-foreground: #0B0A12;
-  --ring: #FFC83D;
-  background: #0B0A12;
-  color: #F4F1FA;
-  color-scheme: dark;
+/* Signal surfaces. The landing's black and red bands look the same in both themes. */
+.sig-black {
+  --background: #0A0A0A; --foreground: #F1F1F1; --muted-foreground: #A3A3A3; --border: #2A2A2A; --ring: #E8271C;
+  background: #0A0A0A; color: #F1F1F1; color-scheme: dark;
 }
-.stripes {
-  background: linear-gradient(90deg, var(--color-stripe-crimson) 0 20%, var(--color-stripe-tangerine) 20% 40%, var(--color-stripe-amber) 40% 60%, var(--color-stripe-sun) 60% 80%, var(--color-stripe-teal) 80% 100%);
+.sig-paper {
+  --background: #F1F1F1; --foreground: #0A0A0A; --muted-foreground: #5E5E5E; --border: #CFCFCF; --ring: #C8160D;
+  background: #F1F1F1; color: #0A0A0A; color-scheme: light;
 }
-.intro-stripe { animation: intro-lift 0.7s cubic-bezier(0.7, 0, 0.2, 1) both; }
-.intro-line { animation: intro-out 0.2s ease-in 0.5s both; }
-@keyframes intro-lift { to { transform: translateY(-100%); } }
-@keyframes intro-out { to { opacity: 0; } }
-.hm-intro-seen .intro-curtain { display: none; }
-@media (prefers-reduced-motion: reduce), (max-width: 767px) { .intro-curtain { display: none; } }
-
-/* Hero entrance runs in CSS so it plays from first paint, before any script. */
-.hero-rise { animation: hero-rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
-.hero-fade { animation: hero-fade 0.6s ease-out both; }
-@keyframes hero-rise { from { transform: translateY(105%); } to { transform: none; } }
-@keyframes hero-fade { from { opacity: 0.01; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.text-glow { text-shadow: 0 0 32px rgb(255 200 61 / 0.25); }
-.grain::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.07; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.sig-red {
+  --background: #F0140F; --foreground: #0A0A0A; --muted-foreground: #0A0A0A; --border: #0A0A0A; --ring: #0A0A0A;
+  background: #F0140F; color: #0A0A0A;
 }
+/* HUD micro type: tiny, uppercase, tight. */
+.hud { font-family: var(--font-mono); font-size: 10.5px; line-height: 1.25; letter-spacing: 0.02em; text-transform: uppercase; }
+.sig-rise { animation: sig-rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.sig-breathe { transform-box: fill-box; transform-origin: center; animation: sig-breathe 7s ease-in-out infinite; }
+@keyframes sig-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.62); } }
+@keyframes sig-rise { from { transform: translateY(102%); } to { transform: none; } }
 
 @layer base {
   * { @apply border-border outline-ring/50; }

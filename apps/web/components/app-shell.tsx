@@ -110,7 +110,6 @@ export function TopBar({ children }: { children?: React.ReactNode }) {
           <ThemeToggle />
         </div>
       </div>
-      <div className="stripes h-[3px]" aria-hidden />
     </header>
   );
 }

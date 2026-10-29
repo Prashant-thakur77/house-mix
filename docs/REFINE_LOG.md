@@ -101,3 +101,18 @@ Review: design, against current award-winning sites. Eighteen references were ca
 | 7 | First build of the new landing scored 54 for mobile performance | LCP 6.9 s, TBT 650 ms | Hero entrance in CSS; WebGL only on desktop after idle, CSS crowd on phones; curtain is static CSS. 94 mobile, 98 desktop; accessibility 100 |
 | 8 | Inactive steps, an orange eyebrow and the mobile tool row failed axe | 3 violations | Contrast-safe colours; the scroll row is focusable and labelled |
 | 9 | On the hosted site, mobile LCP waited on the hero paragraph's fade and the full-screen curtain | Mobile 72–73 in production | The largest paint has no entrance; the curtain plays from tablet width up. Production Lighthouse: desktop 93–96, mobile 75–89 (network-dependent; 94 on the local production build), accessibility and best practices 100 |
+
+## Round 6
+
+Review from the owner: the round-5 landing was "too much" and its colours didn't work; of the references, unbelievablycrap.com was the one to follow. The site was captured again end to end (44 wheel-driven frames) and the landing rebuilt from scratch; see the "Signal" addendum in `design/DIRECTION.md`.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | Too many colours and too many effects | Seven poster colours, ribbons, curtain, fan deck, poster art | Black, paper and one red; HUD micro type; one 3D figure; one red bar motif |
+| 2 | The 3D said "party", not "taste data" | A cartoon crowd of capsules | A scanned-looking point-cloud figure that crumbles into a crowd as you scroll: one person is never the point |
+| 3 | The product story was spread across nine sections | Hero, ribbons, posters, steps, crowd, deck, sponsors, Ask, comparison, safety, footer | Five bands: hero, dossier (how it works), the record (evidence, Qloo, sponsors, Ask, Without Qloo), the index of shows, the red finale with the safety principles |
+| 4 | The point cloud never dispersed | Uniforms passed as a prop were copied by React Three Fiber | The material is built once with its uniforms; scroll progress reaches the shader every frame |
+| 5 | The mobile hero rendered empty | Scroll-linked fade divided by zero on a one-screen section | Fade is desktop only; phones get a dotted silhouette and static dot fields |
+| 6 | HUD lists and the theme button failed axe | `div` inside `ul`; accessible name without the visible clock | List items; the clock is part of the button's name |
+
+Lighthouse (production build): desktop 100 / 100 / 100, mobile 93 / 100 / 100. All 37 e2e + axe tests pass.

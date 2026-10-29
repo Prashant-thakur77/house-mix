@@ -783,14 +783,14 @@ and what still works), **partial/degraded** (content plus a `StatusChip` and a o
 - Keyboard shortcuts are listed in a `?` dialog and never steal focus from inputs.
 
 
-## Addendum (29 Oct 2026): "House lights" for the landing page
+## Addendum (30 Oct 2026): "Signal" for the landing page
 
-The console stays the quiet ops console above. The landing page and brand moments get a second register, researched in `REFERENCES-AWWWARDS.md`:
+The console stays the quiet ops console above. The landing page follows the reference the team chose from the Awwwards round, unbelievablycrap.com (`refs-awwwards/unbelievably-crap.jpg`, full scroll in `refs-awwwards/unbelievably-crap-full-*.jpg`): a black HUD, a white dossier, a red ending. An earlier, multi-colour "House lights" version was judged too much and replaced.
 
-- **Stage.** The hero, "how it works", the Qloo deck, the Ask demo and the footer sit on a fixed night stage (`.stage`, #0B0A12) in both themes; the bands between follow the theme.
-- **Gig-poster stripes.** Crimson #C4133C, tangerine #F2501E, amber #FF9F1C, sun #FFC83D, teal #17A398, plus violet #6B4CF6 and pink #FF4F9A. Ink pairs: white on crimson and violet, #160A12 on the rest (all ≥ 4.5:1). The stripe bar under the header carries the motif into every page.
-- **Type.** Bricolage Grotesque (800) for display, Geist for UI, Geist Mono for Qloo data.
-- **3D.** The hero is a stage-eye view of the crowd (three.js via React Three Fiber): instanced figures in the stripe colours jumping in a wave that starts at the pointer, four additive light beams, a spinning vinyl and two floating knots. It loads after the page is idle on desktop, pauses off-screen, renders one still frame for reduced motion, and phones get a CSS crowd instead.
-- **Art.** Four poster illustrations, one per mode (vinyl and EQ bars, mic under a spotlight, a pitch with a ball arc, tents under a spinning sun), as inline SVG with small looping details. They appear on the demo cards, the intake mode picker and the console header.
-- **Motion.** Entrance in CSS (plays from first paint); scroll-linked pieces with Motion: the pinned five-step assembly, the fanned tool deck, bars and sparklines that draw on view, count-ups, a typed Ask exchange. `MotionConfig reducedMotion="user"` throughout.
-- **Budget.** Lighthouse on the production build: landing 98 / 100 / 100 desktop, 94 / 100 / 100 mobile (performance / accessibility / best practices).
+- **Colour.** Black #0A0A0A, paper #F1F1F1, status-bar grey #393939, one red (#E8271C for marks, #F0140F for fills, #C8160D for red text on paper). The only other colour is a faint RGB fringe in the 3D figure's scanlines. Ink on red is black (≥ 4.5:1).
+- **Type.** Saira Condensed (bold, uppercase) for display; Geist Mono at 10.5–11.5 px uppercase for HUD labels; Doto (dot matrix) for the big rotated numerals; Geist for body copy.
+- **Hero (black).** A point-cloud figure built from body primitives, with scanlines and one red scan line, turning towards the pointer. HUD around it: a minimap with live pointer X/Y, the Qloo tools the seeded plan cited with counts, venue coordinates, protocol counters, the MOCK DATA notice. Scrolling reveals two narrative columns, then the figure crumbles point by point into a crowd of tiny figures: *one figure is never the point; Qloo reads the crowd* (our twist on the reference, and the safe-use rule in one image).
+- **Dossier (paper).** A line-art head; two red bars that start as a cross, swing onto the shoulders and close into a "locked" bar; dot-matrix numerals (the plan's pick count) sliding past; the crowd's Qloo tags and their mirror inside the head; the five steps as bracketed HUD cards; a closing scramble: *We read crowds. Never people.*
+- **The record (black)** and **the index (paper)**: one cited pick, the Without Qloo numbers in dot-matrix digits, Qloo's role, the sponsor one-pager, an Ask answer; then the four demo shows as an index that inverts on hover.
+- **Flood and finale (red).** A stepped red horizon rises into the final band: the closing headline, a black panel with a breathing red ellipse and a waveform, the nav, and the four safety principles. A fixed grey status bar (links, Qloo mode, GMT offset, live clock, "Plan a show +") runs across the page.
+- **Budget.** Dot fields are a 2D canvas drawn every 120 ms on desktop and once on phones; the WebGL figure loads after idle on desktop only (phones get a dotted silhouette). Lighthouse on the production build: 100 / 100 / 100 desktop, 93 / 100 / 100 mobile.

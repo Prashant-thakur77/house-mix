@@ -15,7 +15,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { PosterArt } from "@/components/landing/poster-art";
 
 const TIERS: { id: CapacityTier; label: string; hint: string }[] = [
   { id: "club", label: "Club", hint: "< 500" },
@@ -192,11 +191,10 @@ export default function NewShow() {
                       aria-checked={mode === m}
                       onClick={() => switchMode(m)}
                       className={cn(
-                        "group overflow-hidden rounded-lg border text-left transition-[colors,box-shadow,transform] hover:-translate-y-0.5",
+                        "group overflow-hidden rounded-lg border text-left transition-colors",
                         mode === m ? "border-primary bg-accent text-accent-foreground ring-2 ring-primary" : "border-input hover:bg-muted",
                       )}
                     >
-                      <PosterArt mode={m} className={cn("h-16 transition-[filter]", mode === m ? "" : "saturate-[0.55] group-hover:saturate-100")} />
                       <span className="flex items-center gap-2 px-3 py-2.5">
                         <Icon className="size-4 shrink-0" aria-hidden />
                         <span>
