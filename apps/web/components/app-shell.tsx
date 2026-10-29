@@ -93,6 +93,7 @@ export function MockBanner() {
 export function TopBar({ children }: { children?: React.ReactNode }) {
   return (
     <header className="no-print sticky top-0 z-30 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
+      <span className="pointer-events-none absolute -bottom-px left-0 h-[2px] w-16 bg-ring" aria-hidden />
       <MockBanner />
       <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-3 px-4 md:px-6">
         <Logo />

@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { PixelGlyph } from "@/components/pixel-glyph";
 
 const TIERS: { id: CapacityTier; label: string; hint: string }[] = [
   { id: "club", label: "Club", hint: "< 500" },
@@ -182,7 +183,6 @@ export default function NewShow() {
               <Kicker>Mode</Kicker>
               <div role="radiogroup" aria-label="Event mode" className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {(Object.keys(MODES) as Mode[]).map((m) => {
-                  const Icon = MODE_META[m].icon;
                   return (
                     <button
                       key={m}
@@ -196,7 +196,7 @@ export default function NewShow() {
                       )}
                     >
                       <span className="flex items-center gap-2 px-3 py-2.5">
-                        <Icon className="size-4 shrink-0" aria-hidden />
+                        <PixelGlyph mode={m} className="size-7" />
                         <span>
                           <span className="block font-medium">{MODES[m].label}</span>
                           <span className="block text-small text-muted-foreground">{MODES[m].tagline}</span>

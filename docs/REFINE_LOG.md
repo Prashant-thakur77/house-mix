@@ -116,3 +116,16 @@ Review from the owner: the round-5 landing was "too much" and its colours didn't
 | 6 | HUD lists and the theme button failed axe | `div` inside `ul`; accessible name without the visible clock | List items; the clock is part of the button's name |
 
 Lighthouse (production build): desktop 100 / 100 / 100, mobile 93 / 100 / 100. All 37 e2e + axe tests pass.
+
+## Round 7
+
+Owner's call: keep the round-6 landing as it is; refresh the other pages a little (colour, texture, art) without touching the fonts.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | App pages looked like a different product from the landing | Violet accent on warm grey | Ink actions and a signal-red accent on the landing's paper and black |
+| 2 | Flat canvases | Plain background | A faint dot grid behind the app |
+| 3 | Generic line icons for modes | Lucide icons | Pixel glyphs with one red pixel, in chips, the intake picker and the console header |
+| 4 | Labels had no character | Plain uppercase | A red "//" prefix (CSS only, so names and tests are unchanged) and a red tick under the header |
+
+19 API, 6 eval and 37 e2e + axe tests pass (light and dark, desktop and mobile).

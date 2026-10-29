@@ -28,6 +28,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Kbd } from "@/components/ui/kbd";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PixelGlyph } from "@/components/pixel-glyph";
 
 const STATE_LABEL: Record<Show["status"], string> = {
   needs_confirmation: "Needs you",
@@ -233,6 +234,9 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   const header = (
     <div className="border-b bg-background">
       <div className="mx-auto flex max-w-[1600px] flex-col gap-x-4 gap-y-2 px-4 py-3 md:flex-row md:flex-wrap md:items-center md:px-6">
+        <span className="hidden size-16 shrink-0 place-items-center rounded-lg border bg-card md:grid" aria-hidden>
+          <PixelGlyph mode={i.mode} className="size-10" />
+        </span>
         <div className="min-w-0 md:flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <ModeChip mode={i.mode} />

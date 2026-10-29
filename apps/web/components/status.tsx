@@ -1,6 +1,7 @@
 import { CircleCheck, CircleDashed, CircleHelp, CircleX, Contrast, LoaderCircle, Mic, Music, Sparkles, Tent, TrendingUp, TriangleAlert, Trophy } from "lucide-react";
 import type { Mode, QlooStatus } from "@housemix/shared";
 import { cn } from "cn";
+import { PixelGlyph } from "@/components/pixel-glyph";
 
 const STATUS: Record<QlooStatus | "running", { icon: typeof CircleCheck; label: string; cls: string }> = {
   ok: { icon: CircleCheck, label: "ok", cls: "bg-status-ok-bg text-status-ok" },
@@ -75,15 +76,15 @@ export const MODE_META: Record<Mode, { label: string; icon: typeof Music }> = {
 
 export function ModeChip({ mode, className }: { mode: Mode; className?: string }) {
   const m = MODE_META[mode];
-  const Icon = m.icon;
   return (
     <span className={cn("inline-flex h-6 items-center gap-1.5 rounded-full border px-2.5 text-small font-medium", className)}>
-      <Icon className="size-3.5" aria-hidden />
+      <PixelGlyph mode={mode} className="size-3.5" />
       {m.label}
     </span>
   );
 }
 
 export function Kicker({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <div className={cn("text-label font-medium uppercase text-muted-foreground", className)}>{children}</div>;
+  // The red "//" prefix is a CSS pseudo-element, so it never enters the text or the accessible name.
+  return <div className={cn("kicker text-label font-medium uppercase text-muted-foreground", className)}>{children}</div>;
 }

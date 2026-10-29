@@ -794,3 +794,11 @@ The console stays the quiet ops console above. The landing page follows the refe
 - **The record (black)** and **the index (paper)**: one cited pick, the Without Qloo numbers in dot-matrix digits, Qloo's role, the sponsor one-pager, an Ask answer; then the four demo shows as an index that inverts on hover.
 - **Flood and finale (red).** A stepped red horizon rises into the final band: the closing headline, a black panel with a breathing red ellipse and a waveform, the nav, and the four safety principles. A fixed grey status bar (links, Qloo mode, GMT offset, live clock, "Plan a show +") runs across the page.
 - **Budget.** Dot fields are a 2D canvas drawn every 120 ms on desktop and once on phones; the WebGL figure loads after idle on desktop only (phones get a dotted silhouette). Lighthouse on the production build: 100 / 100 / 100 desktop, 93 / 100 / 100 mobile.
+
+### App pages (30 Oct 2026)
+
+The console, intake, compare, rating and share pages keep their layout and fonts (Geist, Geist Mono, Saira Condensed titles) and take a light version of the landing's language:
+
+- **Colour.** Paper #F1F1F1 / near-black #0A0A0A canvases; primary actions in ink (paper-white in dark); signal red for focus rings, selected states and the live indicator (#E8271C for marks; #B3170E / #FF8A80 for red text, ≥ 5.8:1). Chart, status and evidence colours are unchanged because they carry meaning.
+- **Texture.** A faint 14 px dot grid behind the app; cards stay solid.
+- **Art.** 9×9 pixel glyphs per mode (a beamed note, a mic on a stand, a ball, a tent with a flag), each with one red pixel, in mode chips, the intake picker and the console header; section labels carry a red "//"; the header has a short red tick on its bottom edge.
