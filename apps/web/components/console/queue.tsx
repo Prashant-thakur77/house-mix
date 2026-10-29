@@ -17,7 +17,7 @@ function why(item: PlanItem): string {
   return "Needs a human sign-off";
 }
 
-export function ApprovalQueue({ show, busy, onAction, onSelect, onLock, onUnlock, locking }: { show: Show; busy: Record<string, ItemAction>; onAction: (item: PlanItem, a: ItemAction) => void; onSelect: (item: PlanItem) => void; onLock: () => void; onUnlock: () => void; locking?: boolean }) {
+export function ApprovalQueue({ show, busy, onAction, onSelect, onLock, onUnlock, onApproveConfident, locking }: { show: Show; busy: Record<string, ItemAction>; onAction: (item: PlanItem, a: ItemAction) => void; onSelect: (item: PlanItem) => void; onLock: () => void; onUnlock: () => void; onApproveConfident: () => void; locking?: boolean }) {
   const items = show.plan?.slots.flatMap((s) => s.items.map((i) => ({ i, slot: s }))) ?? [];
   const live = items.filter(({ i }) => i.approval.state !== "swapped");
   const pending = live.filter(({ i }) => i.approval.state === "pending");
@@ -45,6 +45,11 @@ export function ApprovalQueue({ show, busy, onAction, onSelect, onLock, onUnlock
         </div>
       ) : (
         <>
+          {pending.some(({ i }) => !i.isWildcard && i.confidence === "high") ? (
+            <Button variant="outline" onClick={onApproveConfident} title="Approves pending picks whose Qloo calls all returned ok; stretch and reduced-confidence picks stay in the queue">
+              <Check data-icon="inline-start" /> Approve {pending.filter(({ i }) => !i.isWildcard && i.confidence === "high").length} high-confidence picks
+            </Button>
+          ) : null}
           <ol className="grid gap-1.5">
             {pending.slice(0, 40).map(({ i, slot }, n) => (
               <li key={i.id} className="grid grid-cols-[1.5rem_1fr_auto] items-center gap-2 rounded-md border px-2 py-1.5">

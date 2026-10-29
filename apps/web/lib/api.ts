@@ -87,6 +87,7 @@ export const api = {
   reset: (id: string, itemId: string) => post<Show>(`/shows/${id}/items/${itemId}/reset`),
   reject: (id: string, itemId: string, reason: string) => post<Show>(`/shows/${id}/items/${itemId}/reject`, { reason }),
   swap: (id: string, itemId: string) => post<Show>(`/shows/${id}/items/${itemId}/swap`),
+  approveConfident: (id: string) => post<Show>(`/shows/${id}/approve-confident`),
   lock: (id: string) => post<Show>(`/shows/${id}/lock`),
   unlock: (id: string) => post<Show>(`/shows/${id}/unlock`),
   briefing: (id: string, force = false) => post<Briefing>(`/shows/${id}/briefing`, { force }),

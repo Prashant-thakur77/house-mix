@@ -27,6 +27,24 @@ export async function approveItem(showId: string, itemId: string): Promise<Show>
   return saveShow(show);
 }
 
+/** Approves every pending, high-confidence, non-stretch item; stretch and reduced-confidence picks stay for a human look. */
+export async function approveConfident(showId: string): Promise<{ show: Show; approved: number }> {
+  const show = await getShow(showId);
+  assertEditable(show);
+  if (!show.plan) throw new HttpError(409, "This show has no plan yet.", "no_plan");
+  let approved = 0;
+  const at = new Date().toISOString();
+  for (const slot of show.plan.slots) {
+    for (const item of slot.items) {
+      if (item.approval.state === "pending" && !item.isWildcard && item.confidence === "high") {
+        item.approval = { state: "approved", at, reason: "Bulk-approved: high confidence" };
+        approved++;
+      }
+    }
+  }
+  return { show: await saveShow(show), approved };
+}
+
 export async function resetItem(showId: string, itemId: string): Promise<Show> {
   const show = await getShow(showId);
   assertEditable(show);

@@ -136,6 +136,19 @@ describe("approvals, exports and share", () => {
     expect((await post(`/shows/${show.id}/items/i_1/approve`)).status).toBe(409);
   });
 
+  it("bulk-approves only high-confidence, non-stretch pending items", async () => {
+    const base = show.plan!.slots[0]!.items[0]!;
+    const items = [
+      { ...base, id: "b1", confidence: "high" as const, isWildcard: false, approval: { state: "pending" as const } },
+      { ...base, id: "b2", confidence: "reduced" as const, isWildcard: false, approval: { state: "pending" as const } },
+      { ...base, id: "b3", confidence: "high" as const, isWildcard: true, approval: { state: "pending" as const } },
+    ];
+    const copy: Show = { ...show, id: "s_bulk", lockedAt: undefined, status: "planned", plan: { ...show.plan!, slots: [{ ...show.plan!.slots[0]!, items }] } };
+    await getStore().put("shows", copy.id, copy);
+    const s = (await post<Show>(`/shows/${copy.id}/approve-confident`)).body;
+    expect(s.plan!.slots[0]!.items.map((i) => i.approval.state)).toEqual(["approved", "pending", "pending"]);
+  });
+
   it("exports CSV and PDFs and serves the share link", async () => {
     const csv = await app.inject({ url: `/shows/${show.id}/export.csv` });
     expect(csv.statusCode).toBe(200);

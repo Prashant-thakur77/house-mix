@@ -10,7 +10,7 @@ import { compareOf } from "./qloo/normalize.ts";
 import { getStore } from "./store/store.ts";
 import { confirmEntity, createShow, getShow, HttpError, listShows, refineEntity, saveShow } from "./shows/service.ts";
 import { getRun, isEndMarker, startRun, subscribe } from "./shows/runs.ts";
-import { approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
+import { approveConfident, approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
 import { planCsv } from "./exports/csv.ts";
 import { runOfShowPdf, sponsorPdf } from "./exports/pdf.tsx";
 import { buildBriefing } from "./briefing/briefing.ts";
@@ -114,6 +114,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/reset", async (req) => resetItem(req.params.id, req.params.itemId));
   app.post<{ Params: { id: string; itemId: string }; Body: { reason?: string } }>("/shows/:id/items/:itemId/reject", async (req) => rejectItem(req.params.id, req.params.itemId, req.body?.reason ?? ""));
   app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/swap", { config: { rateLimit: { max: 20, timeWindow: "1 minute" } } }, async (req) => (await swapItem(req.params.id, req.params.itemId)).show);
+  app.post<{ Params: { id: string } }>("/shows/:id/approve-confident", async (req) => (await approveConfident(req.params.id)).show);
   app.post<{ Params: { id: string } }>("/shows/:id/lock", async (req) => lockPlan(req.params.id));
   app.post<{ Params: { id: string } }>("/shows/:id/unlock", async (req) => unlockPlan(req.params.id));
 

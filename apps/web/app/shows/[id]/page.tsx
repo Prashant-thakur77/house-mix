@@ -371,6 +371,15 @@ export default function ConsolePage() {
         }
       }}
       onUnlock={async () => setShow(await api.unlock(show.id))}
+      onApproveConfident={async () => {
+        try {
+          const next = await api.approveConfident(show.id);
+          setShow(next);
+          toast.success("High-confidence picks approved", { description: "Stretch and reduced-confidence picks are still waiting for you." });
+        } catch (e) {
+          toast.error("Bulk approve failed", { description: (e as ApiError).message });
+        }
+      }}
     />
   ) : (
     <div className="grid gap-2 text-small text-muted-foreground">
