@@ -47,3 +47,15 @@ Review: Lighthouse (mobile, throttled) on the production site, a live-run captur
 | 10 | No capture of the agent working | Only finished plans | `design/app/show-live-run/` (desktop light/dark, mobile) |
 
 Lighthouse after round 2 (production): landing 93 / 100 / 100, intake 91 / 100 / 100, console 84–90 / 100 / 100 (performance / accessibility / best practices).
+
+## Round 3
+
+Review: the headline demo show as a judge would open it.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | The concert demo's crowd read said "0 shared concepts" (mock comparison treated two different fixture tag sets as almost disjoint) | 0 shared, every bar one-sided | Mock comparison scores concepts from the same family in the middle, as real fan bases overlap; concert re-seeded: Psychedelic Rock and Funk are shared ground |
+| 2 | Cached mock envelopes survived mock changes (24 h cache) | Re-seed reused stale comparisons (10 of 22 calls cached) | Mock cache keys carry `MOCK_VERSION` |
+| 3 | Re-generated seeds never reached production (import skipped existing IDs) | Old seed kept in Firestore | Seeds with a newer `createdAt` replace the stored copy |
+
+Remaining items that would move a judge's score are external: live Qloo data (key), measured results (key, setlist.fm key, raters), and the video. Nothing else found in this round changes a score.
