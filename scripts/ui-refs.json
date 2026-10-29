@@ -1,0 +1,40 @@
+{
+  "$comment": "Reference sites for scripts/ui-research.ts (default mode). slug = folder under design/refs/. Entries with a localhost url need that server running first.",
+  "sites": [
+    { "slug": "strikal-move", "url": "https://strikal-move.vercel.app", "category": "saved reference", "source": "user saved reference" },
+    { "slug": "campus", "url": "http://localhost:3100", "category": "saved reference (live-ops sim)", "source": "user saved reference, github.com/AfreenInnovates/campus run locally" },
+    { "slug": "campus-rooms", "url": "http://localhost:3100/simulation/rooms", "category": "saved reference (lobby screen)", "source": "user saved reference, run locally" },
+    { "slug": "campus-play", "url": "http://localhost:3100/simulation/play", "category": "saved reference (live drill HUD)", "source": "user saved reference, run locally", "settleMs": 6000 },
+
+    { "slug": "incident-io", "url": "https://incident.io", "category": "operator console / incident ops", "source": "product site" },
+    { "slug": "linear", "url": "https://linear.app", "category": "operator console / product", "source": "product site, Godly / Land-book regular" },
+    { "slug": "vercel", "url": "https://vercel.com", "category": "observability / dev platform", "source": "product site" },
+    { "slug": "grafana", "url": "https://grafana.com", "category": "observability dashboards", "source": "product site" },
+    { "slug": "sentry", "url": "https://sentry.io", "category": "observability / error ops", "source": "product site" },
+    { "slug": "betterstack", "url": "https://betterstack.com", "category": "uptime / incident ops", "source": "product site, Godly / Land-book regular" },
+    { "slug": "axiom", "url": "https://axiom.co", "category": "observability / logs", "source": "product site" },
+    { "slug": "tinybird", "url": "https://www.tinybird.co", "category": "real-time analytics", "source": "product site" },
+    { "slug": "posthog", "url": "https://posthog.com", "category": "product analytics", "source": "product site" },
+    { "slug": "supabase", "url": "https://supabase.com", "category": "dev platform / dashboard", "source": "product site" },
+    { "slug": "raycast", "url": "https://www.raycast.com", "category": "tool UI", "source": "product site, Awwwards / Godly regular" },
+    { "slug": "tremor", "url": "https://tremor.so", "category": "dashboard components (Tailwind)", "source": "dashboard gallery / component kit" },
+    { "slug": "shadcn-dashboard", "url": "https://ui.shadcn.com/examples/dashboard", "category": "dashboard example (shadcn)", "source": "dashboard gallery" },
+
+    { "slug": "dice", "url": "https://dice.fm", "category": "ticketing / music events", "source": "product site" },
+    { "slug": "resident-advisor", "url": "https://ra.co/events", "category": "events listings / music", "source": "product site" },
+    { "slug": "songkick", "url": "https://www.songkick.com", "category": "concert listings", "source": "product site" },
+    { "slug": "bandsintown", "url": "https://www.bandsintown.com", "category": "concert listings", "source": "product site" },
+    { "slug": "chartmetric", "url": "https://chartmetric.com", "category": "music analytics", "source": "product site" },
+    { "slug": "soundcharts", "url": "https://soundcharts.com", "category": "music analytics", "source": "product site" },
+
+    { "slug": "sofascore", "url": "https://www.sofascore.com", "category": "live sports data", "source": "product site" },
+    { "slug": "fotmob", "url": "https://www.fotmob.com", "category": "live sports data", "source": "product site" },
+    { "slug": "opta-analyst", "url": "https://theanalyst.com", "category": "sports data editorial", "source": "product site" },
+    { "slug": "statsbomb", "url": "https://statsbomb.com", "category": "sports data", "source": "product site" },
+
+    { "slug": "overworld-audio", "url": "https://overworldaudio.com/", "category": "music (award)", "source": "Awwwards Site of the Day, Oct 2026", "actions": [{ "type": "click", "selector": "text=/enter without sound/i" }], "settleMs": 4000 },
+    { "slug": "nickho-motorsports", "url": "https://nickho-motorsports.nl/", "category": "sports (award)", "source": "Awwwards Site of the Day, Oct 2026" },
+    { "slug": "the-immortals", "url": "https://theimmortals.world/", "category": "football (award)", "source": "Awwwards Honorable Mention, Aug 2026", "settleMs": 9000 },
+    { "slug": "nyphil-gustavo", "url": "https://www.nyphil.org/discover/gustavo", "category": "concert (award)", "source": "Awwwards Honorable Mention, Oct 2026" }
+  ]
+}

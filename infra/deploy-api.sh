@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Builds the API image with Cloud Build and deploys it to Cloud Run (min-instances 1, secrets from Secret Manager).
+# Usage: GCP_PROJECT=my-project [REGION=us-central1] [QLOO_MODE=live] [WEB_ORIGIN=https://house-mix.vercel.app] infra/deploy-api.sh
+set -euo pipefail
+: "${GCP_PROJECT:?set GCP_PROJECT}"
+REGION="${REGION:-us-central1}"
+SERVICE="${SERVICE:-house-mix-api}"
+QLOO_MODE="${QLOO_MODE:-mock}"
+BUCKET="${HM_AUDIO_BUCKET:-${GCP_PROJECT}-house-mix-audio}"
+cd "$(dirname "$0")/.."
+
+gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com \
+  firestore.googleapis.com secretmanager.googleapis.com texttospeech.googleapis.com storage.googleapis.com \
+  --project "$GCP_PROJECT"
+gcloud artifacts repositories describe house-mix --location "$REGION" --project "$GCP_PROJECT" >/dev/null 2>&1 \
+  || gcloud artifacts repositories create house-mix --repository-format docker --location "$REGION" --project "$GCP_PROJECT"
+gcloud firestore databases describe --project "$GCP_PROJECT" >/dev/null 2>&1 \
+  || gcloud firestore databases create --location "$REGION" --project "$GCP_PROJECT"
+gcloud storage buckets describe "gs://${BUCKET}" --project "$GCP_PROJECT" >/dev/null 2>&1 \
+  || gcloud storage buckets create "gs://${BUCKET}" --location "$REGION" --project "$GCP_PROJECT" --uniform-bucket-level-access
+
+IMAGE="${REGION}-docker.pkg.dev/${GCP_PROJECT}/house-mix/api:$(git rev-parse --short HEAD)"
+gcloud builds submit --project "$GCP_PROJECT" --config infra/cloudbuild.yaml --substitutions "_IMAGE=${IMAGE}" .
+
+SA="$(gcloud projects describe "$GCP_PROJECT" --format='value(projectNumber)')-compute@developer.gserviceaccount.com"
+for role in roles/secretmanager.secretAccessor roles/datastore.user roles/storage.objectAdmin; do
+  gcloud projects add-iam-policy-binding "$GCP_PROJECT" --member "serviceAccount:${SA}" --role "$role" --condition=None >/dev/null
+done
+
+SECRETS="ANTHROPIC_API_KEY=anthropic-api-key:latest"
+gcloud secrets describe qloo-api-key --project "$GCP_PROJECT" >/dev/null 2>&1 && SECRETS="${SECRETS},QLOO_API_KEY=qloo-api-key:latest"
+gcloud run deploy "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --image "$IMAGE" \
+  --allow-unauthenticated --min-instances 1 --max-instances 3 --cpu 2 --memory 2Gi --timeout 900 \
+  --no-cpu-throttling --concurrency 40 \
+  --set-secrets "$SECRETS" \
+  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}"
+gcloud run services describe "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --format 'value(status.url)'

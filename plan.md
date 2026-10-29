@@ -112,12 +112,16 @@ One `query()` per plan run. Main thread = **Planner**; subagents are defined in 
 
 | Agent | Model | Tools | Job |
 | --- | --- | --- | --- |
-| Planner (main) | `HM_PLANNER_MODEL` (default `claude-sonnet-5-5`; Opus 5.5 is a flag if eval shows it helps) | Task, `submit_plan_summary` | Reads confirmed entities + mode template, dispatches subagents (in parallel where independent), writes the plan headline. |
-| CrowdReader | `HM_MODEL` | compare_audiences, audience_demographics, entity_tags, trends, `submit_crowd_read` | Builds the crowd read; outputs demographic phrase + top tags the others reuse. |
-| Programmer | `HM_MODEL` | recommend, rank, trends, where_popular, find_tags, `submit_slot` | One invocation per slot (walk-in, openers/interval, food & drink, local flavour). |
-| SponsorFit | `HM_MODEL` | recommend (brand), compare_audiences, rank, `submit_slot` | Merch + brand activations with fit score. |
-| Wildcard | `HM_MODEL` | recommend, rank, `submit_wildcard` | One stretch pick per slot. |
+| Planner (main) | `HM_PLANNER_MODEL` (default `HM_MODEL` = `claude-sonnet-5-5`; Opus 5.5 is a flag if eval shows it helps) | Task, `submit_plan_summary` | Reads confirmed entities + mode template, dispatches subagents (in parallel where independent), writes the plan headline. |
+| CrowdReader | `HM_WORKER_MODEL` (default `HM_MODEL`) | compare_audiences, audience_demographics, entity_tags, trends, `submit_crowd_read` | Builds the crowd read; outputs demographic phrase + top tags the others reuse. |
+| Programmer | `HM_WORKER_MODEL` | recommend, rank, trends, where_popular, find_tags, `submit_slot` | One invocation per slot (walk-in, openers/interval, food & drink, local flavour). |
+| SponsorFit | `HM_WORKER_MODEL` | recommend (brand), compare_audiences, rank, `submit_slot` | Merch + brand activations with fit score. |
+| Wildcard | `HM_WORKER_MODEL` | recommend, rank, `submit_wildcard` | One stretch pick per slot. |
 | Critic | deterministic + Anthropic SDK (`HM_MODEL`) | — (runs inside every `submit_*` handler) | Drops any item whose cited `call_id` is missing, whose entity is not in that call's results, whose call status was `error`/`empty`, or whose "why" makes claims the evidence does not support. Every drop is a trace event. |
+
+Resolver: a deterministic intake step (not an LLM) that calls `qloo_describe` / `qloo_find_tags` for every name and turns ambiguity into confirm cards. The kit says free-text tags and non-exact names come back as `needs_input`, so resolving up front is what lets every later call pass IDs only.
+
+The demographic phrase sent back to Qloo is derived server-side from Qloo's own age distribution (`phraseFromAges`, age only, never gender), because a model-written phrase can fail the harness's parser.
 
 Evidence contract: every submitted item must cite `{call_id, entity_id}` pairs from the run's ledger. The server — not the model — fills in tool name, inputs, status, scores and provenance from the ledger, so the model cannot fabricate evidence.
 
@@ -196,11 +200,11 @@ Hook → sports intake (home vs away) → "Genesis" triggers `needs_input` confi
 
 ## 12. Phases (each ends with a commit)
 
-- [ ] **P1 Scaffold** — workspaces, TS config, shared schemas, lint/test tooling, .env.example, gitleaks CI. *Done when* `npm run typecheck && npm test` pass on an empty suite.
-- [ ] **P2 Qloo layer** — frozen contract, mock server + fixtures (all 6 statuses), QlooClient (pool, cache, retry rule, budget, ledger), typed wrappers, `qloo:verify`. *Done when* tests show every status from the mock over real stdio MCP, retry happens only on `retryable`, and the cache hits on a repeat call.
-- [ ] **P3 Store + shows + resolution** — FileStore/FirestoreStore, `POST /shows`, confirm flow, guardrails. *Done when* "Genesis" returns a pending confirmation and confirm resolves it (API test).
-- [ ] **P4 Agent pipeline** — Planner + subagents, proxy MCP, hooks, Critic, SSE run events, slot templates for 4 modes. *Done when* a mock-mode run produces a full plan where 100% of items have valid evidence and the trace shows every call.
-- [ ] **P5 Approvals, exports, share, compare** — approve/swap/reject/lock, PDF/CSV/sponsor PDF, share, compare. *Done when* API tests cover each and the PDF opens.
+- [x] **P1 Scaffold** — workspaces, TS config, shared schemas, lint/test tooling, .env.example, gitleaks CI. *Done when* `npm run typecheck && npm test` pass on an empty suite.
+- [x] **P2 Qloo layer** — frozen contract, mock server + fixtures (all 6 statuses), QlooClient (pool, cache, retry rule, budget, ledger), typed wrappers, `qloo:verify`. *Done when* tests show every status from the mock over real stdio MCP, retry happens only on `retryable`, and the cache hits on a repeat call.
+- [x] **P3 Store + shows + resolution** — FileStore/FirestoreStore, `POST /shows`, confirm flow, guardrails. *Done when* "Genesis" returns a pending confirmation and confirm resolves it (API test).
+- [x] **P4 Agent pipeline** — Planner + subagents, proxy MCP, hooks, Critic, SSE run events, slot templates for 4 modes. *Done when* a mock-mode run produces a full plan where 100% of items have valid evidence and the trace shows every call.
+- [x] **P5 Approvals, exports, share, compare** — approve/swap/reject/lock, PDF/CSV/sponsor PDF, share, compare. *Done when* API tests cover each and the PDF opens.
 - [ ] **P6 Briefing** — script, judge, TTS, MP3. *Done when* a briefing with ≥1 judged-out line is produced and audio plays (or the TTS reason is shown).
 - [ ] **P7 UI research** — screenshots, REFERENCES.md, DIRECTION.md. *Done when* both docs exist with scores and tokens.
 - [ ] **P8 Web app** — all screens, states, a11y; screenshots to design/app. *Done when* Playwright e2e + axe pass in mock mode and screenshots are reviewed against references.

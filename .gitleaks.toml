@@ -1,0 +1,10 @@
+title = "house-mix"
+[extend]
+useDefault = true
+[allowlist]
+paths = ['''fixtures/mock/.*''', '''apps/api/src/qloo/contract/.*''']
+
+[[rules]]
+id = "anthropic-any-key"
+description = "Anthropic key of any prefix"
+regex = '''sk-ant-[a-z]{2,8}[0-9]{0,2}-[A-Za-z0-9_\-]{20,}'''

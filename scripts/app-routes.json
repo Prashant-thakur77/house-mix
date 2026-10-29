@@ -1,0 +1,26 @@
+{
+  "$comment": "Routes for `npx tsx scripts/ui-research.ts --app <baseUrl>`. Each route is captured at desktop + mobile in light + dark into design/app/<slug>/. Actions run in order after load. Update the paths once the seeded demo show ids exist.",
+  "themeStorageKey": "theme",
+  "waitFor": "main",
+  "routes": [
+    { "slug": "landing", "path": "/" },
+    { "slug": "new-concert", "path": "/new" },
+    { "slug": "new-comedy", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/comedy/i" }] },
+    { "slug": "new-sports", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/sports/i" }] },
+    { "slug": "new-festival", "path": "/new", "actions": [{ "type": "click", "role": "tab", "name": "/festival/i" }] },
+    { "slug": "show-concert", "path": "/shows/demo-concert" },
+    { "slug": "show-comedy", "path": "/shows/demo-comedy" },
+    { "slug": "show-sports", "path": "/shows/demo-football" },
+    {
+      "slug": "show-concert-evidence",
+      "path": "/shows/demo-concert",
+      "actions": [
+        { "type": "click", "selector": "[data-testid=plan-item] >> nth=0" },
+        { "type": "waitFor", "role": "dialog" }
+      ]
+    },
+    { "slug": "compare", "path": "/compare" },
+    { "slug": "share-concert", "path": "/shows/demo-concert/share" },
+    { "slug": "eval-rater", "path": "/eval" }
+  ]
+}
