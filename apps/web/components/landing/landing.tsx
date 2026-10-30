@@ -684,7 +684,7 @@ type EvalSummary = {
   judgeV1: { wins: number; losses: number; ties: number } | null;
   evidence: { items: number; valid: number; criticDrops: number; l0Items: number; l0Unresolved: number; l0Ambiguous: number | null } | null;
   humanAb: { raters: number; wins: number; losses: number } | null;
-  value?: { brandsRepeated: number; brands: number; l0BrandsRepeated: number; l0Brands: number; tooBig: number; acts: number; l0TooBig: number; l0Acts: number } | null;
+  value?: { brandsRepeated: number; brands: number; l0BrandsRepeated: number; l0Brands: number; tooBig: number; acts: number; l0TooBig: number; l0Acts: number; explained?: number; picks?: number; repeatSame?: number; repeatCalls?: number; awayOverlap?: number } | null;
 };
 
 function TestedLive() {
@@ -698,6 +698,11 @@ function TestedLive() {
     cells.push({
       value: `${s.value.brandsRepeated}/${s.value.brands}`,
       label: `Sponsors repeated from one show to another (Claude alone: ${s.value.l0BrandsRepeated}/${s.value.l0Brands}). Openers bigger than the headliner: ${s.value.tooBig}/${s.value.acts} (Claude alone: ${s.value.l0TooBig}/${s.value.l0Acts})`,
+    });
+  if (s.value?.explained != null && s.value.picks)
+    cells.push({
+      value: `${s.value.explained}/${s.value.picks}`,
+      label: `Plan picks that carry Qloo's own reason${s.value.repeatCalls ? `; the same call asked twice gave the same answer ${s.value.repeatSame} of ${s.value.repeatCalls} times` : ""}${s.value.awayOverlap != null ? `; the same bill in another city keeps only ${Math.round(s.value.awayOverlap * 100)}% of Qloo's top 10` : ""}`,
     });
   if (s.judge)
     cells.push({
@@ -715,7 +720,7 @@ function TestedLive() {
           Methods and the negative result →
         </a>
       </div>
-      <div className={cn("mt-4 grid grid-cols-2 gap-6", cells.length > 2 && "lg:grid-cols-4", cells.length > 4 && "xl:grid-cols-5")}>
+      <div className={cn("mt-4 grid grid-cols-2 gap-6", cells.length % 3 === 0 ? "lg:grid-cols-3" : cells.length > 2 && "lg:grid-cols-4", cells.length === 5 && "xl:grid-cols-5")}>
         {cells.map((c) => (
           <Big key={c.label} value={c.value} label={c.label} />
         ))}

@@ -46,6 +46,9 @@ const value = r<{
   realism: Record<"houseMixV1" | "houseMixV2" | "l0", Real>;
   specificity: Record<"houseMix" | "l0" | "houseMixBrands" | "l0Brands", Rep>;
   sensitivity: { crowds: number; pairs: number; meanOverlap: number; maxOverlap: number };
+  location?: { shows: number; meanAwayOverlap: number; meanNoCityOverlap: number; changed: number };
+  repeatability?: { calls: number; sameSet: number; sameOrder: number };
+  explainability?: { picks: number; explained: number; recommended: number; cited: number };
   music?: { artists: number; withSongs: number; filledByQloo: number; explicitLeftOut: number; playlists: number; minutesPlanned: number };
   latency?: Record<string, { calls: number; medianMs: number; maxMs: number }>;
 }>("qloo_value");
@@ -102,6 +105,21 @@ if (live(value) && value) {
     `| Picks repeated from another show's plan, across ${7} different shows | ${frac(S.houseMix.repeated, S.houseMix.picks)} | ${frac(S.l0.repeated, S.l0.picks)} | Qloo's picks follow each crowd; L0 falls back on defaults (${S.l0.top.slice(0, 2).join(", ")}) |`,
     `| Sponsors repeated from another show | ${frac(S.houseMixBrands.repeated, S.houseMixBrands.picks)} | ${frac(S.l0Brands.repeated, S.l0Brands.picks)} | the same brand pitched to every crowd is not a fit score |`,
     `| Overlap between Qloo's top 10 artists for two different crowds | ${pct(value.sensitivity.meanOverlap)} on average across ${value.sensitivity.pairs} pairs of ${value.sensitivity.crowds} crowds (max ${pct(value.sensitivity.maxOverlap)}) | – | change the bill and the recommendations change completely |`,
+    ...(value.location
+      ? [
+          `| Overlap when the same bill is asked for in a city on another continent (London ↔ Los Angeles) | ${pct(value.location.meanAwayOverlap)} on average; ${value.location.changed} of ${value.location.shows} lists changed (with no city: ${pct(value.location.meanNoCityOverlap)}) | – | where the show is changes who the crowd wants; Qloo answers for the city, not just the bill |`,
+        ]
+      : []),
+    ...(value.repeatability
+      ? [
+          `| Same call asked twice, cache bypassed | ${value.repeatability.sameOrder} of ${value.repeatability.calls} identical, in the same order | – | a cited call ID can be re-run and checked by anyone |`,
+        ]
+      : []),
+    ...(value.explainability
+      ? [
+          `| Plan picks that carry Qloo's own reason (which input signals drove them, and how much) | ${frac(value.explainability.explained, value.explainability.picks)}; ${value.explainability.cited === value.explainability.picks ? "every one" : frac(value.explainability.cited, value.explainability.picks)} cites a Qloo call | 0 (L0's reasons are its own prose) | the "why" on each card is Qloo's explainability, not a model's guess |`,
+        ]
+      : []),
     "",
     "These say Qloo grounds the picks in each crowd and makes booking rules enforceable. They do not say the picks taste better: the automated judge above still prefers L0 on taste.",
     "",
@@ -222,6 +240,9 @@ const summary = {
           acts: value.realism.houseMixV2.picks,
           l0TooBig: value.realism.l0.tooBig,
           l0Acts: value.realism.l0.picks,
+          ...(value.explainability ? { explained: value.explainability.explained, picks: value.explainability.picks } : {}),
+          ...(value.repeatability ? { repeatSame: value.repeatability.sameOrder, repeatCalls: value.repeatability.calls } : {}),
+          ...(value.location ? { awayOverlap: value.location.meanAwayOverlap } : {}),
         }
       : null,
   plans:

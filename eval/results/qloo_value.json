@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:36:18.343Z",
+  "generatedAt": "2026-10-30T15:54:00.112Z",
   "qlooMode": "live",
   "method": "Free: the eval's stored plans plus Qloo describe and recommend calls. No Claude calls.",
   "realism": {
@@ -71,6 +71,81 @@
     "maxOverlap": 0,
     "identicalPairs": 0,
     "zeroOverlapPairs": 28
+  },
+  "location": {
+    "shows": 8,
+    "meanAwayOverlap": 0.2622466327961684,
+    "meanNoCityOverlap": 0.2699220713926596,
+    "changed": 8,
+    "moves": [
+      {
+        "id": "ab01",
+        "home": "Manchester",
+        "away": "Los Angeles",
+        "awayOverlap": 0.1111111111111111,
+        "noCityOverlap": 0.3333333333333333
+      },
+      {
+        "id": "ab02",
+        "home": "Los Angeles",
+        "away": "London",
+        "awayOverlap": 0.6666666666666666,
+        "noCityOverlap": 0.5384615384615384
+      },
+      {
+        "id": "ab03",
+        "home": "London",
+        "away": "Los Angeles",
+        "awayOverlap": 0.25,
+        "noCityOverlap": 0
+      },
+      {
+        "id": "ab04",
+        "home": "New York City",
+        "away": "London",
+        "awayOverlap": 0.5384615384615384,
+        "noCityOverlap": 0.1111111111111111
+      },
+      {
+        "id": "ab06",
+        "home": "Chicago",
+        "away": "London",
+        "awayOverlap": 0.05263157894736842,
+        "noCityOverlap": 0.6666666666666666
+      },
+      {
+        "id": "ab08",
+        "home": "Liverpool",
+        "away": "Los Angeles",
+        "awayOverlap": 0.25,
+        "noCityOverlap": 0.17647058823529413
+      },
+      {
+        "id": "ab09",
+        "home": "London",
+        "away": "Los Angeles",
+        "awayOverlap": 0.17647058823529413,
+        "noCityOverlap": 0
+      },
+      {
+        "id": "ab10",
+        "home": "Los Angeles",
+        "away": "London",
+        "awayOverlap": 0.05263157894736842,
+        "noCityOverlap": 0.3333333333333333
+      }
+    ]
+  },
+  "repeatability": {
+    "calls": 5,
+    "sameSet": 5,
+    "sameOrder": 5
+  },
+  "explainability": {
+    "picks": 182,
+    "explained": 155,
+    "recommended": 182,
+    "cited": 182
   },
   "ops": {
     "plans": 7,

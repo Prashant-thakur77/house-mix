@@ -97,10 +97,13 @@ Measured on live Qloo on 30 Oct 2026 over 7 held-out real shows (2025 and Januar
 | Opener, interval and halftime acts bigger than the headliner (Qloo popularity) | **0 of 28** (first run: 14 of 28) | 4 of 10 it could pin down | the fix is a rule the server enforces with Qloo's popularity |
 | Sponsors repeated from one show to another | **0 of 32** | 6 of 28 (Spotify on 4 of 7 shows) | Qloo ranks brands per crowd; Claude alone falls back on defaults |
 | Overlap between Qloo's top-10 artists for two different crowds | **0%** across 28 pairs | – | change the bill and the picks change completely |
+| The same bill asked for in a city on another continent (London ↔ Los Angeles) | **26%** overlap on average; 8 of 8 lists changed | – | Qloo answers for where the show is, not only for who is on the bill |
+| The same Qloo call asked twice, cache bypassed | **5 of 5** identical, in the same order | – | a cited call ID can be re-run and checked |
+| Picks that carry Qloo's own reason (which input signals drove them) | **155 of 182 (85%)** | 0 (its reasons are its own prose) | the "why" on each card comes from Qloo's explainability |
 
 ![Tested on live Qloo: the landing page's results strip](design/app/landing/tested-live.png)
 
-The last three rows are free checks with no Claude calls (`npm run eval:qloo`, method in [`eval/REPORT.md`](eval/REPORT.md)).
+The last six rows are free checks with no Claude calls (`npm run eval:qloo`, method in [`eval/REPORT.md`](eval/REPORT.md)).
 
 **The negative result, plainly:** on taste alone, a judge prefers Claude's own picks. Claude alone names the anthems a specific fan base sings and the obvious category sponsors; Qloo's ranking surfaces broader or less expected names, and our explanations still read like ranking output. What Claude alone can't do is say where any pick came from: half its picks are names Qloo can't pin down without a person choosing, and none of them carry evidence. The first judge run also found real bugs (openers bigger than the headliner, bars across the city, rival clubs as sponsors); each became a rule the server enforces, and the openers slot went from losing to winning.
 

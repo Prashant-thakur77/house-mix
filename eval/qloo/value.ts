@@ -11,6 +11,11 @@
  *  5. Music: of the artists Qloo picked for the five demo shows, how many have real songs to play, how many Qloo added
  *     to fill a short slot, and how many explicit songs were left out for all-ages shows.
  *  6. Qloo call times per tool, from the demo shows' call ledgers (cache hits excluded).
+ *  7. Location: the same bill asked for in its own city, in a city on another continent, and with no city. How much
+ *     of the top 10 survives the move says whether Qloo's answer depends on where the show is.
+ *  8. Repeatability: the same recommend call twice, the cache bypassed. A citation is only worth checking if asking
+ *     again gives the same answer.
+ *  9. Explainability: of the plan's picks, how many carry Qloo's own reason (which input signals drove the pick).
  *
  *    QLOO_MODE=live npx tsx --env-file-if-exists=../.env.local qloo/value.ts   ->  eval/results/qloo_value.json
  */
@@ -22,6 +27,7 @@ import type { L0Plan } from "../baselines.ts";
 requireLive("qloo:value");
 const { QlooClient } = await import("../../apps/api/src/qloo/client.ts");
 const { entitiesOf } = await import("../../apps/api/src/qloo/normalize.ts");
+const { config } = await import("../../apps/api/src/config.ts");
 const qloo = new QlooClient("live");
 const ctx = { runId: "eval_qloo_value", agent: "eval" };
 
@@ -120,6 +126,7 @@ const specificity = {
 
 // 3. Crowd sensitivity: Qloo's top artists for each show's bill in its city, and how much two crowds share.
 const lists: { id: string; names: string[] }[] = [];
+const billIds = new Map<string, string[]>();
 for (const s of shows.shows) {
   const ids = [];
   for (const side of s.input.sides.slice(0, 2)) {
@@ -127,6 +134,7 @@ for (const s of shows.shows) {
     if (e) ids.push(e.id);
   }
   if (!ids.length) continue;
+  billIds.set(s.id, ids);
   const { call } = await qloo.call("qloo_recommend", { target_type: "artist", signals: ids, signal_location: s.input.city, limit: 10 }, ctx);
   lists.push({ id: s.id, names: entitiesOf(call).map((e) => e.name) });
 }
@@ -145,6 +153,56 @@ const sensitivity = {
   maxOverlap: Math.max(0, ...jac),
   identicalPairs: jac.filter((j) => j === 1).length,
   zeroOverlapPairs: jac.filter((j) => j === 0).length,
+};
+
+const overlap = (a: string[], b: string[]) => {
+  const x = new Set(a.map(norm));
+  const y = new Set(b.map(norm));
+  return [...x].filter((n) => y.has(n)).length / Math.max(1, new Set([...x, ...y]).size);
+};
+const mean = (xs: number[]) => xs.reduce((s, v) => s + v, 0) / Math.max(1, xs.length);
+
+// 7. Location: the same bill in its own city, across an ocean, and with no city.
+const UK = new Set(["London", "Manchester", "Liverpool"]);
+const recNames = async (signals: string[], city?: string) =>
+  entitiesOf((await qloo.call("qloo_recommend", { target_type: "artist", signals, ...(city ? { signal_location: city } : {}), limit: 10 }, ctx)).call).map((e) => e.name);
+const moves: { id: string; home: string; away: string; awayOverlap: number; noCityOverlap: number }[] = [];
+for (const s of shows.shows) {
+  const ids = billIds.get(s.id);
+  const home = lists.find((l) => l.id === s.id)?.names;
+  if (!ids || !home?.length) continue;
+  const away = UK.has(s.input.city) ? "Los Angeles" : "London";
+  moves.push({ id: s.id, home: s.input.city, away, awayOverlap: overlap(home, await recNames(ids, away)), noCityOverlap: overlap(home, await recNames(ids)) });
+}
+const location = {
+  shows: moves.length,
+  meanAwayOverlap: mean(moves.map((m) => m.awayOverlap)),
+  meanNoCityOverlap: mean(moves.map((m) => m.noCityOverlap)),
+  changed: moves.filter((m) => m.awayOverlap < 1).length,
+  moves,
+};
+
+// 8. Repeatability: ask again with the cache bypassed.
+const ttl = config.cacheTtlMs;
+config.cacheTtlMs = 0;
+const repeats8: { id: string; sameSet: boolean; sameOrder: boolean }[] = [];
+for (const s of shows.shows.slice(0, 5)) {
+  const ids = billIds.get(s.id);
+  if (!ids) continue;
+  const a = await recNames(ids, s.input.city);
+  const b = await recNames(ids, s.input.city);
+  repeats8.push({ id: s.id, sameSet: overlap(a, b) === 1, sameOrder: a.join("|") === b.join("|") });
+}
+config.cacheTtlMs = ttl;
+const repeatability = { calls: repeats8.length, sameSet: repeats8.filter((r) => r.sameSet).length, sameOrder: repeats8.filter((r) => r.sameOrder).length };
+
+// 9. Explainability: picks that carry Qloo's own reason.
+const items9 = testRuns.flatMap((r) => r.plan.slots.flatMap((s) => s.items.filter((i) => i.approval.state !== "swapped")));
+const explainability = {
+  picks: items9.length,
+  explained: items9.filter((i) => /explained by/.test(i.qlooSays)).length,
+  recommended: items9.filter((i) => i.evidence.some((e) => e.tool === "qloo_recommend")).length,
+  cited: items9.filter((i) => i.evidence.length > 0).length,
 };
 
 // 4. Operations, from the plans' own stats.
@@ -182,7 +240,18 @@ for (const c of seeds.flatMap((x) => x.ledger).filter((c) => !c.cached && c.dura
 const latency = Object.fromEntries([...byTool.entries()].sort().map(([tool, xs]) => [tool, { calls: xs.length, medianMs: med(xs), maxMs: Math.max(...xs) }]));
 
 await qloo.close();
-const file = writeResult("qloo_value", { method: "Free: the eval's stored plans plus Qloo describe and recommend calls. No Claude calls.", realism, specificity, sensitivity, ops, music, latency });
-console.log(JSON.stringify({ realism, specificity, sensitivity, ops, music, latency }, null, 1));
+const file = writeResult("qloo_value", {
+  method: "Free: the eval's stored plans plus Qloo describe and recommend calls. No Claude calls.",
+  realism,
+  specificity,
+  sensitivity,
+  location,
+  repeatability,
+  explainability,
+  ops,
+  music,
+  latency,
+});
+console.log(JSON.stringify({ realism, specificity, sensitivity, location, repeatability, explainability, ops, music, latency }, null, 1));
 console.log(`wrote ${file}`);
 process.exit(0);

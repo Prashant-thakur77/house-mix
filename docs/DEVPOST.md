@@ -77,6 +77,9 @@ Measured on live Qloo on 30 Oct 2026. Every number comes from `eval/` scripts; s
 | Booking realism | Opener, interval and halftime acts with Qloo popularity at or above the headliner's | House Mix **0 of 28** (14 of 28 before the fix); L0 4 of 10 it could pin down |
 | Crowd specificity | Picks and sponsors repeated from one of seven shows to another | Sponsors: House Mix **0 of 32**, L0 6 of 28 (Spotify on 4 shows). All picks: 2 of 182 vs 10 of 157 |
 | Crowd sensitivity | Overlap between Qloo's top-10 artists for two different crowds | **0%** across 28 pairs |
+| Location matters | The same bill asked for in its own city and in a city on another continent | **26%** overlap on average; 8 of 8 top-10 lists changed |
+| Citations can be re-checked | The same Qloo call twice, cache bypassed | **5 of 5** identical, in the same order |
+| The "why" is Qloo's | Plan picks that carry Qloo's explainability (which input signals drove them) | **155 of 182 (85%)** |
 
 The negative result: on taste alone, the judge still prefers Claude's own picks. Claude alone names the anthems a specific fan base sings and the obvious category sponsors; Qloo's ranking surfaces broader or less expected names, and our explanations still read like ranking output. The first run also exposed real bugs, and each became a rule the server enforces: openers must be less popular than the headliner (the openers slot went from losing to winning 3–1), bars and food must come from a search around the venue's address, and rival clubs, governments and news outlets are not sponsors.
 

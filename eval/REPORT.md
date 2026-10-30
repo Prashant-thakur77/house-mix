@@ -24,6 +24,9 @@ Free checks on the same eval plans plus Qloo calls (`npm run eval:qloo`); no Cla
 | Picks repeated from another show's plan, across 7 different shows | 2 of 182 (1.1%) | 10 of 157 (6.4%) | Qloo's picks follow each crowd; L0 falls back on defaults (spotify (4 shows), chappell roan (2 shows)) |
 | Sponsors repeated from another show | 0 of 32 (0.0%) | 6 of 28 (21.4%) | the same brand pitched to every crowd is not a fit score |
 | Overlap between Qloo's top 10 artists for two different crowds | 0.0% on average across 28 pairs of 8 crowds (max 0.0%) | – | change the bill and the recommendations change completely |
+| Overlap when the same bill is asked for in a city on another continent (London ↔ Los Angeles) | 26.2% on average; 8 of 8 lists changed (with no city: 27.0%) | – | where the show is changes who the crowd wants; Qloo answers for the city, not just the bill |
+| Same call asked twice, cache bypassed | 5 of 5 identical, in the same order | – | a cited call ID can be re-run and checked by anyone |
+| Plan picks that carry Qloo's own reason (which input signals drove them, and how much) | 155 of 182 (85.2%); every one cites a Qloo call | 0 (L0's reasons are its own prose) | the "why" on each card is Qloo's explainability, not a model's guess |
 
 These say Qloo grounds the picks in each crowd and makes booking rules enforceable. They do not say the picks taste better: the automated judge above still prefers L0 on taste.
 
