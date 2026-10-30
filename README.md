@@ -16,6 +16,7 @@
 ![Unit tests](https://img.shields.io/badge/unit%20%2B%20API%20tests-43%20passing-2ea44f)
 ![E2E tests](https://img.shields.io/badge/e2e%20tests-45%20passing%20%C3%97%202%20modes-2ea44f)
 ![Accessibility](https://img.shields.io/badge/a11y-WCAG%202.1%20AA-2ea44f)
+[![Release](https://img.shields.io/github/v/release/Prashant-thakur77/house-mix?label=release&color=E8271C)](https://github.com/Prashant-thakur77/house-mix/releases)
 ![Licence](https://img.shields.io/badge/licence-MIT-lightgrey)
 
 Built for the **Qloo Agentic Hackathon** with **Qloo Taste AI** (`qloo mcp`) and **Claude** (Claude Agent SDK).
@@ -224,6 +225,10 @@ Tests: `npm run typecheck && npm test && npm run test:e2e`. Deploy: `infra/deplo
 | [`docs`](docs) | Qloo contract and walkthrough, Devpost write-up, go-live steps, [scope notes](docs/LIMITATIONS.md) |
 
 Charts on this page: `python3 docs/charts.py` redraws them from `eval/results/`.
+
+## Releases
+
+**v1.0.0** is the hackathon release. Every version since the first commit is tagged, with notes: see [`CHANGELOG.md`](CHANGELOG.md) and [Releases](https://github.com/Prashant-thakur77/house-mix/releases). The live API reports its version at [`/health`](https://house-mix-api-120659974854.us-central1.run.app/health).
 
 ## Licence
 

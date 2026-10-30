@@ -66,5 +66,5 @@ export const config = {
   get publicBaseUrl(): string {
     return env("HM_PUBLIC_BASE_URL", `http://localhost:${config.port}`);
   },
-  version: "0.1.0",
+  version: "1.0.0",
 };
