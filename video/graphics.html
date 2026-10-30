@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>House Mix film drawn scenes</title>
+    <!--
+  The film's drawn scenes, recorded in real time by video/record.mjs at 1920×1080.
+  #scene=turn|proof|judge|recap|end&dur=<s>&cues={key: seconds}&words={lineId: [[word, seconds], ...]}&facts={...}&stills=<file URL of a folder>
+  window.__ready turns true once fonts are in; window.__start() runs the scene; every motion is a function of the
+  time since __start, so a recording is reproducible. window.__seek(t) draws one exact frame (for checks).
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Geist+Mono:wght@400;500&family=Geist:wght@400;600&family=Doto:wght@900&display=block" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --card: #141414;
+        --paper: #f1f1f1;
+        --muted: #9a9a9a;
+        --line: #2a2a2a;
+        --red: #e8271c;
+        --violet: #6a3df5;
+        --violet-tint: #a893ff;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: Geist, sans-serif;
+      }
+      body {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+      .stage {
+        position: absolute;
+        inset: 0;
+        padding: 96px 120px;
+      }
+      .hud {
+        font-family: 'Geist Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .hud .slash {
+        color: var(--red);
+      }
+      .display {
+        font-family: 'Saira Condensed', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 0.9;
+      }
+      .num {
+        font-family: Doto, monospace;
+        font-weight: 900;
+        line-height: 0.9;
+      }
+      .red {
+        color: var(--red);
+      }
+      .violet {
+        color: var(--violet-tint);
+      }
+      .in {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 44px 48px;
+      }
+      .shot {
+        position: absolute;
+        border-radius: 14px;
+        border: 1px solid #333;
+        overflow: hidden;
+        background: #111;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      }
+      .shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .flash {
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const params = new URLSearchParams(location.hash.slice(1));
+      const SCENE = params.get('scene') || 'turn';
+      const DUR = +(params.get('dur') || 8);
+      const cues = JSON.parse(params.get('cues') || '{}');
+      const words = JSON.parse(params.get('words') || '{}');
+      const facts = JSON.parse(params.get('facts') || '{}');
+      const STILLS = params.get('stills') || '';
+      const root = document.getElementById('root');
+
+      // The one ease, and an entrance: a 12 px rise plus a fade over 600 ms.
+      const ease = (x) => {
+        // cubic-bezier(0.16, 1, 0.3, 1), solved numerically
+        const x1 = 0.16, y1 = 1, x2 = 0.3, y2 = 1;
+        const bx = (t) => 3 * x1 * t * (1 - t) ** 2 + 3 * x2 * t * t * (1 - t) + t ** 3;
+        const by = (t) => 3 * y1 * t * (1 - t) ** 2 + 3 * y2 * t * t * (1 - t) + t ** 3;
+        let lo = 0, hi = 1;
+        for (let i = 0; i < 24; i++) {
+          const m = (lo + hi) / 2;
+          if (bx(m) < x) lo = m;
+          else hi = m;
+        }
+        return by((lo + hi) / 2);
+      };
+      const clamp01 = (x) => Math.max(0, Math.min(1, x));
+      const prog = (t, t0, d = 0.6) => ease(clamp01((t - t0) / d));
+      const enter = (el, t, t0, d = 0.6) => {
+        const k = prog(t, t0, d);
+        el.style.opacity = k;
+        el.style.transform = `translateY(${12 * (1 - k)}px)`;
+      };
+      /** When a word is said: the line's cue plus the word's time, or a fallback. */
+      const said = (lid, re, fallback) => {
+        const w = (words[lid] || []).find(([x]) => re.test(x));
+        return (cues[lid] ?? 0) + (w ? w[1] : fallback);
+      };
+      const h = (html) => {
+        const d = document.createElement('div');
+        d.innerHTML = html.trim();
+        return d.firstElementChild;
+      };
+
+      const scenes = {
+        /** "Tonight's crowd, read by Qloo. Every pick, on file." as big type, phrase by phrase. */
+        turn() {
+          const el = h(`<div class="stage" style="display:flex;flex-direction:column;justify-content:center;gap:22px">
+            <div class="hud in" id="k0"><span class="slash">//</span> House Mix</div>
+            <div class="display in" id="k1" style="font-size:170px">Tonight’s crowd,</div>
+            <div class="display in" id="k2" style="font-size:170px">read by <span class="red">Qloo.</span></div>
+            <div class="display in" id="k3" style="font-size:120px;color:var(--violet-tint)">Every pick, on file.</div></div>`);
+          root.append(el);
+          const t1 = said('n9', /crowd/i, 0.2), t2 = said('n9', /read/i, 1.0), t3 = said('n9', /every/i, 1.8);
+          return (t) => {
+            enter(el.querySelector('#k0'), t, 0);
+            enter(el.querySelector('#k1'), t, t1 - 0.25);
+            enter(el.querySelector('#k2'), t, t2 - 0.15);
+            enter(el.querySelector('#k3'), t, t3 - 0.15);
+          };
+        },
+
+        /** Two numbers from the eval, counting up as they're said, with their source. */
+        proof() {
+          const el = h(`<div class="stage">
+            <div class="hud in" id="h"><span class="slash">//</span> Tested on live Qloo · ${facts.shows} real shows · ${facts.date}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:70px">
+              <div class="card in" id="c1"><div class="num" style="font-size:190px"><span id="v1">0</span>/${facts.citedOf}</div>
+                <div class="display" style="font-size:58px;margin-top:26px">House Mix picks</div>
+                <div style="font-size:30px;color:var(--muted);margin-top:12px">with a valid live Qloo citation</div></div>
+              <div class="card in" id="c2"><div class="num" style="font-size:190px;color:var(--red)"><span id="v2">0</span>/${facts.l0Picks}</div>
+                <div class="display" style="font-size:58px;margin-top:26px">Claude-alone picks</div>
+                <div style="font-size:30px;color:var(--muted);margin-top:12px">ambiguous in Qloo: a person must choose first</div></div>
+            </div>
+            <div class="hud in" id="src" style="margin-top:56px;font-size:20px">Source: eval/REPORT.md · evidence eval · ${facts.criticDrops} unsupported items removed by the Critic first</div></div>`);
+          root.append(el);
+          const a = said('n27', /^(182|one|hundred)/i, 3.2), b = said('n27', /^nearly/i, 5.4);
+          return (t) => {
+            enter(el.querySelector('#h'), t, 0);
+            enter(el.querySelector('#c1'), t, a - 0.9);
+            enter(el.querySelector('#c2'), t, b - 0.6);
+            enter(el.querySelector('#src'), t, b + 0.6);
+            el.querySelector('#v1').textContent = Math.round(facts.cited * prog(t, a - 0.6, 0.9));
+            el.querySelector('#v2').textContent = Math.round(facts.l0Ambiguous * prog(t, b - 0.3, 0.9));
+          };
+        },
+
+        /** The honest result: the judge's first run, the second, and what the fixes turned around. */
+        judge() {
+          const el = h(`<div class="stage">
+            <div class="hud in" id="h"><span class="slash">//</span> Blind judge · ${facts.judgeModel} · both orders · ${facts.shows} real shows</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:70px">
+              <div class="card in" id="c1"><div class="hud">First run</div><div class="num" style="font-size:150px;margin-top:22px">${facts.v1Wins}–${facts.v1Losses}</div>
+                <div style="font-size:28px;color:var(--muted);margin-top:16px">openers bigger than the headliner, bars across town</div></div>
+              <div class="card in" id="c2"><div class="hud">After the fixes</div><div class="num" style="font-size:150px;margin-top:22px">${facts.wins}–${facts.losses}</div>
+                <div style="font-size:28px;color:var(--muted);margin-top:16px">${facts.ties} tie · Claude alone still wins on taste</div></div>
+              <div class="card in" id="c3" style="border-color:var(--violet)"><div class="hud violet">Openers</div><div class="num violet" style="font-size:150px;margin-top:22px">${facts.openersWins}–${facts.openersLosses}</div>
+                <div style="font-size:28px;color:var(--muted);margin-top:16px">House Mix, after the popularity rule</div></div>
+            </div>
+            <div class="display in" id="say" style="font-size:64px;margin-top:64px">We show the loss too<span class="red">.</span></div></div>`);
+          root.append(el);
+          return (t) => {
+            enter(el.querySelector('#h'), t, 0);
+            enter(el.querySelector('#c1'), t, 0.4);
+            enter(el.querySelector('#c2'), t, 1.4);
+            enter(el.querySelector('#c3'), t, 2.4);
+            enter(el.querySelector('#say'), t, 3.4);
+          };
+        },
+
+        /** Four lines stack on the left, a real screen for each on the right, a white flash on each line. */
+        recap() {
+          const lines = [
+            ['Every name,', 'confirmed.', 'confirm.jpg', /^name/i, 0.0],
+            ['Every pick,', 'cited.', 'evidence.jpg', /^pick/i, 1.3],
+            ['Every sponsor,', 'matched honestly.', 'sponsor.jpg', /^sponsor/i, 2.6],
+            ['Every cue,', 'on time.', 'night.jpg', /^(cue|queue)/i, 4.3],
+          ];
+          const el = h(`<div class="stage"><div class="hud"><span class="slash">//</span> What nobody else does</div>
+            <div id="ls" style="position:absolute;left:120px;top:200px;display:grid;gap:34px"></div><div class="flash" id="fl"></div></div>`);
+          root.append(el);
+          const ls = el.querySelector('#ls');
+          const at = lines.map(([, , , re, fb]) => said('n29', re, fb) - 0.15);
+          const rows = lines.map(([a, b]) => {
+            const r = h(`<div class="display in" style="font-size:88px">${a} <span class="red">${b}</span></div>`);
+            ls.append(r);
+            return r;
+          });
+          const shots = lines.map(([, , img]) => {
+            const s = h(`<div class="shot" style="left:1060px;top:590px;width:740px;height:416px;opacity:0;transform-origin:100% 100%"><img src="${STILLS}/${img}" /></div>`);
+            el.append(s);
+            return s;
+          });
+          return (t) => {
+            let cur = -1;
+            at.forEach((a, i) => (t >= a - 0.05 ? (cur = i) : 0));
+            rows.forEach((r, i) => {
+              enter(r, t, at[i], 0.3);
+              if (t >= at[i]) r.style.opacity = i === cur ? 1 : 0.4;
+            });
+            shots.forEach((s, i) => {
+              const on = i === cur;
+              const k = on ? prog(t, at[i], 1.2) : 0;
+              s.style.opacity = on ? Math.min(1, (t - at[i]) / 0.15) : 0;
+              s.style.transform = `scale(${1 + 0.08 * k})`;
+            });
+            const since = Math.min(...at.map((a) => (t >= a ? t - a : 99)));
+            el.querySelector('#fl').style.opacity = since < 0.07 ? 0.85 : 0;
+          };
+        },
+
+        /** The end card: the mark, the URL, no sign-in, a QR code, the hackathon line. */
+        end() {
+          const el = h(`<div class="stage" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:30px">
+            <div class="in" id="m" style="display:flex;align-items:center;gap:30px"><img src="../design/brand/house-mix-mark.svg" style="width:120px;height:120px" />
+              <div class="display" style="font-size:150px">House Mix<span class="red">.</span></div></div>
+            <div class="in" id="u" style="font-family:'Geist Mono';font-size:54px">house-mix.vercel.app</div>
+            <div class="hud in" id="n" style="font-size:26px;color:var(--paper)">Try it now · no sign-in · open a show and check every receipt</div>
+            <div class="hud in" id="r" style="font-size:22px">github.com/Prashant-thakur77/house-mix · Qloo Agentic Hackathon · Qloo Taste AI + Claude</div>
+            <img class="in" id="q" src="${STILLS}/qr.png" style="position:absolute;right:140px;top:300px;width:330px;height:330px;border-radius:16px" /></div>`);
+          root.append(el);
+          return (t) => {
+            enter(el.querySelector('#m'), t, 0.1);
+            enter(el.querySelector('#u'), t, 0.5);
+            enter(el.querySelector('#n'), t, 0.8);
+            enter(el.querySelector('#r'), t, 1.1);
+            enter(el.querySelector('#q'), t, 0.7);
+          };
+        },
+      };
+
+      const draw = scenes[SCENE]();
+      let t0 = null;
+      window.__seek = (t) => {
+        t0 = null;
+        draw(t);
+      };
+      window.__start = () => {
+        t0 = performance.now();
+        const tick = () => {
+          if (t0 === null) return;
+          draw((performance.now() - t0) / 1000);
+          requestAnimationFrame(tick);
+        };
+        tick();
+      };
+      draw(0);
+      Promise.all([document.fonts.ready, ...[...document.images].map((i) => (i.complete ? 0 : new Promise((r) => (i.onload = i.onerror = r))))]).then(() => {
+        requestAnimationFrame(() => (window.__ready = true));
+      });
+    </script>
+  </body>
+</html>

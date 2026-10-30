@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>House Mix film: under the hood</title>
+    <!--
+  The film's "Under the hood" scene: House Mix's architecture as an exploded stack, drawn with three.js
+  and recorded in real time by Playwright at 1920x1080.
+  #scene=arch&dur=<seconds>&cues=<url-encoded {"intake":s,"agents":s,"qloo":s,"gate":s,"you":s}>
+  window.__ready turns true once fonts, three.js and the first frame are in.
+  window.__start() starts the clock; window.__seek(t) draws the exact frame at t seconds.
+  Every motion is a pure function of t: no transitions, no randomness, no accumulated state.
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Saira+Condensed:wght@600;700&display=block"
+    />
+    <style>
+      :root {
+        --ink: #0a0a0a;
+        --violet: #6a3df5;
+        --glow: #a893ff;
+        --red: #e8271c;
+        --paper: #f1f1f1;
+        --muted: #9a9a9a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: var(--paper);
+        background: var(--ink);
+      }
+      body {
+        background:
+          radial-gradient(ellipse 70% 60% at 42% 55%, rgba(106, 61, 245, 0.05), transparent 70%),
+          radial-gradient(circle, rgba(255, 255, 255, 0.07) 1.1px, transparent 1.7px) 0 0 / 36px 36px,
+          var(--ink);
+      }
+      canvas {
+        position: absolute;
+        inset: 0;
+        display: block;
+      }
+      #hud,
+      #wires {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        pointer-events: none;
+      }
+      .abs {
+        position: absolute;
+        left: 0;
+        top: 0;
+        will-change: transform, opacity;
+      }
+      svg.arr {
+        display: inline-block;
+        width: 0.95em;
+        height: 0.62em;
+        vertical-align: 0.04em;
+        margin: 0 0.12em;
+      }
+      .eyebrow {
+        left: 96px;
+        top: 62px;
+        font: 500 22px 'Geist Mono', monospace;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--glow);
+      }
+
+      /* Slab labels: a fixed column on the right. */
+      .lab {
+        white-space: nowrap;
+      }
+      .lab .row {
+        display: flex;
+        align-items: center;
+        height: 60px;
+      }
+      .lab b {
+        width: 44px;
+        font: 500 22px 'Geist Mono', monospace;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .lab h3 {
+        margin: 0;
+        font: 700 58px/1 'Saira Condensed', sans-serif;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--paper);
+      }
+      .lab p {
+        margin: 6px 0 0;
+        font: 400 23px/1.3 'Geist Mono', monospace;
+        color: var(--muted);
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 22px;
+        padding: 7px 16px 7px 12px;
+        border-radius: 999px;
+        background: var(--violet);
+        color: #fff;
+        font: 500 22px 'Geist Mono', monospace;
+        box-shadow: 0 0 28px rgba(168, 147, 255, 0.55);
+        transform-origin: 0 50%;
+      }
+      .chip svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Services, beside the stack. */
+      .sat {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .sat .in {
+        transform: translate(-100%, -50%);
+      }
+      .sat h4 {
+        margin: 0;
+        font: 700 30px/1 'Saira Condensed', sans-serif;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+      }
+      .sat small {
+        display: block;
+        margin-top: 5px;
+        font: 400 20px 'Geist Mono', monospace;
+        color: var(--muted);
+      }
+
+      /* The blocked pick. */
+      .callout .in {
+        transform: translate(-100%, -50%);
+      }
+      .callout .box {
+        padding: 14px 22px 16px;
+        border: 2px solid var(--red);
+        border-radius: 14px;
+        background: rgba(232, 39, 28, 0.13);
+        box-shadow: 0 0 40px rgba(232, 39, 28, 0.25);
+        white-space: nowrap;
+        transform-origin: 100% 50%;
+      }
+      .callout .box div {
+        font: 700 36px/1.08 'Saira Condensed', sans-serif;
+        color: var(--paper);
+      }
+      .callout .box div + div {
+        color: var(--red);
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <svg id="wires" viewBox="0 0 1920 1080"></svg>
+    <div id="hud"></div>
+
+    <script>
+      (async () => {
+        const W = 1920;
+        const H = 1080;
+
+        // ---------- contract ----------
+        const params = new URLSearchParams(location.hash.slice(1));
+        const DEFAULT_CUES = { intake: 0.6, agents: 4.8, qloo: 6.4, gate: 10.8, you: 16.2 };
+        let cues = { ...DEFAULT_CUES };
+        try {
+          const raw = params.get('cues');
+          if (raw) {
+            const got = JSON.parse(raw);
+            for (const k of Object.keys(DEFAULT_CUES)) if (Number.isFinite(+got[k]) && got[k] !== null) cues[k] = +got[k];
+          }
+        } catch (e) {
+          cues = { ...DEFAULT_CUES };
+        }
+        const DUR = Number.isFinite(+params.get('dur')) && +params.get('dur') > 0 ? +params.get('dur') : 20;
+        const CUE = [cues.intake, cues.agents, cues.qloo, cues.gate, cues.you];
+
+        // ---------- time helpers ----------
+        /** cubic-bezier(x1, y1, x2, y2) as a function of progress. */
+        const bezier = (x1, y1, x2, y2) => {
+          const cx = 3 * x1,
+            bx = 3 * (x2 - x1) - cx,
+            ax = 1 - cx - bx;
+          const cy = 3 * y1,
+            by = 3 * (y2 - y1) - cy,
+            ay = 1 - cy - by;
+          const sx = (t) => ((ax * t + bx) * t + cx) * t;
+          const sy = (t) => ((ay * t + by) * t + cy) * t;
+          const dx = (t) => (3 * ax * t + 2 * bx) * t + cx;
+          return (x) => {
+            if (x <= 0) return 0;
+            if (x >= 1) return 1;
+            let t = x;
+            for (let i = 0; i < 8; i++) {
+              const d = dx(t);
+              if (Math.abs(d) < 1e-6) break;
+              t -= (sx(t) - x) / d;
+            }
+            if (t < 0 || t > 1 || Math.abs(sx(t) - x) > 1e-4) {
+              let lo = 0,
+                hi = 1;
+              t = x;
+              for (let i = 0; i < 30; i++) {
+                if (sx(t) < x) lo = t;
+                else hi = t;
+                t = (lo + hi) / 2;
+              }
+            }
+            return sy(t);
+          };
+        };
+        const ease = bezier(0.16, 1, 0.3, 1); // the film's one ease
+        const inOut = bezier(0.65, 0, 0.35, 1); // camera and packet travel
+        const backOut = (p) => {
+          const c = 1.7;
+          return p <= 0 ? 0 : p >= 1 ? 1 : 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2);
+        };
+        const clamp01 = (v) => Math.min(1, Math.max(0, v));
+        const prog = (t, t0, dur) => clamp01((t - t0) / dur);
+        const lerp = (a, b, p) => a + (b - a) * p;
+        /** A fixed hash in [0, 1): the only "randomness" in the scene. */
+        const hash = (k, s) => {
+          const x = Math.sin(k * 127.1 + s * 311.7) * 43758.5453;
+          return x - Math.floor(x);
+        };
+        const mixHex = (a, b, p) => {
+          const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16));
+          const pb = [1, 3, 5].map((i) => parseInt(b.slice(i, i + 2), 16));
+          return `rgb(${pa.map((v, i) => Math.round(lerp(v, pb[i], p))).join(',')})`;
+        };
+
+        const el = (tag, cls, html = '') => {
+          const e = document.createElement(tag);
+          if (cls) e.className = cls;
+          e.innerHTML = html;
+          return e;
+        };
+        const svgEl = (tag, attrs) => {
+          const e = document.createElementNS('http://www.w3.org/2000/svg', tag);
+          for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+          return e;
+        };
+        const ARROW =
+          '<svg class="arr" viewBox="0 0 30 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h25M19 2l8 7-8 7"/></svg>';
+        const CHECK =
+          '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>';
+
+        const hud = document.getElementById('hud');
+        const wires = document.getElementById('wires');
+
+        // ---------- palette ----------
+        const C = {
+          ink: '#0a0a0a',
+          slab: '#141414',
+          slabTop: '#1c1c1c',
+          edge: '#343434',
+          violet: '#6a3df5',
+          glow: '#a893ff',
+          red: '#e8271c',
+          paper: '#f1f1f1',
+          muted: '#9a9a9a',
+          dimLine: '#3a3a3a',
+        };
+        const col = (hex) => new THREE.Color(hex);
+
+        // ---------- renderer ----------
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+        renderer.setPixelRatio(1);
+        renderer.setSize(W, H);
+        renderer.setClearColor(0x000000, 0);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        document.body.prepend(renderer.domElement);
+
+        const world = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(28, W / H, 0.1, 200);
+        const tmpV = new THREE.Vector3();
+        const toScreen = (v) => {
+          tmpV.copy(v).project(camera);
+          return { x: ((tmpV.x + 1) / 2) * W, y: ((1 - tmpV.y) / 2) * H };
+        };
+
+        // ---------- geometry constants ----------
+        const SW = 4.4,
+          SD = 3.0,
+          ST = 0.22,
+          GAP = 1.8,
+          RISE = 1.5,
+          FLOOR = -1.9;
+        const SLAB_Y = [0, 1, 2, 3, 4].map((i) => i * GAP);
+        const SATX = -4.15;
+        const LX = 1166; // left edge of the label column, page px
+
+        // ---------- lights and floor ----------
+        world.add(new THREE.HemisphereLight(0xd9d4ff, 0x0a0a0a, 0.55));
+        const key = new THREE.DirectionalLight(0xffffff, 1.05);
+        key.position.set(5, 17, 9);
+        key.castShadow = true;
+        key.shadow.mapSize.set(2048, 2048);
+        key.shadow.radius = 6;
+        key.shadow.bias = -0.0005;
+        key.shadow.normalBias = 0.02;
+        Object.assign(key.shadow.camera, { left: -11, right: 11, top: 11, bottom: -11, near: 1, far: 50 });
+        world.add(key);
+        const rim = new THREE.DirectionalLight(0x8f74ff, 0.55);
+        rim.position.set(-8, 6, -9);
+        world.add(rim);
+        const accentLight = new THREE.PointLight(0x6a3df5, 0, 7, 1.6);
+        world.add(accentLight);
+        const redLight = new THREE.PointLight(0xe8271c, 0, 7, 1.6);
+        world.add(redLight);
+
+        const radialTex = (inner, outer) => {
+          const c = document.createElement('canvas');
+          c.width = c.height = 256;
+          const g = c.getContext('2d');
+          const grad = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+          grad.addColorStop(0, inner);
+          grad.addColorStop(1, outer);
+          g.fillStyle = grad;
+          g.fillRect(0, 0, 256, 256);
+          return new THREE.CanvasTexture(c);
+        };
+        const pool = new THREE.Mesh(
+          new THREE.PlaneGeometry(22, 22),
+          new THREE.MeshBasicMaterial({ map: radialTex('rgba(255,255,255,0.075)', 'rgba(255,255,255,0)'), transparent: true, depthWrite: false }),
+        );
+        pool.rotation.x = -Math.PI / 2;
+        pool.position.set(-0.8, FLOOR - 0.002, 0);
+        world.add(pool);
+        const shadowFloor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.75 }));
+        shadowFloor.rotation.x = -Math.PI / 2;
+        shadowFloor.position.y = FLOOR;
+        shadowFloor.receiveShadow = true;
+        world.add(shadowFloor);
+
+        // ---------- slabs ----------
+        const roundRect = (w, d, r) => {
+          const s = new THREE.Shape();
+          const x = w / 2,
+            z = d / 2;
+          s.moveTo(-x + r, -z);
+          s.lineTo(x - r, -z);
+          s.quadraticCurveTo(x, -z, x, -z + r);
+          s.lineTo(x, z - r);
+          s.quadraticCurveTo(x, z, x - r, z);
+          s.lineTo(-x + r, z);
+          s.quadraticCurveTo(-x, z, -x, z - r);
+          s.lineTo(-x, -z + r);
+          s.quadraticCurveTo(-x, -z, -x + r, -z);
+          return s;
+        };
+        const slabShape = roundRect(SW, SD, 0.3);
+        const slabGeo = new THREE.ExtrudeGeometry(slabShape, {
+          depth: ST,
+          bevelEnabled: true,
+          bevelThickness: 0.02,
+          bevelSize: 0.02,
+          bevelSegments: 2,
+          curveSegments: 10,
+        });
+        slabGeo.rotateX(-Math.PI / 2);
+        slabGeo.translate(0, -ST / 2, 0);
+        const loopGeo = (y) =>
+          new THREE.BufferGeometry().setFromPoints(slabShape.getPoints(10).map((p) => new THREE.Vector3(p.x, y, -p.y)));
+        const topLoop = loopGeo(ST / 2 + 0.022);
+        const botLoop = loopGeo(-ST / 2 - 0.022);
+
+        // A soft rounded-rect glow under each slab (white; tinted by material colour, added on top).
+        const glowTex = (() => {
+          const c = document.createElement('canvas');
+          c.width = 512;
+          c.height = 384;
+          const g = c.getContext('2d');
+          g.shadowColor = '#ffffff';
+          g.shadowBlur = 46;
+          g.fillStyle = '#ffffff';
+          const rx = 92,
+            ry = 86;
+          const w = 512 - 2 * rx,
+            h = 384 - 2 * ry;
+          for (let i = 0; i < 2; i++) {
+            g.beginPath();
+            g.moveTo(rx + 24, ry);
+            g.arcTo(rx + w, ry, rx + w, ry + h, 24);
+            g.arcTo(rx + w, ry + h, rx, ry + h, 24);
+            g.arcTo(rx, ry + h, rx, ry, 24);
+            g.arcTo(rx, ry, rx + w, ry, 24);
+            g.fill();
+          }
+          return new THREE.CanvasTexture(c);
+        })();
+        const glowW = SW * (512 / (512 - 184));
+        const glowD = SD * (384 / (384 - 172));
+
+        const LAYERS = [
+          ['Intake', `every name ${ARROW} a confirmed Qloo ID<br>(qloo_describe); ambiguous names<br>wait for a person`],
+          ['Agents', 'Claude Agent SDK: planner, crowd reader,<br>programmers, sponsor fit, wildcard'],
+          ['Qloo MCP · 10 tools', 'qloo mcp over stdio ·<br>every call written to a ledger'],
+          ['Evidence gate', 'a pick must be in Qloo’s results ·<br>openers under the headliner ·<br>places near the venue'],
+          ['You', 'approve, swap or reject, line by line'],
+        ];
+
+        const slabs = LAYERS.map(([name, sub], i) => {
+          const capMat = new THREE.MeshLambertMaterial({ color: C.slabTop, transparent: true, opacity: 0, emissive: col(C.violet), emissiveIntensity: 0 });
+          const sideMat = new THREE.MeshLambertMaterial({ color: C.slab, transparent: true, opacity: 0, emissive: col(C.violet), emissiveIntensity: 0 });
+          const mesh = new THREE.Mesh(slabGeo, [capMat, sideMat]);
+          mesh.castShadow = true;
+          const lineMat = new THREE.LineBasicMaterial({ color: C.edge, transparent: true, opacity: 0 });
+          mesh.add(new THREE.LineLoop(topLoop, lineMat), new THREE.LineLoop(botLoop, lineMat));
+          const glowMat = new THREE.MeshBasicMaterial({
+            map: glowTex,
+            color: C.violet,
+            transparent: true,
+            opacity: 0,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+          });
+          const glow = new THREE.Mesh(new THREE.PlaneGeometry(glowW, glowD), glowMat);
+          glow.rotation.x = -Math.PI / 2;
+          glow.position.y = -ST / 2 - 0.03;
+          glow.renderOrder = -1;
+          mesh.add(glow);
+          mesh.visible = false;
+          world.add(mesh);
+
+          // Label: a leader line (SVG, drawn on by dash offset) to a fixed column.
+          const lead = svgEl('line', { 'stroke-width': 2, 'stroke-linecap': 'round', fill: 'none' });
+          const dot = svgEl('circle', { r: 5 });
+          wires.append(lead, dot);
+          const lab = el(
+            'div',
+            'abs lab',
+            `<div class="row"><b>0${i + 1}</b><h3>${name}</h3>${i === 4 ? `<span class="chip">${CHECK}approved</span>` : ''}</div><p>${sub}</p>`,
+          );
+          hud.append(lab);
+          return { mesh, capMat, sideMat, lineMat, glowMat, glow, lead, dot, lab, num: lab.querySelector('b'), chip: lab.querySelector('.chip') };
+        });
+
+        // ---------- satellites (services) ----------
+        const SATS = [
+          { name: 'Vercel', sub: '', slab: 4, y: SLAB_Y[4], ez: 0.2, lit: CUE[4] + 0.45, dir: -1 },
+          { name: 'Qloo Taste AI', sub: 'hackathon API', slab: 2, y: SLAB_Y[2] + 0.4, ez: -0.55, lit: CUE[2] + 0.45, dir: 1 },
+          { name: 'Cloud Run + Firestore', sub: 'the ledger', slab: 2, y: SLAB_Y[2] - 0.65, ez: 0.55, lit: CUE[2] + 0.95, dir: -1 },
+          { name: 'Claude', sub: 'Anthropic', slab: 1, y: SLAB_Y[1] - 0.3, ez: 0.2, lit: CUE[1] + 0.45, dir: 1 },
+        ];
+        const satGeo = new THREE.BoxGeometry(0.9, 0.4, 0.9);
+        const satEdges = new THREE.EdgesGeometry(satGeo);
+        const glowSprite = radialTex('rgba(255,255,255,1)', 'rgba(255,255,255,0)');
+        const makeGlowSprite = (hex, size) => {
+          const s = new THREE.Sprite(
+            new THREE.SpriteMaterial({ map: glowSprite, color: hex, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending }),
+          );
+          s.scale.setScalar(size);
+          return s;
+        };
+        SATS.forEach((s) => {
+          s.mat = new THREE.MeshLambertMaterial({ color: '#161616', emissive: col(C.violet), emissiveIntensity: 0, transparent: true, opacity: 0 });
+          s.mesh = new THREE.Mesh(satGeo, s.mat);
+          s.mesh.position.set(SATX, s.y, 0);
+                    s.lineMat = new THREE.LineBasicMaterial({ color: C.edge, transparent: true, opacity: 0 });
+          s.mesh.add(new THREE.LineSegments(satEdges, s.lineMat));
+          world.add(s.mesh);
+
+          const sx = -SW / 2;
+          const pts = [
+            new THREE.Vector3(SATX + 0.45, s.y, 0),
+            new THREE.Vector3(SATX + 0.75, s.y, 0),
+            new THREE.Vector3(sx - 0.45, SLAB_Y[s.slab], s.ez),
+            new THREE.Vector3(sx + 0.05, SLAB_Y[s.slab], s.ez),
+          ];
+          s.path = new THREE.CurvePath();
+          for (let i = 0; i < pts.length - 1; i++) s.path.add(new THREE.LineCurve3(pts[i], pts[i + 1]));
+          s.traceMat = new THREE.MeshBasicMaterial({ color: C.dimLine, transparent: true, opacity: 0 });
+          world.add(new THREE.Mesh(new THREE.TubeGeometry(s.path, 48, 0.02, 6, false), s.traceMat));
+          s.pulses = [0, 1].map(() => {
+            const p = new THREE.Mesh(
+              new THREE.SphereGeometry(0.05, 12, 8),
+              new THREE.MeshBasicMaterial({ color: C.glow, transparent: true }),
+            );
+            p.add(makeGlowSprite(C.violet, 0.5));
+            world.add(p);
+            return p;
+          });
+          s.lab = el('div', 'abs sat', `<div class="in"><h4>${s.name}</h4>${s.sub ? `<small>${s.sub}</small>` : ''}</div>`);
+          s.title = s.lab.querySelector('h4');
+          hud.append(s.lab);
+        });
+
+        // ---------- packets ----------
+        const makePacket = (core, halo, size = 1) => {
+          const m = new THREE.Mesh(new THREE.SphereGeometry(0.085 * size, 16, 12), new THREE.MeshBasicMaterial({ color: core, transparent: true }));
+          const h = makeGlowSprite(halo, 0.85 * size);
+          m.add(h);
+          m.visible = false;
+          world.add(m);
+          return m;
+        };
+        const POOL = 18;
+        const packets = Array.from({ length: POOL }, () => makePacket(C.glow, C.violet));
+        const SPAWN = CUE[2] + 0.5; // packets flow from the Qloo cue onward
+        const SPACING = 0.42;
+        const MOVE0 = 0.7,
+          MOVE = 0.5,
+          PAUSE = 0.28,
+          EXIT = 0.8,
+          FADE = 0.35;
+        const LIFE = MOVE0 + 5 * PAUSE + 4 * MOVE + EXIT + 0.1;
+        const surf = (j) => SLAB_Y[j] + ST / 2 + 0.11;
+        const inPlace = (j) => CUE[j] + 0.55;
+        /** Where packet k is at time t: {x, y, z, a, s} or null. Pure. */
+        const packetAt = (k, t) => {
+          const s0 = SPAWN + k * SPACING;
+          const tt = t - s0;
+          if (tt < 0) return null;
+          const x = -0.55 + 2.3 * hash(k, 1);
+          const z = -1.0 + 2.0 * hash(k, 2);
+          const startY = FLOOR + 0.35;
+          if (tt < MOVE0) return { x, y: lerp(startY, surf(0), inOut(tt / MOVE0)), z, a: clamp01(tt / 0.2), s: 1 };
+          let arrive = s0 + MOVE0;
+          for (let j = 0; j < 5; j++) {
+            const dep = arrive + PAUSE;
+            const settle = 1 + 0.35 * Math.sin(Math.PI * prog(t, arrive, PAUSE));
+            if (t < dep) return { x, y: surf(j), z, a: 1, s: settle };
+            if (j === 4) {
+              const u = (t - dep) / EXIT;
+              if (u >= 1) return null;
+              return { x, y: surf(4) + 0.7 * ease(u), z, a: 1 - u, s: 1 };
+            }
+            if (inPlace(j + 1) > dep) {
+              const u = (t - dep) / FADE;
+              if (u >= 1) return null;
+              return { x, y: surf(j), z, a: 1 - u, s: 1 - 0.6 * u };
+            }
+            const u = (t - dep) / MOVE;
+            if (u < 1) return { x, y: lerp(surf(j), surf(j + 1), inOut(u)), z, a: 1, s: 1 };
+            arrive = dep + MOVE;
+          }
+          return null;
+        };
+
+        // The blocked pick: a red packet from Qloo MCP up into the gate's underside.
+        const RX = -1.35,
+          RZ = 0.95;
+        const RED_FROM = CUE[3] + 1.2,
+          RED_MOVE = 0.6,
+          RED_HIT = RED_FROM + RED_MOVE,
+          RED_HOLD = 2.4;
+        const CALLOUT_OUT = Math.min(RED_HIT + 3.6, CUE[4] - 0.2);
+        const redPacket = makePacket('#ff5a4f', C.red, 1.35);
+        const redStart = new THREE.Vector3(RX, surf(2), RZ);
+        const redEnd = new THREE.Vector3(RX, SLAB_Y[3] - ST / 2 - 0.13, RZ);
+        const ringMat = (hex) =>
+          new THREE.MeshBasicMaterial({ color: hex, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false, blending: THREE.AdditiveBlending });
+        const redRing = new THREE.Mesh(new THREE.RingGeometry(0.42, 0.5, 64), ringMat(C.red));
+        redRing.rotation.x = -Math.PI / 2;
+        world.add(redRing);
+        const callout = el('div', 'abs callout', `<div class="in"><div class="box"><div>Not in Qloo’s results</div><div>${ARROW}blocked</div></div></div>`);
+        hud.append(callout);
+        const calloutBox = callout.querySelector('.box');
+        const calloutLead = svgEl('line', { stroke: C.red, 'stroke-width': 2.5, 'stroke-linecap': 'round' });
+        const calloutDot = svgEl('circle', { r: 6, fill: C.red });
+        wires.append(calloutLead, calloutDot);
+
+        // The human gate: slab 5 pulses and the chip pops.
+        const APPROVE = CUE[4] + 1.0;
+        const youRing = new THREE.Mesh(new THREE.RingGeometry(0.96, 1.0, 96), ringMat(C.glow));
+        youRing.rotation.x = -Math.PI / 2;
+        youRing.scale.set(SW / 2, SD / 2, 1);
+        world.add(youRing);
+
+        // ---------- chapter label ----------
+        const eye = el('div', 'abs eyebrow', 'Under the hood');
+        eye.style.left = '0';
+        eye.style.top = '0';
+        hud.append(eye);
+
+        // ---------- camera ----------
+        const target = new THREE.Vector3();
+        camera.setViewOffset(W, H, 150, -10, W, H);
+        const HOLD = 2.0;
+        const placeCamera = (t) => {
+          const p = inOut(clamp01(t / Math.max(1, DUR - HOLD)));
+          const az = THREE.MathUtils.degToRad(-13 + 20 * p);
+          const el_ = THREE.MathUtils.degToRad(19 - 2 * p);
+          const dist = 26 - 2.6 * p;
+          target.set(0, 2.75 + 0.2 * p, 0);
+          camera.position.set(dist * Math.sin(az) * Math.cos(el_), target.y + dist * Math.sin(el_), dist * Math.cos(az) * Math.cos(el_));
+          camera.lookAt(target);
+          camera.updateMatrixWorld();
+        };
+
+        // Label slots: from the final camera's view of each slab, kept at least PITCH apart.
+        const PITCH = 176;
+        const slotY = [0, 1, 2, 3, 4].map((i) => 112 + (4 - i) * PITCH);
+
+        // ---------- the frame, as a function of t ----------
+        const corner = new THREE.Vector3();
+        const rightCorner = (y, x0 = 0) => {
+          let best = null;
+          for (const cz of [SD / 2 - 0.09, -SD / 2 + 0.09]) {
+            corner.set(x0 + SW / 2 - 0.09, y + ST / 2, cz);
+            const sp = toScreen(corner);
+            if (!best || sp.x > best.x) best = sp;
+          }
+          return best;
+        };
+        const setLine = (line, x1, y1, x2, y2, p) => {
+          const len = Math.hypot(x2 - x1, y2 - y1);
+          line.setAttribute('x1', x1.toFixed(1));
+          line.setAttribute('y1', y1.toFixed(1));
+          line.setAttribute('x2', x2.toFixed(1));
+          line.setAttribute('y2', y2.toFixed(1));
+          line.setAttribute('stroke-dasharray', `${len.toFixed(1)} ${(len + 10).toFixed(1)}`);
+          line.setAttribute('stroke-dashoffset', (len * (1 - p)).toFixed(1));
+        };
+        const RESTORE = DUR - HOLD - 0.4; // every label back to full for the held final frame
+
+        const frame = (t) => {
+          placeCamera(t);
+
+          eye.style.transform = `translate(96px, ${(62 + 12 * (1 - ease(prog(t, 0.05, 0.6)))).toFixed(1)}px)`;
+          eye.style.opacity = ease(prog(t, 0.05, 0.6)).toFixed(3);
+
+          const restore = ease(prog(t, RESTORE, 0.5));
+          const hit = t - RED_HIT;
+          const redFlash = hit > 0 ? Math.exp(-2.6 * hit) : 0;
+          const pulse = t > APPROVE ? Math.sin(Math.PI * prog(t, APPROVE, 0.7)) : 0;
+          let top = -1;
+          let accentY = 0,
+            accentW = 0;
+
+          slabs.forEach((s, i) => {
+            const p = ease(prog(t, CUE[i], 0.6));
+            const next = i < 4 ? CUE[i + 1] : Infinity;
+            // Active from its label's arrival until the next slab's.
+            const act = ease(prog(t, CUE[i] + 0.15, 0.35)) * (1 - ease(prog(t, next + 0.15, 0.4)));
+            if (p > 0) top = i;
+            accentY += act * SLAB_Y[i];
+            accentW += act;
+
+            s.mesh.visible = p > 0;
+            let x = 0;
+            if (i === 3 && hit > 0) x = 0.07 * Math.sin(2 * Math.PI * 15 * hit) * Math.exp(-6.5 * hit);
+            s.mesh.position.set(x, SLAB_Y[i] - RISE * (1 - p), 0);
+            const sc = i === 4 ? 1 + 0.035 * pulse : 1;
+            s.mesh.scale.set(sc, 1, sc);
+            const o = clamp01(p * 1.25);
+            s.capMat.opacity = o;
+            s.sideMat.opacity = o;
+            s.capMat.depthWrite = s.sideMat.depthWrite = o > 0.95;
+            s.capMat.emissiveIntensity = 0.16 * act + 0.25 * (i === 4 ? pulse : 0) + (i === 3 ? 0.3 * redFlash : 0);
+            s.sideMat.emissiveIntensity = 0.1 * act;
+            const danger = i === 3 ? redFlash : 0;
+            s.capMat.emissive.set(C.violet).lerp(col(C.red), danger);
+            s.lineMat.opacity = o;
+            s.lineMat.color.set(C.edge).lerp(col(C.glow), Math.max(act, 0.35 * restore)).lerp(col(C.red), danger);
+            s.glowMat.opacity = o * (0.42 * act + 0.5 * (i === 4 ? pulse : 0) + 0.7 * danger);
+            s.glowMat.color.set(C.violet).lerp(col(C.red), danger);
+
+            // Label: leader draws on over 300 ms, then the text rises in.
+            const lp = ease(prog(t, CUE[i] + 0.25, 0.3));
+            const tp = ease(prog(t, CUE[i] + 0.35, 0.45));
+            const dim = 1 - 0.55 * ease(prog(t, next + 0.15, 0.35)) * (1 - restore);
+            const rc = rightCorner(s.mesh.position.y, x);
+            const ly = slotY[i] + 30;
+            setLine(s.lead, rc.x + 6, rc.y, LX - 14, ly, lp);
+            const lc = mixHex(C.dimLine, C.violet, act);
+            s.lead.setAttribute('stroke', lc);
+            s.lead.setAttribute('opacity', lp > 0 ? dim.toFixed(3) : '0');
+            s.dot.setAttribute('cx', (rc.x + 6).toFixed(1));
+            s.dot.setAttribute('cy', rc.y.toFixed(1));
+            s.dot.setAttribute('fill', mixHex('#5a5a5a', C.glow, act));
+            s.dot.setAttribute('opacity', (clamp01(lp * 4) * dim).toFixed(3));
+            s.lab.style.transform = `translate(${LX}px, ${(slotY[i] + 14 * (1 - tp)).toFixed(1)}px)`;
+            s.lab.style.opacity = (tp * dim).toFixed(3);
+            s.num.style.color = mixHex(C.muted, C.glow, act);
+            if (s.chip) {
+              const cp = backOut(prog(t, APPROVE, 0.45));
+              s.chip.style.opacity = clamp01(prog(t, APPROVE, 0.15)).toFixed(3);
+              s.chip.style.transform = `scale(${(0.6 + 0.4 * cp).toFixed(3)})`;
+            }
+          });
+
+          // The active slab lights its neighbours a little.
+          if (accentW > 0.001) {
+            accentLight.position.set(0.6, accentY / accentW + 0.9, 1.4);
+            accentLight.intensity = 1.6 * Math.min(1, accentW) + 1.2 * pulse;
+          } else accentLight.intensity = 0;
+
+          // Satellites and their traces.
+          SATS.forEach((s) => {
+            const show = ease(prog(t, 0.3 + 0.12 * SATS.indexOf(s), 0.7));
+            const lit = ease(prog(t, s.lit, 0.45));
+            s.mat.opacity = show;
+            s.mat.emissiveIntensity = 0.3 * lit;
+            s.lineMat.opacity = show;
+            s.lineMat.color.set(C.edge).lerp(col(C.glow), lit);
+            s.traceMat.opacity = show * ease(prog(t, CUE[s.slab], 0.6)) * (0.55 + 0.45 * lit);
+            s.traceMat.color.set(C.dimLine).lerp(col(C.violet), lit);
+            s.pulses.forEach((p, m) => {
+              const run = t - s.lit;
+              if (run <= 0) {
+                p.visible = false;
+                return;
+              }
+              let u = (run / 1.5 + m / 2) % 1;
+              if (s.dir < 0) u = 1 - u;
+              p.visible = true;
+              s.path.getPointAt(u, p.position);
+              const a = lit * Math.min(1, Math.sin(Math.PI * u) * 3);
+              p.material.opacity = a;
+              p.children[0].material.opacity = a * 0.8;
+            });
+            const sp = toScreen(tmpV.set(SATX - 0.5, s.y, 0.45));
+            s.lab.style.transform = `translate(${(sp.x - 18).toFixed(1)}px, ${sp.y.toFixed(1)}px)`;
+            s.lab.style.opacity = (show * (0.6 + 0.4 * lit)).toFixed(3);
+            s.title.style.color = mixHex(C.muted, C.paper, lit);
+          });
+
+          // Normal packets: up through every risen layer, pausing on each.
+          packets.forEach((p) => (p.visible = false));
+          const kMax = Math.floor((t - SPAWN) / SPACING);
+          for (let k = Math.max(0, Math.ceil((t - SPAWN - LIFE) / SPACING)); k <= kMax; k++) {
+            const st = packetAt(k, t);
+            if (!st) continue;
+            const p = packets[k % POOL];
+            p.visible = true;
+            p.position.set(st.x, st.y, st.z);
+            p.scale.setScalar(st.s);
+            p.material.opacity = st.a;
+            p.children[0].material.opacity = st.a * 0.75;
+          }
+
+          // The blocked pick.
+          const rp = prog(t, RED_FROM, RED_MOVE);
+          const gone = 1 - prog(t, RED_HIT + RED_HOLD, 0.4);
+          redPacket.visible = t >= RED_FROM && gone > 0;
+          if (redPacket.visible) {
+            redPacket.position.lerpVectors(redStart, redEnd, inOut(rp));
+            if (hit > 0) redPacket.position.x += 0.06 * Math.sin(2 * Math.PI * 15 * hit) * Math.exp(-6.5 * hit);
+            const a = clamp01(rp / 0.15) * gone;
+            redPacket.material.opacity = a;
+            redPacket.children[0].material.opacity = a * (0.8 + 0.2 * Math.sin(t * 9));
+            redPacket.scale.setScalar(1 + 0.25 * redFlash);
+          }
+          const bp = prog(t, RED_HIT, 0.8);
+          redRing.position.copy(redEnd).setY(redEnd.y + 0.04);
+          redRing.scale.setScalar(0.4 + 3.2 * ease(bp));
+          redRing.material.opacity = bp > 0 && bp < 1 ? (1 - bp) * 0.9 : 0;
+          redLight.position.copy(redEnd);
+          redLight.intensity = 5 * redFlash;
+
+          const cOut = 1 - ease(prog(t, CALLOUT_OUT, 0.35));
+          const clp = ease(prog(t, RED_HIT + 0.05, 0.3)) * cOut;
+          const cbp = ease(prog(t, RED_HIT + 0.2, 0.4));
+          const hitSp = toScreen(redEnd);
+          const anchor = toScreen(tmpV.set(-SW / 2 - 0.15, SLAB_Y[3] - 0.2, 0));
+          const boxX = Math.min(anchor.x - 60, hitSp.x - 150);
+          setLine(calloutLead, hitSp.x, hitSp.y, boxX, anchor.y, ease(prog(t, RED_HIT + 0.05, 0.3)));
+          calloutLead.setAttribute('opacity', clp > 0 ? cOut.toFixed(3) : '0');
+          calloutDot.setAttribute('cx', hitSp.x.toFixed(1));
+          calloutDot.setAttribute('cy', hitSp.y.toFixed(1));
+          calloutDot.setAttribute('opacity', (clamp01(clp * 4) * cOut).toFixed(3));
+          callout.style.transform = `translate(${(boxX + 12 * (1 - cbp)).toFixed(1)}px, ${anchor.y.toFixed(1)}px)`;
+          callout.style.opacity = (cbp * cOut).toFixed(3);
+          calloutBox.style.transform = `scale(${(0.94 + 0.06 * cbp).toFixed(3)})`;
+
+          // The human gate's pulse ring.
+          const yp = prog(t, APPROVE, 1.0);
+          youRing.position.set(0, SLAB_Y[4] + ST / 2 + 0.03, 0);
+          const rs = 1.0 + 0.35 * ease(yp);
+          youRing.scale.set((SW / 2 + 0.1) * rs, (SD / 2 + 0.1) * rs, 1);
+          youRing.material.opacity = yp > 0 && yp < 1 ? 0.85 * (1 - yp) : 0;
+        };
+
+        // ---------- clock ----------
+        let startAt = null;
+        let seekT = 0;
+        const draw = (t) => {
+          frame(t);
+          renderer.render(world, camera);
+        };
+        const loop = () => {
+          draw(startAt === null ? seekT : (performance.now() - startAt) / 1000);
+          requestAnimationFrame(loop);
+        };
+        window.__start = () => {
+          if (startAt === null) startAt = performance.now();
+        };
+        window.__seek = (t) => {
+          startAt = null;
+          seekT = +t || 0;
+          draw(seekT);
+        };
+        window.__cues = { ...cues, dur: DUR };
+
+        await Promise.all(
+          ['700 54px "Saira Condensed"', '600 36px "Saira Condensed"', '400 21px "Geist Mono"', '500 22px "Geist Mono"'].map((f) => document.fonts.load(f)),
+        );
+        await document.fonts.ready;
+        draw(0);
+        requestAnimationFrame(() => {
+          window.__ready = true;
+          requestAnimationFrame(loop);
+        });
+      })();
+    </script>
+  </body>
+</html>

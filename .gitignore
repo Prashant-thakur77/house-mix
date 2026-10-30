@@ -3,6 +3,7 @@
 node_modules/
 house-mix-plan.md
 .next/
+.next-film/
 dist/
 coverage/
 test-results/
@@ -18,3 +19,4 @@ playwright-report/
 # Blind A/B side keys stay local while ratings are open
 eval/ab_blind/pairs.key.json
 eval/results/pairs_v*.key.json
+__pycache__/
