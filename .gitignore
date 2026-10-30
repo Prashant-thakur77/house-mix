@@ -20,3 +20,5 @@ playwright-report/
 eval/ab_blind/pairs.key.json
 eval/results/pairs_v*.key.json
 __pycache__/
+# The owner-supplied voice reference stays local (see video/refs/LICENSES.md)
+video/refs/male.wav

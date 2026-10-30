@@ -1,4 +1,4 @@
-"""The narrator's lines: Chatterbox reads each line with refs/narrator.wav (its own built-in voice) as the reference;
+"""The narrator's lines: Chatterbox reads each line in its narrator's voice (refs/female.wav or refs/male.wav, see refs/LICENSES.md);
 Whisper transcribes every take and the best match is kept, with its pauses tightened.
 
     python3 video/synth.py            every line (takes are cached, so a rerun only makes what changed)
@@ -28,7 +28,7 @@ from narration import WORK, load  # noqa: E402
 
 AUDIO = f"{WORK}/audio"
 CACHE = f"{WORK}/takes"
-REF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "refs", "narrator.wav")
+REFS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "refs")
 SEEDS = (11, 23, 37)
 MORE = (101, 202, 303)
 MAX_PAUSE = 0.35
@@ -72,17 +72,20 @@ def asr():
     return _asr
 
 
-def take(text: str, seed: int, ex: float, cfg: float) -> str:
+def take(text: str, seed: int, ex: float, cfg: float, voice: str, make: bool = True) -> str | None:
     """One take, cached by everything that shapes it."""
     import soundfile as sf
     import torch
 
-    key = hashlib.sha1(json.dumps([text, seed, ex, cfg, 0.7, open(REF, "rb").read().hex()[:64]]).encode()).hexdigest()[:16]
+    ref = f"{REFS}/{voice}.wav"
+    key = hashlib.sha1(json.dumps([text, seed, ex, cfg, 0.7, hashlib.sha1(open(ref, "rb").read()).hexdigest()]).encode()).hexdigest()[:16]
     path = f"{CACHE}/{key}.wav"
+    if not os.path.exists(path) and not make:
+        return None
     if not os.path.exists(path):
         torch.manual_seed(seed)
         with contextlib.redirect_stderr(io.StringIO()):
-            wav = tts().generate(text, audio_prompt_path=REF, exaggeration=ex, cfg_weight=cfg, temperature=0.7)
+            wav = tts().generate(text, audio_prompt_path=ref, exaggeration=ex, cfg_weight=cfg, temperature=0.7)
         sf.write(path, wav.squeeze(0).numpy(), tts().sr)
     return path
 
@@ -92,12 +95,16 @@ def heard(path: str) -> str:
     return " ".join(s.text.strip() for s in segs)
 
 
-def tighten(src: str, dst: str) -> None:
-    """Trim both ends; cap every pause inside the line at MAX_PAUSE seconds."""
+TEMPO = {"female": 1.08, "male": 1.0}  # the female reference reads slowly; her lines play a touch faster, pitch kept
+
+
+def tighten(src: str, dst: str, tempo: float = 1.0) -> None:
+    """Trim both ends; cap every pause inside the line at MAX_PAUSE seconds; optionally quicken it (pitch kept)."""
     af = (
         "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
         "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.12,areverse,"
         f"silenceremove=stop_periods=-1:stop_threshold=-40dB:stop_duration={MAX_PAUSE}:stop_silence={MAX_PAUSE}"
+        + (f",atempo={tempo}" if tempo != 1.0 else "")
     )
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-af", af, "-ar", "48000", "-ac", "1", dst], check=True)
 
@@ -116,13 +123,14 @@ def main(only: set[str]) -> None:
     report = json.load(open(report_path)) if os.path.exists(report_path) else {}
     asr_cache_path = f"{CACHE}/asr.json"
     asr_cache = json.load(open(asr_cache_path)) if os.path.exists(asr_cache_path) else {}
-    for _scene, lid, caption, spoken, ex, cfg in load():
+    for _scene, lid, caption, spoken, ex, cfg, voice in load():
         if only and lid not in only:
             continue
-        seeds = SEEDS + (MORE if only else ())
+        # Three seeds, plus three more when asked for this line (or already made on an earlier run).
+        seeds = SEEDS + tuple(x for x in MORE if only or take(spoken, x, ex, cfg, voice, make=False))
         scored = []
         for seed in seeds:
-            path = take(spoken, seed, ex, cfg)
+            path = take(spoken, seed, ex, cfg, voice)
             name = os.path.basename(path)
             if name not in asr_cache:
                 asr_cache[name] = heard(path)
@@ -130,9 +138,10 @@ def main(only: set[str]) -> None:
             scored.append((score(caption, asr_cache[name]), -abs(len(spoken) / max(duration(path), 0.1) - 16), path, asr_cache[name]))
         best = max(scored)
         out = f"{AUDIO}/lines/{lid}.wav"
-        tighten(best[2], out)
+        tighten(best[2], out, TEMPO[voice])
         report[lid] = {"score": round(best[0], 3), "heard": best[3], "take": os.path.basename(best[2]), "s": round(duration(out), 2), "all": sorted(round(s[0], 3) for s in scored)}
-        print(f"{lid:4s} {report[lid]['s']:5.2f}s  score {best[0]:.2f}  | {best[3]}", flush=True)
+        report[lid]["voice"] = voice
+        print(f"{lid:4s} {voice:6s} {report[lid]['s']:5.2f}s  score {best[0]:.2f}  | {best[3]}", flush=True)
     keep = {lid for _, lid, *_ in load()}
     report = {k: v for k, v in report.items() if k in keep}
     json.dump(report, open(report_path, "w"), indent=1)

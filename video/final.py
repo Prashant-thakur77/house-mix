@@ -13,11 +13,9 @@ transcript, and the clearer of his two takes is kept.
 
 from __future__ import annotations
 
-import difflib
 import glob
 import json
 import os
-import re
 import subprocess
 import sys
 
@@ -66,12 +64,10 @@ SCRIPT = {
 FACE = next(iter(sorted(glob.glob(f"{HOME}/from-mac/face.*"))), "")
 WORDS = f"{HOME}/build/face-words.json"
 # How Whisper hears names, and how they're written.
-SPELLED = {"prasanth": "Prashant", "prashanth": "Prashant", "clue": "Qloo", "qlu": "Qloo", "klu": "Qloo", "housemix": "House Mix"}
-
-
-def norm(text: str) -> list[str]:
-    t = text.lower().replace("’", "'").replace("qloo", "clue")
-    return re.sub(r"[^a-z0-9' ]", " ", t).split()
+# How Whisper hears names and a few of his words in this take, and how they're written (checked against the script).
+SPELLED = {"prasanth": "Prashant", "prashanth": "Prashant", "clue": "Qloo", "qlu": "Qloo", "klu": "Qloo", "housemix": "House Mix", "kiss": "guess",
+           "raid": "read", "drinker": "drinks", "partners": "partner", "launch": "lounge", "services": "service", "podcast": "podcasts",
+           "headliners": "headliner's", "everything": "Every", "picked": "pick"}
 
 
 def face_words() -> list[dict]:
@@ -89,31 +85,97 @@ def face_words() -> list[dict]:
     return json.load(open(WORDS))
 
 
-def find_lines() -> dict[int, tuple[float, float, str]]:
-    """Each scripted line's best take in his recording: the window of his words that matches it best (he says every
-    line twice; the clearer take wins, the later one on a tie). Cached next to the transcript."""
-    cache = f"{HOME}/build/face-lines.json"
-    if os.path.exists(cache) and os.path.getmtime(cache) > os.path.getmtime(FACE):
-        return {int(k): tuple(v) for k, v in json.load(open(cache)).items()}
+# His one continuous take (30 Oct 2026), cut by word times from Whisper (re-timed on short slices where words run
+# together, and on the loudness envelope): (start, end) of each piece of a line. Line 3 keeps the second of a stuttered
+# "Qloo", line 7 drops a false start ("And it's not,") and line 11 a repeated "picked"; lines 14 and 15 split at
+# "House Mix is live".
+RANGES = {
+    1: [(0.91, 5.99)],
+    2: [(6.49, 12.51)],
+    3: [(13.15, 14.86), (15.30, 17.29)],
+    4: [(18.35, 19.27)],
+    5: [(20.15, 21.79)],
+    6: [(22.11, 25.43)],
+    7: [(28.50, 30.10)],
+    8: [(30.17, 35.79)],
+    9: [(36.31, 40.57)],
+    10: [(40.77, 46.79)],
+    11: [(47.43, 51.25), (52.29, 53.03)],
+    12: [(53.59, 57.71)],
+    13: [(58.27, 63.13)],
+    14: [(64.35, 67.06)],
+    15: [(67.45, 70.17)],
+}
+# What he said in each line (his own wording, names spelled right): the captions.
+SAID = {
+    1: "I'm Prashant, and I built House Mix for the people who run the room.",
+    2: "So every night, they guess the music, the opener, the bar, and the sponsor, for a crowd they have never met.",
+    3: "So House Mix asks Qloo: who is really coming?",
+    4: "This is House Mix.",
+    5: "Now, the part sponsors care about.",
+    6: "If you are a brand paying for tonight, here's how you know you belong.",
+    7: "It is not only stadiums.",
+    8: "A comedy club gets openers who fit the headliner's crowd, and podcasts for the interval.",
+    9: "A festival gets every stage programmed for the crowd moving between them.",
+    10: "And a restaurant gets its whole service: the playlist, the drinks partner, the late lounge set.",
+    11: "Five kinds of night. One crowd read. Every pick, backed by Qloo.",
+    12: "And we have tested it the hard way. Seven real shows, against Claude on its own.",
+    13: "And on taste alone, a blind judge still preferred Claude. We are showing you that too.",
+    14: "Doors open at seven. This time, the room is ready.",
+    15: "House Mix is live. Open a show and check every receipt.",
+}
+LINE_WORDS: dict[int, list[dict]] = {}
+
+
+def line_src(n: int) -> str:
+    return f"{HOME}/build/lines/line_{n:02d}.mkv"
+
+
+_asr = None
+
+
+def prepare_lines() -> None:
+    """Each line as its own clip: its pieces joined, with exactly LEAD before and TAIL after. Where the take has less
+    room than that before the next or previous word, the edge frame is held and padded with silence instead, so no
+    neighbouring word is heard."""
     words = face_words()
-    heard = [norm(w["w"])[0] if norm(w["w"]) else "" for w in words]
-    found = {}
-    for n, text in SCRIPT.items():
-        want = norm(text)
-        best = (0.0, 0, 0)
-        for i in range(len(words)):
-            for size in range(max(1, len(want) - 2), len(want) + 3):
-                j = i + size
-                if j > len(words):
-                    break
-                r = difflib.SequenceMatcher(None, want, heard[i:j]).ratio()
-                if r > best[0] + 0.02 or (abs(r - best[0]) <= 0.02 and r > 0.6 and i > best[1]):
-                    best = (r, i, j)
-        r, i, j = best
-        found[n] = (words[i]["s"], words[j - 1]["e"], " ".join(w["w"] for w in words[i:j]))
-        print(f"line {n:2d}: {r:.2f} at {found[n][0]:7.2f}–{found[n][1]:7.2f}  | {found[n][2]}")
-    json.dump(found, open(cache, "w"), indent=1)
-    return found
+    os.makedirs(f"{HOME}/build/lines", exist_ok=True)
+    for n, pieces in RANGES.items():
+        first, last = pieces[0][0], pieces[-1][1]
+        before = max([w["e"] for w in words if w["e"] <= first + 0.01] or [0.0])
+        after = min([w["s"] for w in words if w["s"] >= last - 0.01] or [last + 5])
+        lead = min(LEAD, max(0.0, first - before - 0.05))
+        tail = min(TAIL, max(0.0, after - last - 0.05))
+        cuts = []
+        for k, (a, b) in enumerate(pieces):
+            a0 = a - (lead if k == 0 else 0.03)
+            b0 = b + (tail if k == len(pieces) - 1 else 0.06)
+            cuts.append((a0, b0))
+        hold_in, hold_out = LEAD - lead, TAIL - tail
+        inputs, parts = [], []
+        for k, (a0, b0) in enumerate(cuts):
+            inputs += ["-ss", f"{a0:.3f}", "-t", f"{b0 - a0:.3f}", "-i", FACE]
+            parts.append(f"[{k}:v]setpts=PTS-STARTPTS,fps={FPS},scale=1620:1080,setsar=1[v{k}];[{k}:a]asetpts=PTS-STARTPTS,aresample=48000[a{k}]")
+        speech = sum(b0 - a0 for a0, b0 in cuts)
+        total = round((hold_in + speech + hold_out) * FPS) / FPS
+        ms = round(hold_in * 1000)
+        graph = ";".join(parts) + ";" + "".join(f"[v{k}][a{k}]" for k in range(len(cuts))) + f"concat=n={len(cuts)}:v=1:a=1[cv][ca];"
+        graph += f"[cv]tpad=start_mode=clone:start_duration={hold_in:.3f}:stop_mode=clone:stop_duration={hold_out + 0.1:.3f},trim=0:{total}[v];"
+        graph += f"[ca]adelay={ms}|{ms},aresample=48000:async=1:first_pts=0,apad,atrim=end_sample={round(total * 48000)}[a]"
+        run(*inputs, "-filter_complex", graph, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "14", "-preset", "medium", "-c:a", "pcm_s16le", line_src(n))
+        # His words on the clip's own clock: the clip is transcribed, and the words he said (SAID, spelled right) take
+        # the times of Whisper's words in order, so pauses stay where he made them.
+        from faster_whisper import WhisperModel
+
+        global _asr
+        _asr = _asr or WhisperModel("small.en", device="cpu", compute_type="int8")
+        segs, _ = _asr.transcribe(line_src(n), word_timestamps=True, beam_size=5)
+        heard = [(w.start, w.end) for seg_ in segs for w in seg_.words] or [(LEAD, total - TAIL)]
+        said = SAID[n].replace("House Mix", "House\u00a0Mix").split()
+        LINE_WORDS[n] = [{"w": word.replace("\u00a0", " "), "s": heard[k * len(heard) // len(said)][0],
+                          "e": heard[min(len(heard) - 1, (k + 1) * len(heard) // len(said) - 1)][1]} for k, word in enumerate(said)]
+        LINES[n] = (LEAD, total - TAIL, SAID[n])
+        print(f"line {n:2d}: {total:5.2f}s  | {LINES[n][2]}")
 
 
 LINES: dict[int, tuple[float, float, str]] = {}
@@ -136,9 +198,8 @@ def sung(n: int, offset: float) -> list[tuple[float, float, str]]:
     """His line as captions that follow him word by word; `offset` is where the line's first word lands in the segment."""
     if n not in LINES:
         return pop(evenly(SCRIPT[n], offset, offset + line_len(n)))
-    start, end, _ = LINES[n]
-    words = [w for w in face_words() if start - 0.05 <= w["s"] <= end + 0.05]
-    timed = [(spelled(w["w"]), offset + w["s"] - start, offset + w["e"] - start) for w in words]
+    start = LINES[n][0]
+    timed = [(w["w"], offset + w["s"] - start, offset + w["e"] - start) for w in LINE_WORDS[n]]
     # "House" then "Mix" stays one name on screen.
     merged: list[tuple[str, float, float]] = []
     for w in timed:
@@ -194,7 +255,7 @@ def evenly(text: str, t0: float, t1: float) -> list[tuple[str, float, float]]:
     return [(w, t0 + k * step, t0 + (k + 1) * step) for k, w in enumerate(words)]
 
 
-NAR = {lid: (caption, spoken) for _, lid, caption, spoken, _, _ in narrator_lines()}
+NAR = {lid: (caption, spoken) for _, lid, caption, spoken, *_ in narrator_lines()}
 NAR_WORDS = json.load(open(f"{HOME}/audio/words.json"))
 
 
@@ -316,7 +377,7 @@ def build_edl() -> list[dict]:
     live = "Live site · house-mix.vercel.app · recorded 30 Oct 2026"
     # The live plan runs for minutes; it plays fast enough to fit the narrator's line, and says how much faster.
     plan_a, plan_b = plan["build"] - 0.5, plan["ready"] + 1.5
-    plan_speed = round((plan_b - plan_a) / 7.5, 1)
+    plan_speed = round((plan_b - plan_a) / 5.2, 1)
     return [
         # 1. The opening: doors at 6:58, the questions, the sponsor's question; then Prashant, and the turn.
         seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=4.6, nar=["n1"], fade_in=0.4),
@@ -345,8 +406,8 @@ def build_edl() -> list[dict]:
         seg(kind="screen", src=f"{CLIPS}/sponsor.mp4", a=sponsor["compare"] - 0.2, b=sponsor["export"] - 0.4, nar=["n18"], shade=True,
             zoom=[(0.4, 7.5, 1.6, 1620, 560)], sfx=[(4.2, "click", 0.4)]),
         seg(kind="screen", src=f"{CLIPS}/onepager.mp4", a=0.0, b=5.5, nar=["n20"], label="Real output · the sponsor one-pager (PDF)"),
-        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.6, speed=1.2, nar=["n21"], shade=True,
-            label="Run the night · cues for the partnerships crew", zoom=[(0.4, 9.0, 1.4, 1460, 620)], sfx=[((night["called"] - night["play"] + 0.3) / 1.2, "click", 0.6)]),
+        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.4, speed=1.6, nar=["n21"], shade=True,
+            label="Run the night · cues for the partnerships crew", zoom=[(0.4, 9.0, 1.4, 1460, 620)], sfx=[((night["called"] - night["play"] + 0.3) / 1.6, "click", 0.6)]),
         # 4. Every kind of night: comedy, a festival, a restaurant, each a seeded show planned on live Qloo.
         seg(kind="screen", src=f"{CLIPS}/modes.mp4", a=0.4, b=7.4, speed=1.4, pip=7, shade=True, label="Five modes · the intake"),
         seg(kind="screen", src=f"{CLIPS}/comedy.mp4", a=0.4, b=7.6, speed=1.25, pip=8, shade=True, label="Comedy · Taylor Tomlinson at The Comedy Store", zoom=[(0.2, 9.0, 1.3, 760, 520)]),
@@ -400,7 +461,7 @@ def render(i: int, s: dict) -> str:
             start, end, _ = LINES[n]
             a = start - LEAD
             dur = round((end - start + LEAD + TAIL) * FPS) / FPS
-            inputs = ["-ss", f"{a}", "-t", f"{dur}", "-i", FACE]
+            inputs = ["-ss", f"{a}", "-t", f"{dur}", "-i", line_src(n)]
             filters.append(
                 f"[0:v]fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,"
                 f"scale=w='trunc(1920*(1+0.05*t/{dur})/2)*2':h='trunc(1080*(1+0.05*t/{dur})/2)*2':eval=frame,crop=1920:1080,"
@@ -440,7 +501,7 @@ def render(i: int, s: dict) -> str:
         if voice and LINES:
             vs, ve, _ = LINES[voice]
             voice_in = inputs.count("-i")
-            inputs += ["-ss", f"{vs - LEAD}", "-t", f"{ve - vs + LEAD + TAIL}", "-i", FACE]
+            inputs += ["-ss", f"{vs - LEAD}", "-t", f"{ve - vs + LEAD + TAIL}", "-i", line_src(voice)]
         nar_idx = []
         for lid, wav, at in nar_in:
             nar_idx.append((inputs.count("-i"), at))
@@ -547,7 +608,7 @@ def main() -> None:
     os.makedirs(B, exist_ok=True)
     if not PREVIEW:
         assert FACE, f"Put his recording at {HOME}/from-mac/face.mov (or .mp4), or run with --preview."
-        LINES.update(find_lines())
+        prepare_lines()
     edl = build_edl()
     parts, lengths = [], []
     marks_ = chapters(edl)
@@ -581,7 +642,8 @@ def main() -> None:
     turn = starts[6]
     recap = starts[26]
     end = starts[-1]
-    json.dump({"total": total, "starts": starts, "chapters": {CHAPTERS[i]: starts[i] for i in CHAPTERS if CHAPTERS[i]}}, open(f"{B}/cut.json", "w"), indent=1)
+    pace = min(1.04, max(1.0, total / TARGET))
+    json.dump({"total": total, "pace": pace, "starts": starts, "chapters": {CHAPTERS[i]: starts[i] for i in CHAPTERS if CHAPTERS[i]}}, open(f"{B}/cut.json", "w"), indent=1)
     subprocess.run([os.path.expanduser("~/Videos/debrief/.venv-music/bin/python"), os.path.join(os.path.dirname(os.path.abspath(__file__)), "music.py"),
                     f"{total:.2f}", f"{turn:.2f}", f"{recap:.2f}", f"{end:.2f}"], check=True)
     music = f"{HOME}/music/theme.wav"
@@ -611,7 +673,6 @@ def main() -> None:
         f"[{n + 1}:a]aresample=48000[fx];[voice][duck][fx]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-15:TP=-2:LRA=11,alimiter=limit=0.79:level=false[aout]"
     )
     # The rules allow under three minutes: the whole cut plays up to 4% faster to land at TARGET; atempo keeps pitch.
-    pace = min(1.04, max(1.0, total / TARGET))
     if pace > 1.0:
         graph.append(f"{v}setpts=PTS/{pace:.4f},fps={FPS}[vp];[aout]atempo={pace:.4f}[ap]")
         v, aout = "[vp]", "[ap]"

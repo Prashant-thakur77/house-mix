@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>House Mix thumbnail</title>
+    <!-- The film's thumbnail, 1920×1080: screenshot it with Playwright (video/record.mjs is not needed). ?shots=<file URL of the stills folder> -->
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@800;900&family=Geist+Mono:wght@500&display=block" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0a0a0a;
+        color: #f1f1f1;
+      }
+      body {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+        background-size: 32px 32px;
+        border: 14px solid #1c1c1c;
+        border-radius: 36px;
+        position: relative;
+      }
+      .words {
+        position: absolute;
+        left: 90px;
+        top: 150px;
+        width: 900px;
+        font-family: "Saira Condensed", sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 158px;
+        line-height: 0.86;
+        letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px #f1f1f1;
+      }
+      .red {
+        color: #e8271c;
+        -webkit-text-stroke-color: #e8271c;
+      }
+      .tag {
+        position: absolute;
+        left: 96px;
+        bottom: 96px;
+        font-family: "Geist Mono", monospace;
+        font-size: 34px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c9c9c9;
+      }
+      .tag b {
+        color: #a893ff;
+      }
+      .frame {
+        position: absolute;
+        border-radius: 22px;
+        overflow: hidden;
+        background: #111;
+        border: 2px solid #333;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+      }
+      .bar {
+        height: 40px;
+        background: #1c1c1c;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 18px;
+      }
+      .bar i {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #444;
+        display: block;
+      }
+      .frame img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="words">Know your crowd before the doors <span class="red">open.</span></div>
+    <div class="tag"><b>House Mix</b> · built on Qloo taste AI</div>
+    <div class="frame" style="left: 1010px; top: 110px; width: 830px; transform: rotate(1.5deg)">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <img id="a" />
+    </div>
+    <div class="frame" style="left: 1000px; top: 580px; width: 740px; transform: rotate(-2deg); border-color: #e8271c">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <img id="b" />
+    </div>
+    <script>
+      const shots = new URLSearchParams(location.search).get("shots");
+      document.getElementById("a").src = "../design/app/landing/hero-desktop.png";
+      document.getElementById("b").src = `${shots}/sponsor.jpg`;
+    </script>
+  </body>
+</html>

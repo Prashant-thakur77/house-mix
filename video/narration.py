@@ -1,6 +1,7 @@
 """The narrator's lines, as data, with every number read from facts.json (video/facts.py).
 
-Each line: (scene, id, caption, spoken, exaggeration, cfg_weight). The caption is what the screen shows; the spoken
+Each line: (scene, id, caption, spoken, exaggeration, cfg_weight, voice). Two narrators share the film: a female voice
+for the story, the sponsors and the proof, and a male voice for the product, under the hood and the recap (refs/). The caption is what the screen shows; the spoken
 text is what the voice reads (numbers in words, names spelled for the voice). Prashant's own lines are in
 FACE_SCRIPT.txt and are cut from his recording, not voiced here. The ids match video/storyboard.md (n<shot>).
 """
@@ -33,9 +34,12 @@ PRODUCT = (0.75, 0.4)
 LIFT = (0.95, 0.3)
 
 
-def lines(f: dict) -> list[tuple[str, str, str, str, float, float]]:
+FEMALE = {"open", "sponsor", "proof"}
+
+
+def lines(f: dict) -> list[tuple[str, str, str, str, float, float, str]]:
     cited, of = f["cited"], f["citedOf"]
-    return [
+    out = [
         ("open", "n1", "6:58. Doors open in two minutes, and the queue is round the block.",
          "Six fifty-eight. Doors open in two minutes, and the queue is round the block.", *OPEN),
         ("open", "n2", "Who’s actually coming tonight? What will they sing? Where will they drink after?",
@@ -44,8 +48,8 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float]]:
          "And the sponsor paying for all of it wants one answer. Do we fit this crowd?", *OPEN),
         ("loop", "n10", "Watch. A promoter types tonight’s fixture, and every name goes to Qloo first. Dodger Stadium has a twin in Iowa, so House Mix asks. It never guesses.",
          "Watch. A promoter types tonight's fixture, and every name goes to Clue first. Dodger Stadium has a twin, in Iowa. So House Mix asks. It never guesses.", *PRODUCT),
-        ("loop", "n12", "Then Claude agents go to work, and every Qloo call lands in the trace.",
-         "Then Claude agents go to work, and every Clue call lands in the trace.", *PRODUCT),
+        ("loop", "n12", "Then the agents go to work, and every Qloo call lands in the trace.",
+         "Then the agents go to work, and every Clue call lands in the trace.", *PRODUCT),
         ("loop", "n13", "Here’s the crowd: what both fan bases share, and what only one side carries.",
          "Here's the crowd. What both fan bases share, and what only one side carries.", *PRODUCT),
         ("loop", "n14", "Open any pick: exactly what Qloo returned, our reading of it, even which act drove it.",
@@ -58,8 +62,8 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float]]:
          "One click, and the sponsor gets a one-pager. The activation, and the evidence behind it.", *PRODUCT),
         ("sponsor", "n21", "And on the night, the partnerships crew gets the cue, right on time.",
          "And on the night, the partnerships crew gets the cue, right on time.", *PRODUCT),
-        ("hood", "n22", f"Under the hood: every name becomes a confirmed Qloo ID, and agents call {f['tools']} Qloo tools through MCP.",
-         f"Under the hood. Every name becomes a confirmed Clue I D, and agents call {words(f['tools'])} Clue tools, through M C P.", *PRODUCT),
+        ("hood", "n22", f"Under the hood: every name becomes a confirmed Qloo ID, and agents call {f['tools']} tools from Qloo, through MCP.",
+         f"Under the hood. Every name becomes a confirmed Clue I D, and agents call {words(f['tools'])} tools from Clue, through M C P.", *PRODUCT),
         ("hood", "n24", "A gate rejects anything Qloo didn’t return. Then a person approves every line.",
          "A gate rejects anything Clue didn't return. Then a person approves every line.", *PRODUCT),
         ("proof", "n27", f"Every House Mix pick traces back to a real Qloo call: {cited} of {of}. Claude alone? Nearly half its picks, Qloo couldn’t pin down.",
@@ -67,7 +71,8 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float]]:
         ("recap", "n29", "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.",
          "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.", *LIFT),
     ]
+    return [(*line, "female" if line[0] in FEMALE else "male") for line in out]
 
 
-def load() -> list[tuple[str, str, str, str, float, float]]:
+def load() -> list[tuple[str, str, str, str, float, float, str]]:
     return lines(json.load(open(FACTS)))
