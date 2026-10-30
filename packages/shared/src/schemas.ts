@@ -323,6 +323,57 @@ export const AskAnswer = z.object({
 });
 export type AskAnswer = z.infer<typeof AskAnswer>;
 
+/** A real recording of a pick's artist (Apple's catalogue): a 30-second preview to audition, and a link to the full song. */
+export const Track = z.object({
+  id: z.string(),
+  title: z.string(),
+  artist: z.string(),
+  album: z.string().optional(),
+  durationMs: z.number(),
+  previewUrl: z.string().optional(),
+  url: z.string(),
+  artwork: z.string().optional(),
+  explicit: z.boolean().default(false),
+});
+export type Track = z.infer<typeof Track>;
+
+export const MusicPick = z.object({
+  itemId: z.string(),
+  qlooId: z.string(),
+  artist: z.string(),
+  tracks: z.array(Track).default([]),
+  note: z.string().optional(),
+  /** "fill": not in the plan; added because the slot ran short, from a qloo_recommend call on the slot's own picks. */
+  source: z.enum(["plan", "fill"]).default("plan"),
+  slotKey: z.string().optional(),
+  callId: z.string().optional(),
+  rank: z.number().optional(),
+});
+export type MusicPick = z.infer<typeof MusicPick>;
+
+/** A music slot as an actual playlist: the picks' tracks in the plan's order, timed from the slot's start until it is full. */
+export const Playlist = z.object({
+  slotKey: z.string(),
+  label: z.string(),
+  timeRange: z.string(),
+  minutes: z.number(),
+  filledMinutes: z.number(),
+  entries: z.array(z.object({ at: z.string(), itemId: z.string(), track: Track, fill: z.boolean().default(false) })).default([]),
+});
+export type Playlist = z.infer<typeof Playlist>;
+
+export const Music = z.object({
+  source: z.literal("itunes"),
+  country: z.string(),
+  picks: z.array(MusicPick).default([]),
+  playlists: z.array(Playlist).default([]),
+  /** Explicit tracks left out because the show is all ages. */
+  skippedExplicit: z.number().default(0),
+  notes: z.array(z.string()).default([]),
+  createdAt: z.string(),
+});
+export type Music = z.infer<typeof Music>;
+
 export const Show = z.object({
   id: z.string(),
   shareId: z.string(),
@@ -340,6 +391,7 @@ export const Show = z.object({
   briefing: Briefing.optional(),
   heatmap: Heatmap.optional(),
   counterfactual: Counterfactual.optional(),
+  music: Music.optional(),
   asks: z.array(AskAnswer).default([]),
   lastRunId: z.string().optional(),
   qlooMode: z.enum(["mock", "live"]),

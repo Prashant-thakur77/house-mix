@@ -5228,6 +5228,2543 @@
    },
    "costUsd": 0.0244,
    "createdAt": "2026-10-30T06:23:33.690Z"
+  },
+  "music": {
+   "source": "itunes",
+   "country": "GB",
+   "picks": [
+    {
+     "itemId": "i_eae4ee7f-d",
+     "qlooId": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+     "artist": "Katy J Pearson",
+     "tracks": [
+      {
+       "id": "1607335602",
+       "title": "Talk Over Town",
+       "artist": "Katy J Pearson",
+       "album": "Sound of the Morning",
+       "durationMs": 352136,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/4a/5a/4b4a5a81-f539-83ca-433b-87ff82dda4f5/mzaf_15628032206226979647.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/talk-over-town/1607335043?i=1607335602&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a9/6a/eb/a96aeb99-6d6f-8356-d193-ab5041126fab/5400863072094_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1523330091",
+       "title": "Beautiful Soul",
+       "artist": "Katy J Pearson",
+       "album": "Return",
+       "durationMs": 196253,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/4a/e9/594ae956-a5ed-996f-4899-baf7151c9f4a/mzaf_10189986040720961447.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/beautiful-soul/1523329982?i=1523330091&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/3a/74/b2/3a74b249-1fe6-826c-f3f4-e62c4d12b07b/5400863035020_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1507400152",
+       "title": "Take Back The Radio",
+       "artist": "Katy J Pearson",
+       "album": "Take Back The Radio - Single",
+       "durationMs": 301576,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a7/c6/a9/a7c6a95d-50eb-04cc-d097-ba717c38c77b/mzaf_2314861809623706901.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/take-back-the-radio/1507400147?i=1507400152&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f4/d9/1f/f4d91f69-8c5e-4317-4b08-a29c34d8e274/5400863030865_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1523330082",
+       "title": "Tonight",
+       "artist": "Katy J Pearson",
+       "album": "Return",
+       "durationMs": 237413,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/f1/64/48f164f0-968c-fe34-4f24-87659b145316/mzaf_5315043606888975248.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/tonight/1523329982?i=1523330082&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/3a/74/b2/3a74b249-1fe6-826c-f3f4-e62c4d12b07b/5400863035020_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1607336251",
+       "title": "Float",
+       "artist": "Katy J Pearson",
+       "album": "Sound of the Morning",
+       "durationMs": 218074,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/bb/1e/76bb1e15-47a8-b9ed-293d-76b5241790e7/mzaf_2308769783015446111.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/float/1607335043?i=1607336251&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a9/6a/eb/a96aeb99-6d6f-8356-d193-ab5041126fab/5400863072094_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_abddc9e1-6",
+     "qlooId": "698966C8-3D82-4E54-A30A-CF56232B3090",
+     "artist": "Pip Blom",
+     "tracks": [
+      {
+       "id": "1448111279",
+       "title": "Daddy Issues",
+       "artist": "Pip Blom",
+       "album": "Boat",
+       "durationMs": 265707,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f1/21/f0/f121f02c-7b7d-af56-8464-a371f5fdad33/mzaf_5590142717067994395.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/daddy-issues/1448111276?i=1448111279&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/74/92/85/7492850f-ed37-7d5f-6899-489d043fa224/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1894898826",
+       "title": "I Think I'm In Love",
+       "artist": "Pip Blom",
+       "album": "I Think I'm In Love - Single",
+       "durationMs": 144025,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a7/84/69/a78469f0-bef6-9e39-c931-ab01e35450a3/mzaf_4349870422515718620.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-think-im-in-love/1894898822?i=1894898826&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0e/f4/b6/0ef4b6fb-da8c-2cc7-aa58-9e693fe097be/5054526387959_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1569829026",
+       "title": "I Know I'm Not Easy To Like",
+       "artist": "Pip Blom",
+       "album": "Welcome Break",
+       "durationMs": 214566,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d0/67/62/d06762a7-4cf7-dd91-719e-9d7282ed376a/mzaf_8540954778077302018.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-know-im-not-easy-to-like/1569828446?i=1569829026&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f1/4e/f5/f14ef5a4-f74e-314d-794a-78025fa8cfdb/5400863050788_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6767551055",
+       "title": "School (2026 Edition)",
+       "artist": "Pip Blom",
+       "album": "School (2026 Edition) - Single",
+       "durationMs": 119625,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/67/80/7e/67807e39-7b88-3981-6807-3499d7ceff40/mzaf_7934489583607884198.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/school-2026-edition/6767551054?i=6767551055&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f6/d9/ef/f6d9efb9-81b6-72d4-8fe5-4c74ed2c233b/824296576267_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1680510664",
+       "title": "I Can Be Your Man",
+       "artist": "Pip Blom",
+       "album": "Bobbie",
+       "durationMs": 216560,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7b/37/ed/7b37eded-9efc-f4cc-7f93-130a3561a9e5/mzaf_5977094938143583351.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-can-be-your-man/1680509812?i=1680510664&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/9c/b9/b49cb9e8-8062-b4bf-73ed-af6702de9ba6/5400863130060_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_1ca6d427-e",
+     "qlooId": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+     "artist": "Twin Peaks",
+     "tracks": [],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_2f1c8c0f-6",
+     "qlooId": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+     "artist": "Tierra Whack",
+     "tracks": [
+      {
+       "id": "1473487844",
+       "title": "MY POWER",
+       "artist": "Tierra Whack, Beyoncé, Moonchild Sanelly, Nija, DJ Lag, Yemi Alade & Busiswa",
+       "album": "The Lion King: The Gift",
+       "durationMs": 259742,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/64/73/5864735d-3aa0-7aae-5ea9-b1d7754eed7f/mzaf_13773271482994614145.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/my-power/1473486502?i=1473487844&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/aa/20/73/aa207387-444f-b04d-9b7e-7ea6c687c15e/886447863329.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1388074114",
+       "title": "Hungry Hippo",
+       "artist": "Tierra Whack",
+       "album": "Whack World",
+       "durationMs": 60000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/14/aa/e014aa6f-20e3-ef71-b7af-b80af1f5fef0/mzaf_7242515878458879711.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hungry-hippo/1388073103?i=1388074114&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/5f/b9/795fb9eb-cdc3-fd76-e18f-7b6ce5cfa669/18UMGIM29201.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1388074185",
+       "title": "Pretty Ugly",
+       "artist": "Tierra Whack",
+       "album": "Whack World",
+       "durationMs": 60000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/31/f7/7d/31f77d22-b54c-4d47-c827-313646c83dc2/mzaf_7731263173595487066.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pretty-ugly/1388073103?i=1388074185&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/5f/b9/795fb9eb-cdc3-fd76-e18f-7b6ce5cfa669/18UMGIM29201.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1726096185",
+       "title": "SHOWER SONG",
+       "artist": "Tierra Whack",
+       "album": "WORLD WIDE WHACK",
+       "durationMs": 163133,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/0f/48/f70f4815-c911-d5b3-9ede-3552ba186b28/mzaf_8819191026125319727.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/shower-song/1726095840?i=1726096185&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/37/02/a5/3702a50f-1e46-b541-2932-c3108e72ceb7/23UM1IM58229.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1540022802",
+       "title": "feel good",
+       "artist": "Tierra Whack",
+       "album": "feel good - Single",
+       "durationMs": 85006,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/48/ab/f748ab45-88d3-eed8-5c69-bffd59fb26d9/mzaf_12454258985069872794.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/feel-good/1540022800?i=1540022802&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/be/dc/fc/bedcfcfe-70c1-9556-7964-66f3f622f6bc/20UMGIM96985.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_4db39c8b-1",
+     "qlooId": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+     "artist": "Yard Act",
+     "tracks": [
+      {
+       "id": "1891450730",
+       "title": "You're Gonna Need A Little Music",
+       "artist": "Yard Act",
+       "album": "You're Gonna Need A Little Music",
+       "durationMs": 280412,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/56/9d/46569d29-bfe3-7c72-b21b-324499dffefe/mzaf_5251175427956202506.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/youre-gonna-need-a-little-music/1891450512?i=1891450730&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1891450725",
+       "title": "New Beginnings",
+       "artist": "Yard Act",
+       "album": "You're Gonna Need A Little Music",
+       "durationMs": 207167,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f2/ae/bf/f2aebfcd-2793-b0ad-f2cd-581babd64265/mzaf_5647709333054421226.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/new-beginnings/1891450512?i=1891450725&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1693636302",
+       "title": "The Trench Coat Museum",
+       "artist": "Yard Act",
+       "album": "The Trench Coat Museum - Single",
+       "durationMs": 491539,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1e/dd/3d/1edd3d85-bb9a-e7d3-112d-5047cedd28f4/mzaf_8809268017397903773.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-trench-coat-museum/1693636278?i=1693636302&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e1/df/e6/e1dfe6f5-f779-a0f6-b4d6-3e760287df47/23UMGIM50623.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1891450729",
+       "title": "Fiction",
+       "artist": "Yard Act",
+       "album": "You're Gonna Need A Little Music",
+       "durationMs": 160251,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/1e/9f/4c1e9fd5-1d2b-8a00-8714-93b0a4f99ad3/mzaf_8272075934487172922.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/fiction/1891450512?i=1891450729&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1712519259",
+       "title": "Dream Job",
+       "artist": "Yard Act",
+       "album": "Where’s My Utopia?",
+       "durationMs": 159341,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a3/4b/17/a34b178e-dabc-3d58-87d3-fdfc34c12179/mzaf_16722703904541055050.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dream-job/1712518914?i=1712519259&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/48/f1/3d/48f13d2e-a939-61df-9bc2-c9fcbaecc719/23UM1IM20781.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_2e7c29e1-4",
+     "qlooId": "1D7AFB18-740F-4F23-828E-7FC4D31A2A9B",
+     "artist": "Pottery",
+     "tracks": [
+      {
+       "id": "1783187721",
+       "title": "Texas Drums, Pt. I & II",
+       "artist": "Pottery",
+       "album": "Welcome to Bobby's Motel",
+       "durationMs": 381196,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/02/bd/4c02bd24-4fd5-b08e-189e-4ac84c18fe76/mzaf_9395083828735104495.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/texas-drums-pt-i-ii/1783187462?i=1783187721&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1783184792",
+       "title": "Texas Drums, Pt. I",
+       "artist": "Pottery",
+       "album": "Texas Drums, Pt. I & II - Single",
+       "durationMs": 182233,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/c9/29/0bc929c9-b1e2-ffb5-f623-34dfb788b0d7/mzaf_11545309199596110596.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/texas-drums-pt-i/1783184782?i=1783184792&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/6d/27/7c6d272d-c083-5879-2ecc-237ad21332c0/0720841241300_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1783187732",
+       "title": "Hot Like Jungle",
+       "artist": "Pottery",
+       "album": "Welcome to Bobby's Motel",
+       "durationMs": 227438,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f9/9f/f5/f99ff588-8ec6-bdce-623c-bc332441f980/mzaf_15644711134233328431.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hot-like-jungle/1783187462?i=1783187732&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1783187472",
+       "title": "Bobby's Forecast",
+       "artist": "Pottery",
+       "album": "Welcome to Bobby's Motel",
+       "durationMs": 183339,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/aa/8c/c0aa8c15-1f11-780a-228d-0f09aaae0672/mzaf_13461570717861937609.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bobbys-forecast/1783187462?i=1783187472&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1783187730",
+       "title": "Take Your Time",
+       "artist": "Pottery",
+       "album": "Welcome to Bobby's Motel",
+       "durationMs": 194466,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/99/86/ea/9986ea4c-bda4-0a69-6470-840e8cc67938/mzaf_8219660657684528376.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/take-your-time/1783187462?i=1783187730&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_b7f77cd4-2",
+     "qlooId": "2D309B5E-4AAB-4B4C-9F70-BCDDB12DB708",
+     "artist": "SPRINTS",
+     "tracks": [],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_6f1f350f-a",
+     "qlooId": "E11B00A7-2F79-4C4E-A717-B8EF22406C56",
+     "artist": "The Mysterines",
+     "tracks": [
+      {
+       "id": "1587673443",
+       "title": "Hung Up",
+       "artist": "The Mysterines",
+       "album": "Reeling",
+       "durationMs": 204973,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/43/2f/8b432f5b-33b2-3beb-62fe-dba3e4ea04e2/mzaf_18014683594903410396.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hung-up/1587673426?i=1587673443&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1e/a7/6b/1ea76b2c-719e-4dcd-21bb-b729a5f3250d/21UM1IM19255.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1646623027",
+       "title": "All These Things",
+       "artist": "The Mysterines",
+       "album": "All These Things EP",
+       "durationMs": 269920,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/c7/21/94c72167-ec8c-2c58-74ce-62ecc3a7eec0/mzaf_3025001147196314068.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/all-these-things/1646623011?i=1646623027&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/81/84/39/81843969-461b-92b3-65a4-314abf7d6409/22UM1IM01889.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1587673807",
+       "title": "Dangerous",
+       "artist": "The Mysterines",
+       "album": "Reeling",
+       "durationMs": 211467,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/46/f8/b1/46f8b176-69d5-1f9e-b6b3-5b3f7527a355/mzaf_2075019106204810197.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dangerous/1587673426?i=1587673807&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1e/a7/6b/1ea76b2c-719e-4dcd-21bb-b729a5f3250d/21UM1IM19255.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1632206810",
+       "title": "Bet Your Pretty Face",
+       "artist": "The Mysterines",
+       "album": "Take Control - EP",
+       "durationMs": 190033,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/33/4f/0a334fa3-d69b-3dd1-9f28-22a2e94eabb6/mzaf_17497596406380851688.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bet-your-pretty-face/1632206806?i=1632206810&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/f6/9e/b0f69ef8-490d-9e83-a2cc-de3a9cb80016/22UMGIM51848.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1632206807",
+       "title": "Take Control",
+       "artist": "The Mysterines",
+       "album": "Take Control - EP",
+       "durationMs": 207304,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/ca/4a/12ca4ac6-fe91-c20b-d1cc-b79826b37965/mzaf_3065164921822896356.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/take-control/1632206806?i=1632206807&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/f6/9e/b0f69ef8-490d-9e83-a2cc-de3a9cb80016/22UMGIM51848.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_28300929-f",
+     "qlooId": "F45ABBF1-1592-402A-8870-BDFF1E442F3A",
+     "artist": "Our Girl",
+     "tracks": [
+      {
+       "id": "1382207699",
+       "title": "In My Head",
+       "artist": "Our Girl",
+       "album": "Stranger Today",
+       "durationMs": 228392,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/86/a5/f3/86a5f379-11fc-3d6f-6e4f-2ba1a7916b95/mzaf_1773364279827495631.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/in-my-head/1382207693?i=1382207699&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1344811804",
+       "title": "Our Girl",
+       "artist": "Our Girl",
+       "album": "Our Girl - Single",
+       "durationMs": 207236,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6e/da/8c/6eda8c60-3b98-0af4-543f-916f550374e0/mzaf_8262991611889382206.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/our-girl/1344811782?i=1344811804&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/59/88/63/598863de-b58c-5eb1-ca19-bbdc9d309cde/5053760038474.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1382207698",
+       "title": "Being Around",
+       "artist": "Our Girl",
+       "album": "Stranger Today",
+       "durationMs": 163203,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b4/84/6a/b4846af9-581e-939e-0fac-f2ca93e9e25a/mzaf_14050694889909600855.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/being-around/1382207693?i=1382207698&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1382207702",
+       "title": "Two Life",
+       "artist": "Our Girl",
+       "album": "Stranger Today",
+       "durationMs": 290117,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/83/47/e1834782-2722-99b4-0434-79996655d54d/mzaf_16699453843080038671.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/two-life/1382207693?i=1382207702&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1382207705",
+       "title": "I Wish It Was Sunday",
+       "artist": "Our Girl",
+       "album": "Stranger Today",
+       "durationMs": 220000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/08/5a/c5/085ac5dd-a892-d735-a45a-12976b6b0a2c/mzaf_3955944378353455932.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-wish-it-was-sunday/1382207693?i=1382207705&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_faf9823a-8",
+     "qlooId": "F01A7A37-BC17-4B90-8AB6-45E24E9D2E8A",
+     "artist": "Lexie",
+     "tracks": [
+      {
+       "id": "1836371543",
+       "title": "X",
+       "artist": "Lexie Liu",
+       "album": "TEENAGE RAMBLE - EP",
+       "durationMs": 199565,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/f9/c2/32f9c291-94a3-035c-8ea2-76e34adf3e14/mzaf_3597420125817197057.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/x/1836371538?i=1836371543&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/25/88/0b/25880b3b-6d79-debf-2433-0e6b3f49e2d1/193017182552.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1654831378",
+       "title": "FORTUNA",
+       "artist": "Lexie Liu",
+       "album": "The Happy Star",
+       "durationMs": 182361,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6b/c6/a5/6bc6a5bc-6fe1-0482-0929-0f928be9a679/mzaf_11629977643837890104.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/fortuna/1654831374?i=1654831378&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ca/24/cd/ca24cd52-ec4e-09ba-ec3f-a9984af260ff/194690984952_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1654831761",
+       "title": "MAGICIAN",
+       "artist": "Lexie Liu",
+       "album": "The Happy Star",
+       "durationMs": 213063,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c9/67/58/c9675899-1783-5bf5-2d81-a84ab3d8ae30/mzaf_3401792234413707039.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/magician/1654831374?i=1654831761&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ca/24/cd/ca24cd52-ec4e-09ba-ec3f-a9984af260ff/194690984952_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6769395745",
+       "title": "POP GIRL (with Yves)",
+       "artist": "Lexie Liu & Yves",
+       "album": "POP GIRLS CLUB - Single",
+       "durationMs": 147908,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/93/13/59/931359a4-913d-bda5-2ec2-52470370c26d/mzaf_6552477407704773163.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pop-girl-with-yves/6769395744?i=6769395745&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/16/46/8f/16468f78-0eb3-96f1-79e7-90c269b1400f/193017207385.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1492257225",
+       "title": "Holy",
+       "artist": "Lexie Liu",
+       "album": "Meta Ego",
+       "durationMs": 168459,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/93/6d/bd/936dbd64-e57b-92f6-1711-541c9c47cd80/mzaf_1268039230478537568.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/holy/1492257220?i=1492257225&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1a/9a/db/1a9adb64-e11c-fc7c-3456-83aa633aeb13/193017016147.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_3d6777eb-c",
+     "qlooId": "67459671-6091-499D-8719-AE019BE06982",
+     "artist": "Lauran Hibberd",
+     "tracks": [
+      {
+       "id": "1706498092",
+       "title": "Call Shotgun",
+       "artist": "Lauran Hibberd",
+       "album": "Call Shotgun - Single",
+       "durationMs": 169250,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8e/57/1a/8e571a28-52e7-6d9c-4101-290c4f85eb94/mzaf_9395687528401662300.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/call-shotgun/1706497785?i=1706498092&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/5a/cf/995acfcd-1e87-2709-b918-96dd5f20f85b/192641114434.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1492344379",
+       "title": "Bang Bang Bang",
+       "artist": "Lauran Hibberd",
+       "album": "Bang Bang Bang - Single",
+       "durationMs": 142490,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f2/cd/33/f2cd335f-ba33-f776-467c-3b084574a336/mzaf_7928783062970146211.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bang-bang-bang/1492343844?i=1492344379&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/3a/c8/73/3ac8736e-0941-4991-e177-3cf77118d49d/194491783358.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1714872518",
+       "title": "mary",
+       "artist": "Lauran Hibberd",
+       "album": "girlfriend material",
+       "durationMs": 176667,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c1/52/2e/c1522e9f-3d1e-23f9-17e1-357f8267c88b/mzaf_9969167537210989969.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/mary/1714872498?i=1714872518&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/36/20/b1/3620b169-44e2-6b6b-801c-afebaac25fe3/23SYMIM08133.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1568200206",
+       "title": "Bleugh",
+       "artist": "Lauran Hibberd",
+       "album": "Goober - EP",
+       "durationMs": 184825,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/62/d6/cb/62d6cb63-2404-a10b-5a4d-90aa23fb88fd/mzaf_7545800161477768292.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bleugh/1568199964?i=1568200206&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/17/3e/78173e64-0dec-a6eb-371f-73cbcf599ba4/638812817525.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1449261047",
+       "title": "Sugardaddy",
+       "artist": "Lauran Hibberd",
+       "album": "Sugardaddy - Single",
+       "durationMs": 186300,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/06/71/f9/0671f9f1-2390-5c35-c6f6-e4fc67d0ce1d/mzaf_2663503294822068644.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sugardaddy/1449261044?i=1449261047&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5c/c8/ec/5cc8ec22-1a14-2d59-e2a1-1c7d256cb585/193483352374.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_015657f6-7",
+     "qlooId": "E8978829-E267-4814-BC44-71F50B87613B",
+     "artist": "Courting",
+     "tracks": [
+      {
+       "id": "1617122090",
+       "title": "Tennis",
+       "artist": "Courting",
+       "album": "Guitar Music",
+       "durationMs": 194511,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/fd/20/adfd209f-c125-b9ef-3ef4-d620c5b82c63/mzaf_1770465042434886340.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/tennis/1617122077?i=1617122090&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/60/85/91/608591ae-0be6-08ee-44dc-2b3c734d1b19/5400863083557_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1617122098",
+       "title": "Famous",
+       "artist": "Courting",
+       "album": "Guitar Music",
+       "durationMs": 199328,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/5f/9d/c05f9de7-ce38-d997-4f47-5f29af62835d/mzaf_8685959723419288094.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/famous/1617122077?i=1617122098&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/60/85/91/608591ae-0be6-08ee-44dc-2b3c734d1b19/5400863083557_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1617122092",
+       "title": "Loaded",
+       "artist": "Courting",
+       "album": "Guitar Music",
+       "durationMs": 214416,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f0/82/0e/f0820e6d-986b-df70-c83f-36309023f5f0/mzaf_9396297358680571831.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/loaded/1617122077?i=1617122092&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/60/85/91/608591ae-0be6-08ee-44dc-2b3c734d1b19/5400863083557_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1617122780",
+       "title": "Jumper",
+       "artist": "Courting",
+       "album": "Guitar Music",
+       "durationMs": 219159,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a6/70/5a/a6705a88-893e-d9f0-688e-c821500213b6/mzaf_5880120166782878984.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/jumper/1617122077?i=1617122780&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/60/85/91/608591ae-0be6-08ee-44dc-2b3c734d1b19/5400863083557_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1728001545",
+       "title": "David Byrne's Badside",
+       "artist": "Courting",
+       "album": "David Byrne's Badside - Single",
+       "durationMs": 197394,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0c/a7/0e/0ca70e32-a85c-c076-edb8-dab40addc9e9/mzaf_2375084607411572663.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/david-byrnes-badside/1728001542?i=1728001545&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1b/c6/8d/1bc68db1-839e-6a2a-847f-f44549f5ff30/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_998f7621-2",
+     "qlooId": "AB8DF64E-63B5-4FC1-B008-BACFE477FFF1",
+     "artist": "TV Priest",
+     "tracks": [
+      {
+       "id": "6781279498",
+       "title": "Just so You Know",
+       "artist": "TV Priest",
+       "album": "Cartoons",
+       "durationMs": 221582,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/02/81/d4/0281d435-c4d8-54fd-15e6-fffc06d92241/mzaf_325451157420593219.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/just-so-you-know/6781278835?i=6781279498&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b2/d0/1a/b2d01a53-bc46-a9e5-8a3b-dbbd6b76cfce/5056868112619.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1598485232",
+       "title": "It Was Beautiful",
+       "artist": "TV Priest",
+       "album": "My Other People",
+       "durationMs": 213886,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/21/49/c2214980-6dd3-5440-69aa-e2acb270b858/mzaf_4772555075824415368.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/it-was-beautiful/1598485227?i=1598485232&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/9a/fb/fd/9afbfdde-f840-1506-e221-01c94a51d6b8/098787148763.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1535554798",
+       "title": "Press Gang",
+       "artist": "TV Priest",
+       "album": "Uppers",
+       "durationMs": 179813,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/9c/80/009c802c-261a-f780-79ac-61133df1fe34/mzaf_4947719436888279517.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/press-gang/1535554796?i=1535554798&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b1/5d/e5/b15de5a2-293a-967b-fd96-3a660fa3e61a/098787142266.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1598485229",
+       "title": "Bury Me in My Shoes",
+       "artist": "TV Priest",
+       "album": "My Other People",
+       "durationMs": 241449,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1f/f6/01/1ff601ba-103b-d12f-7b8d-e056eca417c9/mzaf_5727755023921683171.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bury-me-in-my-shoes/1598485227?i=1598485229&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/9a/fb/fd/9afbfdde-f840-1506-e221-01c94a51d6b8/098787148763.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1535554799",
+       "title": "Leg Room",
+       "artist": "TV Priest",
+       "album": "Uppers",
+       "durationMs": 212881,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6e/28/92/6e2892cf-7aaf-07f0-a084-76b825e389e4/mzaf_14149781216769654541.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/leg-room/1535554796?i=1535554799&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b1/5d/e5/b15de5a2-293a-967b-fd96-3a660fa3e61a/098787142266.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_4dfa8647-0",
+     "qlooId": "47586D29-E57E-4E3B-AC4D-77A7FCA6406B",
+     "artist": "bdrmm",
+     "tracks": [
+      {
+       "id": "1710268186",
+       "title": "Be Careful (Fila Brazillia Remix)",
+       "artist": "bdrmm",
+       "album": "Be Careful (Fila Brazillia Remix) - Single",
+       "durationMs": 342350,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/21/65/60/2165607a-0797-0443-3769-43cb34fce0f3/mzaf_17989251193079452675.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/be-careful-fila-brazillia-remix/1710267876?i=1710268186&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d2/37/9b/d2379b28-eda9-7780-99d4-0d14edad5337/5051083198301_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1701098308",
+       "title": "Happy",
+       "artist": "bdrmm",
+       "album": "Bedroom",
+       "durationMs": 226595,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2b/a7/60/2ba76054-fdb4-0534-562a-cbea54a67918/mzaf_9993827306664787950.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/happy/1701098303?i=1701098308&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0c/c5/a8/0cc5a823-43be-c6ca-201c-b8de617a40c4/3616404148391.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1666711622",
+       "title": "It's Just a Bit of Blood",
+       "artist": "bdrmm",
+       "album": "I Don't Know",
+       "durationMs": 286520,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/62/3e/2a/623e2a23-0d28-a746-8c5e-1a7510fd5a95/mzaf_14865572875322493894.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/its-just-a-bit-of-blood/1666711040?i=1666711622&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e3/41/a5/e341a59e-66ca-b067-2457-f76fa9a85db2/5051083189095_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1666711616",
+       "title": "Be Careful",
+       "artist": "bdrmm",
+       "album": "I Don't Know",
+       "durationMs": 270120,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/90/b4/40/90b440e2-c599-701a-ac57-8cab0e24b5c9/mzaf_977795070367653880.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/be-careful/1666711040?i=1666711616&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e3/41/a5/e341a59e-66ca-b067-2457-f76fa9a85db2/5051083189095_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1774290497",
+       "title": "Infinity Peaking",
+       "artist": "bdrmm",
+       "album": "Microtonic",
+       "durationMs": 341427,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/96/e8/e2/96e8e282-47c2-2e55-5d99-1f6519fc2f33/mzaf_8822357464049220509.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/infinity-peaking/1774290482?i=1774290497&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8c/21/43/8c21431c-9e61-c999-1e62-2b83779de3e8/5051083210539_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+     "qlooId": "E2C8357C-1928-4CC8-A24D-874862A1583E",
+     "artist": "Wet Leg",
+     "tracks": [
+      {
+       "id": "1594742877",
+       "title": "Wet Dream",
+       "artist": "Wet Leg",
+       "album": "Wet Leg",
+       "durationMs": 140080,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/17/5e/3e175e1f-2c1e-18b1-a53c-1aa170a0f757/mzaf_5496191525412031976.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/wet-dream/1594742869?i=1594742877&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/e9/53/2ce95363-f652-e1aa-de07-d52df30314fa/887828049660.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1594742873",
+       "title": "Chaise Longue",
+       "artist": "Wet Leg",
+       "album": "Wet Leg",
+       "durationMs": 196905,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/d7/fb/7cd7fb76-1e06-a789-d660-0acdc0ebb7e4/mzaf_14092996379524574973.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/chaise-longue/1594742869?i=1594742873&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/e9/53/2ce95363-f652-e1aa-de07-d52df30314fa/887828049660.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1802918484",
+       "title": "catch these fists",
+       "artist": "Wet Leg",
+       "album": "moisturizer",
+       "durationMs": 188515,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/b4/4c/61b44c9e-258e-87c5-0d0a-1e2376c1165f/mzaf_284004132639539584.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/catch-these-fists/1802918329?i=1802918484&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1802918496",
+       "title": "pokemon",
+       "artist": "Wet Leg",
+       "album": "moisturizer",
+       "durationMs": 206772,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/62/5d/59/625d5912-0141-eb28-4e3e-5387ebe83f8e/mzaf_8536892089257942601.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pokemon/1802918329?i=1802918496&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1802918480",
+       "title": "CPR",
+       "artist": "Wet Leg",
+       "album": "moisturizer",
+       "durationMs": 170338,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3b/b1/35/3bb13563-8039-e355-e414-eb858dc16217/mzaf_4555788394626773232.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/cpr/1802918329?i=1802918480&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 1
+    },
+    {
+     "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+     "qlooId": "B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+     "artist": "Fontaines D.C.",
+     "tracks": [
+      {
+       "id": "6792085056",
+       "title": "Marianne",
+       "artist": "Fontaines D.C.",
+       "album": "Dopamine Chamber",
+       "durationMs": 225646,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3e/b9/78/3eb9782b-551e-2ba4-87ea-5b4a1ecc25b1/mzaf_15502600618009895997.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/marianne/6792085051?i=6792085056&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1737990517",
+       "title": "Favourite",
+       "artist": "Fontaines D.C.",
+       "album": "Romance",
+       "durationMs": 256067,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/15/ae/4e/15ae4e05-a1ec-00ab-4ea0-a2dc14ac324f/mzaf_10791699547174648318.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/favourite/1737990072?i=1737990517&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/3a/76/4d3a7621-8b56-56a3-829f-545dde0b2b6a/191404143674.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6792085388",
+       "title": "Where Is Gone?",
+       "artist": "Fontaines D.C. & ROSALÍA",
+       "album": "Dopamine Chamber",
+       "durationMs": 316004,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/51/da/cf/51dacf04-3936-22cf-94e4-d3c09a6bf6b0/mzaf_18115747665246223806.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/where-is-gone/6792085051?i=6792085388&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6792085376",
+       "title": "Demolition",
+       "artist": "Fontaines D.C.",
+       "album": "Dopamine Chamber",
+       "durationMs": 199855,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/84/e6/9184e6a0-5bbe-98b0-0e20-00559ad025bc/mzaf_726210030077478535.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/demolition/6792085051?i=6792085376&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1783171809",
+       "title": "Jackie Down The Line",
+       "artist": "Fontaines D.C.",
+       "album": "Skinty Fia",
+       "durationMs": 241093,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/32/c4/8f32c4d8-b0e1-9387-4670-72070d8a3ebf/mzaf_6230559467213730159.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/jackie-down-the-line/1783171798?i=1783171809&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/41/0a/57/410a57cb-4194-e52e-3b3e-cb02bd97ecd8/0720841301608_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 2
+    },
+    {
+     "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+     "qlooId": "8ECDE519-1C13-484E-97EF-4D9C96209135",
+     "artist": "Goat Girl",
+     "tracks": [
+      {
+       "id": "1338170829",
+       "title": "The Man",
+       "artist": "Goat Girl",
+       "album": "Goat Girl",
+       "durationMs": 190462,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f0/36/42/f036426c-3e0e-2ab7-619f-baa25c2a274e/mzaf_1984049851481681393.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-man/1338170819?i=1338170829&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/fa/00/b4fa00f2-2871-3e2a-d95f-1ea841107c11/883870088466.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1530656161",
+       "title": "Sad Cowboy",
+       "artist": "Goat Girl",
+       "album": "On All Fours",
+       "durationMs": 317147,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/aa/2b/e6aa2b84-b3b1-3f49-98f7-e55f88f382e1/mzaf_6734460978504407805.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sad-cowboy/1530656152?i=1530656161&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/40/76/11/40761160-6dd3-0829-dfea-58ea72d521a4/191402015454.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1298421183",
+       "title": "Cracker Drool",
+       "artist": "Goat Girl",
+       "album": "Cracker Drool - Single",
+       "durationMs": 158462,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/24/2f/3e/242f3e4a-67f9-4221-75c0-22ba76a2ab8d/mzaf_2276352216037334753.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/cracker-drool/1298421181?i=1298421183&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a8/71/d7/a871d7f5-c179-0d8e-0a0f-5df370968bf3/883870088367.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1726888870",
+       "title": "take it away",
+       "artist": "Goat Girl",
+       "album": "Below the Waste",
+       "durationMs": 150044,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/97/3f/56973f9b-96ab-3610-2a5a-3d331147965d/mzaf_17749971720930022768.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/take-it-away/1726888259?i=1726888870&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a0/74/f3/a074f3e9-c185-4034-e8eb-7e103ae5b48c/191402047578.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1338170820",
+       "title": "Salty Sounds",
+       "artist": "Goat Girl",
+       "album": "Goat Girl",
+       "durationMs": 67769,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2c/d9/d1/2cd9d1b6-a502-2f8b-5bca-e2077afec3f3/mzaf_16288037770229780094.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/salty-sounds/1338170819?i=1338170820&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/fa/00/b4fa00f2-2871-3e2a-d95f-1ea841107c11/883870088466.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 3
+    },
+    {
+     "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+     "qlooId": "17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+     "artist": "Dry Cleaning",
+     "tracks": [
+      {
+       "id": "1549505089",
+       "title": "Scratchcard Lanyard",
+       "artist": "Dry Cleaning",
+       "album": "New Long Leg",
+       "durationMs": 246600,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f4/55/ed/f455ed14-255c-0277-832a-ae438856125d/mzaf_16107023272420583329.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/scratchcard-lanyard/1549505079?i=1549505089&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/97/88/77/978877e3-628d-3b5a-4108-e8112e3df12e/191400025479.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1839040858",
+       "title": "Hit My Head All Day",
+       "artist": "Dry Cleaning",
+       "album": "Secret Love",
+       "durationMs": 363919,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2e/21/41/2e2141f8-20f3-1bc1-d52d-e0fad559c291/mzaf_18214791530726705158.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hit-my-head-all-day/1839040855?i=1839040858&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/25/dc/f725dccc-c05e-31e6-d5f4-60e57f919863/191400086852.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1839040859",
+       "title": "Cruise Ship Designer",
+       "artist": "Dry Cleaning",
+       "album": "Secret Love",
+       "durationMs": 149930,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/69/ed/6a/69ed6aae-2882-359a-b5ac-3bd1518556d7/mzaf_18197998237552554841.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/cruise-ship-designer/1839040855?i=1839040859&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/25/dc/f725dccc-c05e-31e6-d5f4-60e57f919863/191400086852.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1731097340",
+       "title": "Magic of Meghan (2024 Remaster)",
+       "artist": "Dry Cleaning",
+       "album": "Sweet Princess EP (2024 Remaster)",
+       "durationMs": 229747,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2b/d4/30/2bd43078-1ef4-dcbf-6b07-49260d66a753/mzaf_5706321512067164231.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/magic-of-meghan-2024-remaster/1731097214?i=1731097340&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8d/ab/00/8dab00dc-d91a-751a-4a35-de1f56b68888/191400059573.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1549505102",
+       "title": "Unsmart Lady",
+       "artist": "Dry Cleaning",
+       "album": "New Long Leg",
+       "durationMs": 182413,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/bd/94/d6bd9422-1ae9-f1d7-f6be-926775c1bb71/mzaf_7278107812423039541.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/unsmart-lady/1549505079?i=1549505102&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/97/88/77/978877e3-628d-3b5a-4108-e8112e3df12e/191400025479.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 4
+    },
+    {
+     "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+     "qlooId": "4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+     "artist": "The Lemon Twigs",
+     "tracks": [
+      {
+       "id": "6789935540",
+       "title": "I Just Can't Get Over Losing You",
+       "artist": "The Lemon Twigs",
+       "album": "Look For Your Mind!",
+       "durationMs": 127693,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/fb/3a/2cfb3af4-7259-6087-44fc-006f4856c90d/mzaf_14930568724697091759.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-just-cant-get-over-losing-you/6789935518?i=6789935540&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/8b/c8/668bc89c-6bff-2485-6d84-4ab11b8abed2/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789935531",
+       "title": "2 or 3",
+       "artist": "The Lemon Twigs",
+       "album": "Look For Your Mind!",
+       "durationMs": 207307,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/55/04/0b55046f-8fea-3c9e-f77d-ccb28a5728aa/mzaf_14745657786632627475.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/2-or-3/6789935518?i=6789935531&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/8b/c8/668bc89c-6bff-2485-6d84-4ab11b8abed2/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1137330143",
+       "title": "These Words",
+       "artist": "The Lemon Twigs",
+       "album": "Do Hollywood",
+       "durationMs": 221120,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/08/08/5d0808aa-6993-0fcd-ffc7-16a227cdfea3/mzaf_2940254584642720651.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/these-words/1137330039?i=1137330143&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/99/4b/2e/994b2e76-222c-6c65-7bc6-ff2cda07e9e3/652637365030.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1448144319",
+       "title": "Small Victories",
+       "artist": "The Lemon Twigs",
+       "album": "Go to School",
+       "durationMs": 236367,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/99/e8/9799e8b8-c724-daee-983f-c6ca7e99267a/mzaf_3559476358359683146.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/small-victories/1448144313?i=1448144319&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6d/a5/70/6da5709c-e31f-0f6d-5764-5216b25e0331/191400009486.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1137330139",
+       "title": "Baby, Baby",
+       "artist": "The Lemon Twigs",
+       "album": "Do Hollywood",
+       "durationMs": 296747,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/db/27/49db2789-8b1a-04c7-4121-a0a8cf2ba375/mzaf_17941215772074054111.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/baby-baby/1137330039?i=1137330139&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/99/4b/2e/994b2e76-222c-6c65-7bc6-ff2cda07e9e3/652637365030.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 5
+    },
+    {
+     "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+     "qlooId": "C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+     "artist": "Dream Wife",
+     "tracks": [
+      {
+       "id": "1295081613",
+       "title": "Somebody",
+       "artist": "Dream Wife",
+       "album": "Dream Wife",
+       "durationMs": 209948,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cf/96/27/cf962741-b6c5-6dcb-1a15-32ddec2e085b/mzaf_8872437580215201477.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/somebody/1295081132?i=1295081613&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1499654798",
+       "title": "Sports!",
+       "artist": "Dream Wife",
+       "album": "So When You Gonna…",
+       "durationMs": 205418,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e6/07/c8/e607c867-dbe7-5ca4-d5ff-3a2c8fbaaff3/mzaf_4539861595838142587.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sports/1499654796?i=1499654798&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4e/9b/84/4e9b84e8-159c-334c-dd57-dbb13510d89b/689492200688.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1499654820",
+       "title": "Temporary",
+       "artist": "Dream Wife",
+       "album": "So When You Gonna…",
+       "durationMs": 175915,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/38/a0/91/38a09105-7f97-c165-56ad-c2fe76903bbf/mzaf_10626563585301887260.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/temporary/1499654796?i=1499654820&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4e/9b/84/4e9b84e8-159c-334c-dd57-dbb13510d89b/689492200688.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1295081647",
+       "title": "Right Now",
+       "artist": "Dream Wife",
+       "album": "Dream Wife",
+       "durationMs": 148560,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9e/59/75/9e5975f5-6732-878d-079e-9f62b9690f88/mzaf_18234189755567275498.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/right-now/1295081132?i=1295081647&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1295081648",
+       "title": "Spend the Night",
+       "artist": "Dream Wife",
+       "album": "Dream Wife",
+       "durationMs": 159987,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/a5/d4/69a5d423-4002-f448-5dc2-09d5c5abd161/mzaf_18032117586558206805.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/spend-the-night/1295081132?i=1295081648&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 6
+    },
+    {
+     "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+     "qlooId": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+     "artist": "Julia Jacklin",
+     "tracks": [
+      {
+       "id": "6771009711",
+       "title": "Get Away From Me (I Think I'll Love You Soon)",
+       "artist": "Julia Jacklin",
+       "album": "The Gem",
+       "durationMs": 168524,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e0/19/54/e01954ff-00a6-91fa-2519-f065d2ba2d2b/mzaf_1175925137259285782.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/get-away-from-me-i-think-ill-love-you-soon/6771009439?i=6771009711&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6771009691",
+       "title": "If I Had The Hand Of God",
+       "artist": "Julia Jacklin",
+       "album": "The Gem",
+       "durationMs": 161817,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/76/a6/9976a606-7353-75ea-b9e1-54307a3bb53d/mzaf_9198407848151542544.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/if-i-had-the-hand-of-god/6771009439?i=6771009691&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440697458",
+       "title": "Pressure to Party",
+       "artist": "Julia Jacklin",
+       "album": "Crushing",
+       "durationMs": 182307,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/04/2e/2e/042e2e09-34c8-af40-fa2a-c7357b2f7053/mzaf_2176977526772044388.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pressure-to-party/1440697455?i=1440697458&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/21/b4/dd/21b4dd3d-3ff9-94ab-508d-481719aae7dd/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6771009694",
+       "title": "The Hardest Thing",
+       "artist": "Julia Jacklin",
+       "album": "The Gem",
+       "durationMs": 201993,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/4a/06/e94a066b-a3d1-62ed-847a-a2733d8831d9/mzaf_2808985086690972729.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-hardest-thing/6771009439?i=6771009694&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440697460",
+       "title": "Don't Know How to Keep Loving You",
+       "artist": "Julia Jacklin",
+       "album": "Crushing",
+       "durationMs": 332987,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/d7/4f/b3d74fc0-b432-6403-b416-08b4e82f3131/mzaf_11337020906419441115.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dont-know-how-to-keep-loving-you/1440697455?i=1440697460&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/21/b4/dd/21b4dd3d-3ff9-94ab-508d-481719aae7dd/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 7
+    },
+    {
+     "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+     "qlooId": "46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+     "artist": "Hinds",
+     "tracks": [
+      {
+       "id": "1033895985",
+       "title": "Garden",
+       "artist": "Hinds",
+       "album": "Leave Me Alone",
+       "durationMs": 247747,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f6/ed/3c/f6ed3c68-388e-e2d0-823d-485a50a7042c/mzaf_2243207235921066163.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/garden/1033895945?i=1033895985&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1033896314",
+       "title": "Bamboo",
+       "artist": "Hinds",
+       "album": "Leave Me Alone",
+       "durationMs": 229920,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/56/cb/95/56cb95ce-e301-48fd-4259-bcc602afecb1/mzaf_12674151968962032894.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bamboo/1033895945?i=1033896314&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1326887628",
+       "title": "The Club",
+       "artist": "Hinds",
+       "album": "I Don't Run",
+       "durationMs": 197373,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ec/79/eb/ec79eb98-8a45-57dd-172f-5d82a0e89e1c/mzaf_11396728453947457092.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-club/1326887526?i=1326887628&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/93/02/72/93027245-b787-95cc-33a7-ca415d4c6eca/689492186982.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1033896270",
+       "title": "Chili Town",
+       "artist": "Hinds",
+       "album": "Leave Me Alone",
+       "durationMs": 191554,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a9/c6/df/a9c6df25-8617-8ac8-e910-cdcbebfea2e0/mzaf_3246381632900264306.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/chili-town/1033895945?i=1033896270&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1495220973",
+       "title": "Good Bad Times",
+       "artist": "Hinds",
+       "album": "The Prettiest Curse",
+       "durationMs": 198547,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/66/6d/6a/666d6a09-7dd8-6f19-3ce8-366d53da4f91/mzaf_18137528871903443338.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/good-bad-times/1495220965?i=1495220973&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/95/b9/7e/95b97e30-f29b-cf53-3031-708618d9f672/689492199685.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "fill",
+     "slotKey": "walk_in",
+     "callId": "c_46c974d0-685",
+     "rank": 8
+    }
+   ],
+   "playlists": [
+    {
+     "slotKey": "walk_in",
+     "label": "Gates & between-sets music",
+     "timeRange": "12:00–22:00",
+     "minutes": 600,
+     "filledMinutes": 264,
+     "entries": [
+      {
+       "at": "12:00",
+       "itemId": "i_eae4ee7f-d",
+       "track": {
+        "id": "1607335602",
+        "title": "Talk Over Town",
+        "artist": "Katy J Pearson",
+        "album": "Sound of the Morning",
+        "durationMs": 352136,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/4a/5a/4b4a5a81-f539-83ca-433b-87ff82dda4f5/mzaf_15628032206226979647.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/talk-over-town/1607335043?i=1607335602&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a9/6a/eb/a96aeb99-6d6f-8356-d193-ab5041126fab/5400863072094_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:06",
+       "itemId": "i_abddc9e1-6",
+       "track": {
+        "id": "1448111279",
+        "title": "Daddy Issues",
+        "artist": "Pip Blom",
+        "album": "Boat",
+        "durationMs": 265707,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f1/21/f0/f121f02c-7b7d-af56-8464-a371f5fdad33/mzaf_5590142717067994395.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/daddy-issues/1448111276?i=1448111279&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/74/92/85/7492850f-ed37-7d5f-6899-489d043fa224/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:10",
+       "itemId": "i_2f1c8c0f-6",
+       "track": {
+        "id": "1473487844",
+        "title": "MY POWER",
+        "artist": "Tierra Whack, Beyoncé, Moonchild Sanelly, Nija, DJ Lag, Yemi Alade & Busiswa",
+        "album": "The Lion King: The Gift",
+        "durationMs": 259742,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/64/73/5864735d-3aa0-7aae-5ea9-b1d7754eed7f/mzaf_13773271482994614145.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/my-power/1473486502?i=1473487844&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/aa/20/73/aa207387-444f-b04d-9b7e-7ea6c687c15e/886447863329.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:15",
+       "itemId": "i_4db39c8b-1",
+       "track": {
+        "id": "1891450730",
+        "title": "You're Gonna Need A Little Music",
+        "artist": "Yard Act",
+        "album": "You're Gonna Need A Little Music",
+        "durationMs": 280412,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/56/9d/46569d29-bfe3-7c72-b21b-324499dffefe/mzaf_5251175427956202506.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/youre-gonna-need-a-little-music/1891450512?i=1891450730&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:19",
+       "itemId": "i_2e7c29e1-4",
+       "track": {
+        "id": "1783187721",
+        "title": "Texas Drums, Pt. I & II",
+        "artist": "Pottery",
+        "album": "Welcome to Bobby's Motel",
+        "durationMs": 381196,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/02/bd/4c02bd24-4fd5-b08e-189e-4ac84c18fe76/mzaf_9395083828735104495.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/texas-drums-pt-i-ii/1783187462?i=1783187721&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:26",
+       "itemId": "i_6f1f350f-a",
+       "track": {
+        "id": "1587673443",
+        "title": "Hung Up",
+        "artist": "The Mysterines",
+        "album": "Reeling",
+        "durationMs": 204973,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/43/2f/8b432f5b-33b2-3beb-62fe-dba3e4ea04e2/mzaf_18014683594903410396.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/hung-up/1587673426?i=1587673443&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1e/a7/6b/1ea76b2c-719e-4dcd-21bb-b729a5f3250d/21UM1IM19255.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:29",
+       "itemId": "i_28300929-f",
+       "track": {
+        "id": "1382207699",
+        "title": "In My Head",
+        "artist": "Our Girl",
+        "album": "Stranger Today",
+        "durationMs": 228392,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/86/a5/f3/86a5f379-11fc-3d6f-6e4f-2ba1a7916b95/mzaf_1773364279827495631.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/in-my-head/1382207693?i=1382207699&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "12:33",
+       "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+       "track": {
+        "id": "1594742877",
+        "title": "Wet Dream",
+        "artist": "Wet Leg",
+        "album": "Wet Leg",
+        "durationMs": 140080,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/17/5e/3e175e1f-2c1e-18b1-a53c-1aa170a0f757/mzaf_5496191525412031976.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/wet-dream/1594742869?i=1594742877&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/e9/53/2ce95363-f652-e1aa-de07-d52df30314fa/887828049660.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:35",
+       "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+       "track": {
+        "id": "6792085056",
+        "title": "Marianne",
+        "artist": "Fontaines D.C.",
+        "album": "Dopamine Chamber",
+        "durationMs": 225646,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3e/b9/78/3eb9782b-551e-2ba4-87ea-5b4a1ecc25b1/mzaf_15502600618009895997.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/marianne/6792085051?i=6792085056&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:39",
+       "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+       "track": {
+        "id": "1338170829",
+        "title": "The Man",
+        "artist": "Goat Girl",
+        "album": "Goat Girl",
+        "durationMs": 190462,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f0/36/42/f036426c-3e0e-2ab7-619f-baa25c2a274e/mzaf_1984049851481681393.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-man/1338170819?i=1338170829&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/fa/00/b4fa00f2-2871-3e2a-d95f-1ea841107c11/883870088466.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:42",
+       "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+       "track": {
+        "id": "1549505089",
+        "title": "Scratchcard Lanyard",
+        "artist": "Dry Cleaning",
+        "album": "New Long Leg",
+        "durationMs": 246600,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f4/55/ed/f455ed14-255c-0277-832a-ae438856125d/mzaf_16107023272420583329.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/scratchcard-lanyard/1549505079?i=1549505089&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/97/88/77/978877e3-628d-3b5a-4108-e8112e3df12e/191400025479.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:46",
+       "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+       "track": {
+        "id": "6789935540",
+        "title": "I Just Can't Get Over Losing You",
+        "artist": "The Lemon Twigs",
+        "album": "Look For Your Mind!",
+        "durationMs": 127693,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/fb/3a/2cfb3af4-7259-6087-44fc-006f4856c90d/mzaf_14930568724697091759.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/i-just-cant-get-over-losing-you/6789935518?i=6789935540&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/8b/c8/668bc89c-6bff-2485-6d84-4ab11b8abed2/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:48",
+       "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+       "track": {
+        "id": "1295081613",
+        "title": "Somebody",
+        "artist": "Dream Wife",
+        "album": "Dream Wife",
+        "durationMs": 209948,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cf/96/27/cf962741-b6c5-6dcb-1a15-32ddec2e085b/mzaf_8872437580215201477.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/somebody/1295081132?i=1295081613&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:52",
+       "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+       "track": {
+        "id": "6771009711",
+        "title": "Get Away From Me (I Think I'll Love You Soon)",
+        "artist": "Julia Jacklin",
+        "album": "The Gem",
+        "durationMs": 168524,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e0/19/54/e01954ff-00a6-91fa-2519-f065d2ba2d2b/mzaf_1175925137259285782.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/get-away-from-me-i-think-ill-love-you-soon/6771009439?i=6771009711&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:55",
+       "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+       "track": {
+        "id": "1033895985",
+        "title": "Garden",
+        "artist": "Hinds",
+        "album": "Leave Me Alone",
+        "durationMs": 247747,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f6/ed/3c/f6ed3c68-388e-e2d0-823d-485a50a7042c/mzaf_2243207235921066163.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/garden/1033895945?i=1033895985&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "12:59",
+       "itemId": "i_eae4ee7f-d",
+       "track": {
+        "id": "1523330091",
+        "title": "Beautiful Soul",
+        "artist": "Katy J Pearson",
+        "album": "Return",
+        "durationMs": 196253,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/4a/e9/594ae956-a5ed-996f-4899-baf7151c9f4a/mzaf_10189986040720961447.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/beautiful-soul/1523329982?i=1523330091&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/3a/74/b2/3a74b249-1fe6-826c-f3f4-e62c4d12b07b/5400863035020_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:02",
+       "itemId": "i_abddc9e1-6",
+       "track": {
+        "id": "1894898826",
+        "title": "I Think I'm In Love",
+        "artist": "Pip Blom",
+        "album": "I Think I'm In Love - Single",
+        "durationMs": 144025,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a7/84/69/a78469f0-bef6-9e39-c931-ab01e35450a3/mzaf_4349870422515718620.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/i-think-im-in-love/1894898822?i=1894898826&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0e/f4/b6/0ef4b6fb-da8c-2cc7-aa58-9e693fe097be/5054526387959_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:04",
+       "itemId": "i_2f1c8c0f-6",
+       "track": {
+        "id": "1388074114",
+        "title": "Hungry Hippo",
+        "artist": "Tierra Whack",
+        "album": "Whack World",
+        "durationMs": 60000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/14/aa/e014aa6f-20e3-ef71-b7af-b80af1f5fef0/mzaf_7242515878458879711.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/hungry-hippo/1388073103?i=1388074114&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/5f/b9/795fb9eb-cdc3-fd76-e18f-7b6ce5cfa669/18UMGIM29201.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:05",
+       "itemId": "i_4db39c8b-1",
+       "track": {
+        "id": "1891450725",
+        "title": "New Beginnings",
+        "artist": "Yard Act",
+        "album": "You're Gonna Need A Little Music",
+        "durationMs": 207167,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f2/ae/bf/f2aebfcd-2793-b0ad-f2cd-581babd64265/mzaf_5647709333054421226.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/new-beginnings/1891450512?i=1891450725&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:09",
+       "itemId": "i_2e7c29e1-4",
+       "track": {
+        "id": "1783184792",
+        "title": "Texas Drums, Pt. I",
+        "artist": "Pottery",
+        "album": "Texas Drums, Pt. I & II - Single",
+        "durationMs": 182233,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/c9/29/0bc929c9-b1e2-ffb5-f623-34dfb788b0d7/mzaf_11545309199596110596.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/texas-drums-pt-i/1783184782?i=1783184792&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/6d/27/7c6d272d-c083-5879-2ecc-237ad21332c0/0720841241300_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:12",
+       "itemId": "i_6f1f350f-a",
+       "track": {
+        "id": "1646623027",
+        "title": "All These Things",
+        "artist": "The Mysterines",
+        "album": "All These Things EP",
+        "durationMs": 269920,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/c7/21/94c72167-ec8c-2c58-74ce-62ecc3a7eec0/mzaf_3025001147196314068.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/all-these-things/1646623011?i=1646623027&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/81/84/39/81843969-461b-92b3-65a4-314abf7d6409/22UM1IM01889.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:16",
+       "itemId": "i_28300929-f",
+       "track": {
+        "id": "1344811804",
+        "title": "Our Girl",
+        "artist": "Our Girl",
+        "album": "Our Girl - Single",
+        "durationMs": 207236,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6e/da/8c/6eda8c60-3b98-0af4-543f-916f550374e0/mzaf_8262991611889382206.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/our-girl/1344811782?i=1344811804&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/59/88/63/598863de-b58c-5eb1-ca19-bbdc9d309cde/5053760038474.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:20",
+       "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+       "track": {
+        "id": "1594742873",
+        "title": "Chaise Longue",
+        "artist": "Wet Leg",
+        "album": "Wet Leg",
+        "durationMs": 196905,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/d7/fb/7cd7fb76-1e06-a789-d660-0acdc0ebb7e4/mzaf_14092996379524574973.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/chaise-longue/1594742869?i=1594742873&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2c/e9/53/2ce95363-f652-e1aa-de07-d52df30314fa/887828049660.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:23",
+       "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+       "track": {
+        "id": "1737990517",
+        "title": "Favourite",
+        "artist": "Fontaines D.C.",
+        "album": "Romance",
+        "durationMs": 256067,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/15/ae/4e/15ae4e05-a1ec-00ab-4ea0-a2dc14ac324f/mzaf_10791699547174648318.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/favourite/1737990072?i=1737990517&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/3a/76/4d3a7621-8b56-56a3-829f-545dde0b2b6a/191404143674.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:27",
+       "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+       "track": {
+        "id": "1530656161",
+        "title": "Sad Cowboy",
+        "artist": "Goat Girl",
+        "album": "On All Fours",
+        "durationMs": 317147,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/aa/2b/e6aa2b84-b3b1-3f49-98f7-e55f88f382e1/mzaf_6734460978504407805.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/sad-cowboy/1530656152?i=1530656161&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/40/76/11/40761160-6dd3-0829-dfea-58ea72d521a4/191402015454.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:33",
+       "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+       "track": {
+        "id": "1839040858",
+        "title": "Hit My Head All Day",
+        "artist": "Dry Cleaning",
+        "album": "Secret Love",
+        "durationMs": 363919,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2e/21/41/2e2141f8-20f3-1bc1-d52d-e0fad559c291/mzaf_18214791530726705158.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/hit-my-head-all-day/1839040855?i=1839040858&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/25/dc/f725dccc-c05e-31e6-d5f4-60e57f919863/191400086852.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:39",
+       "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+       "track": {
+        "id": "6789935531",
+        "title": "2 or 3",
+        "artist": "The Lemon Twigs",
+        "album": "Look For Your Mind!",
+        "durationMs": 207307,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/55/04/0b55046f-8fea-3c9e-f77d-ccb28a5728aa/mzaf_14745657786632627475.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/2-or-3/6789935518?i=6789935531&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/8b/c8/668bc89c-6bff-2485-6d84-4ab11b8abed2/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:42",
+       "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+       "track": {
+        "id": "1499654798",
+        "title": "Sports!",
+        "artist": "Dream Wife",
+        "album": "So When You Gonna…",
+        "durationMs": 205418,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e6/07/c8/e607c867-dbe7-5ca4-d5ff-3a2c8fbaaff3/mzaf_4539861595838142587.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/sports/1499654796?i=1499654798&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4e/9b/84/4e9b84e8-159c-334c-dd57-dbb13510d89b/689492200688.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:46",
+       "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+       "track": {
+        "id": "6771009691",
+        "title": "If I Had The Hand Of God",
+        "artist": "Julia Jacklin",
+        "album": "The Gem",
+        "durationMs": 161817,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/76/a6/9976a606-7353-75ea-b9e1-54307a3bb53d/mzaf_9198407848151542544.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/if-i-had-the-hand-of-god/6771009439?i=6771009691&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:48",
+       "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+       "track": {
+        "id": "1033896314",
+        "title": "Bamboo",
+        "artist": "Hinds",
+        "album": "Leave Me Alone",
+        "durationMs": 229920,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/56/cb/95/56cb95ce-e301-48fd-4259-bcc602afecb1/mzaf_12674151968962032894.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/bamboo/1033895945?i=1033896314&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "13:52",
+       "itemId": "i_eae4ee7f-d",
+       "track": {
+        "id": "1507400152",
+        "title": "Take Back The Radio",
+        "artist": "Katy J Pearson",
+        "album": "Take Back The Radio - Single",
+        "durationMs": 301576,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a7/c6/a9/a7c6a95d-50eb-04cc-d097-ba717c38c77b/mzaf_2314861809623706901.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/take-back-the-radio/1507400147?i=1507400152&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f4/d9/1f/f4d91f69-8c5e-4317-4b08-a29c34d8e274/5400863030865_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "13:57",
+       "itemId": "i_abddc9e1-6",
+       "track": {
+        "id": "1569829026",
+        "title": "I Know I'm Not Easy To Like",
+        "artist": "Pip Blom",
+        "album": "Welcome Break",
+        "durationMs": 214566,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d0/67/62/d06762a7-4cf7-dd91-719e-9d7282ed376a/mzaf_8540954778077302018.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/i-know-im-not-easy-to-like/1569828446?i=1569829026&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f1/4e/f5/f14ef5a4-f74e-314d-794a-78025fa8cfdb/5400863050788_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:01",
+       "itemId": "i_2f1c8c0f-6",
+       "track": {
+        "id": "1388074185",
+        "title": "Pretty Ugly",
+        "artist": "Tierra Whack",
+        "album": "Whack World",
+        "durationMs": 60000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/31/f7/7d/31f77d22-b54c-4d47-c827-313646c83dc2/mzaf_7731263173595487066.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/pretty-ugly/1388073103?i=1388074185&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/5f/b9/795fb9eb-cdc3-fd76-e18f-7b6ce5cfa669/18UMGIM29201.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:02",
+       "itemId": "i_4db39c8b-1",
+       "track": {
+        "id": "1693636302",
+        "title": "The Trench Coat Museum",
+        "artist": "Yard Act",
+        "album": "The Trench Coat Museum - Single",
+        "durationMs": 491539,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1e/dd/3d/1edd3d85-bb9a-e7d3-112d-5047cedd28f4/mzaf_8809268017397903773.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-trench-coat-museum/1693636278?i=1693636302&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e1/df/e6/e1dfe6f5-f779-a0f6-b4d6-3e760287df47/23UMGIM50623.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:10",
+       "itemId": "i_2e7c29e1-4",
+       "track": {
+        "id": "1783187732",
+        "title": "Hot Like Jungle",
+        "artist": "Pottery",
+        "album": "Welcome to Bobby's Motel",
+        "durationMs": 227438,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f9/9f/f5/f99ff588-8ec6-bdce-623c-bc332441f980/mzaf_15644711134233328431.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/hot-like-jungle/1783187462?i=1783187732&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:14",
+       "itemId": "i_6f1f350f-a",
+       "track": {
+        "id": "1587673807",
+        "title": "Dangerous",
+        "artist": "The Mysterines",
+        "album": "Reeling",
+        "durationMs": 211467,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/46/f8/b1/46f8b176-69d5-1f9e-b6b3-5b3f7527a355/mzaf_2075019106204810197.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/dangerous/1587673426?i=1587673807&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1e/a7/6b/1ea76b2c-719e-4dcd-21bb-b729a5f3250d/21UM1IM19255.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:17",
+       "itemId": "i_28300929-f",
+       "track": {
+        "id": "1382207698",
+        "title": "Being Around",
+        "artist": "Our Girl",
+        "album": "Stranger Today",
+        "durationMs": 163203,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b4/84/6a/b4846af9-581e-939e-0fac-f2ca93e9e25a/mzaf_14050694889909600855.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/being-around/1382207693?i=1382207698&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:20",
+       "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+       "track": {
+        "id": "1802918484",
+        "title": "catch these fists",
+        "artist": "Wet Leg",
+        "album": "moisturizer",
+        "durationMs": 188515,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/b4/4c/61b44c9e-258e-87c5-0d0a-1e2376c1165f/mzaf_284004132639539584.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/catch-these-fists/1802918329?i=1802918484&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:23",
+       "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+       "track": {
+        "id": "6792085388",
+        "title": "Where Is Gone?",
+        "artist": "Fontaines D.C. & ROSALÍA",
+        "album": "Dopamine Chamber",
+        "durationMs": 316004,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/51/da/cf/51dacf04-3936-22cf-94e4-d3c09a6bf6b0/mzaf_18115747665246223806.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/where-is-gone/6792085051?i=6792085388&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:28",
+       "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+       "track": {
+        "id": "1298421183",
+        "title": "Cracker Drool",
+        "artist": "Goat Girl",
+        "album": "Cracker Drool - Single",
+        "durationMs": 158462,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/24/2f/3e/242f3e4a-67f9-4221-75c0-22ba76a2ab8d/mzaf_2276352216037334753.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/cracker-drool/1298421181?i=1298421183&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a8/71/d7/a871d7f5-c179-0d8e-0a0f-5df370968bf3/883870088367.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:31",
+       "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+       "track": {
+        "id": "1839040859",
+        "title": "Cruise Ship Designer",
+        "artist": "Dry Cleaning",
+        "album": "Secret Love",
+        "durationMs": 149930,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/69/ed/6a/69ed6aae-2882-359a-b5ac-3bd1518556d7/mzaf_18197998237552554841.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/cruise-ship-designer/1839040855?i=1839040859&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/25/dc/f725dccc-c05e-31e6-d5f4-60e57f919863/191400086852.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:34",
+       "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+       "track": {
+        "id": "1137330143",
+        "title": "These Words",
+        "artist": "The Lemon Twigs",
+        "album": "Do Hollywood",
+        "durationMs": 221120,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5d/08/08/5d0808aa-6993-0fcd-ffc7-16a227cdfea3/mzaf_2940254584642720651.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/these-words/1137330039?i=1137330143&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/99/4b/2e/994b2e76-222c-6c65-7bc6-ff2cda07e9e3/652637365030.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:37",
+       "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+       "track": {
+        "id": "1499654820",
+        "title": "Temporary",
+        "artist": "Dream Wife",
+        "album": "So When You Gonna…",
+        "durationMs": 175915,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/38/a0/91/38a09105-7f97-c165-56ad-c2fe76903bbf/mzaf_10626563585301887260.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/temporary/1499654796?i=1499654820&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/4e/9b/84/4e9b84e8-159c-334c-dd57-dbb13510d89b/689492200688.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:40",
+       "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+       "track": {
+        "id": "1440697458",
+        "title": "Pressure to Party",
+        "artist": "Julia Jacklin",
+        "album": "Crushing",
+        "durationMs": 182307,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/04/2e/2e/042e2e09-34c8-af40-fa2a-c7357b2f7053/mzaf_2176977526772044388.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/pressure-to-party/1440697455?i=1440697458&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/21/b4/dd/21b4dd3d-3ff9-94ab-508d-481719aae7dd/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:43",
+       "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+       "track": {
+        "id": "1326887628",
+        "title": "The Club",
+        "artist": "Hinds",
+        "album": "I Don't Run",
+        "durationMs": 197373,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ec/79/eb/ec79eb98-8a45-57dd-172f-5d82a0e89e1c/mzaf_11396728453947457092.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-club/1326887526?i=1326887628&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/93/02/72/93027245-b787-95cc-33a7-ca415d4c6eca/689492186982.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "14:47",
+       "itemId": "i_eae4ee7f-d",
+       "track": {
+        "id": "1523330082",
+        "title": "Tonight",
+        "artist": "Katy J Pearson",
+        "album": "Return",
+        "durationMs": 237413,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/f1/64/48f164f0-968c-fe34-4f24-87659b145316/mzaf_5315043606888975248.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/tonight/1523329982?i=1523330082&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/3a/74/b2/3a74b249-1fe6-826c-f3f4-e62c4d12b07b/5400863035020_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:51",
+       "itemId": "i_abddc9e1-6",
+       "track": {
+        "id": "6767551055",
+        "title": "School (2026 Edition)",
+        "artist": "Pip Blom",
+        "album": "School (2026 Edition) - Single",
+        "durationMs": 119625,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/67/80/7e/67807e39-7b88-3981-6807-3499d7ceff40/mzaf_7934489583607884198.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/school-2026-edition/6767551054?i=6767551055&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f6/d9/ef/f6d9efb9-81b6-72d4-8fe5-4c74ed2c233b/824296576267_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:53",
+       "itemId": "i_2f1c8c0f-6",
+       "track": {
+        "id": "1726096185",
+        "title": "SHOWER SONG",
+        "artist": "Tierra Whack",
+        "album": "WORLD WIDE WHACK",
+        "durationMs": 163133,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/0f/48/f70f4815-c911-d5b3-9ede-3552ba186b28/mzaf_8819191026125319727.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/shower-song/1726095840?i=1726096185&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/37/02/a5/3702a50f-1e46-b541-2932-c3108e72ceb7/23UM1IM58229.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:55",
+       "itemId": "i_4db39c8b-1",
+       "track": {
+        "id": "1891450729",
+        "title": "Fiction",
+        "artist": "Yard Act",
+        "album": "You're Gonna Need A Little Music",
+        "durationMs": 160251,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4c/1e/9f/4c1e9fd5-1d2b-8a00-8714-93b0a4f99ad3/mzaf_8272075934487172922.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/fiction/1891450512?i=1891450729&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/62/11/4b621188-7313-b486-f5b4-45c3c4fd2876/26UMGIM33741.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "14:58",
+       "itemId": "i_2e7c29e1-4",
+       "track": {
+        "id": "1783187472",
+        "title": "Bobby's Forecast",
+        "artist": "Pottery",
+        "album": "Welcome to Bobby's Motel",
+        "durationMs": 183339,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/aa/8c/c0aa8c15-1f11-780a-228d-0f09aaae0672/mzaf_13461570717861937609.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/bobbys-forecast/1783187462?i=1783187472&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:01",
+       "itemId": "i_6f1f350f-a",
+       "track": {
+        "id": "1632206810",
+        "title": "Bet Your Pretty Face",
+        "artist": "The Mysterines",
+        "album": "Take Control - EP",
+        "durationMs": 190033,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/33/4f/0a334fa3-d69b-3dd1-9f28-22a2e94eabb6/mzaf_17497596406380851688.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/bet-your-pretty-face/1632206806?i=1632206810&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/f6/9e/b0f69ef8-490d-9e83-a2cc-de3a9cb80016/22UMGIM51848.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:04",
+       "itemId": "i_28300929-f",
+       "track": {
+        "id": "1382207702",
+        "title": "Two Life",
+        "artist": "Our Girl",
+        "album": "Stranger Today",
+        "durationMs": 290117,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/83/47/e1834782-2722-99b4-0434-79996655d54d/mzaf_16699453843080038671.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/two-life/1382207693?i=1382207702&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:09",
+       "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+       "track": {
+        "id": "1802918496",
+        "title": "pokemon",
+        "artist": "Wet Leg",
+        "album": "moisturizer",
+        "durationMs": 206772,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/62/5d/59/625d5912-0141-eb28-4e3e-5387ebe83f8e/mzaf_8536892089257942601.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/pokemon/1802918329?i=1802918496&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:12",
+       "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+       "track": {
+        "id": "6792085376",
+        "title": "Demolition",
+        "artist": "Fontaines D.C.",
+        "album": "Dopamine Chamber",
+        "durationMs": 199855,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/84/e6/9184e6a0-5bbe-98b0-0e20-00559ad025bc/mzaf_726210030077478535.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/demolition/6792085051?i=6792085376&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:16",
+       "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+       "track": {
+        "id": "1726888870",
+        "title": "take it away",
+        "artist": "Goat Girl",
+        "album": "Below the Waste",
+        "durationMs": 150044,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/56/97/3f/56973f9b-96ab-3610-2a5a-3d331147965d/mzaf_17749971720930022768.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/take-it-away/1726888259?i=1726888870&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a0/74/f3/a074f3e9-c185-4034-e8eb-7e103ae5b48c/191402047578.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:18",
+       "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+       "track": {
+        "id": "1731097340",
+        "title": "Magic of Meghan (2024 Remaster)",
+        "artist": "Dry Cleaning",
+        "album": "Sweet Princess EP (2024 Remaster)",
+        "durationMs": 229747,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2b/d4/30/2bd43078-1ef4-dcbf-6b07-49260d66a753/mzaf_5706321512067164231.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/magic-of-meghan-2024-remaster/1731097214?i=1731097340&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8d/ab/00/8dab00dc-d91a-751a-4a35-de1f56b68888/191400059573.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:22",
+       "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+       "track": {
+        "id": "1448144319",
+        "title": "Small Victories",
+        "artist": "The Lemon Twigs",
+        "album": "Go to School",
+        "durationMs": 236367,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/99/e8/9799e8b8-c724-daee-983f-c6ca7e99267a/mzaf_3559476358359683146.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/small-victories/1448144313?i=1448144319&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6d/a5/70/6da5709c-e31f-0f6d-5764-5216b25e0331/191400009486.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:26",
+       "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+       "track": {
+        "id": "1295081647",
+        "title": "Right Now",
+        "artist": "Dream Wife",
+        "album": "Dream Wife",
+        "durationMs": 148560,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9e/59/75/9e5975f5-6732-878d-079e-9f62b9690f88/mzaf_18234189755567275498.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/right-now/1295081132?i=1295081647&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:28",
+       "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+       "track": {
+        "id": "6771009694",
+        "title": "The Hardest Thing",
+        "artist": "Julia Jacklin",
+        "album": "The Gem",
+        "durationMs": 201993,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/4a/06/e94a066b-a3d1-62ed-847a-a2733d8831d9/mzaf_2808985086690972729.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-hardest-thing/6771009439?i=6771009694&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a3/93/40/a39340a9-676b-4099-c126-fcdd6b2f0bfe/191400094277.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:32",
+       "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+       "track": {
+        "id": "1033896270",
+        "title": "Chili Town",
+        "artist": "Hinds",
+        "album": "Leave Me Alone",
+        "durationMs": 191554,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a9/c6/df/a9c6df25-8617-8ac8-e910-cdcbebfea2e0/mzaf_3246381632900264306.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/chili-town/1033895945?i=1033896270&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/b6/83/5b/b6835bae-beff-7894-3577-08010bf4fa11/689492165987.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "15:35",
+       "itemId": "i_eae4ee7f-d",
+       "track": {
+        "id": "1607336251",
+        "title": "Float",
+        "artist": "Katy J Pearson",
+        "album": "Sound of the Morning",
+        "durationMs": 218074,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/bb/1e/76bb1e15-47a8-b9ed-293d-76b5241790e7/mzaf_2308769783015446111.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/float/1607335043?i=1607336251&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a9/6a/eb/a96aeb99-6d6f-8356-d193-ab5041126fab/5400863072094_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:39",
+       "itemId": "i_abddc9e1-6",
+       "track": {
+        "id": "1680510664",
+        "title": "I Can Be Your Man",
+        "artist": "Pip Blom",
+        "album": "Bobbie",
+        "durationMs": 216560,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7b/37/ed/7b37eded-9efc-f4cc-7f93-130a3561a9e5/mzaf_5977094938143583351.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/i-can-be-your-man/1680509812?i=1680510664&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/9c/b9/b49cb9e8-8062-b4bf-73ed-af6702de9ba6/5400863130060_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:42",
+       "itemId": "i_2f1c8c0f-6",
+       "track": {
+        "id": "1540022802",
+        "title": "feel good",
+        "artist": "Tierra Whack",
+        "album": "feel good - Single",
+        "durationMs": 85006,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/48/ab/f748ab45-88d3-eed8-5c69-bffd59fb26d9/mzaf_12454258985069872794.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/feel-good/1540022800?i=1540022802&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/be/dc/fc/bedcfcfe-70c1-9556-7964-66f3f622f6bc/20UMGIM96985.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:44",
+       "itemId": "i_4db39c8b-1",
+       "track": {
+        "id": "1712519259",
+        "title": "Dream Job",
+        "artist": "Yard Act",
+        "album": "Where’s My Utopia?",
+        "durationMs": 159341,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a3/4b/17/a34b178e-dabc-3d58-87d3-fdfc34c12179/mzaf_16722703904541055050.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/dream-job/1712518914?i=1712519259&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/48/f1/3d/48f13d2e-a939-61df-9bc2-c9fcbaecc719/23UM1IM20781.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:46",
+       "itemId": "i_2e7c29e1-4",
+       "track": {
+        "id": "1783187730",
+        "title": "Take Your Time",
+        "artist": "Pottery",
+        "album": "Welcome to Bobby's Motel",
+        "durationMs": 194466,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/99/86/ea/9986ea4c-bda4-0a69-6470-840e8cc67938/mzaf_8219660657684528376.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/take-your-time/1783187462?i=1783187730&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/fd/24/72fd2456-3a0b-c74a-b435-a5b093789879/0720841218005_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:50",
+       "itemId": "i_6f1f350f-a",
+       "track": {
+        "id": "1632206807",
+        "title": "Take Control",
+        "artist": "The Mysterines",
+        "album": "Take Control - EP",
+        "durationMs": 207304,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/ca/4a/12ca4ac6-fe91-c20b-d1cc-b79826b37965/mzaf_3065164921822896356.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/take-control/1632206806?i=1632206807&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/f6/9e/b0f69ef8-490d-9e83-a2cc-de3a9cb80016/22UMGIM51848.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:53",
+       "itemId": "i_28300929-f",
+       "track": {
+        "id": "1382207705",
+        "title": "I Wish It Was Sunday",
+        "artist": "Our Girl",
+        "album": "Stranger Today",
+        "durationMs": 220000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/08/5a/c5/085ac5dd-a892-d735-a45a-12976b6b0a2c/mzaf_3955944378353455932.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/i-wish-it-was-sunday/1382207693?i=1382207705&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/77/35/b6/7735b6c4-cd60-621b-b435-58c748639168/5053760040705.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:57",
+       "itemId": "fill_walk_in_E2C8357C-1928-4CC8-A24D-874862A1583E",
+       "track": {
+        "id": "1802918480",
+        "title": "CPR",
+        "artist": "Wet Leg",
+        "album": "moisturizer",
+        "durationMs": 170338,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3b/b1/35/3bb13563-8039-e355-e414-eb858dc16217/mzaf_4555788394626773232.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/cpr/1802918329?i=1802918480&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/de/57/62de5769-2422-4cfe-69d3-3cec4cb94d14/887828053063.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:00",
+       "itemId": "fill_walk_in_B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+       "track": {
+        "id": "1783171809",
+        "title": "Jackie Down The Line",
+        "artist": "Fontaines D.C.",
+        "album": "Skinty Fia",
+        "durationMs": 241093,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/32/c4/8f32c4d8-b0e1-9387-4670-72070d8a3ebf/mzaf_6230559467213730159.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/jackie-down-the-line/1783171798?i=1783171809&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/41/0a/57/410a57cb-4194-e52e-3b3e-cb02bd97ecd8/0720841301608_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:04",
+       "itemId": "fill_walk_in_8ECDE519-1C13-484E-97EF-4D9C96209135",
+       "track": {
+        "id": "1338170820",
+        "title": "Salty Sounds",
+        "artist": "Goat Girl",
+        "album": "Goat Girl",
+        "durationMs": 67769,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2c/d9/d1/2cd9d1b6-a502-2f8b-5bca-e2077afec3f3/mzaf_16288037770229780094.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/salty-sounds/1338170819?i=1338170820&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b4/fa/00/b4fa00f2-2871-3e2a-d95f-1ea841107c11/883870088466.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:05",
+       "itemId": "fill_walk_in_17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+       "track": {
+        "id": "1549505102",
+        "title": "Unsmart Lady",
+        "artist": "Dry Cleaning",
+        "album": "New Long Leg",
+        "durationMs": 182413,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d6/bd/94/d6bd9422-1ae9-f1d7-f6be-926775c1bb71/mzaf_7278107812423039541.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/unsmart-lady/1549505079?i=1549505102&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/97/88/77/978877e3-628d-3b5a-4108-e8112e3df12e/191400025479.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:08",
+       "itemId": "fill_walk_in_4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+       "track": {
+        "id": "1137330139",
+        "title": "Baby, Baby",
+        "artist": "The Lemon Twigs",
+        "album": "Do Hollywood",
+        "durationMs": 296747,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/db/27/49db2789-8b1a-04c7-4121-a0a8cf2ba375/mzaf_17941215772074054111.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/baby-baby/1137330039?i=1137330139&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/99/4b/2e/994b2e76-222c-6c65-7bc6-ff2cda07e9e3/652637365030.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:13",
+       "itemId": "fill_walk_in_C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+       "track": {
+        "id": "1295081648",
+        "title": "Spend the Night",
+        "artist": "Dream Wife",
+        "album": "Dream Wife",
+        "durationMs": 159987,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/a5/d4/69a5d423-4002-f448-5dc2-09d5c5abd161/mzaf_18032117586558206805.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/spend-the-night/1295081132?i=1295081648&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/4f/27/04/4f2704ec-6f35-264e-f340-2846d3004a14/689492185183.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:15",
+       "itemId": "fill_walk_in_4CE60D14-B414-4163-97C3-C1E51108ED90",
+       "track": {
+        "id": "1440697460",
+        "title": "Don't Know How to Keep Loving You",
+        "artist": "Julia Jacklin",
+        "album": "Crushing",
+        "durationMs": 332987,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b3/d7/4f/b3d74fc0-b432-6403-b416-08b4e82f3131/mzaf_11337020906419441115.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/dont-know-how-to-keep-loving-you/1440697455?i=1440697460&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/21/b4/dd/21b4dd3d-3ff9-94ab-508d-481719aae7dd/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      },
+      {
+       "at": "16:21",
+       "itemId": "fill_walk_in_46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+       "track": {
+        "id": "1495220973",
+        "title": "Good Bad Times",
+        "artist": "Hinds",
+        "album": "The Prettiest Curse",
+        "durationMs": 198547,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/66/6d/6a/666d6a09-7dd8-6f19-3ce8-366d53da4f91/mzaf_18137528871903443338.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/good-bad-times/1495220965?i=1495220973&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/95/b9/7e/95b97e30-f29b-cf53-3031-708618d9f672/689492199685.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": true
+      }
+     ]
+    }
+   ],
+   "skippedExplicit": 0,
+   "notes": [
+    "Twin Peaks: no clean songs found in Apple's GB catalogue; pick songs by hand.",
+    "SPRINTS: no clean songs found in Apple's GB catalogue; pick songs by hand.",
+    "Gates & between-sets music: ran short, so 8 more artists were added from qloo_recommend on this slot's picks (call c_46c974d0-685).",
+    "Gates & between-sets music: the picks' top songs fill 264 of 600 minutes; repeat the set or add picks for the rest."
+   ],
+   "createdAt": "2026-10-30T15:26:03.374Z"
   }
  },
  "ledger": [
@@ -16591,6 +19128,825 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:23:33.689Z"
+  },
+  {
+   "callId": "c_46c974d0-685",
+   "runId": "music_seed-festival",
+   "agent": "music_fill",
+   "tool": "qloo_recommend",
+   "args": {
+    "target_type": "artist",
+    "signals": [
+     "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+     "698966C8-3D82-4E54-A30A-CF56232B3090",
+     "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+     "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+     "37A8214E-BEB6-4CA6-8666-30F863282BEB"
+    ],
+    "signal_location": "London",
+    "limit": 20
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "E2C8357C-1928-4CC8-A24D-874862A1583E",
+     "name": "Wet Leg",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.986070424473586,
+     "affinity": 0.9838493841643156,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.21852257983791015
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21625902771399022
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.21551748349267238
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1759212006683803
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.173779708287047
+       }
+      ]
+     },
+     "properties": {
+      "description": "Wet Leg are a British indie rock duo from the Isle of Wight, formed by Rhian Teasdale and Hester Chambers. They broke through with their 2021 single \"Chaise Longue\" and released a self-titled debut album in 2022 to wide critical attention. Their sound mixes deadpan, conversational vocals, jangly guitars and propulsive rhythms, and they are known for witty, tongue-in-cheek lyrics and memorable hooks.",
+      "image": {
+       "url": "https://images.qloo.com/i/E2C8357C-1928-4CC8-A24D-874862A1583E-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+     "name": "Fontaines D.C.",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9895307001159979,
+     "affinity": 0.9811960138645475,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22722479752065058
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.219559376414808
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21893587213144075
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1711993056223859
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.16308064831071478
+       }
+      ]
+     },
+     "properties": {
+      "description": "Fontaines D.C. are a five‑piece band from Dublin, formed in 2014. They fuse raw, driving post‑punk instrumentation with literate, often Dublin‑inflected lyrics and a chantlike vocal delivery. Their records and live shows emphasize urgent guitar lines, propulsive rhythm sections and spoken‑word influenced lyricism, bringing Irish literary and street influences into contemporary indie rock.",
+      "image": {
+       "url": "https://images.qloo.com/i/B11A0C7D-59E5-4911-8273-4879B4A3EA77-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "8ECDE519-1C13-484E-97EF-4D9C96209135",
+     "name": "Goat Girl",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9157606380538571,
+     "affinity": 0.9799463330713526,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22427479487009613
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22000186627979135
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21988849825481602
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1730217952961607
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1628130452991358
+       }
+      ]
+     },
+     "properties": {
+      "description": "Goat Girl is a British indie rock band formed in South London, known for their raw, post-punk influenced sound and incisive social commentary. The band blends elements of indie rock, garage rock, and art rock, creating a distinctive style marked by gritty guitar riffs and evocative vocals. Their lyrics often explore themes of urban life, social issues, and youth culture, delivered with a blend of wit and urgency. Since their formation, Goat Girl has garnered critical acclaim for their energetic performances and unique voice within the UK indie scene.",
+      "image": {
+       "url": "https://images.qloo.com/i/8ECDE519-1C13-484E-97EF-4D9C96209135-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+     "name": "Dry Cleaning",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9537089829542104,
+     "affinity": 0.979853187125266,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.2261862223487585
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.2189886823815791
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21736148765860552
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.17210105547408647
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.16536255213697051
+       }
+      ]
+     },
+     "properties": {
+      "description": "Dry Cleaning is a British post-punk band formed in London, known for their distinctive spoken-word vocal delivery by lead singer Florence Shaw, combined with angular guitar work and a tight rhythm section. Their music blends elements of post-punk and indie rock with art rock influences, characterized by clever, often surreal and observational lyrics. The band members include Florence Shaw (vocals), Lewis Maynard (bass), Tom Dowse (guitar), and Nick Buxton (drums). They have gained critical acclaim for their unique sound and lyrical style since their formation in the late 2010s.",
+      "image": {
+       "url": "https://images.qloo.com/i/17C4F8DC-457C-4C66-976B-0F5F453CC9F8-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+     "name": "The Lemon Twigs",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9579622384313418,
+     "affinity": 0.9785642395436898,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.21605764467876176
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.2088981732576145
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.20862964074341162
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.18686476202260283
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.17954977929760932
+       }
+      ]
+     },
+     "properties": {
+      "description": "The Lemon Twigs are an American rock band formed by brothers Brian and Michael D'Addario. They are known for their distinctive blend of baroque pop, glam rock, and indie rock, drawing heavily on 1960s and 1970s influences. Their music features intricate arrangements, multi-instrumental performances, and theatrical elements. The band has been praised for their musicianship, songwriting, and vintage aesthetic, often incorporating elaborate harmonies and classic rock instrumentation.",
+      "image": {
+       "url": "https://images.qloo.com/i/4C22D1A8-687F-42B4-9595-D92E0CB80F57-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+     "name": "Dream Wife",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8928199280419952,
+     "affinity": 0.9751911607275716,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.22307666081942937
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22072423539723462
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.21455427018861473
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1783086429487565
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.16333619064596486
+       }
+      ]
+     },
+     "properties": {
+      "description": "Dream Wife is a British indie rock band formed in 2014, known for their energetic blend of punk rock and pop punk with feminist lyrical themes. The band consists of Rakel Mjöll (vocals), Alice Go (guitar), and Sophie Ellis (bass). They have gained recognition for their powerful live performances and socially conscious messages.",
+      "image": {
+       "url": "https://images.qloo.com/i/C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "4CE60D14-B414-4163-97C3-C1E51108ED90",
+     "name": "Julia Jacklin",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9737399157213167,
+     "affinity": 0.9741118492466361,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.21670985548738092
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21122818856102482
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.20811465376472366
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.18303724743281546
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1809100547540551
+       }
+      ]
+     },
+     "properties": {
+      "description": "Julia Jacklin is an Australian singer-songwriter and musician known for her intimate and emotionally resonant indie rock and folk music. She has gained critical acclaim for her storytelling ability, blending indie rock and folk influences with personal and introspective lyrics. Jacklin's music often explores themes of relationships, self-discovery, and vulnerability, delivered with a distinctive, emotive vocal style.",
+      "image": {
+       "url": "https://images.qloo.com/i/4CE60D14-B414-4163-97C3-C1E51108ED90-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+     "name": "Hinds",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.960347731487853,
+     "affinity": 0.9738618806048395,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21428456866973108
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.20918656616836376
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.20193014979935203
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.20144431213740055
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1731544032251526
+       }
+      ]
+     },
+     "properties": {
+      "description": "Hinds is a Spanish indie rock band formed in Madrid, originally known as Deers. The band consists of members Carla, Ana, Adele, and Amber. They are recognized for their energetic garage rock and lo-fi sound, blending elements of garage pop and surf rock. Their music is characterized by catchy melodies, raw production, and a playful yet authentic vibe. Hinds gained international attention with their debut album and have toured extensively, contributing to the indie and garage rock scenes with their distinctive style.",
+      "image": {
+       "url": "https://images.qloo.com/i/46CC801F-F1B0-4EDE-85CE-F8A1BF28091C-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "67803A9C-9E54-4594-9A49-60597D741113",
+     "name": "Arlo Parks",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9806637437823172,
+     "affinity": 0.9723710718833504,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.21508083706510672
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.2138693460819274
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.20843879566403045
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.20492112312112531
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.15768989806781014
+       }
+      ]
+     },
+     "properties": {
+      "description": "Arlo Parks (born 2000) is a British singer-songwriter celebrated for intimate, literate songwriting and a warm, breathy vocal delivery. She emerged in the late 2010s with lo-fi singles and bedroom-pop sensibilities and released her critically acclaimed debut album, Collapsed in Sunbeams (2021), which won the Mercury Prize. Her music blends neo-soul, R&B and indie-pop with themes of youth, mental health, identity and relationships. Parks followed her debut with further releases and international touring, establishing herself across the UK, Europe and North America as a leading voice of a new generation of introspective pop.",
+      "image": {
+       "url": "https://images.qloo.com/i/67803A9C-9E54-4594-9A49-60597D741113-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AFD2316F-E00F-40D2-8E33-E4CF433ED977",
+     "name": "Sports Team",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8499170975627339,
+     "affinity": 0.9722017546713203,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.22819583359981832
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.21534073256538042
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.2127799953194906
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.18679677877229592
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1568866597430148
+       }
+      ]
+     },
+     "properties": {
+      "description": "Sports Team is an English indie rock band formed in London, known for their energetic and charismatic performances, blending indie rock with post-punk influences. They have gained attention for their witty lyrics and engaging live shows.",
+      "image": {
+       "url": "https://images.qloo.com/i/AFD2316F-E00F-40D2-8E33-E4CF433ED977-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "8D71A48C-617F-4D0D-A66D-8CC3E5E2F334",
+     "name": "Porridge Radio",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9440916448761051,
+     "affinity": 0.9721546611565769,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22501159160431633
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.2225419243097123
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21717976726611338
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1707289783968357
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.16453773842302225
+       }
+      ]
+     },
+     "properties": {
+      "description": "Porridge Radio is an indie rock band from Brighton, England, formed in 2015. The band is known for their raw, emotive lyrics and a lo-fi, indie rock sound that incorporates elements of shoegaze and post-punk. Fronted by Dana Margolin, the group has gained critical acclaim for their introspective songwriting and dynamic performances. Their music often explores themes of mental health, personal struggles, and emotional vulnerability.",
+      "image": {
+       "url": "https://images.qloo.com/i/8D71A48C-617F-4D0D-A66D-8CC3E5E2F334-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "7F9DD646-44A6-4530-B804-D527EECDF96D",
+     "name": "Bodega",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8916533957231517,
+     "affinity": 0.9720186399782449,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.23041161773925406
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.22708758149413052
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22175298738881485
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.17492535321605968
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.14582246016174097
+       }
+      ]
+     },
+     "properties": {
+      "description": "Bodega is an American post-punk band formed in New York City, known for their energetic sound and literate lyrics. Their music blends post-punk with indie rock and art punk influences, characterized by sharp guitar work and insightful storytelling.",
+      "image": {
+       "url": "https://images.qloo.com/i/7F9DD646-44A6-4530-B804-D527EECDF96D-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "5DC542C0-8BC9-42C7-B5C7-DC5FACD3BC4A",
+     "name": "Alex Cameron",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9505993223626867,
+     "affinity": 0.9720175172620683,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.20438549571122053
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.2043771318961599
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.20251771849714684
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.19826361281899121
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.19045604107648156
+       }
+      ]
+     },
+     "properties": {
+      "description": "Alex Cameron is an Australian singer-songwriter and musician known for his distinctive narrative style and synthpop sound. His music often features storytelling lyrics that explore themes of loneliness, failure, and flawed characters, delivered with a dry, deadpan vocal style. Cameron's work blends elements of synthpop, indie pop, and new wave, often accompanied by theatrical and character-driven performances.",
+      "image": {
+       "url": "https://images.qloo.com/i/5DC542C0-8BC9-42C7-B5C7-DC5FACD3BC4A-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "84B3908D-4F07-4030-8AC7-2FB0C1510EBA",
+     "name": "Billy Nomates",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.864157966825918,
+     "affinity": 0.9719793536238585,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.23333315351693357
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.23112210600379451
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21912296892215075
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.16710671342872435
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.14931505812839685
+       }
+      ]
+     },
+     "properties": {
+      "description": "Billy Nomates is the stage name of Tor Maries, a British singer-songwriter and musician known for her candid, raw, and socially conscious alternative rock and post-punk music. She blends elements of indie rock with electronic and experimental sounds, often delivering sharp, witty lyrics that explore themes of social issues and personal experiences.",
+      "image": {
+       "url": "https://images.qloo.com/i/84B3908D-4F07-4030-8AC7-2FB0C1510EBA-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+     "name": "Big Thief",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9913460341177935,
+     "affinity": 0.9717670385577475,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.2087346416094223
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.20427039660025678
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.20330181672096714
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.19212716022367035
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.19156598484568343
+       }
+      ]
+     },
+     "properties": {
+      "description": "Big Thief is an American four-piece indie rock/folk band formed in Brooklyn in 2015. Anchored by songwriter and singer Adrianne Lenker and guitarist Buck Meek, with Max Oleartchik on bass and James Krivchenia on drums, the band is celebrated for sparse, intimate arrangements, vulnerable storytelling and dynamic shifts between hushed folk and more urgent rock. Their acclaimed albums include Masterpiece (2016), Capacity (2017), U.F.O.F. (2019), Two Hands (2019) and Dragon New Warm Mountain I Believe in You (2022). They gained strong critical praise, steady festival presence and a devoted international indie audience.",
+      "image": {
+       "url": "https://images.qloo.com/i/AD420A3F-5F09-4C1C-BB1E-A3DEB937F184-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "C0C42CC4-68D9-4B7D-9A91-1A26D7DFDB92",
+     "name": "Squid",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9656528321176494,
+     "affinity": 0.971589416900216,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22759498761443964
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.21962039915333478
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.2107075942218736
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.17204888335445953
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.17002813565589248
+       }
+      ]
+     },
+     "properties": {
+      "description": "Squid is a British post-punk band formed in Brighton, England, known for their energetic, experimental, and genre-blending music that incorporates elements of post-punk, indie rock, and art punk. The band consists of members Louis Borlase, Anton Pearson, Oliver Judge, Laurie Nankivell, and Arthur Leadbetter. They have gained critical acclaim for their dynamic compositions, intricate rhythms, and socially conscious lyrics.",
+      "image": {
+       "url": "https://images.qloo.com/i/C0C42CC4-68D9-4B7D-9A91-1A26D7DFDB92-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "A52C5D5B-4653-41F1-91EF-F4D2D88D23CA",
+     "name": "Mattiel",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8789067363964637,
+     "affinity": 0.9714732335391046,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22910353395156444
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.2242829150963501
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.21629206602294745
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.1710369136316559
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1592845712974822
+       }
+      ]
+     },
+     "properties": {
+      "description": "Mattiel is an American indie rock band fronted by singer Mattiel Brown and guitarist Josh McCormick. They are known for their energetic blend of garage rock, psychedelic rock, and soul influences, creating a distinctive and dynamic sound. The band has gained recognition for their vintage-inspired aesthetic and powerful live performances.",
+      "image": {
+       "url": "https://images.qloo.com/i/A52C5D5B-4653-41F1-91EF-F4D2D88D23CA-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "0351A75F-C0A1-4812-8A7F-87EE28EF910B",
+     "name": "IDLES",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9895896820871753,
+     "affinity": 0.9713649267119093,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22739244671818581
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.2153133304746701
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.1987237300989053
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.18105917815213282
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.17751131455610586
+       }
+      ]
+     },
+     "properties": {
+      "description": "Idles is a British post-punk band formed in Bristol in 2009. The band is known for their aggressive yet thoughtful sound, combining elements of punk rock and post-punk with raw, emotional vocals and politically charged lyrics. Their music often addresses themes such as toxic masculinity, mental health, and working-class struggles. Idles have gained critical acclaim for their powerful live performances and have become influential figures in the modern punk scene.",
+      "image": {
+       "url": "https://images.qloo.com/i/0351A75F-C0A1-4812-8A7F-87EE28EF910B-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "EE5538CA-1718-4526-B786-B3F395A118B8",
+     "name": "Working Men’s Club",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8150259848350798,
+     "affinity": 0.9710299192926312,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.2243806134326817
+       },
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22143348199224425
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.22128326965617287
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.17134048726878334
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.1615621476501179
+       }
+      ]
+     },
+     "properties": {
+      "description": "Working Men’s Club is a British band known for their fusion of post-punk, indie rock, and electronic music. They combine driving rhythms, synth textures, and dynamic vocals to create a modern yet nostalgic sound. Their music often features danceable beats and a raw, energetic edge, reflecting influences from 1980s new wave and synth-pop.",
+      "image": {
+       "url": "https://images.qloo.com/i/EE5538CA-1718-4526-B786-B3F395A118B8-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "41477B30-8A97-4E47-A847-EA689EEECAE7",
+     "name": "Amyl and the Sniffers",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9705352286206739,
+     "affinity": 0.970522125665941,
+     "explainability": {
+      "signal.interests.entities": [
+       {
+        "entity_id": "37A8214E-BEB6-4CA6-8666-30F863282BEB",
+        "score": 0.22529943252304072
+       },
+       {
+        "entity_id": "698966C8-3D82-4E54-A30A-CF56232B3090",
+        "score": 0.220594816735771
+       },
+       {
+        "entity_id": "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+        "score": 0.199156642420839
+       },
+       {
+        "entity_id": "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+        "score": 0.18712331271109248
+       },
+       {
+        "entity_id": "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+        "score": 0.16782579560925676
+       }
+      ]
+     },
+     "properties": {
+      "description": "Amyl and the Sniffers are an Australian punk rock band formed in Melbourne in the mid-2010s, fronted by charismatic vocalist Amy Taylor. They blend short, high‑energy punk songs with garage‑rock grit and pub‑rock attitude. The band is noted for ferocious live performances, blunt lyrics, and a raw production style that emphasizes immediacy and aggression.",
+      "image": {
+       "url": "https://images.qloo.com/i/41477B30-8A97-4E47-A847-EA689EEECAE7-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "E2C8357C-1928-4CC8-A24D-874862A1583E",
+    "B11A0C7D-59E5-4911-8273-4879B4A3EA77",
+    "8ECDE519-1C13-484E-97EF-4D9C96209135",
+    "17C4F8DC-457C-4C66-976B-0F5F453CC9F8",
+    "4C22D1A8-687F-42B4-9595-D92E0CB80F57",
+    "C0FEDDD3-AAB0-449A-908B-2F4E9CF0A4E4",
+    "4CE60D14-B414-4163-97C3-C1E51108ED90",
+    "46CC801F-F1B0-4EDE-85CE-F8A1BF28091C",
+    "67803A9C-9E54-4594-9A49-60597D741113",
+    "AFD2316F-E00F-40D2-8E33-E4CF433ED977",
+    "8D71A48C-617F-4D0D-A66D-8CC3E5E2F334",
+    "7F9DD646-44A6-4530-B804-D527EECDF96D",
+    "5DC542C0-8BC9-42C7-B5C7-DC5FACD3BC4A",
+    "84B3908D-4F07-4030-8AC7-2FB0C1510EBA",
+    "AD420A3F-5F09-4C1C-BB1E-A3DEB937F184",
+    "C0C42CC4-68D9-4B7D-9A91-1A26D7DFDB92",
+    "A52C5D5B-4653-41F1-91EF-F4D2D88D23CA",
+    "0351A75F-C0A1-4812-8A7F-87EE28EF910B",
+    "EE5538CA-1718-4526-B786-B3F395A118B8",
+    "41477B30-8A97-4E47-A847-EA689EEECAE7"
+   ],
+   "inputIds": [
+    "3F1B7EC6-EB80-4DD1-A342-EF02D61D0918",
+    "698966C8-3D82-4E54-A30A-CF56232B3090",
+    "A9A22573-FBEA-4EB8-95AD-F79087359EDB",
+    "7E3F5027-C465-445A-9A8E-7D606F0BAD41",
+    "37A8214E-BEB6-4CA6-8666-30F863282BEB"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 3916,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T15:25:40.962Z"
   }
  ],
  "run": {

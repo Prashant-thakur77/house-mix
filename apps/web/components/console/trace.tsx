@@ -42,10 +42,7 @@ export function TraceRow({ e, highlight }: { e: ToolEvent; highlight?: boolean }
   return (
     <Collapsible>
       <CollapsibleTrigger
-        className={cn(
-          "group flex h-8 w-full items-center gap-2 rounded-md px-2 text-left text-small hover:bg-muted animate-arrive",
-          highlight && "bg-accent text-accent-foreground",
-        )}
+        className={cn("group flex h-8 w-full items-center gap-2 rounded-md px-2 text-left text-small hover:bg-muted animate-arrive", highlight && "bg-accent text-accent-foreground")}
         data-call-id={e.callId}
       >
         <StatusChip status={e.status} compact />
@@ -165,7 +162,12 @@ export function TracePane({ events, entities, stream, highlightCallId, className
           </span>
         </div>
         <div className="mt-2 flex flex-wrap gap-1" role="group" aria-label="Filter by status">
-          <button type="button" onClick={() => setFilter("all")} aria-pressed={filter === "all"} className={cn("h-6 rounded-md border px-1.5 text-label", filter === "all" ? "border-primary bg-accent text-accent-foreground" : "text-muted-foreground")}>
+          <button
+            type="button"
+            onClick={() => setFilter("all")}
+            aria-pressed={filter === "all"}
+            className={cn("h-6 rounded-md border px-1.5 text-label", filter === "all" ? "border-primary bg-accent text-accent-foreground" : "text-muted-foreground")}
+          >
             all
           </button>
           {statuses

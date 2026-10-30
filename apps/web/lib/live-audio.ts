@@ -71,6 +71,7 @@ export class CueSynth {
   readonly ctx: AudioContext;
   readonly analyser: AnalyserNode;
   private master: GainNode;
+  private el: HTMLAudioElement | undefined;
   private bus: GainNode | undefined;
   private noise: AudioBuffer;
   private timer: ReturnType<typeof setInterval> | undefined;
@@ -116,12 +117,34 @@ export class CueSynth {
     if (!this.timer) this.timer = setInterval(() => this.schedule(), 25);
   }
 
+  /**
+   * The real song instead of a cue: a 30-second preview (Apple's catalogue) through the same gain and analyser, so the
+   * mute button and the visualiser work on it. Undefined stops it. It loops while its artist is on.
+   */
+  preview(url: string | undefined) {
+    if (!url) {
+      this.el?.pause();
+      return;
+    }
+    if (!this.el) {
+      this.el = new Audio();
+      this.el.crossOrigin = "anonymous";
+      this.el.loop = true;
+      const lift = this.ctx.createGain();
+      lift.gain.value = 1.3;
+      this.ctx.createMediaElementSource(this.el).connect(lift).connect(this.master);
+    }
+    if (this.el.src !== url) this.el.src = url;
+    void this.el.play().catch(() => undefined);
+  }
+
   async resume() {
     if (this.ctx.state === "suspended") await this.ctx.resume();
   }
 
   close() {
     this.stopTimer();
+    this.el?.pause();
     void this.ctx.close();
   }
 
@@ -153,13 +176,31 @@ export class CueSynth {
     const chord = [0, 2, 4].map((k) => s.root + scale[(degree + k) % 7]! + (degree + k >= 7 ? 12 : 0));
     const p = s.profile;
     // Drums
-    const kick = p === "club" || p === "stadium" ? beat % 4 === 0 : p === "drive" ? beat % 4 === 0 || beat === 10 : p === "dream" ? beat === 0 || beat === 9 : p === "lounge" ? beat === 0 || beat === 10 : beat === 0 || beat === 7 || beat === 10;
+    const kick =
+      p === "club" || p === "stadium"
+        ? beat % 4 === 0
+        : p === "drive"
+          ? beat % 4 === 0 || beat === 10
+          : p === "dream"
+            ? beat === 0 || beat === 9
+            : p === "lounge"
+              ? beat === 0 || beat === 10
+              : beat === 0 || beat === 7 || beat === 10;
     if (kick) this.kick(bus, t, p === "dream" || p === "lounge" ? 0.55 : 0.9);
-    if (beat === 4 || beat === 12) (p === "club" || p === "stadium" ? this.clap(bus, t) : this.snare(bus, t, p === "dream" || p === "lounge" ? 0.25 : 0.5));
+    if (beat === 4 || beat === 12) p === "club" || p === "stadium" ? this.clap(bus, t) : this.snare(bus, t, p === "dream" || p === "lounge" ? 0.25 : 0.5);
     const hat = p === "club" ? beat % 4 === 2 : p === "drive" ? beat % 2 === 0 : p === "lounge" ? beat % 4 === 0 || beat % 4 === 3 : beat % 2 === 0 || (p === "groove" && beat % 4 === 3);
     if (hat) this.hat(bus, t, p === "club" && beat % 4 === 2 ? 0.12 : 0.05, p === "club" ? 0.18 : 0.05);
     // Bass
-    const bassHit = p === "club" ? beat % 4 === 2 : p === "drive" ? beat % 2 === 0 : p === "lounge" ? beat % 4 === 0 : p === "dream" ? beat === 0 || beat === 8 : beat === 0 || beat === 3 || beat === 6 || beat === 10 || beat === 14;
+    const bassHit =
+      p === "club"
+        ? beat % 4 === 2
+        : p === "drive"
+          ? beat % 2 === 0
+          : p === "lounge"
+            ? beat % 4 === 0
+            : p === "dream"
+              ? beat === 0 || beat === 8
+              : beat === 0 || beat === 3 || beat === 6 || beat === 10 || beat === 14;
     if (bassHit) this.tone(bus, mtof(chordRoot - 12 + (p === "lounge" && beat === 8 ? 7 : 0)), t, len * (p === "dream" ? 6 : 1.6), p === "drive" ? "sawtooth" : "triangle", 0.22, 600);
     // Harmony: stabs, pads or chords
     if (p === "dream" && beat === 0) chord.forEach((n) => this.tone(bus, mtof(n + 12), t, len * 15, "sine", 0.05, 1800, 0.4));

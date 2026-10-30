@@ -17,7 +17,25 @@ function why(item: PlanItem): string {
   return "Needs a human sign-off";
 }
 
-export function ApprovalQueue({ show, busy, onAction, onSelect, onLock, onUnlock, onApproveConfident, locking }: { show: Show; busy: Record<string, ItemAction>; onAction: (item: PlanItem, a: ItemAction) => void; onSelect: (item: PlanItem) => void; onLock: () => void; onUnlock: () => void; onApproveConfident: () => void; locking?: boolean }) {
+export function ApprovalQueue({
+  show,
+  busy,
+  onAction,
+  onSelect,
+  onLock,
+  onUnlock,
+  onApproveConfident,
+  locking,
+}: {
+  show: Show;
+  busy: Record<string, ItemAction>;
+  onAction: (item: PlanItem, a: ItemAction) => void;
+  onSelect: (item: PlanItem) => void;
+  onLock: () => void;
+  onUnlock: () => void;
+  onApproveConfident: () => void;
+  locking?: boolean;
+}) {
   const items = show.plan?.slots.flatMap((s) => s.items.map((i) => ({ i, slot: s }))) ?? [];
   const live = items.filter(({ i }) => i.approval.state !== "swapped");
   const pending = live.filter(({ i }) => i.approval.state === "pending");
@@ -72,7 +90,11 @@ export function ApprovalQueue({ show, busy, onAction, onSelect, onLock, onUnlock
             ))}
           </ol>
           {pending.length === 0 && live.length ? <p className="text-small text-muted-foreground">Every item is decided. Lock the plan to version it.</p> : null}
-          <Button onClick={onLock} disabled={pending.length > 0 || !live.length || locking} title={pending.length ? `Decide ${pending.length} more item${pending.length === 1 ? "" : "s"} first` : undefined}>
+          <Button
+            onClick={onLock}
+            disabled={pending.length > 0 || !live.length || locking}
+            title={pending.length ? `Decide ${pending.length} more item${pending.length === 1 ? "" : "s"} first` : undefined}
+          >
             {locking ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <Lock data-icon="inline-start" />}
             {pending.length ? `Approve ${pending.length} more to lock` : "Lock plan"}
           </Button>

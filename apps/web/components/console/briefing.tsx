@@ -108,12 +108,22 @@ export function BriefingSheet({ show, onBriefing }: { show: Show; onBriefing: (b
                 {busy ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <AudioLines data-icon="inline-start" />}
                 {busy ? "Writing, judging and voicing…" : `Write the briefing for plan v${show.version}`}
               </Button>
-              {show.briefing && show.briefing.planVersion !== show.version ? <p className="text-small text-muted-foreground">The plan changed since the last briefing (v{show.briefing.planVersion}); write a new one.</p> : null}
+              {show.briefing && show.briefing.planVersion !== show.version ? (
+                <p className="text-small text-muted-foreground">The plan changed since the last briefing (v{show.briefing.planVersion}); write a new one.</p>
+              ) : null}
             </div>
           ) : (
             <div className="grid gap-2 rounded-lg border p-3">
               {b.audio.available && b.audio.url ? (
-                <audio ref={audioRef} src={audioUrl(b.audio.url)} onTimeUpdate={onTime} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} preload="metadata" />
+                <audio
+                  ref={audioRef}
+                  src={audioUrl(b.audio.url)}
+                  onTimeUpdate={onTime}
+                  onPlay={() => setPlaying(true)}
+                  onPause={() => setPlaying(false)}
+                  onEnded={() => setPlaying(false)}
+                  preload="metadata"
+                />
               ) : null}
               <div className="flex items-center gap-2">
                 <Button
@@ -168,13 +178,16 @@ export function BriefingSheet({ show, onBriefing }: { show: Show; onBriefing: (b
               <ol className="grid gap-1" aria-label="Transcript">
                 {b.lines.map((l, i) => (
                   <li key={i} id={`bline-${i}`}>
-                    <button type="button" onClick={() => seek(i)} className={cn("grid w-full grid-cols-[4.5rem_1fr] gap-2 rounded-md px-2 py-1.5 text-left hover:bg-muted", active === i && "bg-accent text-accent-foreground")} aria-current={active === i ? "true" : undefined}>
+                    <button
+                      type="button"
+                      onClick={() => seek(i)}
+                      className={cn("grid w-full grid-cols-[4.5rem_1fr] gap-2 rounded-md px-2 py-1.5 text-left hover:bg-muted", active === i && "bg-accent text-accent-foreground")}
+                      aria-current={active === i ? "true" : undefined}
+                    >
                       <span className="pt-0.5 text-label font-medium uppercase text-muted-foreground">{SPEAKER[l.speaker]}</span>
                       <span>
                         <span className="text-body-lg">{l.text}</span>
-                        <span className="mt-0.5 block font-mono text-label text-subtle-foreground">
-                          {[...new Set(l.evidence.map((e) => e.tool))].join(" · ") || "no citation"}
-                        </span>
+                        <span className="mt-0.5 block font-mono text-label text-subtle-foreground">{[...new Set(l.evidence.map((e) => e.tool))].join(" · ") || "no citation"}</span>
                       </span>
                     </button>
                   </li>

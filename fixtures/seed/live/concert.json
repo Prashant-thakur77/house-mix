@@ -5307,6 +5307,986 @@
    },
    "costUsd": 0.025,
    "createdAt": "2026-10-30T06:11:53.195Z"
+  },
+  "music": {
+   "source": "itunes",
+   "country": "US",
+   "picks": [
+    {
+     "itemId": "i_50ec87df-e",
+     "qlooId": "07F849EC-529A-48C4-A4E1-CB15317A5A5C",
+     "artist": "Chick Corea",
+     "tracks": [
+      {
+       "id": "1452804079",
+       "title": "Spain",
+       "artist": "Chick Corea",
+       "album": "Light As a Feather",
+       "durationMs": 333667,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7a/60/c7/7a60c745-4c1b-053f-aead-df39557aaf90/mzaf_5566418436145077654.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/spain/1452803070?i=1452804079&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/65/02/11/65021175-307b-6110-1269-1bd34444d1a1/00731455711523.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "724790828",
+       "title": "Windows",
+       "artist": "Chick Corea",
+       "album": "Now He Sings, Now He Sobs",
+       "durationMs": 192107,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0d/e4/af/0de4af61-f879-eeaf-a690-9d482d92177b/mzaf_793068362135547521.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/windows/724790507?i=724790828&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d2/5e/f0/d25ef09f-9da9-4be2-a9ee-b05d3eb59407/00724353826550.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1443763361",
+       "title": "Armando's Rhumba",
+       "artist": "Chick Corea",
+       "album": "My Spanish Heart",
+       "durationMs": 319067,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/eb/45/48/eb45487a-33be-0880-dfba-f17be4b18c95/mzaf_3675938311309273955.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/armandos-rhumba/1443763181?i=1443763361&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a4/76/13/a47613bd-9c27-d42a-e700-2d7d56461117/06UMGIM21295.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "724790580",
+       "title": "Matrix",
+       "artist": "Chick Corea",
+       "album": "Now He Sings, Now He Sobs",
+       "durationMs": 388160,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a3/36/69/a3366901-1eef-fe6d-8a3d-5d2571d0c38b/mzaf_10621616336590390555.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/matrix/724790507?i=724790580&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d2/5e/f0/d25ef09f-9da9-4be2-a9ee-b05d3eb59407/00724353826550.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "56217541",
+       "title": "Tones for Joan's Bones",
+       "artist": "Chick Corea",
+       "album": "Tone's for Joan's Bones",
+       "durationMs": 369067,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/33/ac/7d/33ac7dfc-fb63-969f-2569-86c7ec862525/mzaf_645546514490722683.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/tones-for-joans-bones/56217610?i=56217541&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d5/3b/ea/d53beae6-5398-a964-4bbf-8549b4796486/s06.pnmxnekc.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_6dbf1158-9",
+     "qlooId": "CFFDEF53-DEB6-4BC1-899C-A0BEFFF45A59",
+     "artist": "Allah-Las",
+     "tracks": [
+      {
+       "id": "1608119816",
+       "title": "Catamaran",
+       "artist": "Allah-Las",
+       "album": "Allah-Las",
+       "durationMs": 212986,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/b6/eb/a5b6ebe8-5a01-8f7a-5e61-6060284ada49/mzaf_2839643615619884245.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/catamaran/1608119814?i=1608119816&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/ca/d8/8acad89e-620b-ddee-ebde-08377bb7785b/196626351906.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1608120277",
+       "title": "Sacred Sands",
+       "artist": "Allah-Las",
+       "album": "Allah-Las",
+       "durationMs": 211086,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/89/6e/af/896eafe4-5757-5a1b-c2c2-20fc7351c9ca/mzaf_7629972813365746715.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/sacred-sands/1608119814?i=1608120277&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/ca/d8/8acad89e-620b-ddee-ebde-08377bb7785b/196626351906.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1608200690",
+       "title": "Ferus Gallery",
+       "artist": "Allah-Las",
+       "album": "Worship the Sun",
+       "durationMs": 215973,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/6b/5e/586b5e6b-6da6-5bd6-0bfc-825577dc574d/mzaf_7127945826408955251.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/ferus-gallery/1608200681?i=1608200690&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e8/7d/eb/e87deb4c-b6ca-a4ee-3ab8-384f6ee572a6/196626413932.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1608120280",
+       "title": "No Voodoo",
+       "artist": "Allah-Las",
+       "album": "Allah-Las",
+       "durationMs": 181203,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/37/76/8f37767c-5f08-c158-870c-7199f833a378/mzaf_7505616146263053498.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/no-voodoo/1608119814?i=1608120280&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/ca/d8/8acad89e-620b-ddee-ebde-08377bb7785b/196626351906.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1797572014",
+       "title": "Star",
+       "artist": "Allah-Las",
+       "album": "LAHS",
+       "durationMs": 248344,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/30/cd/91/30cd91e3-63e0-3b15-23c1-b212116d1305/mzaf_9771656800637195740.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/star/1797571447?i=1797572014&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c5/db/80/c5db8069-3f16-cb9b-8b13-5951af1f1ac1/184923128567_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_3d85e910-7",
+     "qlooId": "FC2E3A2F-A99A-4287-91E7-7FD8F7DE0A40",
+     "artist": "Steve Lacy",
+     "tracks": [
+      {
+       "id": "6773775304",
+       "title": "nothing",
+       "artist": "Steve Lacy",
+       "album": "Oh yeah?",
+       "durationMs": 149664,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/06/97/43/06974392-0342-a5f0-f8ba-0c7a7e62bd0c/mzaf_6247541630954684284.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/nothing/6773775032?i=6773775304&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1207820258",
+       "title": "Dark Red",
+       "artist": "Steve Lacy",
+       "album": "Steve Lacy's Demo - EP",
+       "durationMs": 173104,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/9a/0c/209a0c57-2234-f660-e31e-9df4be89b1d6/mzaf_13317414679944797201.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/dark-red/1207820151?i=1207820258&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b0/a8/e7/b0a8e748-8210-a4a5-79d3-d3449e51381a/5054526102712_1.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1030015261",
+       "title": "C U Girl",
+       "artist": "Steve Lacy",
+       "album": "C U Girl - Single",
+       "durationMs": 129698,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/88/51/e9885149-8fcc-04b4-5e26-355002fe3a2e/mzaf_17678319034399169015.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/c-u-girl/1030015256?i=1030015261&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/64/c3/be/64c3bede-09e6-e55e-fa07-f45d3af7d8fa/859715367645_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1464025342",
+       "title": "N Side",
+       "artist": "Steve Lacy",
+       "album": "Apollo XXI",
+       "durationMs": 224444,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f1/52/02/f152022a-18cf-1d83-05ba-ec52799a847f/mzaf_9684692731852373409.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/n-side/1464024764?i=1464025342&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/a4/2d/93/a42d9329-4df4-2825-208e-855aab7413e3/5056167115243_1.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1631909589",
+       "title": "Sunshine (feat. Fousheé)",
+       "artist": "Steve Lacy",
+       "album": "Gemini Rights",
+       "durationMs": 293429,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/3f/1a/113f1a63-4a46-07b0-0d41-2788ca33c310/mzaf_377333444864429654.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/sunshine-feat-foushe%C3%A9/1631909576?i=1631909589&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/e5/96/7ae596ae-2acf-2070-cfdb-d06372773e0b/196589099631.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_5db81211-3",
+     "qlooId": "BF4A9D39-D3B6-4276-A3C0-DB005063443C",
+     "artist": "Mk.gee",
+     "tracks": [
+      {
+       "id": "1774113852",
+       "title": "ROCKMAN",
+       "artist": "Mk.gee",
+       "album": "ROCKMAN - Single",
+       "durationMs": 179371,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/30/f4/5530f47c-5baa-5fdf-b33e-7c148f3d2922/mzaf_17707594068505034871.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/rockman/1774113849?i=1774113852&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/62/c0/15/62c01558-5a2d-5338-825b-2b530160ccbd/198704203923_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1882613144",
+       "title": "How many miles",
+       "artist": "Mk.gee",
+       "album": "Two Star & The Dream Police",
+       "durationMs": 141237,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/c6/80/bdc680d1-56ec-8dd3-21f9-e9edabf6bde4/mzaf_301686839269840229.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/how-many-miles/1882613139?i=1882613144&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/78/c9/1a78c9fb-667e-9f77-61b6-35c2f7eabf81/193436368681_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1882613148",
+       "title": "Are You Looking Up",
+       "artist": "Mk.gee",
+       "album": "Two Star & The Dream Police",
+       "durationMs": 166179,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7a/3d/22/7a3d22f8-bebb-64e6-011a-6b43754fd47a/mzaf_3027147006598155362.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/are-you-looking-up/1882613139?i=1882613148&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/78/c9/1a78c9fb-667e-9f77-61b6-35c2f7eabf81/193436368681_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1882613491",
+       "title": "Alesis",
+       "artist": "Mk.gee",
+       "album": "Two Star & The Dream Police",
+       "durationMs": 198295,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f4/82/7b/f4827bd1-fbc9-8f6e-638e-f165624a093a/mzaf_15354866121054311953.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/alesis/1882613139?i=1882613491&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/78/c9/1a78c9fb-667e-9f77-61b6-35c2f7eabf81/193436368681_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1882613339",
+       "title": "I Want",
+       "artist": "Mk.gee",
+       "album": "Two Star & The Dream Police",
+       "durationMs": 218766,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/47/29/324729e1-6869-d9af-b533-9791503e5048/mzaf_11703382864523790918.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/i-want/1882613139?i=1882613339&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/78/c9/1a78c9fb-667e-9f77-61b6-35c2f7eabf81/193436368681_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_a512993c-1",
+     "qlooId": "00CA1D93-3642-49EE-9EBC-74D8870A6DE1",
+     "artist": "Drugdealer",
+     "tracks": [
+      {
+       "id": "1775760960",
+       "title": "Pictures of You",
+       "artist": "Drugdealer & Kate Bollinger",
+       "album": "Hiding in Plain Sight",
+       "durationMs": 189467,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8d/f5/47/8df547df-1233-e539-e7f9-fa30cffdf979/mzaf_2229233250430477355.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/pictures-of-you/1775760631?i=1775760960&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d5/60/0f/d5600fa2-d4f0-22f5-1cca-248d7d031280/184923129267_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1775806399",
+       "title": "Honey (feat. Weyes Blood)",
+       "artist": "Drugdealer",
+       "album": "Raw Honey",
+       "durationMs": 268147,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/6e/b1/aa6eb18c-397e-75d0-8c77-a2163d5eb183/mzaf_16850559762022390010.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/honey-feat-weyes-blood/1775806291?i=1775806399&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/86/ae/74/86ae74f1-e579-57e9-12ff-c635c0bd5aca/184923124866_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1131207786",
+       "title": "Suddenly",
+       "artist": "Drugdealer & Weyes Blood",
+       "album": "The End of Comedy",
+       "durationMs": 197013,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5c/ef/8c/5cef8c8d-39cd-137b-b76e-773bb0353880/mzaf_18055006981966496697.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/suddenly/1131207436?i=1131207786&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/6d/aa/08/6daa08b9-99b3-758b-6242-71ce9d9a67f1/dj.cswpzgux.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1775760776",
+       "title": "Madison",
+       "artist": "Drugdealer",
+       "album": "Hiding in Plain Sight",
+       "durationMs": 222573,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1c/17/cd/1c17cd31-4139-8a32-5a02-caaddf745dc0/mzaf_1962753533042709481.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/madison/1775760631?i=1775760776&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d5/60/0f/d5600fa2-d4f0-22f5-1cca-248d7d031280/184923129267_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1775806417",
+       "title": "Fools",
+       "artist": "Drugdealer",
+       "album": "Raw Honey",
+       "durationMs": 269840,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/63/fc/47/63fc47f4-fa4e-d8c2-6a6e-69c0a7af2d93/mzaf_16778453189831059868.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/fools/1775806291?i=1775806417&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/86/ae/74/86ae74f1-e579-57e9-12ff-c635c0bd5aca/184923124866_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_26456a97-e",
+     "qlooId": "B8A29D31-35E3-4DB7-8BDA-92F505BD24C0",
+     "artist": "SAULT",
+     "tracks": [
+      {
+       "id": "1518680501",
+       "title": "Wildfires",
+       "artist": "Sault",
+       "album": "Untitled (Black Is)",
+       "durationMs": 206947,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/61/bd/1f61bdc6-a71b-f0c2-e2d6-681b2c13d29e/mzaf_903150131318644412.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/wildfires/1518680087?i=1518680501&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/f1/98/66f19821-f899-77e5-4daa-32a8e877d649/859740074815_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1460826901",
+       "title": "Masterpiece",
+       "artist": "Sault",
+       "album": "5",
+       "durationMs": 344681,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/d3/a9/25d3a96f-01e5-c5ee-ea6d-b9e852942e83/mzaf_7323076294642949079.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/masterpiece/1460826525?i=1460826901&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/4b/e7/9f/4be79f7b-3e75-35b5-85e9-8841e7ab24d1/859732024965_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1460826789",
+       "title": "Why Why Why Why Why",
+       "artist": "Sault",
+       "album": "5",
+       "durationMs": 238679,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/65/76/71/657671ec-e33f-3666-2e9e-95c276172a05/mzaf_9905003375280858191.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/why-why-why-why-why/1460826525?i=1460826789&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/4b/e7/9f/4be79f7b-3e75-35b5-85e9-8841e7ab24d1/859732024965_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1531057514",
+       "title": "Free",
+       "artist": "Sault",
+       "album": "Untitled (Rise)",
+       "durationMs": 305829,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/24/39/572439f4-2568-8423-e9a4-4b5628690e13/mzaf_9837102191524112474.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/free/1531056843?i=1531057514&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/66/a8/05/66a8059f-d3e0-5f09-71cd-aa0a18001972/859741920043_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1531057321",
+       "title": "Son Shine",
+       "artist": "Sault",
+       "album": "Untitled (Rise)",
+       "durationMs": 196814,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/0c/f5/ab0cf52c-d4ed-49a6-99bd-7944108d8fdb/mzaf_2329465542377439694.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/son-shine/1531056843?i=1531057321&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/66/a8/05/66a8059f-d3e0-5f09-71cd-aa0a18001972/859741920043_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_cc6a4b17-9",
+     "qlooId": "78040E96-305A-48C7-8C5C-6F18877B6507",
+     "artist": "Holy Hive",
+     "tracks": [
+      {
+       "id": "1500912971",
+       "title": "Hypnosis",
+       "artist": "Holy Hive",
+       "album": "Float Back To You",
+       "durationMs": 231869,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8d/ae/82/8dae8226-e6df-b1fe-80f4-fd1e885fb8f1/mzaf_18039142776978454789.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/hypnosis/1500912968?i=1500912971&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1500912975",
+       "title": "Oh I Miss Her So (feat. Mary Lattimore)",
+       "artist": "Holy Hive",
+       "album": "Float Back To You",
+       "durationMs": 251082,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/d7/2e/fdd72e7f-efe5-3f84-8018-da507c7281aa/mzaf_452457242777269767.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/oh-i-miss-her-so-feat-mary-lattimore/1500912968?i=1500912975&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1500912977",
+       "title": "Float Back To You",
+       "artist": "Holy Hive",
+       "album": "Float Back To You",
+       "durationMs": 255773,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d4/92/7a/d4927ac0-09ac-71b6-eda5-9086e1933d2c/mzaf_4788313330258992669.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/float-back-to-you/1500912968?i=1500912977&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1500912978",
+       "title": "You Will Always Be By My Side Forever",
+       "artist": "Holy Hive",
+       "album": "Float Back To You",
+       "durationMs": 214319,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/89/08/03/89080326-9afd-92e2-41ad-5bab6b7eba2c/mzaf_10961006928616954024.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/you-will-always-be-by-my-side-forever/1500912968?i=1500912978&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1500912969",
+       "title": "Broom",
+       "artist": "Holy Hive",
+       "album": "Float Back To You",
+       "durationMs": 135753,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/91/6c/25916c3c-8463-88d1-00f1-bfa1279012f3/mzaf_8458358250401094054.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/broom/1500912968?i=1500912969&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_25131e9c-6",
+     "qlooId": "732D9924-FC26-432F-95C9-8DD1C34D6D83",
+     "artist": "Brainstory",
+     "tracks": [
+      {
+       "id": "1477206807",
+       "title": "Mnemophobia",
+       "artist": "Brainstory",
+       "album": "Buck",
+       "durationMs": 168386,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/4f/38/d84f38b2-99fb-cfe9-8793-82711299c32f/mzaf_5935167538793082295.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/mnemophobia/1477206745?i=1477206807&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/51/06/24/5106246e-92b2-d97f-02ab-3effc55f3156/656605349794.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1477206809",
+       "title": "Dead End",
+       "artist": "Brainstory",
+       "album": "Buck",
+       "durationMs": 223257,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b7/6c/1f/b76c1ff7-77d6-5202-da1b-88e40d2b7802/mzaf_12512299838603914046.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/dead-end/1477206745?i=1477206809&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/51/06/24/5106246e-92b2-d97f-02ab-3effc55f3156/656605349794.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1560329535",
+       "title": "Bye Bye",
+       "artist": "Brainstory",
+       "album": "Ripe",
+       "durationMs": 145414,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/7c/f2/1b/7cf21b1c-d0fb-028c-6d72-ac766fda2001/mzaf_12700333352481428465.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/bye-bye/1560329528?i=1560329535&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/20/99/8e/20998e4e-d183-9c01-8a8d-6faf2d4acb6f/BC118-EP_DIGITAL_ART.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6798829613",
+       "title": "Blend",
+       "artist": "Brainstory",
+       "album": "Shoebox Days",
+       "durationMs": 146578,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/29/68/6e/29686e96-9e19-5bb3-921a-6c0582005674/mzaf_11065471319419188630.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/blend/6798829456?i=6798829613&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/75/5d/97/755d9724-e8a0-bc91-a8c0-f55fa3bdef95/68172.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1477206811",
+       "title": "Beautyful Beauti",
+       "artist": "Brainstory",
+       "album": "Buck",
+       "durationMs": 267983,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/34/49/17/34491701-b4c2-15a3-2877-cfe150b73402/mzaf_6482353457622268413.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/beautyful-beauti/1477206745?i=1477206811&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/51/06/24/5106246e-92b2-d97f-02ab-3effc55f3156/656605349794.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_7fcddc5a-5",
+     "qlooId": "FC07BE09-ED83-46BD-AFB1-D5C58D84BDA7",
+     "artist": "Thee Sacred Souls",
+     "tracks": [
+      {
+       "id": "1498124359",
+       "title": "Can I Call You Rose?",
+       "artist": "Thee Sacred Souls",
+       "album": "Can I Call You Rose? - Single",
+       "durationMs": 188513,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/86/07/2a/86072a8a-a8c8-09d6-3505-5399dfab12e4/mzaf_15704289805936940876.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/can-i-call-you-rose/1498124358?i=1498124359&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/21/2b/f4/212bf4a3-f1dc-36b6-5ee3-7d7c7eab7b73/634457012950.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1537029566",
+       "title": "Will I See You Again?",
+       "artist": "Thee Sacred Souls",
+       "album": "Will I See You Again? - Single",
+       "durationMs": 240653,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b3/5d/e3/b35de358-0fc9-8b2f-a6aa-ae3d9ecb680e/mzaf_18322946773829076102.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/will-i-see-you-again/1537029565?i=1537029566&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/6c/e5/fa6ce555-8ca4-e80e-ae6c-1b22778eae32/29745.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1620093368",
+       "title": "Easier Said Than Done",
+       "artist": "Thee Sacred Souls",
+       "album": "Thee Sacred Souls",
+       "durationMs": 174707,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/23/3c/32233cc7-3187-deab-906b-528088f98c29/mzaf_16164133043417840148.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/easier-said-than-done/1620092975?i=1620093368&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/68/7c/50/687c502f-8b64-4ddb-3cd1-8ba478d5ad7a/dj.zlkowpir.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1620093371",
+       "title": "Weak for Your Love",
+       "artist": "Thee Sacred Souls",
+       "album": "Thee Sacred Souls",
+       "durationMs": 261307,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ee/cc/e3/eecce30f-d046-afa5-bf78-f98b8b7ef6a1/mzaf_15801490926097378658.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/weak-for-your-love/1620092975?i=1620093371&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/68/7c/50/687c502f-8b64-4ddb-3cd1-8ba478d5ad7a/dj.zlkowpir.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1749131364",
+       "title": "Lucid Girl",
+       "artist": "Thee Sacred Souls",
+       "album": "Got a Story to Tell",
+       "durationMs": 204960,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/fb/c8/68fbc884-e409-2974-3ff6-d50ae48e9cd4/mzaf_450174408075518453.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/lucid-girl/1749131359?i=1749131364&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/98/33/c0/9833c0fe-87e6-f084-b0bb-170a6a6bd0b2/107898.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_943cfbd4-b",
+     "qlooId": "C304A43C-6D96-4EB2-8F22-F0EA32EFBDB9",
+     "artist": "NEIL FRANCES",
+     "tracks": [
+      {
+       "id": "1603954547",
+       "title": "Music Sounds Better with You",
+       "artist": "NEIL FRANCES",
+       "album": "Music Sounds Better with You - Single",
+       "durationMs": 198305,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a9/63/96/a9639637-f018-0918-d458-850bcfd45b98/mzaf_15275288689763474363.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/music-sounds-better-with-you/1603954541?i=1603954547&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/fe/52/b5fe5244-ba97-5676-bd3b-4251ee203938/067003101561.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1603956585",
+       "title": "Dumb Love",
+       "artist": "NEIL FRANCES",
+       "album": "Took a While - EP",
+       "durationMs": 282729,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/1d/77/051d778c-c14b-f87f-7541-3914cf2e77a4/mzaf_13597049668952193359.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/dumb-love/1603956454?i=1603956585&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ff/2b/e8/ff2be87f-d69e-4013-51ca-b0fffd174557/067003104661.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1598479434",
+       "title": "dancing",
+       "artist": "NEIL FRANCES",
+       "album": "There is no Neil Frances",
+       "durationMs": 174213,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7e/ce/9e/7ece9e76-72e2-f6e3-c910-f4753f996fd2/mzaf_17266702247907906953.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/dancing/1598479424?i=1598479434&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6e/95/61/6e9561d3-fe4e-6bd2-4f90-b151b9747809/067003130356.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1603956592",
+       "title": "Show Me the Right",
+       "artist": "NEIL FRANCES",
+       "album": "Took a While - EP",
+       "durationMs": 204000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/28/2f/c8/282fc885-7acf-eaa2-ac47-9b1803518704/mzaf_12558607031662810694.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/show-me-the-right/1603956454?i=1603956592&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ff/2b/e8/ff2be87f-d69e-4013-51ca-b0fffd174557/067003104661.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1603953664",
+       "title": "Teardrops",
+       "artist": "NEIL FRANCES",
+       "album": "Teardrops - Single",
+       "durationMs": 198332,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/3a/60/123a6033-56bf-0025-aae5-54771f68a10c/mzaf_4242349358004611467.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/teardrops/1603953656?i=1603953664&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/65/ce/4865ce0f-f744-1e23-5fd1-43fdcae4f578/067003104364.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    },
+    {
+     "itemId": "i_aebb139a-8",
+     "qlooId": "8E87EB51-B623-4642-A54D-0EE494C11CBF",
+     "artist": "Unknown Mortal Orchestra",
+     "tracks": [
+      {
+       "id": "1334720791",
+       "title": "Hunnybee",
+       "artist": "Unknown Mortal Orchestra",
+       "album": "Sex & Food",
+       "durationMs": 268333,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/30/81/95/30819524-957f-27d6-baaa-a1fbafda9601/mzaf_10012784831559024024.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/hunnybee/1334720786?i=1334720791&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e5/43/94/e5439435-7d21-9e23-054f-686c515bf625/656605232263.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1714685678",
+       "title": "So Good at Being in Trouble",
+       "artist": "Unknown Mortal Orchestra",
+       "album": "II (10 Year Anniversary Edition)",
+       "durationMs": 230147,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e7/c7/b7/e7c7b7b6-3b97-7bcf-b107-0f93dc6d2c88/mzaf_6174881512937648720.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/so-good-at-being-in-trouble/1714685667?i=1714685678&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/fb/c2/21/fbc22164-808c-6366-9c11-9fe1272ba9b3/43016.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "962057746",
+       "title": "Multi-Love",
+       "artist": "Unknown Mortal Orchestra",
+       "album": "Multi-Love",
+       "durationMs": 250800,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/8c/9c/b28c9cfa-5dd7-3cc5-bad3-1fd05ac9f917/mzaf_12644734179423290846.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/multi-love/962057741?i=962057746&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/93/61/5d/93615d50-5623-7703-28fc-e4298e191cba/656605226262.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1658649928",
+       "title": "That Life",
+       "artist": "Unknown Mortal Orchestra",
+       "album": "V",
+       "durationMs": 215867,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/04/bb/fb04bbc5-6da2-7fdc-d1cb-ae3064e90307/mzaf_2521240538675057961.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/that-life/1658649715?i=1658649928&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/10/e9/3d/10e93d1a-554d-4751-9b28-48b2df12706c/37764.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "962057749",
+       "title": "Can’t Keep Checking My Phone",
+       "artist": "Unknown Mortal Orchestra",
+       "album": "Multi-Love",
+       "durationMs": 256067,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/cd/8c/12cd8ca9-2dc2-97d8-9825-c99871b0d1d5/mzaf_14903104386577088927.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/cant-keep-checking-my-phone/962057741?i=962057749&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/93/61/5d/93615d50-5623-7703-28fc-e4298e191cba/656605226262.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "openers"
+    }
+   ],
+   "playlists": [
+    {
+     "slotKey": "walk_in",
+     "label": "Doors & walk-in",
+     "timeRange": "18:30–19:30",
+     "minutes": 60,
+     "filledMinutes": 60,
+     "entries": [
+      {
+       "at": "18:30",
+       "itemId": "i_50ec87df-e",
+       "track": {
+        "id": "1452804079",
+        "title": "Spain",
+        "artist": "Chick Corea",
+        "album": "Light As a Feather",
+        "durationMs": 333667,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7a/60/c7/7a60c745-4c1b-053f-aead-df39557aaf90/mzaf_5566418436145077654.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/spain/1452803070?i=1452804079&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/65/02/11/65021175-307b-6110-1269-1bd34444d1a1/00731455711523.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:36",
+       "itemId": "i_6dbf1158-9",
+       "track": {
+        "id": "1608119816",
+        "title": "Catamaran",
+        "artist": "Allah-Las",
+        "album": "Allah-Las",
+        "durationMs": 212986,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/b6/eb/a5b6ebe8-5a01-8f7a-5e61-6060284ada49/mzaf_2839643615619884245.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/catamaran/1608119814?i=1608119816&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/ca/d8/8acad89e-620b-ddee-ebde-08377bb7785b/196626351906.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:39",
+       "itemId": "i_3d85e910-7",
+       "track": {
+        "id": "6773775304",
+        "title": "nothing",
+        "artist": "Steve Lacy",
+        "album": "Oh yeah?",
+        "durationMs": 149664,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/06/97/43/06974392-0342-a5f0-f8ba-0c7a7e62bd0c/mzaf_6247541630954684284.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/nothing/6773775032?i=6773775304&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1c/b2/46/1cb246db-afae-a599-d377-44a7ea7267fa/196874346976.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:42",
+       "itemId": "i_5db81211-3",
+       "track": {
+        "id": "1774113852",
+        "title": "ROCKMAN",
+        "artist": "Mk.gee",
+        "album": "ROCKMAN - Single",
+        "durationMs": 179371,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/30/f4/5530f47c-5baa-5fdf-b33e-7c148f3d2922/mzaf_17707594068505034871.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/rockman/1774113849?i=1774113852&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/62/c0/15/62c01558-5a2d-5338-825b-2b530160ccbd/198704203923_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:45",
+       "itemId": "i_a512993c-1",
+       "track": {
+        "id": "1775760960",
+        "title": "Pictures of You",
+        "artist": "Drugdealer & Kate Bollinger",
+        "album": "Hiding in Plain Sight",
+        "durationMs": 189467,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8d/f5/47/8df547df-1233-e539-e7f9-fa30cffdf979/mzaf_2229233250430477355.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/pictures-of-you/1775760631?i=1775760960&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d5/60/0f/d5600fa2-d4f0-22f5-1cca-248d7d031280/184923129267_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:48",
+       "itemId": "i_26456a97-e",
+       "track": {
+        "id": "1518680501",
+        "title": "Wildfires",
+        "artist": "Sault",
+        "album": "Untitled (Black Is)",
+        "durationMs": 206947,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/61/bd/1f61bdc6-a71b-f0c2-e2d6-681b2c13d29e/mzaf_903150131318644412.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/wildfires/1518680087?i=1518680501&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/f1/98/66f19821-f899-77e5-4daa-32a8e877d649/859740074815_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:51",
+       "itemId": "i_cc6a4b17-9",
+       "track": {
+        "id": "1500912971",
+        "title": "Hypnosis",
+        "artist": "Holy Hive",
+        "album": "Float Back To You",
+        "durationMs": 231869,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8d/ae/82/8dae8226-e6df-b1fe-80f4-fd1e885fb8f1/mzaf_18039142776978454789.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/hypnosis/1500912968?i=1500912971&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:55",
+       "itemId": "i_50ec87df-e",
+       "track": {
+        "id": "724790828",
+        "title": "Windows",
+        "artist": "Chick Corea",
+        "album": "Now He Sings, Now He Sobs",
+        "durationMs": 192107,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0d/e4/af/0de4af61-f879-eeaf-a690-9d482d92177b/mzaf_793068362135547521.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/windows/724790507?i=724790828&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d2/5e/f0/d25ef09f-9da9-4be2-a9ee-b05d3eb59407/00724353826550.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:58",
+       "itemId": "i_6dbf1158-9",
+       "track": {
+        "id": "1608120277",
+        "title": "Sacred Sands",
+        "artist": "Allah-Las",
+        "album": "Allah-Las",
+        "durationMs": 211086,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/89/6e/af/896eafe4-5757-5a1b-c2c2-20fc7351c9ca/mzaf_7629972813365746715.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/sacred-sands/1608119814?i=1608120277&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/ca/d8/8acad89e-620b-ddee-ebde-08377bb7785b/196626351906.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:02",
+       "itemId": "i_3d85e910-7",
+       "track": {
+        "id": "1207820258",
+        "title": "Dark Red",
+        "artist": "Steve Lacy",
+        "album": "Steve Lacy's Demo - EP",
+        "durationMs": 173104,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/9a/0c/209a0c57-2234-f660-e31e-9df4be89b1d6/mzaf_13317414679944797201.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/dark-red/1207820151?i=1207820258&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b0/a8/e7/b0a8e748-8210-a4a5-79d3-d3449e51381a/5054526102712_1.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:05",
+       "itemId": "i_5db81211-3",
+       "track": {
+        "id": "1882613144",
+        "title": "How many miles",
+        "artist": "Mk.gee",
+        "album": "Two Star & The Dream Police",
+        "durationMs": 141237,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/c6/80/bdc680d1-56ec-8dd3-21f9-e9edabf6bde4/mzaf_301686839269840229.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/how-many-miles/1882613139?i=1882613144&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/78/c9/1a78c9fb-667e-9f77-61b6-35c2f7eabf81/193436368681_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:07",
+       "itemId": "i_a512993c-1",
+       "track": {
+        "id": "1775806399",
+        "title": "Honey (feat. Weyes Blood)",
+        "artist": "Drugdealer",
+        "album": "Raw Honey",
+        "durationMs": 268147,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/6e/b1/aa6eb18c-397e-75d0-8c77-a2163d5eb183/mzaf_16850559762022390010.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/honey-feat-weyes-blood/1775806291?i=1775806399&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/86/ae/74/86ae74f1-e579-57e9-12ff-c635c0bd5aca/184923124866_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:11",
+       "itemId": "i_26456a97-e",
+       "track": {
+        "id": "1460826901",
+        "title": "Masterpiece",
+        "artist": "Sault",
+        "album": "5",
+        "durationMs": 344681,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/d3/a9/25d3a96f-01e5-c5ee-ea6d-b9e852942e83/mzaf_7323076294642949079.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/masterpiece/1460826525?i=1460826901&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/4b/e7/9f/4be79f7b-3e75-35b5-85e9-8841e7ab24d1/859732024965_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:17",
+       "itemId": "i_cc6a4b17-9",
+       "track": {
+        "id": "1500912975",
+        "title": "Oh I Miss Her So (feat. Mary Lattimore)",
+        "artist": "Holy Hive",
+        "album": "Float Back To You",
+        "durationMs": 251082,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/d7/2e/fdd72e7f-efe5-3f84-8018-da507c7281aa/mzaf_452457242777269767.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/oh-i-miss-her-so-feat-mary-lattimore/1500912968?i=1500912975&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/7c/d0/437cd08e-fbb0-b14b-ead2-ee58d42e5536/dj.muteixkx.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:21",
+       "itemId": "i_50ec87df-e",
+       "track": {
+        "id": "1443763361",
+        "title": "Armando's Rhumba",
+        "artist": "Chick Corea",
+        "album": "My Spanish Heart",
+        "durationMs": 319067,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/eb/45/48/eb45487a-33be-0880-dfba-f17be4b18c95/mzaf_3675938311309273955.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/armandos-rhumba/1443763181?i=1443763361&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a4/76/13/a47613bd-9c27-d42a-e700-2d7d56461117/06UMGIM21295.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:27",
+       "itemId": "i_6dbf1158-9",
+       "track": {
+        "id": "1608200690",
+        "title": "Ferus Gallery",
+        "artist": "Allah-Las",
+        "album": "Worship the Sun",
+        "durationMs": 215973,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/58/6b/5e/586b5e6b-6da6-5bd6-0bfc-825577dc574d/mzaf_7127945826408955251.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/ferus-gallery/1608200681?i=1608200690&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e8/7d/eb/e87deb4c-b6ca-a4ee-3ab8-384f6ee572a6/196626413932.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    }
+   ],
+   "skippedExplicit": 0,
+   "notes": [],
+   "createdAt": "2026-10-30T15:25:36.137Z"
   }
  },
  "ledger": [

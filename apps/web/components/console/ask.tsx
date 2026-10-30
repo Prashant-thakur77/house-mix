@@ -16,11 +16,23 @@ function suggestions(show: Show): string[] {
   const side = (role: string) => show.entities.find((e) => e.kind === "side" && e.role === role)?.name;
   switch (show.input.mode) {
     case "concert":
-      return [`If ${side("support") ?? "the support act"} cancels, who best fills the opener slot?`, "Which merch partner fits both fan bases best?", "Is anything in the walk-in playlist rising right now?"];
+      return [
+        `If ${side("support") ?? "the support act"} cancels, who best fills the opener slot?`,
+        "Which merch partner fits both fan bases best?",
+        "Is anything in the walk-in playlist rising right now?",
+      ];
     case "comedy":
-      return [`Which bar nearby suits ${side("support") ?? "the opener"}'s fans as well as ${side("headliner") ?? "the headliner"}'s?`, "Which podcast should we promote in the interval?", "What is this crowd's strongest shared taste?"];
+      return [
+        `Which bar nearby suits ${side("support") ?? "the opener"}'s fans as well as ${side("headliner") ?? "the headliner"}'s?`,
+        "Which podcast should we promote in the interval?",
+        "What is this crowd's strongest shared taste?",
+      ];
     case "sports":
-      return [`Which walk-in tracks work for both ${side("home") ?? "home"} and ${side("away") ?? "away"} fans?`, "Which pub suits the away fans for a pre-match crowd?", "Which sponsor activation fits the home crowd best?"];
+      return [
+        `Which walk-in tracks work for both ${side("home") ?? "home"} and ${side("away") ?? "away"} fans?`,
+        "Which pub suits the away fans for a pre-match crowd?",
+        "Which sponsor activation fits the home crowd best?",
+      ];
     default:
       return ["Who should close the second stage for this crowd?", "Which food trader suits both stages' crowds?", "Which act on the bill has the most momentum?"];
   }
@@ -34,7 +46,10 @@ function Citation({ n, e, open, onToggle }: { n: number; e?: Evidence; open: boo
       type="button"
       onClick={onToggle}
       aria-expanded={open}
-      className={cn("ml-1 inline-flex h-4 min-w-4 items-center justify-center rounded-sm px-1 align-text-top font-mono text-[10px] leading-none", open ? "bg-qloo text-background" : "bg-qloo-bg text-qloo hover:bg-qloo-border/30")}
+      className={cn(
+        "ml-1 inline-flex h-4 min-w-4 items-center justify-center rounded-sm px-1 align-text-top font-mono text-[10px] leading-none",
+        open ? "bg-qloo text-background" : "bg-qloo-bg text-qloo hover:bg-qloo-border/30",
+      )}
       title={e ? `${e.tool} · ${e.status}` : "Qloo call"}
     >
       {n}
@@ -75,7 +90,13 @@ function AnswerCard({ show, answer, onShow }: { show: Show; answer: AskAnswer; o
           <p className="mt-1 text-small text-muted-foreground">Nothing in the answer survived the Critic.</p>
         )}
       </div>
-      {openCall ? evidence.get(openCall) ? <EvidenceCall e={evidence.get(openCall)!} /> : <p className="font-mono text-label text-muted-foreground">{openCall}: Qloo call from the plan run (see the trace).</p> : null}
+      {openCall ? (
+        evidence.get(openCall) ? (
+          <EvidenceCall e={evidence.get(openCall)!} />
+        ) : (
+          <p className="font-mono text-label text-muted-foreground">{openCall}: Qloo call from the plan run (see the trace).</p>
+        )
+      ) : null}
       {answer.proposals.length ? (
         <div className="grid gap-1.5">
           <Kicker>Proposed changes · you decide</Kicker>
@@ -168,7 +189,8 @@ export function AskSheet({ show, onShow }: { show: Show; onShow: (s: Show) => vo
         <SheetHeader className="border-b p-4">
           <SheetTitle>Ask House Mix</SheetTitle>
           <SheetDescription>
-            Answers come only from Qloo: the plan&apos;s calls plus new ones made for your question. Every line cites its calls and the Critic removes the rest. Suggested changes go to your approval queue, never straight into the plan.
+            Answers come only from Qloo: the plan&apos;s calls plus new ones made for your question. Every line cites its calls and the Critic removes the rest. Suggested changes go to your approval
+            queue, never straight into the plan.
           </SheetDescription>
         </SheetHeader>
         <div className="grid min-h-0 flex-1 content-start gap-3 overflow-y-auto p-4">

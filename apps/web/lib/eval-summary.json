@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T07:48:49.980Z",
+  "generatedAt": "2026-10-30T15:36:46.840Z",
   "verify": {
     "tools": 10,
     "passed": 10,
@@ -28,6 +28,16 @@
     "wins": 0,
     "losses": 7,
     "ties": 0
+  },
+  "value": {
+    "brandsRepeated": 0,
+    "brands": 32,
+    "l0BrandsRepeated": 6,
+    "l0Brands": 28,
+    "tooBig": 0,
+    "acts": 28,
+    "l0TooBig": 4,
+    "l0Acts": 10
   },
   "plans": {
     "n": 7,

@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-10-30T15:36:18.343Z",
+  "qlooMode": "live",
+  "method": "Free: the eval's stored plans plus Qloo describe and recommend calls. No Claude calls.",
+  "realism": {
+    "houseMixV1": {
+      "picks": 28,
+      "tooBig": 14,
+      "examples": [
+        "Kali Uchis for Kendrick Lamar",
+        "Vince Staples for Kendrick Lamar",
+        "Jorja Smith for Kendrick Lamar",
+        "Coldplay for Linkin Park",
+        "Gorillaz for Linkin Park",
+        "Filter for Linkin Park"
+      ]
+    },
+    "houseMixV2": {
+      "picks": 28,
+      "tooBig": 0,
+      "examples": []
+    },
+    "l0": {
+      "picks": 10,
+      "tooBig": 4,
+      "examples": [
+        "Poppy for Linkin Park",
+        "Static-X for Linkin Park",
+        "Kendrick Lamar for Los Angeles Dodgers",
+        "The Weeknd for Los Angeles Dodgers"
+      ],
+      "unresolved": 12
+    }
+  },
+  "specificity": {
+    "houseMix": {
+      "picks": 182,
+      "repeated": 2,
+      "top": [
+        "lizzo (2 shows)"
+      ]
+    },
+    "l0": {
+      "picks": 157,
+      "repeated": 10,
+      "top": [
+        "spotify (4 shows)",
+        "chappell roan (2 shows)",
+        "olivia rodrigo (2 shows)",
+        "nike (2 shows)"
+      ]
+    },
+    "houseMixBrands": {
+      "picks": 32,
+      "repeated": 0,
+      "top": []
+    },
+    "l0Brands": {
+      "picks": 28,
+      "repeated": 6,
+      "top": [
+        "spotify (4 shows)",
+        "nike (2 shows)"
+      ]
+    }
+  },
+  "sensitivity": {
+    "crowds": 8,
+    "pairs": 28,
+    "meanOverlap": 0,
+    "maxOverlap": 0,
+    "identicalPairs": 0,
+    "zeroOverlapPairs": 28
+  },
+  "ops": {
+    "plans": 7,
+    "qlooCallsMedian": 17,
+    "cacheHitsMedian": 7,
+    "secondsMedian": 148,
+    "claudeCostMedian": 0.9048
+  },
+  "music": {
+    "artists": 59,
+    "withSongs": 55,
+    "filledByQloo": 8,
+    "explicitLeftOut": 0,
+    "playlists": 7,
+    "minutesPlanned": 729
+  },
+  "latency": {
+    "qloo_audience_demographics": {
+      "calls": 4,
+      "medianMs": 619,
+      "maxMs": 657
+    },
+    "qloo_compare_audiences": {
+      "calls": 15,
+      "medianMs": 667,
+      "maxMs": 3117
+    },
+    "qloo_describe": {
+      "calls": 87,
+      "medianMs": 773,
+      "maxMs": 29859
+    },
+    "qloo_entity_tags": {
+      "calls": 4,
+      "medianMs": 1468,
+      "maxMs": 3007
+    },
+    "qloo_find_tags": {
+      "calls": 4,
+      "medianMs": 2867,
+      "maxMs": 31054
+    },
+    "qloo_rank": {
+      "calls": 59,
+      "medianMs": 751,
+      "maxMs": 3962
+    },
+    "qloo_recommend": {
+      "calls": 55,
+      "medianMs": 3003,
+      "maxMs": 181639
+    },
+    "qloo_trends": {
+      "calls": 8,
+      "medianMs": 355,
+      "maxMs": 1534
+    },
+    "qloo_where_popular": {
+      "calls": 14,
+      "medianMs": 1951,
+      "maxMs": 2697
+    }
+  }
+}

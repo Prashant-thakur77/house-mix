@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check, Loader2, Repeat2, Undo2, X } from "lucide-react";
 import type { PlanItem, Slot } from "@housemix/shared";
 import { cn } from "cn";
+import { PickPreview } from "@/components/console/listen";
 import { ConfidenceChip, Kicker, RisingBadge, StretchBadge } from "@/components/status";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -24,7 +25,13 @@ export function RejectDialog({ item, open, onOpenChange, onReject }: { item?: Pl
         </DialogHeader>
         <div className="flex flex-wrap gap-1.5">
           {REASONS.map((r) => (
-            <button key={r} type="button" onClick={() => setReason(r)} aria-pressed={reason === r} className={cn("rounded-full border px-2.5 py-1 text-small", reason === r ? "border-primary bg-accent text-accent-foreground" : "hover:bg-muted")}>
+            <button
+              key={r}
+              type="button"
+              onClick={() => setReason(r)}
+              aria-pressed={reason === r}
+              className={cn("rounded-full border px-2.5 py-1 text-small", reason === r ? "border-primary bg-accent text-accent-foreground" : "hover:bg-muted")}
+            >
               {r}
             </button>
           ))}
@@ -110,13 +117,16 @@ export function PlanItemCard({
           {item.rising ? <RisingBadge /> : null}
           {item.confidence !== "high" ? <ConfidenceChip confidence={item.confidence} /> : null}
           {state !== "pending" ? (
-            <span className={cn("inline-flex h-5 items-center rounded-md px-1.5 text-label font-medium", state === "approved" ? "bg-status-ok-bg text-status-ok" : "bg-muted text-muted-foreground")}>{APPROVAL_LABEL[state]}</span>
+            <span className={cn("inline-flex h-5 items-center rounded-md px-1.5 text-label font-medium", state === "approved" ? "bg-status-ok-bg text-status-ok" : "bg-muted text-muted-foreground")}>
+              {APPROVAL_LABEL[state]}
+            </span>
           ) : null}
         </div>
       </div>
       <p className="pointer-events-none relative mt-2 line-clamp-2 text-small">{item.interpretation}</p>
       {item.action ? <p className="pointer-events-none relative mt-1 line-clamp-2 text-small text-muted-foreground">→ {item.action}</p> : null}
       {item.approval.reason ? <p className="pointer-events-none relative mt-1 text-small text-muted-foreground">Reason: {item.approval.reason}</p> : null}
+      {item.pick.type === "artist" && !inactive ? <PickPreview itemId={item.id} /> : null}
       {!readOnly && onAction && state !== "swapped" ? (
         <div className="relative mt-3 flex flex-wrap gap-1.5">
           {state === "pending" ? (
@@ -124,7 +134,15 @@ export function PlanItemCard({
               <Button size="sm" variant="outline" className="h-8 sm:h-7" onClick={() => onAction("approve")} disabled={Boolean(busy)} aria-keyshortcuts="a">
                 {busy === "approve" ? <Loader2 className="animate-spin" /> : <Check />} Approve
               </Button>
-              <Button size="sm" variant="outline" className="h-8 sm:h-7" onClick={() => onAction("swap")} disabled={Boolean(busy)} aria-keyshortcuts="s" title="Re-rank this slot's alternatives with qloo_rank">
+              <Button
+                size="sm"
+                variant="outline"
+                className="h-8 sm:h-7"
+                onClick={() => onAction("swap")}
+                disabled={Boolean(busy)}
+                aria-keyshortcuts="s"
+                title="Re-rank this slot's alternatives with qloo_rank"
+              >
                 {busy === "swap" ? <Loader2 className="animate-spin" /> : <Repeat2 />} Swap
               </Button>
               <Button size="sm" variant="ghost" className="h-8 text-destructive hover:text-destructive sm:h-7" onClick={() => onAction("reject")} disabled={Boolean(busy)} aria-keyshortcuts="r">
@@ -172,7 +190,13 @@ export function SlotLane({
       </div>
       <div className="min-w-0 border-l pl-3 pb-6">
         <div className="-ml-[17px] mb-2 flex items-center gap-2">
-          <span className={cn("size-2 rounded-full ring-4 ring-background", slot.status === "ready" ? "bg-primary" : slot.status === "needs_manual_input" ? "bg-status-degraded" : "bg-signal animate-live")} aria-hidden />
+          <span
+            className={cn(
+              "size-2 rounded-full ring-4 ring-background",
+              slot.status === "ready" ? "bg-primary" : slot.status === "needs_manual_input" ? "bg-status-degraded" : "bg-signal animate-live",
+            )}
+            aria-hidden
+          />
           <Kicker>{slot.kind === "music" ? "Playlist" : slot.kind === "act" ? "Acts" : slot.kind === "food" ? "Food & drink" : slot.kind === "brand" ? "Merch & sponsors" : "Local flavour"}</Kicker>
         </div>
         <div className="flex flex-wrap items-baseline gap-2">
@@ -198,7 +222,16 @@ export function SlotLane({
         ) : (
           <div className="mt-2 grid gap-2 lg:grid-cols-2">
             {[...main, ...stretch].map((it) => (
-              <PlanItemCard key={it.id} item={it} selected={selectedId === it.id} focused={focusedId === it.id} busy={busy?.[it.id]} readOnly={readOnly} onSelect={onSelect ? () => onSelect(it) : undefined} onAction={onAction ? (a) => onAction(it, a) : undefined} />
+              <PlanItemCard
+                key={it.id}
+                item={it}
+                selected={selectedId === it.id}
+                focused={focusedId === it.id}
+                busy={busy?.[it.id]}
+                readOnly={readOnly}
+                onSelect={onSelect ? () => onSelect(it) : undefined}
+                onAction={onAction ? (a) => onAction(it, a) : undefined}
+              />
             ))}
           </div>
         )}

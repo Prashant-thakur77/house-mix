@@ -48,7 +48,10 @@ export function EvidenceCall({ e, onTrace }: { e: Evidence; onTrace?: (callId: s
             ) : k === "delta" ? (
               <div key={k} className="grid grid-cols-[6.5rem_1fr] gap-2 text-small">
                 <span className="text-muted-foreground">90-day change</span>
-                <span className="font-mono">{v >= 0 ? "+" : ""}{(v * 100).toFixed(1)} pct pts</span>
+                <span className="font-mono">
+                  {v >= 0 ? "+" : ""}
+                  {(v * 100).toFixed(1)} pct pts
+                </span>
               </div>
             ) : (
               <ScoreBar key={k} label={k} value={v} />
@@ -79,10 +82,12 @@ export function EvidenceCall({ e, onTrace }: { e: Evidence; onTrace?: (callId: s
           type="button"
           className="rounded-sm p-0.5 hover:text-foreground"
           aria-label="Copy call ID"
-          onClick={() => {
-            void navigator.clipboard?.writeText(e.callId);
-            toast("Call ID copied");
-          }}
+          onClick={() =>
+            navigator.clipboard.writeText(e.callId).then(
+              () => toast("Call ID copied"),
+              () => toast.error("Couldn't copy here", { description: e.callId }),
+            )
+          }
         >
           <Copy className="size-3" />
         </button>

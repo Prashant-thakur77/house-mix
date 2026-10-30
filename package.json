@@ -26,6 +26,7 @@
     "eval:ab:score": "npm run ab:score -w @housemix/eval",
     "eval:ab:judge": "npm run ab:judge -w @housemix/eval",
     "eval:evidence": "npm run evidence -w @housemix/eval",
+    "eval:qloo": "npm run qloo:value -w @housemix/eval",
     "eval:report": "npm run report -w @housemix/eval",
     "eval:all": "npm run all -w @housemix/eval"
   },

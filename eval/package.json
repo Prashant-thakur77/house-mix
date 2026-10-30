@@ -13,7 +13,8 @@
     "evidence": "tsx --env-file-if-exists=../.env.local evidence/run.ts",
     "report": "tsx report.ts",
     "all": "npm run fetch && npm run backtest && npm run ab:pairs && npm run evidence && npm run ab:judge && npm run ab:score; npm run report",
-    "ab:judge": "tsx --env-file-if-exists=../.env.local ab_blind/judge.ts"
+    "ab:judge": "tsx --env-file-if-exists=../.env.local ab_blind/judge.ts",
+    "qloo:value": "tsx --env-file-if-exists=../.env.local qloo/value.ts"
   },
   "dependencies": {
     "@housemix/shared": "*",

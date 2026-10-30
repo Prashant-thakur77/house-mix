@@ -4568,6 +4568,941 @@
    },
    "costUsd": 0.022,
    "createdAt": "2026-10-30T07:47:18.673Z"
+  },
+  "music": {
+   "source": "itunes",
+   "country": "GB",
+   "picks": [
+    {
+     "itemId": "i_985c8811-b",
+     "qlooId": "F23E8901-D8AB-48AA-88CF-E01FDECF7C58",
+     "artist": "Pharrell Williams",
+     "tracks": [
+      {
+       "id": "863835363",
+       "title": "Happy (From \"Despicable Me 2\")",
+       "artist": "Pharrell Williams",
+       "album": "G I R L",
+       "durationMs": 233307,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/a0/19/eda019cf-2794-66d1-208d-2e2e74c26c3d/mzaf_16469762943852039623.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/happy-from-despicable-me-2/863835302?i=863835363&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/76/ff/5e/76ff5ee0-7ab4-2ac2-2598-486a9ccc06e1/886444516877.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1010892001",
+       "title": "Freedom",
+       "artist": "Pharrell Williams",
+       "album": "Freedom - Single",
+       "durationMs": 163227,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/ad/a2/2fada250-c5bc-9deb-bbf3-fde0ed5157c7/mzaf_7491567234686946996.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/freedom/1010891982?i=1010892001&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/96/76/88/96768825-4232-88aa-46ff-bd525ec21d29/886445349689.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1750124164",
+       "title": "Double Life (From \"Despicable Me 4\")",
+       "artist": "Pharrell Williams",
+       "album": "Double Life (From \"Despicable Me 4\") - Single",
+       "durationMs": 190782,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/42/7b/20427b63-bbef-3878-2ebf-9c3a75170647/mzaf_1761255886791017299.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/double-life-from-despicable-me-4/1750124157?i=1750124164&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/a2/ab/97a2abed-940c-3524-db0a-f1a43f27b7f6/196872103007.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "617154366",
+       "title": "Get Lucky",
+       "artist": "Daft Punk, Pharrell Williams & Nile Rodgers",
+       "album": "Random Access Memories",
+       "durationMs": 369629,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/57/a5/85/57a585aa-f1bc-7619-881b-f8a04a5541d5/mzaf_6906185026678279401.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/get-lucky/617154241?i=617154366&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6808358532",
+       "title": "Her",
+       "artist": "John Legend & Pharrell Williams",
+       "album": "Muse",
+       "durationMs": 164946,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/51/60/3f516015-fa1f-2079-ea7d-f1044bc9a548/mzaf_7090075922480384047.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/her/6808358301?i=6808358532&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/df/1b/c6/df1bc6c4-c2a7-66e9-afc0-46c9ae49516a/26UM1IM12676.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_b452394c-9",
+     "qlooId": "723BCD5C-AA73-4E13-AAA6-9FBE10A889E4",
+     "artist": "Rihanna",
+     "tracks": [
+      {
+       "id": "1440896009",
+       "title": "Only Girl (In The World)",
+       "artist": "Rihanna",
+       "album": "Loud (Deluxe)",
+       "durationMs": 235493,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/58/bd/6f/58bd6f05-45d7-76d7-bae3-6d453e00b5cc/mzaf_1937910784700207272.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/only-girl-in-the-world/1440895867?i=1440896009&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440764848",
+       "title": "Disturbia",
+       "artist": "Rihanna",
+       "album": "Good Girl Gone Bad (Reloaded - UK & Oz CD)",
+       "durationMs": 238573,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/45/b6/c345b610-1f84-c1b2-e305-7fe6861b9a8e/mzaf_15147323973101262026.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/disturbia/1440764093?i=1440764848&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a1/b1/4f/a1b14fdc-3918-bfc5-5533-6e8beafaede6/08UMGIM10017.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440867324",
+       "title": "Pon de Replay",
+       "artist": "Rihanna",
+       "album": "Music of the Sun",
+       "durationMs": 247116,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0e/71/b8/0e71b840-af6b-5fb0-3b3c-324fa26c62ff/mzaf_2719173417825269311.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pon-de-replay/1440867092?i=1440867324&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2f/89/a4/2f89a4e5-83c4-7cc8-93d6-99b0d8283a1f/16UMGIM58839.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440764853",
+       "title": "Take a Bow (Main)",
+       "artist": "Rihanna",
+       "album": "Good Girl Gone Bad (Reloaded - UK & Oz CD)",
+       "durationMs": 229413,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/84/af/0084afec-449e-fcd2-4557-55320748de90/mzaf_16482775946051392523.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/take-a-bow-main/1440764093?i=1440764853&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a1/b1/4f/a1b14fdc-3918-bfc5-5533-6e8beafaede6/08UMGIM10017.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1443062143",
+       "title": "We Found Love (feat. Calvin Harris)",
+       "artist": "Rihanna",
+       "album": "Talk That Talk (Deluxe)",
+       "durationMs": 215227,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/14/93/0b14932c-9909-fea3-fff5-8ba34cd473a3/mzaf_3562371518282448348.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/we-found-love-feat-calvin-harris/1443061797?i=1443062143&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/ae/46/51/ae465169-b0a4-3c10-42a0-63e4448d1508/16UMGIM59230.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_77a809a1-d",
+     "qlooId": "8000F8C9-A2AF-46E1-B839-B2749507E555",
+     "artist": "Tinie Tempah",
+     "tracks": [
+      {
+       "id": "693322523",
+       "title": "Wonderman (feat. Ellie Goulding)",
+       "artist": "Tinie Tempah & Ellie Goulding",
+       "album": "Disc-Overy (Deluxe)",
+       "durationMs": 219133,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9d/26/2a/9d262ab7-3467-88ba-5289-ad8413f38a03/mzaf_9090371854100213519.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/wonderman-feat-ellie-goulding/693320619?i=693322523&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0e/8f/2f/0e8f2fc0-b9ab-f5cb-ad4f-7bcd72c4eb84/5099908753953_1535x1535_300dpi.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1203763562",
+       "title": "Not Letting Go (feat. Jess Glynne)",
+       "artist": "Tinie Tempah",
+       "album": "Youth",
+       "durationMs": 229013,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/ba/7d/97ba7df2-5c82-51bb-1376-9fd62cc9c62d/mzaf_4305457346524121385.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/not-letting-go-feat-jess-glynne/1203763487?i=1203763562&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f2/d6/71/f2d6718c-cac4-45f2-ed02-43b4f7243bda/190295839444.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1708392429",
+       "title": "R.I.P.",
+       "artist": "Rita Ora & Tinie Tempah",
+       "album": "R.I.P. - EP",
+       "durationMs": 228920,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/ee/a7/a5eea748-8e89-c75e-de33-030f192057be/mzaf_4547155740015861621.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/r-i-p/1708392423?i=1708392429&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a0/b0/1c/a0b01c74-3be4-5118-9ccb-3c4b3eed1789/23UMGIM68217.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "693269423",
+       "title": "Invincible (feat. Kelly Rowland)",
+       "artist": "Tinie Tempah",
+       "album": "Disc-Overy",
+       "durationMs": 201400,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/f5/a6/aff5a67a-7f4d-e09e-a906-32554929824a/mzaf_2064021922205095295.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/invincible-feat-kelly-rowland/693269111?i=693269423&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/56/78/25/5678259a-0ebd-5f8a-6c5e-c97dec67d23b/5099990890758_1500x1500_300dpi.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "734879660",
+       "title": "Pass Out (Radio Edit)",
+       "artist": "Tinie Tempah",
+       "album": "Pass Out - EP",
+       "durationMs": 236352,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/d1/93/d8d19302-7b15-606b-c0bb-e92e50ada063/mzaf_15069198102340080049.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pass-out-radio-edit/734879577?i=734879660&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/9e/fe/90/9efe905e-ba6e-f1aa-94bd-52d6b9f8babe/5099962946056_1417x1417_300dpi.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_b7d38e56-b",
+     "qlooId": "510B9C56-42DA-4193-82EB-464FAFE1F209",
+     "artist": "will.i.am",
+     "tracks": [
+      {
+       "id": "1442260187",
+       "title": "Bang Bang",
+       "artist": "will.i.am",
+       "album": "#willpower (Deluxe)",
+       "durationMs": 279031,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/33/85/29/33852915-a4ad-8224-1e41-8a71bb51350a/mzaf_10155372142174259699.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/bang-bang/1442258237?i=1442260187&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/99/25/d4/9925d475-1ef4-a536-d45d-adb8101ef539/13UMGIM26865.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1442259401",
+       "title": "#thatPOWER (feat. Justin Bieber)",
+       "artist": "will.i.am",
+       "album": "#willpower (Deluxe)",
+       "durationMs": 279504,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/aa/c1/8d/aac18d77-6032-eeb0-23c3-9d169726c265/mzaf_8322269751596453775.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/thatpower-feat-justin-bieber/1442258237?i=1442259401&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/99/25/d4/9925d475-1ef4-a536-d45d-adb8101ef539/13UMGIM26865.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1445061899",
+       "title": "Birthday (feat. Cody Wise)",
+       "artist": "will.i.am",
+       "album": "Birthday (feat. Cody Wise) - Single",
+       "durationMs": 252496,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/d9/a6/bdd9a646-598c-776b-96dc-b1fc759c39e9/mzaf_9957180564193363760.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/birthday-feat-cody-wise/1445061893?i=1445061899&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/24/ea/3f/24ea3f55-29c0-8247-0f3c-5d654c42e224/00602537874729.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1451766573",
+       "title": "I Like to Move It",
+       "artist": "will.i.am",
+       "album": "Madagascar: Escape 2 Africa (Music from the Motion Picture)",
+       "durationMs": 221467,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8e/4e/90/8e4e904a-20c5-cef2-b541-c36238b01fe5/mzaf_8178599408006355193.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-like-to-move-it/1451766331?i=1451766573&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/47/a9/14/47a914d8-3bfa-1a11-2adb-3fbe16a1cf5a/00602577483707.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1469577500",
+       "title": "This Is Love (feat. Eva Simons) [Radio Edit]",
+       "artist": "will.i.am",
+       "album": "This Is Love (feat. Eva Simons) - Single",
+       "durationMs": 246893,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c1/f9/60/c1f9608b-7386-2048-76c0-d9ab70b6187d/mzaf_12274751329351145699.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/this-is-love-feat-eva-simons-radio-edit/1469577490?i=1469577500&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a3/41/bf/a341bf5f-955b-a120-e3c5-861d3d16835c/12UMGIM27245.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_ea092739-0",
+     "qlooId": "C0DD298A-4109-4D49-B4A1-F052AFBC6772",
+     "artist": "Diplo",
+     "tracks": [
+      {
+       "id": "1608240855",
+       "title": "Don’t Forget My Love",
+       "artist": "Diplo & Miguel",
+       "album": "Diplo",
+       "durationMs": 199091,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/20/13/f1/2013f1bb-b7bd-1efa-3343-8a964b7bb4b2/mzaf_6975505765287640169.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dont-forget-my-love/1608240848?i=1608240855&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3f/92/c8/3f92c890-9642-2783-b43d-a73fba33f5b2/190296245053.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1330564507",
+       "title": "Be Right There",
+       "artist": "Diplo & Sleepy Tom",
+       "album": "Be Right There - Single",
+       "durationMs": 237051,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/89/58/db/8958dbb6-d5ab-8f05-732b-f242f2c081b9/mzaf_4561359042423063701.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/be-right-there/1330564505?i=1330564507&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/90/35/fe/9035fe90-c952-9cf4-5c9e-93dbf5ecd072/5060421562759_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "971262282",
+       "title": "Where Are Ü Now (with Justin Bieber) [feat. Justin Bieber]",
+       "artist": "Jack Ü, Skrillex & Diplo",
+       "album": "Skrillex and Diplo present Jack Ü",
+       "durationMs": 250286,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9a/5d/69/9a5d6917-172a-63da-a911-aaa723ef0b21/mzaf_12979623525508345370.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/where-are-%C3%BC-now-with-justin-bieber-feat-justin-bieber/971262235?i=971262282&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b3/ea/21/b3ea217e-d5d0-4db7-5942-15cdff5ad68d/075679927354.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1513872008",
+       "title": "Looking for Me",
+       "artist": "Paul Woolford, Diplo & Kareen Lomax",
+       "album": "Looking for Me - Single",
+       "durationMs": 211452,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c9/96/17/c9961710-57ee-dcc0-970b-3cb0ea58c761/mzaf_18195396228590206340.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/looking-for-me/1513871854?i=1513872008&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f4/fa/17/f4fa1701-168a-d7cf-3b23-115c837f0568/886448498063.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1501926638",
+       "title": "On My Mind",
+       "artist": "Diplo & SIDEPIECE",
+       "album": "On My Mind - Single",
+       "durationMs": 189268,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ba/3e/5c/ba3e5ca4-d999-da69-4fe9-90461c3fb3cc/mzaf_10319262996372395103.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/on-my-mind/1501926636?i=1501926638&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d7/b0/25/d7b02559-d7e5-1f59-96d1-edd19f7ccee1/190295247461.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_02a0b9c9-4",
+     "qlooId": "8C215FA9-DD4E-4A87-BC72-578887686325",
+     "artist": "Calvin Harris",
+     "tracks": [
+      {
+       "id": "563923509",
+       "title": "Feel So Close (Radio Edit)",
+       "artist": "Calvin Harris",
+       "album": "18 Months (Deluxe Edition)",
+       "durationMs": 206413,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7e/ab/a0/7eaba0bb-1c08-abcd-e685-571f20639e08/mzaf_11839448058287270683.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/feel-so-close-radio-edit/563923351?i=563923509&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f6/86/f7/f686f726-a8d6-ed60-b012-02684566e901/dj.vifysolm.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1811333176",
+       "title": "Blessings",
+       "artist": "Calvin Harris & Clementine Douglas",
+       "album": "Blessings - Single",
+       "durationMs": 219650,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/87/4d/1e/874d1eff-9edf-574e-3ae2-48d899ea3cf1/mzaf_16909187682558851985.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/blessings/1811333156?i=1811333176&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/6d/db/806ddb68-79b2-bacd-8441-eba07b192e59/196873126555.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "922876189",
+       "title": "Summer",
+       "artist": "Calvin Harris",
+       "album": "Motion",
+       "durationMs": 222533,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/32/f1/c332f138-aa3c-52b8-c414-e85111b58bf5/mzaf_12226515580236242706.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/summer/922876176?i=922876189&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/da/50/cc/da50cc80-3515-a38d-369b-0d700ffd249d/886444820448.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "563923516",
+       "title": "Sweet Nothing (feat. Florence Welch)",
+       "artist": "Calvin Harris",
+       "album": "18 Months (Deluxe Edition)",
+       "durationMs": 212560,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/53/b1/51/53b15107-7beb-9d9f-8522-42d2137bd76f/mzaf_10623855419780259442.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sweet-nothing-feat-florence-welch/563923351?i=563923516&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f6/86/f7/f686f726-a8d6-ed60-b012-02684566e901/dj.vifysolm.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "563923521",
+       "title": "Thinking About You (feat. Ayah Marar)",
+       "artist": "Calvin Harris",
+       "album": "18 Months (Deluxe Edition)",
+       "durationMs": 247933,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e8/46/5f/e8465fc4-8a74-dcab-7933-dc16ed0c5ecf/mzaf_3952247523293355858.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/thinking-about-you-feat-ayah-marar/563923351?i=563923521&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f6/86/f7/f686f726-a8d6-ed60-b012-02684566e901/dj.vifysolm.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_229df88a-e",
+     "qlooId": "E98AC92B-C5F4-4340-94E3-075E354A8540",
+     "artist": "Jay Sean",
+     "tracks": [
+      {
+       "id": "271789225",
+       "title": "Ride It (Original)",
+       "artist": "Jay Sean",
+       "album": "Ride It - EP",
+       "durationMs": 192640,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3d/03/e4/3d03e4d0-e4bd-a17a-2518-1c53364c5259/mzaf_9479220943942401414.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/ride-it-original/271789119?i=271789225&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/1f/50/e2/mzi.lvpufphk.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1443234919",
+       "title": "Do You Remember (feat. Sean Paul & Lil Jon)",
+       "artist": "Sean Paul, Jay Sean & Lil Jon",
+       "album": "R&B In the Mix 2010",
+       "durationMs": 208307,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/49/4c/b8/494cb8f8-d3fc-5cee-943b-6b66c33e544b/mzaf_7266421079686079888.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/do-you-remember-feat-sean-paul-lil-jon/1443233859?i=1443234919&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/b4/e2/b4/b4e2b46d-f80e-8471-de03-88bd8dca64a3/10UMGIM25093.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "724609680",
+       "title": "Eyes On You (Radio Mix)",
+       "artist": "Jay Sean",
+       "album": "Me Against Myself",
+       "durationMs": 190493,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/aa/65/9c/aa659c7c-5f8f-33b9-a4da-b4c19e041ed2/mzaf_5959735940207686985.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/eyes-on-you-radio-mix/724609081?i=724609680&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/e9/0d/b1/e90db1c4-8437-fd94-9bf4-c158db2ed1ff/mzm.bxgqqomd.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1445283797",
+       "title": "2012 (It Ain't the End) [feat. Nicki Minaj]",
+       "artist": "Jay Sean",
+       "album": "2012 (It Ain't the End) [feat. Nicki Minaj] - Single",
+       "durationMs": 222200,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/db/fa/b9dbfaa4-ed10-9fc2-89ff-5ae57831e7e8/mzaf_11325518842887932144.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/2012-it-aint-the-end-feat-nicki-minaj/1445283793?i=1445283797&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/40/4b/f0/404bf0d9-3ab8-2b05-ae83-7266f0c04e1b/00602527493251.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1444493879",
+       "title": "Maybe",
+       "artist": "Jay Sean",
+       "album": "My Own Way (Deluxe)",
+       "durationMs": 201720,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/4d/49/ec4d492a-9ba3-f91c-8b1c-2d4cdea63abd/mzaf_8351603227255405003.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/maybe/1444493868?i=1444493879&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/63/32/cb/6332cbab-eafb-f087-c574-3c1239b18a89/5037300757797.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_d3e2db9b-2",
+     "qlooId": "58AD10F7-1D94-4C14-9473-9D8F950D05C5",
+     "artist": "Professor Green",
+     "tracks": [
+      {
+       "id": "1812006095",
+       "title": "On My Way (feat. Zdot & Kara Marni)",
+       "artist": "Professor Green",
+       "album": "On My Way (feat. Zdot & Kara Marni) - Single",
+       "durationMs": 191636,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1a/dd/11/1add1183-dcf1-c174-5c10-f943ce83b564/mzaf_2154226808161961463.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/on-my-way-feat-zdot-kara-marni/1812006090?i=1812006095&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/a7/c5/e2a7c59f-c419-250a-194c-5163acefe60a/659.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440597258",
+       "title": "Photographs",
+       "artist": "Professor Green & Rag'n'Bone Man",
+       "album": "Photographs - Single",
+       "durationMs": 212967,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/75/a5/e1/75a5e1da-e68b-f625-7461-5f3f3aa4d86a/mzaf_1039604282326204292.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/photographs/1440597257?i=1440597258&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/37/19/9a/37199ae6-c165-c332-288b-3e6aa031b5cc/886447410493.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "720117185",
+       "title": "Never Be a Right Time",
+       "artist": "Professor Green",
+       "album": "At Your Inconvenience",
+       "durationMs": 200695,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/09/16/f9/0916f910-b060-0f03-1d4b-ac77175e0fd6/mzaf_11006469317750987813.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/never-be-a-right-time/720116773?i=720117185&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/da/17/70/da17704e-237c-da28-de79-b7cdfb4215e1/05099967933655.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1442346410",
+       "title": "Little Secrets (feat. Mr. Probz)",
+       "artist": "Professor Green",
+       "album": "Growing Up In Public",
+       "durationMs": 238520,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/34/32/96/34329630-103f-b3fa-f75d-ec5abce4959b/mzaf_10605715088596690207.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/little-secrets-feat-mr-probz/1442346365?i=1442346410&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/12/96/28/1296288c-5e20-5de1-9cb9-3ac3c5bbc10a/00602537934744.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1473620098",
+       "title": "Matters of the Heart",
+       "artist": "Professor Green",
+       "album": "Matters of the Heart - Single",
+       "durationMs": 184992,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cb/3a/91/cb3a9117-c8eb-25f4-dfab-c2fa23854ea9/mzaf_11486206406984833767.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/matters-of-the-heart/1473619975?i=1473620098&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/f7/a8/b4/f7a8b470-8788-94da-f250-295146626a4f/194491114671.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "halftime"
+    },
+    {
+     "itemId": "i_cebd6880-7",
+     "qlooId": "78937FBC-4FEB-47AE-A690-B9C80304D224",
+     "artist": "PAZ",
+     "tracks": [],
+     "source": "plan",
+     "slotKey": "halftime"
+    },
+    {
+     "itemId": "i_71929884-b",
+     "qlooId": "4A39ED1A-CE8E-4A2F-B73B-B8CC28D2A030",
+     "artist": "Vice",
+     "tracks": [],
+     "source": "plan",
+     "slotKey": "halftime"
+    },
+    {
+     "itemId": "i_f1e6efb2-c",
+     "qlooId": "DF25CB7F-69E5-4F49-9FF4-5CF7A1A40935",
+     "artist": "K Koke",
+     "tracks": [
+      {
+       "id": "961652925",
+       "title": "Turn Back (feat. Maverick Sabre)",
+       "artist": "K Koke",
+       "album": "Turn Back (feat. Maverick Sabre) - Single",
+       "durationMs": 229225,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/44/2c/7b/442c7b17-8471-a693-3db0-4cf19abcd125/mzaf_15797820592401964239.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/turn-back-feat-maverick-sabre/961652923?i=961652925&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/5c/c4/c4/5cc4c41f-a2aa-173d-8bb7-95bf0781a2d6/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "961651602",
+       "title": "My Time (feat. Bridget Kelly)",
+       "artist": "K Koke",
+       "album": "My Time (feat. Bridget Kelly) - Single",
+       "durationMs": 235173,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/00/73/91/00739158-1d8e-f8f7-d196-7c2f53760188/mzaf_4663725034513839385.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/my-time-feat-bridget-kelly/961651601?i=961651602&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/4a/28/91/4a2891b8-548d-0932-7bdf-675b977bf1b9/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1862616308",
+       "title": "Most High",
+       "artist": "Abel Miller & K Koke",
+       "album": "Most High - Single",
+       "durationMs": 216590,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/c0/3a/bcc03a88-0d06-cf57-4e5a-87cdeb001d7f/mzaf_14609951215361146983.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/most-high/1862616303?i=1862616308&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/e5/88/2ee588f5-2131-f543-7018-914df9ce8e45/199316412550_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1623117057",
+       "title": "Trouble",
+       "artist": "Deep Jandu, K Koke & Gangis Khan",
+       "album": "Trouble - Single",
+       "durationMs": 198333,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/5a/99/16/5a991616-0829-445a-5fd4-8cb46511c097/mzaf_1849260345828785936.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/trouble/1623117056?i=1623117057&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/cb/4e/f2/cb4ef24d-8089-4417-b023-a36fda80d621/5059552409477.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1841295330",
+       "title": "Hearing you call (Radio Edit)",
+       "artist": "Daniel Grace, Anthony Russell & K Koke",
+       "album": "Hearing you call (Radio Edit) - Single",
+       "durationMs": 202893,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/15/ad/0b15ad9f-7beb-ef3e-c7ab-2dda6a8b2b9b/mzaf_13783808069088946895.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hearing-you-call-radio-edit/1841295329?i=1841295330&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/35/17/713517a0-46ec-eef9-6f65-a10c9616ca7c/artwork.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "halftime"
+    }
+   ],
+   "playlists": [
+    {
+     "slotKey": "walk_in",
+     "label": "Gates & warm-up playlist",
+     "timeRange": "15:00–16:15",
+     "minutes": 75,
+     "filledMinutes": 76,
+     "entries": [
+      {
+       "at": "15:00",
+       "itemId": "i_985c8811-b",
+       "track": {
+        "id": "863835363",
+        "title": "Happy (From \"Despicable Me 2\")",
+        "artist": "Pharrell Williams",
+        "album": "G I R L",
+        "durationMs": 233307,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/a0/19/eda019cf-2794-66d1-208d-2e2e74c26c3d/mzaf_16469762943852039623.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/happy-from-despicable-me-2/863835302?i=863835363&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/76/ff/5e/76ff5ee0-7ab4-2ac2-2598-486a9ccc06e1/886444516877.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:04",
+       "itemId": "i_b452394c-9",
+       "track": {
+        "id": "1440896009",
+        "title": "Only Girl (In The World)",
+        "artist": "Rihanna",
+        "album": "Loud (Deluxe)",
+        "durationMs": 235493,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/58/bd/6f/58bd6f05-45d7-76d7-bae3-6d453e00b5cc/mzaf_1937910784700207272.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/only-girl-in-the-world/1440895867?i=1440896009&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:08",
+       "itemId": "i_77a809a1-d",
+       "track": {
+        "id": "693322523",
+        "title": "Wonderman (feat. Ellie Goulding)",
+        "artist": "Tinie Tempah & Ellie Goulding",
+        "album": "Disc-Overy (Deluxe)",
+        "durationMs": 219133,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9d/26/2a/9d262ab7-3467-88ba-5289-ad8413f38a03/mzaf_9090371854100213519.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/wonderman-feat-ellie-goulding/693320619?i=693322523&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0e/8f/2f/0e8f2fc0-b9ab-f5cb-ad4f-7bcd72c4eb84/5099908753953_1535x1535_300dpi.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:11",
+       "itemId": "i_b7d38e56-b",
+       "track": {
+        "id": "1442260187",
+        "title": "Bang Bang",
+        "artist": "will.i.am",
+        "album": "#willpower (Deluxe)",
+        "durationMs": 279031,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/33/85/29/33852915-a4ad-8224-1e41-8a71bb51350a/mzaf_10155372142174259699.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/bang-bang/1442258237?i=1442260187&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/99/25/d4/9925d475-1ef4-a536-d45d-adb8101ef539/13UMGIM26865.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:16",
+       "itemId": "i_ea092739-0",
+       "track": {
+        "id": "1608240855",
+        "title": "Don’t Forget My Love",
+        "artist": "Diplo & Miguel",
+        "album": "Diplo",
+        "durationMs": 199091,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/20/13/f1/2013f1bb-b7bd-1efa-3343-8a964b7bb4b2/mzaf_6975505765287640169.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/dont-forget-my-love/1608240848?i=1608240855&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3f/92/c8/3f92c890-9642-2783-b43d-a73fba33f5b2/190296245053.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:19",
+       "itemId": "i_02a0b9c9-4",
+       "track": {
+        "id": "563923509",
+        "title": "Feel So Close (Radio Edit)",
+        "artist": "Calvin Harris",
+        "album": "18 Months (Deluxe Edition)",
+        "durationMs": 206413,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7e/ab/a0/7eaba0bb-1c08-abcd-e685-571f20639e08/mzaf_11839448058287270683.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/feel-so-close-radio-edit/563923351?i=563923509&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f6/86/f7/f686f726-a8d6-ed60-b012-02684566e901/dj.vifysolm.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:23",
+       "itemId": "i_229df88a-e",
+       "track": {
+        "id": "271789225",
+        "title": "Ride It (Original)",
+        "artist": "Jay Sean",
+        "album": "Ride It - EP",
+        "durationMs": 192640,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3d/03/e4/3d03e4d0-e4bd-a17a-2518-1c53364c5259/mzaf_9479220943942401414.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/ride-it-original/271789119?i=271789225&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/1f/50/e2/mzi.lvpufphk.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:26",
+       "itemId": "i_985c8811-b",
+       "track": {
+        "id": "1010892001",
+        "title": "Freedom",
+        "artist": "Pharrell Williams",
+        "album": "Freedom - Single",
+        "durationMs": 163227,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/ad/a2/2fada250-c5bc-9deb-bbf3-fde0ed5157c7/mzaf_7491567234686946996.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/freedom/1010891982?i=1010892001&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/96/76/88/96768825-4232-88aa-46ff-bd525ec21d29/886445349689.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:29",
+       "itemId": "i_b452394c-9",
+       "track": {
+        "id": "1440764848",
+        "title": "Disturbia",
+        "artist": "Rihanna",
+        "album": "Good Girl Gone Bad (Reloaded - UK & Oz CD)",
+        "durationMs": 238573,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/45/b6/c345b610-1f84-c1b2-e305-7fe6861b9a8e/mzaf_15147323973101262026.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/disturbia/1440764093?i=1440764848&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a1/b1/4f/a1b14fdc-3918-bfc5-5533-6e8beafaede6/08UMGIM10017.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:33",
+       "itemId": "i_77a809a1-d",
+       "track": {
+        "id": "1203763562",
+        "title": "Not Letting Go (feat. Jess Glynne)",
+        "artist": "Tinie Tempah",
+        "album": "Youth",
+        "durationMs": 229013,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/97/ba/7d/97ba7df2-5c82-51bb-1376-9fd62cc9c62d/mzaf_4305457346524121385.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/not-letting-go-feat-jess-glynne/1203763487?i=1203763562&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f2/d6/71/f2d6718c-cac4-45f2-ed02-43b4f7243bda/190295839444.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:37",
+       "itemId": "i_b7d38e56-b",
+       "track": {
+        "id": "1442259401",
+        "title": "#thatPOWER (feat. Justin Bieber)",
+        "artist": "will.i.am",
+        "album": "#willpower (Deluxe)",
+        "durationMs": 279504,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/aa/c1/8d/aac18d77-6032-eeb0-23c3-9d169726c265/mzaf_8322269751596453775.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/thatpower-feat-justin-bieber/1442258237?i=1442259401&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/99/25/d4/9925d475-1ef4-a536-d45d-adb8101ef539/13UMGIM26865.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:41",
+       "itemId": "i_ea092739-0",
+       "track": {
+        "id": "1330564507",
+        "title": "Be Right There",
+        "artist": "Diplo & Sleepy Tom",
+        "album": "Be Right There - Single",
+        "durationMs": 237051,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/89/58/db/8958dbb6-d5ab-8f05-732b-f242f2c081b9/mzaf_4561359042423063701.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/be-right-there/1330564505?i=1330564507&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/90/35/fe/9035fe90-c952-9cf4-5c9e-93dbf5ecd072/5060421562759_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:45",
+       "itemId": "i_02a0b9c9-4",
+       "track": {
+        "id": "1811333176",
+        "title": "Blessings",
+        "artist": "Calvin Harris & Clementine Douglas",
+        "album": "Blessings - Single",
+        "durationMs": 219650,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/87/4d/1e/874d1eff-9edf-574e-3ae2-48d899ea3cf1/mzaf_16909187682558851985.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/blessings/1811333156?i=1811333176&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/6d/db/806ddb68-79b2-bacd-8441-eba07b192e59/196873126555.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:49",
+       "itemId": "i_229df88a-e",
+       "track": {
+        "id": "1443234919",
+        "title": "Do You Remember (feat. Sean Paul & Lil Jon)",
+        "artist": "Sean Paul, Jay Sean & Lil Jon",
+        "album": "R&B In the Mix 2010",
+        "durationMs": 208307,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/49/4c/b8/494cb8f8-d3fc-5cee-943b-6b66c33e544b/mzaf_7266421079686079888.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/do-you-remember-feat-sean-paul-lil-jon/1443233859?i=1443234919&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/b4/e2/b4/b4e2b46d-f80e-8471-de03-88bd8dca64a3/10UMGIM25093.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:52",
+       "itemId": "i_985c8811-b",
+       "track": {
+        "id": "1750124164",
+        "title": "Double Life (From \"Despicable Me 4\")",
+        "artist": "Pharrell Williams",
+        "album": "Double Life (From \"Despicable Me 4\") - Single",
+        "durationMs": 190782,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/20/42/7b/20427b63-bbef-3878-2ebf-9c3a75170647/mzaf_1761255886791017299.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/double-life-from-despicable-me-4/1750124157?i=1750124164&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/a2/ab/97a2abed-940c-3524-db0a-f1a43f27b7f6/196872103007.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "15:56",
+       "itemId": "i_b452394c-9",
+       "track": {
+        "id": "1440867324",
+        "title": "Pon de Replay",
+        "artist": "Rihanna",
+        "album": "Music of the Sun",
+        "durationMs": 247116,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0e/71/b8/0e71b840-af6b-5fb0-3b3c-324fa26c62ff/mzaf_2719173417825269311.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/pon-de-replay/1440867092?i=1440867324&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2f/89/a4/2f89a4e5-83c4-7cc8-93d6-99b0d8283a1f/16UMGIM58839.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "16:00",
+       "itemId": "i_77a809a1-d",
+       "track": {
+        "id": "1708392429",
+        "title": "R.I.P.",
+        "artist": "Rita Ora & Tinie Tempah",
+        "album": "R.I.P. - EP",
+        "durationMs": 228920,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/ee/a7/a5eea748-8e89-c75e-de33-030f192057be/mzaf_4547155740015861621.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/r-i-p/1708392423?i=1708392429&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a0/b0/1c/a0b01c74-3be4-5118-9ccb-3c4b3eed1789/23UMGIM68217.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "16:03",
+       "itemId": "i_b7d38e56-b",
+       "track": {
+        "id": "1445061899",
+        "title": "Birthday (feat. Cody Wise)",
+        "artist": "will.i.am",
+        "album": "Birthday (feat. Cody Wise) - Single",
+        "durationMs": 252496,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/d9/a6/bdd9a646-598c-776b-96dc-b1fc759c39e9/mzaf_9957180564193363760.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/birthday-feat-cody-wise/1445061893?i=1445061899&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/24/ea/3f/24ea3f55-29c0-8247-0f3c-5d654c42e224/00602537874729.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "16:08",
+       "itemId": "i_ea092739-0",
+       "track": {
+        "id": "971262282",
+        "title": "Where Are Ü Now (with Justin Bieber) [feat. Justin Bieber]",
+        "artist": "Jack Ü, Skrillex & Diplo",
+        "album": "Skrillex and Diplo present Jack Ü",
+        "durationMs": 250286,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9a/5d/69/9a5d6917-172a-63da-a911-aaa723ef0b21/mzaf_12979623525508345370.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/where-are-%C3%BC-now-with-justin-bieber-feat-justin-bieber/971262235?i=971262282&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b3/ea/21/b3ea217e-d5d0-4db7-5942-15cdff5ad68d/075679927354.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "16:12",
+       "itemId": "i_02a0b9c9-4",
+       "track": {
+        "id": "922876189",
+        "title": "Summer",
+        "artist": "Calvin Harris",
+        "album": "Motion",
+        "durationMs": 222533,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/32/f1/c332f138-aa3c-52b8-c414-e85111b58bf5/mzaf_12226515580236242706.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/summer/922876176?i=922876189&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/da/50/cc/da50cc80-3515-a38d-369b-0d700ffd249d/886444820448.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    }
+   ],
+   "skippedExplicit": 0,
+   "notes": [
+    "PAZ: no clean songs found in Apple's GB catalogue; pick songs by hand.",
+    "Vice: no clean songs found in Apple's GB catalogue; pick songs by hand."
+   ],
+   "createdAt": "2026-10-30T15:25:36.932Z"
   }
  },
  "ledger": [

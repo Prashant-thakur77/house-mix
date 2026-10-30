@@ -101,7 +101,12 @@ function MapBody({ map }: { map: Heatmap }) {
   return (
     <div className="grid gap-3 lg:grid-cols-[1fr_15rem]">
       <div className="relative min-w-0">
-        <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label={`Qloo heatmap of ${map.within}: ${cells.length} areas${multi ? `, ${map.overlap.length} strong for every side` : ""}. The table below lists every area.`}>
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          className="h-auto w-full"
+          role="img"
+          aria-label={`Qloo heatmap of ${map.within}: ${cells.length} areas${multi ? `, ${map.overlap.length} strong for every side` : ""}. The table below lists every area.`}
+        >
           {rings.map((k) => (
             <g key={k}>
               <circle cx={W / 2} cy={H / 2} r={k * scale} fill="none" stroke="var(--border)" strokeDasharray="3 4" />
@@ -115,9 +120,11 @@ function MapBody({ map }: { map: Heatmap }) {
           <text x={W / 2 + 4} y={14} className="fill-muted-foreground text-[10px]">
             N
           </text>
-          {[...cells].sort((a, b) => a.max - b.max).map((c) => (
-            <Glyph key={c.id} c={c} scale={scale} active={c.id === hover} onHover={setHover} />
-          ))}
+          {[...cells]
+            .sort((a, b) => a.max - b.max)
+            .map((c) => (
+              <Glyph key={c.id} c={c} scale={scale} active={c.id === hover} onHover={setHover} />
+            ))}
           <circle cx={W / 2} cy={H / 2} r={3} fill="var(--foreground)" />
         </svg>
         {hovered ? (
@@ -246,7 +253,8 @@ export function CrowdMap({ show, onHeatmap }: { show: Show; onHeatmap: (h: Heatm
             <MapPinned className="size-4 text-muted-foreground" aria-hidden /> Where the crowd&apos;s taste concentrates
           </h2>
           <p className="text-small text-muted-foreground">
-            Areas of {map?.within ?? show.input.city} where each side&apos;s taste concentrates, from one <span className="font-mono">qloo_where_popular</span> call per side. Use it for street teams, flyering and pre-show partner bars.
+            Areas of {map?.within ?? show.input.city} where each side&apos;s taste concentrates, from one <span className="font-mono">qloo_where_popular</span> call per side. Use it for street teams,
+            flyering and pre-show partner bars.
           </p>
         </div>
         {map ? (

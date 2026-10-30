@@ -12,8 +12,9 @@ import { getStore } from "./store/store.ts";
 import { confirmEntity, createShow, getShow, HttpError, listShows, refineEntity, saveShow } from "./shows/service.ts";
 import { getRun, isEndMarker, startRun, subscribe } from "./shows/runs.ts";
 import { addProposal, approveConfident, approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
-import { planCsv } from "./exports/csv.ts";
-import { runOfShowPdf, sponsorPdf } from "./exports/pdf.tsx";
+import { planCsv, playlistCsv, playlistM3u } from "./exports/csv.ts";
+import { cueSheetPdf, runOfShowPdf, sponsorPdf } from "./exports/pdf.tsx";
+import { musicFor } from "./insights/music.ts";
 import { buildBriefing } from "./briefing/briefing.ts";
 import { readAudio, ttsStatus } from "./briefing/tts.ts";
 import { heatmapFor } from "./insights/heatmap.ts";
@@ -136,6 +137,29 @@ export async function buildApp(): Promise<FastifyInstance> {
     const show = await getShow(req.params.id);
     if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
     return sendFile(reply, "application/pdf", `house-mix-${slug(show.title)}-v${show.version}.pdf`, await runOfShowPdf(show));
+  });
+  // Hear the night: real songs for the artist picks and timed playlists for the music slots (Apple's catalogue, no key).
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/music", { config: { rateLimit: { max: 6, timeWindow: "1 minute" } } }, async (req) =>
+    musicFor(req.params.id, Boolean(req.body?.force)),
+  );
+  const withMusic = async (id: string) => {
+    const show = await getShow(id);
+    if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
+    if (!show.music) throw new HttpError(409, "Find the songs first (Hear the night).", "no_music");
+    return show;
+  };
+  app.get<{ Params: { id: string } }>("/shows/:id/playlist.csv", async (req, reply) => {
+    const show = await withMusic(req.params.id);
+    return sendFile(reply, "text/csv; charset=utf-8", `house-mix-${slug(show.title)}-playlists.csv`, playlistCsv(show));
+  });
+  app.get<{ Params: { id: string } }>("/shows/:id/playlist.m3u8", async (req, reply) => {
+    const show = await withMusic(req.params.id);
+    return sendFile(reply, "audio/x-mpegurl; charset=utf-8", `house-mix-${slug(show.title)}.m3u8`, playlistM3u(show));
+  });
+  app.get<{ Params: { id: string } }>("/shows/:id/cuesheet.pdf", async (req, reply) => {
+    const show = await getShow(req.params.id);
+    if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
+    return sendFile(reply, "application/pdf", `house-mix-${slug(show.title)}-cue-sheet.pdf`, await cueSheetPdf(show));
   });
   app.get<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/sponsor.pdf", async (req, reply) => {
     const show = await getShow(req.params.id);

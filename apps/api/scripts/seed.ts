@@ -5,6 +5,7 @@
  * Usage: tsx scripts/seed.ts [key ...]   (keys: concert comedy sports festival dining)
  *        tsx scripts/seed.ts --extras [--ask | --ask-only] [key ...]   re-runs the crowd map and "Without Qloo" (and/or only the sample question) on stored seeds
  *        tsx scripts/seed.ts --says [key ...]   rewrites each pick's "Qloo says" line from its stored calls (no Qloo or Claude calls)
+ *        tsx scripts/seed.ts --music [key ...]  finds the picks' songs and builds the playlists (Apple's catalogue; no Qloo or Claude calls)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -18,6 +19,7 @@ import { heatmapFor } from "../src/insights/heatmap.ts";
 import { counterfactualFor } from "../src/insights/counterfactual.ts";
 import { askShow } from "../src/insights/ask.ts";
 import { qlooSaysLine } from "../src/qloo/normalize.ts";
+import { buildMusic } from "../src/insights/music.ts";
 
 interface SeedDef {
   key: string;
@@ -164,6 +166,7 @@ function referencedLedger(show: Show, run: RunState, ledger: LedgerCall[]): Ledg
     for (const a of sl.alternatives) keep.add(a.callId);
   }
   for (const ev of show.plan?.crowd.evidence ?? []) keep.add(ev.callId);
+  for (const p of show.music?.picks ?? []) if (p.callId) keep.add(p.callId);
   for (const l of show.heatmap?.layers ?? []) keep.add(l.evidence.callId);
   for (const sl of show.counterfactual?.slots ?? []) {
     if (sl.rankEvidence) keep.add(sl.rankEvidence.callId);
@@ -185,6 +188,24 @@ if (process.argv.includes("--clean")) {
     const ledger = referencedLedger(seed.show, seed.run, seed.ledger);
     exportSeed(def.key, seed.show, ledger, seed.run);
     console.log(`${def.key}: ledger ${seed.ledger.length} → ${ledger.length}`);
+  }
+  process.exit(0);
+}
+
+if (process.argv.includes("--music")) {
+  for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
+    const file = path.join(outDir, `${def.key}.json`);
+    const seed = JSON.parse(fs.readFileSync(file, "utf8")) as { show: Show; ledger: LedgerCall[]; run: RunState };
+    seed.show.music = await buildMusic(seed.show);
+    // The fill calls (qloo_recommend on a short slot's picks) travel with the seed, as evidence.
+    const have = new Set(seed.ledger.map((c) => c.callId));
+    const fill = (await getStore().list<LedgerCall>("ledger")).filter((c) => c.runId === `music_${seed.show.id}` && !have.has(c.callId) && seed.show.music!.picks.some((p) => p.callId === c.callId));
+    exportSeed(def.key, seed.show, [...seed.ledger, ...fill], seed.run);
+    const m = seed.show.music;
+    console.log(
+      `${def.key}: ${m.picks.filter((p) => p.tracks.length).length}/${m.picks.length} artists with songs · ${m.playlists.map((p) => `${p.label} ${p.entries.length} songs/${p.filledMinutes} of ${p.minutes} min`).join(" · ")}${m.skippedExplicit ? ` · ${m.skippedExplicit} explicit left out` : ""}`,
+    );
+    for (const n of m.notes) console.log("   ", n);
   }
   process.exit(0);
 }

@@ -29,6 +29,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Kbd } from "@/components/ui/kbd";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PixelGlyph } from "@/components/pixel-glyph";
+import { HearTheNight, ListenProvider } from "@/components/console/listen";
+import { OutreachSheet } from "@/components/console/outreach";
+import { Readiness } from "@/components/console/readiness";
 
 const STATE_LABEL: Record<Show["status"], string> = {
   needs_confirmation: "Needs you",
@@ -41,7 +44,15 @@ const STATE_LABEL: Record<Show["status"], string> = {
 
 function templateSlots(show: Show): Slot[] {
   const t = MODES[show.input.mode];
-  return t.slots.map((s) => ({ key: s.key, label: s.label, timeRange: slotTime(show.input.doorsTime ?? "18:30", s.offsetMin, s.lengthMin), kind: s.kind, status: "running", items: [], alternatives: [] }));
+  return t.slots.map((s) => ({
+    key: s.key,
+    label: s.label,
+    timeRange: slotTime(show.input.doorsTime ?? "18:30", s.offsetMin, s.lengthMin),
+    kind: s.kind,
+    status: "running",
+    items: [],
+    alternatives: [],
+  }));
 }
 
 function liveState(show: Show, events: RunEvent[]): { slots: Slot[]; crowd?: CrowdRead } {
@@ -75,7 +86,11 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   });
   const [stored, setStored] = useState<RunEvent[]>([]);
   useEffect(() => {
-    if (show?.lastRunId && !streamId) api.run(show.lastRunId).then((r) => setStored(r.events)).catch(() => setStored([]));
+    if (show?.lastRunId && !streamId)
+      api
+        .run(show.lastRunId)
+        .then((r) => setStored(r.events))
+        .catch(() => setStored([]));
   }, [show?.lastRunId, streamId]);
 
   const streaming = Boolean(streamId) && stream.state !== "done" && stream.state !== "failed";
@@ -240,7 +255,12 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         <div className="min-w-0 md:flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <ModeChip mode={i.mode} />
-            <span className={cn("inline-flex h-6 items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 text-small font-medium", streaming ? "bg-signal-bg text-signal" : show.status === "needs_confirmation" ? "bg-status-needs-input-bg text-status-needs-input" : "bg-muted text-muted-foreground")}>
+            <span
+              className={cn(
+                "inline-flex h-6 items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 text-small font-medium",
+                streaming ? "bg-signal-bg text-signal" : show.status === "needs_confirmation" ? "bg-status-needs-input-bg text-status-needs-input" : "bg-muted text-muted-foreground",
+              )}
+            >
               {streaming ? <span className="size-1.5 rounded-full bg-signal animate-live" aria-hidden /> : null}
               {streaming ? "Agent planning" : STATE_LABEL[show.status]}
             </span>
@@ -251,7 +271,8 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           </h1>
           {show.plan?.headline ? <p className="mt-1 max-w-[90ch] text-body text-foreground">{show.plan.headline}</p> : null}
           <p className="text-small text-muted-foreground">
-            {i.venue} · {i.city} · {new Date(`${i.date}T00:00:00Z`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })} · {i.mode === "sports" ? "gates" : "doors"} <span className="font-mono">{i.doorsTime}</span> · {i.capacityTier}
+            {i.venue} · {i.city} · {new Date(`${i.date}T00:00:00Z`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })} ·{" "}
+            {i.mode === "sports" ? "gates" : "doors"} <span className="font-mono">{i.doorsTime}</span> · {i.capacityTier}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -271,6 +292,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
               <Radio data-icon="inline-start" /> Run the night
             </Button>
           ) : null}
+          {show.plan && !streaming ? <OutreachSheet show={show} /> : null}
           <AskSheet show={show} onShow={setShow} />
           <BriefingSheet show={show} onBriefing={(b) => setShow({ ...show, briefing: b })} />
           <ExportsMenu show={show} />
@@ -329,7 +351,9 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <Kicker>{pendingEntities.length ? "Step 2 of 2" : "Ready"}</Kicker>
-              <p className="mt-1 max-w-[60ch] text-small text-muted-foreground">The Planner sends a CrowdReader, one Programmer per slot, SponsorFit and a Wildcard agent. Every Qloo call streams into the trace; the Critic removes anything without a citation.</p>
+              <p className="mt-1 max-w-[60ch] text-small text-muted-foreground">
+                The Planner sends a CrowdReader, one Programmer per slot, SponsorFit and a Wildcard agent. Every Qloo call streams into the trace; the Critic removes anything without a citation.
+              </p>
             </div>
             <Button size="lg" onClick={start} disabled={starting || show.status === "needs_confirmation"} title={show.status === "needs_confirmation" ? "Confirm every name first" : undefined}>
               {starting ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <Play data-icon="inline-start" />} Build run-of-show
@@ -343,6 +367,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           <AlertDescription>The plan keeps running on the server; the trace resumes where it left off.</AlertDescription>
         </Alert>
       ) : null}
+      {show.plan && !streaming ? <Readiness show={show} onShow={setShow} /> : null}
       {streaming || show.plan ? <CrowdReadPanel crowd={crowd} streaming={streaming} /> : null}
       {show.plan && !streaming ? <CrowdMap show={show} onHeatmap={(h) => setShow((cur) => (cur ? { ...cur, heatmap: h } : cur))} /> : null}
       {slots.length ? (
@@ -351,15 +376,28 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
             <h2 id="ros-title" className="text-h2 font-semibold">
               Run of show
             </h2>
-            <span className="text-small text-muted-foreground">{items.length} picks · {items.filter((x) => x.isWildcard).length} stretch</span>
+            <span className="text-small text-muted-foreground">
+              {items.length} picks · {items.filter((x) => x.isWildcard).length} stretch
+            </span>
           </div>
           <div>
             {slots.map((s) => (
-              <SlotLane key={s.key} slot={s} running={streaming} selectedId={selectedId} focusedId={focusedId} busy={busy} readOnly={!editable} onSelect={(it) => setSelectedId(it.id)} onAction={editable ? act : undefined} />
+              <SlotLane
+                key={s.key}
+                slot={s}
+                running={streaming}
+                selectedId={selectedId}
+                focusedId={focusedId}
+                busy={busy}
+                readOnly={!editable}
+                onSelect={(it) => setSelectedId(it.id)}
+                onAction={editable ? act : undefined}
+              />
             ))}
           </div>
         </section>
       ) : null}
+      {show.plan && !streaming ? <HearTheNight show={show} onMusic={(m) => setShow((cur) => (cur ? { ...cur, music: m } : cur))} /> : null}
       {show.plan && !streaming ? <CounterfactualPanel show={show} onResult={(c) => setShow((cur) => (cur ? { ...cur, counterfactual: c } : cur))} /> : null}
       {!streaming ? <LimitationsPanel show={show} /> : null}
     </div>
@@ -404,7 +442,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   );
 
   return (
-    <>
+    <ListenProvider music={show.music}>
       <TopBar />
       {header}
       {!mounted ? (
@@ -415,7 +453,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         <main id="main" className="mx-auto grid h-[calc(100vh-8.5rem)] max-w-[1600px] grid-cols-[320px_1fr_400px] gap-0 xl:min-h-[640px]">
           {/* The trace is an ink HUD pane in both themes. */}
           <div className="dark min-h-0 border-r bg-card text-foreground">{trace}</div>
-          <div className="min-h-0 overflow-y-auto p-4">{center}</div>
+          <div className="min-h-0 overflow-y-auto p-4 pb-20">{center}</div>
           <aside className="min-h-0 overflow-y-auto border-l bg-card p-4" aria-label={selected ? "Evidence" : "Approval queue"}>
             {right}
           </aside>
@@ -447,13 +485,16 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         </main>
       ) : (
         <main id="main" className="overflow-x-hidden px-3 pb-16 pt-2">
-          {events.filter((e) => e.type === "tool_call").slice(-1).map((e) =>
-            e.type === "tool_call" ? (
-              <p key={e.callId} className="mb-2 truncate rounded-md bg-muted px-2 py-1 font-mono text-label text-muted-foreground" aria-live="polite">
-                latest: {e.tool} · {e.status}
-              </p>
-            ) : null,
-          )}
+          {events
+            .filter((e) => e.type === "tool_call")
+            .slice(-1)
+            .map((e) =>
+              e.type === "tool_call" ? (
+                <p key={e.callId} className="mb-2 truncate rounded-md bg-muted px-2 py-1 font-mono text-label text-muted-foreground" aria-live="polite">
+                  latest: {e.tool} · {e.status}
+                </p>
+              ) : null,
+            )}
           <Tabs defaultValue="plan" className="min-w-0">
             <TabsList className="sticky top-14 z-20 w-full">
               <TabsTrigger value="plan">
@@ -462,11 +503,15 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
               <TabsTrigger value="trace">Trace</TabsTrigger>
               <TabsTrigger value="queue">Queue{pendingCount ? ` (${pendingCount})` : ""}</TabsTrigger>
             </TabsList>
-            <TabsContent value="plan" className="min-w-0">{center}</TabsContent>
+            <TabsContent value="plan" className="min-w-0">
+              {center}
+            </TabsContent>
             <TabsContent value="trace" className="h-[70vh] rounded-lg border bg-card">
               {trace}
             </TabsContent>
-            <TabsContent value="queue" className="min-w-0">{show.plan ? right : <p className="p-3 text-small text-muted-foreground">No plan yet.</p>}</TabsContent>
+            <TabsContent value="queue" className="min-w-0">
+              {show.plan ? right : <p className="p-3 text-small text-muted-foreground">No plan yet.</p>}
+            </TabsContent>
           </Tabs>
           <Sheet open={Boolean(selected)} onOpenChange={(o) => !o && setSelectedId(undefined)}>
             <SheetContent side="bottom" className="max-h-[90vh] overflow-y-auto rounded-t-xl p-4">
@@ -504,6 +549,6 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           </dl>
         </DialogContent>
       </Dialog>
-    </>
+    </ListenProvider>
   );
 }

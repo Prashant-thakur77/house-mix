@@ -4494,6 +4494,527 @@
    },
    "costUsd": 0.0244,
    "createdAt": "2026-10-30T06:19:20.447Z"
+  },
+  "music": {
+   "source": "itunes",
+   "country": "US",
+   "picks": [
+    {
+     "itemId": "i_645b50c0-1",
+     "qlooId": "D07A3760-545D-4499-9E57-3EB056D43AF0",
+     "artist": "Lucius",
+     "tracks": [
+      {
+       "id": "1881438676",
+       "title": "Until We Get There",
+       "artist": "Lucius",
+       "album": "Wildewoman",
+       "durationMs": 208145,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c1/a7/67/c1a767b1-65d9-2a17-40db-fa1d1b8f635d/mzaf_9279964048227092539.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/until-we-get-there/1881438315?i=1881438676&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/c2/4f/fbc24fff-14e1-906b-11fa-947eb817fbae/112419.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1599395973",
+       "title": "Next to Normal",
+       "artist": "Lucius",
+       "album": "Second Nature",
+       "durationMs": 190965,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/bc/82/73bc8298-bb40-6090-409a-dc2a32953610/mzaf_4539488548206721611.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/next-to-normal/1599395964?i=1599395973&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/30/9a/e4/309ae481-ad7c-2346-5764-71a8b9840b79/810090090269.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "543327688",
+       "title": "Keep the Wolves Away",
+       "artist": "Uncle Lucius",
+       "album": "And You Are Me",
+       "durationMs": 275520,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/a1/d0/f7a1d0d7-9ed9-eeac-6e05-aafbfab98e4b/mzaf_17206019048103814221.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/keep-the-wolves-away/543327641?i=543327688&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bf/ff/f7/bffff762-f559-ca4b-2484-c77f37c7b637/4207.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1881438338",
+       "title": "Two of Us On the Run",
+       "artist": "Lucius",
+       "album": "Wildewoman",
+       "durationMs": 275628,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/75/ef/2e/75ef2e52-bd66-d318-7982-ec1d67cb3f1b/mzaf_7705760789461480376.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/two-of-us-on-the-run/1881438315?i=1881438338&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/c2/4f/fbc24fff-14e1-906b-11fa-947eb817fbae/112419.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1881362965",
+       "title": "Right Down The Line",
+       "artist": "Lucius",
+       "album": "NUDES",
+       "durationMs": 235872,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/d6/87/9ed6870b-a94d-829a-1fcb-b58b081dc879/mzaf_4185158802882119193.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/right-down-the-line/1881362960?i=1881362965&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/69/10/7469105b-f16f-d0c6-8402-3fa3a981593a/112108.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_c5153b61-2",
+     "qlooId": "AECCB030-6878-446D-A150-BD8A49EEEE4F",
+     "artist": "Rayland Baxter",
+     "tracks": [
+      {
+       "id": "1511063053",
+       "title": "Yellow Eyes",
+       "artist": "Rayland Baxter",
+       "album": "Imaginary Man",
+       "durationMs": 230787,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/36/1d/cc/361dccfa-aac8-72e8-20a6-822a384afb4f/mzaf_1395555329860220429.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/yellow-eyes/1511062802?i=1511063053&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7c/57/93/7c57936f-a211-9af9-739b-820cfd19a910/96.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "568153998",
+       "title": "Willy's Song",
+       "artist": "Rayland Baxter",
+       "album": "Feathers & Fishhooks",
+       "durationMs": 223547,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/89/2f/bd892f91-8ba7-6902-13a0-b572d54e1639/mzaf_15168895887548315026.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/willys-song/568153464?i=568153998&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ee/6f/72/ee6f72b0-dca2-be09-ea84-7fcecd57357e/rayLandBaxter_1500_24F07E4.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6792094675",
+       "title": "Haymaker",
+       "artist": "Rayland Baxter",
+       "album": "True Violet",
+       "durationMs": 232801,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7d/bd/0d/7dbd0d91-f47f-ecdf-bb3e-c98286fa27b8/mzaf_11025192522568456397.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/haymaker/6792094671?i=6792094675&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f1/dd/8a/f1dd8a81-3f6c-83cd-0e83-11dcc7e1f106/00880882709150_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6792094678",
+       "title": "Bolly Plateau",
+       "artist": "Rayland Baxter",
+       "album": "True Violet",
+       "durationMs": 282536,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/13/74/31/13743148-b20d-6994-a527-25e97e17d892/mzaf_15180696843897178337.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/bolly-plateau/6792094671?i=6792094678&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f1/dd/8a/f1dd8a81-3f6c-83cd-0e83-11dcc7e1f106/00880882709150_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "568153992",
+       "title": "Olivia",
+       "artist": "Rayland Baxter",
+       "album": "Feathers & Fishhooks",
+       "durationMs": 233693,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bc/f4/8d/bcf48d2b-e244-9956-5311-4c20de4e2146/mzaf_9692819895103223097.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/olivia/568153464?i=568153992&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ee/6f/72/ee6f72b0-dca2-be09-ea84-7fcecd57357e/rayLandBaxter_1500_24F07E4.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_ef1d1c6e-3",
+     "qlooId": "88E644E8-FE21-4D9A-8861-CF54254C8238",
+     "artist": "The Milk Carton Kids",
+     "tracks": [
+      {
+       "id": "1521363149",
+       "title": "Michigan",
+       "artist": "The Milk Carton Kids",
+       "album": "Prologue",
+       "durationMs": 330773,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e3/3b/47/e33b47c6-67c3-286c-1ded-1358b2d9e50d/mzaf_7257963093817008878.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/michigan/1521363142?i=1521363149&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/13/8a/7c/138a7c87-38a2-0f36-bec9-27673622e4f5/195081827315.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1860384655",
+       "title": "A Friend Like You",
+       "artist": "The Milk Carton Kids",
+       "album": "Lost Cause Lover Fool",
+       "durationMs": 367080,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/23/a8/ba/23a8ba91-233d-db07-299f-5e76eb86d7fd/mzaf_8621539155639485177.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/a-friend-like-you/1860384647?i=1860384655&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cc/8e/fb/cc8efb15-ad5e-69fc-ae92-dd921630c41d/199806333808.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1651063568",
+       "title": "When You're Gone",
+       "artist": "The Milk Carton Kids",
+       "album": "When You're Gone - Single",
+       "durationMs": 165320,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f3/e1/46/f3e14617-8569-395e-4f6e-7b61864bcf19/mzaf_8772347183521067873.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/when-youre-gone/1651063564?i=1651063568&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/d1/f3/82/d1f3829a-06f1-3364-6fb8-4fc199ce3662/197187255962.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1485072818",
+       "title": "Younger Years",
+       "artist": "The Milk Carton Kids",
+       "album": "All the Things That I Did and All the Things That I Didn't Do",
+       "durationMs": 229763,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/aa/21/23/aa212319-5746-fa9c-18c2-0418374dff08/mzaf_2050598318650691966.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/younger-years/1485072575?i=1485072818&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/5a/62/43/5a6243ef-27f6-3a74-6056-672082e8d56e/0045778751600.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1485062590",
+       "title": "Wish You Were Here",
+       "artist": "The Milk Carton Kids",
+       "album": "Wish You Were Here - Single",
+       "durationMs": 285719,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/54/e7/f754e763-12bd-7f98-b434-92a4c0976723/mzaf_270576320097745286.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/wish-you-were-here/1485062589?i=1485062590&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/ac/95/2b/ac952bce-4017-742c-e421-e27f747ac07e/0045778740895.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_2f14778d-5",
+     "qlooId": "C8543090-A342-4C40-80F9-1577454B9FF4",
+     "artist": "Bahamas",
+     "tracks": [
+      {
+       "id": "1469585281",
+       "title": "All The Time",
+       "artist": "Bahamas",
+       "album": "Bahamas is Afie",
+       "durationMs": 234921,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/0e/c7/1f0ec761-c9a7-ebc9-c82d-f4c21385f7e2/mzaf_15875169998167723317.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/all-the-time/1469585165?i=1469585281&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/e5/27/66e527d7-7054-73a5-c0a6-5b5690c5a8a8/14UMGIM22870.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1445887250",
+       "title": "Lost In the Light",
+       "artist": "Bahamas",
+       "album": "Barchords",
+       "durationMs": 236720,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/71/69/0a716979-ce64-6ba3-7079-7f10763d110c/mzaf_15688102830864917834.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/lost-in-the-light/1445887247?i=1445887250&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b0/2d/24/b02d24d6-6d48-fb59-eafb-1b2b83e5f58c/00602527942315.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440914364",
+       "title": "Way With Words",
+       "artist": "Bahamas",
+       "album": "Earthtones",
+       "durationMs": 260964,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/74/44/71/744471b5-eed4-0de5-0a66-b5fe9fd42f62/mzaf_18271643628507889369.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/way-with-words/1440913969?i=1440914364&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/4b/6d/e4/4b6de44f-778f-bb06-06b6-22351e854ae7/00602567459736.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1469585401",
+       "title": "All I've Ever Known",
+       "artist": "Bahamas",
+       "album": "Bahamas is Afie",
+       "durationMs": 375820,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/03/37/ab/0337ab24-8334-2b02-6434-5105504cc29b/mzaf_12111621579136691468.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/all-ive-ever-known/1469585165?i=1469585401&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/e5/27/66e527d7-7054-73a5-c0a6-5b5690c5a8a8/14UMGIM22870.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_bd395a25-7",
+     "qlooId": "461D94F8-77B3-4544-9796-D888A899048E",
+     "artist": "Shakey Graves",
+     "tracks": [
+      {
+       "id": "1750379769",
+       "title": "Tomorrow",
+       "artist": "Shakey Graves",
+       "album": "In Case You Missed It: 15 Years of Dualtone",
+       "durationMs": 240587,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2a/c4/44/2ac444b3-14c5-5100-085f-6eee2c07a582/mzaf_12146406503194206508.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/tomorrow/1750379761?i=1750379769&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/7c/81/e07c81fe-4e6b-478a-0ee4-3c3150987cf3/18551.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1752543387",
+       "title": "Dearly Departed (feat. Esmé Patterson)",
+       "artist": "Shakey Graves",
+       "album": "And the War Came",
+       "durationMs": 212800,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/94/bf/a7/94bfa78a-c9ed-ba15-c7bf-1562b891d50c/mzaf_11419136249574648468.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/dearly-departed-feat-esm%C3%A9-patterson/1752543285?i=1752543387&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/be/83/5d/be835de4-a951-6e21-67c5-2e415f415743/18531.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1780892874",
+       "title": "Roll the Bones (Audiotree Live Version)",
+       "artist": "Shakey Graves",
+       "album": "Shakey Graves on Audiotree Live (Session #1) - EP",
+       "durationMs": 291596,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/a8/07/11a80706-41bd-d0dd-a9ba-19986fd1b289/mzaf_11936666965317248335.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/roll-the-bones-audiotree-live-version/1780892873?i=1780892874&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1b/9a/a7/1b9aa756-daf7-ea11-e8a0-daadcfda2b17/889326558910.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1753109259",
+       "title": "Nobody's Fool",
+       "artist": "Shakey Graves",
+       "album": "Shakey Graves and the Horse He Rode In On (Nobody's Fool & the Donor Blues EP)",
+       "durationMs": 256736,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/5d/54/635d5429-2f6e-6a48-9e34-fdcace8a52d0/mzaf_13735159698543778071.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/nobodys-fool/1753109036?i=1753109259&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/de/34/13/de3413da-f979-1f7a-4aa2-c7ed37fdbefb/23014.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1780892878",
+       "title": "Late July (Audiotree Live Version)",
+       "artist": "Shakey Graves",
+       "album": "Shakey Graves on Audiotree Live (Session #1) - EP",
+       "durationMs": 363143,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/56/9a/cd/569acd40-f267-d31c-a6ef-68226d6fdcdc/mzaf_7219473955659946086.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/late-july-audiotree-live-version/1780892873?i=1780892878&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1b/9a/a7/1b9aa756-daf7-ea11-e8a0-daadcfda2b17/889326558910.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_28136d92-3",
+     "qlooId": "EC4971F5-EF3E-4B72-84B2-2AD18AF6B43B",
+     "artist": "Jamestown Revival",
+     "tracks": [
+      {
+       "id": "6765773873",
+       "title": "Juniper & Gin",
+       "artist": "Jamestown Revival",
+       "album": "Juniper & Gin - Single",
+       "durationMs": 193054,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/90/1d/9f/901d9f06-5ce5-3f71-4805-8ff9422e405e/mzaf_4015820144354795256.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/juniper-gin/6765773871?i=6765773873&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/bb/af/c6bbaf49-cddb-3a08-b3b9-4f3eb76acd58/820233296991.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1584875933",
+       "title": "Young Man",
+       "artist": "Jamestown Revival",
+       "album": "Young Man",
+       "durationMs": 246000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/77/2b/eb/772beb8b-b807-8090-7473-7560bd83d83b/mzaf_17752751014529216840.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/young-man/1584875794?i=1584875933&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/35/23/1d/35231d7a-4d89-afa7-7c81-b29cf127c97b/196292389296.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1445885190",
+       "title": "California (Cast Iron Soul)",
+       "artist": "Jamestown Revival",
+       "album": "Utah",
+       "durationMs": 252960,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a3/95/0f/a3950f39-266e-d815-dd7e-ea470adb4b67/mzaf_13756127655858444774.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/california-cast-iron-soul/1445884888?i=1445885190&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/12/d7/fc/12d7fcff-4451-0115-ded9-e4fd66c62575/14UMGIM38066.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6803187080",
+       "title": "Being Honest",
+       "artist": "Jamestown Revival",
+       "album": "Being Honest - Single",
+       "durationMs": 206147,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/9d/8e/c49d8e69-7ac5-56b1-0226-dd7e6c4d50e9/mzaf_11802350390575803408.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/being-honest/6803187077?i=6803187080&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/58/73/435873d0-c0bc-0edf-a92f-0fafeef21bb8/885288333961.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1445885193",
+       "title": "Golden Age",
+       "artist": "Jamestown Revival",
+       "album": "Utah",
+       "durationMs": 247320,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/64/37/2c/64372c14-eedb-cbc4-e3cc-9720c8bff4b5/mzaf_7733933290878250852.plus.aac.p.m4a",
+       "url": "https://music.apple.com/us/album/golden-age/1445884888?i=1445885193&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/12/d7/fc/12d7fcff-4451-0115-ded9-e4fd66c62575/14UMGIM38066.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    }
+   ],
+   "playlists": [
+    {
+     "slotKey": "walk_in",
+     "label": "Doors & room music",
+     "timeRange": "19:30–20:00",
+     "minutes": 30,
+     "filledMinutes": 31,
+     "entries": [
+      {
+       "at": "19:30",
+       "itemId": "i_645b50c0-1",
+       "track": {
+        "id": "1881438676",
+        "title": "Until We Get There",
+        "artist": "Lucius",
+        "album": "Wildewoman",
+        "durationMs": 208145,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c1/a7/67/c1a767b1-65d9-2a17-40db-fa1d1b8f635d/mzaf_9279964048227092539.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/until-we-get-there/1881438315?i=1881438676&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/c2/4f/fbc24fff-14e1-906b-11fa-947eb817fbae/112419.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:33",
+       "itemId": "i_c5153b61-2",
+       "track": {
+        "id": "1511063053",
+        "title": "Yellow Eyes",
+        "artist": "Rayland Baxter",
+        "album": "Imaginary Man",
+        "durationMs": 230787,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/36/1d/cc/361dccfa-aac8-72e8-20a6-822a384afb4f/mzaf_1395555329860220429.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/yellow-eyes/1511062802?i=1511063053&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7c/57/93/7c57936f-a211-9af9-739b-820cfd19a910/96.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:37",
+       "itemId": "i_ef1d1c6e-3",
+       "track": {
+        "id": "1521363149",
+        "title": "Michigan",
+        "artist": "The Milk Carton Kids",
+        "album": "Prologue",
+        "durationMs": 330773,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e3/3b/47/e33b47c6-67c3-286c-1ded-1358b2d9e50d/mzaf_7257963093817008878.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/michigan/1521363142?i=1521363149&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/13/8a/7c/138a7c87-38a2-0f36-bec9-27673622e4f5/195081827315.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:43",
+       "itemId": "i_2f14778d-5",
+       "track": {
+        "id": "1469585281",
+        "title": "All The Time",
+        "artist": "Bahamas",
+        "album": "Bahamas is Afie",
+        "durationMs": 234921,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/0e/c7/1f0ec761-c9a7-ebc9-c82d-f4c21385f7e2/mzaf_15875169998167723317.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/all-the-time/1469585165?i=1469585281&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/e5/27/66e527d7-7054-73a5-c0a6-5b5690c5a8a8/14UMGIM22870.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:47",
+       "itemId": "i_bd395a25-7",
+       "track": {
+        "id": "1750379769",
+        "title": "Tomorrow",
+        "artist": "Shakey Graves",
+        "album": "In Case You Missed It: 15 Years of Dualtone",
+        "durationMs": 240587,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2a/c4/44/2ac444b3-14c5-5100-085f-6eee2c07a582/mzaf_12146406503194206508.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/tomorrow/1750379761?i=1750379769&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/7c/81/e07c81fe-4e6b-478a-0ee4-3c3150987cf3/18551.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:51",
+       "itemId": "i_28136d92-3",
+       "track": {
+        "id": "6765773873",
+        "title": "Juniper & Gin",
+        "artist": "Jamestown Revival",
+        "album": "Juniper & Gin - Single",
+        "durationMs": 193054,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/90/1d/9f/901d9f06-5ce5-3f71-4805-8ff9422e405e/mzaf_4015820144354795256.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/juniper-gin/6765773871?i=6765773873&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/bb/af/c6bbaf49-cddb-3a08-b3b9-4f3eb76acd58/820233296991.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:54",
+       "itemId": "i_645b50c0-1",
+       "track": {
+        "id": "1599395973",
+        "title": "Next to Normal",
+        "artist": "Lucius",
+        "album": "Second Nature",
+        "durationMs": 190965,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/bc/82/73bc8298-bb40-6090-409a-dc2a32953610/mzaf_4539488548206721611.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/next-to-normal/1599395964?i=1599395973&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/30/9a/e4/309ae481-ad7c-2346-5764-71a8b9840b79/810090090269.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:57",
+       "itemId": "i_c5153b61-2",
+       "track": {
+        "id": "568153998",
+        "title": "Willy's Song",
+        "artist": "Rayland Baxter",
+        "album": "Feathers & Fishhooks",
+        "durationMs": 223547,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/89/2f/bd892f91-8ba7-6902-13a0-b572d54e1639/mzaf_15168895887548315026.plus.aac.p.m4a",
+        "url": "https://music.apple.com/us/album/willys-song/568153464?i=568153998&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ee/6f/72/ee6f72b0-dca2-be09-ea84-7fcecd57357e/rayLandBaxter_1500_24F07E4.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    }
+   ],
+   "skippedExplicit": 0,
+   "notes": [],
+   "createdAt": "2026-10-30T15:25:36.824Z"
   }
  },
  "ledger": [

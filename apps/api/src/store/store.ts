@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { config } from "../config.ts";
 
-export type Collection = "shows" | "runs" | "ledger" | "cache" | "ratings" | "briefings" | "spend";
+export type Collection = "shows" | "runs" | "ledger" | "cache" | "ratings" | "briefings" | "spend" | "itunes";
 
 /** Minimal document store. FileStore for local dev and CI, FirestoreStore in production. */
 export interface Store {

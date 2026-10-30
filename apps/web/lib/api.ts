@@ -1,4 +1,4 @@
-import type { AskAnswer, Briefing, Counterfactual, Heatmap, Health, QlooToolName, Show, ShowInput, RunState } from "@housemix/shared";
+import type { AskAnswer, Briefing, Counterfactual, Heatmap, Health, Music, QlooToolName, Show, ShowInput, RunState } from "@housemix/shared";
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787").replace(/\/$/, "");
 
@@ -100,6 +100,7 @@ export const api = {
   unlock: (id: string) => post<Show>(`/shows/${id}/unlock`),
   briefing: (id: string, force = false) => post<Briefing>(`/shows/${id}/briefing`, { force }),
   heatmap: (id: string, force = false) => post<Heatmap>(`/shows/${id}/heatmap`, { force }),
+  music: (id: string, force = false) => post<Music>(`/shows/${id}/music`, { force }),
   counterfactual: (id: string, force = false) => post<Counterfactual>(`/shows/${id}/counterfactual`, { force }),
   addProposal: (id: string, askId: string, proposalId: string) => post<Show>(`/shows/${id}/asks/${askId}/proposals/${proposalId}/add`),
   // Qloo can return one concept name under two tag categories; the table lists each name once per side.
@@ -114,6 +115,8 @@ export const api = {
 
 export const exportUrl = (id: string, kind: "pdf" | "csv") => `${API_URL}/shows/${id}/export.${kind}`;
 export const sponsorUrl = (id: string, itemId: string) => `${API_URL}/shows/${id}/items/${itemId}/sponsor.pdf`;
+export const playlistUrl = (id: string, kind: "csv" | "m3u8") => `${API_URL}/shows/${id}/playlist.${kind}`;
+export const cueSheetUrl = (id: string) => `${API_URL}/shows/${id}/cuesheet.pdf`;
 export const audioUrl = (path: string) => `${API_URL}${path}`;
 export const eventsUrl = (runId: string) => `${API_URL}/runs/${runId}/events`;
 

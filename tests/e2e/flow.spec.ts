@@ -160,7 +160,8 @@ test("run the night: the clock plays the plan, cues can be called, the venue scr
   await page.getByRole("button", { name: /start the show/i }).click();
   const stage = page.getByRole("region", { name: "On stage now" });
   await expect(stage.getByText(/now playing/i)).toBeVisible({ timeout: 10_000 });
-  await expect(stage.getByText(/synthesized cue/i)).toBeVisible();
+  // A real 30-second preview when House Mix found the artist's songs (live data), otherwise a synthesized cue.
+  await expect(stage.getByText(/synthesized cue|30-second preview/i)).toBeVisible();
   await page.getByRole("button", { name: /^pause$/i }).click();
   const first = page.getByRole("button", { name: /^mark called:/i }).first();
   await first.click();
@@ -183,4 +184,51 @@ test("dining mode: a restaurant and its theme resolve, and the seeded dinner ser
   await page.goto("/shows/seed-dining/live");
   await expect(page.getByText(/arrivals & early seating/i).first()).toBeVisible();
   await expect(page.getByRole("radio", { name: "F&B" })).toBeVisible();
+});
+
+test("get the night ready: a checklist from names to doors, and an outreach pack built from the evidence", async ({ page, context }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.goto("/shows/seed-sports");
+  const ready = page.getByRole("region", { name: /of \d+ done/ }).or(page.locator("section[aria-labelledby='ready-title']"));
+  await expect(ready.first()).toBeVisible();
+  await expect(page.getByText("Names confirmed with Qloo")).toBeVisible();
+  await expect(page.getByText("Partners contacted")).toBeVisible();
+  await page.getByRole("button", { name: /^Outreach/ }).click();
+  const sheet = page.getByRole("dialog", { name: "Outreach pack" });
+  await expect(sheet).toBeVisible();
+  const first = sheet.getByRole("article").first();
+  await expect(first).toContainText(/Qloo's taste data/);
+  // Base UI renders the link with a button role.
+  const mail = first.getByRole("button", { name: /open in email/i });
+  await expect(mail).toHaveAttribute("href", /^mailto:\?subject=/);
+  await first.getByRole("button", { name: /^copy/i }).click();
+  // Only a copy that worked counts as contacted, and what was copied is the message itself.
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(/Qloo's taste data/);
+  await page.keyboard.press("Escape");
+  await expect(page.getByText(/1 of \d+ messaged/)).toBeVisible();
+});
+
+test("hear the night: real songs per pick, playlists timed to the slots, exports for the venue", async ({ page, request }) => {
+  const live = process.env.QLOO_MODE === "live";
+  await page.goto("/shows/seed-dining");
+  await expect(page.getByRole("heading", { name: "The playlists, as real songs" })).toBeVisible();
+  const cue = await request.get(`${API}/shows/seed-dining/cuesheet.pdf`);
+  expect(cue.status()).toBe(200);
+  expect((await cue.body()).subarray(0, 4).toString()).toBe("%PDF");
+  if (!live) {
+    // Mock artists are fictional: the page says so instead of inventing songs.
+    await expect(page.getByText(/no songs to play/i)).toBeVisible();
+    expect((await request.get(`${API}/shows/seed-dining/playlist.csv`)).status()).toBe(409);
+    return;
+  }
+  const csv = await (await request.get(`${API}/shows/seed-dining/playlist.csv`)).text();
+  expect(csv.split("\n")[0]).toContain("apple_music");
+  expect(csv.split("\n").length).toBeGreaterThan(20);
+  await page.getByRole("button", { name: "Play the set" }).first().click();
+  const bar = page.getByRole("region", { name: "Now previewing" });
+  await expect(bar).toBeVisible();
+  await expect(bar).toContainText("30-second preview");
+  await expect(bar.getByRole("link", { name: /apple music/i })).toHaveAttribute("href", /music\.apple\.com/);
+  await bar.getByRole("button", { name: "Stop previews" }).click();
+  await expect(bar).toHaveCount(0);
 });

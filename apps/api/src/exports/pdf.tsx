@@ -224,6 +224,67 @@ function SponsorOnePager({ show, item }: { show: Show; item: PlanItem }) {
   );
 }
 
+const OWNER: Record<string, string> = { music: "Sound / DJ", act: "Stage manager", food: "F&B", brand: "Partnerships", local: "Front of house", split: "Front of house" };
+const mmss = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.round((ms % 60000) / 1000)).padStart(2, "0")}`;
+
+/** The night on paper for the crew: every slot in running order, who owns it, and what happens when; music slots as timed songs. */
+function CueSheet({ show }: { show: Show }) {
+  const i = show.input;
+  const playlist = (key: string) => show.music?.playlists.find((p) => p.slotKey === key);
+  const live = (it: PlanItem) => it.approval.state !== "swapped" && it.approval.state !== "rejected";
+  return (
+    <Document title={`Cue sheet: ${show.title}`} author="House Mix">
+      <Page size="A4" style={s.page}>
+        <Mark />
+        <Text style={s.eyebrow}>{MODES[i.mode].label} · cue sheet</Text>
+        <Text style={s.h1}>{show.title}</Text>
+        <Text style={s.meta}>
+          {i.venue}, {i.city} · {i.date} · doors {i.doorsTime}
+        </Text>
+        {show.qlooMode === "mock" ? <Text style={s.banner}>MOCK DATA: produced against fictional mock Qloo fixtures, not live Qloo results.</Text> : null}
+        <View style={s.box}>
+          <Text>
+            Songs are each picked artist's most popular recordings in Apple's catalogue. Play them through the venue's own licensed music service: a personal streaming account is not licensed for
+            public performance.
+          </Text>
+        </View>
+        {show.plan!.slots.map((slot) => {
+          const pl = playlist(slot.key);
+          return (
+            <View key={slot.key}>
+              <Text style={s.h2} minPresenceAhead={60}>
+                {slot.timeRange} · {slot.label} <Text style={s.chip}>{OWNER[slot.kind] ?? ""}</Text>
+              </Text>
+              {pl
+                ? pl.entries.map((e, n) => (
+                    <View key={n} style={s.row} wrap={false}>
+                      <Text style={s.time}>{e.at}</Text>
+                      <Text style={s.pick}>{e.track.artist}</Text>
+                      <Text style={s.body}>
+                        {e.track.title} <Text style={s.chip}>{mmss(e.track.durationMs)}</Text>
+                      </Text>
+                    </View>
+                  ))
+                : slot.items.filter(live).map((it) => (
+                    <View key={it.id} style={s.row} wrap={false}>
+                      <Text style={s.time}>{it.isWildcard ? "stretch" : it.pick.type}</Text>
+                      <Text style={s.pick}>{it.pick.name}</Text>
+                      <Text style={s.body}>{it.action || it.interpretation}</Text>
+                    </View>
+                  ))}
+            </View>
+          );
+        })}
+        <Footer show={show} />
+      </Page>
+    </Document>
+  );
+}
+
+export async function cueSheetPdf(show: Show): Promise<Buffer> {
+  return renderToBuffer(<CueSheet show={show} />);
+}
+
 export async function runOfShowPdf(show: Show): Promise<Buffer> {
   return renderToBuffer(<RunOfShow show={show} />);
 }

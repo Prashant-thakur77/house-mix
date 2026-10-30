@@ -684,6 +684,7 @@ type EvalSummary = {
   judgeV1: { wins: number; losses: number; ties: number } | null;
   evidence: { items: number; valid: number; criticDrops: number; l0Items: number; l0Unresolved: number; l0Ambiguous: number | null } | null;
   humanAb: { raters: number; wins: number; losses: number } | null;
+  value?: { brandsRepeated: number; brands: number; l0BrandsRepeated: number; l0Brands: number; tooBig: number; acts: number; l0TooBig: number; l0Acts: number } | null;
 };
 
 function TestedLive() {
@@ -693,6 +694,11 @@ function TestedLive() {
   if (s.evidence) cells.push({ value: `${s.evidence.valid}/${s.evidence.items}`, label: `Eval-plan picks with a valid live Qloo citation (the Critic removed ${s.evidence.criticDrops} more)` });
   if (s.evidence?.l0Ambiguous != null)
     cells.push({ value: `${s.evidence.l0Ambiguous}/${s.evidence.l0Items}`, label: "Claude-alone picks that are ambiguous in Qloo: a person must choose before they can be used" });
+  if (s.value)
+    cells.push({
+      value: `${s.value.brandsRepeated}/${s.value.brands}`,
+      label: `Sponsors repeated from one show to another (Claude alone: ${s.value.l0BrandsRepeated}/${s.value.l0Brands}). Openers bigger than the headliner: ${s.value.tooBig}/${s.value.acts} (Claude alone: ${s.value.l0TooBig}/${s.value.l0Acts})`,
+    });
   if (s.judge)
     cells.push({
       value: `${s.judge.wins}–${s.judge.losses}`,
@@ -709,7 +715,7 @@ function TestedLive() {
           Methods and the negative result →
         </a>
       </div>
-      <div className={cn("mt-4 grid grid-cols-2 gap-6", cells.length > 2 && "lg:grid-cols-4")}>
+      <div className={cn("mt-4 grid grid-cols-2 gap-6", cells.length > 2 && "lg:grid-cols-4", cells.length > 4 && "xl:grid-cols-5")}>
         {cells.map((c) => (
           <Big key={c.label} value={c.value} label={c.label} />
         ))}

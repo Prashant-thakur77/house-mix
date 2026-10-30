@@ -119,17 +119,24 @@ export function LivePage({ show }: { show: Show }) {
   const onNow = (s: Segment) => s.start <= t && t < s.end;
   const stage = segs.find((s) => onNow(s) && (s.kind === "music" || s.kind === "act"));
   const openNow = segs.filter((s) => onNow(s) && s.kind !== "music" && s.kind !== "act");
-  const nextUp = segs.filter((s) => (s.kind === "music" || s.kind === "act") && s.start >= (stage?.end ?? t) - 0.01).sort((a, b) => a.start - b.start).slice(0, 3);
+  const nextUp = segs
+    .filter((s) => (s.kind === "music" || s.kind === "act") && s.start >= (stage?.end ?? t) - 0.01)
+    .sort((a, b) => a.start - b.start)
+    .slice(0, 3);
   const cues = night.cues.map((c) => ({ ...c, at: adj(c.at) }));
   const nextCue = cues.find((c) => c.at > t && !done[c.id]);
   const sponsor = openNow.find((s) => s.kind === "brand");
 
-  // Audio follows the stage: a new track or set crossfades in; silence between.
+  // Audio follows the stage: the artist's real song (a 30-second preview) when House Mix found one, otherwise a cue
+  // synthesized in the crowd's style; silence between.
   const stageId = playing && stage?.audible ? stage.item.pick.qlooId : undefined;
+  const song = stage?.audible ? show.music?.picks.find((p) => p.itemId === stage.item.id)?.tracks.find((x) => x.previewUrl) : undefined;
+  const songUrl = playing ? song?.previewUrl : undefined;
   useEffect(() => {
     if (!synth) return;
-    synth.play(stageId ? styleFor(stageId, profile) : undefined);
-  }, [synth, stageId, profile]);
+    synth.preview(songUrl);
+    synth.play(stageId && !songUrl ? styleFor(stageId, profile) : undefined);
+  }, [synth, stageId, songUrl, profile]);
   useEffect(() => {
     if (synth) synth.volume = muted ? 0 : 0.7;
   }, [synth, muted]);
@@ -188,23 +195,38 @@ export function LivePage({ show }: { show: Show }) {
             <div className="font-dot text-[2.6rem] font-black leading-none tabular" aria-live="off">
               {fmt(t)}
             </div>
-            <Hud className="text-muted-foreground">
-              Show clock{totalDelay ? ` · running ${totalDelay} min late` : ""}
-            </Hud>
+            <Hud className="text-muted-foreground">Show clock{totalDelay ? ` · running ${totalDelay} min late` : ""}</Hud>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <button type="button" onClick={() => void toggle()} className="flex h-10 items-center gap-2 rounded-full bg-[#C8160D] px-4 text-[13px] font-semibold text-white hover:brightness-110" aria-pressed={playing}>
+            <button
+              type="button"
+              onClick={() => void toggle()}
+              className="flex h-10 items-center gap-2 rounded-full bg-[#C8160D] px-4 text-[13px] font-semibold text-white hover:brightness-110"
+              aria-pressed={playing}
+            >
               {playing ? <Pause className="size-4" aria-hidden /> : <Play className="size-4" aria-hidden />}
               {playing ? "Pause" : t > night.start ? "Resume" : "Start the show"}
             </button>
             <div role="radiogroup" aria-label="Clock speed" className="flex rounded-full border p-0.5">
               {SPEEDS.map((s) => (
-                <button key={s.v} type="button" role="radio" aria-checked={speed === s.v} onClick={() => setSpeed(s.v)} className={cn("hud rounded-full px-2.5 py-1", speed === s.v ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}>
+                <button
+                  key={s.v}
+                  type="button"
+                  role="radio"
+                  aria-checked={speed === s.v}
+                  onClick={() => setSpeed(s.v)}
+                  className={cn("hud rounded-full px-2.5 py-1", speed === s.v ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}
+                >
                   {s.label}
                 </button>
               ))}
             </div>
-            <button type="button" onClick={() => setDelays((d) => [...d, { from: t, minutes: 5 }])} className="hud flex h-8 items-center gap-1.5 rounded-full border px-3 hover:bg-muted" title="Push every cue from now on back by five minutes">
+            <button
+              type="button"
+              onClick={() => setDelays((d) => [...d, { from: t, minutes: 5 }])}
+              className="hud flex h-8 items-center gap-1.5 rounded-full border px-3 hover:bg-muted"
+              title="Push every cue from now on back by five minutes"
+            >
               <Clock className="size-3.5" aria-hidden /> +5 min late
             </button>
             <button type="button" onClick={() => setMuted((m) => !m)} className="grid size-8 place-items-center rounded-full border hover:bg-muted" aria-label={muted ? "Unmute" : "Mute"}>
@@ -235,11 +257,19 @@ export function LivePage({ show }: { show: Show }) {
               {night.slots.map((s) => (
                 <div key={s.key} className="relative h-6">
                   <span className="hud absolute left-0 top-1 z-10 text-[10px] text-muted-foreground">{s.label}</span>
-                  <span className="absolute inset-y-0 rounded-sm border border-white/15 bg-white/[0.06]" style={{ left: pct(adj(s.start)), width: `calc(${pct(adj(s.end))} - ${pct(adj(s.start))})` }} />
+                  <span
+                    className="absolute inset-y-0 rounded-sm border border-white/15 bg-white/[0.06]"
+                    style={{ left: pct(adj(s.start)), width: `calc(${pct(adj(s.end))} - ${pct(adj(s.start))})` }}
+                  />
                   {segs
                     .filter((g) => g.slotKey === s.key && (g.kind === "music" || g.kind === "act"))
                     .map((g) => (
-                      <span key={g.id} className={cn("absolute inset-y-1 border-l", onNow(g) ? "border-[#E8271C] bg-[#E8271C]/30" : "border-white/25")} style={{ left: pct(g.start), width: `calc(${pct(g.end)} - ${pct(g.start)})` }} title={`${fmt(g.start)} ${g.item.pick.name}`} />
+                      <span
+                        key={g.id}
+                        className={cn("absolute inset-y-1 border-l", onNow(g) ? "border-[#E8271C] bg-[#E8271C]/30" : "border-white/25")}
+                        style={{ left: pct(g.start), width: `calc(${pct(g.end)} - ${pct(g.start)})` }}
+                        title={`${fmt(g.start)} ${g.item.pick.name}`}
+                      />
                     ))}
                 </div>
               ))}
@@ -259,11 +289,17 @@ export function LivePage({ show }: { show: Show }) {
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
                 <Hud className="text-[#FF8A80]">
-                  {stage ? (stage.kind === "music" ? "Now playing" : "On stage") : t < night.start + 0.01 ? "Before doors" : "Between cues"} {stage ? `· ${stage.slotLabel} · ${fmt(stage.start)}–${fmt(stage.end)}` : ""}
+                  {stage ? (stage.kind === "music" ? "Now playing" : "On stage") : t < night.start + 0.01 ? "Before doors" : "Between cues"}{" "}
+                  {stage ? `· ${stage.slotLabel} · ${fmt(stage.start)}–${fmt(stage.end)}` : ""}
                 </Hud>
                 <div className="mt-1 truncate font-display text-[clamp(2.2rem,4.6vw,3.8rem)] font-bold uppercase leading-[0.95]" aria-live="polite">
                   {stage ? stage.item.pick.name : nextUp[0] ? `Next: ${nextUp[0].item.pick.name}` : "That's the night"}
                 </div>
+                {song ? (
+                  <div className="mt-1 truncate text-[15px] text-muted-foreground">
+                    “{song.title}”{song.album ? ` · ${song.album}` : ""}
+                  </div>
+                ) : null}
               </div>
               {stage?.item.isWildcard ? <Hud className="shrink-0 rounded border px-1.5 py-0.5">Stretch pick</Hud> : null}
             </div>
@@ -272,7 +308,9 @@ export function LivePage({ show }: { show: Show }) {
               <div className="grid gap-2">
                 <div className="border-l-2 border-[#5EE0CF] pl-3">
                   <Hud className="text-muted-foreground">Qloo says</Hud>
-                  <p className="line-clamp-2 font-mono text-[12.5px] leading-snug" title={stage.item.qlooSays}>{stage.item.qlooSays}</p>
+                  <p className="line-clamp-2 font-mono text-[12.5px] leading-snug" title={stage.item.qlooSays}>
+                    {stage.item.qlooSays}
+                  </p>
                 </div>
                 {stage.item.action ? (
                   <div className="border-l-2 border-[#E8271C] pl-3">
@@ -283,11 +321,13 @@ export function LivePage({ show }: { show: Show }) {
               </div>
             ) : null}
             <Hud className="text-muted-foreground">
-              {style
-                ? `Synthesized cue · ${PROFILE_LABEL[style.profile]} · ${style.bpm} BPM, styled on tonight's Qloo crowd read. Not the recording.`
-                : stage && !stage.audible
-                  ? "A set by a person: no music cue. The house mic is theirs."
-                  : "Press Start the show. Audio plays only after you press it."}
+              {song
+                ? `Playing a 30-second preview of “${song.title}” · ${song.artist} (Apple Music), looping while they're on. A rehearsal: on the night, the venue's licensed music service plays the set.`
+                : style
+                  ? `Synthesized cue · ${PROFILE_LABEL[style.profile]} · ${style.bpm} BPM, styled on tonight's Qloo crowd read. Not the recording.`
+                  : stage && !stage.audible
+                    ? "A set by a person: no music cue. The house mic is theirs."
+                    : "Press Start the show. Audio plays only after you press it."}
             </Hud>
             {nextUp.length ? (
               <div>
@@ -330,7 +370,14 @@ export function LivePage({ show }: { show: Show }) {
               </div>
               <div role="radiogroup" aria-label="Show cues for" className="mt-2 flex flex-wrap gap-1">
                 {(["All", ...OWNERS] as const).map((o) => (
-                  <button key={o} type="button" role="radio" aria-checked={owner === o} onClick={() => setOwner(o)} className={cn("hud rounded-full border px-2 py-0.5 text-[10px]", owner === o ? "border-foreground bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}>
+                  <button
+                    key={o}
+                    type="button"
+                    role="radio"
+                    aria-checked={owner === o}
+                    onClick={() => setOwner(o)}
+                    className={cn("hud rounded-full border px-2 py-0.5 text-[10px]", owner === o ? "border-foreground bg-foreground text-background" : "text-muted-foreground hover:text-foreground")}
+                  >
                     {o}
                   </button>
                 ))}
@@ -356,7 +403,13 @@ export function LivePage({ show }: { show: Show }) {
                       </div>
                       <p className="mt-0.5 line-clamp-2 text-[12.5px] text-muted-foreground">{c.detail}</p>
                     </div>
-                    <button type="button" onClick={() => mark(c.id)} className={cn("grid size-7 place-items-center rounded-full border", done[c.id] ? "border-[#5EE0CF] bg-[#5EE0CF] text-background" : "hover:bg-muted")} aria-label={done[c.id] ? `Undo called: ${c.title}` : `Mark called: ${c.title}`} aria-pressed={Boolean(done[c.id])}>
+                    <button
+                      type="button"
+                      onClick={() => mark(c.id)}
+                      className={cn("grid size-7 place-items-center rounded-full border", done[c.id] ? "border-[#5EE0CF] bg-[#5EE0CF] text-background" : "hover:bg-muted")}
+                      aria-label={done[c.id] ? `Undo called: ${c.title}` : `Mark called: ${c.title}`}
+                      aria-pressed={Boolean(done[c.id])}
+                    >
                       <Check className="size-3.5" aria-hidden />
                     </button>
                   </li>
@@ -392,7 +445,12 @@ export function LivePage({ show }: { show: Show }) {
           <div className="grid gap-4 border-t border-white/15 pt-4 md:grid-cols-2">
             <div>
               <Hud className="text-[#A3A3A3]">Open now</Hud>
-              <div className="mt-1 text-[clamp(1rem,1.6vw,1.4rem)]">{openNow.filter((g) => g.kind !== "brand").map((g) => g.item.pick.name).join(" · ") || "—"}</div>
+              <div className="mt-1 text-[clamp(1rem,1.6vw,1.4rem)]">
+                {openNow
+                  .filter((g) => g.kind !== "brand")
+                  .map((g) => g.item.pick.name)
+                  .join(" · ") || "—"}
+              </div>
             </div>
             <div className="md:text-right">
               <Hud className="text-[#A3A3A3]">With</Hud>

@@ -39,6 +39,16 @@ const judge = r<{
   positionConsistency: number;
 }>("ab_judge");
 const judgeV1 = r<{ qlooMode: string; model: string; pairs: number; overall: { wins: number; losses: number; ties: number }; fit: { houseMix: number; l0: number } }>("ab_judge_v1");
+type Real = { picks: number; tooBig: number; examples: string[]; unresolved?: number };
+type Rep = { picks: number; repeated: number; top: string[] };
+const value = r<{
+  qlooMode: string;
+  realism: Record<"houseMixV1" | "houseMixV2" | "l0", Real>;
+  specificity: Record<"houseMix" | "l0" | "houseMixBrands" | "l0Brands", Rep>;
+  sensitivity: { crowds: number; pairs: number; meanOverlap: number; maxOverlap: number };
+  music?: { artists: number; withSongs: number; filledByQloo: number; explicitLeftOut: number; playlists: number; minutesPlanned: number };
+  latency?: Record<string, { calls: number; medianMs: number; maxMs: number }>;
+}>("qloo_value");
 const plans = r<{ qlooMode: string; plans: { id: string; durationMs: number; stats: { qlooCalls: number; cacheHits: number; costUsd: number } }[] }>("plans");
 
 const out: string[] = [
@@ -76,6 +86,41 @@ if (live(ev) && ev) {
     );
 } else out.push("| Items with a valid Qloo citation | pending | L0 | needs live plans |");
 out.push("");
+
+if (live(value) && value) {
+  const R = value.realism;
+  const S = value.specificity;
+  const frac = (a: number, b: number) => `${a} of ${b} (${pct(a / Math.max(1, b))})`;
+  out.push(
+    "## What Qloo adds, measured without a judge",
+    "",
+    "Free checks on the same eval plans plus Qloo calls (`npm run eval:qloo`); no Claude calls.",
+    "",
+    "| Check | House Mix | L0 (Claude alone) | What it means |",
+    "| --- | --- | --- | --- |",
+    `| Opener / interval / halftime acts bigger than the headliner (Qloo popularity at or above the headliner's, or 0.99) | ${frac(R.houseMixV2.tooBig, R.houseMixV2.picks)} (first run: ${frac(R.houseMixV1.tooBig, R.houseMixV1.picks)}) | ${frac(R.l0.tooBig, R.l0.picks)}; ${R.l0.unresolved} more Qloo could not pin down | Qloo's popularity makes "smaller than the headliner" a rule the server enforces. L0's included ${R.l0.examples.slice(0, 2).join(" and ")} |`,
+    `| Picks repeated from another show's plan, across ${7} different shows | ${frac(S.houseMix.repeated, S.houseMix.picks)} | ${frac(S.l0.repeated, S.l0.picks)} | Qloo's picks follow each crowd; L0 falls back on defaults (${S.l0.top.slice(0, 2).join(", ")}) |`,
+    `| Sponsors repeated from another show | ${frac(S.houseMixBrands.repeated, S.houseMixBrands.picks)} | ${frac(S.l0Brands.repeated, S.l0Brands.picks)} | the same brand pitched to every crowd is not a fit score |`,
+    `| Overlap between Qloo's top 10 artists for two different crowds | ${pct(value.sensitivity.meanOverlap)} on average across ${value.sensitivity.pairs} pairs of ${value.sensitivity.crowds} crowds (max ${pct(value.sensitivity.maxOverlap)}) | – | change the bill and the recommendations change completely |`,
+    "",
+    "These say Qloo grounds the picks in each crowd and makes booking rules enforceable. They do not say the picks taste better: the automated judge above still prefers L0 on taste.",
+    "",
+  );
+  if (value.music)
+    out.push(
+      `**Hear the night (the five demo shows).** ${value.music.withSongs} of the ${value.music.artists} artists Qloo picked have real songs to play; ${value.music.filledByQloo} more were added by \`qloo_recommend\` when a slot ran short; ${value.music.playlists} playlists hold ${value.music.minutesPlanned} minutes of music${value.music.explicitLeftOut ? `; ${value.music.explicitLeftOut} explicit songs were left out for all-ages shows` : ""}.`,
+      "",
+    );
+  if (value.latency)
+    out.push(
+      "**Qloo call times (the demo shows' ledgers, cache hits excluded).** " +
+        Object.entries(value.latency)
+          .map(([t, v]) => `${t.replace("qloo_", "")} median ${(v.medianMs / 1000).toFixed(1)} s (${v.calls} calls, slowest ${(v.maxMs / 1000).toFixed(1)} s)`)
+          .join("; ") +
+        ". Slow outliers happen; results are cached for 24 hours, so a repeat run reuses them, and a call is retried only when Qloo says the error is retryable.",
+      "",
+    );
+}
 
 if (live(judgeV1) && judgeV1) {
   out.push(
@@ -166,6 +211,19 @@ const summary = {
         }
       : null,
   judgeV1: live(judgeV1) && judgeV1 ? { wins: judgeV1.overall.wins, losses: judgeV1.overall.losses, ties: judgeV1.overall.ties } : null,
+  value:
+    live(value) && value
+      ? {
+          brandsRepeated: value.specificity.houseMixBrands.repeated,
+          brands: value.specificity.houseMixBrands.picks,
+          l0BrandsRepeated: value.specificity.l0Brands.repeated,
+          l0Brands: value.specificity.l0Brands.picks,
+          tooBig: value.realism.houseMixV2.tooBig,
+          acts: value.realism.houseMixV2.picks,
+          l0TooBig: value.realism.l0.tooBig,
+          l0Acts: value.realism.l0.picks,
+        }
+      : null,
   plans:
     live(plans) && plans?.plans.length
       ? {

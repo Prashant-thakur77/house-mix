@@ -5431,6 +5431,2172 @@
    },
    "costUsd": 0.0248,
    "createdAt": "2026-10-30T06:27:19.314Z"
+  },
+  "music": {
+   "source": "itunes",
+   "country": "GB",
+   "picks": [
+    {
+     "itemId": "i_89825f32-6",
+     "qlooId": "EEEA5629-5AC0-431D-83D8-22B3CDEEB1C8",
+     "artist": "Yazmin Lacey",
+     "tracks": [
+      {
+       "id": "6781463361",
+       "title": "Summer Haze",
+       "artist": "Yazmin Lacey",
+       "album": "Summer Haze - Single",
+       "durationMs": 173742,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/80/fb/3e80fbb1-d2e8-8bcb-5e4a-79cb04e6020b/mzaf_8068995827048731445.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/summer-haze/6781463358?i=6781463361&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/4d/58/b54d58d4-5b44-c15d-ab0d-06b201abed03/823375245605_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1815405891",
+       "title": "Ain't I Good For You",
+       "artist": "Yazmin Lacey",
+       "album": "Ain't I Good For You - Single",
+       "durationMs": 161805,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/64/98/00649880-5014-09c5-115d-37c67c3cd561/mzaf_4157638457993594480.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/aint-i-good-for-you/1815405890?i=1815405891&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e8/9b/d8/e89bd8a6-4b7c-4d91-9314-96e8c88b9eb8/25SYMIM19884.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6769417063",
+       "title": "Sweetest Season",
+       "artist": "Yazmin Lacey",
+       "album": "Sweetest Season - Single",
+       "durationMs": 170753,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/77/cb/f6/77cbf639-351c-4554-d95c-1de305f2123b/mzaf_18441051912869932910.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sweetest-season/6769416641?i=6769417063&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/15/03/7d/15037de2-6714-2aad-7c15-61976b41db80/823375181972_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1828247314",
+       "title": "Wallpaper",
+       "artist": "Yazmin Lacey",
+       "album": "Teal Dreams",
+       "durationMs": 179540,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/94/9e/bc949e3d-b5db-5ac7-cc3d-2bc716b20aef/mzaf_4366573835115795144.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/wallpaper/1828247311?i=1828247314&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f3/09/dc/f309dc26-c7eb-cd9b-0006-fa1b705a84fa/25SYMIM21375.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1629441842",
+       "title": "Morning Matters",
+       "artist": "Yazmin Lacey",
+       "album": "Morning Matters - EP",
+       "durationMs": 246800,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/88/c5/de88c587-7a16-3f26-db8c-5b814be22465/mzaf_6189591584401933710.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/morning-matters/1629441825?i=1629441842&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/59/ef/d7/59efd742-7130-f3d1-a197-22651c7a7d3c/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_274a50bd-e",
+     "qlooId": "45FDB5B7-70A8-4D44-9E09-3D48B9305103",
+     "artist": "Ashley Henry",
+     "tracks": [
+      {
+       "id": "1456111214",
+       "title": "COLORS",
+       "artist": "Ashley Henry",
+       "album": "Beautiful Vinyl Hunter",
+       "durationMs": 268993,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f3/32/5b/f3325bca-4f3e-8f2c-2959-e23e54b1f5cb/mzaf_16044929118373868252.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/colors/1456111197?i=1456111214&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1456111210",
+       "title": "Between the Lines (feat. Keyon Harrold)",
+       "artist": "Ashley Henry",
+       "album": "Beautiful Vinyl Hunter",
+       "durationMs": 287173,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/17/38/52/17385219-5254-f46d-5591-76798f21e5f7/mzaf_16280111082351476461.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/between-the-lines-feat-keyon-harrold/1456111197?i=1456111210&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1677444618",
+       "title": "Melanin",
+       "artist": "Ashley Henry",
+       "album": "My Voice - EP",
+       "durationMs": 260593,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5e/d8/26/5ed82647-0372-ab2e-9103-99ffc4edd3bc/mzaf_9153517736529108104.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/melanin/1677444473?i=1677444618&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/c5/bd/36c5bd60-8747-feb1-c6ed-288bc4c6d8a4/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1456111216",
+       "title": "Cranes (In the Sky)",
+       "artist": "Ashley Henry",
+       "album": "Beautiful Vinyl Hunter",
+       "durationMs": 350378,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/f8/9c/05f89cec-65de-70af-a8a9-72aee90036f6/mzaf_16556347443102233911.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/cranes-in-the-sky/1456111197?i=1456111216&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1456111205",
+       "title": "Realisations",
+       "artist": "Ashley Henry",
+       "album": "Beautiful Vinyl Hunter",
+       "durationMs": 369894,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/41/3d/42/413d425e-1e7f-4b95-1d63-cf24476477a0/mzaf_11108942138207447738.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/realisations/1456111197?i=1456111205&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_eb613d42-f",
+     "qlooId": "963FE97F-BF3D-49A8-AD0C-DADA873E614C",
+     "artist": "Moses Boyd",
+     "tracks": [
+      {
+       "id": "6789628147",
+       "title": "More To Life (feat. SHANTÉH)",
+       "artist": "Moses Boyd",
+       "album": "Songs For Sinners",
+       "durationMs": 295125,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/14/3a/c3143a58-8124-1327-7f7b-2c6c0c59046d/mzaf_8073139851546376114.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/more-to-life-feat-shant%C3%A9h/6789627970?i=6789628147&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789627979",
+       "title": "Precious",
+       "artist": "Moses Boyd",
+       "album": "Songs For Sinners",
+       "durationMs": 423038,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e2/70/7b/e2707b78-68ec-d787-541a-b413ae4af3e2/mzaf_1173034206211003545.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/precious/6789627970?i=6789627979&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789628382",
+       "title": "Guess I'll be Alright",
+       "artist": "Moses Boyd",
+       "album": "Songs For Sinners",
+       "durationMs": 380582,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/97/06/009706ef-a9ec-ac17-0bbe-cb910f57ce9f/mzaf_12067792696228873793.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/guess-ill-be-alright/6789627970?i=6789628382&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789628420",
+       "title": "I Surrender All Interlude",
+       "artist": "Moses Boyd",
+       "album": "Songs For Sinners",
+       "durationMs": 52924,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a6/e2/f7/a6e2f7a0-6ba6-0f29-84f4-e1d159962dc1/mzaf_6861997263588606090.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-surrender-all-interlude/6789627970?i=6789628420&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789628432",
+       "title": "It Is Well",
+       "artist": "Moses Boyd",
+       "album": "Songs For Sinners",
+       "durationMs": 252397,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/53/0a/27/530a274f-3810-ad9d-8087-67df8ecb3d14/mzaf_4384048489485625316.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/it-is-well/6789627970?i=6789628432&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_a6757030-d",
+     "qlooId": "97FCD59C-4F36-4605-B458-79167FBCED33",
+     "artist": "KOKOROKO",
+     "tracks": [
+      {
+       "id": "1561771400",
+       "title": "Abusey Junction",
+       "artist": "Kokoroko",
+       "album": "We Out Here",
+       "durationMs": 429093,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/0d/75/8f0d7519-8892-5849-83c9-7261cb8a9ea3/mzaf_8878046729423962042.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/abusey-junction/1561770961?i=1561771400&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c1/e6/af/c1e6aff2-d170-5a9b-3b63-b6cb6686a803/5060180323301.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1805175468",
+       "title": "Sweetie",
+       "artist": "Kokoroko",
+       "album": "Tuff Times Never Last",
+       "durationMs": 244049,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4f/35/a9/4f35a92b-7156-8fe9-9016-c8cdde31c472/mzaf_5727756502883362108.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sweetie/1805175466?i=1805175468&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/e0/64/ebe064c9-513b-b546-9e91-f34d17f88b3c/5034644578637.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1805175834",
+       "title": "Just Can’t Wait",
+       "artist": "Kokoroko",
+       "album": "Tuff Times Never Last",
+       "durationMs": 382509,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/4f/53/1b4f5301-f89d-cc28-dc08-6bfca292b637/mzaf_2599919059219197931.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/just-cant-wait/1805175466?i=1805175834&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/e0/64/ebe064c9-513b-b546-9e91-f34d17f88b3c/5034644578637.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1805175830",
+       "title": "Da Du Dah",
+       "artist": "Kokoroko",
+       "album": "Tuff Times Never Last",
+       "durationMs": 228385,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/5b/98/9d5b9885-6fcf-2b1c-02d2-d7aaed16198c/mzaf_1690200685674299837.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/da-du-dah/1805175466?i=1805175830&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/e0/64/ebe064c9-513b-b546-9e91-f34d17f88b3c/5034644578637.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1561234531",
+       "title": "Ti-de",
+       "artist": "Kokoroko",
+       "album": "KOKOROKO - EP",
+       "durationMs": 372387,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/da/17/47/da174736-4a65-d462-2e47-5ecf087268d6/mzaf_17449684809166786950.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/ti-de/1561234528?i=1561234531&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ed/76/24/ed7624b8-4079-8881-47f1-c72b03ede03e/5060180323844.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_1bbe9ae6-a",
+     "qlooId": "972B2229-24D2-4B30-A457-BA5A36DBA7AE",
+     "artist": "Sons of Kemet",
+     "tracks": [
+      {
+       "id": "1440909509",
+       "title": "My Queen Is Albertina Sisulu",
+       "artist": "Sons Of Kemet",
+       "album": "Your Queen Is A Reptile",
+       "durationMs": 319240,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/d2/5a/f7d25a2a-b4a8-d4ad-7786-83d6889fb131/mzaf_5130054033232223829.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/my-queen-is-albertina-sisulu/1440908967?i=1440909509&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7d/e1/aa/7de1aa4c-ae28-f3ad-64da-90e2d00ab9a2/00602567383789.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440909216",
+       "title": "My Queen Is Harriet Tubman",
+       "artist": "Sons Of Kemet",
+       "album": "Your Queen Is A Reptile",
+       "durationMs": 340053,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/31/98/6e/31986ea0-a09f-605e-959b-1b1ba1244e09/mzaf_1783895410955153834.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/my-queen-is-harriet-tubman/1440908967?i=1440909216&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7d/e1/aa/7de1aa4c-ae28-f3ad-64da-90e2d00ab9a2/00602567383789.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1558301384",
+       "title": "For The Culture (feat. D Double E)",
+       "artist": "Sons Of Kemet",
+       "album": "Black To The Future",
+       "durationMs": 241080,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/02/72/7f/02727f81-9b96-7691-29ca-231886d5a18c/mzaf_2915583258546606374.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/for-the-culture-feat-d-double-e/1558301183?i=1558301384&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/07/60/8c/07608c66-6e33-7c16-3b4c-6f8b997458a4/21UMGIM18629.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440909497",
+       "title": "My Queen Is Nanny Of The Maroons",
+       "artist": "Sons Of Kemet",
+       "album": "Your Queen Is A Reptile",
+       "durationMs": 403640,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e1/00/84/e1008484-1a8d-8990-95d5-7d86b9f4fdcb/mzaf_17430786871571886776.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/my-queen-is-nanny-of-the-maroons/1440908967?i=1440909497&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7d/e1/aa/7de1aa4c-ae28-f3ad-64da-90e2d00ab9a2/00602567383789.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1604578976",
+       "title": "In Memory Of Samir Awad",
+       "artist": "Sons Of Kemet",
+       "album": "Lest We Forget What We Came Here to Do",
+       "durationMs": 522796,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/84/be/ce84be65-e69d-92b1-6a1e-539f0bc83f0c/mzaf_8067135528814537893.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/in-memory-of-samir-awad/1604578969?i=1604578976&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/42/46/ed/4246edbc-1f35-cfac-b768-b95c9a5e2073/22UMGIM03622.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_c616e136-b",
+     "qlooId": "27E6B373-F460-4857-8B0E-81B5A003B8FC",
+     "artist": "Joesef",
+     "tracks": [
+      {
+       "id": "1638935553",
+       "title": "Just Come Home with Me Tonight",
+       "artist": "Joesef",
+       "album": "Permanent Damage",
+       "durationMs": 247645,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ab/36/ca/ab36cadb-92e6-5317-3c08-e1ccd581195f/mzaf_5033165527574994079.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/just-come-home-with-me-tonight/1638935082?i=1638935553&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fd/f9/73/fdf973ef-040b-560c-c456-87512f799f9d/5056167175520.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1503587179",
+       "title": "The Sun Is Up Forever",
+       "artist": "Joesef",
+       "album": "The Sun Is Up Forever - Single",
+       "durationMs": 224740,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/22/8f/8f/228f8fc2-a2b8-1121-a3d7-dc8289859fdc/mzaf_10965927407701107901.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-sun-is-up-forever/1503587171?i=1503587179&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/72/5a/65725a4f-4cea-0aa6-d552-7a38ae53cca2/5056167122708_1.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1638935890",
+       "title": "Joe",
+       "artist": "Joesef",
+       "album": "Permanent Damage",
+       "durationMs": 187660,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/31/97/2f3197af-c739-016e-d3cb-06ca20aca419/mzaf_17724751422569710945.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/joe/1638935082?i=1638935890&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fd/f9/73/fdf973ef-040b-560c-c456-87512f799f9d/5056167175520.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1579858913",
+       "title": "Fire",
+       "artist": "Joesef",
+       "album": "Fire - Single",
+       "durationMs": 237718,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/94/8c/8b/948c8b03-e6ad-3b0f-b542-760b707a7e6a/mzaf_14405827371284633231.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/fire/1579858907?i=1579858913&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2f/94/00/2f940043-e417-b906-fda1-4d77cd0adccf/5056167165866_1.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1480027640",
+       "title": "Don't Give In",
+       "artist": "Joesef",
+       "album": "Play Me Something Nice - EP",
+       "durationMs": 209749,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/64/7f/de647f07-b9b0-252d-f1aa-ca767afed13c/mzaf_10721349123757815747.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dont-give-in/1480027619?i=1480027640&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/13/a0/4e/13a04e50-2797-d127-3b65-797c178289b3/5056167118343_1.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "walk_in"
+    },
+    {
+     "itemId": "i_9ff359a5-9",
+     "qlooId": "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
+     "artist": "Alfa Mist",
+     "tracks": [
+      {
+       "id": "1451211668",
+       "title": "Keep On",
+       "artist": "Alfa Mist",
+       "album": "Antiphon",
+       "durationMs": 647000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/8e/7e/038e7e22-2ebd-91c2-d78e-46085ebef4c4/mzaf_17080027920536188767.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/keep-on/1451211664?i=1451211668&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1451211683",
+       "title": "7th October",
+       "artist": "Alfa Mist",
+       "album": "Antiphon",
+       "durationMs": 249082,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/ef/1d/c2ef1db8-71bc-aad4-9cc9-bf1d207b580a/mzaf_15806643451055019069.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/7th-october/1451211664?i=1451211683&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1451211681",
+       "title": "Breathe",
+       "artist": "Alfa Mist",
+       "album": "Antiphon",
+       "durationMs": 447000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/92/fa/c2/92fac217-7f3b-d5a7-7293-b7c63d0ea84d/mzaf_3876864033206792203.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/breathe/1451211664?i=1451211681&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1451212196",
+       "title": "Kyoki",
+       "artist": "Alfa Mist",
+       "album": "Antiphon",
+       "durationMs": 366165,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8c/6f/46/8c6f46e9-3fee-97d2-0c24-f174c6d97020/mzaf_2380098877229272884.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/kyoki/1451211664?i=1451212196&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1544953738",
+       "title": "Run Outs",
+       "artist": "Alfa Mist",
+       "album": "Bring Backs",
+       "durationMs": 292200,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/a8/1e/c3a81e30-e347-20d2-5b4d-9606ddbbd9cf/mzaf_6114484334147227093.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/run-outs/1544953732?i=1544953738&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/27/f7/5727f790-f920-5f4a-72aa-981bb1f4b1ca/0045778778966.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_b25d6d23-a",
+     "qlooId": "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
+     "artist": "Kamaal Williams",
+     "tracks": [
+      {
+       "id": "1621511415",
+       "title": "New Heights (Visions of Aisha Malik)",
+       "artist": "Kamaal Williams & Darkhouse Family",
+       "album": "New Heights / Snitches Brew - Single",
+       "durationMs": 239358,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/05/19/05051900-cd8c-f2a8-c999-42de57599fa6/mzaf_17185620865227552199.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/new-heights-visions-of-aisha-malik/1621511195?i=1621511415&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/75/75/c7/7575c755-e67e-4155-dc19-bf99c5bedd93/5060384615011.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1698168817",
+       "title": "Dogtown",
+       "artist": "Kamaal Williams",
+       "album": "Stings",
+       "durationMs": 390000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/73/dd/41/73dd4174-daf3-6d4e-aac0-3533eaddc642/mzaf_13472229678913644855.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/dogtown/1698168193?i=1698168817&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/21/43/84/214384f1-60ac-69b6-e930-d0ee344d47b8/197189413469.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1621512906",
+       "title": "Situations (Live In Milan)",
+       "artist": "Kamaal Williams",
+       "album": "The Return",
+       "durationMs": 179693,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/80/dc/ab/80dcab8d-9725-3143-ef43-41184b998d94/mzaf_12204117095940183602.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/situations-live-in-milan/1621512735?i=1621512906&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/98/5f/43/985f4351-d1d0-867e-b4a5-fd648522ee5f/5060384613437.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1621512938",
+       "title": "Pigalle",
+       "artist": "Kamaal Williams",
+       "album": "Wu Hen",
+       "durationMs": 374875,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/cc/a3/d1cca341-528e-ba2f-e39b-6f9d4c68e9a8/mzaf_16488828711642967491.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/pigalle/1621512196?i=1621512938&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/43/1d/f6/431df65a-5519-e7c3-5c6e-58f61c1fefd6/5060384618739.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1621512933",
+       "title": "Medina",
+       "artist": "Kamaal Williams",
+       "album": "The Return",
+       "durationMs": 417754,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e6/b2/1b/e6b21b19-d740-6b2e-e78a-eeb555fb3cba/mzaf_10848473335955685471.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/medina/1621512735?i=1621512933&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/98/5f/43/985f4351-d1d0-867e-b4a5-fd648522ee5f/5060384613437.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_86ace149-3",
+     "qlooId": "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+     "artist": "Yussef Dayes",
+     "tracks": [
+      {
+       "id": "1497226895",
+       "title": "Tidal Wave",
+       "artist": "Tom Misch & Yussef Dayes",
+       "album": "What Kinda Music",
+       "durationMs": 249427,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c7/bc/a6/c7bca6ff-c5e5-237d-7ee4-7c4fbf89313e/mzaf_4183522174819284107.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/tidal-wave/1497226866?i=1497226895&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d1/f4/9b/d1f49b90-7f67-faf6-ac75-c522e2ddd3c2/20UMGIM06943.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1683587507",
+       "title": "Rust (feat. Tom Misch)",
+       "artist": "Yussef Dayes",
+       "album": "Black Classical Music",
+       "durationMs": 238787,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e9/c0/8c/e9c08cbe-1d83-ed6c-48bc-f1bb91af8e2e/mzaf_10256303127215585383.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/rust-feat-tom-misch/1683587217?i=1683587507&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8d/09/c0/8d09c054-0bcb-c172-92fa-268a89aac299/197338790748.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1487538372",
+       "title": "For My Ladies (feat. Rocco Palladino & Charlie Stacey)",
+       "artist": "Yussef Dayes",
+       "album": "Duality (feat. Rocco Palladino & Charlie Stacey) - Single",
+       "durationMs": 341346,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/e2/8f/95e28fab-4c3d-7d1b-265b-b294f9f33361/mzaf_5674953030113435668.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/for-my-ladies-feat-rocco-palladino-charlie-stacey/1487538302?i=1487538372&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/be/6c/f8/be6cf8a0-8cfa-3ee6-9444-4d47abd33ec1/5054526181625_1.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1683587535",
+       "title": "Marching Band (feat. Masego)",
+       "artist": "Yussef Dayes",
+       "album": "Black Classical Music",
+       "durationMs": 284387,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/32/38/3f323872-24e1-b0c3-3bd5-a1e885e36b28/mzaf_13521420895682870634.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/marching-band-feat-masego/1683587217?i=1683587535&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8d/09/c0/8d09c054-0bcb-c172-92fa-268a89aac299/197338790748.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1497226883",
+       "title": "What Kinda Music",
+       "artist": "Tom Misch & Yussef Dayes",
+       "album": "What Kinda Music",
+       "durationMs": 230470,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/28/4b/9b284b56-114f-5ee3-e688-6fb20c160121/mzaf_13919342640326402158.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/what-kinda-music/1497226866?i=1497226883&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d1/f4/9b/d1f49b90-7f67-faf6-ac75-c522e2ddd3c2/20UMGIM06943.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_9d78f973-c",
+     "qlooId": "AD180D23-3790-4A0B-AF66-8B2E778B26A0",
+     "artist": "Oscar Jerome",
+     "tracks": [
+      {
+       "id": "1632524369",
+       "title": "The Spoon",
+       "artist": "Oscar Jerome",
+       "album": "The Spoon",
+       "durationMs": 426240,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/45/41/94/45419464-7229-cfcc-3452-18b791038788/mzaf_1025101557607093316.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-spoon/1632523766?i=1632524369&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/cb/39/05cb3930-1c3d-c90d-a401-219bb53cd2ec/196626898258.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1506178614",
+       "title": "Gravitate",
+       "artist": "Oscar Jerome",
+       "album": "Breathe Deep",
+       "durationMs": 342120,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/66/94/f76694c6-93ba-baa7-3ee8-894c40cc6642/mzaf_926838418643239150.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/gravitate/1506178599?i=1506178614&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/42/2f/25/422f25e2-49c8-b0bf-799f-00035ae70ce9/20UMGIM16659.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1506178603",
+       "title": "Sun for Someone",
+       "artist": "Oscar Jerome",
+       "album": "Breathe Deep",
+       "durationMs": 303960,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/78/78/f4/7878f44f-dcdb-f73d-2b50-2a130e626a83/mzaf_5637812131538560670.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/sun-for-someone/1506178599?i=1506178603&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/42/2f/25/422f25e2-49c8-b0bf-799f-00035ae70ce9/20UMGIM16659.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1632524794",
+       "title": "Use It",
+       "artist": "Oscar Jerome",
+       "album": "The Spoon",
+       "durationMs": 353653,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/2d/18/bc2d18a3-25b7-9a3f-4b2b-ce8d6618b23d/mzaf_13558942003936712813.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/use-it/1632523766?i=1632524794&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/cb/39/05cb3930-1c3d-c90d-a401-219bb53cd2ec/196626898258.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1694853042",
+       "title": "Far Too Much (Edit)",
+       "artist": "Oscar Jerome",
+       "album": "Far Too Much (Edit) - Single",
+       "durationMs": 195945,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/7d/1e/9f/7d1e9ff4-362b-e2af-1fb6-fa535a83cad5/mzaf_3044703761369282651.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/far-too-much-edit/1694853025?i=1694853042&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/80/34/94/80349450-d3f9-61f8-2718-4fdf5c63da82/5063268985248_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_2c577712-3",
+     "qlooId": "B3C36B49-259E-4A4F-80E6-AE9F19F6004C",
+     "artist": "Nubya Garcia",
+     "tracks": [
+      {
+       "id": "1881715805",
+       "title": "Monsters",
+       "artist": "Jordan Rakei & Nubya Garcia",
+       "album": "Between Us - EP",
+       "durationMs": 363791,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/72/9c/54729cb7-69d7-dd03-b57a-4aa5078912fe/mzaf_10497796176061310753.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/monsters/1881715800?i=1881715805&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/94/fe/01/94fe018a-a49a-8063-0205-6116d9ec3b81/26UMGIM20092.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1523554805",
+       "title": "The Message Continues",
+       "artist": "Nubya Garcia",
+       "album": "SOURCE",
+       "durationMs": 404776,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d9/90/07/d9900767-3e41-5cfa-9384-eaa92219402c/mzaf_2855974874382002147.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-message-continues/1523554803?i=1523554805&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/01/0b/96/010b9654-4059-150f-8650-38f94faa62cf/20CRGIM21278.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1718239686",
+       "title": "Lost Kingdoms",
+       "artist": "Nubya Garcia",
+       "album": "Nubya's 5ive",
+       "durationMs": 458606,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/2e/5e/762e5e98-c345-bea9-0464-c0e972c9ea49/mzaf_13633160546735599606.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/lost-kingdoms/1718239682?i=1718239686&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/62/20/7d/62207db4-4a40-97ce-f421-34d585c20b6d/197190481730.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1747391276",
+       "title": "Triumphance",
+       "artist": "Nubya Garcia",
+       "album": "Odyssey",
+       "durationMs": 354750,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/74/2a/de742a78-74a7-766e-675d-03189f47ffc6/mzaf_767035975341602669.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/triumphance/1747390562?i=1747391276&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8f/e7/5c/8fe75c78-6429-ff91-04c6-fbb84fac68cc/24CRGIM42807.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1718239691",
+       "title": "Fly Free",
+       "artist": "Nubya Garcia",
+       "album": "Nubya's 5ive",
+       "durationMs": 581780,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/53/70/a8/5370a8c6-31e3-eb58-bc97-0d46621bd3c3/mzaf_9072585662847516861.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/fly-free/1718239682?i=1718239691&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/62/20/7d/62207db4-4a40-97ce-f421-34d585c20b6d/197190481730.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_68128b1d-7",
+     "qlooId": "922FAA8C-C1CB-4D72-BE81-F132B388DF17",
+     "artist": "Obongjayar",
+     "tracks": [
+      {
+       "id": "1700707219",
+       "title": "adore u",
+       "artist": "Fred again.. & Obongjayar",
+       "album": "adore u - Single",
+       "durationMs": 220653,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/bb/35/d2bb35e8-cc43-fef6-bbcb-2ccb6e49b786/mzaf_10723061851435265005.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/adore-u/1700707216?i=1700707219&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/7f/97/dd/7f97ddab-43e6-6e83-923a-e243d37d722c/5054197770555.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1792524312",
+       "title": "Not In Surrender",
+       "artist": "Obongjayar",
+       "album": "Not In Surrender - Single",
+       "durationMs": 199421,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ff/ec/61/ffec6102-3969-6ac9-0a4b-4372a6b5ba0f/mzaf_11678464586760544787.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/not-in-surrender/1792524311?i=1792524312&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/a1/f0/b4a1f0f3-7524-0210-1e85-bc785b885dda/196872839487.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1585164366",
+       "title": "Gone Girl",
+       "artist": "Obongjayar & Sarz",
+       "album": "Sweetness - EP",
+       "durationMs": 253686,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/f3/7e/8ff37e8f-2576-1c02-996a-d7e077f17465/mzaf_12410912567027102057.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/gone-girl/1585164131?i=1585164366&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/77/49/24/7749247a-8579-29c9-81c5-cefa5df23779/196292113969.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1589447164",
+       "title": "I Wish It Was Me",
+       "artist": "Obongjayar",
+       "album": "Some Nights I Dream of Doors",
+       "durationMs": 203800,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2b/b9/d7/2bb9d786-e5c8-0450-6c8a-32546902c3cf/mzaf_16303856298283678227.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/i-wish-it-was-me/1589446170?i=1589447164&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8b/43/50/8b43506a-3f08-e156-e29d-ef54d328d493/196292594140.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1771937014",
+       "title": "Just My Luck",
+       "artist": "Obongjayar",
+       "album": "Just My Luck / Tomorrow Man - Single",
+       "durationMs": 180333,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/36/8b/97/368b97d1-049a-3cfb-22c4-e38dea7a8b2e/mzaf_1669849363749067709.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/just-my-luck/1771937012?i=1771937014&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8a/25/5e/8a255eeb-0c34-df8e-b14c-34cf283e5b85/196872517637.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "peak"
+    },
+    {
+     "itemId": "i_111f286c-7",
+     "qlooId": "57478178-BBBC-49A4-8755-5D942B388316",
+     "artist": "Jordan Rakei",
+     "tracks": [
+      {
+       "id": "1455373552",
+       "title": "Ottolenghi",
+       "artist": "Loyle Carner & Jordan Rakei",
+       "album": "Not Waving, But Drowning",
+       "durationMs": 197600,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/50/9a/1b/509a1bf5-1bd5-676d-03c3-5dd20a6df7a6/mzaf_11648730818208902697.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/ottolenghi/1455373538?i=1455373552&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d4/ee/4d/d4ee4dba-edc3-d2a4-e8b2-7464405afa04/19UMGIM00624.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1881715803",
+       "title": "It Never Ends",
+       "artist": "Jordan Rakei & Femi Koleoso",
+       "album": "Between Us - EP",
+       "durationMs": 197123,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/1a/b7/571ab746-a93f-a703-3583-98434b84dce2/mzaf_2313875266846687511.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/it-never-ends/1881715800?i=1881715803&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/94/fe/01/94fe018a-a49a-8063-0205-6116d9ec3b81/26UMGIM20092.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6789552244",
+       "title": "Paradise",
+       "artist": "Jordan Rakei",
+       "album": "A Safe Place To Be Wild",
+       "durationMs": 181113,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/51/5f/fb515f45-1105-0c15-11a9-c941698e0fca/mzaf_16140868010390534426.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/paradise/6789552109?i=6789552244&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/c0/7b/8bc07b7a-7ac4-e6b8-4da9-41473577a7e0/26UMGIM80671.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1565382319",
+       "title": "Family",
+       "artist": "Jordan Rakei",
+       "album": "What We Call Life",
+       "durationMs": 207987,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5c/7f/c1/5c7fc11e-cd89-cab3-c336-4df967a4cc57/mzaf_18331378692821700204.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/family/1565382318?i=1565382319&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6a/45/32/6a4532bc-57e2-27c4-c470-fcf027b1c93b/5054429149166.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1540037362",
+       "title": "Midnight Mischief",
+       "artist": "Jordan Rakei",
+       "album": "Cloak",
+       "durationMs": 322347,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/ed/e4/b8ede4a7-4642-56fe-3126-f8923a358212/mzaf_9415961489606683760.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/midnight-mischief/1540037358?i=1540037362&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d8/65/b1/d865b1a9-9fb0-6c0a-27b2-787b9160b88c/859743553478_cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "late"
+    },
+    {
+     "itemId": "i_9f869c77-c",
+     "qlooId": "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+     "artist": "Mansur Brown",
+     "tracks": [
+      {
+       "id": "1436875255",
+       "title": "Mashita",
+       "artist": "Mansur Brown",
+       "album": "Shiroi",
+       "durationMs": 172373,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ee/4e/0c/ee4e0c0f-4ca2-e0ab-dba2-74db9dd16244/mzaf_18377262274759580780.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/mashita/1436875242?i=1436875255&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1562145531",
+       "title": "Serious",
+       "artist": "Mansur Brown",
+       "album": "Heiwa",
+       "durationMs": 382760,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/d5/ab/61/d5ab610f-c18f-99df-c296-df2712bc879e/mzaf_3860178437316721376.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/serious/1562145323?i=1562145531&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/44/02/8c/44028c98-c3f3-698c-f905-d06d6354f946/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1436875253",
+       "title": "God Willing",
+       "artist": "Mansur Brown",
+       "album": "Shiroi",
+       "durationMs": 205893,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f5/bd/08/f5bd08e8-6b28-c4d5-bfb2-3fa88620ef75/mzaf_16459725988513221552.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/god-willing/1436875242?i=1436875253&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1436875251",
+       "title": "The Beginning",
+       "artist": "Mansur Brown",
+       "album": "Shiroi",
+       "durationMs": 208640,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/95/a2/49/95a249ef-ccf2-f5ec-4c6f-e298553b4551/mzaf_2196594455707786034.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/the-beginning/1436875242?i=1436875251&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1436875252",
+       "title": "Shiroi",
+       "artist": "Mansur Brown",
+       "album": "Shiroi",
+       "durationMs": 225773,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/52/6f/ce526f62-de40-00de-de54-7327db0d959d/mzaf_2900777512756334448.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/shiroi/1436875242?i=1436875252&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "late"
+    },
+    {
+     "itemId": "i_311ebeda-2",
+     "qlooId": "AC007829-3D79-438E-9F02-11228C82AD38",
+     "artist": "Hiatus Kaiyote",
+     "tracks": [
+      {
+       "id": "1552222017",
+       "title": "Red Room",
+       "artist": "Hiatus Kaiyote",
+       "album": "Mood Valiant",
+       "durationMs": 232053,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/96/2c/86962cb3-79eb-a935-f8c2-1cdf02d74773/mzaf_12576810374842223936.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/red-room/1552222008?i=1552222017&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/11/a3/70/11a37079-8d3b-a414-0319-9426b70bab2a/5054429148053.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "972218254",
+       "title": "Molasses",
+       "artist": "Hiatus Kaiyote",
+       "album": "Choose Your Weapon",
+       "durationMs": 289488,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/b0/c2/98b0c262-9552-8a55-3779-96369d71937b/mzaf_9561167930064172640.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/molasses/972218237?i=972218254&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "972218246",
+       "title": "Fingerprints",
+       "artist": "Hiatus Kaiyote",
+       "album": "Choose Your Weapon",
+       "durationMs": 256912,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6d/64/f9/6d64f991-d5a6-c20d-d1bf-96cf847d71bc/mzaf_4778103349859151560.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/fingerprints/972218237?i=972218246&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1692856325",
+       "title": "Nakamarra (feat. Q-Tip)",
+       "artist": "Hiatus Kaiyote",
+       "album": "Tawk Tomahawk",
+       "durationMs": 275320,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5b/7b/a5/5b7ba545-07ef-5705-0d88-db605a9ce51f/mzaf_15291525202232505857.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/nakamarra-feat-q-tip/1692856313?i=1692856325&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f2/56/b1/f256b166-bdfb-2ee0-c9fb-ca6950129d98/artwork.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "972218243",
+       "title": "Breathing Underwater",
+       "artist": "Hiatus Kaiyote",
+       "album": "Choose Your Weapon",
+       "durationMs": 344317,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0c/bf/ad/0cbfadfc-99ee-0a3f-f726-ef45ebed2408/mzaf_10206416784510212245.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/breathing-underwater/972218237?i=972218243&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "late"
+    },
+    {
+     "itemId": "i_989215c0-6",
+     "qlooId": "390ED3FE-8883-4738-8DEF-42B291006151",
+     "artist": "Mr Jukes",
+     "tracks": [
+      {
+       "id": "1440885385",
+       "title": "Grant Green (feat. Charles Bradley)",
+       "artist": "Mr Jukes",
+       "album": "God First",
+       "durationMs": 202850,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/0f/e9/b20fe9b0-1a76-5484-369d-4e5ea8c8305f/mzaf_17655696544106632580.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/grant-green-feat-charles-bradley/1440884781?i=1440885385&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440885372",
+       "title": "Angels / Your Love (feat. BJ the Chicago Kid)",
+       "artist": "Mr Jukes",
+       "album": "God First",
+       "durationMs": 312020,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/34/df/5e34dfd5-49ea-2821-a360-bd3d98d1f8e6/mzaf_14629832211288162986.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/angels-your-love-feat-bj-the-chicago-kid/1440884781?i=1440885372&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440885383",
+       "title": "Somebody New (feat. Elli Ingram)",
+       "artist": "Mr Jukes",
+       "album": "God First",
+       "durationMs": 172988,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/0d/13/320d13c5-7a12-bf4f-9327-0cc42d7c3fce/mzaf_11958273851347560260.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/somebody-new-feat-elli-ingram/1440884781?i=1440885383&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440885388",
+       "title": "Leap of Faith (feat. De La Soul & Horace Andy)",
+       "artist": "Mr Jukes",
+       "album": "God First",
+       "durationMs": 186113,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ae/fb/b7/aefbb7fe-e8cf-480f-e2e4-68461510b2a4/mzaf_365047003013647856.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/leap-of-faith-feat-de-la-soul-horace-andy/1440884781?i=1440885388&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1440885376",
+       "title": "Ruby",
+       "artist": "Mr Jukes",
+       "album": "God First",
+       "durationMs": 263504,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1b/4c/11/1b4c115a-0b7e-6c4a-077b-5c5a151109c0/mzaf_11768279968111100100.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/ruby/1440884781?i=1440885376&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "late"
+    },
+    {
+     "itemId": "i_b18cf357-8",
+     "qlooId": "CE900E5A-FBA6-4915-BBE4-6D4C3F181E03",
+     "artist": "Children of Zeus",
+     "tracks": [
+      {
+       "id": "1389215114",
+       "title": "Hard Work",
+       "artist": "Children of Zeus",
+       "album": "Travel Light",
+       "durationMs": 207988,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/e2/1c/3fe21cee-ffac-fc1e-f1c3-3fad8ecfc3e5/mzaf_5990036057975802285.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/hard-work/1389214910?i=1389215114&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cc/53/a6/cc53a67c-93ef-a886-6310-6ad092f04e8f/5050580693548.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "6774234613",
+       "title": "Good Light",
+       "artist": "Children of Zeus",
+       "album": "As The World Burns...",
+       "durationMs": 220000,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/9e/99/169e990a-af4e-760f-5791-33c769d7e6aa/mzaf_6833574397568548419.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/good-light/6774234605?i=6774234613&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/c3/dc/48c3dcac-c0de-08cb-d3a2-79c26c9564b8/823375206903_Cover.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1086958797",
+       "title": "Still Standing",
+       "artist": "Children of Zeus",
+       "album": "Still Standing - Single",
+       "durationMs": 232829,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/4e/5f/e14e5fcd-e0ad-a4e6-6bc6-75b096cc1d3a/mzaf_6010964167460551257.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/still-standing/1086956977?i=1086958797&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/72/be/86/72be868d-8aff-9363-8999-465a2dd92fa9/5050580651180.png/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1501221849",
+       "title": "Push On",
+       "artist": "Children of Zeus",
+       "album": "Ronnie Herel Presents Neo Soul Sessions, Vol. 1",
+       "durationMs": 206870,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3c/12/1e/3c121e12-0f94-f7a8-d953-adf6cb10fe7d/mzaf_11951272191600694787.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/push-on/1501221312?i=1501221849&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/27/f8/8c27f885-233f-b04d-dd33-656022a28171/194491624514.jpg/100x100bb.jpg",
+       "explicit": false
+      },
+      {
+       "id": "1482846675",
+       "title": "Still Standing (feat. DRS) [Lenzman Remix]",
+       "artist": "Children of Zeus",
+       "album": "All for You",
+       "durationMs": 314989,
+       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6d/fa/ad/6dfaadb9-7fbb-5356-2b8a-17ccd0b5295c/mzaf_11889585494270393717.plus.aac.p.m4a",
+       "url": "https://music.apple.com/gb/album/still-standing-feat-drs-lenzman-remix/1482846667?i=1482846675&uo=4",
+       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/24/7d/0a/247d0af9-2613-9661-1bb5-6007d09b8802/cover.jpg/100x100bb.jpg",
+       "explicit": false
+      }
+     ],
+     "source": "plan",
+     "slotKey": "late"
+    }
+   ],
+   "playlists": [
+    {
+     "slotKey": "walk_in",
+     "label": "Arrivals & early seating",
+     "timeRange": "18:00–19:30",
+     "minutes": 90,
+     "filledMinutes": 93,
+     "entries": [
+      {
+       "at": "18:00",
+       "itemId": "i_89825f32-6",
+       "track": {
+        "id": "6781463361",
+        "title": "Summer Haze",
+        "artist": "Yazmin Lacey",
+        "album": "Summer Haze - Single",
+        "durationMs": 173742,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3e/80/fb/3e80fbb1-d2e8-8bcb-5e4a-79cb04e6020b/mzaf_8068995827048731445.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/summer-haze/6781463358?i=6781463361&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/4d/58/b54d58d4-5b44-c15d-ab0d-06b201abed03/823375245605_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:03",
+       "itemId": "i_274a50bd-e",
+       "track": {
+        "id": "1456111214",
+        "title": "COLORS",
+        "artist": "Ashley Henry",
+        "album": "Beautiful Vinyl Hunter",
+        "durationMs": 268993,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f3/32/5b/f3325bca-4f3e-8f2c-2959-e23e54b1f5cb/mzaf_16044929118373868252.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/colors/1456111197?i=1456111214&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:07",
+       "itemId": "i_eb613d42-f",
+       "track": {
+        "id": "6789628147",
+        "title": "More To Life (feat. SHANTÉH)",
+        "artist": "Moses Boyd",
+        "album": "Songs For Sinners",
+        "durationMs": 295125,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c3/14/3a/c3143a58-8124-1327-7f7b-2c6c0c59046d/mzaf_8073139851546376114.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/more-to-life-feat-shant%C3%A9h/6789627970?i=6789628147&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:12",
+       "itemId": "i_a6757030-d",
+       "track": {
+        "id": "1561771400",
+        "title": "Abusey Junction",
+        "artist": "Kokoroko",
+        "album": "We Out Here",
+        "durationMs": 429093,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/0d/75/8f0d7519-8892-5849-83c9-7261cb8a9ea3/mzaf_8878046729423962042.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/abusey-junction/1561770961?i=1561771400&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c1/e6/af/c1e6aff2-d170-5a9b-3b63-b6cb6686a803/5060180323301.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:19",
+       "itemId": "i_1bbe9ae6-a",
+       "track": {
+        "id": "1440909509",
+        "title": "My Queen Is Albertina Sisulu",
+        "artist": "Sons Of Kemet",
+        "album": "Your Queen Is A Reptile",
+        "durationMs": 319240,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/d2/5a/f7d25a2a-b4a8-d4ad-7786-83d6889fb131/mzaf_5130054033232223829.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/my-queen-is-albertina-sisulu/1440908967?i=1440909509&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7d/e1/aa/7de1aa4c-ae28-f3ad-64da-90e2d00ab9a2/00602567383789.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:25",
+       "itemId": "i_c616e136-b",
+       "track": {
+        "id": "1638935553",
+        "title": "Just Come Home with Me Tonight",
+        "artist": "Joesef",
+        "album": "Permanent Damage",
+        "durationMs": 247645,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ab/36/ca/ab36cadb-92e6-5317-3c08-e1ccd581195f/mzaf_5033165527574994079.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/just-come-home-with-me-tonight/1638935082?i=1638935553&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fd/f9/73/fdf973ef-040b-560c-c456-87512f799f9d/5056167175520.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:29",
+       "itemId": "i_89825f32-6",
+       "track": {
+        "id": "1815405891",
+        "title": "Ain't I Good For You",
+        "artist": "Yazmin Lacey",
+        "album": "Ain't I Good For You - Single",
+        "durationMs": 161805,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/64/98/00649880-5014-09c5-115d-37c67c3cd561/mzaf_4157638457993594480.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/aint-i-good-for-you/1815405890?i=1815405891&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e8/9b/d8/e89bd8a6-4b7c-4d91-9314-96e8c88b9eb8/25SYMIM19884.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:32",
+       "itemId": "i_274a50bd-e",
+       "track": {
+        "id": "1456111210",
+        "title": "Between the Lines (feat. Keyon Harrold)",
+        "artist": "Ashley Henry",
+        "album": "Beautiful Vinyl Hunter",
+        "durationMs": 287173,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/17/38/52/17385219-5254-f46d-5591-76798f21e5f7/mzaf_16280111082351476461.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/between-the-lines-feat-keyon-harrold/1456111197?i=1456111210&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:36",
+       "itemId": "i_eb613d42-f",
+       "track": {
+        "id": "6789627979",
+        "title": "Precious",
+        "artist": "Moses Boyd",
+        "album": "Songs For Sinners",
+        "durationMs": 423038,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e2/70/7b/e2707b78-68ec-d787-541a-b413ae4af3e2/mzaf_1173034206211003545.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/precious/6789627970?i=6789627979&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:43",
+       "itemId": "i_a6757030-d",
+       "track": {
+        "id": "1805175468",
+        "title": "Sweetie",
+        "artist": "Kokoroko",
+        "album": "Tuff Times Never Last",
+        "durationMs": 244049,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4f/35/a9/4f35a92b-7156-8fe9-9016-c8cdde31c472/mzaf_5727756502883362108.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/sweetie/1805175466?i=1805175468&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/e0/64/ebe064c9-513b-b546-9e91-f34d17f88b3c/5034644578637.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:47",
+       "itemId": "i_1bbe9ae6-a",
+       "track": {
+        "id": "1440909216",
+        "title": "My Queen Is Harriet Tubman",
+        "artist": "Sons Of Kemet",
+        "album": "Your Queen Is A Reptile",
+        "durationMs": 340053,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/31/98/6e/31986ea0-a09f-605e-959b-1b1ba1244e09/mzaf_1783895410955153834.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/my-queen-is-harriet-tubman/1440908967?i=1440909216&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7d/e1/aa/7de1aa4c-ae28-f3ad-64da-90e2d00ab9a2/00602567383789.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:53",
+       "itemId": "i_c616e136-b",
+       "track": {
+        "id": "1503587179",
+        "title": "The Sun Is Up Forever",
+        "artist": "Joesef",
+        "album": "The Sun Is Up Forever - Single",
+        "durationMs": 224740,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/22/8f/8f/228f8fc2-a2b8-1121-a3d7-dc8289859fdc/mzaf_10965927407701107901.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-sun-is-up-forever/1503587171?i=1503587179&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/72/5a/65725a4f-4cea-0aa6-d552-7a38ae53cca2/5056167122708_1.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "18:57",
+       "itemId": "i_89825f32-6",
+       "track": {
+        "id": "6769417063",
+        "title": "Sweetest Season",
+        "artist": "Yazmin Lacey",
+        "album": "Sweetest Season - Single",
+        "durationMs": 170753,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/77/cb/f6/77cbf639-351c-4554-d95c-1de305f2123b/mzaf_18441051912869932910.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/sweetest-season/6769416641?i=6769417063&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/15/03/7d/15037de2-6714-2aad-7c15-61976b41db80/823375181972_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:00",
+       "itemId": "i_274a50bd-e",
+       "track": {
+        "id": "1677444618",
+        "title": "Melanin",
+        "artist": "Ashley Henry",
+        "album": "My Voice - EP",
+        "durationMs": 260593,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5e/d8/26/5ed82647-0372-ab2e-9103-99ffc4edd3bc/mzaf_9153517736529108104.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/melanin/1677444473?i=1677444618&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/c5/bd/36c5bd60-8747-feb1-c6ed-288bc4c6d8a4/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:04",
+       "itemId": "i_eb613d42-f",
+       "track": {
+        "id": "6789628382",
+        "title": "Guess I'll be Alright",
+        "artist": "Moses Boyd",
+        "album": "Songs For Sinners",
+        "durationMs": 380582,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/97/06/009706ef-a9ec-ac17-0bbe-cb910f57ce9f/mzaf_12067792696228873793.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/guess-ill-be-alright/6789627970?i=6789628382&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/79/f9/40/79f9408f-0954-9da2-96eb-1b2432203347/820233948364.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:10",
+       "itemId": "i_a6757030-d",
+       "track": {
+        "id": "1805175834",
+        "title": "Just Can’t Wait",
+        "artist": "Kokoroko",
+        "album": "Tuff Times Never Last",
+        "durationMs": 382509,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/4f/53/1b4f5301-f89d-cc28-dc08-6bfca292b637/mzaf_2599919059219197931.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/just-cant-wait/1805175466?i=1805175834&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/e0/64/ebe064c9-513b-b546-9e91-f34d17f88b3c/5034644578637.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:17",
+       "itemId": "i_1bbe9ae6-a",
+       "track": {
+        "id": "1558301384",
+        "title": "For The Culture (feat. D Double E)",
+        "artist": "Sons Of Kemet",
+        "album": "Black To The Future",
+        "durationMs": 241080,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/02/72/7f/02727f81-9b96-7691-29ca-231886d5a18c/mzaf_2915583258546606374.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/for-the-culture-feat-d-double-e/1558301183?i=1558301384&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/07/60/8c/07608c66-6e33-7c16-3b4c-6f8b997458a4/21UMGIM18629.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:21",
+       "itemId": "i_c616e136-b",
+       "track": {
+        "id": "1638935890",
+        "title": "Joe",
+        "artist": "Joesef",
+        "album": "Permanent Damage",
+        "durationMs": 187660,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/31/97/2f3197af-c739-016e-d3cb-06ca20aca419/mzaf_17724751422569710945.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/joe/1638935082?i=1638935890&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fd/f9/73/fdf973ef-040b-560c-c456-87512f799f9d/5056167175520.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:24",
+       "itemId": "i_89825f32-6",
+       "track": {
+        "id": "1828247314",
+        "title": "Wallpaper",
+        "artist": "Yazmin Lacey",
+        "album": "Teal Dreams",
+        "durationMs": 179540,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/94/9e/bc949e3d-b5db-5ac7-cc3d-2bc716b20aef/mzaf_4366573835115795144.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/wallpaper/1828247311?i=1828247314&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f3/09/dc/f309dc26-c7eb-cd9b-0006-fa1b705a84fa/25SYMIM21375.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:27",
+       "itemId": "i_274a50bd-e",
+       "track": {
+        "id": "1456111216",
+        "title": "Cranes (In the Sky)",
+        "artist": "Ashley Henry",
+        "album": "Beautiful Vinyl Hunter",
+        "durationMs": 350378,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/f8/9c/05f89cec-65de-70af-a8a9-72aee90036f6/mzaf_16556347443102233911.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/cranes-in-the-sky/1456111197?i=1456111216&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1e/2c/7d/1e2c7dd1-1f76-7a6b-e00a-e873b2d32afd/886447244128.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    },
+    {
+     "slotKey": "peak",
+     "label": "Peak service",
+     "timeRange": "19:30–21:30",
+     "minutes": 120,
+     "filledMinutes": 122,
+     "entries": [
+      {
+       "at": "19:30",
+       "itemId": "i_9ff359a5-9",
+       "track": {
+        "id": "1451211668",
+        "title": "Keep On",
+        "artist": "Alfa Mist",
+        "album": "Antiphon",
+        "durationMs": 647000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/03/8e/7e/038e7e22-2ebd-91c2-d78e-46085ebef4c4/mzaf_17080027920536188767.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/keep-on/1451211664?i=1451211668&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:41",
+       "itemId": "i_b25d6d23-a",
+       "track": {
+        "id": "1621511415",
+        "title": "New Heights (Visions of Aisha Malik)",
+        "artist": "Kamaal Williams & Darkhouse Family",
+        "album": "New Heights / Snitches Brew - Single",
+        "durationMs": 239358,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/05/19/05051900-cd8c-f2a8-c999-42de57599fa6/mzaf_17185620865227552199.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/new-heights-visions-of-aisha-malik/1621511195?i=1621511415&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/75/75/c7/7575c755-e67e-4155-dc19-bf99c5bedd93/5060384615011.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:45",
+       "itemId": "i_86ace149-3",
+       "track": {
+        "id": "1497226895",
+        "title": "Tidal Wave",
+        "artist": "Tom Misch & Yussef Dayes",
+        "album": "What Kinda Music",
+        "durationMs": 249427,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c7/bc/a6/c7bca6ff-c5e5-237d-7ee4-7c4fbf89313e/mzaf_4183522174819284107.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/tidal-wave/1497226866?i=1497226895&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d1/f4/9b/d1f49b90-7f67-faf6-ac75-c522e2ddd3c2/20UMGIM06943.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:49",
+       "itemId": "i_9d78f973-c",
+       "track": {
+        "id": "1632524369",
+        "title": "The Spoon",
+        "artist": "Oscar Jerome",
+        "album": "The Spoon",
+        "durationMs": 426240,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/45/41/94/45419464-7229-cfcc-3452-18b791038788/mzaf_1025101557607093316.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-spoon/1632523766?i=1632524369&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/cb/39/05cb3930-1c3d-c90d-a401-219bb53cd2ec/196626898258.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "19:56",
+       "itemId": "i_2c577712-3",
+       "track": {
+        "id": "1881715805",
+        "title": "Monsters",
+        "artist": "Jordan Rakei & Nubya Garcia",
+        "album": "Between Us - EP",
+        "durationMs": 363791,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/72/9c/54729cb7-69d7-dd03-b57a-4aa5078912fe/mzaf_10497796176061310753.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/monsters/1881715800?i=1881715805&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/94/fe/01/94fe018a-a49a-8063-0205-6116d9ec3b81/26UMGIM20092.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:02",
+       "itemId": "i_68128b1d-7",
+       "track": {
+        "id": "1700707219",
+        "title": "adore u",
+        "artist": "Fred again.. & Obongjayar",
+        "album": "adore u - Single",
+        "durationMs": 220653,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d2/bb/35/d2bb35e8-cc43-fef6-bbcb-2ccb6e49b786/mzaf_10723061851435265005.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/adore-u/1700707216?i=1700707219&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/7f/97/dd/7f97ddab-43e6-6e83-923a-e243d37d722c/5054197770555.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:06",
+       "itemId": "i_9ff359a5-9",
+       "track": {
+        "id": "1451211683",
+        "title": "7th October",
+        "artist": "Alfa Mist",
+        "album": "Antiphon",
+        "durationMs": 249082,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c2/ef/1d/c2ef1db8-71bc-aad4-9cc9-bf1d207b580a/mzaf_15806643451055019069.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/7th-october/1451211664?i=1451211683&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:10",
+       "itemId": "i_b25d6d23-a",
+       "track": {
+        "id": "1698168817",
+        "title": "Dogtown",
+        "artist": "Kamaal Williams",
+        "album": "Stings",
+        "durationMs": 390000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/73/dd/41/73dd4174-daf3-6d4e-aac0-3533eaddc642/mzaf_13472229678913644855.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/dogtown/1698168193?i=1698168817&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/21/43/84/214384f1-60ac-69b6-e930-d0ee344d47b8/197189413469.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:16",
+       "itemId": "i_86ace149-3",
+       "track": {
+        "id": "1683587507",
+        "title": "Rust (feat. Tom Misch)",
+        "artist": "Yussef Dayes",
+        "album": "Black Classical Music",
+        "durationMs": 238787,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e9/c0/8c/e9c08cbe-1d83-ed6c-48bc-f1bb91af8e2e/mzaf_10256303127215585383.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/rust-feat-tom-misch/1683587217?i=1683587507&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8d/09/c0/8d09c054-0bcb-c172-92fa-268a89aac299/197338790748.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:20",
+       "itemId": "i_9d78f973-c",
+       "track": {
+        "id": "1506178614",
+        "title": "Gravitate",
+        "artist": "Oscar Jerome",
+        "album": "Breathe Deep",
+        "durationMs": 342120,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f7/66/94/f76694c6-93ba-baa7-3ee8-894c40cc6642/mzaf_926838418643239150.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/gravitate/1506178599?i=1506178614&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/42/2f/25/422f25e2-49c8-b0bf-799f-00035ae70ce9/20UMGIM16659.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:26",
+       "itemId": "i_2c577712-3",
+       "track": {
+        "id": "1523554805",
+        "title": "The Message Continues",
+        "artist": "Nubya Garcia",
+        "album": "SOURCE",
+        "durationMs": 404776,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d9/90/07/d9900767-3e41-5cfa-9384-eaa92219402c/mzaf_2855974874382002147.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-message-continues/1523554803?i=1523554805&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/01/0b/96/010b9654-4059-150f-8650-38f94faa62cf/20CRGIM21278.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:33",
+       "itemId": "i_68128b1d-7",
+       "track": {
+        "id": "1792524312",
+        "title": "Not In Surrender",
+        "artist": "Obongjayar",
+        "album": "Not In Surrender - Single",
+        "durationMs": 199421,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ff/ec/61/ffec6102-3969-6ac9-0a4b-4372a6b5ba0f/mzaf_11678464586760544787.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/not-in-surrender/1792524311?i=1792524312&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/a1/f0/b4a1f0f3-7524-0210-1e85-bc785b885dda/196872839487.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:36",
+       "itemId": "i_9ff359a5-9",
+       "track": {
+        "id": "1451211681",
+        "title": "Breathe",
+        "artist": "Alfa Mist",
+        "album": "Antiphon",
+        "durationMs": 447000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/92/fa/c2/92fac217-7f3b-d5a7-7293-b7c63d0ea84d/mzaf_3876864033206792203.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/breathe/1451211664?i=1451211681&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:44",
+       "itemId": "i_b25d6d23-a",
+       "track": {
+        "id": "1621512906",
+        "title": "Situations (Live In Milan)",
+        "artist": "Kamaal Williams",
+        "album": "The Return",
+        "durationMs": 179693,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/80/dc/ab/80dcab8d-9725-3143-ef43-41184b998d94/mzaf_12204117095940183602.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/situations-live-in-milan/1621512735?i=1621512906&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/98/5f/43/985f4351-d1d0-867e-b4a5-fd648522ee5f/5060384613437.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:47",
+       "itemId": "i_86ace149-3",
+       "track": {
+        "id": "1487538372",
+        "title": "For My Ladies (feat. Rocco Palladino & Charlie Stacey)",
+        "artist": "Yussef Dayes",
+        "album": "Duality (feat. Rocco Palladino & Charlie Stacey) - Single",
+        "durationMs": 341346,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/e2/8f/95e28fab-4c3d-7d1b-265b-b294f9f33361/mzaf_5674953030113435668.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/for-my-ladies-feat-rocco-palladino-charlie-stacey/1487538302?i=1487538372&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/be/6c/f8/be6cf8a0-8cfa-3ee6-9444-4d47abd33ec1/5054526181625_1.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:52",
+       "itemId": "i_9d78f973-c",
+       "track": {
+        "id": "1506178603",
+        "title": "Sun for Someone",
+        "artist": "Oscar Jerome",
+        "album": "Breathe Deep",
+        "durationMs": 303960,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/78/78/f4/7878f44f-dcdb-f73d-2b50-2a130e626a83/mzaf_5637812131538560670.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/sun-for-someone/1506178599?i=1506178603&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/42/2f/25/422f25e2-49c8-b0bf-799f-00035ae70ce9/20UMGIM16659.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "20:57",
+       "itemId": "i_2c577712-3",
+       "track": {
+        "id": "1718239686",
+        "title": "Lost Kingdoms",
+        "artist": "Nubya Garcia",
+        "album": "Nubya's 5ive",
+        "durationMs": 458606,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/2e/5e/762e5e98-c345-bea9-0464-c0e972c9ea49/mzaf_13633160546735599606.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/lost-kingdoms/1718239682?i=1718239686&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/62/20/7d/62207db4-4a40-97ce-f421-34d585c20b6d/197190481730.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:05",
+       "itemId": "i_68128b1d-7",
+       "track": {
+        "id": "1585164366",
+        "title": "Gone Girl",
+        "artist": "Obongjayar & Sarz",
+        "album": "Sweetness - EP",
+        "durationMs": 253686,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/f3/7e/8ff37e8f-2576-1c02-996a-d7e077f17465/mzaf_12410912567027102057.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/gone-girl/1585164131?i=1585164366&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/77/49/24/7749247a-8579-29c9-81c5-cefa5df23779/196292113969.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:09",
+       "itemId": "i_9ff359a5-9",
+       "track": {
+        "id": "1451212196",
+        "title": "Kyoki",
+        "artist": "Alfa Mist",
+        "album": "Antiphon",
+        "durationMs": 366165,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8c/6f/46/8c6f46e9-3fee-97d2-0c24-f174c6d97020/mzaf_2380098877229272884.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/kyoki/1451211664?i=1451212196&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/dc/a2/69/dca269e7-e81b-f54a-d6a6-e8e2f0cf80f6/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:15",
+       "itemId": "i_b25d6d23-a",
+       "track": {
+        "id": "1621512938",
+        "title": "Pigalle",
+        "artist": "Kamaal Williams",
+        "album": "Wu Hen",
+        "durationMs": 374875,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/cc/a3/d1cca341-528e-ba2f-e39b-6f9d4c68e9a8/mzaf_16488828711642967491.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/pigalle/1621512196?i=1621512938&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/43/1d/f6/431df65a-5519-e7c3-5c6e-58f61c1fefd6/5060384618739.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:22",
+       "itemId": "i_86ace149-3",
+       "track": {
+        "id": "1683587535",
+        "title": "Marching Band (feat. Masego)",
+        "artist": "Yussef Dayes",
+        "album": "Black Classical Music",
+        "durationMs": 284387,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/32/38/3f323872-24e1-b0c3-3bd5-a1e885e36b28/mzaf_13521420895682870634.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/marching-band-feat-masego/1683587217?i=1683587535&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8d/09/c0/8d09c054-0bcb-c172-92fa-268a89aac299/197338790748.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:26",
+       "itemId": "i_9d78f973-c",
+       "track": {
+        "id": "1632524794",
+        "title": "Use It",
+        "artist": "Oscar Jerome",
+        "album": "The Spoon",
+        "durationMs": 353653,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bc/2d/18/bc2d18a3-25b7-9a3f-4b2b-ce8d6618b23d/mzaf_13558942003936712813.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/use-it/1632523766?i=1632524794&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/cb/39/05cb3930-1c3d-c90d-a401-219bb53cd2ec/196626898258.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    },
+    {
+     "slotKey": "late",
+     "label": "Late lounge set",
+     "timeRange": "21:30–23:00",
+     "minutes": 90,
+     "filledMinutes": 91,
+     "entries": [
+      {
+       "at": "21:30",
+       "itemId": "i_111f286c-7",
+       "track": {
+        "id": "1455373552",
+        "title": "Ottolenghi",
+        "artist": "Loyle Carner & Jordan Rakei",
+        "album": "Not Waving, But Drowning",
+        "durationMs": 197600,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/50/9a/1b/509a1bf5-1bd5-676d-03c3-5dd20a6df7a6/mzaf_11648730818208902697.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/ottolenghi/1455373538?i=1455373552&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d4/ee/4d/d4ee4dba-edc3-d2a4-e8b2-7464405afa04/19UMGIM00624.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:33",
+       "itemId": "i_9f869c77-c",
+       "track": {
+        "id": "1436875255",
+        "title": "Mashita",
+        "artist": "Mansur Brown",
+        "album": "Shiroi",
+        "durationMs": 172373,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ee/4e/0c/ee4e0c0f-4ca2-e0ab-dba2-74db9dd16244/mzaf_18377262274759580780.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/mashita/1436875242?i=1436875255&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:36",
+       "itemId": "i_311ebeda-2",
+       "track": {
+        "id": "1552222017",
+        "title": "Red Room",
+        "artist": "Hiatus Kaiyote",
+        "album": "Mood Valiant",
+        "durationMs": 232053,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/96/2c/86962cb3-79eb-a935-f8c2-1cdf02d74773/mzaf_12576810374842223936.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/red-room/1552222008?i=1552222017&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/11/a3/70/11a37079-8d3b-a414-0319-9426b70bab2a/5054429148053.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:40",
+       "itemId": "i_989215c0-6",
+       "track": {
+        "id": "1440885385",
+        "title": "Grant Green (feat. Charles Bradley)",
+        "artist": "Mr Jukes",
+        "album": "God First",
+        "durationMs": 202850,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/0f/e9/b20fe9b0-1a76-5484-369d-4e5ea8c8305f/mzaf_17655696544106632580.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/grant-green-feat-charles-bradley/1440884781?i=1440885385&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:43",
+       "itemId": "i_b18cf357-8",
+       "track": {
+        "id": "1389215114",
+        "title": "Hard Work",
+        "artist": "Children of Zeus",
+        "album": "Travel Light",
+        "durationMs": 207988,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3f/e2/1c/3fe21cee-ffac-fc1e-f1c3-3fad8ecfc3e5/mzaf_5990036057975802285.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/hard-work/1389214910?i=1389215114&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cc/53/a6/cc53a67c-93ef-a886-6310-6ad092f04e8f/5050580693548.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:47",
+       "itemId": "i_111f286c-7",
+       "track": {
+        "id": "1881715803",
+        "title": "It Never Ends",
+        "artist": "Jordan Rakei & Femi Koleoso",
+        "album": "Between Us - EP",
+        "durationMs": 197123,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/1a/b7/571ab746-a93f-a703-3583-98434b84dce2/mzaf_2313875266846687511.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/it-never-ends/1881715800?i=1881715803&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/94/fe/01/94fe018a-a49a-8063-0205-6116d9ec3b81/26UMGIM20092.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:50",
+       "itemId": "i_9f869c77-c",
+       "track": {
+        "id": "1562145531",
+        "title": "Serious",
+        "artist": "Mansur Brown",
+        "album": "Heiwa",
+        "durationMs": 382760,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/d5/ab/61/d5ab610f-c18f-99df-c296-df2712bc879e/mzaf_3860178437316721376.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/serious/1562145323?i=1562145531&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/44/02/8c/44028c98-c3f3-698c-f905-d06d6354f946/cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "21:57",
+       "itemId": "i_311ebeda-2",
+       "track": {
+        "id": "972218254",
+        "title": "Molasses",
+        "artist": "Hiatus Kaiyote",
+        "album": "Choose Your Weapon",
+        "durationMs": 289488,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/b0/c2/98b0c262-9552-8a55-3779-96369d71937b/mzaf_9561167930064172640.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/molasses/972218237?i=972218254&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:01",
+       "itemId": "i_989215c0-6",
+       "track": {
+        "id": "1440885372",
+        "title": "Angels / Your Love (feat. BJ the Chicago Kid)",
+        "artist": "Mr Jukes",
+        "album": "God First",
+        "durationMs": 312020,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/34/df/5e34dfd5-49ea-2821-a360-bd3d98d1f8e6/mzaf_14629832211288162986.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/angels-your-love-feat-bj-the-chicago-kid/1440884781?i=1440885372&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:07",
+       "itemId": "i_b18cf357-8",
+       "track": {
+        "id": "6774234613",
+        "title": "Good Light",
+        "artist": "Children of Zeus",
+        "album": "As The World Burns...",
+        "durationMs": 220000,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/9e/99/169e990a-af4e-760f-5791-33c769d7e6aa/mzaf_6833574397568548419.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/good-light/6774234605?i=6774234613&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/c3/dc/48c3dcac-c0de-08cb-d3a2-79c26c9564b8/823375206903_Cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:10",
+       "itemId": "i_111f286c-7",
+       "track": {
+        "id": "6789552244",
+        "title": "Paradise",
+        "artist": "Jordan Rakei",
+        "album": "A Safe Place To Be Wild",
+        "durationMs": 181113,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/51/5f/fb515f45-1105-0c15-11a9-c941698e0fca/mzaf_16140868010390534426.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/paradise/6789552109?i=6789552244&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/c0/7b/8bc07b7a-7ac4-e6b8-4da9-41473577a7e0/26UMGIM80671.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:13",
+       "itemId": "i_9f869c77-c",
+       "track": {
+        "id": "1436875253",
+        "title": "God Willing",
+        "artist": "Mansur Brown",
+        "album": "Shiroi",
+        "durationMs": 205893,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f5/bd/08/f5bd08e8-6b28-c4d5-bfb2-3fa88620ef75/mzaf_16459725988513221552.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/god-willing/1436875242?i=1436875253&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:17",
+       "itemId": "i_311ebeda-2",
+       "track": {
+        "id": "972218246",
+        "title": "Fingerprints",
+        "artist": "Hiatus Kaiyote",
+        "album": "Choose Your Weapon",
+        "durationMs": 256912,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6d/64/f9/6d64f991-d5a6-c20d-d1bf-96cf847d71bc/mzaf_4778103349859151560.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/fingerprints/972218237?i=972218246&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:21",
+       "itemId": "i_989215c0-6",
+       "track": {
+        "id": "1440885383",
+        "title": "Somebody New (feat. Elli Ingram)",
+        "artist": "Mr Jukes",
+        "album": "God First",
+        "durationMs": 172988,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/0d/13/320d13c5-7a12-bf4f-9327-0cc42d7c3fce/mzaf_11958273851347560260.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/somebody-new-feat-elli-ingram/1440884781?i=1440885383&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:24",
+       "itemId": "i_b18cf357-8",
+       "track": {
+        "id": "1086958797",
+        "title": "Still Standing",
+        "artist": "Children of Zeus",
+        "album": "Still Standing - Single",
+        "durationMs": 232829,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/4e/5f/e14e5fcd-e0ad-a4e6-6bc6-75b096cc1d3a/mzaf_6010964167460551257.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/still-standing/1086956977?i=1086958797&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/72/be/86/72be868d-8aff-9363-8999-465a2dd92fa9/5050580651180.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:28",
+       "itemId": "i_111f286c-7",
+       "track": {
+        "id": "1565382319",
+        "title": "Family",
+        "artist": "Jordan Rakei",
+        "album": "What We Call Life",
+        "durationMs": 207987,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5c/7f/c1/5c7fc11e-cd89-cab3-c336-4df967a4cc57/mzaf_18331378692821700204.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/family/1565382318?i=1565382319&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6a/45/32/6a4532bc-57e2-27c4-c470-fcf027b1c93b/5054429149166.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:31",
+       "itemId": "i_9f869c77-c",
+       "track": {
+        "id": "1436875251",
+        "title": "The Beginning",
+        "artist": "Mansur Brown",
+        "album": "Shiroi",
+        "durationMs": 208640,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/95/a2/49/95a249ef-ccf2-f5ec-4c6f-e298553b4551/mzaf_2196594455707786034.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/the-beginning/1436875242?i=1436875251&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:35",
+       "itemId": "i_311ebeda-2",
+       "track": {
+        "id": "1692856325",
+        "title": "Nakamarra (feat. Q-Tip)",
+        "artist": "Hiatus Kaiyote",
+        "album": "Tawk Tomahawk",
+        "durationMs": 275320,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5b/7b/a5/5b7ba545-07ef-5705-0d88-db605a9ce51f/mzaf_15291525202232505857.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/nakamarra-feat-q-tip/1692856313?i=1692856325&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f2/56/b1/f256b166-bdfb-2ee0-c9fb-ca6950129d98/artwork.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:39",
+       "itemId": "i_989215c0-6",
+       "track": {
+        "id": "1440885388",
+        "title": "Leap of Faith (feat. De La Soul & Horace Andy)",
+        "artist": "Mr Jukes",
+        "album": "God First",
+        "durationMs": 186113,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ae/fb/b7/aefbb7fe-e8cf-480f-e2e4-68461510b2a4/mzaf_365047003013647856.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/leap-of-faith-feat-de-la-soul-horace-andy/1440884781?i=1440885388&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/80/d6/c180d64c-be44-d11b-f24f-017bbed52abc/00602557545920.rgb.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:42",
+       "itemId": "i_b18cf357-8",
+       "track": {
+        "id": "1501221849",
+        "title": "Push On",
+        "artist": "Children of Zeus",
+        "album": "Ronnie Herel Presents Neo Soul Sessions, Vol. 1",
+        "durationMs": 206870,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3c/12/1e/3c121e12-0f94-f7a8-d953-adf6cb10fe7d/mzaf_11951272191600694787.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/push-on/1501221312?i=1501221849&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/27/f8/8c27f885-233f-b04d-dd33-656022a28171/194491624514.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:46",
+       "itemId": "i_111f286c-7",
+       "track": {
+        "id": "1540037362",
+        "title": "Midnight Mischief",
+        "artist": "Jordan Rakei",
+        "album": "Cloak",
+        "durationMs": 322347,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/ed/e4/b8ede4a7-4642-56fe-3126-f8923a358212/mzaf_9415961489606683760.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/midnight-mischief/1540037358?i=1540037362&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d8/65/b1/d865b1a9-9fb0-6c0a-27b2-787b9160b88c/859743553478_cover.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:51",
+       "itemId": "i_9f869c77-c",
+       "track": {
+        "id": "1436875252",
+        "title": "Shiroi",
+        "artist": "Mansur Brown",
+        "album": "Shiroi",
+        "durationMs": 225773,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ce/52/6f/ce526f62-de40-00de-de54-7327db0d959d/mzaf_2900777512756334448.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/shiroi/1436875242?i=1436875252&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/dc/3c/33dc3c08-63d5-4bb4-a14e-b8e41997a4bf/5060384614793.png/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      },
+      {
+       "at": "22:55",
+       "itemId": "i_311ebeda-2",
+       "track": {
+        "id": "972218243",
+        "title": "Breathing Underwater",
+        "artist": "Hiatus Kaiyote",
+        "album": "Choose Your Weapon",
+        "durationMs": 344317,
+        "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0c/bf/ad/0cbfadfc-99ee-0a3f-f726-ef45ebed2408/mzaf_10206416784510212245.plus.aac.p.m4a",
+        "url": "https://music.apple.com/gb/album/breathing-underwater/972218237?i=972218243&uo=4",
+        "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ac/04/1a/ac041a3a-ac40-3820-01f0-982615c30c37/dj.fnoymdtg.jpg/100x100bb.jpg",
+        "explicit": false
+       },
+       "fill": false
+      }
+     ]
+    }
+   ],
+   "skippedExplicit": 0,
+   "notes": [],
+   "createdAt": "2026-10-30T15:26:03.522Z"
   }
  },
  "ledger": [

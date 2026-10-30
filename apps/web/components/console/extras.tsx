@@ -30,7 +30,8 @@ export function LimitationsPanel({ show }: { show: Show }) {
           ))}
         </ul>
         <p className="border-t px-3 py-2 font-mono text-label text-muted-foreground">
-          {plan.stats.qlooCalls} Qloo calls · {plan.stats.cacheHits} cache hits · {plan.stats.retries} retries · {plan.stats.criticDrops} removed by the Critic · {(plan.stats.durationMs / 1000).toFixed(0)}s · ${plan.stats.costUsd.toFixed(3)} Claude
+          {plan.stats.qlooCalls} Qloo calls · {plan.stats.cacheHits} cache hits · {plan.stats.retries} retries · {plan.stats.criticDrops} removed by the Critic ·{" "}
+          {(plan.stats.durationMs / 1000).toFixed(0)}s · ${plan.stats.costUsd.toFixed(3)} Claude
         </p>
       </CollapsibleContent>
     </Collapsible>
@@ -54,10 +55,12 @@ export function ExportsMenu({ show }: { show: Show }) {
           <FileSpreadsheet /> Ops CSV
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => {
-            void navigator.clipboard?.writeText(share);
-            toast.success("Share link copied", { description: "Read-only, no login needed." });
-          }}
+          onClick={() =>
+            navigator.clipboard.writeText(share).then(
+              () => toast.success("Share link copied", { description: "Read-only, no login needed." }),
+              () => toast.error("Couldn't copy here", { description: share }),
+            )
+          }
         >
           <Link2 /> Copy share link
         </DropdownMenuItem>
