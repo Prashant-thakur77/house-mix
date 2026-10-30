@@ -1,0 +1,2256 @@
+{
+  "generatedAt": "2026-10-30T07:36:36.943Z",
+  "pairs": [
+    {
+      "pairId": "ab02",
+      "split": "test",
+      "title": "Kendrick Lamar with SZA",
+      "mode": "concert",
+      "venue": "SoFi Stadium",
+      "city": "Los Angeles",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Kali Uchis",
+                "why": "Smooth, sultry opener that suits early arrivals and SZA fans.",
+                "action": "Place her track first in the 18:00 playlist block at low-mid volume while gates are busy."
+              },
+              {
+                "name": "Daniel Caesar",
+                "why": "Soulful R&B bridges SZA's audience and Kendrick's introspective fans.",
+                "action": "Queue two tracks back-to-back at 18:15 to settle the early crowd."
+              },
+              {
+                "name": "Childish Gambino",
+                "why": "Genre-fluid and widely loved by this demographic, with rising tempo options.",
+                "action": "Pick the more upbeat tracks to lift energy around 18:30."
+              },
+              {
+                "name": "Schoolboy Q",
+                "why": "TDE labelmate who connects the crowd to Kendrick's Top Dawg roots.",
+                "action": "Slot him at 18:40 and cue a TDE-heavy mini-set to build local pride."
+              },
+              {
+                "name": "Travis Scott",
+                "why": "High-energy trap anthems prime the stadium for a big headliner.",
+                "action": "Play a high-BPM track at 18:50 and raise levels on the concourse speakers."
+              },
+              {
+                "name": "Anderson .Paak",
+                "why": "Funky Southern California favorite that lifts the mood with live-band energy.",
+                "action": "Use as the 18:55 finale, then fade to the opener's intro cue."
+              },
+              {
+                "name": "Tyler, the Creator (stretch)",
+                "why": "Adjacent LA alt-rap with a loyal crossover crowd that broadens the mix.",
+                "action": "Insert one track in the middle of the block as a test and watch crowd reaction."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Rising local R&B or alt-R&B act (venue-supplied)",
+                "why": "Fits the SZA-leaning half of the crowd and gives a rising local act a big stage.",
+                "action": "Confirm the venue's local list, choose the top R&B act, and schedule a 20-minute set with a quick changeover."
+              },
+              {
+                "name": "Local LA hip-hop act (venue-supplied)",
+                "why": "Matches Kendrick's core audience and credibly represents the hometown.",
+                "action": "Flag as a rising-act candidate and offer a short 15-minute slot with a DJ-only setup."
+              },
+              {
+                "name": "Steve Lacy (stretch)",
+                "why": "Adjacent alt-R&B/indie guitar sound with strong crossover appeal to this audience.",
+                "action": "Check availability and prepare a contingency slot for the stage manager."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Randy's Donuts",
+                "why": "Iconic Inglewood landmark that locals and visitors love.",
+                "action": "Set up a pop-up donut cart near the main gate entrance."
+              },
+              {
+                "name": "Tacos from a local taqueria vendor (e.g. Tacos 1986-style al pastor)",
+                "why": "LA street-taco culture suits a casual, diverse concert crowd.",
+                "action": "Add an al pastor taco stand at the main concourse with a fast-line setup."
+              },
+              {
+                "name": "Hot chicken or fried chicken vendor (e.g. Howlin' Ray's-style)",
+                "why": "Comfort food that travels well and has strong appeal to a young hip-hop audience.",
+                "action": "Offer a sandwich combo at a dedicated concession stand with a mobile order option."
+              },
+              {
+                "name": "Boba or craft lemonade stand (stretch)",
+                "why": "Non-alcoholic alternative that appeals to younger fans and designated drivers.",
+                "action": "Place a booth near the family and general-admission area with cashless payment."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Nike / Jordan Brand",
+                "why": "Strong streetwear fit with sneakerhead fans (sponsor-fit 8/10).",
+                "action": "Run a sneaker-customization or pop-up display near the merch stand."
+              },
+              {
+                "name": "Spotify",
+                "why": "Music-first brand that suits a fan base that streams heavily (sponsor-fit 9/10).",
+                "action": "Set up a playlist-QR activation where fans can save the setlist."
+              },
+              {
+                "name": "Beats by Dre",
+                "why": "LA-rooted audio brand with deep hip-hop ties (sponsor-fit 8/10).",
+                "action": "Create a listening booth with headphones and a photo backdrop."
+              },
+              {
+                "name": "Gap or Carhartt WIP-style collab (stretch)",
+                "why": "Adjacent streetwear fashion lane with potential for co-branded tour merch (sponsor-fit 6/10).",
+                "action": "Offer a limited-run tee at the merch stand and track sell-through."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "The Forum area bars and lounges, Inglewood",
+                "why": "Close to SoFi and rooted in Inglewood's music culture.",
+                "action": "Publish a shuttle and walking-route map with a post-show timeline."
+              },
+              {
+                "name": "Leimert Park venues and cafes",
+                "why": "Historic Black arts and music hub that matches the crowd's cultural taste.",
+                "action": "Partner with a Leimert Park spot to offer a late-night concert-ticket discount."
+              },
+              {
+                "name": "Compton or Crenshaw food spots (e.g. Hot Dog on a Stick-style or local diners)",
+                "why": "Ties the night back to Kendrick's Compton roots and offers late-night bites.",
+                "action": "Highlight a Compton-roots food trail in the show's digital guide."
+              },
+              {
+                "name": "Downtown LA rooftop or club (stretch)",
+                "why": "A bigger-night-out option for fans who want to continue partying after the show.",
+                "action": "Include rideshare pickup guidance and a recommended departure time."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Frank Ocean",
+                "why": "Top taste match to both Kendrick and SZA for this crowd, so it sets a warm, familiar tone as people arrive.",
+                "action": "Play first as the doors-open opener at low volume while queues move in."
+              },
+              {
+                "name": "Kali Uchis",
+                "why": "High taste match for this crowd; a relaxed pick that keeps the mood easy as people arrive.",
+                "action": "Play second, same level, as concourses start to fill."
+              },
+              {
+                "name": "The Internet",
+                "why": "Strong taste match for this crowd, ranking 2nd of 10 and 1st of 7 in the funk comparison.",
+                "action": "Play third, nudging volume up as seating begins."
+              },
+              {
+                "name": "KAYTRANADA",
+                "why": "A good pick for lifting the tempo, with a high taste match for this crowd.",
+                "action": "Play fourth, with more bounce, as the bowl fills."
+              },
+              {
+                "name": "Tierra Whack",
+                "why": "Strong taste match for this crowd (rank 2 of 7 in the comparison); a good pick for raising energy.",
+                "action": "Play fifth, at full walk-in volume."
+              },
+              {
+                "name": "Vince Staples",
+                "why": "High taste match for this crowd; a good pick for building energy into the first act.",
+                "action": "Play last before the first act, loudest and with no gap into changeover."
+              },
+              {
+                "name": "FKA twigs",
+                "why": "STRETCH: FKA twigs has a high affinity score with the Kendrick and SZA audience, so she fits as a change of texture in the walk-in.",
+                "action": "Slot her mid-playlist as a low-risk change of texture, between two familiar picks, and drop back to the core names if the room thins."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Daniel Caesar",
+                "why": "A soft, warm start that lets a stadium fill in. Trend check shows no movement, so he is not flagged as rising.",
+                "action": "Play first as the gentle opening set while the stadium fills."
+              },
+              {
+                "name": "Kilo Kish",
+                "why": "Alt-R&B pick with high affinity to the crowd's taste and lower popularity than the other picks. Not in the trend check, so no rising flag.",
+                "action": "Play second, as a mid-tempo set between the opener and the closer."
+              },
+              {
+                "name": "Little Simz",
+                "why": "High-energy pick for the slot before the changeover. Trend check shows no movement, so not flagged as rising.",
+                "action": "Play last before the changeover, as the highest-energy set leading into the main acts."
+              },
+              {
+                "name": "070 Shake",
+                "why": "STRETCH: 070 Shake shows high affinity with the crowd's taste. Offer her as the middle or optional changeover set after the primary opener, so the room can try her without risking the opening slot.",
+                "action": "Offer her as the middle or optional changeover set after the primary opener, so the room can try her without risking the opening slot."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Seven Nineteen By Gs Restaurant",
+                "why": "Seven Nineteen By Gs ranks 4 of 10 with strong affinity, making it a good fit for the premium drink side of the night.",
+                "action": "Feature a Seven Nineteen By Gs cocktail bar activation as the premium drink stop, with a zero-proof option for all ages."
+              },
+              {
+                "name": "Red's Flavor Table Takeout",
+                "why": "Red's Flavor Table ranks 5 of 10 with strong affinity, a good fit for this bill. Price fit is lower confidence, as the budget signal was weak.",
+                "action": "Run a Red's Flavor Table pop-up stall on the main concourse first, with a small handheld menu."
+              },
+              {
+                "name": "WaBa Grill",
+                "why": "WaBa Grill ranks 6 of 10 with strong affinity and lower popularity, which makes it a reasonable option for a quick pre-show meal.",
+                "action": "Set up a WaBa Grill partner stall near the gate entrances for the pre-show rush."
+              },
+              {
+                "name": "Little Belize Restaurant",
+                "why": "Little Belize ranks 7 of 10 with strong affinity, adding variety to the food line-up.",
+                "action": "Add a Little Belize stall with jerk-style plates after the opener, positioned away from the other food stalls."
+              },
+              {
+                "name": "The Court Cafe",
+                "why": "STRETCH: The Court Cafe is a stretch pick with strong affinity to the crowd's tastes (0.88-0.92) and moderate popularity (0.44). Place signals are weak, so this has reduced confidence.",
+                "action": "Feature it first as a small-plates or dish-of-the-night partner at one stand, and keep the core vendors as the main offer."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Urban Outfitters",
+                "why": "Urban Outfitters ranked first of 7 for this crowd. No sponsor-fit score, because the comparison shared no concepts.",
+                "action": "Run a pop-up merch collab capsule at the main concourse from doors, with a restock push during the changeover."
+              },
+              {
+                "name": "American Apparel",
+                "why": "American Apparel ranked second of 7 in the crowd read. No sponsor-fit score was available.",
+                "action": "Set up a custom-print tee station in the walk-in window, with finished tees collected on the way out."
+              },
+              {
+                "name": "Nasty Gal",
+                "why": "Nasty Gal ranked third of 7 in the rank, with a similar affinity score to American Apparel. No sponsor-fit score was available.",
+                "action": "Run a styling and photo-booth moment near the entry gates first, then move it to the concourse at the changeover."
+              },
+              {
+                "name": "Off-white",
+                "why": "Off-White ranked fourth of 7 in the rank. No sponsor-fit score was available.",
+                "action": "Stage a limited numbered merch drop announced after the opener, and sell it from a single branded kiosk until the headliner."
+              },
+              {
+                "name": "Moschino",
+                "why": "STRETCH: Moschino shows a high affinity (0.951) with this crowd and is very popular (0.999), making it a candidate to test.",
+                "action": "Test it with a small pop-up or capsule merch tie-in first, away from the main merch line, and expand only if there is interest."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "Cork & Batter",
+                "why": "A strong match for this crowd, with an affinity of 0.87. It suits a crowd that wants to stay out and talk about the show.",
+                "action": "Feature first in the guide as the sit-down drinks stop, and suggest booking ahead for post-show groups."
+              },
+              {
+                "name": "Birrieria Gomez",
+                "why": "A strong match for the Kendrick and SZA crowd, ranked 1 of 10 by affinity (0.911) with moderate popularity. It fits a late bite.",
+                "action": "List second as the grab-and-go late-night bite, and note that it is cash only."
+              },
+              {
+                "name": "Krab Queenz",
+                "why": "A high-affinity pick (ranked 2 of 10) with relatively high popularity. It is a casual, social choice that works for groups sharing food after the show.",
+                "action": "List third as the group-sharing dinner option for people who stay in Inglewood."
+              },
+              {
+                "name": "Bayou Grille",
+                "why": "A solid match, ranked 3 of 10 by affinity (0.873), with moderate popularity. It is a relaxed wind-down option.",
+                "action": "List last as the budget-friendly counter-serve stop for a quick po'boy or gumbo."
+              },
+              {
+                "name": "Celebrity Hall",
+                "why": "STRETCH: Celebrity Hall is a place pick with high affinity to the crowd's taste (about 0.89-0.92) but low popularity (0.175), so treat it as a lower-confidence option.",
+                "action": "List it last in the guide as an optional group or private after-party venue, with a note to check availability first."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab03",
+      "split": "test",
+      "title": "Linkin Park",
+      "mode": "concert",
+      "venue": "Wembley Stadium",
+      "city": "London",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Deftones",
+                "why": "Their moody, heavy-melodic sound sets the right tone as the crowd files in.",
+                "action": "Open the playlist with 'Change (In the House of Flies)' at low-to-mid volume on the concourse PA."
+              },
+              {
+                "name": "Thirty Seconds to Mars",
+                "why": "Anthemic mid-2000s rock is familiar to the Linkin Park crowd and gives early singalong moments.",
+                "action": "Slot 'The Kill' around 17:15 and cue gate screens to show the set times."
+              },
+              {
+                "name": "My Chemical Romance",
+                "why": "Their emo-era hits overlap heavily with Linkin Park's core audience and invite people to sing along.",
+                "action": "Play 'Welcome to the Black Parade' at 17:25 and ask the stadium DJ to raise the level in the bowl as seating fills."
+              },
+              {
+                "name": "Paramore",
+                "why": "Their pop-punk energy keeps the mood upbeat and adds crossover appeal for younger fans.",
+                "action": "Run 'Misery Business' near 17:35 and light the video boards with crowd shots."
+              },
+              {
+                "name": "Evanescence",
+                "why": "Their big-chorus nu-metal-adjacent hits are crowd favorites and carry rising intensity.",
+                "action": "Play 'Bring Me to Life' around 17:45 as most fans reach their seats."
+              },
+              {
+                "name": "Limp Bizkit",
+                "why": "Their high-energy nu-metal hits bring the crowd to its loudest right before the opener.",
+                "action": "Close the playlist with 'Break Stuff' at 17:55, then fade directly into the opener's intro music."
+              },
+              {
+                "name": "Bring Me The Horizon",
+                "why": "Stretch pick: a modern heavy-rock act that bridges legacy fans and newer listeners.",
+                "action": "Test 'Can You Feel My Heart' as an alternate late-slot track and check the crowd response on the floor."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Poppy",
+                "why": "Her genre-blending metal and pop would suit fans of Linkin Park's heavier side and she has a growing following.",
+                "action": "Confirm availability and ask her team for a 30-minute set with a quick changeover."
+              },
+              {
+                "name": "Static-X",
+                "why": "Industrial nu-metal fits the headliner's roots, though I'm not certain of their current touring status.",
+                "action": "Check with the promoter whether they are available and keep a backup act ready."
+              },
+              {
+                "name": "Sleep Token",
+                "why": "Stretch pick and rising: a fast-growing modern heavy act with a devoted fanbase, though their anonymity and theatrical style differ from the headliner.",
+                "action": "Raise it with the promoter as a longer-shot option and plan stage and lighting needs early."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Classic British pub fare (fish and chips)",
+                "why": "A familiar crowd-pleaser that moves quickly through concession stands.",
+                "action": "Set up grab-and-go stands near the main gates with a clear cashless line."
+              },
+              {
+                "name": "Burgers and loaded fries",
+                "why": "Easy, portable and a good fit for a rock crowd standing for long periods.",
+                "action": "Position a burger partner near the floor entrances and pre-stock for the 17:30 rush."
+              },
+              {
+                "name": "Craft beer and cider bar",
+                "why": "Beer is a staple of rock concerts and local craft options add a London feel.",
+                "action": "Feature a local brewery on tap and run express bars to shorten queues."
+              },
+              {
+                "name": "Vegan street food stall",
+                "why": "Stretch pick: plant-based options suit a broad, younger audience and add variety.",
+                "action": "Place a vegan stall near the family and accessible areas with clear signage."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Hot Topic-style alternative apparel collab",
+                "why": "Alternative fashion matches the crowd's identity (fit score 9/10 as an estimate).",
+                "action": "Run a limited-edition tour tee drop at the main merch hall with a timed release."
+              },
+              {
+                "name": "Converse",
+                "why": "Long-time rock and alt-culture association gives a natural fit (fit score 8/10 as an estimate).",
+                "action": "Offer a custom-print station for Chuck Taylors or tote bags near the gates."
+              },
+              {
+                "name": "Red Bull",
+                "why": "A familiar music-event sponsor with strong appeal to a young adult crowd (fit score 7/10 as an estimate).",
+                "action": "Set up a sampling and photo area on the approach to the stadium."
+              },
+              {
+                "name": "Vinyl and record label pop-up",
+                "why": "Stretch pick: fans of the band's catalogue like collectible formats (fit score 6/10 as an estimate).",
+                "action": "Stock a pop-up with tour-exclusive pressings and keep it away from the main merch queue."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "Camden rock pubs (e.g. The Black Heart)",
+                "why": "Camden has a strong rock and alternative scene that suits the crowd's taste.",
+                "action": "Publish a Tube route from Wembley Park via Baker Street and Camden Town in the exit guide."
+              },
+              {
+                "name": "Wembley Park pubs and restaurants",
+                "why": "The closest option for fans who want to stay local and avoid crowded transport.",
+                "action": "Distribute QR codes for nearby venues with last-orders times on exit screens."
+              },
+              {
+                "name": "Soho late-night bars",
+                "why": "A central, lively area with late opening hours for fans wanting a bigger night out.",
+                "action": "Share a short list of Soho venues with transport timings in the post-show app push."
+              },
+              {
+                "name": "Alternative club night (Electric Ballroom in Camden)",
+                "why": "Stretch pick: alt-club nights are a good fit for fans who want to keep dancing to rock and metal.",
+                "action": "Check whether any venue is running a post-gig night and promote it if so."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Coldplay",
+                "why": "Big singalong songs that suit an easy start as doors open, with high affinity for this crowd.",
+                "action": "Play first as gates open, at a low volume so people can talk while queuing."
+              },
+              {
+                "name": "Incubus",
+                "why": "High affinity for this crowd; a good fit to ease the crowd in before heavier acts.",
+                "action": "Play second, once the stands start filling."
+              },
+              {
+                "name": "Jimmy Eat World",
+                "why": "High affinity for this crowd; a good fit for building drive while keeping a sing-along feel.",
+                "action": "Play third as the floor fills up."
+              },
+              {
+                "name": "The Killers",
+                "why": "Ranks 3rd of 10 for this crowd; a good pick to lift the energy.",
+                "action": "Play fourth, nudging the volume up as people reach their seats."
+              },
+              {
+                "name": "Foo Fighters",
+                "why": "High affinity for this crowd (ranks 5th of 10); a good pick to get the crowd ready to move.",
+                "action": "Play fifth, with full-volume stadium sound."
+              },
+              {
+                "name": "Muse",
+                "why": "The top-ranked match of the 10 candidates for this crowd (rank 1 of 10); a good peak before the first act.",
+                "action": "Play last before the first act walks on, and cue the house lights down at the end of the final track."
+              },
+              {
+                "name": "Gorillaz",
+                "why": "Stretch: Gorillaz show high affinity with the crowd's taste and could work mid-playlist as a change of texture.",
+                "action": "Place it mid-playlist as a change of texture, after a Coldplay or Killers track, and drop it if the early crowd looks thin."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Yonaka",
+                "why": "Shares Linkin Park's audience taste (affinity 0.927) and sits at rank 4 of 6 in the comparison, a reasonable early slot. Trend was flat over the window, so no rising flag.",
+                "action": "Open the bill with this set first, while the stadium fills; keep the changeover short."
+              },
+              {
+                "name": "Don Broco",
+                "why": "Strong taste overlap with the Linkin Park audience (affinity 0.93, rank 2 of 6). Trend was flat, so no rising flag.",
+                "action": "Play second, after the first opener, to lift the room; run walk-up music from the Linkin Park catalogue in the changeover."
+              },
+              {
+                "name": "Young Guns",
+                "why": "Ranks first of 6 on taste match to the Linkin Park audience (affinity 0.935). Trend was flat, so no rising flag.",
+                "action": "Place last before the headliner so energy peaks into the main set; keep the final changeover tight."
+              },
+              {
+                "name": "Gavin Rossdale",
+                "why": "Stretch: overlaps with the headliner's audience (high affinity), but ranks 8 of 10 among the candidates, so it is a less obvious support-act booking than the other openers.",
+                "action": "Slot it as a changeover track or a short-notice reserve rather than a main opener, and watch crowd reaction before widening its use."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Hiddo Restaurant",
+                "why": "Closest taste match to the Linkin Park crowd in the Wembley area, and a lesser-known spot, so a stall here feels like a discovery.",
+                "action": "Invite them first as a pop-up stall of small plates near the main concourse when doors open."
+              },
+              {
+                "name": "Cheatmeals",
+                "why": "Strong crowd fit with broad appeal, ranking 2 of 10 with high popularity.",
+                "action": "Set up a partner burger and fries stall by the busiest gate and run it through the opener and changeover."
+              },
+              {
+                "name": "Chaboba",
+                "why": "Reduced confidence on exact crowd fit, as it ranks mid-table (5 of 10).",
+                "action": "Run a bubble tea pop-up near the family-friendly entrance, with a quick-serve menu from doors onward."
+              },
+              {
+                "name": "The Yellow Chilli",
+                "why": "Ranks 6 of 10 with solid affinity, adding variety to the mix as a more popular, mainstream option.",
+                "action": "Offer a pre-order boxed-meal partner stall for ticket holders, with pick-up before the headliner."
+              },
+              {
+                "name": "Shaam Restaurant",
+                "why": "Stretch: Shaam Restaurant scores high on affinity for this audience (about 0.89 to 0.95) with moderate popularity (0.40), making it a candidate for a pre-show shared-plates suggestion.",
+                "action": "Feature it first as a pre-show shared-plates suggestion in the food guide, without committing stadium stock to it."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Diesel",
+                "why": "Diesel ranks near the top for this audience (2 of 6). No shared-concept fit score was returned, so this rests on the rank alone.",
+                "action": "Run a Diesel x Linkin Park limited tee and denim-patch customisation stand at the main merch hall, open from doors."
+              },
+              {
+                "name": "Burberry",
+                "why": "Top of the rank for this audience (1 of 6). No fit score was available.",
+                "action": "Offer a small numbered Burberry-style scarf or bucket-hat capsule at a staffed pop-up near the main gate, selling from doors."
+              },
+              {
+                "name": "Zara",
+                "why": "Zara's affinity (0.918) is close to the other brands in the set, though it ranks 5 of 6. No fit score was available.",
+                "action": "Stage a Zara tour-tee drop with a quick-turn print counter in the concourse, running through the changeover after the opener."
+              },
+              {
+                "name": "Nike Training Club",
+                "why": "Nike Training Club ranks last of 6 on this list but its affinity (0.916) is close to the others, so it works as an active, non-fashion option. No fit score was available.",
+                "action": "Set up a Nike Training Club warm-up and sampling zone in the plaza outside the gates, running first before the doors rush."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "The Castle, Harrow",
+                "why": "Best taste match for this crowd in the Wembley-area search, ranked 1 of 8 on affinity, and a good fit for a relaxed post-show pint and debrief.",
+                "action": "List first in the guide as the main post-show pub stop and share its walking route from the stadium."
+              },
+              {
+                "name": "Frosty's Bar",
+                "why": "Strong taste match (rank 2 of 8) with low popularity, so it is a lesser-known option compared with the top pick.",
+                "action": "List second as the quieter pub alternative, flagging the outdoor seating for people who want to unwind."
+              },
+              {
+                "name": "Steakout Harrow",
+                "why": "Ranks 3 of 8 on taste match and could give groups a sit-down meal option beyond pubs.",
+                "action": "List third as the late dinner option and suggest groups book ahead."
+              },
+              {
+                "name": "Arena Lounge UK",
+                "why": "Ranks 4 of 8 on taste match with lower popularity, so it could be an easy, comfortable wind-down option.",
+                "action": "List last as the close-to-stadium option for those who want a short walk after the show."
+              },
+              {
+                "name": "Misk Lounge",
+                "why": "Stretch: a lounge with high affinity for this crowd and low popularity, offering a quieter option for the after-party guide.",
+                "action": "List it last in the after-party guide as the quieter option, and point to it on the exit signage only if the pubs fill up."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab04",
+      "split": "test",
+      "title": "Sabrina Carpenter",
+      "mode": "concert",
+      "venue": "Madison Square Garden",
+      "city": "New York City",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Griff",
+                "why": "Sits close to the headliner's taste and works as a gentle opener while early arrivals settle in.",
+                "action": "Play first as doors open, at low volume while lines move in."
+              },
+              {
+                "name": "Gracie Abrams",
+                "why": "A strong shared-taste match with this crowd, and a good fit as the floor and seats begin to fill.",
+                "action": "Play second, once the floor and seats begin to fill."
+              },
+              {
+                "name": "RAYE",
+                "why": "Stays within the crowd's taste and fits a step up in energy as the concourse gets busy.",
+                "action": "Play third, raising volume a notch as the concourse gets busy."
+              },
+              {
+                "name": "Lizzo",
+                "why": "Strong affinity with the crowd and very high popularity; a good pick for adding dance energy to the walk-in.",
+                "action": "Play fourth, choosing the most danceable tracks to get people to their seats."
+              },
+              {
+                "name": "Charli XCX",
+                "why": "Fits this audience's taste and has very high popularity; a good fit for pushing energy up as the room fills.",
+                "action": "Play fifth, with full-energy tracks as the room nears capacity."
+              },
+              {
+                "name": "Chappell Roan",
+                "why": "Ranks first of 10 for affinity with the headliner's audience, making it a strong choice for a peak sing-along before the first act.",
+                "action": "Play last, ending on the biggest sing-along right before the opener walks on."
+              },
+              {
+                "name": "Todrick Hall",
+                "why": "Stretch pick. Scores high on affinity with the walk-in audience and fits as a mid-playlist addition after the core pop names.",
+                "action": "Slot one or two tracks mid-playlist, after the core pop names and before the final build to the opener; drop it if the floor looks flat."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Charlotte Lawrence",
+                "why": "Close taste overlap with tonight's crowd, so a comfortable first act. Trend check shows steady interest, not a surge.",
+                "action": "Open the night with this set, keep it short and bright, and let the room fill during it."
+              },
+              {
+                "name": "Fletcher",
+                "why": "Strong audience match in the ranking (4 of 10). Interest has been flat over the window, so no rising flag.",
+                "action": "Play second, after the first changeover, to lift the energy before the closing opener."
+              },
+              {
+                "name": "Lola Young",
+                "why": "Strong audience match in the ranking (6 of 10). Not trend-checked, so no rising flag.",
+                "action": "Close the opening block with this set, last before the headliner changeover."
+              },
+              {
+                "name": "King Princess",
+                "why": "Stretch pick. Shows very high affinity with the headliner's audience, and is also very popular, so it fits the crowd's lane as a changeover playlist feature or guest set.",
+                "action": "Offer it as a changeover playlist feature or a guest set after the confirmed opener, not as the main support slot."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Huguenot Creamery",
+                "why": "Top match for this crowd on taste fit. Reduced confidence: the price-tag filter returned nothing, so this ranking is on taste fit alone.",
+                "action": "Offer as a pop-up ice cream stall at the concourse, open from doors through the first act."
+              },
+              {
+                "name": "Magnanini Winery, Restaurant, Distillery & Wedding Venue",
+                "why": "Strong taste fit with the crowd, ranked 2 of 9. Reduced confidence on price fit.",
+                "action": "Feature its restaurant dishes as a partner stall in the interval; keep wine and spirits out of the all-ages offer."
+              },
+              {
+                "name": "Old Drovers Inn",
+                "why": "Good taste fit, ranked 5 of 9. Reduced confidence on price fit.",
+                "action": "Partner for a small plated-snack stall after the opener; keep to food and non-alcoholic drinks."
+              },
+              {
+                "name": "Inquiring Mind Bookstore & Cafe",
+                "why": "Reduced confidence: lowest fit of the shortlist, ranked 9 of 9.",
+                "action": "Set up a coffee and light-bites cart near the entrances from doors."
+              },
+              {
+                "name": "Mighty Quinn's Barbeque",
+                "why": "Stretch pick. Fits the crowd's easy, shareable-food habits as a casual BBQ option, with a high affinity score of 0.877.",
+                "action": "Trial it as a pre-show grab-and-go partner first, with a small cross-promo and no exclusivity, then review the uptake."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Gap",
+                "why": "Gap tops the New York crowd match for this show. The comparison found no shared concepts, so there is no fit score and the ranking decides. Casual, everyday basics fit a pop-up merch moment.",
+                "action": "Open a tour-themed merch collab capsule (tees, hoodies) at a pop-up near the main entrance from doors, and keep it running through the night."
+              },
+              {
+                "name": "Topshop",
+                "why": "Topshop ranks second. The comparison gave no fit score, so confidence is reduced. A trendy, nightlife-leaning brand suits a get-ready styling moment.",
+                "action": "Run a get-ready styling and glitter station in the concourse before the opener, with limited-run accessories for sale."
+              },
+              {
+                "name": "Tiffany & Co.",
+                "why": "Tiffany & Co. ranks third. It suits gifting and keepsake moments, so keep it small. No fit score was available.",
+                "action": "Offer a small charm or friendship-bracelet keepsake bar in the concourse during the changeover, priced accessibly."
+              },
+              {
+                "name": "Coach",
+                "why": "Coach is fourth in the ranking, with high affinity for this crowd. It was not run through the comparison, so there is no fit score. Bags and accessories fit a concert-night keepsake.",
+                "action": "Set up a bag-charm personalization counter after the opener, with a limited concert-edition charm."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "Baja 328 Tequila Bar Southwest Grill",
+                "why": "Reduced confidence: the results skew to the wider New York region, so check the distance from the venue. Affinity and popularity scores are both high, as a relative signal.",
+                "action": "List first in the after-party guide as the sit-down bar option, and confirm travel time from the venue before printing."
+              },
+              {
+                "name": "Hudson Valley Food Hall",
+                "why": "Reduced confidence: it is a regional match, not a verified walk from the venue. Affinity is high, while popularity is comparatively low.",
+                "action": "Second in the guide as the group-friendly option, with a note on distance and closing time."
+              },
+              {
+                "name": "Fishkill Bowl",
+                "why": "Reduced confidence: it is a regional match and may be far from the venue. Affinity is high and popularity is mid-range.",
+                "action": "Third in the guide as the activity-led option, flagged as a longer trip."
+              },
+              {
+                "name": "Bear Mountain",
+                "why": "Reduced confidence: it is a regional match, so treat it as a day-trip style extra. Affinity and popularity are both high.",
+                "action": "Last in the guide as the relaxed wind-down option, with a clear note on travel distance."
+              },
+              {
+                "name": "Clinton Hall",
+                "why": "Stretch pick with high affinity and high popularity scores in Qloo's recommendations. It could suit a large, social post-show group.",
+                "action": "List it last in the after-party guide as the big-group option, and put it on the exit signage as a low-risk suggestion."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & walk-in",
+            "picks": [
+              {
+                "name": "Dua Lipa",
+                "why": "Dance-pop crowd-pleaser that sets a confident, upbeat tone as doors open.",
+                "action": "Open the playlist with 'Dance the Night' and 'Houdini' at moderate volume while lines move through security."
+              },
+              {
+                "name": "Chappell Roan",
+                "why": "Fellow breakout pop fan-favorite whose camp theatrics match the dress-up crowd.",
+                "action": "Slot 'Pink Pony Club' and 'Hot To Go!' second so the early arrivals start singing along."
+              },
+              {
+                "name": "Olivia Rodrigo",
+                "why": "Big sing-along emotional anthems that the core Gen Z audience knows word for word.",
+                "action": "Queue 'good 4 u' and 'vampire' mid-set and raise the volume as the floor fills."
+              },
+              {
+                "name": "Taylor Swift",
+                "why": "Shared pop canon for nearly everyone in the building, which makes it a safe communal moment.",
+                "action": "Place 'Shake It Off' or 'Cruel Summer' around 19:00 to trigger crowd singing."
+              },
+              {
+                "name": "Charli XCX",
+                "why": "Brat-era club energy bridges the pop crowd toward a more high-tempo mood.",
+                "action": "Run '360' and 'Apple' back to back at 19:10 and bring the house lights down a notch."
+              },
+              {
+                "name": "Gracie Abrams",
+                "why": "Intimate pop-songwriter fit that sits close to the fanbase and is a rising Garden-level name.",
+                "action": "Place 'That's So True' as the final ramp-up track before the opener walks on, then cut to the opener's intro."
+              },
+              {
+                "name": "Rene\u00e9 Rapp",
+                "why": "Stretch pick: a big-voiced Broadway-bred pop belter who skews slightly more theatrical, adjacent to the core taste.",
+                "action": "Add 'Pretty Girls' to a late-ramp spot to test crowd reaction and note the response for future walk-ins."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "Opener & changeover",
+            "picks": [
+              {
+                "name": "Declan McKenna",
+                "why": "Indie-pop songwriter with a strong fit for Sabrina's retro-leaning, melodic audience and a track record of supporting bigger pop acts.",
+                "action": "Confirm a 30-minute set with the tour's production team and a 25-minute changeover plan before the doors open."
+              },
+              {
+                "name": "Local NYC pop act from the venue-supplied list",
+                "why": "A New York act gives the home crowd a local hook and fits a short, tight opener slot.",
+                "action": "Ask the venue to confirm availability and a sound check window by 17:00 and prepare a 20-minute set."
+              },
+              {
+                "name": "Sombr",
+                "why": "Stretch pick: a rising, moody bedroom-pop name with fast streaming growth who skews slightly younger and darker than the headliner.",
+                "action": "Flag as a rising act for the booking sheet and arrange a short artist meet-and-greet at the merch area if booked."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bars & food",
+            "picks": [
+              {
+                "name": "Pink Champagne and ros\u00e9 spritz cocktails at the Garden bars",
+                "why": "A pink, glittery crowd would likely respond to a themed, photo-friendly drink.",
+                "action": "Launch a pink spritz special at two concourse bars from 18:30 and add table signage."
+              },
+              {
+                "name": "Joe's Pizza (Broadway/Penn area)",
+                "why": "Quick, iconic New York slices suit fans arriving before the show.",
+                "action": "Share a pre-show pizza tip on the venue social account with walking time from Penn Station."
+              },
+              {
+                "name": "Los Tacos No. 1 (Penn area)",
+                "why": "Fast, casual and well-loved, so it works for a big pre-show crowd on a tight timeline.",
+                "action": "Add it to the pre-show guide with a note about expected evening lines."
+              },
+              {
+                "name": "Milk Bar (Midtown)",
+                "why": "Stretch pick: dessert-forward birthday-cake and cereal-milk treats match the sweet theme of the tour name.",
+                "action": "Pitch a 'Short n' Sweet' cookie or soft-serve pairing for concession or a nearby pop-up."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Merch & activations",
+            "picks": [
+              {
+                "name": "Island Records tour merch",
+                "why": "Official tour merch is the core purchase for fans, with a very high crowd fit (score 9/10).",
+                "action": "Open an extra merch stand near the main entrance by 18:30 and stock heavy on tees and pink vinyl."
+              },
+              {
+                "name": "Sephora",
+                "why": "Beauty and glitter-forward fans are a natural fit for a sponsor activation (score 8/10).",
+                "action": "Set up a glitter and makeup touch-up station in the concourse with a short queue plan."
+              },
+              {
+                "name": "Polaroid",
+                "why": "Instant-photo nostalgia matches the retro-pinup aesthetic and encourages social sharing (score 7/10).",
+                "action": "Install a photo backdrop with Polaroid prints and a branded hashtag sign."
+              },
+              {
+                "name": "Spotify",
+                "why": "Stretch pick: a music-streaming activation fits the audience, though it is less tied to the pink retro theme (score 6/10).",
+                "action": "Run a QR-code 'build your set-list' wall that links to a fan playlist."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-party guide",
+            "picks": [
+              {
+                "name": "Dante NYC / West Village-style cocktail bars",
+                "why": "Stylish, upscale cocktail bars suit the post-show crowd that wants a polished drink.",
+                "action": "Include a short list of cocktail bars in the post-show guide with subway directions from Penn Station."
+              },
+              {
+                "name": "Hudson Yards and The Vessel area",
+                "why": "A scenic, photogenic walk close to the Garden gives fans a place to continue the night.",
+                "action": "Add a walking route from the venue and note late-evening closing times."
+              },
+              {
+                "name": "Chelsea Market",
+                "why": "A food hall with sweets, snacks and casual drinks suits a late-night group.",
+                "action": "List open vendors and closing hours in the guide, noting that some close early."
+              },
+              {
+                "name": "Marie's Crisis Cafe (West Village)",
+                "why": "Stretch pick: a famous show-tune piano bar suits fans who love singing along after the concert.",
+                "action": "Recommend it in the guide as a late-night sing-along option and warn about likely queues."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab06",
+      "split": "test",
+      "title": "Taylor Tomlinson",
+      "mode": "comedy",
+      "venue": "Chicago Theatre",
+      "city": "Chicago",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & room music",
+            "picks": [
+              {
+                "name": "Phoebe Bridgers",
+                "why": "Sad-girl indie that matches the crowd's introspective, dark-humor sensibility and sits easily under conversation.",
+                "action": "Open the playlist with Punisher-era tracks at low volume and keep the tempo mellow."
+              },
+              {
+                "name": "Noah Kahan",
+                "why": "Folk-pop with confessional lyrics that suits a crowd who relate to anxiety and family-baggage comedy.",
+                "action": "Add three Stick Season tracks mid-block and queue them to crossfade."
+              },
+              {
+                "name": "Maggie Rogers",
+                "why": "Warm, upbeat indie-pop that reads as friendly without competing with chatter.",
+                "action": "Place Alaska and Light On in the 19:10 slot as the room fills."
+              },
+              {
+                "name": "Olivia Rodrigo",
+                "why": "Broad Gen Z recognition and singalong energy that lifts the mood before the show.",
+                "action": "Use the clean-edit versions and keep them in the last ten minutes before the opener."
+              },
+              {
+                "name": "Lizzy McAlpine",
+                "why": "Gentle, wry acoustic-leaning pop that stays talk-over-able and fits the emotional-honesty theme.",
+                "action": "Put her in the first ten minutes of doors, when volume should be lowest."
+              },
+              {
+                "name": "Chappell Roan",
+                "why": "Stretch pick: a campy, theatrical pop favorite whose fans overlap with this crowd, and Chicago-area fans especially love her.",
+                "action": "Save one or two upbeat tracks for 19:25 as a final energy bump before the lights drop."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "MC & openers",
+            "picks": [
+              {
+                "name": "Local Chicago MC (room-supplied)",
+                "why": "A strong local host who knows the Chicago Theatre crowd warms the room faster than an outsider.",
+                "action": "Confirm the MC's 7-minute host set and the introduction cues with stage management by 18:30."
+              },
+              {
+                "name": "Local Chicago opener (room-supplied)",
+                "why": "A relatable, personal storytelling style fits the tone of the headliner's set.",
+                "action": "Brief the opener on a firm 20-minute cap and a light cue at 18 minutes."
+              },
+              {
+                "name": "Rising act from the Chicago club scene (flag as rising)",
+                "why": "Chicago's club circuit consistently produces acts that suit this audience and give it a feel of discovery.",
+                "action": "Tag the act in the program and on the screens, and put a merch table QR code in the set-closing slide."
+              },
+              {
+                "name": "Stretch: a sharp observational comic with crossover podcast following",
+                "why": "Adjacent to the headliner's style, but with a stronger crowd-work edge that would add variety to the bill.",
+                "action": "Hold as a backup and have tour management confirm availability before the day of the show."
+              }
+            ]
+          },
+          {
+            "key": "interval",
+            "label": "Interval clips & podcasts",
+            "picks": [
+              {
+                "name": "Mostly Mental clips (Taylor Tomlinson-related)",
+                "why": "The crowd already likes the headliner, and clips of her own conversations keep the interval on theme.",
+                "action": "Cut three 30-second no-profanity clips and loop them with captions."
+              },
+              {
+                "name": "Conan O'Brien Needs a Friend",
+                "why": "Highly clippable comedy conversations with broad appeal across ages in this audience.",
+                "action": "Select two short guest-banter moments with captions and rights cleared."
+              },
+              {
+                "name": "Call Her Daddy",
+                "why": "Popular with the younger female-skewing crowd who relate to candid, relationship-focused talk.",
+                "action": "Pick only safe-for-venue segments and check the rights for screen use first."
+              },
+              {
+                "name": "Stretch: Crime Junkie",
+                "why": "Adjacent pick: its audience overlaps with comedy fans and its dark-humor-adjacent tone is familiar to them.",
+                "action": "Use a single light-toned 20-second teaser, with no graphic content, at the end of the loop."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bar & snacks",
+            "picks": [
+              {
+                "name": "Chicago-style mini hot dogs",
+                "why": "A local snack that is easy to eat in a theatre and gives out-of-town guests a Chicago experience.",
+                "action": "Stock mini dogs at the main lobby bar with a grab-and-go counter during doors."
+              },
+              {
+                "name": "Garrett Popcorn Mix",
+                "why": "A Chicago staple that travels well and works as a take-to-your-seat snack.",
+                "action": "Set up a Garrett's cart near the entrance and sell it in cups."
+              },
+              {
+                "name": "Local craft beer from a Chicago brewery (e.g., Goose Island)",
+                "why": "Familiar local beer fits a casual crowd and supports a local partnership.",
+                "action": "Put a Goose Island tap and a signature can special at each bar."
+              },
+              {
+                "name": "Signature cocktail named for the show",
+                "why": "Stretch pick: a themed drink adds a shareable social moment for a crowd that loves posting.",
+                "action": "Create a two-ingredient cocktail with a clear name and a non-alcoholic version, and price it at the bar."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsors",
+            "picks": [
+              {
+                "name": "Spotify",
+                "why": "Strong fit (about 85/100) with a music- and podcast-heavy young crowd and an easy way to share the room playlist.",
+                "action": "Put a scan-to-listen code for the walk-in playlist on lobby screens."
+              },
+              {
+                "name": "Goose Island",
+                "why": "Strong fit (about 80/100) as a local beer brand with broad adult appeal.",
+                "action": "Arrange branded cups and a bar-side sampling spot."
+              },
+              {
+                "name": "Hims & Hers or a similar wellness/therapy-app brand",
+                "why": "Good fit (about 70/100) because the crowd responds to therapy-themed comedy, though the tone must stay light.",
+                "action": "Offer a low-key table and verify the sponsor's message with the tour first."
+              },
+              {
+                "name": "Stretch: Glossier",
+                "why": "Adjacent fit (about 65/100) with a young, female-skewing, social-first audience.",
+                "action": "Run a small giveaway at the exit with a sample bag and a social tag."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-show spots",
+            "picks": [
+              {
+                "name": "The Berghoff",
+                "why": "A historic Loop restaurant and bar a short walk away, good for a post-show drink with a crowd who like a local classic.",
+                "action": "Call ahead to check late hours and suggest it on the post-show card."
+              },
+              {
+                "name": "Cindy's Rooftop",
+                "why": "Popular, scenic spot overlooking Millennium Park that suits a group night out.",
+                "action": "Check the winter hours and reservation policy, then add it to the guide."
+              },
+              {
+                "name": "The Gage",
+                "why": "A lively gastropub across from Millennium Park that handles pre-show and post-show groups well.",
+                "action": "Share a pre-show booking link on the digital guide."
+              },
+              {
+                "name": "Stretch: The Second City",
+                "why": "An adjacent comedy venue in Old Town that gives comedy-loving fans a way to extend the night.",
+                "action": "Check the late-show schedule and print a QR code for tickets."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & room music",
+            "picks": [
+              {
+                "name": "Rayland Baxter",
+                "why": "Ranked first of 10 for taste match to the headliner's Chicago audience; a good fit for an easygoing opener as the room fills.",
+                "action": "Open the doors playlist with this artist while the first guests find seats and the bar."
+              },
+              {
+                "name": "Shakey Graves",
+                "why": "Ranked second of 10 with strong affinity for this crowd; a good low-key fit for the early part of the night.",
+                "action": "Play second, keeping volume low around the bar and lobby."
+              },
+              {
+                "name": "Mt. Joy",
+                "why": "Ranked third of 10 with strong affinity and high popularity; fits as the energy builds a little.",
+                "action": "Play third, as the lobby fills, with a few singalong-friendly tracks."
+              },
+              {
+                "name": "Houndmouth",
+                "why": "Ranked fourth of 10 with strong affinity for the crowd's taste profile; a good fit for nudging the mood up.",
+                "action": "Play fourth, nudging the tempo up as seating peaks."
+              },
+              {
+                "name": "Caamp",
+                "why": "Ranked fifth of 10 with strong affinity; a good fit as a closing track before the lights go down.",
+                "action": "Play last in the set, fading out as the house is called in."
+              },
+              {
+                "name": "Noah Kahan",
+                "why": "STRETCH: Noah Kahan is a high-affinity, high-popularity pick from Qloo, though it ranked last (10 of 10) in the rank check, so it works best as a low-key addition rather than a centerpiece.",
+                "action": "Slot one Noah Kahan track in the middle of the doors playlist, at low volume, and drop it if the room is loud."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "MC & openers",
+            "picks": [
+              {
+                "name": "Annie Lederman",
+                "why": "Ranks first of 10 on taste match for this audience, with popularity below the other picks' top end, so she works as a warm-up. Trends are flat, so no rising flag.",
+                "action": "Book as the middle opener, after the MC, to settle the room into confessional, personal-style comedy."
+              },
+              {
+                "name": "Fahim Anwar",
+                "why": "Ranks second of 10 on taste match for this audience and has the lowest popularity score of the three picks, so he suits an opening slot. Trends are flat, so no rising flag.",
+                "action": "Place first on the bill to open the night; keep his set short and let him hand off cleanly."
+              },
+              {
+                "name": "Sam Morril",
+                "why": "Ranks third of 10 on taste match for this audience and has the highest popularity of the three picks, so he fits the slot just before the headliner. Trends are flat, so no rising flag.",
+                "action": "Put last before the headliner to carry the energy up; cap the set so the stage turns over fast."
+              },
+              {
+                "name": "Josh Johnson",
+                "why": "STRETCH: Josh Johnson shows high affinity with the headliner's audience (0.946), ranking 6 of 10 in the comparison, which makes him a reasonable change-of-pace option.",
+                "action": "Offer him as an alternate MC or a short guest set after the main openers, not as the first act."
+              }
+            ]
+          },
+          {
+            "key": "interval",
+            "label": "Interval clips & podcasts",
+            "picks": [
+              {
+                "name": "Sincerely Fortune",
+                "why": "Ranked first of 8 for this Chicago crowd's taste, with high affinity, so it is a safe opener for the screens.",
+                "action": "Play first on the interval screens, using short upbeat clips with captions."
+              },
+              {
+                "name": "My Favorite Murder with Karen Kilgariff and Georgia Hardstark",
+                "why": "Ranked second of 8 with high affinity and the highest popularity score, so clips should land with recognition.",
+                "action": "Play second, with a storytelling clip that suits a talk-over-able room."
+              },
+              {
+                "name": "That's Messed Up: An SVU Podcast",
+                "why": "Ranked third of 8 with high affinity and high popularity, so it works as a punchy closer before the house lights drop.",
+                "action": "Play last before the house lights drop, with a punchy clip to reset the room for the show."
+              },
+              {
+                "name": "Las Culturistas with Matt Rogers and Bowen Yang",
+                "why": "STRETCH: Las Culturistas shows high affinity with the crowd and is very popular, which makes it a reasonable pick to try on the interval loop.",
+                "action": "Clip one short, clean, self-contained segment and play it last on the interval loop; pull it if it does not land."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bar & snacks",
+            "picks": [
+              {
+                "name": "Bernie's Tap & Grill",
+                "why": "Top-ranked match for this crowd (rank 1 of 10), with strong affinity. A good fit for an easy, unfussy burger and sliders stall.",
+                "action": "Set up a partner stall for burgers and sliders at the main lobby bar, open from doors."
+              },
+              {
+                "name": "Bunny Hutch",
+                "why": "A solid crowd match (rank 6 of 10, high affinity) that adds variety to the lobby bar offer.",
+                "action": "Add a partner snack and cocktail cart with a vegan option beside the lobby bar."
+              },
+              {
+                "name": "CloudBar at 360 CHICAGO",
+                "why": "A strong crowd match (rank 4 of 10, high affinity) with lower popularity, which makes it a distinctive drink option.",
+                "action": "Feature its craft cocktail as a signature drink at the bar, promoted first at doors."
+              },
+              {
+                "name": "Chicago Winery",
+                "why": "A winery and wine bar that gives the room a relaxed wine option next to the beer and cocktail picks, with a solid match to this crowd.",
+                "action": "Pour a partner wine selection from a lobby stall, promoted after the burgers and cocktails are set."
+              },
+              {
+                "name": "Builders BLDG",
+                "why": "STRETCH: Builders BLDG shows adjacent taste with this crowd, with high affinity in the results. Confidence is moderate because its food and drink offer is unclear from the results.",
+                "action": "Confirm hours and menu with the venue first, then list it as an optional pre-show stop, not a core partner."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsors",
+            "picks": [
+              {
+                "name": "Allbirds",
+                "why": "Ranks 2 of 8 for this audience with a comparison fit score of 72. Shared ground with the headliner's audience was found in the comparison.",
+                "action": "Run a limited tote or crew-sock merch collab at the merch table from doors, with a try-on pair display near the lobby."
+              },
+              {
+                "name": "LaCroix Sparkling Water",
+                "why": "Ranks 3 of 8 for this audience. No shared concepts were found in the comparison, so there is no fit score and the rank decides.",
+                "action": "Sample cans at the bar and lobby stations from doors, then a branded cooler at the interval."
+              },
+              {
+                "name": "Thredup",
+                "why": "Ranks 5 of 8 in the audience read. No comparison was run for it, so fit is from the rank only.",
+                "action": "Set up a pre-loved tee swap or styling rack in the lobby during doors, with a prize draw announced at the interval."
+              },
+              {
+                "name": "Hinge",
+                "why": "Ranks 1 of 8 for this audience, but the comparison found no shared concepts, so there is no fit score. Treat it as a wildcard.",
+                "action": "Run a QR-code 'worst date story' card wall in the lobby, with the best cards read out at the interval screens."
+              },
+              {
+                "name": "Winc",
+                "why": "STRETCH: Winc has a high affinity score with this crowd and is a possible bar tie-in, but it is a drinks tie-in rather than a core consumer-goods fit.",
+                "action": "Trial it as a small tasting card or code at the bar for one night, without exclusive signage."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-show spots",
+            "picks": [
+              {
+                "name": "RiNo Bar",
+                "why": "A bar that matches the crowd's taste and is still a lesser-known find, so it should feel like a discovery.",
+                "action": "List first on the after-show guide as the late option for guests who want to keep going; promote it on the exit screens."
+              },
+              {
+                "name": "Utopian Tailgate",
+                "why": "Strong affinity to this audience, and a relaxed spot that suits a post-comedy debrief.",
+                "action": "Second on the guide as the relaxed group hangout; suggest booking ahead for groups and confirm rooftop seating in winter."
+              },
+              {
+                "name": "Santa Baby Bar at Stolen Saddle",
+                "why": "Strong affinity to this audience, which makes it a fun option for a night out after the show. Reduced confidence on timing in case it is seasonal.",
+                "action": "Third on the guide; crew should confirm it is open and on theme before printing, and drop it if not."
+              },
+              {
+                "name": "Charm'd Bar",
+                "why": "Strong affinity with this crowd's taste, so it works as a wildcard finish. Reduced confidence in case it is seasonal.",
+                "action": "Last on the guide as the wildcard; verify it is running that weekend and note the 21+ entry rule on the handout."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab07",
+      "split": "test",
+      "title": "Shane Gillis",
+      "mode": "comedy",
+      "venue": "Madison Square Garden",
+      "city": "New York City",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & room music",
+            "picks": [
+              {
+                "name": "Janelle Mon\u00e1e",
+                "why": "Reduced confidence: no crowd read, so this rests on the headliner alone. Janelle Mon\u00e1e is a suggested low-volume opener for doors.",
+                "action": "Play first as doors open, at low volume so guests can talk."
+              },
+              {
+                "name": "Solange",
+                "why": "Reduced confidence (headliner-only signal). Solange is a suggested follow-on at the same low volume.",
+                "action": "Follow Janelle Mon\u00e1e, keeping the same low volume."
+              },
+              {
+                "name": "Pharrell Williams",
+                "why": "Reduced confidence (no crowd tags). Pharrell Williams is a suggested mid-set pick as the concourse fills.",
+                "action": "Place mid-set as the concourse fills and lift the volume slightly."
+              },
+              {
+                "name": "Lizzo",
+                "why": "Reduced confidence (headliner-only signal). Lizzo is a suggested pick after Pharrell Williams as the room nears full.",
+                "action": "Play after Pharrell Williams as the room nears full."
+              },
+              {
+                "name": "Rihanna",
+                "why": "Reduced confidence (no crowd read). Rihanna is a suggested closer before the house lights drop.",
+                "action": "Play last, just before the house lights drop for the MC."
+              },
+              {
+                "name": "Billy Porter",
+                "why": "STRETCH: Billy Porter is a stretch pick that Qloo surfaced as a recommendation for this room. Reduced confidence: crowd read had no tags or demographic.",
+                "action": "Slot one track block of his music midway through doors music and watch whether the room talks over it; drop it if the floor goes quiet."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "MC & openers",
+            "picks": [
+              {
+                "name": "Dave East",
+                "why": "Ranked among the closest matches to Shane Gillis's audience in New York (rank 2 of 7), so he works as a warm-up. Reduced confidence: no crowd demographic was available.",
+                "action": "Open the bill with him first, with a short MC-style set to settle the room."
+              },
+              {
+                "name": "Leslie Jordan",
+                "why": "Shows strong taste overlap with the headliner's New York audience (rank 3 of 7). Reduced confidence: crowd read had no tags.",
+                "action": "Slot him second, after the opener, to lift energy."
+              },
+              {
+                "name": "LeJuan James",
+                "why": "Top match for the headliner's audience in New York (rank 1 of 7), so he suits the final opening spot. No rising signal in the trend window (flat), and confidence is reduced.",
+                "action": "Put him last before the headliner to close the opening block with the strongest set."
+              },
+              {
+                "name": "Sebastian Maniscalco",
+                "why": "STRETCH: Sebastian Maniscalco is a stand-up name that shows high affinity with the headliner's audience. Reduced confidence: no crowd tags or demographic were available.",
+                "action": "Treat as a stretch option for the middle opener spot, offered first as a short name check on screens before committing the live slot."
+              }
+            ]
+          },
+          {
+            "key": "interval",
+            "label": "Interval clips & podcasts",
+            "picks": [
+              {
+                "name": "Juan Epstein",
+                "why": "Ranks first of 7 for Shane Gillis fans in New York on affinity. Reduced confidence: the crowd read gave no demographic or tag signal.",
+                "action": "Play a short clip from this show first on the interval screens."
+              },
+              {
+                "name": "The Pete and Sebastian Show",
+                "why": "Ranks second of 7 on affinity for the headliner's fans. Reduced confidence: ranked on the headliner alone.",
+                "action": "Run a banter clip from this show second, in the middle of the interval."
+              },
+              {
+                "name": "Barstool Radio",
+                "why": "Ranks third of 7 on affinity, with very high affinity (0.999). Reduced confidence: the crowd read was thin.",
+                "action": "Close the interval with a clip from this show, shortly before house lights go down."
+              },
+              {
+                "name": "Small Doses with Amanda Seales",
+                "why": "STRETCH: Small Doses with Amanda Seales ranks 5 of 7 with high affinity. Reduced confidence: no crowd tags or demographic were available.",
+                "action": "Run one short clip last in the interval loop, after the core podcast clips, and keep audio low so it is easy to pull."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bar & snacks",
+            "picks": [
+              {
+                "name": "The Bell House",
+                "why": "Strong affinity for this crowd, ranking 2 of 10. Reduced confidence, since the crowd read had no demographic or tags.",
+                "action": "Book first as the main bar partner: a pop-up stall with draft beer and bar snacks in the concourse from doors."
+              },
+              {
+                "name": "Eataly - Flatiron",
+                "why": "Strong affinity for this crowd, ranking 1 of 10. Reduced confidence in the fit.",
+                "action": "Run a partner stall with slices and shareable Italian plates; open it right at doors so it takes the early queue."
+              },
+              {
+                "name": "Brooklyn Crab",
+                "why": "Strong affinity for this crowd, ranking 6 of 10. Reduced confidence in the fit.",
+                "action": "Add a pop-up stall with crab rolls or oysters as a signature snack; place it away from the main bar to spread the queues."
+              },
+              {
+                "name": "Red Rooster Harlem",
+                "why": "Strong affinity for this crowd, ranking 5 of 10. Reduced confidence in the fit.",
+                "action": "Offer a comfort-food stall (fried chicken sliders) for the interval rush; set up last, after the other stalls."
+              },
+              {
+                "name": "Cipriani Wall Street | Event Venue",
+                "why": "STRETCH: Cipriani Wall Street is a high-affinity, high-popularity recommendation for this crowd. Reduced confidence: no crowd tags or demographic were available.",
+                "action": "List it as an optional pre-show dinner suggestion in the guide, after the core bar picks, with no commitment or minimum spend from the house."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsors",
+            "picks": [
+              {
+                "name": "New York Magazine",
+                "why": "New York Magazine ranked first of 8 for this New York crowd and fits a comedy night as a product judgement. Reduced confidence: no fit score was available.",
+                "action": "Run a branded lobby photo wall with a free tote giveaway for the first arrivals after doors open."
+              },
+              {
+                "name": "The Infatuation",
+                "why": "The Infatuation ranked 7th of 8 for this crowd, so it is a lower-priority option. Reduced confidence: no fit score, based on the rank only.",
+                "action": "Hand out a printed after-show eats card at the bar during the interval, tied to the after-party guide."
+              },
+              {
+                "name": "Refinery29",
+                "why": "Refinery29 ranked 6th of 8 for this crowd, so it sits in the lower half. A sampling table is a product judgement. Reduced confidence: no fit score was available.",
+                "action": "Set up a sampling and sticker table by the merch stand, staffed from doors until the headliner starts."
+              },
+              {
+                "name": "MoMA, the Museum of Modern Art",
+                "why": "MoMA ranked 3rd of 8 for this crowd, so a limited merch tie-in could work as a wildcard (product judgement). Reduced confidence: the comparison shared no concepts, so there is no fit score.",
+                "action": "Offer a small limited-run poster or print drop at the merch stand, announced from the stage after the opener."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-show spots",
+            "picks": [
+              {
+                "name": "PHD Rooftop Lounge at Dream Downtown",
+                "why": "A rooftop lounge ranked 3 of 10 for affinity in this set, a possible option for a bigger night out after the set. Reduced confidence, since the crowd read was thin.",
+                "action": "Place second in the guide as the dress-up cocktail option and suggest groups book ahead."
+              },
+              {
+                "name": "Mr. Purple",
+                "why": "A strong pick for groups wanting to keep the night going, ranked 4 of 10 with high affinity and popularity. Reduced confidence: no crowd demographic or tag read.",
+                "action": "Feature it second in the after-show guide as the rooftop option with food, and suggest groups book ahead."
+              },
+              {
+                "name": "Lilia",
+                "why": "Ranked 7 of 10 with high affinity and popularity, a reasonable option for groups after the show. Reduced confidence on fit given the thin crowd read.",
+                "action": "List third as the sit-down dinner option and note it is a trip from the venue."
+              },
+              {
+                "name": "Rockaway Beach Surf Club",
+                "why": "A wildcard pick ranked 9 of 10 with no local popularity signal, offered as a relaxed alternative. Reduced confidence.",
+                "action": "Close the guide with it as the casual wildcard and note it is a trip from the venue."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Doors & room music",
+            "picks": [
+              {
+                "name": "Turnpike Troubadours",
+                "why": "Gritty, singalong country-rock that suits a beer-in-hand crowd and is easy to talk over.",
+                "action": "Load 4-5 of their mid-tempo tracks into the first 10 minutes of the doors playlist at moderate volume."
+              },
+              {
+                "name": "Zach Bryan",
+                "why": "Massive with this demographic and instantly familiar without being intrusive.",
+                "action": "Slot his acoustic-leaning songs during peak entry 19:10-19:25."
+              },
+              {
+                "name": "Tyler Childers",
+                "why": "Working-class storytelling and a loyal overlap with comedy-podcast listeners.",
+                "action": "Queue two Childers tracks right after the Bryan block to keep the tempo steady."
+              },
+              {
+                "name": "Creedence Clearwater Revival",
+                "why": "Universally liked classic rock that bridges age groups in the arena.",
+                "action": "Use as the opening and closing anchor of the 30-minute set so the room feels familiar."
+              },
+              {
+                "name": "Turnpike-adjacent stretch: Sturgill Simpson",
+                "why": "Stretch pick: outlaw-country with a psychedelic edge that rewards the more adventurous fans.",
+                "action": "Place one track mid-playlist as a discovery moment and watch crowd response."
+              }
+            ]
+          },
+          {
+            "key": "openers",
+            "label": "MC & openers",
+            "picks": [
+              {
+                "name": "Matt McCusker",
+                "why": "Close Gillis collaborator from the Matt and Shane's Secret Podcast orbit, so the crowd already loves him.",
+                "action": "Confirm his 15-minute set time with the stage manager and have the MC introduce him warmly."
+              },
+              {
+                "name": "Mark Normand",
+                "why": "Fast, dirty, joke-dense style fits the audience and he is a known Gillis friend.",
+                "action": "Check his availability for the 19:45 slot and prep a clean mic handoff."
+              },
+              {
+                "name": "Stretch: Ari Matti",
+                "why": "Stretch pick: a rising New York club comic with a loose, offbeat voice who could be a discovery for the room.",
+                "action": "Offer a 5-minute early slot and flag him to the MC as a rising act to watch."
+              }
+            ]
+          },
+          {
+            "key": "interval",
+            "label": "Interval clips & podcasts",
+            "picks": [
+              {
+                "name": "Matt and Shane's Secret Podcast",
+                "why": "The core show of tonight's crowd, with the highest clip recognition.",
+                "action": "Cut three 60-second highlight clips with captions and run them on a loop on the interval screens."
+              },
+              {
+                "name": "Kill Tony",
+                "why": "Huge crossover audience and Gillis has been a regular, so fans enjoy the chaos.",
+                "action": "Pull two short crowd-friendly moments with captions and avoid clips with licensing flags."
+              },
+              {
+                "name": "Stretch: Flagrant",
+                "why": "Stretch pick: a bro-leaning interview show with strong overlap among comedy-podcast fans.",
+                "action": "Prepare one 45-second clip and trial it once at the end of the interval loop."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Bar & snacks",
+            "picks": [
+              {
+                "name": "Joe's Pizza",
+                "why": "Iconic New York slice that fits a casual, no-frills crowd.",
+                "action": "Arrange a slice-and-beer combo at the concourse stand and stock enough for peak pre-show demand."
+              },
+              {
+                "name": "Nathan's Famous",
+                "why": "Classic hot dogs match the sports-arena, beer-drinking vibe.",
+                "action": "Put a hot dog and domestic draft deal on the main menu board."
+              },
+              {
+                "name": "Yuengling Lager",
+                "why": "Pennsylvania-rooted beer with strong appeal to a Philly-origin comic's fans.",
+                "action": "Ensure Yuengling is on tap at all main bars and promote it with signage."
+              },
+              {
+                "name": "Stretch: Katz's Delicatessen",
+                "why": "Stretch pick: a New York institution with pastrami that fans will treat as a bucket-list stop.",
+                "action": "Offer a pastrami sandwich special in a limited run at one concession stand."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsors",
+            "picks": [
+              {
+                "name": "Yuengling",
+                "why": "Sponsor-fit 9/10: regional, unpretentious beer matching the crowd's taste.",
+                "action": "Set up a branded bar area and co-branded cups for the night."
+              },
+              {
+                "name": "Carhartt",
+                "why": "Sponsor-fit 8/10: workwear ethos aligns with the working-class identity of the audience.",
+                "action": "Propose a limited merch collaboration such as beanies for sale at the merch table."
+              },
+              {
+                "name": "Barstool-style sports betting brand: DraftKings",
+                "why": "Sponsor-fit 7/10: strong overlap with sports-loving male fans, subject to venue rules.",
+                "action": "Check with venue compliance before any activation and limit to digital signage if allowed."
+              },
+              {
+                "name": "Stretch: Liquid Death",
+                "why": "Stretch pick, sponsor-fit 6/10: irreverent branding with comedy ties that suits the humor.",
+                "action": "Offer free water cans at a branded station near the exits."
+              }
+            ]
+          },
+          {
+            "key": "after_party",
+            "label": "After-show spots",
+            "picks": [
+              {
+                "name": "Stout NYC",
+                "why": "Big, lively beer-and-burger pub near the Garden that suits a post-show crowd.",
+                "action": "List it in the guide with a note to arrive early before the rush."
+              },
+              {
+                "name": "The Ainsworth Penn",
+                "why": "Sports-bar atmosphere with room for groups after the show.",
+                "action": "Share a group-booking contact in the guide and flag late kitchen hours."
+              },
+              {
+                "name": "\u5f0f Keens Steakhouse",
+                "why": "Historic old-school New York spot with a famed mutton chop and a pub room for a classic night.",
+                "action": "Recommend reservations and highlight the pub room for walk-ins."
+              },
+              {
+                "name": "Stretch: Pete's Tavern",
+                "why": "Stretch pick: one of the city's oldest taverns, offering a bit of history for a longer night out.",
+                "action": "Add to the guide as a short cab-ride option with a note on closing time."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab09",
+      "split": "test",
+      "title": "Chelsea FC vs Manchester United",
+      "mode": "sports",
+      "venue": "Stamford Bridge",
+      "city": "London",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Gates & warm-up playlist",
+            "picks": [
+              {
+                "name": "Lauren Aquilina",
+                "why": "A softer opener that ranks 6th of 10 for shared taste, good for easing people through the gates.",
+                "action": "Play first as gates open, at background volume on the concourse and approaches."
+              },
+              {
+                "name": "Tom Grennan",
+                "why": "Top of the rank for shared taste (1 of 10); a good singalong pick to lift the mood.",
+                "action": "Follow the opener with two or three tracks once queues build outside."
+              },
+              {
+                "name": "Avelino",
+                "why": "Mid-high in the rank (5 of 10) with solid affinity; a rap pick that starts raising the tempo.",
+                "action": "Place in the middle of the playlist as concourses fill."
+              },
+              {
+                "name": "Sneakbo",
+                "why": "Ranks 4 of 10 with strong shared affinity, adding more drive to the set.",
+                "action": "Play after Avelino as fans move to their seats."
+              },
+              {
+                "name": "Wretch 32",
+                "why": "Ranks 2 of 10 for shared taste; a good pick to push energy up toward kick-off.",
+                "action": "Play in the final stretch before teams walk out."
+              },
+              {
+                "name": "Skepta",
+                "why": "Ranks 3 of 10 with strong affinity and the highest popularity score of the list; suited as the peak before kick-off.",
+                "action": "Play last, on the PA as players and fans settle for kick-off."
+              },
+              {
+                "name": "Balcony",
+                "why": "STRETCH: Balcony shows high affinity (0.936) with a mid-level popularity score (0.537), so it is a less obvious pick than the main playlist names. Worth trying as a change of texture in the gates mix.",
+                "action": "Slot one Balcony track in the middle of the gates playlist, away from the big sing-along moments, and keep it only if the concourse reacts."
+              }
+            ]
+          },
+          {
+            "key": "halftime",
+            "label": "Halftime act",
+            "picks": [
+              {
+                "name": "Marsicans",
+                "why": "Top-ranked of the five on shared taste (affinity 0.935, rank 1 of 5). Trend delta is 0, so treat it as steady.",
+                "action": "Book as the main halftime set, played from the pitch-side stage after the teams leave the field."
+              },
+              {
+                "name": "Hamzaa",
+                "why": "Close second on shared taste (affinity 0.931, rank 2 of 5). Trend is flat, so this is a steady rather than rising act.",
+                "action": "Use as the second halftime slot, a short set after the lead act, or as concourse-stage cover."
+              },
+              {
+                "name": "Only The Poets",
+                "why": "Ranks third of five on shared taste (affinity 0.927). Trend is flat across the window.",
+                "action": "Place last in the halftime run, finishing with a singalong track just before players return."
+              },
+              {
+                "name": "Danyl Johnson",
+                "why": "STRETCH: Danyl Johnson shows a high affinity score (0.919) with a moderate popularity score (0.461), making him a lesser-known interval option.",
+                "action": "Offer a short pop-up set after the main halftime act, with a clear fallback to the main act if the crowd is thin."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Concourse food",
+            "picks": [
+              {
+                "name": "The Eight Bells",
+                "why": "A local tavern with high affinity and popularity in Qloo's data, ranking 3 of 10; a fit for adding traditional pub character to the concourse.",
+                "action": "Add a pop-up cask ale and classic pub-snack stall on the second concourse, open from gates to full time."
+              },
+              {
+                "name": "Frankie's Sports Bar",
+                "why": "A sports bar with high affinity and popularity in Qloo's data, ranking 4 of 10; burger and pizza food is a reasonable product fit for match-day crowds.",
+                "action": "Place a partner burger and pizza stall near the away-end entrance to ease queues, and keep it open through halftime."
+              },
+              {
+                "name": "Devonshire Arms Kensington",
+                "why": "A pub with high affinity (0.90 rank, 0.91 recommend) and high popularity, ranked 5 of 10 for the combined audience, making it a reasonable refined drinks option for the concourse.",
+                "action": "Run a partner craft beer and seasonal bites stall on the main concourse, open from gates through halftime."
+              },
+              {
+                "name": "Reynolds Bar",
+                "why": "A bar with high affinity (0.89 rank, 0.92 recommend) and lower popularity (0.24), ranked 6 of 10 for the combined audience, which suits a pop-up at the far concourse.",
+                "action": "Add a pop-up bar and meal-deal stall at the far concourse to spread queues away from the main stands."
+              },
+              {
+                "name": "Foxden",
+                "why": "STRETCH: Foxden is a place the crowd's taste points to, with high affinity but low popularity, so it is far less known than mainstream options. It could add a different option.",
+                "action": "Invite Foxden to run a limited burger-and-small-plates trial stall at one concourse point, with a capped menu."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsor activations",
+            "picks": [
+              {
+                "name": "3",
+                "why": "Top of the rank (1 of 8) for the combined Chelsea and United crowd in London. The fit comparison shared no concepts with the clubs, so no fit score is claimed and the rank decides. Suits a neutral, both-sides activation.",
+                "action": "Run a phone-charging and photo station on the main concourse from gates opening, with a prize draw for a matchday moment."
+              },
+              {
+                "name": "Office Shoes",
+                "why": "Ranks 2 of 8 with high affinity (0.942) for the shared crowd. Not compared individually, so reduced confidence on fit.",
+                "action": "Open a limited-run matchday scarf and sneaker pop-up near the main entrance first, closing after kick-off."
+              },
+              {
+                "name": "Very",
+                "why": "Ranks 3 of 8 with the shared crowd (affinity 0.929). Not compared individually, so reduced confidence on fit.",
+                "action": "Host a prize-draw merch giveaway at the concourse screens during the halftime break."
+              },
+              {
+                "name": "Candy Kittens",
+                "why": "Ranks 4 of 8, near the top, with affinity 0.929. The comparison shared no concepts with the clubs, so no fit score is claimed.",
+                "action": "Sample sweets at the concourse stands from gates opening through halftime."
+              },
+              {
+                "name": "La Famiglia Rana",
+                "why": "STRETCH: La Famiglia Rana shows strong shared taste with both sets of fans but is a food brand, not a typical sports sponsor. It could pair with concourse food.",
+                "action": "Offer a small sampling table near the food stalls first, and judge fit by queue and sample uptake before extending it."
+              }
+            ]
+          },
+          {
+            "key": "fan_zone",
+            "label": "City fan zone & post-match",
+            "picks": [
+              {
+                "name": "Kings Arms",
+                "why": "A pub with strong affinity and high popularity that ranked 2 of 10 in the comparison, making it a good candidate for a mixed-crowd meeting point.",
+                "action": "Make it the main pre-match meeting point on the fan zone map and list it first in the post-match guide."
+              },
+              {
+                "name": "The Dove, Hammersmith",
+                "why": "A pub with high affinity and very high popularity in the Qloo results, a good option for a relaxed pint.",
+                "action": "Feature it as the riverside walk-and-pint stop, and flag that it gets busy so fans should arrive early."
+              },
+              {
+                "name": "The Blue Anchor",
+                "why": "A place with high affinity and high popularity in the Qloo results, a reasonable option to feature for early arrivals.",
+                "action": "Place it on the guide as the pub-lunch choice for early arrivals, ahead of the busier bars."
+              },
+              {
+                "name": "Myrtle Restaurant",
+                "why": "A restaurant with high affinity and comparatively low popularity that ranked 1 of 10, so it may offer a less crowded dinner option.",
+                "action": "List it last as the quieter post-match dinner option, and suggest booking ahead."
+              },
+              {
+                "name": "Kamayan Sa Earls Court",
+                "why": "STRETCH: Kamayan Sa Earls Court scores high on affinity (0.915) with this crowd, though it is not a football pub. It could work as a food-led alternative stop for fans who want something different before or after the match.",
+                "action": "List it last in the neighbourhood guide as an alternative food stop, and tell the crew to mention it only to fans asking for non-pub options."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Gates & warm-up playlist",
+            "picks": [
+              {
+                "name": "Oasis",
+                "why": "Mancunian anthems that London and United fans both sing, so the sing-along starts at the gates.",
+                "action": "Open the 18:00 loop with Live Forever and Wonderwall, and save Don't Look Back in Anger for the final gate surge at 19:00."
+              },
+              {
+                "name": "Blur",
+                "why": "Britpop with a London identity gives the home crowd its moment, and United fans know every chorus.",
+                "action": "Schedule Parklife and Song 2 right after the Oasis block at around 18:20."
+              },
+              {
+                "name": "The Stone Roses",
+                "why": "Manchester's defining band for the away end, and a familiar indie-dance groove for everyone else.",
+                "action": "Queue I Wanna Be Adored and Fools Gold as the mid-playlist tempo lift."
+              },
+              {
+                "name": "Stormzy",
+                "why": "A London grime headliner whom younger fans on both sides know.",
+                "action": "Add Big for Your Boots at 18:50 and have the PA operator raise the level slightly for the drop."
+              },
+              {
+                "name": "Queen",
+                "why": "Stadium-ready singalongs that work across every age group and both sets of supporters.",
+                "action": "Run Don't Stop Me Now and Radio Ga Ga at 19:00 as the lead-in to the final build."
+              },
+              {
+                "name": "Calvin Harris",
+                "why": "Stretch pick: big-room dance hits that lift energy in the last minutes before kick-off.",
+                "action": "Play a 5-minute run of Feel So Close and This Is What You Came For from 19:08 to 19:15, then cut straight to the team-entrance audio."
+              }
+            ]
+          },
+          {
+            "key": "halftime",
+            "label": "Halftime act",
+            "picks": [
+              {
+                "name": "Rag'n'Bone Man",
+                "why": "A UK soul-rock voice with broad appeal across both fan bases, and Human works as a mass singalong.",
+                "action": "Book a 3-song acoustic-band slot and have the crew prepare a centre-circle riser."
+              },
+              {
+                "name": "Stormzy",
+                "why": "A London star with strong crossover appeal and real crowd energy.",
+                "action": "Prepare a 2-song cameo with a hype man and have security clear the touchline route."
+              },
+              {
+                "name": "Sam Fender",
+                "why": "Stretch pick: guitar anthems that suit an older, rock-leaning crowd, though he has less local connection.",
+                "action": "Offer a stripped-down 2-song set and confirm a backline on the pitch trolley."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Concourse food",
+            "picks": [
+              {
+                "name": "Pie and mash stand",
+                "why": "A classic London dish that locals love and visiting fans enjoy as a novelty.",
+                "action": "Stock the stand with pies plus a vegetarian option, and position it near the main concourse entrances."
+              },
+              {
+                "name": "Fish and chips counter",
+                "why": "A universal British match-night staple with no allegiance attached.",
+                "action": "Run portioned cones to speed the queue, and add a second fryer for pre-kick-off demand."
+              },
+              {
+                "name": "Craft beer and lager bar",
+                "why": "Beer is the shared ritual for most of the crowd.",
+                "action": "Add extra pour points at both ends and promote a pre-order app option for halftime."
+              },
+              {
+                "name": "Street-food stalls (halal and vegan)",
+                "why": "Stretch pick: London's diversity means many fans want inclusive options beyond the classics.",
+                "action": "Place a visible cluster with clear allergen signage on the west concourse."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsor activations",
+            "picks": [
+              {
+                "name": "Nike",
+                "why": "A global sportswear brand that both fan bases wear, giving the highest crowd fit.",
+                "action": "Set up a boot-and-training-kit pop-up with a quick photo wall near the gates."
+              },
+              {
+                "name": "Carling",
+                "why": "A mainstream UK beer brand that suits a broad adult football crowd.",
+                "action": "Run a responsible-drinking-themed match-ticket prize draw at the bars."
+              },
+              {
+                "name": "Adidas",
+                "why": "A heritage terrace brand with strong ties to British football culture on both sides.",
+                "action": "Offer a retro-terrace scarf giveaway for the first 500 fans."
+              },
+              {
+                "name": "Spotify",
+                "why": "Stretch pick: music-led and fits a playlist-driven night, with a younger audience.",
+                "action": "Build a QR code on the screens so fans can save the walk-in playlist."
+              }
+            ]
+          },
+          {
+            "key": "fan_zone",
+            "label": "City fan zone & post-match",
+            "picks": [
+              {
+                "name": "The Fulham Road pub strip",
+                "why": "The natural pre-match route to the ground, with lots of traditional pubs.",
+                "action": "Distribute crowd-flow maps and shuttle times to the licensees by 15:00."
+              },
+              {
+                "name": "King's Road",
+                "why": "A well-known London street with plenty of cafes and bars for mixed groups before and after the match.",
+                "action": "Post wayfinding signs at Sloane Square and Fulham Broadway to disperse the crowd."
+              },
+              {
+                "name": "Earl's Court bars",
+                "why": "Close enough to reach easily by Tube for an after-party, and with a lively mixed crowd.",
+                "action": "Coordinate with transport staff on late Tube information for post-match exits."
+              },
+              {
+                "name": "Soho",
+                "why": "Stretch pick: a late-night after-party option where visiting fans often end their evening.",
+                "action": "Share a short guide with a safe-travel reminder on the stadium screens in the final 15 minutes."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pairId": "ab10",
+      "split": "test",
+      "title": "Los Angeles Dodgers vs Toronto Blue Jays",
+      "mode": "sports",
+      "venue": "Dodger Stadium",
+      "city": "Los Angeles",
+      "left": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Gates & warm-up playlist",
+            "picks": [
+              {
+                "name": "Drake",
+                "why": "Toronto's biggest global star is a shared-crowd staple whose catalog also lives deep in LA playlists.",
+                "action": "Lead the first 20 minutes of the gate playlist with clean radio edits of his upbeat tracks."
+              },
+              {
+                "name": "Kendrick Lamar",
+                "why": "The Compton icon is an LA home-crowd anthem-maker with massive Toronto streaming reach.",
+                "action": "Slot his big singles at the 15:30 mark when the bowl begins filling."
+              },
+              {
+                "name": "The Weeknd",
+                "why": "A Toronto native with an LA superstar presence, he bridges both fan bases.",
+                "action": "Queue his high-tempo hits around 15:45 to lift energy."
+              },
+              {
+                "name": "Dr. Dre",
+                "why": "His West Coast sound is a core LA identity cue that visitors also know.",
+                "action": "Use his instrumentals as transitions between vocal tracks."
+              },
+              {
+                "name": "Justin Bieber",
+                "why": "The Canadian pop star is widely loved across generations and both cities.",
+                "action": "Place a sing-along track in the 16:00 block ahead of lineup announcements."
+              },
+              {
+                "name": "Randy Newman",
+                "why": "His LA anthem 'I Love L.A.' is a stretch pick that gives the home crowd a nostalgic singalong.",
+                "action": "Cue 'I Love L.A.' as the final track before first-pitch ceremonies, with a lyric graphic on the video board."
+              }
+            ]
+          },
+          {
+            "key": "halftime",
+            "label": "Halftime act",
+            "picks": [
+              {
+                "name": "Kendrick Lamar",
+                "why": "He has the strongest shared appeal and a stadium-ready catalog for a quick interval set.",
+                "action": "Hold a 10-minute slot with a pre-cleared setlist and a stage ready for the seventh-inning-stretch window."
+              },
+              {
+                "name": "The Weeknd",
+                "why": "His Toronto roots and LA residence make him a rare act both sides claim.",
+                "action": "Prepare a short, high-impact set with lighting synced to the video board."
+              },
+              {
+                "name": "Los Angeles Master Chorale or local mariachi ensemble",
+                "why": "As a stretch pick, a local mariachi act honors LA's Latino fan base and works as a warm, friendly interval moment.",
+                "action": "Place the group on the field-level platform with a feed to the big screen and a 5-minute cap."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Concourse food",
+            "picks": [
+              {
+                "name": "Dodger Dog stand",
+                "why": "The signature ballpark item is a must-have for the home crowd and a bucket-list taste for visitors.",
+                "action": "Add extra grill capacity and signage at concourse entrances before gates open."
+              },
+              {
+                "name": "Pink's Hot Dogs pop-up",
+                "why": "An LA institution that fits the ballpark craving for both fan bases.",
+                "action": "Position near the plaza gates with a clear line-management layout."
+              },
+              {
+                "name": "Poutine station",
+                "why": "A Toronto-flavored comfort item that locals are also happy to try.",
+                "action": "Set up a dedicated cart at the visitor-heavy sections with pre-portioned toppings."
+              },
+              {
+                "name": "Taco and street-food vendors",
+                "why": "As a stretch pick, LA-style tacos suit the home identity and broad tastes.",
+                "action": "Cluster two taco carts with fast-service cashless payment."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsor activations",
+            "picks": [
+              {
+                "name": "Nike",
+                "why": "Sports apparel fits both fan bases and offers broad crowd appeal (high sponsor fit).",
+                "action": "Run a pop-up with limited commemorative tees near the main entrance."
+              },
+              {
+                "name": "New Era",
+                "why": "Caps are the core baseball merch and signal fandom for either team (high sponsor fit).",
+                "action": "Set up a custom-patch cap station with a staffed queue."
+              },
+              {
+                "name": "Rogers or Bell (Canadian telecom)",
+                "why": "A sponsor tied to Blue Jays travelers and roaming needs fits the visiting crowd (moderate fit).",
+                "action": "Offer phone-charging lockers with branded signage in the visitor-heavy sections."
+              },
+              {
+                "name": "Uniqlo",
+                "why": "As a stretch pick, its LA and Toronto presence and graphic tee collaborations fit a youthful shared audience (moderate fit).",
+                "action": "Run a small photo-wall activation with giveaway tees for social posts."
+              }
+            ]
+          },
+          {
+            "key": "fan_zone",
+            "label": "City fan zone & post-match",
+            "picks": [
+              {
+                "name": "Echo Park",
+                "why": "The neighborhood next to the stadium offers casual bars and cafes with good walkability for both crowds.",
+                "action": "Distribute a printed map with shuttle pickup points and bar partners."
+              },
+              {
+                "name": "Chinatown (Los Angeles)",
+                "why": "Its galleries, food halls, and bars give a vibrant pre-show gathering area.",
+                "action": "Coordinate with a food hall to host a pre-game watch table and signage."
+              },
+              {
+                "name": "Grand Central Market",
+                "why": "Diverse food stalls suit mixed tastes and visitors wanting a local taste of LA.",
+                "action": "Share a recommended-stall list in the fan app and push it at 13:00."
+              },
+              {
+                "name": "Santa Monica Pier",
+                "why": "As a stretch pick, the iconic LA landmark suits visiting fans seeking a postcard moment for the after-party.",
+                "action": "Promote a post-game meetup with rideshare codes and a photo-op signpost."
+              }
+            ]
+          }
+        ]
+      },
+      "right": {
+        "slots": [
+          {
+            "key": "walk_in",
+            "label": "Gates & warm-up playlist",
+            "picks": [
+              {
+                "name": "Childish Gambino",
+                "why": "Strong shared-taste affinity, ranking 3 of 10; a warm, melodic opener for the gates.",
+                "action": "Play first as gates open, at easy volume while fans find their seats."
+              },
+              {
+                "name": "Chance the Rapper",
+                "why": "Feel-good, upbeat pick that sits high in the shared-taste results, ranking 4 of 10.",
+                "action": "Follow the opener and lift the volume in the concourse speakers."
+              },
+              {
+                "name": "Kid Cudi",
+                "why": "Ranks 2 of 10 in the shared-affinity results and adds a singalong mood before first pitch.",
+                "action": "Run mid-block on concourse and plaza speakers as crowds thicken."
+              },
+              {
+                "name": "Dom Kennedy",
+                "why": "Matches the shared profile with high affinity; a good fit to bring a local feel into the build.",
+                "action": "Slot after the singalong tracks to bring a local feel into the build."
+              },
+              {
+                "name": "Casey Veggies",
+                "why": "High shared-taste affinity pick that suits the late build as energy rises.",
+                "action": "Play in the late-build block as seating bowls fill."
+              },
+              {
+                "name": "YG",
+                "why": "Ranks 1 of 10 in the shared-affinity results, so it makes a strong closer for the playlist.",
+                "action": "Play last before first pitch, at full stadium volume."
+              },
+              {
+                "name": "Warren G",
+                "why": "STRETCH: Recommended by Qloo with high affinity (0.952) and high popularity (0.99). Could add a singalong moment to the warm-up (reduced confidence, crowd tags generic).",
+                "action": "Slot one Warren G track mid-playlist, between two current picks; drop it if the gates are quiet."
+              }
+            ]
+          },
+          {
+            "key": "halftime",
+            "label": "Halftime act",
+            "picks": [
+              {
+                "name": "Pell",
+                "why": "Second-highest affinity of the ten ranked, which makes it a strong fit alongside the bigger acts.",
+                "action": "Open the interval first with a short, upbeat set to get fans back to their seats and build toward the later acts."
+              },
+              {
+                "name": "Travis Barker",
+                "why": "Shows high shared taste (affinity 0.954) and high popularity (0.979), ranking 5 of 10 in the comparison. Not trend-checked, so reduced confidence on momentum.",
+                "action": "Place second in the interval, between the opening act and the closer, with a high-energy short set."
+              },
+              {
+                "name": "Iamsu!",
+                "why": "High shared taste across both fan bases (affinity 0.954), ranked 6 of 10. Not trend-checked, so reduced confidence on momentum.",
+                "action": "Use as the opening act of the interval so the crowd settles in, before the later acts."
+              },
+              {
+                "name": "D.R.A.M.",
+                "why": "STRETCH: Near the crowd's hip-hop taste, with high affinity (0.953) and popularity (0.949). Offered as a change of pace after the harder acts (reduced confidence).",
+                "action": "Offer as a short backup or video-board feature after the main halftime act, before trying a live set."
+              }
+            ]
+          },
+          {
+            "key": "food_drink",
+            "label": "Concourse food",
+            "picks": [
+              {
+                "name": "Members Restaurant & Club",
+                "why": "Strong shared affinity across both fan bases, ranked second of ten.",
+                "action": "Set up a partner stall with mezze plates and flatbreads near the main concourse, running through the middle innings."
+              },
+              {
+                "name": "NIKU X",
+                "why": "Scores well with both sides and has lower popularity than the other picks, ranked third of ten.",
+                "action": "Offer a small pop-up with wagyu-style sliders or rice bowls at a standard price point, placed second in the concourse flow."
+              },
+              {
+                "name": "ADKT Kitchen, Bar & Lounge",
+                "why": "Both fan bases lean toward it, ranked fourth of ten. It rounds out the lineup as a casual option.",
+                "action": "Place a pop-up bar and snack stall late in the concourse route, serving non-alcoholic options alongside for all ages."
+              },
+              {
+                "name": "Cipriani Beverly Hills",
+                "why": "Next-best shared affinity across both fan bases. A familiar option to sit beside the other stalls.",
+                "action": "Run a partner stall with flatbreads and pasta cups at a standard price, placed last in the concourse route."
+              },
+              {
+                "name": "KA'TEEN",
+                "why": "STRETCH: A fresh option for fans who want something beyond ballpark staples, with a high affinity score (0.941) but ranked last of 10 in the comparison (reduced confidence).",
+                "action": "Run a small pop-up of two or three shareable dishes at one concourse stand first, and scale up if lines move."
+              }
+            ]
+          },
+          {
+            "key": "brands",
+            "label": "Sponsor activations",
+            "picks": [
+              {
+                "name": "Dave & Buster's",
+                "why": "Ranked first of 7 for this crowd. The comparison found no shared concepts with the bill, so there is no fit score. It adds a playful, social non-baseball touch.",
+                "action": "Run an arcade-style game booth on the main concourse, open from gates, with prizes redeemable for Dave & Buster's game cards."
+              },
+              {
+                "name": "Finish Line",
+                "why": "Ranked 2 of 7 for this crowd. The comparison shows no shared concepts with the bill, so no fit score is claimed.",
+                "action": "Set up a sneaker and cap customization pop-up near the main gate, running from doors through the early innings."
+              },
+              {
+                "name": "Stance",
+                "why": "Ranked 3 of 7 for this crowd. No shared concepts with the bill came back, so no fit score is claimed.",
+                "action": "Hand out a limited game-day sock drop in team colors at the merch stand, first 15 minutes after gates open."
+              },
+              {
+                "name": "In-N-Out Burger",
+                "why": "Ranked 5 of 7 for this crowd, with high affinity (0.917). It suits a casual concourse food pop-up.",
+                "action": "Run a pop-up burger window on the concourse, with a combo-meal promotion through the middle innings."
+              },
+              {
+                "name": "Los Angeles Dodgers Foundation",
+                "why": "STRETCH: A community cause rather than a product brand, with a relatively high affinity signal (0.934) in the Qloo recommendations. Could add a feel-good activation beyond the retail and food sponsors (reduced confidence).",
+                "action": "Set up one small tabletop on a main concourse and keep it to a sign-up or donation tap, with no interruption to play."
+              }
+            ]
+          },
+          {
+            "key": "fan_zone",
+            "label": "City fan zone & post-match",
+            "picks": [
+              {
+                "name": "Yamashiro Hollywood",
+                "why": "High affinity and the top rank among the 10 candidates. It is a sit-down spot, so it works best as a meet-up point.",
+                "action": "List first in the pre-game guide as the headline meet-up spot with a suggested early arrival."
+              },
+              {
+                "name": "Mother Wolf",
+                "why": "High affinity and a strong rank (3 of 10). A good option for groups wanting a proper meal before or after the game.",
+                "action": "Second in the guide as the sit-down dinner option, with a note to book ahead for post-game."
+              },
+              {
+                "name": "Harriet's Rooftop",
+                "why": "High affinity, though it ranks lower in this set (9 of 10). It suits the after-party side of the night as a drinks option.",
+                "action": "Place third as the post-game drinks pick, with a note to arrive early to get a spot."
+              },
+              {
+                "name": "Cabaret Tehran",
+                "why": "High affinity with lower popularity than the other picks, so it adds variety beyond the bigger names. It is the wildcard for fans who want a different night out.",
+                "action": "Close the guide with this as the live-music late option for fans still out after the game."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

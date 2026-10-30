@@ -6,6 +6,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import evalSummary from "@/lib/eval-summary.json";
 import { BRAND_MARK, type Show } from "@housemix/shared";
 import { cn } from "cn";
 import type { ShowSummary } from "@/lib/api";
@@ -562,10 +563,15 @@ function Big({ value, label }: { value: string; label: string }) {
 export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
   const pick = concert?.plan?.slots.flatMap((s) => s.items).find((i) => !i.isWildcard && i.evidence.some((e) => e.tool === "qloo_rank"));
   const slot = concert?.plan?.slots.find((s) => s.items.some((i) => i.id === pick?.id));
-  const brand = (concert?.plan?.slots ?? [])
-    .flatMap((s) => s.items)
-    .filter((i) => i.fitScore !== undefined)
-    .sort((a, b) => b.fitScore! - a.fitScore!)[0];
+  // Prefer a brand with a sponsor-fit score; live Qloo often finds no shared concepts between a
+  // crowd and a brand, so fall back to the brand Qloo ranked first for this crowd.
+  const brandItems = (concert?.plan?.slots ?? []).filter((s) => s.kind === "brand").flatMap((s) => s.items.filter((i) => i.approval.state !== "swapped" && !i.isWildcard));
+  const fitted = [...brandItems].filter((i) => i.fitScore !== undefined).sort((a, b) => b.fitScore! - a.fitScore!)[0];
+  const ranked = brandItems
+    .map((i) => ({ i, rank: i.evidence.find((e) => e.tool === "qloo_rank")?.scores.rank }))
+    .filter((x) => x.rank !== undefined)
+    .sort((a, b) => a.rank! - b.rank!)[0];
+  const brand = fitted ?? ranked?.i;
   const cf = sports?.counterfactual;
   const items = sports?.plan?.slots.flatMap((s) => s.items.filter((i) => i.approval.state !== "swapped")) ?? [];
   const ask = concert?.asks[0];
@@ -611,7 +617,7 @@ export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
             <div className="mt-4 grid grid-cols-2 gap-6">
               <Big value={`${items.length}/${items.length}`} label="House Mix picks with a Qloo citation" />
               <Big value={`0/${cf.summary.llmPicks}`} label="Claude-alone picks with a citation" />
-              <Big value={`${cf.summary.llmPicks - cf.summary.llmResolved}/${cf.summary.llmPicks}`} label="Claude-alone picks Qloo couldn't find" />
+              <Big value={`${cf.summary.llmPicks - cf.summary.llmResolved}/${cf.summary.llmPicks}`} label="Claude-alone picks Qloo couldn't pin down (ambiguous or not found)" />
               <Big value={`${cf.summary.slotsQlooLed}/${cf.summary.rankedSlots}`} label="Slots where Qloo ranked a House Mix pick first" />
             </div>
             <p className="mt-4 text-[13px] text-sig-mid">Qloo ranks House Mix&apos;s own picks here, so this is not the quality test; the blind human A/B in the repo is.</p>
@@ -635,9 +641,9 @@ export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
             <>
               <div className="mt-2 flex items-end justify-between gap-3">
                 <span className="font-display text-[1.6rem] font-bold uppercase leading-none">{brand.pick.name}</span>
-                <span className="font-dot text-[2.6rem] font-black leading-none">{brand.fitScore}</span>
+                <span className="font-dot text-[2.6rem] font-black leading-none">{brand.fitScore ?? `#${ranked?.rank}`}</span>
               </div>
-              <Hud className="mt-1 text-sig-mid">Sponsor fit / 100 · our formula over a Qloo audience comparison</Hud>
+              <Hud className="mt-1 text-sig-mid">{brand.fitScore !== undefined ? "Sponsor fit / 100 · our formula over a Qloo audience comparison" : "Qloo rank among the brands for this crowd"}</Hud>
               <a href={sponsorUrl(concert.id, brand.id)} className="hud mt-4 inline-flex h-8 items-center bg-white px-3 font-semibold text-sig-black hover:bg-sig-red">
                 Download the one-pager
                 <Plus />
@@ -664,8 +670,56 @@ export function Record({ sports, concert }: { sports?: Show; concert?: Show }) {
           ) : null}
         </div>
       </div>
+      <TestedLive />
       {sports?.qlooMode === "mock" ? <Hud className="mt-10 text-sig-mid">From seeded demo plans // mock data: fictional Qloo fixtures until the live key is connected</Hud> : null}
     </section>
+  );
+}
+
+/** Numbers from eval/results via `npm run eval:report` (live Qloo only); a missing result is shown as pending, never estimated. */
+type EvalSummary = {
+  generatedAt: string;
+  verify: { tools: number; passed: number; harness: string } | null;
+  judge: { model: string; pairs: number; wins: number; losses: number; ties: number } | null;
+  judgeV1: { wins: number; losses: number; ties: number } | null;
+  evidence: { items: number; valid: number; criticDrops: number; l0Items: number; l0Unresolved: number; l0Ambiguous: number | null } | null;
+  humanAb: { raters: number; wins: number; losses: number } | null;
+};
+
+function TestedLive() {
+  const s = evalSummary as EvalSummary;
+  const cells: { value: string; label: string }[] = [];
+  if (s.verify) cells.push({ value: `${s.verify.passed}/${s.verify.tools}`, label: `Qloo tools verified against the live API (harness ${s.verify.harness})` });
+  if (s.evidence) cells.push({ value: `${s.evidence.valid}/${s.evidence.items}`, label: `Eval-plan picks with a valid live Qloo citation (the Critic removed ${s.evidence.criticDrops} more)` });
+  if (s.evidence?.l0Ambiguous != null)
+    cells.push({ value: `${s.evidence.l0Ambiguous}/${s.evidence.l0Items}`, label: "Claude-alone picks that are ambiguous in Qloo: a person must choose before they can be used" });
+  if (s.judge)
+    cells.push({
+      value: `${s.judge.wins}–${s.judge.losses}`,
+      label: `Blind A/B vs Claude alone, automated judge (${s.judge.ties} tie${s.judge.ties === 1 ? "" : "s"}, ${s.judge.pairs} test shows${s.judgeV1 ? `; ${s.judgeV1.wins}–${s.judgeV1.losses} before the fixes` : ""}). Claude alone still wins this one`,
+    });
+  if (!cells.length) return null;
+  return (
+    <div className="mt-16 border-t border-white/15 pt-6" aria-labelledby="tested-title">
+      <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <h3 id="tested-title" className="hud text-[#FF6B60]">
+          // Tested on live Qloo · {new Date(s.generatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}
+        </h3>
+        <a href="https://github.com/Prashant-thakur77/house-mix/blob/main/eval/REPORT.md" className="hud text-sig-mid underline-offset-4 hover:text-white hover:underline">
+          Methods and the negative result →
+        </a>
+      </div>
+      <div className={cn("mt-4 grid grid-cols-2 gap-6", cells.length > 2 && "lg:grid-cols-4")}>
+        {cells.map((c) => (
+          <Big key={c.label} value={c.value} label={c.label} />
+        ))}
+      </div>
+      <Hud className="mt-4 text-sig-mid">
+        {s.humanAb
+          ? `Human raters: ${s.humanAb.wins}–${s.humanAb.losses} from ${s.humanAb.raters} raters.`
+          : "Human blind ratings are open at /rate; the automated judge is a secondary signal until they are in."}
+      </Hud>
+    </div>
   );
 }
 

@@ -1,14 +1,5 @@
 import { randomUUID } from "node:crypto";
-import {
-  checkValue,
-  MODES,
-  ShowInput,
-  type Entity,
-  type Mode,
-  type Show,
-  type ShowInputParsed,
-  type SideRole,
-} from "@housemix/shared";
+import { checkValue, MODES, ShowInput, type Entity, type Mode, type Show, type ShowInputParsed, type SideRole } from "@housemix/shared";
 import { config } from "../config.ts";
 import { getQloo, type QlooClient } from "../qloo/client.ts";
 import { entitiesOf } from "../qloo/normalize.ts";
@@ -27,6 +18,12 @@ export class HttpError extends Error {
 const norm = (s: string) => s.normalize("NFKC").toLowerCase().trim();
 
 /** Qloo search type for a performer on the bill. Sports teams are left unscoped so the operator confirms the match. */
+/** "urn:tag:music_characteristic:qloo:groovy" → "music characteristic tag". */
+export function tagCategory(urn: string): string | undefined {
+  const cat = urn.split(":")[2];
+  return cat ? `${cat.replaceAll("_", " ")} tag` : undefined;
+}
+
 function sideType(mode: Mode, role: SideRole): string | undefined {
   if (mode === "comedy") return "person";
   if (mode === "sports") return undefined;
@@ -89,7 +86,8 @@ async function resolveOne(p: Pending, runId: string, qloo: QlooClient): Promise<
       status: "needs_confirmation",
       callId: call.callId,
       summary: `Qloo returned ${tags.length} candidate tags for "${p.input}". Choose the one you mean.`,
-      candidates: tags.map((t) => ({ qlooId: t.id, name: t.name, type: t.type, popularity: t.popularity })),
+      // Same-name tags differ by category (urn:tag:<category>:…), so the card names it.
+      candidates: tags.map((t) => ({ qlooId: t.id, name: t.name, type: t.type, popularity: t.popularity, disambiguation: tagCategory(t.id) })),
     };
   }
   const args: Record<string, unknown> = { entity: p.input, ...(p.type ? { type: p.type } : {}) };
@@ -218,7 +216,20 @@ export async function refineEntity(showId: string, key: string, text: string, ql
     role: ent.role,
     input: text.trim(),
     tool: ent.kind === "tag" ? "qloo_find_tags" : "qloo_describe",
-    type: ent.kind === "side" ? sideType(show.input.mode, ent.role!) : ent.kind === "venue" ? "place" : ent.kind === "city" ? "locality" : ent.kind === "sponsor" ? "brand" : ent.kind === "local_act" ? (show.input.mode === "comedy" ? "person" : "artist") : undefined,
+    type:
+      ent.kind === "side"
+        ? sideType(show.input.mode, ent.role!)
+        : ent.kind === "venue"
+          ? "place"
+          : ent.kind === "city"
+            ? "locality"
+            : ent.kind === "sponsor"
+              ? "brand"
+              : ent.kind === "local_act"
+                ? show.input.mode === "comedy"
+                  ? "person"
+                  : "artist"
+                : undefined,
   };
   const next = await resolveOne(p, `resolve_${show.id}`, qloo);
   show.entities = show.entities.map((e) => (e.key === key ? next : e));

@@ -156,3 +156,20 @@ Owner's asks: a different centrepiece and colour for the landing's "How it works
 | 4 | Dev server served stale shared code after a schema change | Hydration mismatch in dev | Restart with a clean build dir (dev only; production builds are fresh) |
 
 Violet pairs: white on #5B2BE0 7.3:1, #5B2BE0 on paper 6.5:1, #A893FF on ink 7.8:1, lilac #E4DBFF on violet 5.5:1.
+
+## Round 10: live Qloo
+
+Owner's asks: connect the Qloo key, test as much as possible, and put the results in the README and on the site. The key arrived on 30 Oct 2026; the spend cap was raised to about 23 USD for the live re-seed and the eval.
+
+| # | Weakness | Before | After |
+| --- | --- | --- | --- |
+| 1 | Adapters were written against a stub | 9 of 11 live checks passed | 11 of 11: compare reads the live `{tags, a, b}` shape, trends use a window that ends where Qloo's data ends, points sorted by date; live fixtures now have unit tests (25 API tests) |
+| 2 | Crowd card assumed per-concept A/B affinities | Butterfly bars | "Only A / Both crowds / Only B" with Qloo's similarity score, one entry per concept name |
+| 3 | Picks didn't say which signal drove them | Rank and affinity only | "explained by Khruangbin (0.52) and Men I Trust (0.48)" from live explainability |
+| 4 | Sponsor fit would show 0 when Qloo shares no concepts across domains | 0/100 | No score; Qloo's rank orders those brands, and the landing's sponsor card falls back to the rank |
+| 5 | Flat trend showed a green ▲ 0.0 | Looked like growth | "– flat" |
+| 6 | Same-name tags in the confirm card were indistinguishable | Name only | Tag category (style, ambience, music characteristic…) and popularity |
+| 7 | Demo shows ran on mock data | Mock seeds | All five re-seeded live; the operator's choices among ambiguous candidates are written in the seed script; on the sports seed a rival club's brand was rejected with a reason and the United Nations swapped through the app's own Qloo re-rank |
+| 8 | Long candidate lists flooded "Without Qloo" | Every candidate with its description | Three names, the rest on hover |
+| 9 | Eval inputs were never committed | `data/` ignored `eval/data/` | Anchored to the repo root; the A/B listings were checked against sources (three dates fixed, one show dropped) |
+| 10 | No results on the site | – | A "tested on live Qloo" strip on the landing, generated from `eval/results` |

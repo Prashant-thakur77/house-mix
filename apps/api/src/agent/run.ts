@@ -36,6 +36,7 @@ export async function runPlan(show: Show, runId: string, emit: (e: RunEvent) => 
   await assertSpendHeadroom();
   const qloo = opts.qloo ?? getQloo();
   const ctx = new RunContext(show, runId, emit);
+  await ctx.loadAnchors();
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), "housemix-run-"));
   const abort = new AbortController();
   const timer = setTimeout(() => abort.abort(), opts.timeoutMs ?? 7 * 60 * 1000);

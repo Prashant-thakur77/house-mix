@@ -1,0 +1,358 @@
+{
+  "args": {
+    "entities": [
+      "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+      "045707A1-C8EF-443F-A882-1B97AC69DC9A"
+    ],
+    "entity_type": "artist",
+    "start_date": "2026-04-18",
+    "end_date": "2026-07-17",
+    "limit": 12
+  },
+  "envelope": {
+    "schema_version": "1.0-preview.1",
+    "operation": "trends",
+    "status": "ok",
+    "interpretation": {
+      "entity_type": "urn:entity:artist",
+      "start_date": "2026-04-18",
+      "end_date": "2026-07-17"
+    },
+    "resolution": {
+      "contract_version": "1.0-preview.1",
+      "provider": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "name": "Qloo native resolution",
+        "entity_strategy": "exact_name_context_or_choice",
+        "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+        "remote": true,
+        "uses_model": false,
+        "fallback": "none"
+      },
+      "outcomes": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9999966263060412,
+            "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+            "name": "Portishead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9996896201557972,
+            "description": "Portishead is an English band known for pioneering the trip hop genre with their atmospheric and cinematic sound."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        }
+      ]
+    },
+    "series": [
+      {
+        "entity": {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "name": "Radiohead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        "points": [
+          {
+            "date": "2026-07-11",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-07-04",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-27",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-20",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-13",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-06",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-30",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-23",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-16",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-09",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-02",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-01",
+            "population_percentile": 0.11302744677218043,
+            "population_rank": "693",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          }
+        ]
+      },
+      {
+        "entity": {
+          "input": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "entityId": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "name": "Portishead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        "points": [
+          {
+            "date": "2026-07-11",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-07-04",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-27",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-20",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-13",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-06-06",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-30",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-23",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-16",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-09",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-02",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          },
+          {
+            "date": "2026-05-01",
+            "population_percentile": 0.1118957684231734,
+            "population_rank": "16585",
+            "population_rank_velocity": 0,
+            "velocity_fold_change": 0,
+            "population_percent_delta": 0
+          }
+        ]
+      }
+    ],
+    "result_count": 2,
+    "provenance": {
+      "source": "Qloo API",
+      "endpoint": "/v2/trending",
+      "documentation": "https://docs.qloo.com/reference/get-trending",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/v2/trending",
+          "query": {
+            "filter.type": "urn:entity:artist",
+            "filter.start_date": "2026-04-18",
+            "filter.end_date": "2026-07-17",
+            "signal.interests.entities": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "take": 12
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/v2/trending",
+          "query": {
+            "filter.type": "urn:entity:artist",
+            "filter.start_date": "2026-04-18",
+            "filter.end_date": "2026-07-17",
+            "signal.interests.entities": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+            "take": 12
+          }
+        }
+      ],
+      "transport": "mcp"
+    },
+    "query_intent": {
+      "schema_version": "1.0-preview.1",
+      "source_contract_version": "1.0.0",
+      "operation": "trends",
+      "job": "trends",
+      "signals": {},
+      "filters": {
+        "startDate": "2026-04-18",
+        "endDate": "2026-07-17"
+      },
+      "operators": {},
+      "output": {
+        "limit": 12
+      },
+      "assumptions": [],
+      "unresolved": [],
+      "target": {
+        "type": "artist",
+        "entities": [
+          "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "045707A1-C8EF-443F-A882-1B97AC69DC9A"
+        ]
+      }
+    },
+    "execution": {
+      "transport": "mcp",
+      "transport_name": "Qloo canonical MCP",
+      "correlation_id": "mcp-3",
+      "duration_ms": 2329
+    },
+    "summary": "",
+    "results": []
+  }
+}

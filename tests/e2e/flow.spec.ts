@@ -5,7 +5,7 @@ const API = "http://localhost:8788";
 test("landing lists the seeded demo shows and the mode banner", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1, name: /program the night/i })).toBeVisible();
-  for (const t of [/Khruangbin/, /Taylor Tomlinson/, /Chelsea FC vs Arsenal FC/]) await expect(page.getByRole("link", { name: t }).first()).toBeVisible();
+  for (const t of [/Khruangbin/, /Taylor Tomlinson/, /Chelsea FC vs Arsenal F\.?C\.?/]) await expect(page.getByRole("link", { name: t }).first()).toBeVisible();
   if ((process.env.QLOO_MODE ?? "mock") === "mock") await expect(page.getByText("MOCK DATA").first()).toBeVisible();
   // The landing explains how it works, Qloo's role, the sponsor tools and the safety rules.
   await expect(page.getByRole("heading", { name: /how it works/i })).toBeAttached();
@@ -22,14 +22,22 @@ test("intake resolves names, Genesis needs confirmation, and nothing is auto-pic
   await page.getByLabel("City", { exact: true }).fill("Los Angeles");
   await page.getByRole("button", { name: /resolve and continue/i }).click();
   await expect(page).toHaveURL(/\/shows\/s_/);
-  await expect(page.getByRole("heading", { name: /which “genesis”/i })).toBeVisible();
+  // The mock makes the band ambiguous; live Qloo resolves the band and asks about the venue and the city.
+  const live = process.env.QLOO_MODE === "live";
+  const first = live ? /which “hollywood bowl”/i : /which “genesis”/i;
+  await expect(page.getByRole("heading", { name: first })).toBeVisible();
   const build = page.getByRole("button", { name: /build run-of-show/i });
   await expect(build).toBeDisabled();
-  const confirm = page.getByRole("button", { name: "Confirm" }).first();
-  await expect(confirm).toBeDisabled();
-  await page.getByRole("radio").first().check();
-  await confirm.click();
-  await expect(page.getByRole("heading", { name: /which “genesis”/i })).toHaveCount(0);
+  const cards = page.getByRole("article").filter({ has: page.getByRole("heading", { name: /^which “/i }) });
+  const n = await cards.count();
+  for (let k = 0; k < n; k++) {
+    const card = cards.first();
+    const confirm = card.getByRole("button", { name: "Confirm" });
+    await expect(confirm).toBeDisabled();
+    await card.getByRole("radio").first().check();
+    await confirm.click();
+    await expect(cards).toHaveCount(n - k - 1);
+  }
   await expect(build).toBeEnabled();
 });
 
@@ -50,7 +58,10 @@ test("console: evidence drawer, approve, swap re-ranks with Qloo, reject records
   await expect(page.getByRole("log", { name: /qloo tool calls/i })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Crowd read" })).toBeVisible();
 
-  await page.getByRole("button", { name: /^open evidence for/i }).first().click();
+  await page
+    .getByRole("button", { name: /^open evidence for/i })
+    .first()
+    .click();
   const aside = page.getByRole("complementary", { name: "Evidence" });
   await expect(aside.getByText("Qloo says")).toBeVisible();
   await expect(aside.getByText("Our interpretation")).toBeVisible();
@@ -86,7 +97,7 @@ test("exports and share link work without login", async ({ page, request }) => {
   expect(sp.status()).toBe(200);
   await page.goto(`/shows/seed-sports/share?k=${show.shareId}`);
   await expect(page.getByText("Shared plan · read only")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Chelsea FC vs Arsenal FC" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /^Chelsea FC vs Arsenal F\.?C\.?$/ })).toBeVisible();
   await expect(page.getByText("Limitations")).toBeVisible();
 });
 
@@ -128,7 +139,10 @@ test("console: crowd map, Without Qloo comparison and a cited Ask answer", async
   await expect(sheet).toBeVisible();
   const answer = sheet.locator("article").first();
   await expect(answer.getByText("House Mix, from Qloo")).toBeVisible();
-  await answer.getByRole("button", { name: /qloo evidence/i }).first().click();
+  await answer
+    .getByRole("button", { name: /qloo evidence/i })
+    .first()
+    .click();
   await expect(answer.getByText(/^qloo_/).first()).toBeVisible();
 
   // Personal data is refused before anything reaches Claude or Qloo.

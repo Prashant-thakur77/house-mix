@@ -131,17 +131,30 @@ if (!a || !b) {
   process.exit(1);
 }
 await probe("qloo_find_tags", { query: "jazz", limit: 5 }, (c) => (N.entitiesOf(c).length ? undefined : "find_tags: no tags extracted"));
-const rec = await probe("qloo_recommend", { target_type: "artist", signals: [a], signal_location: "New York City", limit: 10 }, (c) => (N.entitiesOf(c).length ? undefined : "recommend: no entities extracted"));
-const opts = N.entitiesOf(rec).slice(0, 6).map((e) => e.id);
-await probe("qloo_rank", { options: opts, option_type: "artist", signals: [a], signal_location: "New York City", demographic: "adults 25-34" }, (c) => (N.entitiesOf(c).length === opts.length ? undefined : `rank: expected ${opts.length} ranked entities, got ${N.entitiesOf(c).length}`));
-await probe("qloo_where_popular", { entity: a, entity_type: "artist", within: "New York City", limit: 10 }, (c) => (c.status === "empty" || N.heatmapOf(c).length ? undefined : "where_popular: heatmap points not extracted"));
-await probe("qloo_compare_audiences", { group_a: [a], group_b: [b], limit: 10 }, (c) => (N.compareOf(c).rows.length ? undefined : "compare_audiences: no a/b rows extracted (check compareOf against fixtures/live/qloo_compare_audiences.json)"));
+const rec = await probe("qloo_recommend", { target_type: "artist", signals: [a], signal_location: "New York City", limit: 10 }, (c) =>
+  N.entitiesOf(c).length ? undefined : "recommend: no entities extracted",
+);
+const opts = N.entitiesOf(rec)
+  .slice(0, 6)
+  .map((e) => e.id);
+await probe("qloo_rank", { options: opts, option_type: "artist", signals: [a], signal_location: "New York City", demographic: "adults 25-34" }, (c) =>
+  N.entitiesOf(c).length === opts.length ? undefined : `rank: expected ${opts.length} ranked entities, got ${N.entitiesOf(c).length}`,
+);
+await probe("qloo_where_popular", { entity: a, entity_type: "artist", within: "New York City", limit: 10 }, (c) =>
+  c.status === "empty" || N.heatmapOf(c).length ? undefined : "where_popular: heatmap points not extracted",
+);
+await probe("qloo_compare_audiences", { group_a: [a], group_b: [b], limit: 10 }, (c) =>
+  N.compareOf(c).rows.length ? undefined : "compare_audiences: no a/b rows extracted (check compareOf against fixtures/live/qloo_compare_audiences.json)",
+);
 await probe("qloo_entity_tags", { entities: [a, b], entity_type: "artist", limit: 10 }, (c) => (N.entitiesOf(c).length ? undefined : "entity_tags: no tags extracted"));
 await probe("qloo_audience_demographics", { entity: a, entity_type: "artist" }, (c) => (N.demographicsOf(c).age.length ? undefined : "audience_demographics: no age buckets extracted"));
-const end = new Date();
-const start = new Date(end.getTime() - 90 * 86400000);
-await probe("qloo_trends", { entities: [a, b], entity_type: "artist", start_date: start.toISOString().slice(0, 10), end_date: end.toISOString().slice(0, 10), limit: 12 }, (c) => (N.trendsOf(c)[0]?.points.length ? undefined : "trends: no series points extracted"));
-await probe("qloo_describe", { entity: "Genesis" }, (c) => (c.status === "needs_input" ? (c.issues[0]?.candidates.length ? undefined : "needs_input without candidates") : c.status === "ok" ? undefined : `unexpected ${c.status}`));
+const { trendWindow } = await import("../apps/api/src/agent/prompts.ts");
+await probe("qloo_trends", { entities: [a, b], entity_type: "artist", ...trendWindow(new Date().toISOString().slice(0, 10)), limit: 12 }, (c) =>
+  N.trendsOf(c)[0]?.points.length ? undefined : "trends: no series points extracted",
+);
+await probe("qloo_describe", { entity: "Genesis" }, (c) =>
+  c.status === "needs_input" ? (c.issues[0]?.candidates.length ? undefined : "needs_input without candidates") : c.status === "ok" ? undefined : `unexpected ${c.status}`,
+);
 
 // 3. Refresh the frozen contract with the live schemas (the mock serves these).
 fs.writeFileSync(frozenPath, `${JSON.stringify({ harness_version: version, tools: live }, null, 2)}\n`);
@@ -168,6 +181,14 @@ const md = [
   "",
 ].join("\n");
 fs.writeFileSync(path.join(ROOT, "docs/QLOO_VERIFY.md"), md);
+// qloo_capabilities passed above (the script stops if the adapter is not ready); count it with the probed tools.
+const toolNames = [...new Set(rows.map((r) => r.tool))];
+const passedTools = toolNames.filter((t) => rows.filter((r) => r.tool === t).every((r) => r.ok));
+fs.mkdirSync(path.join(ROOT, "eval/results"), { recursive: true });
+fs.writeFileSync(
+  path.join(ROOT, "eval/results/verify.json"),
+  `${JSON.stringify({ generatedAt: new Date().toISOString(), qlooMode: "live", harness: version, at: new Date().toISOString(), tools: toolNames.length + 1, passed: passedTools.length + 1, checks: rows.length, checksPassed: rows.filter((r) => r.ok).length, problems }, null, 2)}\n`,
+);
 await qloo.close();
 log(md);
 

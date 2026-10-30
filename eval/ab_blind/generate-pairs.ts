@@ -25,7 +25,9 @@ const key: Record<string, { left: "house_mix" | "l0" }> = {};
 const plans = [];
 const rand = rng(20251031);
 
-for (const s of ds.shows) {
+// `--only ab02,ab03` regenerates just those shows.
+const only = process.argv.find((a) => a.startsWith("--only="))?.slice(7).split(",");
+for (const s of ds.shows.filter((x) => !only || only.includes(x.id))) {
   if (!s.verified) {
     console.log(`${s.id}: skipped (not verified)`);
     continue;

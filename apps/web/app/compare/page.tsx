@@ -65,7 +65,11 @@ function CompareView() {
   }, [a, b, router]);
 
   const keys = result ? [...new Set([...result.a.slots.map((s) => s.label), ...result.b.slots.map((s) => s.label)])] : [];
-  const names = (slots: CompareResult["a"]["slots"], label: string) => slots.find((s) => s.label === label)?.items.filter((i) => i.approval.state !== "swapped" && i.approval.state !== "rejected").map((i) => i.pick.name) ?? [];
+  const names = (slots: CompareResult["a"]["slots"], label: string) =>
+    slots
+      .find((s) => s.label === label)
+      ?.items.filter((i) => i.approval.state !== "swapped" && i.approval.state !== "rejected")
+      .map((i) => i.pick.name) ?? [];
   const overlap = result ? result.diff.both.length / Math.max(1, result.diff.both.length + result.diff.onlyA.length + result.diff.onlyB.length) : 0;
 
   return (
@@ -107,7 +111,7 @@ function CompareView() {
               ["Plan overlap", `${Math.round(overlap * 100)}%`],
               ["Only tonight", String(result.diff.onlyA.length)],
               ["Only last night", String(result.diff.onlyB.length)],
-              ["Shared concepts", String(result.comparison.rows.filter((r) => Math.abs(r.delta) < 0.25).length)],
+              ["Shared concepts", String(result.comparison.rows.filter((r) => r.side === "shared").length)],
             ].map(([k, v]) => (
               <div key={k} className="rounded-lg border bg-card p-3">
                 <Kicker>{k}</Kicker>
@@ -125,22 +129,22 @@ function CompareView() {
             </div>
             {result.comparison.rows.length ? (
               <table className="mt-3 w-full text-small">
-                <caption className="sr-only">Affinity per concept for each show's bill</caption>
+                <caption className="sr-only">Which bill's crowd carries each concept, with Qloo's similarity score for shared concepts</caption>
                 <thead className="text-left text-muted-foreground">
                   <tr>
                     <th className="py-1 font-medium">Concept</th>
-                    <th className="py-1 text-right font-medium">{result.a.title}</th>
-                    <th className="py-1 text-right font-medium">{result.b.title}</th>
-                    <th className="py-1 text-right font-medium">Leans to</th>
+                    <th className="py-1 text-right font-medium">Carried by</th>
+                    <th className="py-1 text-right font-medium">Qloo similarity</th>
                   </tr>
                 </thead>
                 <tbody>
                   {result.comparison.rows.map((r) => (
-                    <tr key={r.id} className="border-t">
+                    <tr key={`${r.side}-${r.id}`} className="border-t">
                       <td className="py-1.5">{r.name}</td>
-                      <td className="py-1.5 text-right font-mono">{r.a.toFixed(2)}</td>
-                      <td className="py-1.5 text-right font-mono">{r.b.toFixed(2)}</td>
-                      <td className={cn("py-1.5 text-right", Math.abs(r.delta) < 0.25 ? "text-muted-foreground" : "font-medium")}>{Math.abs(r.delta) < 0.25 ? "both" : r.delta > 0 ? "tonight" : "last night"}</td>
+                      <td className={cn("py-1.5 text-right", r.side === "shared" ? "font-medium" : "text-muted-foreground")}>
+                        {r.side === "shared" ? "both crowds" : r.side === "a" ? "only tonight" : "only last night"}
+                      </td>
+                      <td className="py-1.5 text-right font-mono">{r.score !== undefined ? r.score.toFixed(2) : "—"}</td>
                     </tr>
                   ))}
                 </tbody>

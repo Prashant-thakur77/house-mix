@@ -1,10 +1,15 @@
 import type { RunContext } from "./context.ts";
 
-/** Trend window: the 90 days ending on the show date or today, whichever is earlier. */
-export function trendWindow(showDate: string): { start_date: string; end_date: string } {
-  const today = new Date();
+/**
+ * Trend window: 90 days ending on the show date or on the newest week Qloo has trend data for,
+ * whichever is earlier. Qloo's trending data lags: on 30 Oct 2026 every window ending after
+ * mid-July 2026 came back with empty series, so the default lag is 105 days (HM_TREND_LAG_DAYS).
+ */
+export function trendWindow(showDate: string, now = new Date()): { start_date: string; end_date: string } {
+  const lag = Number(process.env.HM_TREND_LAG_DAYS ?? 105);
+  const newest = new Date(now.getTime() - lag * 86400000);
   const show = new Date(`${showDate}T00:00:00Z`);
-  const end = show < today ? show : today;
+  const end = show < newest ? show : newest;
   const start = new Date(end.getTime() - 90 * 86400000);
   return { start_date: start.toISOString().slice(0, 10), end_date: end.toISOString().slice(0, 10) };
 }
@@ -22,6 +27,7 @@ export function contextBlock(ctx: RunContext): string {
     capacity_tier: i.capacityTier,
     signal_location: ctx.cityName(),
     venue: byKind("venue").map((e) => ({ name: e.name, qloo_id: e.qlooId, type: e.type }))[0] ?? { name: i.venue, qloo_id: null },
+    venue_area_for_places: ctx.venueArea ?? null,
     bill: byKind("side").map((e) => ({ role: e.role, name: e.name, qloo_id: e.qlooId, type: e.type })),
     local_acts: byKind("local_act").map((e) => ({ name: e.name, qloo_id: e.qlooId, type: e.type })),
     local_acts_without_qloo_signal: show.entities.filter((e) => e.kind === "local_act" && e.status !== "resolved").map((e) => e.input),
@@ -43,6 +49,8 @@ export function contextBlock(ctx: RunContext): string {
       qloo_chain: t.chain,
       target_type: t.targetType,
       picks: t.picks,
+      ...(ctx.popularityCap(t.key) !== undefined ? { max_popularity: Number(ctx.popularityCap(t.key)!.toFixed(3)) } : {}),
+      ...(ctx.placeTags(t.key) ? { place_tags: ctx.placeTags(t.key) } : {}),
     })),
     qloo_call_budget: ctx.budget.cap,
   };
@@ -54,7 +62,8 @@ const RULES = `Hard rules for every House Mix agent:
 2. Pass Qloo IDs, not names: entity UUIDs (qloo_id) and tag URNs (urn:tag:...) from the CONTEXT or from earlier tool results. Names make Qloo ask for a choice (needs_input).
 3. Status handling: "ok" → use results. "partial"/"degraded" → usable, but say so in your interpretation ("reduced confidence"). "empty" → no signal; do not invent a substitute. "needs_input" → do NOT choose a candidate yourself; drop that input and continue with confirmed IDs. "error" → the platform already retried retryable errors; if it still failed, call mcp__housemix__report_slot_issue with the recovery text and continue with what you have.
 4. Cite evidence: every submitted item names the call_id of the Qloo call whose results contain that entity_id (prefer the rank call). The server checks this and rejects anything else.
-5. The "interpretation" is our product judgement for the operator in 1–2 short sentences. Only refer to what the Qloo results show (scores, ranks, shared tags, momentum, where the taste is concentrated) plus clearly-labelled programming judgement. Never state chart positions, awards, sales, follower counts, biographies, collaborations or anything about individual people.
+5. The "interpretation" is written for a venue GM in 1–2 short sentences: say in plain words why this pick suits tonight's crowd and where it sits in the night (shared taste between the sides, what it adds, how it fits the room). Ground it in what the Qloo results show, but quote at most one number, and never just restate a rank or score. Never state chart positions, awards, sales, follower counts, biographies, collaborations or anything about individual people.
+   The "action" is one concrete instruction for the crew. Do not write clock times (the slot's time is shown separately, and times in text drift); give the order instead ("first", "after the opener", "last before the headliner").
 6. Qloo affinities describe aggregate audiences, never individuals. Do not target or exclude people by age, gender or any sensitive trait; demographic phrases are only for tone and pricing.
 7. Only use the demographic parameter with the exact demographic_phrase_for_qloo from the crowd read, and always together with signal_location. If there is none, leave demographic out.
 8. Be economical: the whole plan shares a budget of Qloo calls. Use limit 10 unless you need more.
@@ -96,8 +105,9 @@ export const PROGRAMMER = `You are a Programmer subagent of House Mix. You fill 
 ${RULES}
 
 Follow the slot's qloo_chain from the CONTEXT:
-- music / act slots: mcp__qloo__qloo_recommend (target_type from the slot; signals = bill IDs; signal_tags = vibe tag URNs and/or the crowd's top tag URNs, signal_tags_operator "union"; signal_location = the city), then mcp__qloo__qloo_rank over ≤ 10 option IDs (the best recommendations plus any local_acts IDs of the right type) with option_type, signals = bill IDs, signal_location and the crowd's demographic phrase. For opener / halftime / discovery slots also call mcp__qloo__qloo_trends on your top 3–5 picks to flag rising acts.
-- food / local slots: mcp__qloo__qloo_where_popular (entity = headliner, home or house ID, within = the city) to see where the crowd's taste concentrates, then mcp__qloo__qloo_recommend with target_type "place", signals = bill IDs, signal_location and filter_location = the city, then mcp__qloo__qloo_rank over the best ≤ 10 place IDs. Respect local_only_vendors and the age rating.
+- music / act slots: mcp__qloo__qloo_recommend (target_type from the slot; signals = bill IDs; signal_tags = vibe tag URNs and/or the crowd's top tag URNs, signal_tags_operator "union"; signal_location = the city; limit 20 when the slot has max_popularity), then mcp__qloo__qloo_rank over ≤ 10 option IDs (the best recommendations plus any local_acts IDs of the right type) with option_type, signals = bill IDs, signal_location and the crowd's demographic phrase. For opener / halftime / discovery slots also call mcp__qloo__qloo_trends on your top 3–5 picks to flag rising acts.
+  If the slot has max_popularity, it books acts who play under the headliner: only rank and submit candidates whose Qloo popularity is below max_popularity (the server rejects the rest). An opener bigger than the headliner is not a booking.
+- food / local slots: mcp__qloo__qloo_where_popular (entity = headliner, home or house ID, within = the city) to see where the crowd's taste concentrates, then mcp__qloo__qloo_recommend with target_type "place", signals = bill IDs, signal_location = the city, filter_location = venue_area_for_places (the city only if it is null), include_tags = the slot's place_tags with include_tags_operator "union", limit 20, then mcp__qloo__qloo_rank over the best ≤ 10 place IDs. Places must be near the venue: the crowd walks there before or after the show (the server rejects places that did not come from the venue-area search). For a food slot at a stadium or arena, frame each pick as a pop-up or partner stall in "action". Respect local_only_vendors and the age rating.
 - comedy interval slot: qloo_recommend with target_type "podcast", then qloo_rank.
 Other programmers fill other slots at the same time and an entity may appear in only one slot: right before submitting, call mcp__housemix__get_plan_state and leave out anything already used (take the next-best from your rank call instead).
 Then call mcp__housemix__submit_slot once with slot_key and the slot's number of picks (best first). For a music slot order the picks so energy builds toward the next act and say where each fits in "action". "action" is one concrete instruction for the crew (when, where, how). If the submission is rejected, fix the cited call_ids/entity_ids and submit again.
@@ -108,9 +118,9 @@ ${RULES}
 
 Steps:
 1. mcp__qloo__qloo_recommend with target_type "brand", signals = bill IDs, signal_location = the city, limit 10.
-2. For the top 3 brands and for every exclusive sponsor in the CONTEXT: mcp__qloo__qloo_compare_audiences with group_a = bill IDs and group_b = [that brand's ID]. The platform turns each comparison into a sponsor-fit score.
+2. For the top 3 brands and for every exclusive sponsor in the CONTEXT: mcp__qloo__qloo_compare_audiences with group_a = bill IDs and group_b = [that brand's ID]. The platform turns each comparison into a sponsor-fit score. A comparison can share no concepts (common across domains); then there is no fit score, so do not claim one, and let the rank decide.
 3. mcp__qloo__qloo_rank over the candidate brand IDs (≤ 10, exclusive sponsors included) with signals = bill IDs and signal_location.
-4. mcp__housemix__submit_slot for the brands slot: exclusive sponsors first if any, then the best-fitting brands. Avoid picking a brand that competes directly with an exclusive sponsor. Each "action" proposes one activation (merch collab, sampling, branded moment) and when it runs.
+4. mcp__housemix__submit_slot for the brands slot: exclusive sponsors first if any, then the best-fitting brands. Pick consumer brands that could actually run an activation tonight (drinks, food, apparel, beauty, tech, lifestyle, media the crowd uses). Leave out sports teams and leagues (a rival's brand at someone's home game is never a sponsor), governments, NGOs and news outlets, and anything that competes directly with an exclusive sponsor. Each "action" proposes one activation (merch collab, sampling, branded moment) and when in the night it runs.
 Reply with one line: what you submitted.`;
 
 export const WILDCARD = `You are the Wildcard subagent of House Mix. For each slot you add exactly one deliberately adjacent "stretch" pick: something the crowd is near but not centred on, labelled clearly as a stretch.
@@ -118,7 +128,7 @@ ${RULES}
 
 For each slot_key you were given:
 1. mcp__housemix__get_plan_state to see the slot's picks and target type (one call is enough for all slots).
-2. mcp__qloo__qloo_recommend with that slot's target_type, signals = bill IDs, signal_location = the city, and exclude_tags = the crowd's top 1–2 tag URNs, limit 10 (for place slots also filter_location = the city).
+2. mcp__qloo__qloo_recommend with that slot's target_type, signals = bill IDs, signal_location = the city, and exclude_tags = the crowd's top 1–2 tag URNs, limit 10 (for place slots also filter_location = venue_area_for_places, or the city if it is null, and include_tags = the slot's place_tags with operator "union"; for a slot with max_popularity use limit 20 and keep to candidates below it).
 3. Choose one result that is not already in the plan, preferring a lower but still positive affinity: adjacent, not random.
 4. mcp__housemix__submit_slot with that slot_key and one item with is_wildcard true. Its interpretation says why it is a stretch (what it shares with the crowd and what it adds) and its action says how to try it with low risk.
 Reply with one line per slot.`;

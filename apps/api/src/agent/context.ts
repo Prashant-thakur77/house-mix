@@ -10,8 +10,15 @@ import {
   type Slot,
 } from "@housemix/shared";
 import { Budget } from "../qloo/client.ts";
+import { entitiesOf } from "../qloo/normalize.ts";
+import { getStore } from "../store/store.ts";
 import { canonical } from "../qloo/client.ts";
 import { config } from "../config.ts";
+
+const PLACE_TAGS = {
+  food: ["urn:tag:genre:place:restaurant", "urn:tag:category:place:bar", "urn:tag:category:place:pub"],
+  local: ["urn:tag:category:place:bar", "urn:tag:category:place:pub", "urn:tag:category:place:cocktail_bar", "urn:tag:genre:place:restaurant"],
+};
 
 /** Everything one plan run shares: the show, the call ledger, the slot state and the event sink. */
 export class RunContext {
@@ -21,6 +28,11 @@ export class RunContext {
   readonly slots = new Map<string, Slot>();
   readonly toolsUsed = new Set<QlooToolName>();
   crowd: CrowdRead | undefined;
+  /** The venue's street address from its Qloo record; place slots search around it, not the whole city. */
+  venueArea: string | undefined;
+  /** The headliner's Qloo popularity and type; opener acts of the same type must sit below it. */
+  headlinerPopularity: number | undefined;
+  headlinerType: string | undefined;
   headline = "";
   criticDrops = 0;
   costUsd = 0;
@@ -47,6 +59,40 @@ export class RunContext {
         alternatives: [],
       });
     }
+  }
+
+  /** Reads the venue address and the headliner's popularity from their intake calls. */
+  async loadAnchors() {
+    const store = getStore();
+    const anchor = async (kind: "venue" | "side") => {
+      const ent = this.show.entities.find((e) => e.kind === kind && e.status === "resolved" && e.callId);
+      const call = ent?.callId ? await store.get<LedgerCall>("ledger", ent.callId) : undefined;
+      return call ? entitiesOf(call).find((x) => x.id === ent!.qlooId) : undefined;
+    };
+    // Mock fixtures have no neighbourhoods or Qloo place-category tags, so the venue-area search is live-only.
+    this.venueArea = config.qlooMode === "live" ? (await anchor("venue"))?.address : undefined;
+    const lead = await anchor("side");
+    this.headlinerPopularity = lead?.popularity;
+    this.headlinerType = lead?.type;
+  }
+
+  /**
+   * Popularity ceiling for a slot that books acts under the headliner (openers, halftime), if any:
+   * below 0.99, and below the headliner when the headliner is the same kind of act (a football
+   * club's popularity says nothing about how big a halftime artist may be).
+   */
+  popularityCap(slotKey: string): number | undefined {
+    const t = this.template.slots.find((s) => s.key === slotKey);
+    if (!t || t.kind !== "act" || (t.targetType !== "artist" && t.targetType !== "person")) return undefined;
+    const sameKind = this.headlinerType === t.targetType && this.headlinerPopularity !== undefined;
+    return Math.min(0.99, sameKind ? this.headlinerPopularity! : 1);
+  }
+
+  /** Qloo place-category tags a place slot searches with: venues to eat and drink, or to go on to. */
+  placeTags(slotKey: string): string[] | undefined {
+    const t = this.template.slots.find((s) => s.key === slotKey);
+    if (!t || t.targetType !== "place" || config.qlooMode !== "live") return undefined;
+    return t.kind === "food" ? PLACE_TAGS.food : PLACE_TAGS.local;
   }
 
   emit(e: RunEvent) {

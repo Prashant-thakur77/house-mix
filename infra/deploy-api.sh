@@ -36,9 +36,13 @@ done
 
 SECRETS="ANTHROPIC_API_KEY=anthropic-api-key:latest"
 gcloud secrets describe qloo-api-key --project "$GCP_PROJECT" >/dev/null 2>&1 && SECRETS="${SECRETS},QLOO_API_KEY=qloo-api-key:latest"
+# The hackathon key only works against Qloo's hackathon server; the harness needs the trusted base to match.
+QBASE="${QLOO_BASE_URL:-$(grep -E '^QLOO_BASE_URL=' .env.local 2>/dev/null | head -1 | cut -d= -f2- || true)}"
+QENV=""
+[ -n "$QBASE" ] && QENV=",QLOO_BASE_URL=${QBASE},QLOO_TRUSTED_BASE_URL=${QBASE}"
 gcloud run deploy "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --image "$IMAGE" \
   --allow-unauthenticated --min-instances 1 --max-instances 3 --cpu 1 --memory 2Gi --timeout 900 \
   --no-cpu-throttling --concurrency 40 \
   --set-secrets "$SECRETS" \
-  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_SPEND_LIMIT_USD=${HM_SPEND_LIMIT_USD:-8},HM_MAX_CONCURRENT_RUNS=1,HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}"
+  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_SPEND_LIMIT_USD=${HM_SPEND_LIMIT_USD:-8},HM_MAX_CONCURRENT_RUNS=1,HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}${QENV}"
 gcloud run services describe "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --format 'value(status.url)'

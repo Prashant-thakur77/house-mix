@@ -215,10 +215,11 @@ Hook → sports intake (home vs away) → "Genesis" triggers `needs_input` confi
 - [x] **P14 Round-4 features** — crowd map (`qloo_where_popular` per side, overlap, street-team areas), "Without Qloo" (Claude-alone plan checked by `qloo_describe` and ranked by `qloo_rank` against House Mix), "Ask House Mix" (tool loop over the Qloo tools, cited lines, Critic, proposals into the queue). *Done when* each renders on every seed, has API or e2e coverage, and appears in the PDF/README/Devpost.
 - [ ] **P13 Refine loop** (in progress; rounds logged in docs/REFINE_LOG.md) — rounds logged in docs/REFINE_LOG.md until nothing would change a judge's score.
 
-## Status (29 Oct 2026, 21:30 IST)
+## Status (30 Oct 2026, 13:30 IST)
 
 - Live: https://house-mix.vercel.app (web) · https://house-mix-api-120659974854.us-central1.run.app (API, GCP project `house-mix-qloo-1029`).
-- Waiting on external inputs: `QLOO_API_KEY` (then `npm run qloo:verify`, live re-seed, evals), `SETLISTFM_API_KEY` (backtest), human raters (A/B). See docs/GO_LIVE.md.
+- Live Qloo since 30 Oct: the hackathon key (server `https://hackathon.api.qloo.com`) is in `.env.local` and Secret Manager; `qloo:verify` passes 11 of 11; the five demo shows were re-seeded live; the A/B pairs, evidence eval and an automated blind judge ran on live plans (see eval/REPORT.md). Still waiting on: `SETLISTFM_API_KEY` (backtest) and human raters.
+- Round 10 (30 Oct): live adapters (compare shape, trend lag, explainability), the first judge run (0–7) and the fixes it led to (popularity cap for openers, venue-area search for places, sponsor rules, plainer writing, same model for both arms), second run 1–5 with 1 tie. Claude spend about 31.8 USD against the owner's raised limit of about 31 (local 30.1 tracked, about 0.9 untracked early runs, production 0.77); production cap kept at 1.65 USD.
 - Round 4 (29 Oct): crowd map, "Without Qloo", "Ask House Mix"; seeds regenerated. Claude spend so far about 13.2 USD of the 15 USD limit (local 11.5 tracked, about 0.9 untracked early runs, production 0.7); production cap lowered to 2.3 USD so the total cannot pass 15 USD.
 - Round 5–6 (29–30 Oct): landing rebuilt on the owner's chosen reference from an Awwwards research round (18 sites captured with Playwright): black HUD, point-cloud figure that becomes a crowd (three.js / React Three Fiber), white dossier, red finale. Lighthouse landing 100 desktop / 93 mobile, accessibility 100.
 - Round 8–9 (30 Oct): the mark; Run the night (show clock, synthesized cues, crew cue sheet, venue screen); ink chrome; violet DJ section and LED finale on the landing; Dining mode for restaurants and bars with a seeded demo. Claude spend about 14.0 USD of 15; production cap 1.65 USD.

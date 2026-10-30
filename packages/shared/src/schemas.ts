@@ -56,7 +56,10 @@ export const ShowInput = z.object({
   venue: z.string().trim().min(1).max(120),
   city: z.string().trim().min(1).max(80),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  doorsTime: z.string().regex(/^\d{2}:\d{2}$/).default("18:30"),
+  doorsTime: z
+    .string()
+    .regex(/^\d{2}:\d{2}$/)
+    .default("18:30"),
   capacityTier: CapacityTier,
   houseRules: HouseRules.default(HouseRules.parse({})),
 });
@@ -161,12 +164,18 @@ export type Slot = z.infer<typeof Slot>;
 
 export const CrowdRead = z.object({
   sharedGround: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number() })).default([]),
-  distinctA: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number() })).default([]),
-  distinctB: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number() })).default([]),
+  distinctA: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number().optional() })).default([]),
+  distinctB: z.array(z.object({ name: z.string(), qlooId: z.string(), type: z.string(), score: z.number().optional() })).default([]),
   labelA: z.string().default(""),
   labelB: z.string().default(""),
-  /** Raw group-A / group-B affinities per concept from qloo_compare_audiences. */
-  compare: z.array(z.object({ name: z.string(), id: z.string(), a: z.number(), b: z.number() })).default([]),
+  /** Concepts from qloo_compare_audiences: which side carries each, and the shared similarity score. */
+  compare: z
+    .array(
+      z
+        .object({ name: z.string(), id: z.string(), side: z.enum(["shared", "a", "b"]).optional(), score: z.number().optional(), a: z.number().optional(), b: z.number().optional() })
+        .transform((r) => (r.side ? r : { ...r, side: (Math.abs((r.a ?? 0) - (r.b ?? 0)) < 0.25 ? "shared" : (r.a ?? 0) > (r.b ?? 0) ? "a" : "b") as "shared" | "a" | "b" })),
+    )
+    .default([]),
   demographics: z
     .object({
       age: z.array(z.object({ bucket: z.string(), value: z.number() })).default([]),
@@ -174,9 +183,7 @@ export const CrowdRead = z.object({
     })
     .default({ age: [], gender: [] }),
   tags: z.array(z.object({ name: z.string(), tagId: z.string(), score: z.number() })).default([]),
-  trends: z
-    .array(z.object({ name: z.string(), qlooId: z.string(), points: z.array(z.object({ date: z.string(), value: z.number() })), delta: z.number() }))
-    .default([]),
+  trends: z.array(z.object({ name: z.string(), qlooId: z.string(), points: z.array(z.object({ date: z.string(), value: z.number() })), delta: z.number() })).default([]),
   demographicPhrase: z.string().default(""),
   qlooSays: z.array(z.string()).default([]),
   interpretation: z.array(z.string()).default([]),
@@ -225,9 +232,7 @@ export type BriefingLine = z.infer<typeof BriefingLine>;
 export const Briefing = z.object({
   lines: z.array(BriefingLine),
   dropped: z.array(z.object({ text: z.string(), reason: z.string() })).default([]),
-  audio: z
-    .object({ available: z.boolean(), url: z.string().optional(), reason: z.string().optional(), durationMs: z.number().optional() })
-    .default({ available: false }),
+  audio: z.object({ available: z.boolean(), url: z.string().optional(), reason: z.string().optional(), durationMs: z.number().optional() }).default({ available: false }),
   createdAt: z.string(),
   planVersion: z.number(),
 });

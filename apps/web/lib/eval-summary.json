@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-10-30T07:48:49.980Z",
+  "verify": {
+    "tools": 10,
+    "passed": 10,
+    "harness": "0.1.26",
+    "at": "2026-10-30T06:31:00.462Z"
+  },
+  "judge": {
+    "model": "claude-opus-5-5",
+    "pairs": 7,
+    "wins": 1,
+    "losses": 5,
+    "ties": 1,
+    "fitHouseMix": 2.357142857142857,
+    "fitL0": 3.7857142857142856
+  },
+  "evidence": {
+    "items": 182,
+    "valid": 182,
+    "rate": 1,
+    "criticDrops": 23,
+    "l0Items": 157,
+    "l0Unresolved": 0,
+    "l0Ambiguous": 76
+  },
+  "judgeV1": {
+    "wins": 0,
+    "losses": 7,
+    "ties": 0
+  },
+  "plans": {
+    "n": 7,
+    "medianSeconds": 148,
+    "medianCalls": 17,
+    "medianCostUsd": 0.9048
+  },
+  "humanAb": null
+}

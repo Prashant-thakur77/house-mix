@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-10-30T07:12:56.054Z",
+  "qlooMode": "live",
+  "method": "Automated blind judge (claude-opus-5-5), each pair judged in both orders; a system wins a pair only when preferred in both. Secondary signal: the judge is a Claude model and may share the planner's tastes. Test split only for the win rate.",
+  "model": "claude-opus-5-5",
+  "pairs": 7,
+  "overall": {
+    "wins": 0,
+    "losses": 7,
+    "ties": 0,
+    "winRate": {
+      "p": 0,
+      "lo": 0,
+      "hi": 0.35433884297520657
+    }
+  },
+  "perSlot": {
+    "walk_in": {
+      "wins": 0,
+      "losses": 7,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.35433884297520657
+      }
+    },
+    "openers": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "winRate": {
+        "p": 0.2,
+        "lo": 0.03622316096978745,
+        "hi": 0.6244717358814613
+      }
+    },
+    "food_drink": {
+      "wins": 0,
+      "losses": 6,
+      "ties": 1,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.3903430336530645
+      }
+    },
+    "brands": {
+      "wins": 0,
+      "losses": 7,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.35433884297520657
+      }
+    },
+    "after_party": {
+      "wins": 0,
+      "losses": 5,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.43449149475208104
+      }
+    },
+    "interval": {
+      "wins": 0,
+      "losses": 2,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.6576280471103807
+      }
+    },
+    "halftime": {
+      "wins": 0,
+      "losses": 2,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.6576280471103807
+      }
+    },
+    "fan_zone": {
+      "wins": 0,
+      "losses": 2,
+      "ties": 0,
+      "winRate": {
+        "p": 0,
+        "lo": 0,
+        "hi": 0.6576280471103807
+      }
+    }
+  },
+  "fit": {
+    "houseMix": 1.7857142857142858,
+    "l0": 4
+  },
+  "positionConsistency": 1,
+  "costUsd": 0.4953,
+  "rows": [
+    {
+      "pairId": "ab02",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 2,
+        "l0": 4
+      },
+      "reasons": [
+        "Walk-in: both lists are real and on-genre. The second plan's .Paak and TDE run (Schoolboy Q, Isaiah Rashad) is more rooted in LA and in Kendrick's world. The first plan's timings contradict themselves: Tierra Whack overlaps Tinashe, and Daniel Caesar is placed 'between Tinashe and KAYTRANADA' in an 18:00-18:40 window, though both play 18:50 or later. Openers: the first plan names real, fitting acts, including Vince Staples from Long Beach. The second plan offers only generic placeholders, so the first wins here. Food and drink: the first plan's picks are questionable. Moe's Tavern is suspect, the notes say 'game-night' and 'after the game', and the off-site bars are vague. The second plan's birria stands and Roscoe's pop-up are concrete, LA-authentic and doable in-stadium. Brands: the first plan leans on mall fashion labels (Brandy Melville, American Apparel, Ivy Park, which no longer operates as an active line) and gives an inconsistent SZA set time. The second plan's pgLang and Nike Cortez picks fit Kendrick directly, though its fit scores look invented. After-party: the second plan's Randy's Donuts, Hollywood Park and Leimert Park are close to SoFi and culturally on point. The first plan sends people to a BAPE store and a Paul Smith photo wall at 21:45, which is impractical. Overall, the second plan fits the crowd and city better despite its generic openers.",
+        "The first plan covers both halves of the bill and is rooted in LA. Its walk-in uses TDE acts (Schoolboy Q, Isaiah Rashad) and LA's Anderson .Paak. Food uses Roscoe's and birria. Brands are pgLang and Nike Cortez, a real Kendrick tie. The after-party list (Randy's Donuts, Leimert Park, Hollywood Park) suits Inglewood and the crowd. Its weakness is the openers slot, which uses generic placeholders rather than named acts. The second plan wins openers with real, fitting names, including LA's Vince Staples, The Internet and Kali Uchis. Its walk-in is R&B-heavy with overlapping time windows and almost no Kendrick-side rap. Food and drink suggests off-site spots framed for 'game night' (Moe's Tavern, Lucky Strike) instead of in-stadium service. The brands (Urban Outfitters, Brandy Melville) are a poor fit for the crowd. The after-party list includes a BAPE store and the Paul Smith Pink Wall, which are not places to go after a show."
+      ]
+    },
+    {
+      "pairId": "ab03",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 1.5,
+        "l0": 4
+      },
+      "reasons": [
+        "The first plan reads affinity scores mechanically and ignores the night itself. Walk-in: plan 1's mix is plausible, but ordering acts by a 'London rank' is meaningless. Plan 2 picks genre-adjacent artists (Deftones, Evanescence, MCR, Limp Bizkit) with named tracks and a coherent build. Openers: plan 1 proposes Coldplay, Gorillaz and Arctic Monkeys as support for Linkin Park, all stadium headliners who would never open, so these are implausible. Plan 2's Pale Waves, Holding Absence and Nothing But Thieves are real, bookable UK support acts; slightly odd labelling aside, they fit. Food and drink: plan 1 sends a Wembley crowd to Caviar House Piccadilly, Park Chinois and Mayfair cocktail bars, which is far from the venue and a poor match for this audience. Plan 2's Boxpark Wembley and Wembley Park street food are on site and actionable. Two of its picks are generic, but the plan is workable. Brands: plan 1's Burberry, Dior and Chanel are luxury houses with no fit for a nu-metal crowd; only Jägermeister works. Plan 2's Dr. Martens, Red Bull and Rough Trade fit well. After-party: plan 1 lists Westminster Abbey and Big Ben as 'pre-show meet points' at 20:45, which is incoherent and impossible, and the abbey is closed at night. Plan 2 offers real nearby pubs and the Camden rock venues The Black Heart and Camden Assembly, with transit notes. Its route note is slightly off, since the Jubilee line doesn't reach Camden directly, but it is broadly sensible.",
+        "The first plan is genre-coherent and practical. It builds a nu-metal and emo walk-in with specific tracks, books plausible UK openers (Holding Absence, Nothing But Thieves), uses Boxpark Wembley and Wembley Park food, picks rock-fit brands (Dr. Martens, Rough Trade), and gives Camden rock pubs with Tube routes. It has minor weaknesses: the generic 'craft beer partner', the vague 'OVO Arena area bars', and Pale Waves being a soft fit. The second plan leans on raw affinity scores and produces implausible picks. Coldplay, Gorillaz and Arctic Monkeys are proposed as stadium openers, and luxury houses (Burberry, Dior, Chanel) as merch partners. Its pre-show food options are in Mayfair and Piccadilly, far from Wembley. Its 'after-party' list is Westminster landmarks with a pre-show meet point timed at 20:45, which is incoherent and impossible for a crew to run on the night."
+      ]
+    },
+    {
+      "pairId": "ab04",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 2,
+        "l0": 4
+      },
+      "reasons": [
+        "The second plan is stronger in every slot. Its walk-in uses named songs from artists central to Sabrina's crowd (Chappell, Olivia, Dua, Taylor, Charli, Gracie) and builds a coherent arc. The first plan's walk-in has overlapping times (Amber Mark at 19:00 clashes with RAYE) and leans on metric talk rather than programming logic. For openers, the second plan's Amaarae, a real tour opener for Sabrina, and Role Model are plausible bookings. The first plan's Charli XCX, Gracie Abrams and Kim Petras as openers at MSG are unrealistic. The second plan's food picks (Joe's, Shake Shack, Magnolia, Los Tacos) are real NYC spots near the venue. The first plan includes an upstate winery and calls a Rockefeller Center pub a short walk. The second plan's brands (Sephora, Polaroid, Skims, Crocs) fit the crowd, while Topshop and Dunkin' fit poorly. For the after-party, the second plan lists real Midtown and Village nightlife, including Marie's Crisis. The first plan puts a pre-show bakery in the after-party guide and a Hudson Valley spot that is out of reach.",
+        "The first plan fits Sabrina's NYC crowd with crew-ready actions.\n\n**walk_in:** It names the right touchstones (Chappell, Olivia, Taylor, Charli, Gracie) with specific tracks. The second plan's playlist is plausible but has a timing contradiction (Amber Mark at 19:00 clashes with RAYE) and reads as raw affinity scores.\n\n**openers:** The second plan proposes Charli XCX, Kim Petras and Mitski as openers. That is implausible: Charli and Mitski are headliners in their own right. Gracie Abrams can be booked, but she now headlines arenas herself. The first plan's Amaarae and Role Model are realistic support-level picks.\n\n**food_drink:** The first plan uses iconic, real Midtown or NYC spots (Joe's, Shake Shack, Magnolia, Los Tacos). The second includes Whitecliff Vineyard, which is upstate, and a Rockefeller Center pub. Its action notes concede uncertainty with \"confirm location\" caveats.\n\n**brands:** Sephora, Polaroid and Crocs suit this crowd. The second plan's Gap, Topshop and Tiffany carry no stated fit, and Topshop has no US retail stores.\n\n**after_party:** The second plan lists a pre-show bakery as an after-party stop and includes Hudson Valley Falafel, which may be outside the city. The first plan's Marie's Crisis piano-bar sing-along is an inspired, real pick."
+      ]
+    },
+    {
+      "pairId": "ab06",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 2,
+        "l0": 4
+      },
+      "reasons": [
+        "The second plan reads Tomlinson's crowd, largely millennial and Gen Z women drawn to therapy and heartbreak humour, much better. Its room music (Phoebe Bridgers, Noah Kahan, Gracie Abrams, Maggie Rogers), podcasts (Crime Junkie, Call Her Daddy) and sponsors (Spotify, Calm/Headspace, Liquid Death, Bumble) are all real and fitting. Its after-show list (The Gage, Cindy's, Revolution Brewing, Chicago Magic Lounge) is real and suits the Loop. Its weak points are a generic local MC, the divisive Matt Rife wishlist pick, and food items that are concepts rather than named vendors. The first plan leans on affinity numbers instead of crowd logic and has implausible openers: Nikki Glaser and Nate Bargatze are arena headliners. Its interval picks are odd (Sincerely Fortune, Berner Phone). It also gets Chicago geography wrong: The Wiener's Circle and Merkle's are not walkable from State Street, The Wade is called a 'lakeside bar', Argyle is a neighbourhood rather than a venue, and WNDR Museum is listed as open until 22:45. Its food slot names real places, but the location errors offset that, so food is a tie.",
+        "The first plan's walk-in music (Bridgers, Kahan, Abrams) matches Tomlinson's young, confessional crowd, and Chance adds a local touch. Its podcasts are real and recognisable, its in-venue bar and snack actions are doable on the night, its sponsors fit, and its after-show spots are real Loop-area places. Its main weakness is listing Atsuko Okatsuka as an opener, which is ambitious for a headliner-level act. The second plan reads like raw affinity-score output. Its openers (Nikki Glaser, Nate Bargatze) are arena headliners who would never open this show. It lists a stand-up special and an obscure item as interval podcasts. Its bar and snacks slot names off-site restaurants instead of in-venue offerings and wrongly says The Wiener's Circle is walkable from State Street. Its sponsors (Buy Me Brunch, Rothy's) are weak or obscure, and its after-show entries are vague or mislabelled."
+      ]
+    },
+    {
+      "pairId": "ab07",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 1,
+        "l0": 4
+      },
+      "reasons": [
+        "The first plan reads like raw affinity scores with no judgement about the crowd. Teddy Geiger, *NSYNC and Billy Porter are odd walk-in picks for a Shane Gillis crowd. Maniscalco, Haddish and Handler are implausible openers, and the slot timings overlap. Its interval picks (Juan Epstein, Getting Curious) miss the audience. Its food picks are music venues and a parks corporation, and its after-show list includes Brooklyn Steel, Forest Hills Stadium and parks, none of which works near MSG. The second plan is specific and fits this crowd: McCusker and Normand as openers, the Secret Podcast and Kill Tony in the interval, Yuengling and Carhartt as sponsors, and Stout, Keens and Joe's Pizza Greeley Square, which are all walkable from the Garden. It has small flaws: its food section uses generic 'Prince Street-style' slices, it gives invented sponsor-fit scores, and 'Tom's Irish pub-style' is vague. Even so, it is far more bookable and coherent.",
+        "The first plan reads Shane Gillis's crowd correctly: working-class, Philly-adjacent fans who like beer and comedy podcasts. Springsteen, Billy Joel and Zach Bryan suit that crowd. Openers come from his circle (McCusker, Normand), and the interval uses his own Secret Podcast. Yuengling and Carhartt fit well, and the after-show bars near MSG (Stout, Keens, Mustang Harry's, Joe's Pizza) are real and walkable. It has minor blemishes: a 'Tom's Irish pub-style' hedge, a 'Barstool-style' label, and Tom Segura as a speculative drop-in. The second plan is driven by affinity scores and badly misreads the audience. The walk-in is Teddy Geiger, *NSYNC and Billy Porter. Openers are Tiffany Haddish, Chelsea Handler and Dave East, who are implausible and wrong for this bill. Interval and sponsor picks (Jonathan Van Ness, The New Yorker, MoMA) don't fit this crowd. Bar & snacks lists venues and a park corporation rather than food, and after-show picks include Brooklyn Steel, Forest Hills Stadium and parks. A crew could not run most of these actions on the night."
+      ]
+    },
+    {
+      "pairId": "ab09",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 2,
+        "l0": 4
+      },
+      "reasons": [
+        "The second plan fits a Chelsea vs Man Utd crowd far better. Its walk-in mix (Oasis, Stone Roses, Blur, Queen, Stormzy) is terrace-friendly and nods to both fan bases. Its halftime acts (Dave, Rag'n'Bone Man, Blossoms) are real, recognisable and plausible. Its sponsors (Nike, Guinness, EA Sports FC, Spotify) are football-native. Its fan zone stays local to the ground: King's Road, Fulham Broadway and the stadium tour. Its food is generic but crew-actionable and names the Matthew Harding stand. The first plan relies on affinity scores over sense. It has niche or odd acts (Martine McCutcheon, Balcony, Ariel, Lauren Aquilina). Its halftime note talks about building energy 'toward kick-off'. Its brands are weak (VO5, '3', Oasis as a brand). Its food option (LARDO) and fan-zone venues (Shoreditch, the City, Trafalgar Square) are far from Stamford Bridge.",
+        "The first plan is grounded in this fixture. Its walk-in mix (Oasis, Stone Roses, Blur, Queen, Stormzy) speaks to both the Manchester away end and the London home crowd. Halftime acts like Dave and Blossoms fit both fan bases. Concourse food and sponsors (Nike, EA Sports FC, Guinness) suit match day. Fan-zone picks are local and walkable: the King's Road, Fulham Broadway and the stadium tour. Minor quibble: Premier League clubs don't usually host halftime acts. The second plan reads as score-driven output with little feel for the crowd. Its walk-in is reasonable, but halftime picks like Martine McCutcheon and the vague 'Balcony' and 'Ariel' are odd for a football crowd. It offers only one food option, the Islington restaurant LARDO, which is implausible for a stadium concourse. Sponsors such as VO5 and Candy Kittens are weak fits. Fan-zone picks (Shoreditch, Trafalgar Square, the BFI IMAX, World of Golf) are scattered far from Stamford Bridge."
+      ]
+    },
+    {
+      "pairId": "ab10",
+      "split": "test",
+      "overall": "l0",
+      "orders": [
+        "l0",
+        "l0"
+      ],
+      "fit": {
+        "houseMix": 2,
+        "l0": 4
+      },
+      "reasons": [
+        "The first plan is driven by affinity scores and ignores the visiting Toronto crowd. Its warm-up playlist is niche LA/Midwest rap, and its 'halftime' headliners (Childish Gambino, Chance the Rapper) are implausible bookings for a 15-minute baseball slot. Its food slot lists off-site Hollywood restaurants and hotels instead of concourse vendors. Its sponsors are other sports franchises (Angels, Chargers, Rams), which a Dodgers game would not activate, and its post-match stops (Cabaret Tehran, Musso & Frank, The Garland) are far from Chavez Ravine. The second plan reads the matchup. Drake, The Weeknd and Bieber nod to Toronto, Kendrick and RHCP cover LA, and 'I Love L.A.' is a genuine Dodgers tradition. It also has Dodger Dogs plus a poutine pop-up, sensible brands (New Era, Nike, Uber, Roots) and walkable neighbourhoods (Echo Park, Chinatown) near the stadium. Its weaknesses are some generic items: a taco stand, neighbourhoods rather than named bars, and halftime tributes rather than booked acts. Even so, its actions are crew-feasible and coherent.",
+        "The first plan is built for the actual matchup. Its playlist pairs LA and Toronto artists (Drake, Kendrick, The Weeknd, RHCP, Bieber) and closes with 'I Love L.A.', a real Dodgers tradition. Its food picks (Dodger Dog, tacos, a poutine pop-up), sponsors (New Era, Uber) and neighbourhoods (Echo Park, Chinatown, Grand Central Market) are real, close to the stadium and workable on the night. Its weaknesses: baseball has no 'halftime', and booking Kendrick or The Weeknd is unrealistic, though the plan sensibly falls back to board tributes and a Los Lobos concourse set. The second plan reads like raw affinity scores pasted in. Its playlist is niche hip-hop (Pell, Casey Veggies) with nothing for Toronto fans. Its 'concourse food' slot lists off-site Hollywood steakhouses and a hotel, none of which it can actually use on the concourse. Its 'sponsors' are rival sports teams, the Angels, Chargers and Rams, which can't realistically be booked as Dodger Stadium sponsors. Its fan-zone picks are far from the stadium, including hotel pools. Overall the first plan fits the crowd and city much better."
+      ]
+    }
+  ]
+}

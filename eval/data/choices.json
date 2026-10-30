@@ -1,0 +1,36 @@
+{
+  "ab01": {
+    "city": "skip"
+  },
+  "ab02": {
+    "city": "skip"
+  },
+  "ab03": {
+    "city": "skip"
+  },
+  "ab04": {
+    "venue": "F9C3DBC0-A18B-445D-B1EB-6C46FD21E465",
+    "city": "81E61924-6CEE-4AB4-93D3-282A5C784AB8"
+  },
+  "ab06": {
+    "venue": "D3E92F38-AAE5-4A19-A2CF-A8E89A47DF23",
+    "city": "skip"
+  },
+  "ab07": {
+    "side_0": "3B3075A8-787A-475A-86FF-E237F4163ABB",
+    "venue": "F9C3DBC0-A18B-445D-B1EB-6C46FD21E465",
+    "city": "81E61924-6CEE-4AB4-93D3-282A5C784AB8"
+  },
+  "ab08": {
+    "city": "skip"
+  },
+  "ab09": {
+    "side_1": "D05FCD62-1BE1-4466-9F98-94052E2C0B3B",
+    "city": "skip"
+  },
+  "ab10": {
+    "side_1": "9631FCE1-CE2F-4F1F-BC71-30177C202245",
+    "venue": "EA480550-8ED3-4A66-A212-4CCFBB1C942D",
+    "city": "skip"
+  }
+}

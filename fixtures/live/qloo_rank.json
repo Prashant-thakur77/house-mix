@@ -1,0 +1,404 @@
+{
+  "args": {
+    "options": [
+      "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+      "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+      "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+      "1A44C04F-7251-4809-809B-6C885FFD68EB",
+      "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+      "354C8BBA-A058-4B4E-B0CA-6619A3F348CD"
+    ],
+    "option_type": "artist",
+    "signals": [
+      "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+    ],
+    "signal_location": "New York City",
+    "demographic": "adults 25-34"
+  },
+  "envelope": {
+    "schema_version": "1.0-preview.1",
+    "operation": "rank",
+    "status": "ok",
+    "interpretation": {
+      "option_type": "urn:entity:artist",
+      "options": [
+        {
+          "input": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+          "entityId": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+          "name": "Thom Yorke",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        {
+          "input": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+          "entityId": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+          "name": "Beck",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        {
+          "input": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+          "entityId": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+          "name": "Arcade Fire",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        {
+          "input": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+          "entityId": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+          "name": "The Strokes",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        {
+          "input": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+          "entityId": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+          "name": "Interpol",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        },
+        {
+          "input": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+          "entityId": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+          "name": "Death Cab for Cutie",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        }
+      ],
+      "signals": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "name": "Radiohead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        }
+      ],
+      "signal_location": "New York City",
+      "demographic": {
+        "input": "adults 25-34",
+        "age": "25_to_29,30_to_34"
+      },
+      "include_tags": [],
+      "exclude_tags": []
+    },
+    "resolution": {
+      "contract_version": "1.0-preview.1",
+      "provider": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "name": "Qloo native resolution",
+        "entity_strategy": "exact_name_context_or_choice",
+        "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+        "remote": true,
+        "uses_model": false,
+        "fallback": "none"
+      },
+      "outcomes": [
+        {
+          "input": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+            "name": "Thom Yorke",
+            "type": "urn:entity:artist",
+            "popularity": 0.9985661800675414,
+            "description": "English musician, singer, and songwriter, best known as the lead vocalist of Radiohead."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+            "name": "Beck",
+            "type": "urn:entity:artist",
+            "popularity": 0.9997301044833019,
+            "description": "American singer-songwriter known for his eclectic style and genre-blending music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+            "name": "Arcade Fire",
+            "type": "urn:entity:artist",
+            "popularity": 0.9998954154872794,
+            "description": "Arcade Fire is a Canadian indie rock band known for their anthemic sound and eclectic instrumentation."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+            "name": "The Strokes",
+            "type": "urn:entity:artist",
+            "popularity": 0.9999291524268668,
+            "description": "An American rock band known for pioneering the garage rock revival in the early 2000s."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+            "name": "Interpol",
+            "type": "urn:entity:artist",
+            "popularity": 0.9996288936645401,
+            "description": "Interpol is an American rock band known for their post-punk revival sound and atmospheric music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+            "name": "Death Cab for Cutie",
+            "type": "urn:entity:artist",
+            "popularity": 0.9998920417933208,
+            "description": "An American indie rock band known for their introspective lyrics and melodic sound."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        },
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9999966263060412,
+            "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false,
+            "cache_status": "memory_hit"
+          }
+        }
+      ]
+    },
+    "results": [
+      {
+        "entity_id": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+        "name": "The Strokes",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.999931187700293,
+        "affinity": 0.9585745591093621,
+        "properties": {
+          "description": "The Strokes are a New York City rock band formed in 1998 that became central to the early-2000s garage rock revival. Their 2001 debut album Is This It earned widespread critical praise and established the band’s spare, melodic guitar-driven sound, Julian Casablancas’s detached vocal style, and a cool-yet-urban aesthetic. Across several albums — including Room on Fire, First Impressions of Earth, Angles, Comedown Machine and The New Abnormal — they balanced retro influences with concise pop hooks and modern production, influencing a generation of indie and alternative rock bands.",
+          "image": {
+            "url": "https://images.qloo.com/i/1A44C04F-7251-4809-809B-6C885FFD68EB-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+        "name": "Thom Yorke",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9986172004535058,
+        "affinity": 0.92735279286189,
+        "properties": {
+          "description": "Thom Yorke is an English musician, singer and songwriter best known as the principal vocalist, principal songwriter and frontman of Radiohead. Beyond the band he has a solo career and fronted the electronic/experimental project Atoms for Peace; his work fuses melancholic melodies, adventurous electronic production and unconventional song structures. Yorke is noted for his plaintive, breathy falsetto, his interest in technology and politics, and for pushing the boundaries between rock and electronic music.",
+          "image": {
+            "url": "https://images.qloo.com/i/C8DB6D4F-FE7B-465B-92CA-A472E1184E66-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+        "name": "Arcade Fire",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9999016967147042,
+        "affinity": 0.9212580030659797,
+        "properties": {
+          "description": "Arcade Fire is a Montreal-based Canadian indie rock band celebrated for large-scale, anthemic songs, lush orchestration, and multi-instrumental arrangements. Emerging in the early 2000s, they blend rock, chamber pop and experimental textures into emotionally direct music and theatrical live performances. Their albums (notably Funeral and The Suburbs) combined intimate songwriting with dramatic crescendos and earned widespread critical and commercial success.",
+          "image": {
+            "url": "https://images.qloo.com/i/7398A0D8-4BA6-48A8-9969-C27C509A3013-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+        "name": "Interpol",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9995543584399924,
+        "affinity": 0.9201948705496902,
+        "properties": {
+          "description": "Interpol is an American rock band formed in Manhattan, New York, in 1997. The core lineup is Paul Banks (vocals, guitar), Daniel Kessler (guitar, backing vocals) and Sam Fogarino (drums). They were a central act in the post-punk revival of the early 2000s, blending staccato basslines, interlocking rhythmic guitars, snare-forward production and baritone-led vocals to create a moody, atmospheric sound. Key albums include Turn On the Bright Lights (2002), Antics (2004), Our Love to Admire (2007), Interpol (2010), El Pintor (2014), Marauder (2018) and The Other Side of Make-Believe (2022). Original bassist Carlos Dengler left in 2010 and has not been permanently replaced; touring and session players have handled bass and keys since.",
+          "image": {
+            "url": "https://images.qloo.com/i/D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+        "name": "Death Cab for Cutie",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9998951431623512,
+        "affinity": 0.9173054161038197,
+        "properties": {
+          "description": "Death Cab for Cutie is an American indie rock band formed in Bellingham, Washington in 1997. Fronted by singer-songwriter Ben Gibbard, the band blends literate, emotionally direct lyrics with melodic guitar- and piano-based arrangements. They rose from the Pacific Northwest indie scene to international prominence in the 2000s with albums such as Transatlanticism (2003) and Plans (2005), merging intimate singer-songwriter sensibilities with polished alternative-rock production.",
+          "image": {
+            "url": "https://images.qloo.com/i/354C8BBA-A058-4B4E-B0CA-6619A3F348CD-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+        "name": "Beck",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9996657688299943,
+        "affinity": 0.9126344552217013,
+        "properties": {
+          "description": "Beck Hansen is an American singer-songwriter and multi-instrumentalist celebrated for eclectic, genre-blending music that mixes folk, hip-hop, electronic, rock and experimental pop. Rising from the early-90s anti-folk and underground scenes in Los Angeles and New York, he broke into the mainstream with the 1994 hit \"Loser\" and consolidated critical and commercial success with albums such as Odelay, Sea Change, Morning Phase and Colors. His work is marked by inventive sampling, ironic and poetic lyrics, diverse production approaches and frequent collaborations with producers and guest musicians.",
+          "image": {
+            "url": "https://images.qloo.com/i/8431339C-7299-4A35-9AB3-DFE9DBEB7DED-420x-auto.jpg"
+          }
+        }
+      }
+    ],
+    "result_count": 6,
+    "provenance": {
+      "source": "Qloo API",
+      "endpoint": "/v2/insights",
+      "documentation": "https://docs.qloo.com/reference/insights-api-deep-dive",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/v2/insights",
+          "query": {
+            "filter.type": "urn:entity:artist",
+            "filter.results.entities": [
+              "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+              "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+              "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+              "1A44C04F-7251-4809-809B-6C885FFD68EB",
+              "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+              "354C8BBA-A058-4B4E-B0CA-6619A3F348CD"
+            ],
+            "take": 6,
+            "signal.interests.entities": [
+              "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+            ],
+            "signal.location.query": "New York City",
+            "signal.demographics.age": "25_to_29,30_to_34"
+          }
+        }
+      ],
+      "transport": "mcp"
+    },
+    "query_intent": {
+      "schema_version": "1.0-preview.1",
+      "source_contract_version": "1.0.0",
+      "operation": "rank",
+      "job": "rank",
+      "signals": {
+        "entities": [
+          "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+        ],
+        "location": "New York City",
+        "demographic": "adults 25-34"
+      },
+      "filters": {
+        "candidateEntities": [
+          "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+          "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+          "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+          "1A44C04F-7251-4809-809B-6C885FFD68EB",
+          "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+          "354C8BBA-A058-4B4E-B0CA-6619A3F348CD"
+        ]
+      },
+      "operators": {},
+      "output": {
+        "limit": 6
+      },
+      "assumptions": [],
+      "unresolved": [],
+      "target": {
+        "type": "artist"
+      }
+    },
+    "execution": {
+      "transport": "mcp",
+      "transport_name": "Qloo canonical MCP",
+      "correlation_id": "mcp-7",
+      "duration_ms": 2008
+    },
+    "summary": ""
+  }
+}

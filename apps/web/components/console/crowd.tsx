@@ -44,45 +44,76 @@ function Card({ title, kpi, kpiLabel, children, className }: { title: string; kp
   );
 }
 
-function SharedDistinct({ crowd }: { crowd: CrowdRead }) {
-  const rows = crowd.compare.slice(0, 8);
-  const shared = crowd.sharedGround.length;
-  const isShared = (r: { a: number; b: number }) => r.a >= 0.4 && r.b >= 0.4 && Math.abs(r.a - r.b) < 0.25;
+/** Qloo can return the same concept name under two tag categories; show each name once. */
+function byName<T extends { name: string }>(rows: T[]): T[] {
+  const seen = new Set<string>();
+  return rows.filter((r) => {
+    const k = r.name.toLowerCase();
+    return !seen.has(k) && Boolean(seen.add(k));
+  });
+}
+
+function SideList({ label, swatch, rows: all, align }: { label: string; swatch: string; rows: CrowdRead["distinctA"]; align: "start" | "end" }) {
+  const rows = byName(all);
   return (
-    <Card title="Shared vs distinct" kpi={String(shared)} kpiLabel="shared concepts" className="md:col-span-2">
+    <div className={cn("flex min-w-0 flex-col gap-1.5", align === "end" && "items-end text-right")}>
+      <span className={cn("flex max-w-full items-center gap-1.5 text-label uppercase text-muted-foreground", align === "end" && "flex-row-reverse")}>
+        <span className={cn("size-2.5 shrink-0 rounded-sm", swatch)} />
+        <span className="truncate">Only {label}</span>
+      </span>
       {rows.length ? (
+        <ul className={cn("flex flex-wrap gap-1", align === "end" && "justify-end")}>
+          {rows.map((r) => (
+            <li key={r.qlooId} className="rounded-sm border bg-background px-1.5 py-0.5 text-small">
+              {r.name}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <span className="text-small text-muted-foreground">none returned</span>
+      )}
+    </div>
+  );
+}
+
+function SharedDistinct({ crowd }: { crowd: CrowdRead }) {
+  const shared = byName(crowd.sharedGround);
+  const labelA = crowd.labelA || "Group A";
+  const labelB = crowd.labelB || "Group B";
+  const any = shared.length + crowd.distinctA.length + crowd.distinctB.length > 0;
+  return (
+    <Card title="Shared vs distinct" kpi={String(shared.length)} kpiLabel="shared concepts" className="md:col-span-2">
+      {any ? (
         <>
-          <div className="grid grid-cols-[1fr_7.5rem_1fr] gap-2 text-small" aria-hidden>
-            <span className="flex items-center justify-end gap-1.5 truncate">
-              <span className="truncate">{crowd.labelA || "Group A"}</span>
-              <span className="size-2.5 shrink-0 rounded-sm bg-chart-1" />
-            </span>
-            <span className="text-center text-label uppercase text-muted-foreground">concept</span>
-            <span className="flex items-center gap-1.5 truncate">
-              <span className="size-2.5 shrink-0 rounded-sm bg-chart-2" />
-              <span className="truncate">{crowd.labelB || "Group B"}</span>
-            </span>
+          <div className="grid gap-3 sm:grid-cols-[1fr_minmax(0,1.3fr)_1fr]">
+            <SideList label={labelA} swatch="bg-chart-1" rows={crowd.distinctA} align="end" />
+            <div className="flex min-w-0 flex-col gap-1.5 rounded-md border border-dashed p-2">
+              <span className="text-center text-label uppercase text-muted-foreground">Both crowds · Qloo similarity</span>
+              {shared.length ? (
+                <ul className="grid gap-1">
+                  {shared.map((r) => (
+                    <li key={r.qlooId} className="group grid grid-cols-[minmax(0,1fr)_4.5rem_2.25rem] items-center gap-2 text-small" title={`${r.name}: ${r.score?.toFixed(2) ?? "no score"}`}>
+                      <span className="truncate font-medium">{r.name}</span>
+                      <span className="h-2.5 overflow-hidden rounded-[4px] bg-muted">
+                        <span
+                          className="block h-full rounded-[4px] bg-gradient-to-r from-chart-1 to-chart-2 transition-opacity group-hover:opacity-80"
+                          style={{ width: `${Math.max(4, (r.score ?? 0) * 100)}%` }}
+                        />
+                      </span>
+                      <span className="text-right font-mono text-label tabular text-muted-foreground">{r.score?.toFixed(2) ?? "—"}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-center text-small text-muted-foreground">No concepts in common. Qloo returns none when the two sides share no tags.</p>
+              )}
+            </div>
+            <SideList label={labelB} swatch="bg-chart-2" rows={crowd.distinctB} align="start" />
           </div>
-          <ul className="grid gap-1.5" aria-hidden>
-            {rows.map((r) => (
-              <li key={r.id} className="group grid grid-cols-[1fr_7.5rem_1fr] items-center gap-2" title={`${r.name}: ${r.a.toFixed(2)} vs ${r.b.toFixed(2)}`}>
-                <span className="flex items-center justify-end gap-1.5">
-                  <span className="font-mono text-label tabular text-muted-foreground">{r.a.toFixed(2)}</span>
-                  <span className="h-3 rounded-l-[4px] bg-chart-1 transition-opacity group-hover:opacity-80" style={{ width: `${Math.max(2, r.a * 100) * 0.8}%` }} />
-                </span>
-                <span className={cn("truncate text-center text-small", isShared(r) ? "font-semibold text-foreground" : "text-muted-foreground")}>
-                  {r.name}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="h-3 rounded-r-[4px] bg-chart-2 transition-opacity group-hover:opacity-80" style={{ width: `${Math.max(2, r.b * 100) * 0.8}%` }} />
-                  <span className="font-mono text-label tabular text-muted-foreground">{r.b.toFixed(2)}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-label text-muted-foreground">Bold concepts are shared ground (both sides ≥ 0.40, within 0.25 of each other).</p>
+          <p className="text-label text-muted-foreground">The middle column is what both crowds carry, scored by Qloo. The sides are concepts only one crowd carries; they go to that crowd's slots.</p>
           <figcaption className="sr-only">
-            Affinity per concept for {crowd.labelA} versus {crowd.labelB}: {rows.map((r) => `${r.name} ${r.a.toFixed(2)} versus ${r.b.toFixed(2)}`).join("; ")}.
+            Shared by {labelA} and {labelB}: {shared.map((r) => `${r.name}${r.score !== undefined ? ` ${r.score.toFixed(2)}` : ""}`).join("; ") || "none"}. Only {labelA}:{" "}
+            {crowd.distinctA.map((r) => r.name).join(", ") || "none"}. Only {labelB}: {crowd.distinctB.map((r) => r.name).join(", ") || "none"}.
           </figcaption>
         </>
       ) : (
@@ -124,7 +155,12 @@ function Demographics({ crowd }: { crowd: CrowdRead }) {
             ))}
           </div>
           <p className="text-small text-muted-foreground">
-            Relative affinity, −1 to 1. Used only for tone and pricing. {crowd.demographicPhrase ? <>Sent to Qloo as <span className="font-mono text-foreground">“{crowd.demographicPhrase}”</span>.</> : null}
+            Relative affinity, −1 to 1. Used only for tone and pricing.{" "}
+            {crowd.demographicPhrase ? (
+              <>
+                Sent to Qloo as <span className="font-mono text-foreground">“{crowd.demographicPhrase}”</span>.
+              </>
+            ) : null}
           </p>
           <figcaption className="sr-only">Relative age affinity on a −1 to 1 scale: {rows.map((r) => `${r.name} ${r.value.toFixed(2)}`).join(", ")}.</figcaption>
         </>
@@ -174,10 +210,14 @@ function Trends({ crowd, animate }: { crowd: CrowdRead; animate: boolean }) {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <span className={cn("font-mono text-small tabular", t.delta >= 0 ? "text-status-ok" : "text-muted-foreground")}>
-                {t.delta >= 0 ? "▲" : "▼"} {Math.abs(t.delta * 100).toFixed(1)}
-                <span className="sr-only"> percentile points</span>
-              </span>
+              {Math.abs(t.delta * 100) < 0.05 ? (
+                <span className="font-mono text-small tabular text-muted-foreground">– flat</span>
+              ) : (
+                <span className={cn("font-mono text-small tabular", t.delta > 0 ? "text-status-ok" : "text-muted-foreground")}>
+                  {t.delta > 0 ? "▲" : "▼"} {Math.abs(t.delta * 100).toFixed(1)}
+                  <span className="sr-only"> percentile points</span>
+                </span>
+              )}
             </li>
           ))}
         </ul>
@@ -196,7 +236,11 @@ export function CrowdReadPanel({ crowd, streaming }: { crowd?: CrowdRead; stream
   if (!crowd) {
     return (
       <section aria-label="Crowd read" className="grid gap-3 md:grid-cols-2">
-        {streaming ? [0, 1, 2, 3].map((i) => <Skeleton key={i} className={cn("h-64 rounded-lg", i === 0 && "md:col-span-2")} />) : <p className="text-small text-muted-foreground">No crowd read yet.</p>}
+        {streaming ? (
+          [0, 1, 2, 3].map((i) => <Skeleton key={i} className={cn("h-64 rounded-lg", i === 0 && "md:col-span-2")} />)
+        ) : (
+          <p className="text-small text-muted-foreground">No crowd read yet.</p>
+        )}
       </section>
     );
   }

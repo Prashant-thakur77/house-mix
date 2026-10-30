@@ -1,0 +1,92 @@
+{
+  "args": {
+    "entity": "Genesis"
+  },
+  "envelope": {
+    "schema_version": "1.0-preview.1",
+    "operation": "describe",
+    "status": "needs_input",
+    "summary": "Choose the intended Qloo entity.",
+    "resolution": {
+      "issues": [
+        {
+          "input": "Genesis",
+          "kind": "ambiguous",
+          "input_kind": "entity",
+          "field": "entity",
+          "candidates": [
+            {
+              "id": "083B594C-DA47-47F0-964B-8FBEBA9D0F43",
+              "name": "Genesis",
+              "type": "urn:entity:artist",
+              "popularity": 0.9982490528354211,
+              "description": "Genesis is a British rock band known for their progressive and pop rock music, influential in the 1970s and 1980s."
+            },
+            {
+              "id": "655465A0-DD52-49D0-B058-792E66DF4A07",
+              "name": "Genesis",
+              "type": "urn:entity:album",
+              "popularity": 0.9961444953148139,
+              "release_year": 2007
+            },
+            {
+              "id": "04DD25AF-2A7F-4184-8ABD-BD3F1AE130ED",
+              "name": "Genesis",
+              "type": "urn:entity:album",
+              "popularity": 0.9949351717063531,
+              "release_year": 2001
+            },
+            {
+              "id": "379EC14F-6D79-4AE5-A086-53EF0620F6A5",
+              "name": "Genesis",
+              "type": "urn:entity:album",
+              "popularity": 0.9939584103302886,
+              "release_year": 1983
+            },
+            {
+              "id": "2ED91748-7755-4B82-9C26-139FCB9835DA",
+              "name": "Genesis",
+              "type": "urn:entity:album",
+              "popularity": 0.9632187115800906,
+              "release_year": 2002
+            }
+          ],
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/search",
+            "strategy": "exact_name_context_or_choice",
+            "remote": true,
+            "uses_model": false
+          }
+        }
+      ]
+    },
+    "results": [],
+    "query_intent": {
+      "schema_version": "1.0-preview.1",
+      "source_contract_version": "1.0.0",
+      "operation": "describe",
+      "job": "describe",
+      "signals": {},
+      "filters": {},
+      "operators": {},
+      "output": {},
+      "assumptions": [],
+      "unresolved": [],
+      "target": {
+        "entities": [
+          "Genesis"
+        ]
+      }
+    },
+    "execution": {
+      "transport": "mcp",
+      "transport_name": "Qloo canonical MCP",
+      "correlation_id": "mcp-13",
+      "duration_ms": 500
+    },
+    "result_count": 0
+  }
+}

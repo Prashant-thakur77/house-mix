@@ -1,0 +1,371 @@
+{
+  "args": {
+    "target_type": "artist",
+    "signals": [
+      "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+    ],
+    "signal_location": "New York City",
+    "limit": 10
+  },
+  "envelope": {
+    "schema_version": "1.0-preview.1",
+    "operation": "recommend",
+    "status": "ok",
+    "interpretation": {
+      "target_type": "urn:entity:artist",
+      "signals": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "name": "Radiohead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        }
+      ],
+      "signal_tags": [],
+      "signal_location": "New York City",
+      "include_tags": [],
+      "exclude_tags": []
+    },
+    "resolution": {
+      "contract_version": "1.0-preview.1",
+      "provider": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "name": "Qloo native resolution",
+        "entity_strategy": "exact_name_context_or_choice",
+        "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+        "remote": true,
+        "uses_model": false,
+        "fallback": "none"
+      },
+      "outcomes": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9999966263060412,
+            "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        }
+      ]
+    },
+    "results": [
+      {
+        "entity_id": "C8DB6D4F-FE7B-465B-92CA-A472E1184E66",
+        "name": "Thom Yorke",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9986172004535058,
+        "affinity": 0.9733205973857065,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Thom Yorke is an English musician, singer and songwriter best known as the principal vocalist, principal songwriter and frontman of Radiohead. Beyond the band he has a solo career and fronted the electronic/experimental project Atoms for Peace; his work fuses melancholic melodies, adventurous electronic production and unconventional song structures. Yorke is noted for his plaintive, breathy falsetto, his interest in technology and politics, and for pushing the boundaries between rock and electronic music.",
+          "image": {
+            "url": "https://images.qloo.com/i/C8DB6D4F-FE7B-465B-92CA-A472E1184E66-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "8431339C-7299-4A35-9AB3-DFE9DBEB7DED",
+        "name": "Beck",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9996657688299943,
+        "affinity": 0.9720308411939849,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Beck Hansen is an American singer-songwriter and multi-instrumentalist celebrated for eclectic, genre-blending music that mixes folk, hip-hop, electronic, rock and experimental pop. Rising from the early-90s anti-folk and underground scenes in Los Angeles and New York, he broke into the mainstream with the 1994 hit \"Loser\" and consolidated critical and commercial success with albums such as Odelay, Sea Change, Morning Phase and Colors. His work is marked by inventive sampling, ironic and poetic lyrics, diverse production approaches and frequent collaborations with producers and guest musicians.",
+          "image": {
+            "url": "https://images.qloo.com/i/8431339C-7299-4A35-9AB3-DFE9DBEB7DED-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "7398A0D8-4BA6-48A8-9969-C27C509A3013",
+        "name": "Arcade Fire",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9999016967147042,
+        "affinity": 0.9712220584975028,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Arcade Fire is a Montreal-based Canadian indie rock band celebrated for large-scale, anthemic songs, lush orchestration, and multi-instrumental arrangements. Emerging in the early 2000s, they blend rock, chamber pop and experimental textures into emotionally direct music and theatrical live performances. Their albums (notably Funeral and The Suburbs) combined intimate songwriting with dramatic crescendos and earned widespread critical and commercial success.",
+          "image": {
+            "url": "https://images.qloo.com/i/7398A0D8-4BA6-48A8-9969-C27C509A3013-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "1A44C04F-7251-4809-809B-6C885FFD68EB",
+        "name": "The Strokes",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.999931187700293,
+        "affinity": 0.9653180725719874,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "The Strokes are a New York City rock band formed in 1998 that became central to the early-2000s garage rock revival. Their 2001 debut album Is This It earned widespread critical praise and established the band’s spare, melodic guitar-driven sound, Julian Casablancas’s detached vocal style, and a cool-yet-urban aesthetic. Across several albums — including Room on Fire, First Impressions of Earth, Angles, Comedown Machine and The New Abnormal — they balanced retro influences with concise pop hooks and modern production, influencing a generation of indie and alternative rock bands.",
+          "image": {
+            "url": "https://images.qloo.com/i/1A44C04F-7251-4809-809B-6C885FFD68EB-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E",
+        "name": "Interpol",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9995543584399924,
+        "affinity": 0.9628474525328702,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Interpol is an American rock band formed in Manhattan, New York, in 1997. The core lineup is Paul Banks (vocals, guitar), Daniel Kessler (guitar, backing vocals) and Sam Fogarino (drums). They were a central act in the post-punk revival of the early 2000s, blending staccato basslines, interlocking rhythmic guitars, snare-forward production and baritone-led vocals to create a moody, atmospheric sound. Key albums include Turn On the Bright Lights (2002), Antics (2004), Our Love to Admire (2007), Interpol (2010), El Pintor (2014), Marauder (2018) and The Other Side of Make-Believe (2022). Original bassist Carlos Dengler left in 2010 and has not been permanently replaced; touring and session players have handled bass and keys since.",
+          "image": {
+            "url": "https://images.qloo.com/i/D55AA58B-0DB2-43EF-B3B9-E2D40B215E7E-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "354C8BBA-A058-4B4E-B0CA-6619A3F348CD",
+        "name": "Death Cab for Cutie",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9998951431623512,
+        "affinity": 0.96198782553722,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Death Cab for Cutie is an American indie rock band formed in Bellingham, Washington in 1997. Fronted by singer-songwriter Ben Gibbard, the band blends literate, emotionally direct lyrics with melodic guitar- and piano-based arrangements. They rose from the Pacific Northwest indie scene to international prominence in the 2000s with albums such as Transatlanticism (2003) and Plans (2005), merging intimate singer-songwriter sensibilities with polished alternative-rock production.",
+          "image": {
+            "url": "https://images.qloo.com/i/354C8BBA-A058-4B4E-B0CA-6619A3F348CD-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "9F1FC72B-9B11-4D17-8848-FBCC57442B0B",
+        "name": "The Killers",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9999770625667643,
+        "affinity": 0.9619567727266091,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "The Killers are an American rock band from Las Vegas formed in 2001, known for melding synth textures with big, guitar-driven anthems and memorable choruses. Breakout album Hot Fuss (2004) delivered enduring hits such as 'Mr. Brightside' and 'Somebody Told Me.' Led by charismatic frontman Brandon Flowers, the band combines New Wave and post-punk influences with arena-ready production.",
+          "image": {
+            "url": "https://images.qloo.com/i/9F1FC72B-9B11-4D17-8848-FBCC57442B0B-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "4E2076A6-D484-45D5-A700-65F57E83A626",
+        "name": "The Smashing Pumpkins",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.999813223757938,
+        "affinity": 0.9607574679082106,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "The Smashing Pumpkins are an American alternative rock band formed in Chicago in 1988, led by singer-songwriter and guitarist Billy Corgan. They rose to international fame in the early 1990s with dense, guitar-layered albums such as Gish (1991), Siamese Dream (1993) and the double LP Mellon Collie and the Infinite Sadness (1995). Known for blending heavy distortion, orchestral elements and melody, the band produced enduring singles like \"Today,\" \"1979,\" \"Bullet With Butterfly Wings\" and \"Tonight, Tonight.\" The Pumpkins have undergone multiple lineup changes and hiatuses, experimented with electronic and orchestral textures on later records, and reunited in various forms while maintaining a strong legacy in alternative rock.",
+          "image": {
+            "url": "https://images.qloo.com/i/4E2076A6-D484-45D5-A700-65F57E83A626-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "C9FC1FE6-2F92-4B49-9EE5-B531B8536B94",
+        "name": "Pixies",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9997313043535249,
+        "affinity": 0.9602951029672357,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "Pixies are an American alternative rock band formed in Boston in 1986. Known for their loud-quiet-loud dynamics, surreal and often cryptic lyrics, and a blend of melodic hooks with abrasive guitar textures, they released seminal records including Come On Pilgrim (EP), Surfer Rosa, Doolittle, Bossanova and Trompe le Monde. They split in 1993, reunited in 2004 and have continued to record and tour with lineup changes (notably Kim Deal on bass and vocals until 2013, Paz Lenchantin 2016–2024, and Emma Richardson joining in 2024). Frequently cited as a key influence on the alternative and grunge explosion of the early 1990s, their combination of punk energy, surf-rock riffs and pop sensibility left a lasting mark on alternative music worldwide.",
+          "image": {
+            "url": "https://images.qloo.com/i/C9FC1FE6-2F92-4B49-9EE5-B531B8536B94-420x-auto.jpg"
+          }
+        }
+      },
+      {
+        "entity_id": "4A55F337-75B6-4016-B292-A336D360AC80",
+        "name": "MGMT",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.9998853128338215,
+        "affinity": 0.9599859666075545,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+              "score": 1
+            }
+          ]
+        },
+        "properties": {
+          "description": "MGMT is an American psychedelic rock and synthpop duo formed in 2002 at Wesleyan University by Andrew VanWyngarden and Ben Goldwasser. They rose to international prominence after signing to Columbia Records and releasing their breakthrough debut Oracular Spectacular (2007), which included the hits \"Time to Pretend\", \"Kids\" and \"Electric Feel\". Subsequent records—Congratulations (2010), MGMT (2013), Little Dark Age (2018) and Loss Of Life (2024)—showcase a progression from accessible synth-pop to more experimental psychedelia and back toward a contemporary pop-inflected sound. The core duo write and perform with a rotating cast of touring/studio members; MGMT are noted for blending lush harmonies, surreal lyrics and synth-driven arrangements while maintaining a strong visual and live-theatrical presence.",
+          "image": {
+            "url": "https://images.qloo.com/i/4A55F337-75B6-4016-B292-A336D360AC80-420x-auto.jpg"
+          }
+        }
+      }
+    ],
+    "result_count": 10,
+    "explainability": {
+      "signal.interests.entities": {
+        "effect_on_top3_recs": [
+          {
+            "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_top5_recs": [
+          {
+            "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_top10_recs": [
+          {
+            "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_all_recs": [
+          {
+            "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "avg_score": 1
+          }
+        ]
+      }
+    },
+    "provenance": {
+      "source": "Qloo API",
+      "endpoint": "/v2/insights",
+      "documentation": "https://docs.qloo.com/reference/insights-api-deep-dive",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/v2/insights",
+          "query": {
+            "filter.type": "urn:entity:artist",
+            "take": 10,
+            "signal.interests.entities": [
+              "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+            ],
+            "signal.location.query": "New York City",
+            "feature.explainability": true
+          }
+        }
+      ],
+      "transport": "mcp"
+    },
+    "query_intent": {
+      "schema_version": "1.0-preview.1",
+      "source_contract_version": "1.0.0",
+      "operation": "recommend",
+      "job": "recommend",
+      "signals": {
+        "entities": [
+          "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+        ],
+        "location": "New York City"
+      },
+      "filters": {},
+      "operators": {},
+      "output": {
+        "limit": 10,
+        "explain": true
+      },
+      "assumptions": [
+        "explain=true"
+      ],
+      "unresolved": [],
+      "target": {
+        "type": "artist"
+      }
+    },
+    "execution": {
+      "transport": "mcp",
+      "transport_name": "Qloo canonical MCP",
+      "correlation_id": "mcp-6",
+      "duration_ms": 1585
+    },
+    "summary": ""
+  }
+}

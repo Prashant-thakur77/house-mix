@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-10-30T07:10:17.769Z",
+  "qlooMode": "live",
+  "houseMix": {
+    "items": 225,
+    "valid": 225,
+    "rate": 1,
+    "criticDrops": 20
+  },
+  "l0": {
+    "items": 194,
+    "rate": 0,
+    "unresolvedByQloo": 0,
+    "unresolvedPerPlan": 0,
+    "ambiguousInQloo": 90
+  },
+  "rows": [
+    {
+      "id": "ab01",
+      "houseMix": {
+        "items": 24,
+        "valid": 24,
+        "rate": 1,
+        "criticDrops": 5
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 9
+      }
+    },
+    {
+      "id": "ab02",
+      "houseMix": {
+        "items": 23,
+        "valid": 23,
+        "rate": 1,
+        "criticDrops": 0
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 17
+      }
+    },
+    {
+      "id": "ab03",
+      "houseMix": {
+        "items": 26,
+        "valid": 26,
+        "rate": 1,
+        "criticDrops": 1
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 11
+      }
+    },
+    {
+      "id": "ab04",
+      "houseMix": {
+        "items": 25,
+        "valid": 25,
+        "rate": 1,
+        "criticDrops": 3
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 8
+      }
+    },
+    {
+      "id": "ab06",
+      "houseMix": {
+        "items": 28,
+        "valid": 28,
+        "rate": 1,
+        "criticDrops": 0
+      },
+      "l0": {
+        "items": 23,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 12
+      }
+    },
+    {
+      "id": "ab07",
+      "houseMix": {
+        "items": 27,
+        "valid": 27,
+        "rate": 1,
+        "criticDrops": 0
+      },
+      "l0": {
+        "items": 23,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 11
+      }
+    },
+    {
+      "id": "ab08",
+      "houseMix": {
+        "items": 26,
+        "valid": 26,
+        "rate": 1,
+        "criticDrops": 5
+      },
+      "l0": {
+        "items": 22,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 9
+      }
+    },
+    {
+      "id": "ab09",
+      "houseMix": {
+        "items": 22,
+        "valid": 22,
+        "rate": 1,
+        "criticDrops": 1
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 6
+      }
+    },
+    {
+      "id": "ab10",
+      "houseMix": {
+        "items": 24,
+        "valid": 24,
+        "rate": 1,
+        "criticDrops": 5
+      },
+      "l0": {
+        "items": 21,
+        "valid": 0,
+        "rate": 0,
+        "unresolvedByQloo": 0,
+        "ambiguousInQloo": 7
+      }
+    }
+  ]
+}

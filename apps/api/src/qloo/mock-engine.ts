@@ -100,13 +100,24 @@ const AMBIGUOUS_IDS = new Map<string, string[]>();
 /** The disambiguation fixtures ("Giants", "Genesis") exist to exercise needs_input; they are never recommended. */
 const AMBIGUOUS_MEMBERS = new Set<string>();
 for (const [key, cands] of Object.entries(POOL.ambiguous)) {
-  AMBIGUOUS_IDS.set(key, cands.map((_, i) => mockUuid(`ambiguous|${key}|${i}`)));
+  AMBIGUOUS_IDS.set(
+    key,
+    cands.map((_, i) => mockUuid(`ambiguous|${key}|${i}`)),
+  );
   cands.forEach((_, i) => AMBIGUOUS_MEMBERS.add(mockUuid(`ambiguous|${key}|${i}`)));
   cands.forEach((c, i) =>
-    add({ id: mockUuid(`ambiguous|${key}|${i}`), name: c.name, type: c.type.split(":").pop()!, tags: tagsFor(`${key}|${i}`, c.type), popularity: c.popularity, description: c.description, release_year: c.release_year, address: c.address }),
+    add({
+      id: mockUuid(`ambiguous|${key}|${i}`),
+      name: c.name,
+      type: c.type.split(":").pop()!,
+      tags: tagsFor(`${key}|${i}`, c.type),
+      popularity: c.popularity,
+      description: c.description,
+      release_year: c.release_year,
+      address: c.address,
+    }),
   );
 }
-
 
 function loadSynthetics() {
   for (const [id, v] of Object.entries(syntheticSeen)) makeSynthetic(v.name, v.type, !(id in COMMITTED_SYNTHETICS));
@@ -216,9 +227,7 @@ function synthetic(name: string, scope?: string): PoolEntity {
 
 loadSynthetics();
 
-type Resolution =
-  | { ok: true; entity: PoolEntity; match: "identifier" | "exact" | "semantic"; input: string }
-  | { ok: false; issue: Rec };
+type Resolution = { ok: true; entity: PoolEntity; match: "identifier" | "exact" | "semantic"; input: string } | { ok: false; issue: Rec };
 
 const PROVIDER = {
   contract_version: "1.0-preview.1",
@@ -281,7 +290,15 @@ function resolveEntity(input: string, field: string, scope?: string): Resolution
     if (scoped.length === 1) return { ok: true, entity: scoped[0]!, match: "exact", input };
     return {
       ok: false,
-      issue: { input, kind: "ambiguous", input_kind: "entity", field, ...(scope ? { scope: `urn:entity:${scope}` } : {}), candidates: (scoped.length ? scoped : cands).slice(0, 5).map(candidate), provenance: prov },
+      issue: {
+        input,
+        kind: "ambiguous",
+        input_kind: "entity",
+        field,
+        ...(scope ? { scope: `urn:entity:${scope}` } : {}),
+        candidates: (scoped.length ? scoped : cands).slice(0, 5).map(candidate),
+        provenance: prov,
+      },
     };
   }
   const exact = [...ENTITIES.values()].find((e) => norm(e.name) === n && (!scope || e.type === scope));
@@ -291,7 +308,9 @@ function resolveEntity(input: string, field: string, scope?: string): Resolution
 type TagResolution = { ok: true; tag: PoolTag; match: "exact" | "identifier"; input: string } | { ok: false; issue: Rec };
 
 function searchTags(query: string): PoolTag[] {
-  const words = norm(query).split(/[^a-z0-9&]+/).filter((w) => w.length > 1);
+  const words = norm(query)
+    .split(/[^a-z0-9&]+/)
+    .filter((w) => w.length > 1);
   return TAGS.map((t) => ({ t, s: words.filter((w) => norm(t.name).includes(w) || t.key.includes(w)).length }))
     .filter((x) => x.s > 0)
     .sort((a, b) => b.s - a.s || a.t.name.localeCompare(b.t.name))
@@ -314,7 +333,9 @@ function resolveTag(input: string, field: string, purpose: string, scope: string
       field,
       scope: `urn:entity:${scope}`,
       purpose,
-      ...(cands.length ? { candidates: cands.map((t, i) => ({ id: t.id, name: t.name, type: t.type, rank: i + 1, popularity: round(0.4 + rand(t.id) * 0.5), parent_types: [`urn:entity:${scope}`] })) } : {}),
+      ...(cands.length
+        ? { candidates: cands.map((t, i) => ({ id: t.id, name: t.name, type: t.type, rank: i + 1, popularity: round(0.4 + rand(t.id) * 0.5), parent_types: [`urn:entity:${scope}`] })) }
+        : {}),
       provenance: resProv("/v2/tags", "semantic_search_local_parent_scope_exact_name_or_choice"),
       warnings: [
         cands.length
@@ -431,7 +452,16 @@ function needsInput(op: string, issues: Rec[], started: number, summary = NEEDS_
 }
 
 export function errorEnvelope(op: string, code: string, layer: string, retryable: boolean, recovery: string, summary: string, started: number) {
-  return { schema_version: "1.0-preview.1", operation: op, status: "error", summary, query_intent: queryIntent(op), error: { code, layer, retryable, recovery }, results: [], execution: execution(started) };
+  return {
+    schema_version: "1.0-preview.1",
+    operation: op,
+    status: "error",
+    summary,
+    query_intent: queryIntent(op),
+    error: { code, layer, retryable, recovery },
+    results: [],
+    execution: execution(started),
+  };
 }
 
 const TOOLS = (contract as { tools: { name: string; inputSchema: Rec }[] }).tools;
@@ -452,11 +482,22 @@ export function execute(tool: string, rawArgs: Rec): Rec {
   if (!validator || tool === "qloo_capabilities") throw new Error(`Unknown Qloo MCP tool: ${tool}`);
   const parsed = validator.safeParse(rawArgs ?? {});
   if (!parsed.success) {
-    const msg = parsed.error.issues.map((i) => `/${i.path.join("/")}: ${i.message}`).slice(0, 20).join("; ");
+    const msg = parsed.error.issues
+      .map((i) => `/${i.path.join("/")}: ${i.message}`)
+      .slice(0, 20)
+      .join("; ");
     return errorEnvelope(op, "TOOL_INPUT", "tool_input", false, "Correct the reported tool arguments and submit the operation once more.", `Invalid ${op} input: ${msg}`, started);
   }
   if (FORCE_ERROR().includes(tool)) {
-    return errorEnvelope(op, "QLOO_CONTRACT", "qloo", false, "Inspect qloo_capabilities and the linked Qloo documentation before changing the request.", `Qloo API could not execute ${tool}: forced mock failure (MOCK_FORCE_ERROR).`, started);
+    return errorEnvelope(
+      op,
+      "QLOO_CONTRACT",
+      "qloo",
+      false,
+      "Inspect qloo_capabilities and the linked Qloo documentation before changing the request.",
+      `Qloo API could not execute ${tool}: forced mock failure (MOCK_FORCE_ERROR).`,
+      started,
+    );
   }
   const a = parsed.data as Rec;
   switch (op) {
@@ -537,7 +578,12 @@ function recommend(a: Rec, started: number): Rec {
   const inc = resolveTags(a.include_tags, "include_tags", "include_filter", target);
   const exc = resolveTags(a.exclude_tags, "exclude_tags", "exclude_filter", target);
   const qi = {
-    signals: { ...(a.signals ? { entities: a.signals } : {}), ...(a.signal_tags ? { tags: a.signal_tags } : {}), ...(a.signal_location ? { location: a.signal_location } : {}), ...(a.demographic ? { demographic: a.demographic } : {}) },
+    signals: {
+      ...(a.signals ? { entities: a.signals } : {}),
+      ...(a.signal_tags ? { tags: a.signal_tags } : {}),
+      ...(a.signal_location ? { location: a.signal_location } : {}),
+      ...(a.demographic ? { demographic: a.demographic } : {}),
+    },
     filters: { ...(a.include_tags ? { includeTags: a.include_tags } : {}), ...(a.exclude_tags ? { excludeTags: a.exclude_tags } : {}), ...(a.filter_location ? { location: a.filter_location } : {}) },
     output: { limit, explain: a.explain ?? true },
     target: { type: target },
@@ -566,7 +612,10 @@ function recommend(a: Rec, started: number): Rec {
     .map((e) => ({ e, s: affinity(e, signalTags, seed) }))
     .sort((x, y) => y.s - x.s)
     .slice(0, limit);
-  const explain = a.explain === false ? undefined : (e: PoolEntity) => ({ "signal.interests.entities": sig.ok.map((r) => ({ entity_id: r.entity.id, score: round(affinity(e, new Set(r.entity.tags), seed) * 0.8) })) });
+  const explain =
+    a.explain === false
+      ? undefined
+      : (e: PoolEntity) => ({ "signal.interests.entities": sig.ok.map((r) => ({ entity_id: r.entity.id, score: round(affinity(e, new Set(r.entity.tags), seed) * 0.8) })) });
   const results = scored.map(({ e, s }) => entityItem(e, s, explain?.(e)));
   return {
     schema_version: "1.0-preview.1",
@@ -692,7 +741,10 @@ function wherePopular(a: Rec, started: number): Rec {
     .map(({ la, lo, k, w }) => {
       const seed = `${r.entity.id}|${within}|${k}`;
       const cell = `${round(la, 4)},${round(lo, 4)}`;
-      return { location: { latitude: round(la, 4), longitude: round(lo, 4), geohash: createHash("md5").update(`${within}|${cell}`).digest("hex").slice(0, 6) }, query: { affinity: round(0.3 + 0.65 * (w / top)), affinity_rank: round(0.5 + rand(`${seed}|r`) * 0.5), popularity: round(rand(`${seed}|p`)) } };
+      return {
+        location: { latitude: round(la, 4), longitude: round(lo, 4), geohash: createHash("md5").update(`${within}|${cell}`).digest("hex").slice(0, 6) },
+        query: { affinity: round(0.3 + 0.65 * (w / top)), affinity_rank: round(0.5 + rand(`${seed}|r`) * 0.5), popularity: round(rand(`${seed}|p`)) },
+      };
     })
     .sort((x, y) => y.query.affinity - x.query.affinity);
   const status = count === 0 ? "empty" : centre ? "ok" : "partial";
@@ -729,23 +781,35 @@ function compare(a: Rec, started: number): Rec {
   };
   const keys = [...new Set([...ga.ok, ...gb.ok].flatMap((r) => r.entity.tags))];
   const extra = MUSIC_TAGS.filter((k) => !keys.includes(k)).slice(0, 3);
-  const tags = [...keys, ...extra]
-    .map((k) => {
-      const t = TAG_BY_KEY.get(k)!;
-      const wa = weight(ga.ok, k);
-      const wb = weight(gb.ok, k);
-      return { tag_id: t.id, name: t.name, subtype: t.type, query: { a: { affinity: wa }, b: { affinity: wb }, delta: round(wa - wb) } };
-    })
-    .sort((x, y) => Math.max(y.query.a.affinity, y.query.b.affinity) - Math.max(x.query.a.affinity, x.query.b.affinity))
-    .slice(0, limit);
+  // Live Qloo shape: the concepts both audiences share (with a similarity score), then the
+  // concepts only one side carries.
+  const scored = [...keys, ...extra].map((k) => ({ t: TAG_BY_KEY.get(k)!, wa: weight(ga.ok, k), wb: weight(gb.ok, k) }));
+  const item = (t: { id: string; name: string; type: string }, query: Rec) => ({ tag_id: t.id, name: t.name, type: "urn:tag", subtype: t.type, query });
+  const tags = scored
+    .filter((x) => x.wa >= 0.4 && x.wb >= 0.4 && Math.abs(x.wa - x.wb) < 0.25)
+    .map((x) => ({ ...x, score: round((x.wa + x.wb) / 2) }))
+    .sort((x, y) => y.score - x.score)
+    .slice(0, limit)
+    .map((x) => item(x.t, { score: x.score }));
+  const only = (side: 1 | -1) =>
+    scored
+      .filter((x) => side * (x.wa - x.wb) >= 0.25)
+      .sort((x, y) => side * (y.wa - y.wb) - side * (x.wa - x.wb))
+      .slice(0, limit)
+      .map((x) => item(x.t, { count: "1" }));
   return {
     schema_version: "1.0-preview.1",
     operation: "compare_audiences",
     status: "ok",
     interpretation: { group_a: ga.ok.map(ie), group_b: gb.ok.map(ie), ...(a.target_type ? { target_type: `urn:entity:${a.target_type}` } : {}) },
     resolution: resolution([...ga.ok, ...gb.ok].map(outcome)),
-    results: { tags },
-    provenance: provenance("compare_audiences", { "a.signal.interests.entities": ga.ok.map((r) => r.entity.id), "b.signal.interests.entities": gb.ok.map((r) => r.entity.id), take: limit, ...(a.target_type ? { "filter.type": `urn:entity:${a.target_type}` } : {}) }),
+    results: { tags, a: only(1), b: only(-1), matchEntities: [] },
+    provenance: provenance("compare_audiences", {
+      "a.signal.interests.entities": ga.ok.map((r) => r.entity.id),
+      "b.signal.interests.entities": gb.ok.map((r) => r.entity.id),
+      take: limit,
+      ...(a.target_type ? { "filter.type": `urn:entity:${a.target_type}` } : {}),
+    }),
     query_intent: queryIntent("compare_audiences", qi),
     execution: execution(started),
   };
@@ -762,7 +826,13 @@ function entityTags(a: Rec, started: number): Rec {
   const results = [...counts.entries()]
     .map(([k, c]) => {
       const t = TAG_BY_KEY.get(k)!;
-      return { id: t.id, name: t.name, type: t.type, popularity: round(0.3 + rand(t.id) * 0.6), affinity: round(Math.min(0.99, 0.55 + 0.4 * (c / ents.ok.length) + (rand(`${seed}|${k}`) - 0.5) * 0.1)) };
+      return {
+        id: t.id,
+        name: t.name,
+        type: t.type,
+        popularity: round(0.3 + rand(t.id) * 0.6),
+        affinity: round(Math.min(0.99, 0.55 + 0.4 * (c / ents.ok.length) + (rand(`${seed}|${k}`) - 0.5) * 0.1)),
+      };
     })
     .sort((x, y) => y.affinity - x.affinity)
     .slice(0, limit);
@@ -817,12 +887,32 @@ function trends(a: Rec, started: number): Rec {
     return !Number.isNaN(t.getTime()) && t.toISOString().slice(0, 10) === d;
   };
   if (!valid(start) || !valid(end) || start > end) {
-    return { ...errorEnvelope("trends", "MCP_ADAPTER_FAILURE", "harness", false, "Run qloo doctor --network and inspect the local redacted trace.", "The Qloo MCP adapter failed before returning a workflow result.", started), result_count: 0, query_intent: undefined };
+    return {
+      ...errorEnvelope(
+        "trends",
+        "MCP_ADAPTER_FAILURE",
+        "harness",
+        false,
+        "Run qloo doctor --network and inspect the local redacted trace.",
+        "The Qloo MCP adapter failed before returning a workflow result.",
+        started,
+      ),
+      result_count: 0,
+      query_intent: undefined,
+    };
   }
   const key = JSON.stringify([a.entities, type, start, end, limit]);
   if (!rateLimitedOnce.has(key)) {
     rateLimitedOnce.add(key);
-    return errorEnvelope("trends", "QLOO_RATE_LIMIT", "qloo", true, "Wait for the Qloo rate-limit window, then retry the same interpreted request once.", "Qloo API could not execute qloo_trends: Too many requests (mock: first call per argument set is rate-limited once).", started);
+    return errorEnvelope(
+      "trends",
+      "QLOO_RATE_LIMIT",
+      "qloo",
+      true,
+      "Wait for the Qloo rate-limit window, then retry the same interpreted request once.",
+      "Qloo API could not execute qloo_trends: Too many requests (mock: first call per argument set is rate-limited once).",
+      started,
+    );
   }
   const ents = resolveAll(a.entities, "entities", type);
   if (ents.issues.length) return needsInput("trends", ents.issues, started, undefined, qi);
@@ -837,7 +927,13 @@ function trends(a: Rec, started: number): Rec {
     const points = Array.from({ length: steps }, (_, i) => {
       const t = steps === 1 ? t0 : t0 + ((t1 - t0) * i) / (steps - 1);
       const pct = round(Math.max(0.01, Math.min(0.999, base + slope * i + (rand(`${id}|${i}`) - 0.5) * 0.02)));
-      return { date: new Date(t).toISOString().slice(0, 10), population_percentile: pct, population_rank: Math.round((1 - pct) * 5000) + 1, population_rank_velocity: Math.round(-slope * 1000), population_percentile_velocity: round(slope / 7, 4) };
+      return {
+        date: new Date(t).toISOString().slice(0, 10),
+        population_percentile: pct,
+        population_rank: Math.round((1 - pct) * 5000) + 1,
+        population_rank_velocity: Math.round(-slope * 1000),
+        population_percentile_velocity: round(slope / 7, 4),
+      };
     });
     return { entity: ie(r), points };
   });
@@ -851,7 +947,13 @@ function trends(a: Rec, started: number): Rec {
     resolution: resolution(ents.ok.map(outcome)),
     series,
     result_count: series.length,
-    provenance: provenance("trends", { "filter.type": `urn:entity:${type}`, "filter.start_date": start, "filter.end_date": end, "signal.interests.entities": covered.map((r) => r.entity.id).join(","), take: limit }),
+    provenance: provenance("trends", {
+      "filter.type": `urn:entity:${type}`,
+      "filter.start_date": start,
+      "filter.end_date": end,
+      "signal.interests.entities": covered.map((r) => r.entity.id).join(","),
+      take: limit,
+    }),
     query_intent: queryIntent("trends", qi),
     execution: execution(started),
   };

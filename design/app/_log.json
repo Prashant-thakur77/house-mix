@@ -14,9 +14,9 @@
     }
   ],
   "maxHeight": 6000,
-  "updatedAt": "2026-10-29T20:21:24.530Z",
+  "updatedAt": "2026-10-30T06:38:09.188Z",
   "summary": {
-    "captured": 18,
+    "captured": 19,
     "skipped": [],
     "errors": []
   },
@@ -25,7 +25,7 @@
       "slug": "compare",
       "url": "http://localhost:3000/compare?a=seed-concert&b=seed-festival",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:30:17.631Z",
+      "capturedAt": "2026-10-30T06:37:21.200Z",
       "meta": {
         "path": "/compare?a=seed-concert&b=seed-festival"
       },
@@ -39,19 +39,19 @@
           "scheme": "light",
           "file": "design/app/compare/desktop-light.png",
           "width": 1440,
-          "height": 2529,
-          "fullHeight": 2529,
-          "bytes": 260459,
-          "brightness": 0.964
+          "height": 3941,
+          "fullHeight": 3941,
+          "bytes": 347401,
+          "brightness": 0.96
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/compare/desktop-dark.png",
           "width": 1440,
-          "height": 2529,
-          "fullHeight": 2529,
-          "bytes": 261071,
+          "height": 3941,
+          "fullHeight": 3941,
+          "bytes": 345818,
           "brightness": 0.078
         },
         {
@@ -59,20 +59,20 @@
           "scheme": "light",
           "file": "design/app/compare/mobile-light.png",
           "width": 390,
-          "height": 3817,
-          "fullHeight": 3817,
-          "bytes": 221973,
-          "brightness": 0.947
+          "height": 5127,
+          "fullHeight": 5127,
+          "bytes": 305088,
+          "brightness": 0.945
         },
         {
           "viewport": "mobile",
           "scheme": "dark",
           "file": "design/app/compare/mobile-dark.png",
           "width": 390,
-          "height": 3817,
-          "fullHeight": 3817,
-          "bytes": 228235,
-          "brightness": 0.1
+          "height": 5127,
+          "fullHeight": 5127,
+          "bytes": 311198,
+          "brightness": 0.099
         }
       ]
     },
@@ -80,7 +80,7 @@
       "slug": "landing",
       "url": "http://localhost:3000/",
       "status": "captured",
-      "capturedAt": "2026-10-29T20:21:13.166Z",
+      "capturedAt": "2026-10-30T06:36:40.208Z",
       "meta": {
         "path": "/"
       },
@@ -95,9 +95,9 @@
           "file": "design/app/landing/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 8838,
-          "bytes": 462658,
-          "brightness": 0.508
+          "fullHeight": 9037,
+          "bytes": 450183,
+          "brightness": 0.507
         },
         {
           "viewport": "desktop",
@@ -105,9 +105,9 @@
           "file": "design/app/landing/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 8838,
-          "bytes": 462805,
-          "brightness": 0.508
+          "fullHeight": 9037,
+          "bytes": 450312,
+          "brightness": 0.507
         },
         {
           "viewport": "mobile",
@@ -115,9 +115,9 @@
           "file": "design/app/landing/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 6404,
-          "bytes": 276833,
-          "brightness": 0.412
+          "fullHeight": 6534,
+          "bytes": 268421,
+          "brightness": 0.406
         },
         {
           "viewport": "mobile",
@@ -125,9 +125,9 @@
           "file": "design/app/landing/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 6404,
-          "bytes": 276867,
-          "brightness": 0.412
+          "fullHeight": 6534,
+          "bytes": 268469,
+          "brightness": 0.406
         }
       ]
     },
@@ -465,7 +465,7 @@
       "slug": "show-comedy",
       "url": "http://localhost:3000/shows/seed-comedy",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:29:58.165Z",
+      "capturedAt": "2026-10-30T06:36:53.084Z",
       "meta": {
         "path": "/shows/seed-comedy"
       },
@@ -480,9 +480,9 @@
           "file": "design/app/show-comedy/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 7246,
-          "bytes": 298492,
-          "brightness": 0.94
+          "fullHeight": 8364,
+          "bytes": 286222,
+          "brightness": 0.91
         },
         {
           "viewport": "desktop",
@@ -490,9 +490,9 @@
           "file": "design/app/show-comedy/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 7246,
-          "bytes": 288746,
-          "brightness": 0.05
+          "fullHeight": 8364,
+          "bytes": 298158,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -500,9 +500,9 @@
           "file": "design/app/show-comedy/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 13437,
-          "bytes": 445013,
-          "brightness": 0.932
+          "fullHeight": 14692,
+          "bytes": 424576,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
@@ -510,9 +510,9 @@
           "file": "design/app/show-comedy/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 13437,
-          "bytes": 458581,
-          "brightness": 0.112
+          "fullHeight": 14692,
+          "bytes": 439268,
+          "brightness": 0.109
         }
       ]
     },
@@ -520,7 +520,7 @@
       "slug": "show-concert",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:49:24.156Z",
+      "capturedAt": "2026-10-30T06:36:40.208Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -535,9 +535,9 @@
           "file": "design/app/show-concert/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6794,
-          "bytes": 297107,
-          "brightness": 0.905
+          "fullHeight": 7928,
+          "bytes": 304704,
+          "brightness": 0.911
         },
         {
           "viewport": "desktop",
@@ -545,9 +545,9 @@
           "file": "design/app/show-concert/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6794,
-          "bytes": 298718,
-          "brightness": 0.05
+          "fullHeight": 7928,
+          "bytes": 306798,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -555,9 +555,9 @@
           "file": "design/app/show-concert/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 444928,
-          "brightness": 0.917
+          "fullHeight": 13518,
+          "bytes": 434979,
+          "brightness": 0.927
         },
         {
           "viewport": "mobile",
@@ -565,9 +565,9 @@
           "file": "design/app/show-concert/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 457883,
-          "brightness": 0.11
+          "fullHeight": 13518,
+          "bytes": 450091,
+          "brightness": 0.109
         }
       ]
     },
@@ -575,7 +575,7 @@
       "slug": "show-concert-ask",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:45:09.844Z",
+      "capturedAt": "2026-10-30T06:37:21.381Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -590,9 +590,9 @@
           "file": "design/app/show-concert-ask/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 439696,
-          "brightness": 0.946
+          "fullHeight": 7928,
+          "bytes": 470209,
+          "brightness": 0.904
         },
         {
           "viewport": "desktop",
@@ -600,9 +600,9 @@
           "file": "design/app/show-concert-ask/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 430377,
-          "brightness": 0.065
+          "fullHeight": 7928,
+          "bytes": 463708,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -610,9 +610,9 @@
           "file": "design/app/show-concert-ask/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 485549,
-          "brightness": 0.937
+          "fullHeight": 13518,
+          "bytes": 467075,
+          "brightness": 0.929
         },
         {
           "viewport": "mobile",
@@ -620,9 +620,9 @@
           "file": "design/app/show-concert-ask/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 497758,
-          "brightness": 0.122
+          "fullHeight": 13518,
+          "bytes": 480791,
+          "brightness": 0.114
         }
       ]
     },
@@ -630,34 +630,34 @@
       "slug": "show-concert-evidence",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T10:59:52.230Z",
+      "capturedAt": "2026-10-30T06:37:12.354Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
       "hasDarkVariant": true,
       "renderedScheme": "both",
       "consent": "skipped (own app)",
-      "title": "House Mix",
+      "title": "Khruangbin with Men I Trust · House Mix",
       "files": [
         {
           "viewport": "desktop",
           "scheme": "light",
           "file": "design/app/show-concert-evidence/desktop-light.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 266849,
-          "brightness": 0.934
+          "height": 6000,
+          "fullHeight": 7928,
+          "bytes": 313410,
+          "brightness": 0.908
         },
         {
           "viewport": "desktop",
           "scheme": "dark",
           "file": "design/app/show-concert-evidence/desktop-dark.png",
           "width": 1440,
-          "height": 956,
-          "fullHeight": 956,
-          "bytes": 269735,
-          "brightness": 0.121
+          "height": 6000,
+          "fullHeight": 7928,
+          "bytes": 315436,
+          "brightness": 0.05
         },
         {
           "viewport": "mobile",
@@ -665,9 +665,9 @@
           "file": "design/app/show-concert-evidence/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 462879,
-          "brightness": 0.936
+          "fullHeight": 13518,
+          "bytes": 435928,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
@@ -675,9 +675,9 @@
           "file": "design/app/show-concert-evidence/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 9133,
-          "bytes": 476261,
-          "brightness": 0.123
+          "fullHeight": 13518,
+          "bytes": 448090,
+          "brightness": 0.112
         }
       ]
     },
@@ -685,7 +685,7 @@
       "slug": "show-concert-full",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:49:34.856Z",
+      "capturedAt": "2026-10-30T06:36:40.208Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -700,9 +700,9 @@
           "file": "design/app/show-concert-full/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6794,
-          "bytes": 297107,
-          "brightness": 0.905
+          "fullHeight": 7928,
+          "bytes": 304704,
+          "brightness": 0.911
         },
         {
           "viewport": "desktop",
@@ -710,9 +710,9 @@
           "file": "design/app/show-concert-full/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6794,
-          "bytes": 298718,
-          "brightness": 0.05
+          "fullHeight": 7928,
+          "bytes": 306798,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -720,9 +720,9 @@
           "file": "design/app/show-concert-full/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 444928,
-          "brightness": 0.917
+          "fullHeight": 13518,
+          "bytes": 434979,
+          "brightness": 0.927
         },
         {
           "viewport": "mobile",
@@ -730,9 +730,9 @@
           "file": "design/app/show-concert-full/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 457883,
-          "brightness": 0.11
+          "fullHeight": 13518,
+          "bytes": 450091,
+          "brightness": 0.109
         }
       ]
     },
@@ -740,7 +740,7 @@
       "slug": "show-concert-map",
       "url": "http://localhost:3000/shows/seed-concert",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:45:22.106Z",
+      "capturedAt": "2026-10-30T06:37:35.173Z",
       "meta": {
         "path": "/shows/seed-concert"
       },
@@ -755,9 +755,9 @@
           "file": "design/app/show-concert-map/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 273381,
-          "brightness": 0.958
+          "fullHeight": 7928,
+          "bytes": 318953,
+          "brightness": 0.91
         },
         {
           "viewport": "desktop",
@@ -765,9 +765,9 @@
           "file": "design/app/show-concert-map/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6775,
-          "bytes": 318080,
-          "brightness": 0.066
+          "fullHeight": 7928,
+          "bytes": 321570,
+          "brightness": 0.05
         },
         {
           "viewport": "mobile",
@@ -775,9 +775,9 @@
           "file": "design/app/show-concert-map/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 446645,
-          "brightness": 0.938
+          "fullHeight": 13518,
+          "bytes": 435145,
+          "brightness": 0.927
         },
         {
           "viewport": "mobile",
@@ -785,9 +785,9 @@
           "file": "design/app/show-concert-map/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12398,
-          "bytes": 458106,
-          "brightness": 0.121
+          "fullHeight": 13518,
+          "bytes": 450120,
+          "brightness": 0.109
         }
       ]
     },
@@ -847,10 +847,65 @@
       ]
     },
     {
+      "slug": "show-dining",
+      "url": "http://localhost:3000/shows/seed-dining",
+      "status": "captured",
+      "capturedAt": "2026-10-30T06:37:48.129Z",
+      "meta": {
+        "path": "/shows/seed-dining"
+      },
+      "hasDarkVariant": true,
+      "renderedScheme": "both",
+      "consent": "skipped (own app)",
+      "title": "Dishoom Shoreditch: Ezra Collective night · House Mix",
+      "files": [
+        {
+          "viewport": "desktop",
+          "scheme": "light",
+          "file": "design/app/show-dining/desktop-light.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7802,
+          "bytes": 294732,
+          "brightness": 0.911
+        },
+        {
+          "viewport": "desktop",
+          "scheme": "dark",
+          "file": "design/app/show-dining/desktop-dark.png",
+          "width": 1440,
+          "height": 6000,
+          "fullHeight": 7802,
+          "bytes": 297406,
+          "brightness": 0.049
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "light",
+          "file": "design/app/show-dining/mobile-light.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 14274,
+          "bytes": 437196,
+          "brightness": 0.928
+        },
+        {
+          "viewport": "mobile",
+          "scheme": "dark",
+          "file": "design/app/show-dining/mobile-dark.png",
+          "width": 390,
+          "height": 6000,
+          "fullHeight": 14274,
+          "bytes": 451572,
+          "brightness": 0.109
+        }
+      ]
+    },
+    {
       "slug": "show-festival",
       "url": "http://localhost:3000/shows/seed-festival",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:30:07.711Z",
+      "capturedAt": "2026-10-30T06:37:02.104Z",
       "meta": {
         "path": "/shows/seed-festival"
       },
@@ -865,9 +920,9 @@
           "file": "design/app/show-festival/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 7104,
-          "bytes": 289211,
-          "brightness": 0.94
+          "fullHeight": 7263,
+          "bytes": 281214,
+          "brightness": 0.911
         },
         {
           "viewport": "desktop",
@@ -875,9 +930,9 @@
           "file": "design/app/show-festival/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 7104,
-          "bytes": 289588,
-          "brightness": 0.05
+          "fullHeight": 7263,
+          "bytes": 284460,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -885,9 +940,9 @@
           "file": "design/app/show-festival/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12846,
-          "bytes": 439870,
-          "brightness": 0.932
+          "fullHeight": 12946,
+          "bytes": 432813,
+          "brightness": 0.927
         },
         {
           "viewport": "mobile",
@@ -895,9 +950,9 @@
           "file": "design/app/show-festival/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12846,
-          "bytes": 454878,
-          "brightness": 0.111
+          "fullHeight": 12946,
+          "bytes": 446278,
+          "brightness": 0.11
         }
       ]
     },
@@ -905,14 +960,14 @@
       "slug": "show-sports",
       "url": "http://localhost:3000/shows/seed-sports",
       "status": "captured",
-      "capturedAt": "2026-10-29T19:30:07.667Z",
+      "capturedAt": "2026-10-30T06:37:02.046Z",
       "meta": {
         "path": "/shows/seed-sports"
       },
       "hasDarkVariant": true,
       "renderedScheme": "both",
       "consent": "skipped (own app)",
-      "title": "Chelsea FC vs Arsenal FC · House Mix",
+      "title": "Chelsea FC vs Arsenal F.C. · House Mix",
       "files": [
         {
           "viewport": "desktop",
@@ -920,9 +975,9 @@
           "file": "design/app/show-sports/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6796,
-          "bytes": 291204,
-          "brightness": 0.94
+          "fullHeight": 7019,
+          "bytes": 273457,
+          "brightness": 0.911
         },
         {
           "viewport": "desktop",
@@ -930,9 +985,9 @@
           "file": "design/app/show-sports/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6796,
-          "bytes": 292720,
-          "brightness": 0.05
+          "fullHeight": 7019,
+          "bytes": 276673,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -940,9 +995,9 @@
           "file": "design/app/show-sports/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12226,
-          "bytes": 437346,
-          "brightness": 0.933
+          "fullHeight": 12207,
+          "bytes": 435984,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
@@ -950,9 +1005,9 @@
           "file": "design/app/show-sports/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12226,
-          "bytes": 450467,
-          "brightness": 0.11
+          "fullHeight": 12207,
+          "bytes": 448733,
+          "brightness": 0.108
         }
       ]
     },
@@ -960,14 +1015,14 @@
       "slug": "show-sports-without-qloo",
       "url": "http://localhost:3000/shows/seed-sports",
       "status": "captured",
-      "capturedAt": "2026-10-29T15:45:22.142Z",
+      "capturedAt": "2026-10-30T06:37:47.765Z",
       "meta": {
         "path": "/shows/seed-sports"
       },
       "hasDarkVariant": true,
       "renderedScheme": "both",
       "consent": "skipped (own app)",
-      "title": "Chelsea FC vs Arsenal FC · House Mix",
+      "title": "Chelsea FC vs Arsenal F.C. · House Mix",
       "files": [
         {
           "viewport": "desktop",
@@ -975,9 +1030,9 @@
           "file": "design/app/show-sports-without-qloo/desktop-light.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6797,
-          "bytes": 269665,
-          "brightness": 0.958
+          "fullHeight": 7019,
+          "bytes": 263535,
+          "brightness": 0.911
         },
         {
           "viewport": "desktop",
@@ -985,9 +1040,9 @@
           "file": "design/app/show-sports-without-qloo/desktop-dark.png",
           "width": 1440,
           "height": 6000,
-          "fullHeight": 6797,
-          "bytes": 302231,
-          "brightness": 0.065
+          "fullHeight": 7019,
+          "bytes": 308717,
+          "brightness": 0.049
         },
         {
           "viewport": "mobile",
@@ -995,9 +1050,9 @@
           "file": "design/app/show-sports-without-qloo/mobile-light.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12226,
-          "bytes": 436883,
-          "brightness": 0.94
+          "fullHeight": 12207,
+          "bytes": 436066,
+          "brightness": 0.928
         },
         {
           "viewport": "mobile",
@@ -1005,9 +1060,9 @@
           "file": "design/app/show-sports-without-qloo/mobile-dark.png",
           "width": 390,
           "height": 6000,
-          "fullHeight": 12226,
-          "bytes": 449030,
-          "brightness": 0.12
+          "fullHeight": 12207,
+          "bytes": 448755,
+          "brightness": 0.108
         }
       ]
     }

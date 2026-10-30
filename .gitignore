@@ -12,6 +12,9 @@ playwright-report/
 .turbo/
 .vercel/
 .qloo-harness/
-data/
+/data/
 .vercel
 .env*
+# Blind A/B side keys stay local while ratings are open
+eval/ab_blind/pairs.key.json
+eval/results/pairs_v*.key.json

@@ -1,0 +1,222 @@
+{
+  "_note": "Real 2025 events with public lineups, used as inputs only. 'verified' becomes true once eval/backtest/fetch-setlists.ts (concerts) or a manual source check confirms the listing. Unverified rows are excluded from reported results.",
+  "split": {
+    "dev": [
+      "ab01",
+      "ab08"
+    ],
+    "test": [
+      "ab02",
+      "ab03",
+      "ab04",
+      "ab06",
+      "ab07",
+      "ab09",
+      "ab10"
+    ]
+  },
+  "shows": [
+    {
+      "id": "ab01",
+      "verified": true,
+      "source": "oasisinet.com tour listing",
+      "input": {
+        "mode": "concert",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Oasis"
+          },
+          {
+            "role": "support",
+            "name": "Richard Ashcroft"
+          },
+          {
+            "role": "support",
+            "name": "Cast"
+          }
+        ],
+        "venue": "Heaton Park",
+        "city": "Manchester",
+        "date": "2025-07-11",
+        "doorsTime": "16:30",
+        "capacityTier": "stadium"
+      }
+    },
+    {
+      "id": "ab02",
+      "verified": true,
+      "source": "tour listing",
+      "input": {
+        "mode": "concert",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Kendrick Lamar"
+          },
+          {
+            "role": "support",
+            "name": "SZA"
+          }
+        ],
+        "venue": "SoFi Stadium",
+        "city": "Los Angeles",
+        "date": "2025-05-21",
+        "doorsTime": "18:00",
+        "capacityTier": "stadium"
+      }
+    },
+    {
+      "id": "ab03",
+      "verified": true,
+      "source": "tour listing",
+      "input": {
+        "mode": "concert",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Linkin Park"
+          }
+        ],
+        "venue": "Wembley Stadium",
+        "city": "London",
+        "date": "2025-06-28",
+        "doorsTime": "17:00",
+        "capacityTier": "stadium"
+      }
+    },
+    {
+      "id": "ab04",
+      "verified": true,
+      "source": "tour listing",
+      "input": {
+        "mode": "concert",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Sabrina Carpenter"
+          }
+        ],
+        "venue": "Madison Square Garden",
+        "city": "New York City",
+        "date": "2025-10-26",
+        "doorsTime": "18:30",
+        "capacityTier": "arena"
+      },
+      "note": "Madison Square Garden run began 26 Oct 2025 (the 23 Oct date was Pittsburgh)"
+    },
+    {
+      "id": "ab06",
+      "verified": true,
+      "source": "tour listing",
+      "input": {
+        "mode": "comedy",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Taylor Tomlinson"
+          }
+        ],
+        "venue": "Chicago Theatre",
+        "city": "Chicago",
+        "date": "2025-02-15",
+        "doorsTime": "19:00",
+        "capacityTier": "theatre"
+      },
+      "note": "Chicago Theatre, 12\u201315 Feb 2025 (corrected from 15 Mar, which was Grand Prairie TX)"
+    },
+    {
+      "id": "ab07",
+      "verified": true,
+      "source": "tour listing",
+      "input": {
+        "mode": "comedy",
+        "sides": [
+          {
+            "role": "headliner",
+            "name": "Shane Gillis"
+          }
+        ],
+        "venue": "Madison Square Garden",
+        "city": "New York City",
+        "date": "2026-01-23",
+        "doorsTime": "19:00",
+        "capacityTier": "arena"
+      },
+      "note": "MSG run 22\u201324 Jan 2026 (no June 2025 MSG date exists)"
+    },
+    {
+      "id": "ab08",
+      "verified": true,
+      "source": "Premier League fixture list",
+      "input": {
+        "mode": "sports",
+        "sides": [
+          {
+            "role": "home",
+            "name": "Liverpool FC"
+          },
+          {
+            "role": "away",
+            "name": "Arsenal F.C."
+          }
+        ],
+        "venue": "Anfield",
+        "city": "Liverpool",
+        "date": "2025-05-11",
+        "doorsTime": "14:30",
+        "capacityTier": "stadium"
+      }
+    },
+    {
+      "id": "ab09",
+      "verified": true,
+      "source": "Premier League fixture list",
+      "input": {
+        "mode": "sports",
+        "sides": [
+          {
+            "role": "home",
+            "name": "Chelsea FC"
+          },
+          {
+            "role": "away",
+            "name": "Manchester United"
+          }
+        ],
+        "venue": "Stamford Bridge",
+        "city": "London",
+        "date": "2025-05-16",
+        "doorsTime": "18:00",
+        "capacityTier": "stadium"
+      }
+    },
+    {
+      "id": "ab10",
+      "verified": true,
+      "source": "MLB postseason schedule",
+      "input": {
+        "mode": "sports",
+        "sides": [
+          {
+            "role": "home",
+            "name": "Los Angeles Dodgers"
+          },
+          {
+            "role": "away",
+            "name": "Toronto Blue Jays"
+          }
+        ],
+        "venue": "Dodger Stadium",
+        "city": "Los Angeles",
+        "date": "2025-10-27",
+        "doorsTime": "15:00",
+        "capacityTier": "stadium"
+      }
+    }
+  ],
+  "dropped": {
+    "ab05": "Nate Bargatze at the Hollywood Bowl (Netflix Is A Joke 2025) could not be confirmed against a listing; dropped rather than guessed."
+  },
+  "verifiedAt": "2026-10-30"
+}

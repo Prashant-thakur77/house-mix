@@ -1,0 +1,975 @@
+{
+  "args": {
+    "group_a": [
+      "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+    ],
+    "group_b": [
+      "045707A1-C8EF-443F-A882-1B97AC69DC9A"
+    ],
+    "limit": 10
+  },
+  "envelope": {
+    "schema_version": "1.0-preview.1",
+    "operation": "compare_audiences",
+    "status": "ok",
+    "interpretation": {
+      "group_a": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "name": "Radiohead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        }
+      ],
+      "group_b": [
+        {
+          "input": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "entityId": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "name": "Portishead",
+          "type": "urn:entity:artist",
+          "match": "identifier"
+        }
+      ]
+    },
+    "resolution": {
+      "contract_version": "1.0-preview.1",
+      "provider": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "name": "Qloo native resolution",
+        "entity_strategy": "exact_name_context_or_choice",
+        "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+        "remote": true,
+        "uses_model": false,
+        "fallback": "none"
+      },
+      "outcomes": [
+        {
+          "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+            "name": "Radiohead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9999966263060412,
+            "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false,
+            "cache_status": "memory_hit"
+          }
+        },
+        {
+          "input": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+          "status": "resolved",
+          "match": "identifier",
+          "selected": {
+            "id": "045707A1-C8EF-443F-A882-1B97AC69DC9A",
+            "name": "Portishead",
+            "type": "urn:entity:artist",
+            "popularity": 0.9996896201557972,
+            "description": "Portishead is an English band known for pioneering the trip hop genre with their atmospheric and cinematic sound."
+          },
+          "provenance": {
+            "contract_version": "1.0-preview.1",
+            "provider_id": "qloo_api",
+            "provider_name": "Qloo native resolution",
+            "endpoint": "/entities",
+            "strategy": "identifier_lookup",
+            "remote": true,
+            "uses_model": false
+          }
+        }
+      ]
+    },
+    "results": {
+      "tags": [
+        {
+          "tag_id": "urn:tag:characteristic:music:diverse",
+          "name": "Diverse",
+          "type": "urn:tag",
+          "subtype": "urn:tag:characteristic:music",
+          "entity_id": "61EF19FB-D90E-48EC-A6F3-24357E1ADAAE",
+          "popularity": 0,
+          "query": {
+            "score": 0.9819929331449682,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:united_states",
+          "name": "United States",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "9231423C-49CD-4240-8227-78D285399E78",
+          "popularity": 0,
+          "query": {
+            "score": 0.9819929331449682,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:electronic",
+          "name": "Electronic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "D4132442-7F20-48E9-9F70-6BC806164A4F",
+          "popularity": 0.9997944738848622,
+          "query": {
+            "score": 0.9525297846573983,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:united_kingdom",
+          "name": "United Kingdom",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "DFFAA712-681F-41B6-AEEC-146FAF0C82D3",
+          "popularity": 0,
+          "query": {
+            "score": 0.9045874626346899,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:music:electric_guitar",
+          "name": "Electric Guitar",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:music",
+          "entity_id": "258D385F-8543-49F0-8C15-670F1D7EE56A",
+          "popularity": 0,
+          "query": {
+            "score": 0.8553576163970223,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:music:synthesizer",
+          "name": "Synthesizer",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:music",
+          "entity_id": "A54DD76B-1062-41F2-AD73-BBC9671C75EC",
+          "popularity": 0,
+          "query": {
+            "score": 0.8553576163970223,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:characteristic:music:experimental",
+          "name": "Experimental",
+          "type": "urn:tag",
+          "subtype": "urn:tag:characteristic:music",
+          "entity_id": "B88AE3D7-3437-4BAF-B5D3-2FEDFC87A9CB",
+          "popularity": 0,
+          "query": {
+            "score": 0.8553564102778916,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:germany",
+          "name": "Germany",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "32B6DF9B-7FBF-45A7-972A-B618BCF007C2",
+          "popularity": 0,
+          "query": {
+            "score": 0.7310188142577898,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:japan",
+          "name": "Japan",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "61E770B2-AA95-4C8F-9C08-FDC43010F09E",
+          "popularity": 0,
+          "query": {
+            "score": 0.7310188142577898,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:france",
+          "name": "France",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "846EC017-5E75-4735-9459-7185E9A368BD",
+          "popularity": 0,
+          "query": {
+            "score": 0.7310188142577898,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:characteristic:music:innovative",
+          "name": "Innovative",
+          "type": "urn:tag",
+          "subtype": "urn:tag:characteristic:music",
+          "entity_id": "8D6D65FC-1D79-456D-81ED-34030102F87E",
+          "popularity": 0,
+          "query": {
+            "score": 0.7310188142577898,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:region:qloo:new_york_city",
+          "name": "New York City",
+          "type": "urn:tag",
+          "subtype": "urn:tag:region:qloo",
+          "entity_id": "998756D8-43C2-4412-BCBB-5A475DB7A754",
+          "popularity": 0,
+          "query": {
+            "score": 0.7310007883935835,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:funk",
+          "name": "Funk",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "47ED0FA8-991E-45F2-9074-D95153C98ED7",
+          "popularity": 0.9989218336820088,
+          "query": {
+            "score": 0.7309823280860188,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:disco",
+          "name": "Disco",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "C74AA932-C1BC-4332-8E7E-4CDA2CD03221",
+          "popularity": 0.9982234254944573,
+          "query": {
+            "score": 0.7309823280860188,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:loyal",
+          "name": "Loyal",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "EDDB06AD-35FE-431E-A2A5-4F5589471FEE",
+          "popularity": 0.9920264398631783,
+          "query": {
+            "score": 0.7294879979555896,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:guitar",
+          "name": "Guitar",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "48648868-95A5-4F0B-B517-71ECBB9F4EBD",
+          "popularity": 0.9918993251363595,
+          "query": {
+            "score": 0.7294629086685711,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:vocals",
+          "name": "Vocals",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "BC4B0E4D-F317-47A7-94A5-62BBD3D42042",
+          "popularity": 0.9906397337524268,
+          "query": {
+            "score": 0.7292142656792078,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:innovative",
+          "name": "Innovative",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "F468945C-6B6C-467D-8496-733087E03D56",
+          "popularity": 0.9902583895719701,
+          "query": {
+            "score": 0.729138957311338,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:atmospheric",
+          "name": "Atmospheric",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "2620F5B1-CD6D-4D1B-9E92-20620128E1A6",
+          "popularity": 0.9710178422852916,
+          "query": {
+            "score": 0.725322327905514,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:eclectic",
+          "name": "Eclectic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "85F59978-5A95-47E9-B1AE-1A54B54F5F95",
+          "popularity": 0.9584334843302209,
+          "query": {
+            "score": 0.7228080579066528,
+            "a.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ],
+            "b.signal.interests.entities": [
+              "[detail omitted]",
+              "[detail omitted]"
+            ]
+          }
+        }
+      ],
+      "a": [
+        {
+          "tag_id": "urn:tag:subgenre:qloo:ambient",
+          "name": "Ambient",
+          "type": "urn:tag",
+          "subtype": "urn:tag:subgenre:qloo",
+          "entity_id": "09620EEA-9F39-49A5-8EEB-0BC037120E92",
+          "popularity": 0.04416659,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:existentialism",
+          "name": "Existentialism",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "14E0AD82-2ACC-4B63-9246-C0C478A38122",
+          "popularity": 0.9749815,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:experimental",
+          "name": "Experimental",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "19B61203-887D-4E50-83F6-56611F34B49A",
+          "popularity": 0.94864565,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:atmospheric",
+          "name": "Atmospheric",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "2620F5B1-CD6D-4D1B-9E92-20620128E1A6",
+          "popularity": 0.97101784,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:experimental",
+          "name": "Experimental",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "29C806BD-D356-476A-977F-DA8915462690",
+          "popularity": 0.95076036,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:introspective",
+          "name": "Introspective",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "37B3BB7B-51D4-43D1-BE6B-03C60CB4A1D1",
+          "popularity": 0.948403,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:environmentalism",
+          "name": "Environmentalism",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "3E3C4E92-46D3-4E41-9D60-0F63A898F087",
+          "popularity": 0.7914163,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:guitar",
+          "name": "Guitar",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "48648868-95A5-4F0B-B517-71ECBB9F4EBD",
+          "popularity": 0.9918993,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:dynamic",
+          "name": "Dynamic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "4900E325-E17B-482E-A421-A36C21F51569",
+          "popularity": 0.9926158,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:alienation",
+          "name": "Alienation",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "51AE46AC-A8F7-4593-B40D-AA6ED61F5A85",
+          "popularity": 0.86787003,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:intense",
+          "name": "Intense",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "5629A79E-4827-4EEE-9C51-AD840DE83985",
+          "popularity": 0.9834751,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:indie",
+          "name": "Indie",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "585E738B-3D23-4F9C-A30C-FB31A930D30B",
+          "popularity": 0.9996067,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:melancholic",
+          "name": "Melancholic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "5E196B69-ED2E-4793-AD87-C2EB41DE2680",
+          "popularity": 0.94951236,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:intellectual",
+          "name": "Intellectual",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "60AFCC8D-C77C-4823-A440-C5CC260F7B9D",
+          "popularity": 0.9761718,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:alternative_rock",
+          "name": "Alternative Rock",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "61E68939-BFDA-4842-AAFF-AC7FDD210523",
+          "popularity": 0.9996177,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:keyboards",
+          "name": "Keyboards",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "682C4BDB-79BE-4FEF-BDE0-69A15FB8B647",
+          "popularity": 0.9659679,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:bass_guitar",
+          "name": "Bass Guitar",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "6E9F94F5-1C9B-4DE2-984E-91E96054D325",
+          "popularity": 0.94070673,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:eclectic",
+          "name": "Eclectic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "77694357-7B1B-4065-AB25-76B06D85545B",
+          "popularity": 0.94086856,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:synthesizers",
+          "name": "Synthesizers",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "7BD25154-7A00-4DE9-8065-521B967D1575",
+          "popularity": 0.9446589,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:eclectic",
+          "name": "Eclectic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "85F59978-5A95-47E9-B1AE-1A54B54F5F95",
+          "popularity": 0.9584335,
+          "query": {
+            "count": "1"
+          }
+        }
+      ],
+      "b": [
+        {
+          "tag_id": "urn:tag:style:qloo:cinematic",
+          "name": "Cinématic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "04D838F0-09D1-4156-A773-B9D1472C8FDD",
+          "popularity": 0.99020064,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:subgenre:qloo:ambient",
+          "name": "Ambient",
+          "type": "urn:tag",
+          "subtype": "urn:tag:subgenre:qloo",
+          "entity_id": "09620EEA-9F39-49A5-8EEB-0BC037120E92",
+          "popularity": 0.04416659,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:moody",
+          "name": "Moody",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "1379B595-AA69-4778-95B1-99E82F44E1F1",
+          "popularity": 0.976322,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:expressive",
+          "name": "Expressive",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "241982E6-3CCA-42C2-81EC-A5DC7E99896A",
+          "popularity": 0.9734908,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:atmospheric",
+          "name": "Atmospheric",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "2620F5B1-CD6D-4D1B-9E92-20620128E1A6",
+          "popularity": 0.97101784,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:melancholy",
+          "name": "Melancholy",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "26D436CE-FBA9-4D14-A674-D5143B3C87BD",
+          "popularity": 0.9205764,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:music:qloo:experimental",
+          "name": "Experimental",
+          "type": "urn:tag",
+          "subtype": "urn:tag:music:qloo",
+          "entity_id": "29C806BD-D356-476A-977F-DA8915462690",
+          "popularity": 0.95076036,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:genre:music:trip_hop",
+          "name": "Trip - Hop",
+          "type": "urn:tag",
+          "subtype": "urn:tag:genre:music",
+          "entity_id": "2D87EA05-D082-43C3-986F-3E222558B00A",
+          "popularity": 0.9981644,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:haunting",
+          "name": "Haunting",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "3D23A0D4-4329-4D8A-8018-A7C45469A53C",
+          "popularity": 0.9581908,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:guitar",
+          "name": "Guitar",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "48648868-95A5-4F0B-B517-71ECBB9F4EBD",
+          "popularity": 0.9918993,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:haunting",
+          "name": "Haunting",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "5292A9EE-FEDF-4410-9449-6A7D5F4ED7E6",
+          "popularity": 0.6706573,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:loss",
+          "name": "Loss",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "59DB3BC5-EE81-4574-8061-977F37FA724C",
+          "popularity": 0.95141906,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:dedicated",
+          "name": "DedicateD",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "5A0F0ADE-6B19-49BB-9AB7-BD1505D4AF68",
+          "popularity": 0.9908824,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:introspective",
+          "name": "Introspective",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "76E6FB2C-35A8-4283-BB87-9B0E94BAA8A7",
+          "popularity": 0.9888717,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:instrument:qloo:synthesizers",
+          "name": "Synthesizers",
+          "type": "urn:tag",
+          "subtype": "urn:tag:instrument:qloo",
+          "entity_id": "7BD25154-7A00-4DE9-8065-521B967D1575",
+          "popularity": 0.9446589,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:style:qloo:experimental",
+          "name": "Experimental",
+          "type": "urn:tag",
+          "subtype": "urn:tag:style:qloo",
+          "entity_id": "801B4F9C-CC0E-47F1-A3E0-6A610A552CB4",
+          "popularity": 0.94283307,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:audience:qloo:eclectic",
+          "name": "Eclectic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:audience:qloo",
+          "entity_id": "85F59978-5A95-47E9-B1AE-1A54B54F5F95",
+          "popularity": 0.9584335,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:theme:qloo:isolation",
+          "name": "Isolation",
+          "type": "urn:tag",
+          "subtype": "urn:tag:theme:qloo",
+          "entity_id": "8771D20B-BD2F-457D-852B-82A4557D8928",
+          "popularity": 0.9517542,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:subgenre:qloo:electronic",
+          "name": "Electronic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:subgenre:qloo",
+          "entity_id": "9B1EFCA2-1726-42DC-9E09-DE28E103AB9B",
+          "popularity": 0.5383424,
+          "query": {
+            "count": "1"
+          }
+        },
+        {
+          "tag_id": "urn:tag:artist:qloo:cinematic",
+          "name": "Cinematic",
+          "type": "urn:tag",
+          "subtype": "urn:tag:artist:qloo",
+          "entity_id": "A2DAF827-1ABC-4DE6-9A65-C2E0729DC0B7",
+          "popularity": 0.52246463,
+          "query": {
+            "count": "1"
+          }
+        }
+      ],
+      "matchEntities": []
+    },
+    "provenance": {
+      "source": "Qloo API",
+      "endpoint": "/v2/analysis/compare",
+      "documentation": "https://docs.qloo.com/reference/analysis-compare",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/v2/analysis/compare",
+          "query": {
+            "a.signal.interests.entities": [
+              "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+            ],
+            "b.signal.interests.entities": [
+              "045707A1-C8EF-443F-A882-1B97AC69DC9A"
+            ],
+            "take": 10
+          }
+        }
+      ],
+      "transport": "mcp"
+    },
+    "query_intent": {
+      "schema_version": "1.0-preview.1",
+      "source_contract_version": "1.0.0",
+      "operation": "compare_audiences",
+      "job": "compare_audiences",
+      "signals": {
+        "groups": [
+          [
+            "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+          ],
+          [
+            "045707A1-C8EF-443F-A882-1B97AC69DC9A"
+          ]
+        ]
+      },
+      "filters": {},
+      "operators": {},
+      "output": {
+        "limit": 10
+      },
+      "assumptions": [],
+      "unresolved": []
+    },
+    "execution": {
+      "transport": "mcp",
+      "transport_name": "Qloo canonical MCP",
+      "correlation_id": "mcp-9",
+      "duration_ms": 747
+    },
+    "summary": "",
+    "result_count": 0
+  }
+}

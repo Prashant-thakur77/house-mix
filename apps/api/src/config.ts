@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -42,8 +43,10 @@ export const config = {
   get audioBucket(): string {
     return env("HM_AUDIO_BUCKET");
   },
+  /** QLOO_BIN, else the copy `npm run qloo:verify` installs in .qloo-harness/, else `qloo` on PATH. */
   get qlooBin(): string {
-    return env("QLOO_BIN", "qloo");
+    const local = path.join(REPO_ROOT, ".qloo-harness/node_modules/.bin/qloo");
+    return env("QLOO_BIN", fs.existsSync(local) ? local : "qloo");
   },
   get corsOrigins(): string[] {
     return env("HM_CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")

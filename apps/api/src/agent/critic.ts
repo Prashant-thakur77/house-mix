@@ -30,6 +30,12 @@ export function gateItems(ctx: RunContext, slotKey: string, items: SubmittedItem
   const problems: GateProblem[] = [];
   const seen = new Set<string>();
   const rejected = new Set(ctx.show.negativeSignals.map((n) => n.qlooId));
+  const cap = ctx.popularityCap(slotKey);
+  // Place slots must come from a recommendation searched around the venue, not the whole city.
+  const nearVenue =
+    ctx.venueArea && ctx.placeTags(slotKey)
+      ? new Set([...ctx.ledger.values()].filter((c) => c.tool === "qloo_recommend" && c.args.filter_location === ctx.venueArea).flatMap((c) => c.resultIds))
+      : undefined;
   items.forEach((it, index) => {
     const call = ctx.ledger.get(it.call_id);
     const p = (reason: string) => problems.push({ index, entity_id: it.entity_id, reason });
@@ -42,6 +48,12 @@ export function gateItems(ctx: RunContext, slotKey: string, items: SubmittedItem
       if (key !== slotKey && slot.items.some((x) => x.pick.qlooId === it.entity_id)) return p(`entity ${it.entity_id} is already used in slot ${key}`);
     }
     if (!it.interpretation?.trim()) return p("interpretation is empty");
+    if (cap !== undefined) {
+      const pop = [call, ...ctx.callsMentioning(it.entity_id)].map((c) => entityInCall(c, it.entity_id)?.popularity).find((x) => x !== undefined);
+      if (pop !== undefined && pop >= cap)
+        return p(`entity ${it.entity_id} has Qloo popularity ${pop.toFixed(3)}; acts in this slot play under the headliner, so they must be below ${cap.toFixed(3)}`);
+    }
+    if (nearVenue && !nearVenue.has(it.entity_id)) return p(`entity ${it.entity_id} did not come from a qloo_recommend call with filter_location = "${ctx.venueArea}" (places must be near the venue)`);
     seen.add(it.entity_id);
   });
   return problems;
@@ -79,7 +91,7 @@ export function buildItems(ctx: RunContext, slotKey: string, items: SubmittedIte
       id: `i_${randomUUID().slice(0, 10)}`,
       slotKey,
       pick: { name: ent.name, qlooId: ent.id, type: ent.type ?? "entity" },
-      qlooSays: evidence.map((e) => qlooSaysLine(ctx.ledger.get(e.callId)!, it.entity_id)).join(" "),
+      qlooSays: evidence.map((e) => qlooSaysLine(ctx.ledger.get(e.callId)!, it.entity_id, (id) => ctx.show.entities.find((x) => x.qlooId === id)?.name)).join(" "),
       interpretation: it.interpretation.trim().slice(0, 400),
       action: (it.action ?? "").trim().slice(0, 200),
       evidence,

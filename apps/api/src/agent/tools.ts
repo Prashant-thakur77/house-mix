@@ -20,7 +20,13 @@ const STATUS_NOTE: Record<string, string> = {
 
 /** What the model sees from a Qloo call: compact, ID-first, with the call_id to cite. */
 export function compactForModel(call: LedgerCall, envelope: Envelope) {
-  const base = { call_id: call.callId, status: call.status, note: STATUS_NOTE[call.status], ...(envelope.summary ? { summary: envelope.summary } : {}), ...(call.warnings.length ? { warnings: call.warnings } : {}) };
+  const base = {
+    call_id: call.callId,
+    status: call.status,
+    note: STATUS_NOTE[call.status],
+    ...(envelope.summary ? { summary: envelope.summary } : {}),
+    ...(call.warnings.length ? { warnings: call.warnings } : {}),
+  };
   if (call.status === "error") return { ...base, error: call.error };
   if (call.status === "needs_input") return { ...base, unresolved_inputs: call.issues.map((i) => ({ input: i.input, field: i.field, kind: i.kind })) };
   switch (call.tool) {
@@ -28,12 +34,21 @@ export function compactForModel(call: LedgerCall, envelope: Envelope) {
       return { ...base, areas: heatmapOf(call).map((p) => ({ area_id: p.id, lat: p.latitude, lon: p.longitude, affinity: p.affinity })) };
     case "qloo_compare_audiences": {
       const rows = compareOf(call).rows;
-      return { ...base, concepts: rows.map((r) => ({ id: r.id, name: r.name, a: r.a, b: r.b, delta: Number(r.delta.toFixed(3)) })) };
+      const row = (r: (typeof rows)[number]) => ({ id: r.id, name: r.name, ...(r.score !== undefined ? { score: Number(r.score.toFixed(3)) } : {}) });
+      return {
+        ...base,
+        shared_concepts: rows.filter((r) => r.side === "shared").map(row),
+        only_group_a: rows.filter((r) => r.side === "a").map(row),
+        only_group_b: rows.filter((r) => r.side === "b").map(row),
+      };
     }
     case "qloo_audience_demographics":
       return { ...base, ...demographicsOf(call), scale: "relative affinity, -1..1, aggregate only" };
     case "qloo_trends":
-      return { ...base, series: trendsOf(call).map((s) => ({ entity_id: s.id, name: s.name, first: s.points[0]?.value, last: s.points[s.points.length - 1]?.value, delta: Number(s.delta.toFixed(4)) })) };
+      return {
+        ...base,
+        series: trendsOf(call).map((s) => ({ entity_id: s.id, name: s.name, first: s.points[0]?.value, last: s.points[s.points.length - 1]?.value, delta: Number(s.delta.toFixed(4)) })),
+      };
     default:
       return {
         ...base,
@@ -97,7 +112,17 @@ const ItemShape = z.object({
 });
 
 function evidenceOf(call: LedgerCall): Evidence {
-  return { callId: call.callId, tool: call.tool, inputs: call.args, status: call.status, summary: call.summary, scores: {}, endpoint: call.endpoint, source: call.cached ? "cache" : call.source, durationMs: call.durationMs };
+  return {
+    callId: call.callId,
+    tool: call.tool,
+    inputs: call.args,
+    status: call.status,
+    summary: call.summary,
+    scores: {},
+    endpoint: call.endpoint,
+    source: call.cached ? "cache" : call.source,
+    durationMs: call.durationMs,
+  };
 }
 
 /** Builds the crowd read charts from the run's Qloo calls (server-side, never from model text). */
@@ -113,34 +138,50 @@ export function buildCrowd(ctx: RunContext, phrase: string, interpretation: stri
   const nameOf = (ids: string[]) => ids.map((id) => ctx.show.entities.find((e) => e.qlooId === id)?.name ?? id).join(" + ");
   const groupA = cmp ? ((cmp.args.group_a as string[]) ?? []) : [];
   const groupB = cmp ? ((cmp.args.group_b as string[]) ?? []) : [];
-  const shared = rows.filter((r) => r.a >= 0.4 && r.b >= 0.4 && Math.abs(r.delta) < 0.25).sort((x, y) => y.a + y.b - (x.a + x.b));
-  const distinctA = rows.filter((r) => r.delta >= 0.25).sort((x, y) => y.delta - x.delta);
-  const distinctB = rows.filter((r) => r.delta <= -0.25).sort((x, y) => x.delta - y.delta);
-  const toRow = (r: (typeof rows)[number], score: number) => ({ name: r.name, qlooId: r.id, type: r.type ?? "tag", score: Number(score.toFixed(3)) });
+  // Qloo's order is kept within each side; shared concepts sort by their similarity score.
+  // Qloo can return one concept name under two tag categories; keep the first of each name.
+  const once = (xs: typeof rows) => xs.filter((r, i) => xs.findIndex((x) => x.name.toLowerCase() === r.name.toLowerCase()) === i);
+  const shared = once(rows.filter((r) => r.side === "shared").sort((x, y) => (y.score ?? 0) - (x.score ?? 0)));
+  const distinctA = once(rows.filter((r) => r.side === "a"));
+  const distinctB = once(rows.filter((r) => r.side === "b"));
+  const toRow = (r: (typeof rows)[number]) => ({ name: r.name, qlooId: r.id, type: r.type ?? "tag", ...(r.score !== undefined ? { score: Number(r.score.toFixed(3)) } : {}) });
   const d = demo ? demographicsOf(demo) : { age: [], gender: [] };
   const tagList = tags ? entitiesOf(tags).map((t) => ({ name: t.name, tagId: t.id, score: Number((t.affinity ?? 0).toFixed(3)) })) : [];
   const trends = tr ? trendsOf(tr).map((s) => ({ name: s.name, qlooId: s.id, points: s.points, delta: Number(s.delta.toFixed(4)) })) : [];
   const says: string[] = [];
   if (cmp) {
     says.push(
-      `compare_audiences (${nameOf(groupA)} vs ${nameOf(groupB)}): ${shared.length} shared concepts${shared[0] ? `, led by ${shared.slice(0, 3).map((r) => r.name).join(", ")}` : ""}; ${distinctA.length} lean to the first group, ${distinctB.length} to the second.`,
+      `compare_audiences (${nameOf(groupA)} vs ${nameOf(groupB)}): ${shared.length} shared concepts${
+        shared[0]
+          ? `, led by ${shared
+              .slice(0, 3)
+              .map((r) => r.name)
+              .join(", ")}`
+          : ""
+      }; ${distinctA.length} lean to the first group, ${distinctB.length} to the second.`,
     );
   }
   if (d.age.length) {
     const top = [...d.age].sort((x, y) => y.value - x.value)[0]!;
     says.push(`audience_demographics: strongest relative age affinity is ${top.bucket.replaceAll("_", " ")} (${top.value.toFixed(2)} on a −1..1 scale); aggregate only.`);
   }
-  if (tagList.length) says.push(`entity_tags: top concepts ${tagList.slice(0, 4).map((t) => `${t.name} (${t.score.toFixed(2)})`).join(", ")}.`);
+  if (tagList.length)
+    says.push(
+      `entity_tags: top concepts ${tagList
+        .slice(0, 4)
+        .map((t) => `${t.name} (${t.score.toFixed(2)})`)
+        .join(", ")}.`,
+    );
   if (trends.length) says.push(`trends: ${trends.map((t) => `${t.name} ${t.delta >= 0 ? "+" : ""}${t.delta.toFixed(3)} percentile`).join("; ")} over the window.`);
   const used = [cmp, demo, tags, tr].filter((c): c is LedgerCall => Boolean(c));
   const reduced = used.some((c) => c.status === "partial" || c.status === "degraded");
   return {
-    sharedGround: shared.slice(0, 8).map((r) => toRow(r, (r.a + r.b) / 2)),
-    distinctA: distinctA.slice(0, 6).map((r) => toRow(r, r.delta)),
-    distinctB: distinctB.slice(0, 6).map((r) => toRow(r, -r.delta)),
+    sharedGround: shared.slice(0, 8).map((r) => ({ ...toRow(r), score: Number((r.score ?? 0).toFixed(3)) })),
+    distinctA: distinctA.slice(0, 6).map(toRow),
+    distinctB: distinctB.slice(0, 6).map(toRow),
     labelA: nameOf(groupA),
     labelB: nameOf(groupB),
-    compare: [...rows].sort((x, y) => Math.max(y.a, y.b) - Math.max(x.a, x.b)).slice(0, 10).map((r) => ({ name: r.name, id: r.id, a: Number(r.a.toFixed(3)), b: Number(r.b.toFixed(3)) })),
+    compare: rows.slice(0, 12).map((r) => ({ name: r.name, id: r.id, side: r.side, ...(r.score !== undefined ? { score: Number(r.score.toFixed(3)) } : {}) })),
     demographics: d,
     tags: tagList,
     trends,
@@ -181,7 +222,14 @@ export function houseMixServer(ctx: RunContext) {
           }
           ctx.crowd = { ...draft, interpretation: checked.kept };
           ctx.emit({ type: "crowd", at: ctx.now(), crowd: ctx.crowd });
-          return text({ accepted: true, demographic_phrase_for_qloo: ctx.crowd.demographicPhrase || null, top_tags: draft.tags.slice(0, 3).map((t) => ({ tag_urn: t.tagId, name: t.name })), kept_lines: checked.kept.length, dropped_lines: checked.dropped, qloo_says: draft.qlooSays });
+          return text({
+            accepted: true,
+            demographic_phrase_for_qloo: ctx.crowd.demographicPhrase || null,
+            top_tags: draft.tags.slice(0, 3).map((t) => ({ tag_urn: t.tagId, name: t.name })),
+            kept_lines: checked.kept.length,
+            dropped_lines: checked.dropped,
+            qloo_says: draft.qlooSays,
+          });
         },
       ),
       tool(
@@ -197,7 +245,11 @@ export function houseMixServer(ctx: RunContext) {
             ctx.criticDrops++;
             ctx.emit({ type: "critic", at: ctx.now(), slotKey: args.slot_key, pick: ctx.nameOf(p.entity_id), reason: p.reason.replace(p.entity_id, ctx.nameOf(p.entity_id)) });
           }
-          const built = buildItems(ctx, args.slot_key, items.filter((_, i) => !bad.has(i)));
+          const built = buildItems(
+            ctx,
+            args.slot_key,
+            items.filter((_, i) => !bad.has(i)),
+          );
           const verdict = await claimCheck(built);
           ctx.costUsd += verdict.costUsd;
           for (const d of verdict.dropped) {

@@ -70,11 +70,13 @@ export function canonical(value: unknown): string {
 }
 
 /** Bump when the mock's behaviour changes, so cached mock envelopes are not reused. */
-export const MOCK_VERSION = "mock-7";
+export const MOCK_VERSION = "mock-8";
 
 export function cacheKey(mode: string, tool: string, args: unknown): string {
   const ns = mode === "mock" ? MOCK_VERSION : mode;
-  return createHash("sha256").update(`${ns}|${tool}|${canonical(args)}`).digest("hex");
+  return createHash("sha256")
+    .update(`${ns}|${tool}|${canonical(args)}`)
+    .digest("hex");
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -95,9 +97,7 @@ function synthetic(tool: string, code: string, summary: string, recovery: string
 export function parseEnvelope(result: { structuredContent?: unknown; content?: unknown }): Envelope {
   let raw = result.structuredContent as Record<string, unknown> | undefined;
   if (!raw) {
-    const text = Array.isArray(result.content)
-      ? (result.content as { type: string; text?: string }[]).find((c) => c.type === "text")?.text
-      : undefined;
+    const text = Array.isArray(result.content) ? (result.content as { type: string; text?: string }[]).find((c) => c.type === "text")?.text : undefined;
     try {
       raw = text ? (JSON.parse(text) as Record<string, unknown>) : {};
     } catch {
@@ -223,12 +223,7 @@ export class QlooClient {
         cached = true;
         if (ctx.budget) ctx.budget.cacheHits++;
       } else if (ctx.budget && ctx.budget.remaining <= 0) {
-        envelope = synthetic(
-          tool,
-          "HM_BUDGET",
-          `Qloo call budget for this plan is used up (${ctx.budget.cap} calls).`,
-          "Reuse results already gathered in this run; cite existing call IDs.",
-        );
+        envelope = synthetic(tool, "HM_BUDGET", `Qloo call budget for this plan is used up (${ctx.budget.cap} calls).`, "Reuse results already gathered in this run; cite existing call IDs.");
       } else {
         if (ctx.budget) ctx.budget.used++;
         const client = await this.connect();

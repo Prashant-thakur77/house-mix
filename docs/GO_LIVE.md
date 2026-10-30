@@ -2,9 +2,13 @@
 
 Run these from the repo root once the event Qloo key arrives. The key goes only in `.env.local` (gitignored) and Secret Manager.
 
+**Status (30 Oct 2026):** done. The hackathon key works only against `https://hackathon.api.qloo.com`, so `.env.local` also sets `QLOO_BASE_URL` and `QLOO_TRUSTED_BASE_URL` to it (not secrets; `infra/deploy-api.sh` passes them to Cloud Run). `qloo:verify` passes 11 of 11 checks, the five demo shows were re-seeded live, and the A/B pairs and evidence eval ran on live plans.
+
 ```sh
 # 1. Key: local only, never committed
 echo 'QLOO_API_KEY=<paste>' >> .env.local          # and SETLISTFM_API_KEY=<paste> if you have it
+echo 'QLOO_BASE_URL=https://hackathon.api.qloo.com' >> .env.local
+echo 'QLOO_TRUSTED_BASE_URL=https://hackathon.api.qloo.com' >> .env.local
 
 # 2. Verify the live contract against the mock (installs @qloo/qloo-harness >= 0.1.26 if needed)
 npm run qloo:verify                                  # writes fixtures/live/, docs/QLOO_VERIFY.md; sets QLOO_MODE=live in .env.local
@@ -20,6 +24,7 @@ npm run eval:backtest
 #    Mark the A/B shows "verified": true in eval/data/ab_shows.json after checking each listing, then:
 npm run eval:ab:pairs                                # writes eval/data/choices.pending.json if a name is ambiguous
 npm run eval:evidence
+npm run eval:ab:judge                                # automated blind judge, both orders (secondary signal)
 #    Share https://house-mix.vercel.app/rate with 20+ raters, then:
 npm run eval:ab:score && npm run eval:report
 

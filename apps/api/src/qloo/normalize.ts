@@ -20,6 +20,8 @@ export interface NEntity {
   description?: string;
   geocode?: { latitude: number; longitude: number };
   address?: string;
+  /** Qloo's explainability for a recommendation: which input signals drove it, and how much. */
+  because?: { id: string; score: number }[];
 }
 
 export interface HeatPoint {
@@ -48,6 +50,11 @@ function entityFromItem(item: Rec, rank: number): NEntity | undefined {
   const lat = num(geo?.latitude);
   const lon = num(geo?.longitude);
   const query = isRec(item.query) ? item.query : {};
+  const because = Object.values(isRec(item.explainability) ? item.explainability : {})
+    .flatMap((v) => (Array.isArray(v) ? v.filter(isRec) : []))
+    .map((x) => ({ id: str(x.entity_id) ?? str(x.tag_id) ?? str(x.id) ?? "", score: num(x.score) ?? 0 }))
+    .filter((x) => x.id)
+    .sort((x, y) => y.score - x.score);
   return {
     id,
     name,
@@ -58,6 +65,7 @@ function entityFromItem(item: Rec, rank: number): NEntity | undefined {
     description: str(props.short_description) ?? str(props.description),
     geocode: lat !== undefined && lon !== undefined ? { latitude: lat, longitude: lon } : undefined,
     address: str(props.address),
+    ...(because.length ? { because } : {}),
   };
 }
 
@@ -77,7 +85,7 @@ export function entitiesOf(call: Pick<LedgerCall, "tool" | "results">): NEntity[
         .map((r, i) => entityFromItem(r, i + 1))
         .filter((e): e is NEntity => Boolean(e));
     case "qloo_compare_audiences":
-      return compareOf(call).rows.map((r, i) => ({ id: r.id, name: r.name, type: r.type, affinity: r.a, rank: i + 1 }));
+      return compareOf(call).rows.map((r, i) => ({ id: r.id, name: r.name, type: r.type, ...(r.score !== undefined ? { affinity: r.score } : {}), rank: i + 1 }));
     default:
       return [];
   }
@@ -119,18 +127,47 @@ export interface CompareRow {
   id: string;
   name: string;
   type?: string;
-  a: number;
-  b: number;
-  delta: number;
+  /** Which audience carries the concept: both ("shared"), only group A, or only group B. */
+  side: "shared" | "a" | "b";
+  /** Qloo's similarity score for a shared concept (0–1). Distinct concepts have none. */
+  score?: number;
+  /** Per-group affinities, present only in the older A/B-affinity shape. */
+  a?: number;
+  b?: number;
 }
 
 /**
- * compare_audiences passes Qloo's raw `results` through (often `{tags: [...]}`, possibly also
- * entities). Each row carries the group-A and group-B affinity and their difference.
+ * compare_audiences passes Qloo's raw `results` through. Live Qloo returns
+ * `{tags, a, b}`: the concepts both audiences share (each with `query.score`), then the concepts
+ * only group A and only group B carry. Older stored calls carry one list with per-group
+ * affinities; those rows are sorted into the same three sides (shared: both ≥ 0.40 and within 0.25).
  */
 export function compareOf(call: Pick<LedgerCall, "tool" | "results">): { rows: CompareRow[] } {
   if (call.tool !== "qloo_compare_audiences") return { rows: [] };
-  const raw: unknown = call.results;
+  const raw: unknown = Array.isArray(call.results) && call.results.length === 1 ? call.results[0] : call.results;
+  const rows: CompareRow[] = [];
+  const base = (item: Rec) => {
+    const id = str(item.tag_id) ?? str(item.entity_id) ?? str(item.id);
+    const name = str(item.name);
+    return id && name ? { id, name, type: shortType(item.subtype) ?? shortType(item.type) } : undefined;
+  };
+  if (isRec(raw) && (Array.isArray(raw.a) || Array.isArray(raw.b))) {
+    const lists: [unknown, CompareRow["side"]][] = [
+      [raw.tags, "shared"],
+      [raw.a, "a"],
+      [raw.b, "b"],
+    ];
+    for (const [list, side] of lists) {
+      for (const item of Array.isArray(list) ? list : []) {
+        if (!isRec(item)) continue;
+        const b = base(item);
+        if (!b) continue;
+        const q = isRec(item.query) ? item.query : {};
+        rows.push({ ...b, side, ...(side === "shared" && num(q.score) !== undefined ? { score: num(q.score) } : {}) });
+      }
+    }
+    return { rows };
+  }
   const lists: unknown[] = [];
   if (Array.isArray(raw)) {
     for (const r of raw) {
@@ -141,17 +178,18 @@ export function compareOf(call: Pick<LedgerCall, "tool" | "results">): { rows: C
   } else if (isRec(raw)) {
     for (const k of ["tags", "entities", "results"]) if (Array.isArray(raw[k])) lists.push(...(raw[k] as unknown[]));
   }
-  const rows: CompareRow[] = [];
   for (const item of lists) {
     if (!isRec(item)) continue;
-    const id = str(item.tag_id) ?? str(item.entity_id) ?? str(item.id);
-    const name = str(item.name);
-    if (!id || !name) continue;
+    const b = base(item);
+    if (!b) continue;
     const q = isRec(item.query) ? item.query : {};
     const a = num(isRec(q.a) ? q.a.affinity : undefined) ?? num(q.a_affinity) ?? num(q.affinity_a);
-    const b = num(isRec(q.b) ? q.b.affinity : undefined) ?? num(q.b_affinity) ?? num(q.affinity_b);
-    if (a === undefined || b === undefined) continue;
-    rows.push({ id, name, type: shortType(item.subtype) ?? shortType(item.type), a, b, delta: num(q.delta) ?? a - b });
+    const bb = num(isRec(q.b) ? q.b.affinity : undefined) ?? num(q.b_affinity) ?? num(q.affinity_b);
+    if (a === undefined || bb === undefined) continue;
+    const delta = num(q.delta) ?? a - bb;
+    const side = Math.abs(delta) < 0.25 ? "shared" : delta > 0 ? "a" : "b";
+    if (side === "shared" && (a < 0.4 || bb < 0.4)) continue;
+    rows.push({ ...b, side, score: side === "shared" ? (a + bb) / 2 : Math.abs(delta), a, b: bb });
   }
   return { rows };
 }
@@ -197,7 +235,8 @@ export function trendsOf(call: Pick<LedgerCall, "tool" | "results">): TrendSerie
       const points = (Array.isArray(s.points) ? s.points : [])
         .filter(isRec)
         .map((p) => ({ date: str(p.date) ?? "", value: num(p.population_percentile) ?? num(p.value) ?? 0 }))
-        .filter((p) => p.date);
+        .filter((p) => p.date)
+        .sort((x, y) => x.date.localeCompare(y.date));
       const delta = points.length > 1 ? points[points.length - 1]!.value - points[0]!.value : 0;
       return { id, name: str(e.name) ?? id, type: shortType(e.type), points, delta };
     })
@@ -289,15 +328,15 @@ export function scoresFor(call: LedgerCall, entityId: string): Record<string, nu
 }
 
 /**
- * Sponsor fit (0–100) from a crowd-vs-brand comparison: the mean similarity of the two groups'
- * affinities across the concepts Qloo returned, min(a,b)/max(a,b) for positive pairs.
+ * Sponsor fit (0–100) from a crowd-vs-brand comparison: the mean of Qloo's similarity scores over
+ * the concepts both audiences share. No shared concepts gives no score (not zero), because Qloo
+ * returns none when the two sides have no tags in common, for example across domains.
  * This formula is our interpretation of Qloo's comparison, not a Qloo score.
  */
 export function sponsorFit(call: Pick<LedgerCall, "tool" | "results">): number | undefined {
-  const rows = compareOf(call).rows;
-  if (rows.length === 0) return undefined;
-  const sims = rows.map((r) => (r.a > 0 && r.b > 0 ? Math.min(r.a, r.b) / Math.max(r.a, r.b) : 0));
-  return Math.round((100 * sims.reduce((s, x) => s + x, 0)) / sims.length);
+  const shared = compareOf(call).rows.filter((r) => r.side === "shared" && r.score !== undefined);
+  if (shared.length === 0) return undefined;
+  return Math.round((100 * shared.reduce((s, r) => s + r.score!, 0)) / shared.length);
 }
 
 const round = (n: number) => Math.round(n * 1000) / 1000;
@@ -315,7 +354,7 @@ const TOOL_LABEL: Record<string, string> = {
 };
 
 /** A literal, deterministic sentence of what one Qloo call says about one entity. */
-export function qlooSaysLine(call: LedgerCall, entityId: string): string {
+export function qlooSaysLine(call: LedgerCall, entityId: string, nameOf: (id: string) => string | undefined = () => undefined): string {
   const s = scoresFor(call, entityId);
   const label = TOOL_LABEL[call.tool] ?? call.tool;
   const parts: string[] = [];
@@ -323,6 +362,8 @@ export function qlooSaysLine(call: LedgerCall, entityId: string): string {
   if (call.tool === "qloo_recommend") {
     const e = entitiesOf(call).find((x) => x.id === entityId);
     if (e) parts.push(`returned #${e.rank} of ${entitiesOf(call).length}`);
+    const top = (e?.because ?? []).slice(0, 2);
+    if (top.length) parts.push(`explained by ${top.map((b) => `${nameOf(b.id) ?? "an input signal"} (${b.score.toFixed(2)})`).join(" and ")}`);
   }
   if (s.affinity !== undefined) parts.push(`affinity ${s.affinity.toFixed(2)}`);
   if (s.popularity !== undefined) parts.push(`popularity ${s.popularity.toFixed(2)}`);

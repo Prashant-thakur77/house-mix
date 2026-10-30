@@ -54,9 +54,17 @@ export interface ShowSummary {
 }
 
 export interface CompareResult {
-  a: { id: string; title: string; mode: string; date: string; venue: string; crowd?: Show["plan"] extends infer P ? (P extends { crowd: infer C } ? C : never) : never; slots: NonNullable<Show["plan"]>["slots"] };
+  a: {
+    id: string;
+    title: string;
+    mode: string;
+    date: string;
+    venue: string;
+    crowd?: Show["plan"] extends infer P ? (P extends { crowd: infer C } ? C : never) : never;
+    slots: NonNullable<Show["plan"]>["slots"];
+  };
   b: CompareResult["a"];
-  comparison: { callId: string; status: string; summary: string; rows: { id: string; name: string; type?: string; a: number; b: number; delta: number }[]; source: string };
+  comparison: { callId: string; status: string; summary: string; rows: { id: string; name: string; type?: string; side: "shared" | "a" | "b"; score?: number }[]; source: string };
   diff: { onlyA: string[]; onlyB: string[]; both: string[] };
 }
 

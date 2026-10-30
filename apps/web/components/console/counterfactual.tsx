@@ -64,7 +64,14 @@ function SlotTable({ slot, onBill, ours }: { slot: Counterfactual["slots"][numbe
                 </p>
               ) : null}
               {r.status === "ambiguous" && r.candidates.length ? (
-                <p className="text-label text-muted-foreground">Qloo asks which one: {r.candidates.map((c) => c.name + (c.disambiguation ? ` (${c.disambiguation})` : "")).join(" · ")}. Not ranked, because House Mix never picks for you.</p>
+                <p className="text-label text-muted-foreground" title={r.candidates.map((c) => c.name + (c.disambiguation ? ` (${c.disambiguation})` : "")).join(" · ")}>
+                  Qloo asks which one:{" "}
+                  {r.candidates
+                    .slice(0, 3)
+                    .map((c) => c.name)
+                    .join(" · ")}
+                  {r.candidates.length > 3 ? ` · +${r.candidates.length - 3} more` : ""}. Not ranked, because House Mix never picks for you.
+                </p>
               ) : null}
             </div>
           </li>
@@ -103,7 +110,8 @@ export function CounterfactualPanel({ show, onResult, readOnly }: { show: Show; 
             <FlaskConical className="size-4 text-muted-foreground" aria-hidden /> Without Qloo
           </h2>
           <p className="max-w-[75ch] text-small text-muted-foreground">
-            Claude plans the same brief from its own knowledge, with no tools. Then Qloo checks that plan: <span className="font-mono">qloo_describe</span> looks up every pick by name, and one <span className="font-mono">qloo_rank</span> per slot puts both plans&apos; top picks in order for tonight&apos;s bill, city and crowd.
+            Claude plans the same brief from its own knowledge, with no tools. Then Qloo checks that plan: <span className="font-mono">qloo_describe</span> looks up every pick by name, and one{" "}
+            <span className="font-mono">qloo_rank</span> per slot puts both plans&apos; top picks in order for tonight&apos;s bill, city and crowd.
           </p>
         </div>
         {cf && !readOnly ? (
@@ -117,21 +125,35 @@ export function CounterfactualPanel({ show, onResult, readOnly }: { show: Show; 
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
             <Kpi value={`${backed}/${items.length}`} label="House Mix picks with a Qloo citation" hint="Every House Mix pick cites the Qloo call it came from; the Critic removes the rest." />
             <Kpi value={`0/${cf.summary.llmPicks}`} label="Claude-alone picks with a citation" hint="Claude alone has no tools, so nothing it says is backed by a Qloo result." />
-            <Kpi value={`${cf.summary.llmResolved}/${cf.summary.llmPicks}`} label="Claude-alone picks Qloo could find" hint="Looked up by name with qloo_describe. Ambiguous names are reported, never auto-picked." />
-            <Kpi value={`${cf.summary.slotsQlooLed}/${cf.summary.rankedSlots}`} label="slots where Qloo ranked a House Mix pick first" hint="From one qloo_rank call per slot over both plans' top picks." />
+            <Kpi
+              value={`${cf.summary.llmResolved}/${cf.summary.llmPicks}`}
+              label="Claude-alone picks Qloo could find"
+              hint="Looked up by name with qloo_describe. Ambiguous names are reported, never auto-picked."
+            />
+            <Kpi
+              value={`${cf.summary.slotsQlooLed}/${cf.summary.rankedSlots}`}
+              label="slots where Qloo ranked a House Mix pick first"
+              hint="From one qloo_rank call per slot over both plans' top picks."
+            />
           </div>
-          {stale ? <p className="text-small text-status-partial">Made for plan v{cf.planVersion}; the plan is now v{show.version}.</p> : null}
+          {stale ? (
+            <p className="text-small text-status-partial">
+              Made for plan v{cf.planVersion}; the plan is now v{show.version}.
+            </p>
+          ) : null}
           <div className="grid gap-2 lg:grid-cols-2">
             {cf.slots.map((s) => (
               <SlotTable key={s.key} slot={s} onBill={onBill} ours={ours} />
             ))}
           </div>
           <p className="border-l-3 border-interp-border bg-interp-bg/60 py-1.5 pl-3 pr-2 text-small">
-            Read this with care. Qloo is ranking House Mix&apos;s own picks here, so a House Mix lead is expected and is not an independent quality test (the blind human A/B in <span className="font-mono">eval/</span> is). What this view does show: which knowledge-only picks Qloo cannot find or confirm, and where they sit for this specific crowd.
+            Read this with care. Qloo is ranking House Mix&apos;s own picks here, so a House Mix lead is expected and is not an independent quality test (the blind human A/B in{" "}
+            <span className="font-mono">eval/</span> is). What this view does show: which knowledge-only picks Qloo cannot find or confirm, and where they sit for this specific crowd.
             {show.qlooMode === "mock" ? " MOCK DATA: Qloo results here are fictional fixtures." : ""}
           </p>
           <p className="text-label text-muted-foreground">
-            Claude alone: <span className="font-mono">{cf.model}</span>, same slot brief, no tools · ${cf.costUsd.toFixed(3)} · {new Date(cf.createdAt).toISOString().slice(0, 16).replace("T", " ")} UTC
+            Claude alone: <span className="font-mono">{cf.model}</span>, same slot brief, no tools · ${cf.costUsd.toFixed(3)} · {new Date(cf.createdAt).toISOString().slice(0, 16).replace("T", " ")}{" "}
+            UTC
           </p>
         </>
       ) : loading ? (

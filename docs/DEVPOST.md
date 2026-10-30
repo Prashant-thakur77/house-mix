@@ -64,15 +64,16 @@ Full steps, tests and deploy scripts are in the README.
 
 ## Results
 
-House Mix makes three claims, each against a named baseline. All numbers come from `eval/` scripts; see [`eval/REPORT.md`](../eval/REPORT.md).
+Measured on live Qloo on 30 Oct 2026. Every number comes from `eval/` scripts; see [`eval/REPORT.md`](../eval/REPORT.md). The baseline (L0) is the same model with the same brief and no Qloo, on 7 held-out real shows (2025 and January 2026; listings checked, three dates corrected, one unverifiable show dropped).
 
 | Claim | Method | Result |
 | --- | --- | --- |
-| Raters prefer House Mix plans to LLM-only plans | Blind pairwise A/B on 10 real 2025 shows (3 dev, 7 test); same model, same brief, labels stripped, sides randomised; Wilson 95% CI, Fleiss κ | pending live key and raters |
-| Qloo ranking finds the real support act | setlist.fm 2025 shows; 50-artist pool (true support + same-genre distractors); `qloo_rank` tournament vs popularity-only vs LLM-only; hit@10 and MRR; tuned on 5 dev shows | pending live key |
-| Every item has a valid citation | Share of items whose cited call is in the ledger with the entity in its results; unresolvable LLM-only picks | pending live plans |
+| Every pick is backed by Qloo | Share of picks whose cited call is in the ledger with the pick in its results | **182 of 182**; the Critic removed 23 unsupported items first. L0 has no citations |
+| Claude alone can't hand Qloo its picks | Each L0 pick looked up by name in live Qloo | It invented none (157 of 157 found), but **76 of 157 (48%)** are ambiguous and need a person to choose |
+| Raters prefer House Mix | Blind pairwise A/B, labels stripped, sides randomised | Human ratings pending at `/rate`. Automated judge (Claude Opus, both orders): **0–7** on the first run, **1–5 with 1 tie** after fixing what it found |
+| Qloo ranking finds the real support act | setlist.fm backtest, hit@10 | Not run: needs a setlist.fm key |
 
-The report generator also writes one honest negative result: the comparison House Mix did not win, or the weakest coverage area. Our expectation is comedy openers, where Qloo coverage of working comedians is thinner.
+The negative result: on taste alone, the judge still prefers Claude's own picks. Claude alone names the anthems a specific fan base sings and the obvious category sponsors; Qloo's ranking surfaces broader or less expected names, and our explanations still read like ranking output. The first run also exposed real bugs, and each became a rule the server enforces: openers must be less popular than the headliner (the openers slot went from losing to winning 3–1), bars and food must come from a search around the venue's address, and rival clubs, governments and news outlets are not sponsors.
 
 ## Known limitations
 

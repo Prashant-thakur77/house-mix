@@ -4,6 +4,7 @@
  * Seed confirmations are an operator's documented choices (`choose`), not automatic picks.
  * Usage: tsx scripts/seed.ts [key ...]   (keys: concert comedy sports festival dining)
  *        tsx scripts/seed.ts --extras [--ask] [key ...]   re-runs only the crowd map and "Without Qloo" (and the sample question) on stored seeds
+ *        tsx scripts/seed.ts --says [key ...]   rewrites each pick's "Qloo says" line from its stored calls (no Qloo or Claude calls)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -16,6 +17,7 @@ import { getStore } from "../src/store/store.ts";
 import { heatmapFor } from "../src/insights/heatmap.ts";
 import { counterfactualFor } from "../src/insights/counterfactual.ts";
 import { askShow } from "../src/insights/ask.ts";
+import { qlooSaysLine } from "../src/qloo/normalize.ts";
 
 interface SeedDef {
   key: string;
@@ -26,9 +28,13 @@ interface SeedDef {
   ask: string;
 }
 
+// `choose` holds the operator's documented picks among live candidates (by description or tag category).
+// Cities stay unconfirmed: Qloo returns several same-name localities with no location details, and the
+// city name still reaches Qloo as text.
 const SEEDS: SeedDef[] = [
   {
     key: "concert",
+    choose: { venue: "outdoor amphitheater", tag_0: "music_characteristic" },
     ask: "If Men I Trust cancels, which act best fills the opener slot for this crowd?",
     input: {
       mode: "concert",
@@ -46,6 +52,7 @@ const SEEDS: SeedDef[] = [
   },
   {
     key: "comedy",
+    choose: { venue: "Sunset Strip", tag_0: "good_for" },
     ask: "Which podcast should we promote in the interval for this crowd?",
     input: {
       mode: "comedy",
@@ -60,27 +67,37 @@ const SEEDS: SeedDef[] = [
       capacityTier: "club",
       houseRules: { budgetBand: "lean", ageRating: "18_plus", vibeWords: ["late night"], localActs: [], sponsorExclusivities: [], localOnlyVendors: true, notes: "Two-drink minimum room." },
     },
-    choose: { venue: "Los Angeles" },
   },
   {
     key: "sports",
+    choose: { tag_0: "ambience" },
     ask: "Which walk-in tracks work for both Chelsea and Arsenal fans?",
     input: {
       mode: "sports",
       sides: [
         { role: "home", name: "Chelsea FC" },
-        { role: "away", name: "Arsenal FC" },
+        // Qloo's name for the club is "Arsenal F.C."; "Arsenal FC" only matches an artist and a place in Luanda.
+        { role: "away", name: "Arsenal F.C." },
       ],
       venue: "Stamford Bridge",
       city: "London",
       date: "2026-11-28",
       doorsTime: "15:00",
       capacityTier: "stadium",
-      houseRules: { budgetBand: "premium", ageRating: "all_ages", vibeWords: ["high energy"], localActs: [], sponsorExclusivities: [], localOnlyVendors: false, notes: "Family stand in the East Stand." },
+      houseRules: {
+        budgetBand: "premium",
+        ageRating: "all_ages",
+        vibeWords: ["high energy"],
+        localActs: [],
+        sponsorExclusivities: [],
+        localOnlyVendors: false,
+        notes: "Family stand in the East Stand.",
+      },
     },
   },
   {
     key: "festival",
+    choose: { venue: "East London" },
     ask: "Who should close the second stage for the Japanese Breakfast and Alvvays crowd?",
     input: {
       mode: "festival",
@@ -100,6 +117,7 @@ const SEEDS: SeedDef[] = [
   },
   {
     key: "dining",
+    choose: { tag_0: "good_for" },
     ask: "Which drinks brand fits the jazz-night crowd best, and what should we pour with it?",
     input: {
       mode: "dining",
@@ -112,7 +130,15 @@ const SEEDS: SeedDef[] = [
       date: "2026-11-21",
       doorsTime: "18:00",
       capacityTier: "club",
-      houseRules: { budgetBand: "standard", ageRating: "18_plus", vibeWords: ["late night"], localActs: [], sponsorExclusivities: [], localOnlyVendors: false, notes: "Jazz supper: two seatings, the bar stays open late." },
+      houseRules: {
+        budgetBand: "standard",
+        ageRating: "18_plus",
+        vibeWords: ["late night"],
+        localActs: [],
+        sponsorExclusivities: [],
+        localOnlyVendors: false,
+        notes: "Jazz supper: two seatings, the bar stays open late.",
+      },
     },
   },
 ];
@@ -163,6 +189,28 @@ if (process.argv.includes("--clean")) {
   process.exit(0);
 }
 
+if (process.argv.includes("--says")) {
+  for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
+    const file = path.join(outDir, `${def.key}.json`);
+    const seed = JSON.parse(fs.readFileSync(file, "utf8")) as { show: Show; ledger: LedgerCall[]; run: RunState };
+    const byId = new Map(seed.ledger.map((c) => [c.callId, c]));
+    const nameOf = (id: string) => seed.show.entities.find((e) => e.qlooId === id)?.name;
+    let changed = 0;
+    for (const sl of seed.show.plan?.slots ?? []) {
+      for (const it of sl.items) {
+        const calls = it.evidence.map((e) => byId.get(e.callId)).filter((c): c is LedgerCall => Boolean(c));
+        if (calls.length !== it.evidence.length || !it.pick.qlooId) continue;
+        const says = calls.map((c) => qlooSaysLine(c, it.pick.qlooId!, nameOf)).join(" ");
+        if (says !== it.qlooSays) changed++;
+        it.qlooSays = says;
+      }
+    }
+    exportSeed(def.key, seed.show, seed.ledger, seed.run);
+    console.log(`${def.key}: ${changed} "Qloo says" lines rewritten`);
+  }
+  process.exit(0);
+}
+
 if (extrasOnly) {
   for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
     const file = path.join(outDir, `${def.key}.json`);
@@ -179,12 +227,17 @@ if (extrasOnly) {
     }
     const show = await getShow(seed.show.id);
     // Keep the plan and ask calls; replace map and comparison calls with the ones the new results cite.
-    const cited = new Set([...(show.heatmap?.layers.map((l) => l.evidence.callId) ?? []), ...(show.counterfactual?.slots.flatMap((sl) => [sl.rankEvidence?.callId, ...sl.rows.filter((r) => r.source === "llm").map((r) => r.callId)]) ?? [])]);
+    const cited = new Set([
+      ...(show.heatmap?.layers.map((l) => l.evidence.callId) ?? []),
+      ...(show.counterfactual?.slots.flatMap((sl) => [sl.rankEvidence?.callId, ...sl.rows.filter((r) => r.source === "llm").map((r) => r.callId)]) ?? []),
+    ]);
     const asks = new Set(show.asks.map((a) => `ask_${show.id}_${a.id}`));
     const isExtra = (c: LedgerCall) => c.runId === `map_${show.id}` || c.runId.startsWith(`cf_${show.id}_`) || (c.runId.startsWith(`ask_${show.id}_`) && !asks.has(c.runId));
     const ledger = [...seed.ledger.filter((c) => !isExtra(c)), ...(await store.list<LedgerCall>("ledger")).filter((c) => isExtra(c) && cited.has(c.callId))];
     exportSeed(def.key, show, referencedLedger(show, seed.run, ledger), seed.run);
-    console.log(`${def.key}: extras refreshed · ${show.counterfactual?.summary.llmResolved}/${show.counterfactual?.summary.llmPicks} Claude-alone picks found · map ${show.heatmap?.layers.length} layers, ${show.heatmap?.overlap.length} overlap`);
+    console.log(
+      `${def.key}: extras refreshed · ${show.counterfactual?.summary.llmResolved}/${show.counterfactual?.summary.llmPicks} Claude-alone picks found · map ${show.heatmap?.layers.length} layers, ${show.heatmap?.overlap.length} overlap`,
+    );
   }
   await getQloo().close();
   process.exit(0);
@@ -195,7 +248,7 @@ for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
   let show = await createShow(def.input, { seed: true, id: `seed-${def.key}` });
   for (const e of show.entities.filter((x) => x.status === "needs_confirmation")) {
     const want = def.choose?.[e.key];
-    const c = want ? e.candidates.find((x) => `${x.name} ${x.disambiguation ?? ""}`.toLowerCase().includes(want.toLowerCase())) : undefined;
+    const c = want ? e.candidates.find((x) => `${x.qlooId} ${x.name} ${x.disambiguation ?? ""}`.toLowerCase().includes(want.toLowerCase())) : undefined;
     if (c) show = await confirmEntity(show.id, e.key, c.qlooId);
     else if (e.kind !== "side") show = await confirmEntity(show.id, e.key, "skip");
     else throw new Error(`${def.key}: "${e.input}" is ambiguous; add a choose rule.`);
@@ -217,6 +270,8 @@ for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
   await store.put("runs", runId, { runId, showId: show.id, status: "done", events, startedAt: new Date(t0).toISOString(), finishedAt: new Date().toISOString() });
   const run: RunState = { runId, showId: show.id, status: "done", events, startedAt: new Date(t0).toISOString(), finishedAt: new Date().toISOString() };
   exportSeed(def.key, show, referencedLedger(show, run, ledger), run);
-  console.log(`${def.key}: ${show.title} · ${plan.slots.reduce((n, s) => n + s.items.length, 0)} items · ${plan.stats.qlooCalls} calls · $${plan.stats.costUsd} · ${Math.round((Date.now() - t0) / 1000)}s`);
+  console.log(
+    `${def.key}: ${show.title} · ${plan.slots.reduce((n, s) => n + s.items.length, 0)} items · ${plan.stats.qlooCalls} calls · $${plan.stats.costUsd} · ${Math.round((Date.now() - t0) / 1000)}s`,
+  );
 }
 await getQloo().close();
