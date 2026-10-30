@@ -1,177 +1,210 @@
-<img src="design/brand/house-mix-mark.svg" width="56" alt="House Mix mark: a dot-matrix house with EQ bars and one red pixel">
+<div align="center">
+
+<img src="design/brand/house-mix-mark.svg" width="88" alt="House Mix mark: a dot-matrix house with EQ bars and one red pixel">
 
 # House Mix
 
-**House Mix turns tonight's lineup into a run-of-show programmed for the crowd you actually have.** A venue GM or promoter enters the event (headliner and support, or home vs away) and the city. A team of Claude agents uses Qloo taste data to pick the walk-in playlist, openers and interval acts, food and drink partners, merch and sponsor activations, and a local guide, plus one labelled "stretch" pick per slot. Every pick carries its evidence. The operator approves, swaps or rejects each line, locks a version, exports it and plays a two-voice briefing to the crew.
+### Know your crowd before the doors open.
 
-Built for the Qloo Agentic Hackathon ("Agents, but with taste"). Five modes: **Concert, Comedy, Sports, Festival, Dining** (restaurants and bars).
+**AI agents that program the whole night (the music, the openers, the food, the sponsors) for the crowd that's actually coming, with every pick backed by a live Qloo taste call.**
 
-**Live demo (no login):** https://house-mix.vercel.app · API: https://house-mix-api-120659974854.us-central1.run.app/health
+[![Live demo](https://img.shields.io/badge/live%20demo-house--mix.vercel.app-E8271C?style=for-the-badge)](https://house-mix.vercel.app)
+[![Watch the film](https://img.shields.io/badge/watch-the%20film%20(3%3A55)-0a0a0a?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Gbt9bEk-PNs)
 
-Open a seeded show (concert, comedy night, football fixture, festival day, restaurant jazz night) to see a full plan instantly, or plan a new one. The demo runs on **live Qloo data** (the hackathon API): every seeded show was planned against it on 30 Oct 2026, and all ten tools pass `npm run qloo:verify` against the live API. Without a key, the same app runs on a schema-identical mock and says **MOCK DATA** on every screen.
+![Qloo tools](https://img.shields.io/badge/Qloo%20tools-10%2F10%20live-6250d6)
+![Picks cited](https://img.shields.io/badge/picks%20cited-182%2F182-2ea44f)
+![Unit tests](https://img.shields.io/badge/unit%20%2B%20API%20tests-34%20passing-2ea44f)
+![E2E tests](https://img.shields.io/badge/e2e%20tests-45%20passing%20%C3%97%202%20modes-2ea44f)
+![Accessibility](https://img.shields.io/badge/a11y-WCAG%202.1%20AA-2ea44f)
+![Licence](https://img.shields.io/badge/licence-MIT-lightgrey)
 
-![Landing: a point-cloud figure in a black HUD that crumbles into a crowd as you scroll](design/app/landing/hero-desktop.png)
+Built for the **Qloo Agentic Hackathon** with **Qloo Taste AI** (`qloo mcp`) and **Claude** (Claude Agent SDK).
+No sign-in: open a show and check every receipt.
 
-| Console: live trace, crowd read, approval queue | Evidence drawer: "Qloo says" vs "Our interpretation" |
+[![House Mix: the film](docs/img/film-thumbnail.jpg)](https://youtu.be/Gbt9bEk-PNs)
+
+</div>
+
+---
+
+## At a glance
+
+| | | |
+| :---: | :---: | :---: |
+| **182 / 182**<br>picks backed by a real Qloo call | **0 / 32**<br>sponsors repeated across 7 shows | **0 / 28**<br>openers bigger than the headliner |
+| **10 / 10**<br>Qloo tools, verified on the live API | **26%**<br>of Qloo's top 10 stays when a show moves city | **85%**<br>of picks carry Qloo's own reason |
+| **5**<br>kinds of night: concert, comedy, sports, festival, dining | **55 / 59**<br>Qloo-picked artists with real songs to play | **729 min**<br>of timed playlists across 5 demo shows |
+
+Every number on this page comes from scripts in [`eval/`](eval) run against **live Qloo** on 30 Oct 2026, or from the five demo shows planned on live Qloo the same day. Nothing is measured on mock data.
+
+## The problem
+
+Every night, someone at a venue decides the walk-in music, the opener, the halftime act, which food stalls go on the concourse and which sponsor runs the interval activation. They decide for a crowd they have never met, usually from last month's spreadsheet. A psych-funk crowd at the Hollywood Bowl is not a stand-up crowd at The Comedy Store, and Chelsea vs Arsenal is two crowds at once.
+
+**House Mix asks Qloo who is really coming, and a team of Claude agents programs the whole night for them.**
+
+<p align="center"><img src="docs/img/plan-live.gif" width="900" alt="A real live plan: the agents at work, every Qloo call streaming into the trace (sped up 30 times)"><br><sub>A real plan on live Qloo: the agents at work and every Qloo call streaming into the trace (sped up 30×).</sub></p>
+
+## From the bill to the last cue
+
+| | |
 | --- | --- |
-| ![Console](design/app/show-concert-full/desktop-light.png) | ![Evidence](design/app/show-concert-evidence/desktop-dark.png) |
-| ![Agent planning live](design/app/show-live-run/desktop-dark.png) | ![Confirm card for an ambiguous name](design/app/show-confirm/desktop-light.png) |
-| Run the night: show clock, now playing with a synthesized cue, crew cues by role | The venue screen |
-| ![Run the night](design/app/run-the-night/desktop-dark.png) | ![Venue screen](design/app/run-the-night/venue-screen.png) |
-| Crowd read on live Qloo: only one side, both crowds (with Qloo's similarity), only the other | Dining mode: a restaurant's jazz night, planned live |
-| ![Crowd read](design/app/show-concert-crowd/viewport-light.png) | ![Dining](design/app/show-dining/viewport-dark.png) |
-| Ask House Mix: cited answer, Critic, proposals into the queue | Without Qloo: Claude-alone picks checked and ranked by Qloo |
-| ![Ask House Mix](design/app/show-concert-ask/viewport-light.png) | ![Without Qloo](design/app/show-sports-without-qloo/viewport-dark.png) |
+| **1 · Every name confirmed.** Acts, teams, venues and cities resolve to Qloo IDs. Ambiguous names become a one-click confirm card: Dodger Stadium has a twin in Iowa, so House Mix asks instead of guessing. | ![Confirm card: which Dodger Stadium?](docs/img/intake-confirm.jpg) |
+| **2 · The crowd read.** What both fan bases share, what only one side carries, the age skew, the taste vocabulary and the momentum, straight from Qloo. | ![Crowd read](docs/img/crowd-read.jpg) |
+| **3 · Every pick with its receipts.** Open any pick: exactly what Qloo returned, our reading of it, and which act drove it ("explained by Khruangbin (0.52) and Men I Trust (0.48)"). | ![Evidence drawer](docs/img/evidence.jpg) |
+| **4 · Sponsors who fit this crowd.** Brands Qloo ranks for this exact crowd in this city, an honest crowd-vs-brand comparison, a concrete activation and a one-pager PDF for the sponsor. | ![Sponsor activations with Qloo evidence](docs/img/sponsor-compare.jpg) |
+| **5 · Ask anything.** "Which drinks brand fits the jazz-night crowd?" Answered only from Qloo, every line cited, suggestions routed to the approval queue. | ![Ask House Mix](docs/img/ask.jpg) |
+| **6 · Get the night ready.** One checklist from confirmed names to a locked plan, with the action that moves each step on. | ![Get the night ready](docs/img/readiness.jpg) |
+| **7 · Hear the night.** Every artist Qloo picked becomes real songs in playlists timed to each slot, with 30-second previews. When a set runs short, the agent goes back to Qloo for more artists like that slot's picks and keeps the call as evidence. | ![Hear the night: songs added by Qloo](docs/img/hear-the-night.jpg) |
+| **8 · Music for the whole service.** A restaurant gets arrivals, peak service and a late lounge set, each timed to the floor. | ![Dinner service playlists](docs/img/dinner-music.jpg) |
+| **9 · Hand it off.** A ready-to-send message for every partner, written from its Qloo evidence; a cue sheet PDF for the sound desk; playlist CSV and M3U for the venue's licensed music service; a run-of-show PDF. | ![Outreach pack](docs/img/outreach.jpg) |
+| **10 · Run the night.** A show clock with the real song playing for whoever is on, and every crew cue on time, re-timed when the night runs late. | ![Run the night](docs/img/run-the-night.gif) |
+
+## Real nights, planned on live Qloo
+
+Five demo shows, each planned end to end on the live Qloo API: **138 picks**, **291 Qloo calls** across 9 tools, every pick cited. Open any of them on the [live site](https://house-mix.vercel.app).
+
+| Night | Where | A few of Qloo's picks |
+| --- | --- | --- |
+| 🎸 **Khruangbin with Men I Trust** | Hollywood Bowl, Los Angeles | Opener **Brainstory**, **Thee Sacred Souls**; walk-in **Allah-Las**, **Steve Lacy**; merch with **Herschel Supply Co** and **VSCO** |
+| 🎤 **Taylor Tomlinson with Atsuko Okatsuka** | The Comedy Store, Los Angeles | Openers **Fahim Anwar**, **Annie Lederman**; interval podcasts **Bad Friends**, **Sincerely Fortune**; sponsor **Hinge** |
+| ⚽ **Chelsea FC vs Arsenal F.C.** | Stamford Bridge, London | Halftime **Professor Green**; warm-up **Pharrell Williams**, **Tinie Tempah**; sponsors **Nike Training Club**, **Burberry**, **House 99 by David Beckham** |
+| 🎪 **Victoria Park festival day** | Victoria Park, London | Discovery stage **Lexie**, **Courting**; brand village **Rough Trade**, **Fred Perry**; 8 artists added by Qloo to fill the between-sets music |
+| 🍽️ **Dishoom Shoreditch: Ezra Collective night** | Dishoom Shoreditch, London | Peak service **Alfa Mist**, **Yussef Dayes**; drinks partner **Sipsmith Gin**; late lounge **Jordan Rakei**, **Hiatus Kaiyote** |
+
+<table>
+<tr>
+<td><img src="docs/img/comedy.jpg" alt="Comedy night console"><br><sub>Comedy: openers who fit the headliner's crowd, podcasts for the interval</sub></td>
+<td><img src="docs/img/festival.jpg" alt="Festival day console"><br><sub>Festival: every stage programmed for the crowd moving between them</sub></td>
+<td><img src="docs/img/dining.jpg" alt="Restaurant service console"><br><sub>Dining: the playlist, the drinks partner, the late lounge set</sub></td>
+</tr>
+</table>
+
+## Why Qloo makes the difference
+
+We planned **7 real shows** twice on live Qloo: once with House Mix, once with the same Claude model, the same brief and no Qloo ("Claude alone"). Then we checked every pick.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/chart-mistakes-dark.svg">
+  <img src="docs/img/chart-mistakes-light.svg" alt="Mistakes per plan: House Mix 0% on all four checks; Claude alone 100%, 48%, 40% and 21%">
+</picture>
+
+| What we checked | House Mix | Claude alone |
+| --- | --- | --- |
+| Picks backed by a real Qloo call (the call exists and contains the pick) | ✅ **182 of 182** | 0 of 157 |
+| Picks that resolve to one confirmed entity | ✅ **all 182** | 76 of 157 (48%) ambiguous in Qloo |
+| Sponsors tailored to each crowd (repeats across 7 shows) | ✅ **0 of 32** repeated | 6 of 28 repeated; Spotify pitched to 4 shows |
+| Openers, interval and halftime acts smaller than the headliner | ✅ **0 of 28** too big | 4 of 10 too big |
+| Qloo's own reason on the card (which input signals drove the pick) | ✅ **155 of 182** (85%) | – |
+| Different crowds get different nights (overlap between two crowds' top 10s) | ✅ **0%** across 28 pairs | – |
+| Same Qloo call asked twice, cache bypassed | ✅ **5 of 5** identical | – |
+
+**Qloo plans for where the show is, not only who is on the bill.** Ask for the same bill in a city on another continent and, on average, only 26% of Qloo's top 10 stays; all 8 lists changed.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/chart-location-dark.svg">
+  <img src="docs/img/chart-location-light.svg" alt="Same show in another city: on average 26% of Qloo's top 10 stays; 8 of 8 lists changed">
+</picture>
+
+### House Mix vs planning by hand or with a chatbot
+
+| | House Mix | A spreadsheet | A general chatbot |
+| --- | :---: | :---: | :---: |
+| Picks drawn from real taste data for this crowd and city | ✅ | – | – |
+| A receipt on every pick, re-checkable by call ID | ✅ | – | – |
+| Ambiguous names confirmed before anything runs | ✅ | – | – |
+| Sponsors ranked for this crowd, with an honest fit comparison | ✅ | – | – |
+| Booking rules enforced (openers under the headliner, places near the venue) | ✅ | – | – |
+| Real songs, timed playlists, cue sheet, outreach, run-of-show PDF | ✅ | partly, by hand | – |
+| A live show clock with every crew cue | ✅ | – | – |
+| Five kinds of night from one tool | ✅ | – | – |
+
+Full methods, every run and the raw results: [`eval/REPORT.md`](eval/REPORT.md) and [`eval/results/`](eval/results).
+
+## How it uses Qloo
+
+All **10 tools** of `qloo mcp` do load-bearing work. The backend starts `qloo mcp` as a stdio MCP server and routes every call through one client ([`apps/api/src/qloo/client.ts`](apps/api/src/qloo/client.ts)) with a 24-hour cache keyed by the SHA-256 of the arguments, retries only when Qloo says an error is retryable, a 40-call budget per plan, a personal-data guard, and a ledger entry for every call.
+
+| Tool | What it powers in House Mix |
+| --- | --- |
+| `qloo_capabilities` | Readiness at boot and the "Qloo live" badge |
+| `qloo_find_tags` | Turns the operator's vibe words into Qloo tags |
+| `qloo_describe` | Turns every name into a confirmed ID, so every later call is exact |
+| `qloo_compare_audiences` | Home vs away, headliner vs support, act vs venue; crowd vs brand for sponsor fit; tonight vs last night |
+| `qloo_audience_demographics` | Aggregate age skew for tone and pricing |
+| `qloo_entity_tags` | The crowd's taste vocabulary |
+| `qloo_recommend` | Candidates for every slot, the wildcard, and filling a short playlist |
+| `qloo_rank` | Orders every shortlist (including the venue's own local acts) and powers swap |
+| `qloo_where_popular` | Food, drink, after-party spots and street-team areas near the venue |
+| `qloo_trends` | Rising flags on acts and the momentum chart |
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/chart-latency-dark.svg">
+  <img src="docs/img/chart-latency-light.svg" alt="Median Qloo call time per tool, from 250 live calls">
+</picture>
+
+**Evidence that can't be faked.** Agents submit picks as `{entity_id, call_id}` pairs. A hook rejects any pick whose call isn't in the run's ledger or doesn't contain the pick, and the server builds each pick's evidence from the ledger itself: tool, inputs, status, scores and Qloo's explanation. A Claude claim check then trims any sentence the evidence doesn't support.
+
+**Built against the live API.** `npm run qloo:verify` diffs every live response shape against our adapters and records fixtures ([`docs/QLOO_VERIFY.md`](docs/QLOO_VERIFY.md)): 10 of 10 tools and 11 of 11 checks pass. House Mix reads Qloo's three-list audience comparison, its explainability on every recommendation, and its trend window, and confirms ambiguous names ("London" has four Qloo localities) with the operator. [`docs/QLOO_WALKTHROUGH.md`](docs/QLOO_WALKTHROUGH.md) traces one show from request to result.
+
+## Architecture
 
 ![House Mix architecture](docs/architecture.svg)
 
-## What it does
-
-| Step | What happens | Qloo tools |
-| --- | --- | --- |
-| Intake | Event, bill, venue, city, date, capacity, house rules (budget, age rating, exclusive sponsors, local-only vendors, vibe words, local acts) | – |
-| Resolve and confirm | Every name is resolved to a Qloo ID. Anything ambiguous (try "Genesis") becomes a confirm card. Nothing is auto-picked, and nothing downstream runs on an unconfirmed entity. | `qloo_describe`, `qloo_find_tags` |
-| Crowd read | Shared vs distinct taste between the two sides (or the act vs the venue), aggregate age skew, taste vocabulary, 90-day momentum | `qloo_compare_audiences`, `qloo_audience_demographics`, `qloo_entity_tags`, `qloo_trends` |
-| Run of show | One Programmer agent per slot, each following its own Qloo chain; SponsorFit scores brands against the crowd; Wildcard adds one adjacent stretch pick per slot | `qloo_recommend`, `qloo_rank`, `qloo_where_popular`, `qloo_trends`, `qloo_compare_audiences` |
-| Critic | A PreToolUse hook rejects any submission whose citations don't check out; a Claude claim check removes or trims unsupported statements | (ledger) |
-| Approvals | Approve, swap (re-ranks the slot's remaining alternatives with a fresh `qloo_rank`), reject with a reason (a negative signal for the next plan), lock with version + timestamp | `qloo_rank` |
-| Exports | Run-of-show PDF, ops CSV, read-only share link, sponsor one-pager PDF per brand | – |
-| Briefing | ~90 s two-voice script; an evidence judge drops any line it cannot support; Cloud TTS voices it (device voices as a fallback) | (evidence) |
-| Crowd map | Where each side's taste concentrates in the show city, the areas that are strong for every side, and the top three for street teams and flyering (tile-free SVG with a table view) | `qloo_where_popular` |
-| Without Qloo | Claude plans the same brief with no tools; Qloo looks up every one of those picks by name and ranks both plans' top picks per slot for tonight's crowd. Ambiguous names are reported, never auto-picked | `qloo_describe`, `qloo_rank` |
-| Ask House Mix | Questions about the plan ("if the support act cancels, who opens?") answered by a tool-using Claude loop over the real Qloo tools. Every line cites call IDs, the Critic removes the rest, and suggested changes go to the approval queue as pending items | all nine query tools |
-| Dining mode | For restaurants and bars: the house (a Qloo place) and an optional theme or guest (an artist, film or brand). The crowd read compares the room's regulars with the theme's fans; the service gets an arrivals playlist, a peak-service playlist, drinks and pairings with sponsor fit, guest collabs and pop-ups, a late lounge set and an after-dinner guide | `qloo_describe` (place), `qloo_compare_audiences`, `qloo_recommend`, `qloo_rank`, `qloo_where_popular` |
-| Run the night | The plan played out on a show clock (real time, 60× or 300×): a timeline with a playhead, "now playing / on stage" with a synthesized audio cue styled on the crowd's Qloo tags, up next, a crew cue sheet by role (sound, stage, F&B, partnerships, front of house) that can be called and re-timed ("+5 min late"), and a full-screen venue display | (plan evidence) |
-| Hear the night | Every artist pick becomes real songs (each artist's most popular recordings in Apple's catalogue, explicit songs left out for all-ages shows), and every music slot an actual playlist timed to the minute. Press play to audition 30-second previews; Run the night plays the real preview of whoever is on. When a slot runs short, House Mix asks Qloo for more artists like that slot's picks, for this crowd and city, and fills it, keeping the call as evidence | `qloo_recommend` (fill) |
-| Hand-off | Playlist CSV and M3U for the venue's licensed music service, a crew cue sheet PDF (every slot in running order, who owns it, the timed songs), sponsor one-pagers | (plan + music) |
-| Outreach pack | A ready-to-send message for every sponsor, stall, act and local spot, written from its Qloo evidence ("ranks you #1 of 10 for the crowd that's coming, driven by fans of …"), opening in the operator's own email; House Mix never sends anything | (plan evidence) |
-| Get the night ready | A checklist from confirmed names to doors: picks approved, music ready, partners contacted, crew briefed, plan locked, with the one action that moves each step on | (show state) |
-| Compare | Tonight vs last night: one comparison across the two bills plus a plan diff | `qloo_compare_audiences` |
-| Health | Readiness badge and the MOCK DATA banner | `qloo_capabilities` |
-
-## Qloo usage
-
-All 10 tools of `qloo mcp` do load-bearing work. The backend starts `qloo mcp` as a stdio MCP server with `env: process.env` and routes every call through one client (`apps/api/src/qloo/client.ts`). That client applies a 24-hour cache keyed by the SHA-256 of the canonical arguments, retries **only** when `error.retryable` is true (at most twice), enforces a 40-call budget per plan, blocks personal data before it is sent, and records a ledger entry per call. The agents see the same tool names and JSON schemas through an in-process proxy (`apps/api/src/agent/tools.ts`).
-
-| Tool | Where | Inputs we send | What breaks without it |
-| --- | --- | --- | --- |
-| `qloo_capabilities` | Boot and the health badge | `{}` | No readiness check; the UI can't warn about a missing key |
-| `qloo_find_tags` | Intake vibe words | `query`, `limit` | Free-text vibes can't become tag URNs |
-| `qloo_describe` | Intake names; confirming a choice by ID; checking "Without Qloo" picks | `entity`, `type` | No confirmed IDs; every later call would hit `needs_input`; no way to tell which knowledge-only picks Qloo even knows |
-| `qloo_compare_audiences` | Crowd read; sponsor fit; compare page | `group_a`, `group_b` (IDs), `target_type`, `limit` | No home-vs-away split, no sponsor-fit score |
-| `qloo_audience_demographics` | Crowd read (aggregate only) | `entity`, `entity_type` | No age skew; no demographic phrase for ranking |
-| `qloo_entity_tags` | Crowd vocabulary | `entities`, `entity_type` | No "why" vocabulary for the crowd |
-| `qloo_recommend` | Every slot's candidates; wildcards | `target_type`, `signals` (IDs), `signal_tags` (URNs), `signal_location`, `filter_location`, `exclude_tags` | No candidates beyond what the operator already knows |
-| `qloo_rank` | Ordering each slot; local acts; swap; ranking House Mix vs Claude-alone picks | `options` (≤10 IDs), `option_type`, `signals`, `signal_location`, `demographic` | Shortlists stay unordered; swap has nothing to re-rank with |
-| `qloo_where_popular` | Food & drink and local guide; the crowd map (one call per side) | `entity`, `entity_type`, `within` (city), `limit` | The plan isn't specific to the city; no street-team areas |
-| `qloo_trends` | Rising flags on acts; momentum chart | `entities` (1–5), `entity_type`, a 90-day `start_date`/`end_date` window ending where Qloo's trend data ends | No momentum signal for booking risk |
-
-Status handling follows the kit. `ok`: use the results. `empty`: "no Qloo signal", never invented. `needs_input`: a confirm card at intake, and the agents are told never to pick a candidate. `partial`/`degraded`: used with a "reduced confidence" chip and the summary. `error`: retried only when retryable; otherwise the recovery text is shown and the slot is marked "needs manual input". The demographic phrase sent back to Qloo is derived from Qloo's own age distribution, and it is age-only.
-
-### What the live API taught us
-
-The adapters were written against the harness source and a loopback stub before the key arrived; `npm run qloo:verify` then diffed every live shape against them ([`docs/QLOO_VERIFY.md`](docs/QLOO_VERIFY.md), fixtures in `fixtures/live/`, unit tests in `apps/api/test/live-fixtures.test.ts`). Nine of eleven checks passed first time. The rest, and what changed:
-
-- **Compare is three lists, not per-concept affinities.** Live `compare_audiences` returns the concepts both audiences share (each with a similarity score) and the concepts only one side carries. The crowd card is now "Only A / Both crowds / Only B". Cross-domain pairs (a music crowd vs a brand, two football clubs) often share no tags, so sponsor fit is left empty rather than shown as zero, and Qloo's rank orders those brands.
-- **Trend data lags.** Windows ending after mid-July 2026 came back empty, and points arrive newest first. The window now ends 105 days back (`HM_TREND_LAG_DAYS`) and points are sorted by date.
-- **Recommendations explain themselves.** Live `recommend` returns which input signal drove each pick. Every "Qloo says" line now cites it: "explained by Khruangbin (0.52) and Men I Trust (0.48)".
-- **Real names are ambiguous.** "London" has four Qloo localities with no location details, and "Arsenal FC" matches an artist and a place in Luanda (the club is "Arsenal F.C."). The confirm card shows each candidate's description, tag category or popularity, and nothing is auto-picked; the seeds and the eval record every choice (`apps/api/scripts/seed.ts`, `eval/data/choices.json`).
-
-`docs/QLOO_CONTRACT.md` documents the exact runtime contract of `@qloo/qloo-harness` 0.1.26. `docs/QLOO_WALKTHROUGH.md` is a redacted request-to-result trace for one show.
-
-## Results
-
-All numbers come from scripts in `eval/` that write `eval/results/*.json`; `eval/REPORT.md` is regenerated from them. Metrics are never computed from mock data.
-
-Measured on live Qloo on 30 Oct 2026 over 7 held-out real shows (2025 and January 2026 concerts, comedy and football/baseball), against **L0**: the same model with the same brief and no Qloo.
-
-| Claim | House Mix | L0 (Claude alone) | Notes |
-| --- | --- | --- | --- |
-| Live contract: every Qloo tool our adapters read | 10 of 10 tools, 11 of 11 checks | – | `npm run qloo:verify` ([docs/QLOO_VERIFY.md](docs/QLOO_VERIFY.md)) |
-| Picks with a valid Qloo citation (the call exists and its results contain the pick) | **182 of 182** | 0 (no citations) | the Critic removed 23 unsupported items before they reached a plan |
-| Picks ambiguous in Qloo (a person must choose before anything can use them) | 0 (all confirmed IDs) | **76 of 157 (48%)** | L0 invented nothing: live Qloo found all 157 of its picks |
-| Blind A/B, automated judge (Claude Opus, both orders), first run | 0–7 | – | before the fixes below; House Mix workers on Haiku |
-| Blind A/B, automated judge, after the fixes | **1–5, 1 tie** | – | mean fit 2.36 vs 3.79 of 5; openers now win 3–1; walk-in and sponsors still lose |
-| Blind A/B, human raters | pending | – | the pairs are live at `/rate` |
-| Support act in the top 10 (setlist.fm backtest) | not run | – | needs a setlist.fm key |
-| Opener, interval and halftime acts bigger than the headliner (Qloo popularity) | **0 of 28** (first run: 14 of 28) | 4 of 10 it could pin down | the fix is a rule the server enforces with Qloo's popularity |
-| Sponsors repeated from one show to another | **0 of 32** | 6 of 28 (Spotify on 4 of 7 shows) | Qloo ranks brands per crowd; Claude alone falls back on defaults |
-| Overlap between Qloo's top-10 artists for two different crowds | **0%** across 28 pairs | – | change the bill and the picks change completely |
-| The same bill asked for in a city on another continent (London ↔ Los Angeles) | **26%** overlap on average; 8 of 8 lists changed | – | Qloo answers for where the show is, not only for who is on the bill |
-| The same Qloo call asked twice, cache bypassed | **5 of 5** identical, in the same order | – | a cited call ID can be re-run and checked |
-| Picks that carry Qloo's own reason (which input signals drove them) | **155 of 182 (85%)** | 0 (its reasons are its own prose) | the "why" on each card comes from Qloo's explainability |
-
-![Tested on live Qloo: the landing page's results strip](design/app/landing/tested-live.png)
-
-The last six rows are free checks with no Claude calls (`npm run eval:qloo`, method in [`eval/REPORT.md`](eval/REPORT.md)).
-
-**The negative result, plainly:** on taste alone, a judge prefers Claude's own picks. Claude alone names the anthems a specific fan base sings and the obvious category sponsors; Qloo's ranking surfaces broader or less expected names, and our explanations still read like ranking output. What Claude alone can't do is say where any pick came from: half its picks are names Qloo can't pin down without a person choosing, and none of them carry evidence. The first judge run also found real bugs (openers bigger than the headliner, bars across the city, rival clubs as sponsors); each became a rule the server enforces, and the openers slot went from losing to winning.
-
-See [`eval/REPORT.md`](eval/REPORT.md) for methods and the negative result.
+| Layer | What runs there |
+| --- | --- |
+| **Agents** | Claude Agent SDK: a planner, a crowd reader, one programmer per slot in parallel, sponsor fit and a wildcard; the Anthropic SDK for Ask House Mix, the Critic and the crew briefing |
+| **Qloo** | `qloo mcp` over stdio, all 10 tools, one client with cache, budget, guard and ledger |
+| **API** | Fastify on Cloud Run, Firestore, Cloud Storage, Cloud Text-to-Speech; react-pdf for every PDF |
+| **Web** | Next.js 16 on Vercel, shadcn/ui, Tailwind v4, Recharts, Web Audio for Run the night |
 
 ## How it's tested
 
-| Layer | What it checks | Where |
-| --- | --- | --- |
-| Live contract | All ten Qloo tools against the live API; every adapter reads the live shapes (11 of 11 checks) | `npm run qloo:verify` → [docs/QLOO_VERIFY.md](docs/QLOO_VERIFY.md) |
-| Unit and API (28) | The adapters on recorded live Qloo responses, the evidence gate (an opener bigger than the headliner is rejected), the music builder with a fake catalogue and a fake Qloo (explicit songs out for all ages, a short slot filled from Qloo with the call kept), the API over a real MCP connection to the mock | `npm test` |
-| End to end (45) and accessibility | Every flow in a real browser, in mock mode and against live Qloo: intake and confirm cards, the plan console, exports, Run the night, Hear the night (a real preview plays), the outreach pack and the readiness checklist; axe WCAG 2.1 AA in light and dark | `npm run test:e2e` (`QLOO_MODE=live` for live) |
-| Evals | Citations, ambiguity, an automated blind judge in both orders, and the free Qloo checks above; human A/B ratings at `/rate` | `eval/` → [eval/REPORT.md](eval/REPORT.md) |
-| Production | The hosted site loads, says "Qloo live", reaches the API, and a real Qloo call answers | after every deploy |
+| Layer | Count | What it checks |
+| --- | :---: | --- |
+| **Live contract** | **11 / 11** checks · **10 / 10** tools | Every Qloo tool against the live API; every adapter reads the live shapes (`npm run qloo:verify`) |
+| **Unit and API** | **34** passing | Adapters on recorded live Qloo responses, the evidence gate, the music builder and its Qloo fill loop, eval maths, and the API over a real MCP connection (`npm test`) |
+| **End to end** | **45** passing, in mock mode **and** against live Qloo | Every flow in a real browser: intake and confirm cards, the plan console, exports, Ask, Hear the night (a real preview plays), outreach, readiness and Run the night (`npm run test:e2e`) |
+| **Accessibility** | WCAG 2.1 AA | axe-core on every page, desktop and mobile, light and dark |
+| **Evaluation** | 7 real shows · 14 plans · 339 picks checked | Citations, ambiguity, booking realism, crowd specificity, location, repeatability and explainability on live Qloo ([`eval/REPORT.md`](eval/REPORT.md)) |
+| **Production** | after every deploy | The hosted site loads, shows "Qloo live", reaches the API and plays a real preview |
 
-## Run it from a clean machine
+## Run it yourself
 
-Requirements: Node.js 22.19 or newer, an Anthropic API key. A Qloo key is optional (the mock runs without it).
+Requirements: Node.js 22.19 or newer and an Anthropic API key. A Qloo key is optional: without one, a schema-identical mock runs and every screen says **MOCK DATA**.
 
 ```sh
-git clone <this repo> house-mix && cd house-mix
+git clone https://github.com/Prashant-thakur77/house-mix && cd house-mix
 npm install
-cp .env.example .env.local          # then set ANTHROPIC_API_KEY (and QLOO_API_KEY when you have it)
-npm run dev:api                     # API on :8787 (QLOO_MODE=mock by default; seeds load automatically)
+cp .env.example .env.local          # set ANTHROPIC_API_KEY (and QLOO_API_KEY for live Qloo)
+npm run dev:api                     # API on :8787, seeds load automatically
 npm run dev:web                     # console on :3000
 ```
 
-Open http://localhost:3000 and pick a seeded show, or plan a new one.
-
-Switch to live Qloo:
+Live Qloo:
 
 ```sh
-npm install --global @qloo/qloo-harness   # 0.1.26 or newer (qloo:verify installs it locally if missing)
-# put QLOO_API_KEY=... in .env.local
-npm run qloo:verify                       # diffs live schemas/envelopes against the mock, records fixtures/live, sets QLOO_MODE=live
-QLOO_MODE=live npx tsx --env-file=.env.local apps/api/scripts/seed.ts   # live seeds
-npm run eval:all                          # needs SETLISTFM_API_KEY for the backtest
+npm install --global @qloo/qloo-harness   # 0.1.26 or newer
+npm run qloo:verify                       # checks every live shape and records fixtures
+QLOO_MODE=live npx tsx --env-file=.env.local apps/api/scripts/seed.ts
+npm run eval:qloo                         # the free Qloo checks above
 ```
 
-Tests: `npm run typecheck && npm test` (unit and API tests over a real stdio MCP connection to the mock) and `npm run test:e2e` (Playwright end-to-end plus axe WCAG 2.1 AA, desktop and mobile, light and dark).
-
-Deploy: `infra/secrets.sh`, `infra/deploy-api.sh` (Cloud Run, min instances 1, secrets from Secret Manager, Firestore, Cloud Storage, Text-to-Speech) and `infra/deploy-web.sh` (Vercel).
+Tests: `npm run typecheck && npm test && npm run test:e2e`. Deploy: `infra/deploy-api.sh` (Cloud Run) and `infra/deploy-web.sh` (Vercel); see [`docs/GO_LIVE.md`](docs/GO_LIVE.md).
 
 ## Repository
 
 | Path | What it holds |
 | --- | --- |
-| `apps/api` | Fastify API, Qloo client and mock server, agent pipeline, Critic, briefing, exports |
-| `apps/web` | Next.js console |
-| `packages/shared` | Zod schemas, mode templates, guardrails, demographic parser |
-| `eval` | A/B kit, setlist.fm backtest, evidence rate, report generator |
-| `fixtures` | Mock fixtures (fictional), seeded demo shows, live fixtures after `qloo:verify` |
-| `design` | Reference screenshots and scores, the design direction, app screenshots |
-| `docs` | Contract, walkthrough, Devpost write-up, video script, friction and refine logs |
+| [`apps/api`](apps/api) | Fastify API, Qloo client and mock server, the agent pipeline, Critic, music, briefing and exports |
+| [`apps/web`](apps/web) | The Next.js console, Run the night and the landing page |
+| [`packages/shared`](packages/shared) | Zod schemas, mode templates, guardrails |
+| [`eval`](eval) | The evaluation kit, the free Qloo checks and the report generator |
+| [`fixtures`](fixtures) | The five live demo shows, mock fixtures and live Qloo fixtures |
+| [`video`](video) | The film, built from code: recordings, narration, drawn scenes and the edit |
+| [`docs`](docs) | Qloo contract and walkthrough, Devpost write-up, go-live steps, [scope notes](docs/LIMITATIONS.md) |
 
-## Limitations
-
-- Qloo results describe aggregate cultural affinities of audiences. They say nothing about any individual attendee, and an affinity is a relative signal, not a probability that tonight's crowd will like or buy something.
-- Scores from separate Qloo calls are not comparable; each ranking only orders the options it was given.
-- Coverage is uneven: local acts, small vendors and working comedians can have thin or no Qloo signal. They are labelled, never invented.
-- Demographic charts are aggregate distributions, used only for tone and pricing, never to admit, exclude or target anyone. House Mix refuses eligibility-type requests and rejects personal data at intake and before every Qloo call.
-- The sponsor-fit number is our formula (the mean of Qloo's similarity scores over the concepts both audiences share), not a Qloo score. Live Qloo often finds no shared concepts between a music or sports crowd and a brand; those brands get no fit score, and Qloo's rank for the crowd orders them instead.
-- Live trend data lags: on 30 Oct 2026 Qloo returned empty series for any window ending after mid-July 2026, so the momentum window ends 105 days back, and the series we saw were flat. A flat line is shown as flat, not as a signal.
-- In mock mode every Qloo result is fictional, and the UI says so on every screen.
-- "Without Qloo" has Qloo rank House Mix's own picks against Claude-alone picks, so a House Mix lead there is expected and is not an independent quality test. The blind human A/B in `eval/` is the quality test.
-- The crowd map shows where an act's taste concentrates by area (Qloo heatmap cells), centred on the returned areas rather than the venue; it is not a map of where attendees live.
-- Run the night's audio is synthesized in the browser (Web Audio) in a style chosen from the crowd's Qloo tags; it is never the actual recording, and the page says so.
-- Ask House Mix answers only from Qloo calls, so questions Qloo can't speak to (prices, opening hours, walking distance) come back as "check this yourself" rather than a guess.
+Charts on this page: `python3 docs/charts.py` redraws them from `eval/results/`.
 
 ## Licence
 
