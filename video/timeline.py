@@ -33,15 +33,15 @@ def scene(name: str, ids: list[str], tail: float) -> dict:
     return {"name": name, "start": 0.0, "lines": out, "dur": round(t - GAP + tail, 2)}
 
 
-scenes = [scene("turn", ["n9"], 0.7), scene("proof", ["n27"], 1.2), scene("recap", ["n29"], 0.8)]
-arch = scene("arch", ["n22", "n23", "n24", "n25"], 2.0)
+scenes = [scene("proof", ["n27"], 1.2), scene("recap", ["n29"], 0.8)]
+arch = scene("arch", ["n22", "n24"], 2.0)
 at = {l["id"]: l["start"] for l in arch["lines"]}
 arch["cues"] = {
     "intake": round(at["n22"] + said("n22", "name", 1.2), 2),
-    "agents": round(at["n23"] + said("n23", "agents", 0.1), 2),
-    "qloo": round(at["n23"] + said("n23", "clue", 1.1), 2),
+    "agents": round(at["n22"] + said("n22", "agents", 3.4), 2),
+    "qloo": round(at["n22"] + said("n22", "tools", 4.8), 2),
     "gate": round(at["n24"] + said("n24", "gate", 0.2), 2),
-    "you": round(at["n25"] + said("n25", "person", 0.6), 2),
+    "you": round(at["n24"] + said("n24", "person", 2.6), 2),
 }
 scenes += [arch, {"name": "judge", "start": 0.0, "lines": [], "dur": 6.5, "cues": {}}, {"name": "end", "start": 0.0, "lines": [], "dur": 6.5, "cues": {}}]
 

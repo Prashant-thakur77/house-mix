@@ -6,39 +6,57 @@ How to record
 - Light in front of you (window or lamp behind the camera), quiet room, plain wall.
 - Look into the lens, not at the screen.
 - Leave 2 seconds of silence before and after each line.
-- Say each line twice (two takes). This film is energetic: stand if you can, smile on
-  the first line, lean in on "the part sponsors care about", and hit the last words of
-  each line clearly. Fast is fine; rushed is not.
+- Say each line twice (two takes). Energetic: stand if you can, smile on line 1,
+  lean in on line 5, speed up a little through lines 8 to 10, and land the last word
+  of every line clearly. Fast is fine; rushed is not.
 - Say the number first, softly ("line one"), so I can find it.
-- One file is fine for everything. Save it in ~/Downloads with "housemix-face" in the
-  name (housemix-face.mp4 or .mov) and tell me when it is there.
+- One file is fine for everything. Save it in ~/Downloads as housemix-face.mov
+  (or .mp4) and tell me when it is there.
 
-The lines
+THE PROBLEM AND YOU
+1.  I'm Prashant, and I built House Mix for the people who run the room.
 
-1.  I'm Prashant. I build for the people who run the room.
+2.  Every night they guess the music, the opener, the bar and the sponsor,
+    for a crowd they've never met.
 
-2.  They plan every night for a crowd they've never met.
-
-3.  So I built something that asks Qloo who's really coming.
+3.  So House Mix asks Qloo who's really coming.
+    (Qloo is said "clue".)
 
 4.  This is House Mix.
-    (Say it like a reveal. Short pause before "House Mix".)
+    (A reveal: a short pause before "House Mix".)
 
+SPONSORS
 5.  Now, the part sponsors care about.
 
 6.  If you're the brand paying for tonight, here's how you know you belong.
 
-7.  We tested it the hard way: seven real shows, against Claude on its own.
+EVERY KIND OF NIGHT (quick, one breath each)
+7.  And it isn't only stadiums.
 
-8.  And on taste alone, a blind judge still preferred Claude.
+8.  A comedy club gets openers who fit the headliner's crowd,
+    and podcasts for the interval.
+
+9.  A festival gets every stage programmed for the crowd moving between them.
+
+10. And a restaurant gets its whole service: the playlist, the drinks partner,
+    the late lounge set.
+
+11. Five kinds of nights. One crowd read. Every pick backed by Qloo.
+
+PROOF, HONESTLY
+12. We tested it the hard way: seven real shows, against Claude on its own.
+
+13. And on taste alone, a blind judge still preferred Claude.
     We're showing you that too.
-    (Say this one straight and confident. Honesty is the point.)
+    (Straight and confident. Honesty is the point.)
 
-9.  Doors open at seven. This time, the room is ready.
+THE CLOSE
+14. Doors open at seven. This time, the room is ready.
 
-10. House Mix is live. Open a show and check every receipt.
+15. House Mix is live. Open a show and check every receipt.
 
-About 45 seconds of talking in total. The narrator explains the screens between your lines.
+About 75 seconds of talking in total. The narrator explains the screens between
+your lines: the live site, the sponsor flow in detail, Run the night, the 3D
+"under the hood" and the numbers.
 
-If you can't record video: voice only is fine (phone voice memo, same rules, quiet room).
-I'll put your voice over the product instead of a face bubble.
+If you can't record video: voice only is fine (phone voice memo, same rules).

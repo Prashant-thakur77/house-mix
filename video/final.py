@@ -43,19 +43,25 @@ GAP = 0.45  # between two narrator lines in one segment
 VOICE_CLEAN = "afftdn=nr=12:nf=-38:tn=1,deesser=i=0.4:f=0.55"
 SFX = f"{HOME}/sfx"
 QR = f"{STILLS}/qr.png"
+TARGET = 178.0  # seconds: under the three-minute rule with a little room
 
 # His lines, as written in FACE_SCRIPT.txt.
 SCRIPT = {
-    1: "I'm Prashant. I build for the people who run the room.",
-    2: "They plan every night for a crowd they've never met.",
-    3: "So I built something that asks Qloo who's really coming.",
+    1: "I'm Prashant, and I built House Mix for the people who run the room.",
+    2: "Every night they guess the music, the opener, the bar and the sponsor, for a crowd they've never met.",
+    3: "So House Mix asks Qloo who's really coming.",
     4: "This is House Mix.",
     5: "Now, the part sponsors care about.",
     6: "If you're the brand paying for tonight, here's how you know you belong.",
-    7: "We tested it the hard way: seven real shows, against Claude on its own.",
-    8: "And on taste alone, a blind judge still preferred Claude. We're showing you that too.",
-    9: "Doors open at seven. This time, the room is ready.",
-    10: "House Mix is live. Open a show and check every receipt.",
+    7: "And it isn't only stadiums.",
+    8: "A comedy club gets openers who fit the headliner's crowd, and podcasts for the interval.",
+    9: "A festival gets every stage programmed for the crowd moving between them.",
+    10: "And a restaurant gets its whole service: the playlist, the drinks partner, the late lounge set.",
+    11: "Five kinds of nights. One crowd read. Every pick backed by Qloo.",
+    12: "We tested it the hard way: seven real shows, against Claude on its own.",
+    13: "And on taste alone, a blind judge still preferred Claude. We're showing you that too.",
+    14: "Doors open at seven. This time, the room is ready.",
+    15: "House Mix is live. Open a show and check every receipt.",
 }
 FACE = next(iter(sorted(glob.glob(f"{HOME}/from-mac/face.*"))), "")
 WORDS = f"{HOME}/build/face-words.json"
@@ -300,6 +306,9 @@ def m(clip: str, name: str, d: float = 0.0) -> float:
     return marks(clip)[name] + d
 
 
+CROWD = [(-1.0, 60.0, 1.45, 960, 372)]  # a held push-in (it starts already at full zoom)
+
+
 def build_edl() -> list[dict]:
     hero, intake, crowd, sponsor, night, plan = (marks(c) for c in ("hero", "intake", "crowd", "sponsor", "night", "plan"))
     tl = {s["name"]: s for s in json.load(open(f"{HOME}/build/timeline.json"))["scenes"]}
@@ -309,20 +318,18 @@ def build_edl() -> list[dict]:
     plan_a, plan_b = plan["build"] - 0.5, plan["ready"] + 1.5
     plan_speed = round((plan_b - plan_a) / 7.5, 1)
     return [
-        # 1. The opening: doors at 6:58, the questions, the sponsor's question, then the turn.
+        # 1. The opening: doors at 6:58, the questions, the sponsor's question; then Prashant, and the turn.
         seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=4.6, nar=["n1"], fade_in=0.4),
-        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=4.6, b=hero["crowd"] - 1.5, nar=["n2"]),
-        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=hero["crowd"] - 1.5, b=hero["crowd"] + 1.5, nar=["n3"]),
-        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=hero["crowd"] + 1.5, b=hero["end"], nar=["n4"], sfx=[(1.2, "riser", 0.3)]),
+        # Pushed in on the crowd, so the landing's own caption at the bottom stays out of frame.
+        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=4.6, b=hero["crowd"] - 0.5, speed=1.5, nar=["n2"], zoom=CROWD),
+        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=hero["crowd"] - 0.5, b=hero["end"], nar=["n3"], zoom=CROWD, sfx=[(2.4, "riser", 0.3)]),
         face(1, label="Prashant · built House Mix", sfx=[(0.0, "hit", 0.45)]),
         face(2),
         face(3),
         seg(kind="screen", src=f"{CLIPS}/finale.mp4", a=0.5, b=4.0, voice=4, sfx=[(0.1, "hit", 0.6)]),
-        seg(kind="screen", src=f"{CLIPS}/gfx-turn.mp4", a=0.0, b=tl["turn"]["dur"], nar=["n9"]),
         # 2. The live loop: a fixture, every name to Qloo, the twin in Iowa, a real plan, the crowd, the evidence.
-        seg(kind="screen", src=f"{CLIPS}/intake.mp4", a=0.4, b=intake["resolve"] + 0.4, speed=1.3, nar=["n10"], label=live, shade=True),
-        seg(kind="screen", src=f"{CLIPS}/intake.mp4", a=intake["confirm"] - 0.4, b=intake["end"], nar=["n11"], shade=True,
-            zoom=[(0.6, 9.0, 1.4, 900, 560)], sfx=[(2.6, "click", 0.5)]),
+        seg(kind="screen", src=f"{CLIPS}/intake.mp4", a=0.4, b=intake["end"], speed=2.2, nar=["n10"], label=live, shade=True,
+            zoom=[((intake["confirm"] - 0.4) / 2.2, (intake["end"] - 0.4) / 2.2 + 0.5, 1.4, 900, 560)], sfx=[((intake["venueConfirmed"] - 0.4) / 2.2, "click", 0.5)]),
         seg(kind="screen", src=f"{CLIPS}/plan.mp4", a=plan_a, b=plan_b, speed=plan_speed, nar=["n12"], shade=True,
             label=f"A real live plan · live Qloo · local build of the same app · sped up ×{plan_speed:g}"),
         seg(kind="screen", src=f"{CLIPS}/crowd.mp4", a=crowd["crowd"] - 0.3, b=crowd["drawer"] - 0.8, nar=["n13"], shade=True,
@@ -337,26 +344,30 @@ def build_edl() -> list[dict]:
             zoom=[(0.4, 6.5, 1.6, 1620, 430)]),
         seg(kind="screen", src=f"{CLIPS}/sponsor.mp4", a=sponsor["compare"] - 0.2, b=sponsor["export"] - 0.4, nar=["n18"], shade=True,
             zoom=[(0.4, 7.5, 1.6, 1620, 560)], sfx=[(4.2, "click", 0.4)]),
-        seg(kind="screen", src=f"{CLIPS}/sponsor.mp4", a=sponsor["slot"] + 0.6, b=sponsor["evidence"] - 0.5, nar=["n19"], shade=True,
-            zoom=[(0.2, 5.5, 1.8, 760, 540)]),
-        seg(kind="screen", src=f"{CLIPS}/onepager.mp4", a=0.0, b=5.0, nar=["n20"], label="Real output · the sponsor one-pager (PDF)"),
-        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["end"], nar=["n21"], shade=True,
-            label="Run the night · cues for the partnerships crew", zoom=[(0.4, 9.0, 1.4, 1460, 620)], sfx=[(night["called"] - night["play"] + 0.3, "click", 0.6)]),
-        # 4. Under the hood: the 3D stack, its four lines landing where the layers rise.
+        seg(kind="screen", src=f"{CLIPS}/onepager.mp4", a=0.0, b=5.5, nar=["n20"], label="Real output · the sponsor one-pager (PDF)"),
+        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.6, speed=1.2, nar=["n21"], shade=True,
+            label="Run the night · cues for the partnerships crew", zoom=[(0.4, 9.0, 1.4, 1460, 620)], sfx=[((night["called"] - night["play"] + 0.3) / 1.2, "click", 0.6)]),
+        # 4. Every kind of night: comedy, a festival, a restaurant, each a seeded show planned on live Qloo.
+        seg(kind="screen", src=f"{CLIPS}/modes.mp4", a=0.4, b=7.4, speed=1.4, pip=7, shade=True, label="Five modes · the intake"),
+        seg(kind="screen", src=f"{CLIPS}/comedy.mp4", a=0.4, b=7.6, speed=1.25, pip=8, shade=True, label="Comedy · Taylor Tomlinson at The Comedy Store", zoom=[(0.2, 9.0, 1.3, 760, 520)]),
+        seg(kind="screen", src=f"{CLIPS}/festival.mp4", a=0.4, b=7.6, speed=1.25, pip=9, shade=True, label="Festival · Victoria Park, London", zoom=[(0.2, 9.0, 1.3, 760, 520)]),
+        seg(kind="screen", src=f"{CLIPS}/dining.mp4", a=0.4, b=10.8, speed=1.45, pip=10, shade=True, label="Dining · Dishoom Shoreditch, Ezra Collective jazz night", zoom=[(0.2, 12.0, 1.3, 760, 520)]),
+        seg(kind="screen", src=f"{CLIPS}/gfx-turn.mp4", a=0.0, b=3.0, pip=11, sfx=[(0.1, "hit", 0.4)]),
+        # 5. Under the hood: the 3D stack, its lines landing where the layers rise.
         seg(kind="screen", src=f"{CLIPS}/gfx-arch.mp4", a=0.0, b=arch["dur"], nar=[(l["id"], l["start"]) for l in arch["lines"]], keep_speed=True),
-        # 5. Proof, and the honest result.
-        face(7),
+        # 6. Proof, and the honest result.
+        face(12),
         seg(kind="screen", src=f"{CLIPS}/gfx-proof.mp4", a=0.0, b=tl["proof"]["dur"], nar=["n27"], keep_speed=True, sfx=[(3.0, "hit", 0.4), (5.6, "hit", 0.3)]),
-        seg(kind="screen", src=f"{CLIPS}/gfx-judge.mp4", a=0.0, b=6.5, pip=8),
-        # 6. The recap, the callback, the end card.
+        seg(kind="screen", src=f"{CLIPS}/gfx-judge.mp4", a=0.0, b=6.5, pip=13),
+        # 7. The recap, the callback, the end card.
         seg(kind="screen", src=f"{CLIPS}/gfx-recap.mp4", a=0.0, b=tl["recap"]["dur"], nar=["n29"], keep_speed=True, sfx=[(-1.4, "riser", 0.35), (0.3, "hit", 0.4)]),
-        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=5.0, pip=9),
-        seg(kind="screen", src=f"{CLIPS}/gfx-end.mp4", a=0.0, b=6.0, voice=10, fade_out=1.2, sfx=[(0.0, "hit", 0.5)]),
+        seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=5.0, pip=14),
+        seg(kind="screen", src=f"{CLIPS}/gfx-end.mp4", a=0.0, b=6.0, voice=15, fade_out=1.2, sfx=[(0.0, "hit", 0.5)]),
     ]
 
 
-CHAPTERS = {0: "Doors at 6:58", 9: "Live on the site", 14: "For sponsors", 21: "Under the hood", 22: "Proof", 25: None}
-XFADE = {4: 0.4, 7: 0.3, 9: 0.4, 14: 0.4, 21: 0.4, 22: 0.4, 25: 0.35, 27: 0.4}
+CHAPTERS = {0: "Doors at 6:58", 7: "Live on the site", 11: "For sponsors", 17: "Every kind of night", 22: "Under the hood", 23: "Proof", 26: None}
+XFADE = {3: 0.4, 6: 0.3, 7: 0.4, 11: 0.4, 17: 0.4, 22: 0.4, 23: 0.4, 26: 0.35, 28: 0.4}
 
 
 def chapters(edl: list[dict]) -> list[tuple[str | None, int, bool]]:
@@ -567,8 +578,8 @@ def main() -> None:
         starts.append(t)
         t += lengths[i]
     total = t
-    turn = starts[7]
-    recap = starts[25]
+    turn = starts[6]
+    recap = starts[26]
     end = starts[-1]
     json.dump({"total": total, "starts": starts, "chapters": {CHAPTERS[i]: starts[i] for i in CHAPTERS if CHAPTERS[i]}}, open(f"{B}/cut.json", "w"), indent=1)
     subprocess.run([os.path.expanduser("~/Videos/debrief/.venv-music/bin/python"), os.path.join(os.path.dirname(os.path.abspath(__file__)), "music.py"),
@@ -597,11 +608,18 @@ def main() -> None:
     graph.append(
         f"[voices]asplit=2[voice][key];[{n}:a]volume=0.34,equalizer=f=2500:t=q:w=1.2:g=-4,atrim=0:{total:.3f}[m];"
         "[m][key]sidechaincompress=threshold=0.02:ratio=9:attack=20:release=450[duck];"
-        f"[{n + 1}:a]aresample=48000[fx];[voice][duck][fx]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11[aout]"
+        f"[{n + 1}:a]aresample=48000[fx];[voice][duck][fx]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-15:TP=-2:LRA=11,alimiter=limit=0.79:level=false[aout]"
     )
+    # The rules allow under three minutes: the whole cut plays up to 4% faster to land at TARGET; atempo keeps pitch.
+    pace = min(1.04, max(1.0, total / TARGET))
+    if pace > 1.0:
+        graph.append(f"{v}setpts=PTS/{pace:.4f},fps={FPS}[vp];[aout]atempo={pace:.4f}[ap]")
+        v, aout = "[vp]", "[ap]"
+    else:
+        aout = "[aout]"
     final = f"{OUT}/HouseMix-{'preview' if PREVIEW else 'film'}.mp4"
     inputs = [x for f in files for x in ("-reinit_filter", "0", "-i", f)] + ["-i", music] + ["-i", fx]
-    run(*inputs, "-filter_complex", ";".join(graph), "-map", v, "-map", "[aout]", "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-tune", "film",
+    run(*inputs, "-filter_complex", ";".join(graph), "-map", v, "-map", aout, "-c:v", "libx264", "-preset", "slow", "-crf", "16", "-tune", "film",
         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", final)
     run("-i", final, "-vf", "scale=1280:720", "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-c:a", "aac", "-b:a", "128k", final.replace(".mp4", "-720p.mp4"))
     print(f"wrote {final} ({probe(final):.1f} s)")
