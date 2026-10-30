@@ -102,7 +102,12 @@ export const api = {
   heatmap: (id: string, force = false) => post<Heatmap>(`/shows/${id}/heatmap`, { force }),
   counterfactual: (id: string, force = false) => post<Counterfactual>(`/shows/${id}/counterfactual`, { force }),
   addProposal: (id: string, askId: string, proposalId: string) => post<Show>(`/shows/${id}/asks/${askId}/proposals/${proposalId}/add`),
-  compare: (a: string, b: string) => req<CompareResult>(`/compare?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`),
+  // Qloo can return one concept name under two tag categories; the table lists each name once per side.
+  compare: (a: string, b: string) =>
+    req<CompareResult>(`/compare?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`).then((r) => ({
+      ...r,
+      comparison: { ...r.comparison, rows: r.comparison.rows.filter((x, i, all) => all.findIndex((y) => y.side === x.side && y.name.toLowerCase() === x.name.toLowerCase()) === i) },
+    })),
   pairs: () => req<{ pairs: BlindPair[]; note?: string }>("/eval/pairs"),
   rate: (rating: unknown) => post<{ ok: true }>("/eval/ratings", rating),
 };

@@ -10,7 +10,17 @@ import { Input } from "@/components/ui/input";
 
 const KIND_LABEL: Record<Entity["kind"], string> = { side: "On the bill", venue: "Venue", city: "City", tag: "Vibe tag", local_act: "Local act", sponsor: "Exclusive sponsor" };
 
-export function EntityConfirmCard({ entity, onConfirm, onRefine, onSkip }: { entity: Entity; onConfirm: (choice: string) => Promise<void>; onRefine: (text: string) => Promise<void>; onSkip?: () => Promise<void> }) {
+export function EntityConfirmCard({
+  entity,
+  onConfirm,
+  onRefine,
+  onSkip,
+}: {
+  entity: Entity;
+  onConfirm: (choice: string) => Promise<void>;
+  onRefine: (text: string) => Promise<void>;
+  onSkip?: () => Promise<void>;
+}) {
   const [choice, setChoice] = useState<string>();
   const [busy, setBusy] = useState(false);
   const [refine, setRefine] = useState(entity.status === "not_found" ? entity.input : "");
@@ -24,6 +34,10 @@ export function EntityConfirmCard({ entity, onConfirm, onRefine, onSkip }: { ent
     }
   };
   const needs = entity.status === "needs_confirmation";
+  // Qloo sometimes returns several same-name candidates with nothing to tell them apart (cities often
+  // have no location details). Then the card says so and marks the most popular one; it still never picks.
+  const lookAlike = needs && entity.candidates.length > 1 && entity.candidates.every((c) => !c.disambiguation && c.name.toLowerCase() === entity.candidates[0]!.name.toLowerCase());
+  const mostPopular = lookAlike ? [...entity.candidates].sort((a, b) => (b.popularity ?? 0) - (a.popularity ?? 0))[0]?.qlooId : undefined;
   return (
     <article className="rounded-lg border border-status-needs-input/40 bg-card p-3" aria-labelledby={`ent-${entity.key}`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -35,19 +49,34 @@ export function EntityConfirmCard({ entity, onConfirm, onRefine, onSkip }: { ent
         {needs ? `Which “${entity.input}”?` : `No Qloo match for “${entity.input}”`}
       </h3>
       <p className="mt-0.5 text-small text-muted-foreground">{entity.summary ?? (needs ? "Qloo found more than one match. Pick the one you mean; nothing runs until you do." : "")}</p>
+      {lookAlike ? (
+        <p className="mt-1 text-small text-muted-foreground">
+          Qloo gives no details that tell these apart. The most popular is usually the one people mean; if you are not sure, skip it and the name is still used as plain text.
+        </p>
+      ) : null}
       {needs ? (
-        <fieldset className="mt-2 grid gap-1.5">
+        <fieldset className="mt-2 grid min-w-0 gap-1.5">
           <legend className="sr-only">Candidates for {entity.input}</legend>
           {entity.candidates.map((c) => (
-            <label key={c.qlooId} className={cn("flex cursor-pointer items-start gap-2.5 rounded-md border px-2.5 py-2 hover:bg-muted", choice === c.qlooId && "border-primary bg-accent text-accent-foreground")}>
+            <label
+              key={c.qlooId}
+              className={cn("flex min-w-0 cursor-pointer items-start gap-2.5 rounded-md border px-2.5 py-2 hover:bg-muted", choice === c.qlooId && "border-primary bg-accent text-accent-foreground")}
+            >
               <input type="radio" name={`cand-${entity.key}`} value={c.qlooId} checked={choice === c.qlooId} onChange={() => setChoice(c.qlooId)} className="mt-1 accent-[var(--primary)]" />
               <span className="min-w-0 flex-1">
-                <span className="block font-medium">{c.name}</span>
-                <span className="block truncate text-small text-muted-foreground">
+                <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5 font-medium">
+                  {c.name}
+                  {c.qlooId === mostPopular ? <span className="whitespace-nowrap rounded-sm bg-muted px-1.5 py-0.5 text-label font-normal text-muted-foreground">most popular in Qloo</span> : null}
+                </span>
+                <span className="line-clamp-2 text-small text-muted-foreground" title={[c.type, c.disambiguation].filter(Boolean).join(" · ")}>
                   {[c.type, c.disambiguation].filter(Boolean).join(" · ")}
                 </span>
               </span>
-              {c.popularity !== undefined ? <span className="font-mono text-small text-muted-foreground" title="Qloo popularity">{c.popularity.toFixed(2)}</span> : null}
+              {c.popularity !== undefined ? (
+                <span className="font-mono text-small text-muted-foreground" title="Qloo popularity">
+                  {c.popularity.toFixed(2)}
+                </span>
+              ) : null}
             </label>
           ))}
         </fieldset>
