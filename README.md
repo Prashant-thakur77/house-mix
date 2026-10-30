@@ -47,18 +47,28 @@ Every night, someone at a venue decides the walk-in music, the opener, the halft
 
 ## From the bill to the last cue
 
-| | |
-| --- | --- |
-| **1 · Every name confirmed.** Acts, teams, venues and cities resolve to Qloo IDs. Ambiguous names become a one-click confirm card: Dodger Stadium has a twin in Iowa, so House Mix asks instead of guessing. | ![Confirm card: which Dodger Stadium?](docs/img/intake-confirm.jpg) |
-| **2 · The crowd read.** What both fan bases share, what only one side carries, the age skew, the taste vocabulary and the momentum, straight from Qloo. | ![Crowd read](docs/img/crowd-read.jpg) |
-| **3 · Every pick with its receipts.** Open any pick: exactly what Qloo returned, our reading of it, and which act drove it ("explained by Khruangbin (0.52) and Men I Trust (0.48)"). | ![Evidence drawer](docs/img/evidence.jpg) |
-| **4 · Sponsors who fit this crowd.** Brands Qloo ranks for this exact crowd in this city, an honest crowd-vs-brand comparison, a concrete activation and a one-pager PDF for the sponsor. | ![Sponsor activations with Qloo evidence](docs/img/sponsor-compare.jpg) |
-| **5 · Ask anything.** "Which drinks brand fits the jazz-night crowd?" Answered only from Qloo, every line cited, suggestions routed to the approval queue. | ![Ask House Mix](docs/img/ask.jpg) |
-| **6 · Get the night ready.** One checklist from confirmed names to a locked plan, with the action that moves each step on. | ![Get the night ready](docs/img/readiness.jpg) |
-| **7 · Hear the night.** Every artist Qloo picked becomes real songs in playlists timed to each slot, with 30-second previews. When a set runs short, the agent goes back to Qloo for more artists like that slot's picks and keeps the call as evidence. | ![Hear the night: songs added by Qloo](docs/img/hear-the-night.jpg) |
-| **8 · Music for the whole service.** A restaurant gets arrivals, peak service and a late lounge set, each timed to the floor. | ![Dinner service playlists](docs/img/dinner-music.jpg) |
-| **9 · Hand it off.** A ready-to-send message for every partner, written from its Qloo evidence; a cue sheet PDF for the sound desk; playlist CSV and M3U for the venue's licensed music service; a run-of-show PDF. | ![Outreach pack](docs/img/outreach.jpg) |
-| **10 · Run the night.** A show clock with the real song playing for whoever is on, and every crew cue on time, re-timed when the night runs late. | ![Run the night](docs/img/run-the-night.gif) |
+<table>
+<tr>
+<td width="50%" valign="top"><img src="docs/img/intake-confirm.jpg" alt="Confirm card: which Dodger Stadium?"><br><b>1 · Every name confirmed.</b> Acts, teams, venues and cities resolve to Qloo IDs. Ambiguous names become a one-click confirm card: Dodger Stadium has a twin in Iowa, so House Mix asks instead of guessing.</td>
+<td width="50%" valign="top"><img src="docs/img/crowd-read.jpg" alt="Crowd read"><br><b>2 · The crowd read.</b> What both fan bases share, what only one side carries, the age skew, the taste vocabulary and the momentum, straight from Qloo.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><img src="docs/img/evidence.jpg" alt="Evidence drawer"><br><b>3 · Every pick with its receipts.</b> Open any pick: exactly what Qloo returned, our reading of it, and which act drove it (“explained by Khruangbin (0.52) and Men I Trust (0.48)”).</td>
+<td width="50%" valign="top"><img src="docs/img/sponsor-compare.jpg" alt="Sponsor activations with Qloo evidence"><br><b>4 · Sponsors who fit this crowd.</b> Brands Qloo ranks for this exact crowd in this city, an honest crowd-vs-brand comparison, a concrete activation and a one-pager PDF for the sponsor.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><img src="docs/img/ask.jpg" alt="Ask House Mix"><br><b>5 · Ask anything.</b> “Which drinks brand fits the jazz-night crowd?” Answered only from Qloo, every line cited, suggestions routed to the approval queue.</td>
+<td width="50%" valign="top"><img src="docs/img/readiness.jpg" alt="Get the night ready"><br><b>6 · Get the night ready.</b> One checklist from confirmed names to a locked plan, with the action that moves each step on.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><img src="docs/img/hear-the-night.jpg" alt="Hear the night: songs added by Qloo"><br><b>7 · Hear the night.</b> Every artist Qloo picked becomes real songs in playlists timed to each slot, with 30-second previews. When a set runs short, the agent goes back to Qloo for more artists like that slot's picks and keeps the call as evidence.</td>
+<td width="50%" valign="top"><img src="docs/img/dinner-music.jpg" alt="Dinner service playlists"><br><b>8 · Music for the whole service.</b> A restaurant gets arrivals, peak service and a late lounge set, each timed to the floor.</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><img src="docs/img/outreach.jpg" alt="Outreach pack"><br><b>9 · Hand it off.</b> A ready-to-send message for every partner, written from its Qloo evidence; a cue sheet PDF for the sound desk; playlist CSV and M3U for the venue's licensed music service; a run-of-show PDF.</td>
+<td width="50%" valign="top"><img src="docs/img/run-the-night.gif" alt="Run the night"><br><b>10 · Run the night.</b> A show clock with the real song playing for whoever is on, and every crew cue on time, re-timed when the night runs late.</td>
+</tr>
+</table>
 
 ## Real nights, planned on live Qloo
 
