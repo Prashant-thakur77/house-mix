@@ -9,6 +9,7 @@ import { useHealth } from "@/lib/hooks";
 import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { BrandMark } from "@/components/brand-mark";
+import { UserKey } from "@/components/user-key";
 
 export function Logo() {
   return (
@@ -105,6 +106,7 @@ export function TopBar({ children }: { children?: React.ReactNode }) {
         </nav>
         <div className="ml-auto flex items-center gap-2">
           {children}
+          <UserKey />
           <HealthBadge />
           <ThemeToggle />
         </div>

@@ -164,6 +164,24 @@ export async function createShow(raw: unknown, opts: { seed?: boolean; qloo?: Ql
   return show;
 }
 
+/** A visitor's own copy of a show (a demo show, usually): the same plan, music and answers, theirs to change. */
+export async function copyShow(id: string): Promise<Show> {
+  const source = await getShow(id);
+  const now = new Date().toISOString();
+  const copy: Show = {
+    ...structuredClone(source),
+    id: `s_${randomUUID().slice(0, 10)}`,
+    shareId: randomUUID().replace(/-/g, "").slice(0, 16),
+    seed: false,
+    createdAt: now,
+    updatedAt: now,
+  };
+  delete copy.seedHash;
+  delete copy.lockedAt;
+  await getStore().put("shows", copy.id, copy);
+  return copy;
+}
+
 export async function getShow(id: string): Promise<Show> {
   const show = await getStore().get<Show>("shows", id);
   if (!show) throw new HttpError(404, "Show not found.", "not_found");

@@ -8,6 +8,7 @@ import { cn } from "cn";
 import { Kicker, StatusChip } from "@/components/status";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { explained } from "@/lib/user-key";
 import { api, ApiError } from "@/lib/api";
 
 const LOOKUP: Record<CounterfactualRow["status"], string> = {
@@ -91,7 +92,7 @@ export function CounterfactualPanel({ show, onResult, readOnly }: { show: Show; 
     try {
       onResult(await api.counterfactual(show.id, force));
     } catch (e) {
-      toast.error("Could not build the comparison", { description: (e as ApiError).message });
+      if (!explained(e)) toast.error("Could not build the comparison", { description: (e as ApiError).message });
     } finally {
       setLoading(false);
     }

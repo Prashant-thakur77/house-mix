@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { GitCompareArrows, Keyboard, ListChecks, Loader2, PanelLeft, Play, Radio, RefreshCw, Rows3 } from "lucide-react";
+import { Copy, GitCompareArrows, Keyboard, ListChecks, Loader2, PanelLeft, Play, Radio, RefreshCw, Rows3 } from "lucide-react";
 import { toast } from "sonner";
 import { MODES, slotTime, type CrowdRead, type PlanItem, type RunEvent, type Show, type Slot } from "@housemix/shared";
 import { cn } from "cn";
+import { announce, explained } from "@/lib/user-key";
 import { api, ApiError } from "@/lib/api";
-import { useKeyboard, useMediaQuery, useRunStream, useShow } from "@/lib/hooks";
+import { useHealth, useKeyboard, useMediaQuery, useRunStream, useShow } from "@/lib/hooks";
 import { TopBar } from "@/components/app-shell";
 import { Kicker, ModeChip } from "@/components/status";
 import { TracePane } from "@/components/console/trace";
@@ -94,6 +96,12 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   }, [show?.lastRunId, streamId]);
 
   const streaming = Boolean(streamId) && stream.state !== "done" && stream.state !== "failed";
+  // A plan runs in the background: when it stops on the visitor's key (rejected, or out of credit), open the key dialog.
+  const lastEvent = stream.events.at(-1);
+  useEffect(() => {
+    if (lastEvent?.type !== "error" || !/Anthropic didn.t accept that API key|out of credit/.test(lastEvent.message)) return;
+    announce(/credit/.test(lastEvent.message) ? "user_key_no_credit" : "user_key_invalid", lastEvent.message);
+  }, [lastEvent]);
   const events = streamId ? stream.events : stored;
   const live = useMemo(() => (show && streaming ? liveState(show, events) : undefined), [show, streaming, events]);
   const slots = live?.slots ?? show?.plan?.slots ?? [];
@@ -109,6 +117,11 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
   const [traceOpen, setTraceOpen] = useState(false);
   const [locking, setLocking] = useState(false);
   const [starting, setStarting] = useState(false);
+  const [copying, setCopying] = useState(false);
+  const router = useRouter();
+  const { health } = useHealth();
+  // On the public site demo shows are read-only: a visitor works on their own copy.
+  const readOnly = Boolean(show?.seed && health?.seedsReadOnly);
   const desktop = useMediaQuery("(min-width: 1280px)");
   const tablet = useMediaQuery("(min-width: 768px)");
   const large = useMediaQuery("(min-width: 1024px)");
@@ -125,7 +138,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
       setShow({ ...show, status: "planning", lastRunId: r.runId });
       setSelectedId(undefined);
     } catch (e) {
-      toast.error("Could not start the plan", { description: (e as ApiError).message });
+      if (!explained(e)) toast.error("Could not start the plan", { description: (e as ApiError).message });
     } finally {
       setStarting(false);
     }
@@ -145,7 +158,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
         if (selectedId === item.id && repl) setSelectedId(repl.id);
       }
     } catch (e) {
-      toast.error(a === "swap" ? "Swap failed" : "Update failed", { description: (e as ApiError).message });
+      if (!explained(e)) toast.error(a === "swap" ? "Swap failed" : "Update failed", { description: (e as ApiError).message });
     } finally {
       setBusy((b) => {
         const n = { ...b };
@@ -164,7 +177,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
       setShow(await api.reject(show.id, item.id, reason));
       toast(`Rejected ${item.pick.name}`, { description: "Saved as a negative signal for the next plan." });
     } catch (e) {
-      toast.error("Reject failed", { description: (e as ApiError).message });
+      if (!explained(e)) toast.error("Reject failed", { description: (e as ApiError).message });
     } finally {
       setBusy((b) => {
         const n = { ...b };
@@ -276,7 +289,27 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          {show.plan && !streaming ? (
+          {readOnly ? (
+            <Button
+              variant="outline"
+              disabled={copying}
+              onClick={async () => {
+                setCopying(true);
+                try {
+                  const copy = await api.copy(show.id);
+                  toast.success("Your copy is ready", { description: "Change anything here; the demo stays as it was." });
+                  router.push(`/shows/${copy.id}`);
+                } catch {
+                  toast.error("Couldn't make a copy right now. Try again in a minute.");
+                } finally {
+                  setCopying(false);
+                }
+              }}
+              title="Demo shows stay the same for everyone: make your own copy to approve, swap, ask and plan"
+            >
+              {copying ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <Copy data-icon="inline-start" />} Make my own copy
+            </Button>
+          ) : show.plan && !streaming ? (
             <Button variant="ghost" onClick={start} disabled={starting} title="Run the agent again; rejected items are excluded">
               {starting ? <Loader2 className="animate-spin" data-icon="inline-start" /> : <RefreshCw data-icon="inline-start" />} Re-plan
             </Button>
@@ -323,14 +356,14 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
                   try {
                     setShow(await api.confirm(show.id, e.key, c));
                   } catch (err) {
-                    toast.error("Could not confirm", { description: (err as ApiError).message });
+                    if (!explained(err)) toast.error("Could not confirm", { description: (err as ApiError).message });
                   }
                 }}
                 onRefine={async (t) => {
                   try {
                     setShow(await api.refine(show.id, e.key, t));
                   } catch (err) {
-                    toast.error("Search failed", { description: (err as ApiError).message });
+                    if (!explained(err)) toast.error("Search failed", { description: (err as ApiError).message });
                   }
                 }}
                 onSkip={
@@ -418,7 +451,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           setShow(await api.lock(show.id));
           toast.success(`Plan v${show.version} locked`);
         } catch (e) {
-          toast.error("Could not lock", { description: (e as ApiError).message });
+          if (!explained(e)) toast.error("Could not lock", { description: (e as ApiError).message });
         } finally {
           setLocking(false);
         }
@@ -430,7 +463,7 @@ export function ConsolePage({ id, initialShow }: { id: string; initialShow?: Sho
           setShow(next);
           toast.success("High-confidence picks approved", { description: "Stretch and reduced-confidence picks are still waiting for you." });
         } catch (e) {
-          toast.error("Bulk approve failed", { description: (e as ApiError).message });
+          if (!explained(e)) toast.error("Bulk approve failed", { description: (e as ApiError).message });
         }
       }}
     />

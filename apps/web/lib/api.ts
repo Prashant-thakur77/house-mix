@@ -1,5 +1,7 @@
 import type { AskAnswer, Briefing, Counterfactual, Heatmap, Health, Music, QlooToolName, Show, ShowInput, RunState } from "@housemix/shared";
 
+import { announce, claudeHeaders } from "@/lib/user-key";
+
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787").replace(/\/$/, "");
 
 export class ApiError extends Error {
@@ -32,6 +34,8 @@ async function req<T>(path: string, init?: RequestInit & { json?: unknown }): Pr
     } catch {
       // non-JSON error body
     }
+    const showId = /^\/shows\/([^/]+)\//.exec(path)?.[1];
+    announce(body.error ?? "error", body.message ?? "", showId);
     throw new ApiError(res.status, body.error ?? "error", body.message ?? `Request failed (${res.status}).`);
   }
   return (await res.json()) as T;
@@ -80,6 +84,8 @@ export interface BlindPair {
 }
 
 const post = <T>(path: string, json: unknown = {}) => req<T>(path, { json });
+/** A request that uses Claude: it carries the visitor's own API key, when they have added one. */
+const claude = <T>(path: string, json: unknown = {}) => req<T>(path, { json, headers: claudeHeaders() });
 
 export const api = {
   health: () => req<Health>("/health"),
@@ -89,7 +95,8 @@ export const api = {
   createShow: (input: ShowInput) => post<Show>("/shows", input),
   confirm: (id: string, key: string, choice: string) => post<Show>(`/shows/${id}/confirm`, { key, choice }),
   refine: (id: string, key: string, text: string) => post<Show>(`/shows/${id}/refine`, { key, text }),
-  startRun: (id: string) => post<{ runId: string }>(`/shows/${id}/runs`),
+  startRun: (id: string) => claude<{ runId: string }>(`/shows/${id}/runs`),
+  copy: (id: string) => post<Show>(`/shows/${id}/copy`),
   run: (runId: string) => req<RunState>(`/runs/${runId}`),
   approve: (id: string, itemId: string) => post<Show>(`/shows/${id}/items/${itemId}/approve`),
   reset: (id: string, itemId: string) => post<Show>(`/shows/${id}/items/${itemId}/reset`),
@@ -98,10 +105,10 @@ export const api = {
   approveConfident: (id: string) => post<Show>(`/shows/${id}/approve-confident`),
   lock: (id: string) => post<Show>(`/shows/${id}/lock`),
   unlock: (id: string) => post<Show>(`/shows/${id}/unlock`),
-  briefing: (id: string, force = false) => post<Briefing>(`/shows/${id}/briefing`, { force }),
+  briefing: (id: string, force = false) => claude<Briefing>(`/shows/${id}/briefing`, { force }),
   heatmap: (id: string, force = false) => post<Heatmap>(`/shows/${id}/heatmap`, { force }),
   music: (id: string, force = false) => post<Music>(`/shows/${id}/music`, { force }),
-  counterfactual: (id: string, force = false) => post<Counterfactual>(`/shows/${id}/counterfactual`, { force }),
+  counterfactual: (id: string, force = false) => claude<Counterfactual>(`/shows/${id}/counterfactual`, { force }),
   addProposal: (id: string, askId: string, proposalId: string) => post<Show>(`/shows/${id}/asks/${askId}/proposals/${proposalId}/add`),
   // Qloo can return one concept name under two tag categories; the table lists each name once per side.
   compare: (a: string, b: string) =>
@@ -130,7 +137,7 @@ export type AskStreamEvent =
 export async function askStream(id: string, question: string, onEvent: (e: AskStreamEvent) => void, signal?: AbortSignal): Promise<AskAnswer> {
   let res: Response;
   try {
-    res = await fetch(`${API_URL}/shows/${id}/ask`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question }), signal });
+    res = await fetch(`${API_URL}/shows/${id}/ask`, { method: "POST", headers: { "content-type": "application/json", ...claudeHeaders() }, body: JSON.stringify({ question }), signal });
   } catch {
     throw new ApiError(0, "network", "Can't reach the House Mix API. Check your connection and try again.");
   }
@@ -156,7 +163,10 @@ export async function askStream(id: string, question: string, onEvent: (e: AskSt
       buf = buf.slice(nl + 1);
       if (!line) continue;
       const e = JSON.parse(line) as AskStreamEvent;
-      if (e.type === "error") throw new ApiError(422, e.code, e.message);
+      if (e.type === "error") {
+        announce(e.code, e.message, id);
+        throw new ApiError(422, e.code, e.message);
+      }
       if (e.type === "answer") answer = e.answer;
       onEvent(e);
     }

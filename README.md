@@ -13,13 +13,13 @@
 
 ![Qloo tools](https://img.shields.io/badge/Qloo%20tools-10%2F10%20live-6250d6)
 ![Picks cited](https://img.shields.io/badge/picks%20cited-182%2F182-2ea44f)
-![Unit tests](https://img.shields.io/badge/unit%20%2B%20API%20tests-34%20passing-2ea44f)
+![Unit tests](https://img.shields.io/badge/unit%20%2B%20API%20tests-43%20passing-2ea44f)
 ![E2E tests](https://img.shields.io/badge/e2e%20tests-45%20passing%20%C3%97%202%20modes-2ea44f)
 ![Accessibility](https://img.shields.io/badge/a11y-WCAG%202.1%20AA-2ea44f)
 ![Licence](https://img.shields.io/badge/licence-MIT-lightgrey)
 
 Built for the **Qloo Agentic Hackathon** with **Qloo Taste AI** (`qloo mcp`) and **Claude** (Claude Agent SDK).
-No sign-in: open a show and check every receipt.
+No sign-in: open a show and check every receipt. To plan your own night, add your own Anthropic API key in the top bar.
 
 [![House Mix: the film](docs/img/film-thumbnail.jpg)](https://youtu.be/Gbt9bEk-PNs)
 
@@ -131,6 +131,15 @@ We planned **7 real shows** twice on live Qloo: once with House Mix, once with t
 
 Full methods, every run and the raw results: [`eval/REPORT.md`](eval/REPORT.md) and [`eval/results/`](eval/results).
 
+## Try it with your own key
+
+The five demo shows, the evidence, Hear the night, the exports and Run the night are free for everyone and need nothing. The features that call Claude (planning a new show, Ask House Mix, Without Qloo and the crew briefing) run on **your own Anthropic API key**: click **Your API key** in the top bar and paste it.
+
+- **Kept in your browser only.** The key is sent, in one header, only with those Claude requests. The API uses it for that request's work and never stores, logs or returns it.
+- **You pay only for what you use:** about half a dollar for a plan, up to about 25 cents for a question. The public deployment carries no Anthropic key of its own, so nobody can spend anyone else's.
+- **Demo shows stay the same for everyone.** Click **Make my own copy** on any demo show to approve, swap, ask and re-plan your own version.
+- **A key that doesn't work is reported plainly** ("Anthropic didn't accept that API key", "out of credit"), and a failed plan never replaces the one you have.
+
 ## How it uses Qloo
 
 All **10 tools** of `qloo mcp` do load-bearing work. The backend starts `qloo mcp` as a stdio MCP server and routes every call through one client ([`apps/api/src/qloo/client.ts`](apps/api/src/qloo/client.ts)) with a 24-hour cache keyed by the SHA-256 of the arguments, retries only when Qloo says an error is retryable, a 40-call budget per plan, a personal-data guard, and a ledger entry for every call.
@@ -173,7 +182,7 @@ All **10 tools** of `qloo mcp` do load-bearing work. The backend starts `qloo mc
 | Layer | Count | What it checks |
 | --- | :---: | --- |
 | **Live contract** | **11 / 11** checks · **10 / 10** tools | Every Qloo tool against the live API; every adapter reads the live shapes (`npm run qloo:verify`) |
-| **Unit and API** | **34** passing | Adapters on recorded live Qloo responses, the evidence gate, the music builder and its Qloo fill loop, eval maths, and the API over a real MCP connection (`npm test`) |
+| **Unit and API** | **43** passing | Adapters on recorded live Qloo responses, the evidence gate, the music builder and its Qloo fill loop, bring-your-own-key and read-only demo shows, eval maths, and the API over a real MCP connection (`npm test`) |
 | **End to end** | **45** passing, in mock mode **and** against live Qloo | Every flow in a real browser: intake and confirm cards, the plan console, exports, Ask, Hear the night (a real preview plays), outreach, readiness and Run the night (`npm run test:e2e`) |
 | **Accessibility** | WCAG 2.1 AA | axe-core on every page, desktop and mobile, light and dark |
 | **Evaluation** | 7 real shows · 14 plans · 339 picks checked | Citations, ambiguity, booking realism, crowd specificity, location, repeatability and explainability on live Qloo ([`eval/REPORT.md`](eval/REPORT.md)) |

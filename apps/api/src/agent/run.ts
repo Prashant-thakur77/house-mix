@@ -9,6 +9,7 @@ import { getQloo, type QlooClient } from "../qloo/client.ts";
 import { RunContext } from "./context.ts";
 import { gateItems, type SubmittedItem } from "./critic.ts";
 import { CROWD_READER, PROGRAMMER, SPONSOR_FIT, WILDCARD, contextBlock, plannerPrompt } from "./prompts.ts";
+import { claudeProblem, visitorKey } from "../keys.ts";
 import { houseMixServer, qlooProxyServer } from "./tools.ts";
 
 const Q = (t: string) => `mcp__qloo__${t}`;
@@ -110,7 +111,8 @@ export async function runPlan(show: Show, runId: string, emit: (e: RunEvent) => 
       persistSession: false,
       agentProgressSummaries: false,
       // A plan finishes in a few minutes, so the 5-minute cache is enough and writes cost 1.25× instead of 2×.
-      env: { ...process.env, CLAUDE_CODE_PROMPT_CACHE_TTL: "5m", CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL: "5m" },
+      // The visitor's own key when they brought one (keys.ts); the server's key only where the deployment allows it.
+      env: { ...process.env, ...(visitorKey() ? { ANTHROPIC_API_KEY: visitorKey() } : {}), CLAUDE_CODE_PROMPT_CACHE_TTL: "5m", CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL: "5m" },
       abortController: abort,
       stderr: (d) => {
         if (process.env.HM_DEBUG) process.stderr.write(d);
@@ -144,13 +146,16 @@ export async function runPlan(show: Show, runId: string, emit: (e: RunEvent) => 
       }
     }
   } catch (e) {
-    failure = abort.signal.aborted ? "Plan run timed out." : (e as Error).message;
+    failure = abort.signal.aborted ? "Plan run timed out." : (claudeProblem(e)?.message ?? (e as Error).message);
   } finally {
     ctx.costUsd += agentCost;
     await recordSpend("plan_run", agentCost);
     clearTimeout(timer);
     fs.rmSync(cwd, { recursive: true, force: true });
   }
+
+  // Nothing usable came back (a rejected key, an account out of credit, an early stop): the show keeps the plan it has.
+  if (failure && ![...ctx.slots.values()].some((slot) => slot.items.length)) throw new Error(failure);
 
   for (const slot of ctx.slots.values()) {
     if (slot.items.length === 0) {

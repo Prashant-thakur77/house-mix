@@ -34,8 +34,14 @@ for role in roles/secretmanager.secretAccessor roles/datastore.user roles/storag
   gcloud projects add-iam-policy-binding "$GCP_PROJECT" --member "serviceAccount:${SA}" --role "$role" --condition=None >/dev/null
 done
 
-SECRETS="ANTHROPIC_API_KEY=anthropic-api-key:latest"
-gcloud secrets describe qloo-api-key --project "$GCP_PROJECT" >/dev/null 2>&1 && SECRETS="${SECRETS},QLOO_API_KEY=qloo-api-key:latest"
+# Bring your own key (apps/api/src/keys.ts): on the public site every Claude feature runs on the visitor's own Anthropic
+# key, so the deployment carries no Anthropic key of ours at all and nothing can spend it. Demo shows are read-only;
+# visitors make their own copy. HM_REQUIRE_USER_KEY=0 restores the server key (and the spend cap) for a private deploy.
+HM_REQUIRE_USER_KEY="${HM_REQUIRE_USER_KEY:-1}"
+HM_PROTECT_SEEDS="${HM_PROTECT_SEEDS:-1}"
+SECRETS=""
+[ "$HM_REQUIRE_USER_KEY" = "1" ] || SECRETS="ANTHROPIC_API_KEY=anthropic-api-key:latest"
+gcloud secrets describe qloo-api-key --project "$GCP_PROJECT" >/dev/null 2>&1 && SECRETS="${SECRETS:+${SECRETS},}QLOO_API_KEY=qloo-api-key:latest"
 # The hackathon key only works against Qloo's hackathon server; the harness needs the trusted base to match.
 QBASE="${QLOO_BASE_URL:-$(grep -E '^QLOO_BASE_URL=' .env.local 2>/dev/null | head -1 | cut -d= -f2- || true)}"
 QENV=""
@@ -44,5 +50,5 @@ gcloud run deploy "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --image
   --allow-unauthenticated --min-instances 1 --max-instances 3 --cpu 1 --memory 2Gi --timeout 900 \
   --no-cpu-throttling --concurrency 40 \
   --set-secrets "$SECRETS" \
-  --set-env-vars "QLOO_MODE=${QLOO_MODE},HM_SPEND_LIMIT_USD=${HM_SPEND_LIMIT_USD:-8},HM_MAX_CONCURRENT_RUNS=1,HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}${QENV}"
+  --set-env-vars "HM_REQUIRE_USER_KEY=${HM_REQUIRE_USER_KEY},HM_PROTECT_SEEDS=${HM_PROTECT_SEEDS},QLOO_MODE=${QLOO_MODE},HM_SPEND_LIMIT_USD=${HM_SPEND_LIMIT_USD:-8},HM_MAX_CONCURRENT_RUNS=1,HM_STORE=firestore,GOOGLE_CLOUD_PROJECT=${GCP_PROJECT},HM_AUDIO_BUCKET=${BUCKET},HM_CORS_ORIGINS=${WEB_ORIGIN:-*}${QENV}"
 gcloud run services describe "$SERVICE" --project "$GCP_PROJECT" --region "$REGION" --format 'value(status.url)'

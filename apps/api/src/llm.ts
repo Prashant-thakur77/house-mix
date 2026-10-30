@@ -3,6 +3,7 @@ import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import type { z } from "zod";
 import { config } from "./config.ts";
 import { getStore } from "./store/store.ts";
+import { userKeyRequired, visitorKey } from "./keys.ts";
 
 /** USD per million tokens (input, output, cache read). */
 const PRICES: Record<string, [number, number, number]> = {
@@ -12,7 +13,11 @@ const PRICES: Record<string, [number, number, number]> = {
 };
 
 let client: Anthropic | undefined;
+/** The Claude client for the work in progress: the visitor's own key when they brought one, else the server's. */
 export function anthropic(): Anthropic {
+  const key = visitorKey();
+  if (key) return new Anthropic({ apiKey: key });
+  if (userKeyRequired()) throw new Error("A visitor's Anthropic key is required here, and none was given.");
   if (!client) client = new Anthropic();
   return client;
 }
@@ -26,6 +31,8 @@ interface SpendDoc {
 
 /** Running Claude spend for this deployment, so dev and eval runs can stop before the agreed limit. */
 export async function recordSpend(purpose: string, usd: number): Promise<number> {
+  // A visitor's own key pays for their requests: none of it counts against this deployment's budget.
+  if (visitorKey()) return spendSoFar();
   const store = getStore();
   const doc = (await store.get<SpendDoc>("spend", "total")) ?? { id: "total", totalUsd: 0, byPurpose: {}, updatedAt: "" };
   doc.totalUsd += usd;
@@ -42,6 +49,7 @@ export async function spendSoFar(): Promise<number> {
 export const SPEND_LIMIT_USD = Number(process.env.HM_SPEND_LIMIT_USD ?? "15");
 
 export async function assertSpendHeadroom(): Promise<void> {
+  if (visitorKey()) return;
   const spent = await spendSoFar();
   if (spent >= SPEND_LIMIT_USD) {
     throw new Error(`Claude spend limit reached ($${spent.toFixed(2)} of $${SPEND_LIMIT_USD}). Raise HM_SPEND_LIMIT_USD to continue.`);

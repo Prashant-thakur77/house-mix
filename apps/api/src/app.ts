@@ -9,7 +9,8 @@ import { config, REPO_ROOT } from "./config.ts";
 import { getQloo } from "./qloo/client.ts";
 import { compareOf } from "./qloo/normalize.ts";
 import { getStore } from "./store/store.ts";
-import { confirmEntity, createShow, getShow, HttpError, listShows, refineEntity, saveShow } from "./shows/service.ts";
+import { confirmEntity, copyShow, createShow, getShow, HttpError, listShows, refineEntity, saveShow } from "./shows/service.ts";
+import { assertEditable, claudeProblem, seedsReadOnly, userKeyRequired, withClaude } from "./keys.ts";
 import { getRun, isEndMarker, startRun, subscribe } from "./shows/runs.ts";
 import { addProposal, approveConfident, approveItem, lockPlan, rejectItem, resetItem, swapItem, unlockPlan } from "./shows/approvals.ts";
 import { planCsv, playlistCsv, playlistM3u } from "./exports/csv.ts";
@@ -30,7 +31,7 @@ function publicShow(show: Show) {
 
 export async function buildApp(): Promise<FastifyInstance> {
   const app = Fastify({
-    logger: process.env.NODE_ENV === "test" ? false : { level: process.env.LOG_LEVEL ?? "info", redact: ["req.headers.authorization", "req.headers.cookie", "req.headers[\"x-api-key\"]"] },
+    logger: process.env.NODE_ENV === "test" ? false : { level: process.env.LOG_LEVEL ?? "info", redact: ["req.headers.authorization", "req.headers.cookie", "req.headers[\"x-api-key\"]", "req.headers[\"x-anthropic-key\"]"] },
     bodyLimit: 64 * 1024,
   });
   await app.register(cors, {
@@ -45,6 +46,8 @@ export async function buildApp(): Promise<FastifyInstance> {
 
   app.setErrorHandler((err, _req, reply) => {
     if (err instanceof HttpError) return reply.status(err.status).send({ error: err.code, message: err.message });
+    const problem = claudeProblem(err);
+    if (problem) return reply.status(problem.status).send({ error: problem.code, message: problem.message });
     const status = (err as { statusCode?: number }).statusCode ?? 500;
     if (status >= 500) app.log.error(err);
     return reply.status(status).send({ error: status === 429 ? "rate_limited" : "server_error", message: status >= 500 ? "Something went wrong on the server." : (err as Error).message });
@@ -61,27 +64,38 @@ export async function buildApp(): Promise<FastifyInstance> {
       version: config.version,
       store: getStore().kind,
       ttsAvailable: ttsStatus().available,
+      userKeyRequired: userKeyRequired(),
+      seedsReadOnly: seedsReadOnly(),
     };
   });
 
-  app.get("/shows", async () => (await listShows()).map((s) => ({ id: s.id, title: s.title, mode: s.input.mode, venue: s.input.venue, city: s.input.city, date: s.input.date, status: s.status, seed: s.seed, version: s.version, qlooMode: s.qlooMode, updatedAt: s.updatedAt, headline: s.plan?.headline ?? "", items: s.plan?.slots.reduce((n, sl) => n + sl.items.length, 0) ?? 0 })));
+  // With demo shows read-only, the public list is the demo shows: a visitor's copies are reached by their own link.
+  app.get("/shows", async () => (await listShows()).filter((s) => !seedsReadOnly() || s.seed).map((s) => ({ id: s.id, title: s.title, mode: s.input.mode, venue: s.input.venue, city: s.input.city, date: s.input.date, status: s.status, seed: s.seed, version: s.version, qlooMode: s.qlooMode, updatedAt: s.updatedAt, headline: s.plan?.headline ?? "", items: s.plan?.slots.reduce((n, sl) => n + sl.items.length, 0) ?? 0 })));
 
   app.post("/shows", { config: { rateLimit: { max: 12, timeWindow: "1 minute" } } }, async (req, reply) => reply.status(201).send(publicShow(await createShow(req.body))));
   app.get<{ Params: { id: string } }>("/shows/:id", async (req) => publicShow(await getShow(req.params.id)));
+  app.post<{ Params: { id: string } }>("/shows/:id/copy", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (req, reply) =>
+    reply.status(201).send(publicShow(await copyShow(req.params.id))),
+  );
+  /** Stops changes to a demo show when demo shows are read-only (keys.ts). */
+  const editable = async (id: string) => assertEditable(await getShow(id));
 
   app.post<{ Params: { id: string }; Body: { key?: string; choice?: string } }>("/shows/:id/confirm", async (req) => {
     const { key, choice } = req.body ?? {};
     if (!key || !choice) throw new HttpError(400, "key and choice are required.");
+    await editable(req.params.id);
     return confirmEntity(req.params.id, key, choice);
   });
   app.post<{ Params: { id: string }; Body: { key?: string; text?: string } }>("/shows/:id/refine", async (req) => {
     const { key, text } = req.body ?? {};
     if (!key || !text?.trim()) throw new HttpError(400, "key and text are required.");
+    await editable(req.params.id);
     return refineEntity(req.params.id, key, text);
   });
 
   app.post<{ Params: { id: string } }>("/shows/:id/runs", { config: { rateLimit: { max: 4, timeWindow: "1 minute" } } }, async (req, reply) => {
-    const run = await startRun(req.params.id);
+    await editable(req.params.id);
+    const run = await withClaude(req, () => startRun(req.params.id));
     return reply.status(202).send({ runId: run.runId });
   });
   app.get<{ Params: { runId: string } }>("/runs/:runId", async (req) => getRun(req.params.runId));
@@ -117,13 +131,13 @@ export async function buildApp(): Promise<FastifyInstance> {
     return reply;
   });
 
-  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/approve", async (req) => approveItem(req.params.id, req.params.itemId));
-  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/reset", async (req) => resetItem(req.params.id, req.params.itemId));
-  app.post<{ Params: { id: string; itemId: string }; Body: { reason?: string } }>("/shows/:id/items/:itemId/reject", async (req) => rejectItem(req.params.id, req.params.itemId, req.body?.reason ?? ""));
-  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/swap", { config: { rateLimit: { max: 20, timeWindow: "1 minute" } } }, async (req) => (await swapItem(req.params.id, req.params.itemId)).show);
-  app.post<{ Params: { id: string } }>("/shows/:id/approve-confident", async (req) => (await approveConfident(req.params.id)).show);
-  app.post<{ Params: { id: string } }>("/shows/:id/lock", async (req) => lockPlan(req.params.id));
-  app.post<{ Params: { id: string } }>("/shows/:id/unlock", async (req) => unlockPlan(req.params.id));
+  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/approve", async (req) => (await editable(req.params.id), approveItem(req.params.id, req.params.itemId)));
+  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/reset", async (req) => (await editable(req.params.id), resetItem(req.params.id, req.params.itemId)));
+  app.post<{ Params: { id: string; itemId: string }; Body: { reason?: string } }>("/shows/:id/items/:itemId/reject", async (req) => (await editable(req.params.id), rejectItem(req.params.id, req.params.itemId, req.body?.reason ?? "")));
+  app.post<{ Params: { id: string; itemId: string } }>("/shows/:id/items/:itemId/swap", { config: { rateLimit: { max: 20, timeWindow: "1 minute" } } }, async (req) => (await editable(req.params.id), (await swapItem(req.params.id, req.params.itemId)).show));
+  app.post<{ Params: { id: string } }>("/shows/:id/approve-confident", async (req) => (await editable(req.params.id), (await approveConfident(req.params.id)).show));
+  app.post<{ Params: { id: string } }>("/shows/:id/lock", async (req) => (await editable(req.params.id), lockPlan(req.params.id)));
+  app.post<{ Params: { id: string } }>("/shows/:id/unlock", async (req) => (await editable(req.params.id), unlockPlan(req.params.id)));
 
   const sendFile = (reply: FastifyReply, type: string, name: string, body: Buffer | string) =>
     reply.header("Content-Type", type).header("Content-Disposition", `attachment; filename="${name}"`).send(body);
@@ -139,9 +153,11 @@ export async function buildApp(): Promise<FastifyInstance> {
     return sendFile(reply, "application/pdf", `house-mix-${slug(show.title)}-v${show.version}.pdf`, await runOfShowPdf(show));
   });
   // Hear the night: real songs for the artist picks and timed playlists for the music slots (Apple's catalogue, no key).
-  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/music", { config: { rateLimit: { max: 6, timeWindow: "1 minute" } } }, async (req) =>
-    musicFor(req.params.id, Boolean(req.body?.force)),
-  );
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/music", { config: { rateLimit: { max: 6, timeWindow: "1 minute" } } }, async (req) => {
+    const show = await getShow(req.params.id);
+    if (req.body?.force || !show.music) assertEditable(show);
+    return musicFor(req.params.id, Boolean(req.body?.force));
+  });
   const withMusic = async (id: string) => {
     const show = await getShow(id);
     if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
@@ -172,7 +188,8 @@ export async function buildApp(): Promise<FastifyInstance> {
     const show = await getShow(req.params.id);
     if (!show.plan) throw new HttpError(409, "Plan the show first.", "no_plan");
     if (!req.body?.force && show.briefing && show.briefing.planVersion === show.version && show.briefing.audio.available) return show.briefing;
-    const { briefing } = await buildBriefing(show);
+    assertEditable(show);
+    const { briefing } = await withClaude(req, () => buildBriefing(show));
     const fresh = await getShow(show.id);
     fresh.briefing = briefing;
     await saveShow(fresh);
@@ -187,10 +204,20 @@ export async function buildApp(): Promise<FastifyInstance> {
   });
 
   /** Crowd map: where each side's taste concentrates in the show city (qloo_where_popular). */
-  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/heatmap", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (req) => heatmapFor(req.params.id, Boolean(req.body?.force)));
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/heatmap", { config: { rateLimit: { max: 10, timeWindow: "1 minute" } } }, async (req) => {
+    if (req.body?.force) await editable(req.params.id);
+    return heatmapFor(req.params.id, Boolean(req.body?.force));
+  });
 
   /** "Without Qloo": Claude alone plans the same brief; Qloo checks and ranks those picks against the plan's. */
-  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/counterfactual", { config: { rateLimit: { max: 3, timeWindow: "1 minute" } } }, async (req) => counterfactualFor(req.params.id, Boolean(req.body?.force)));
+  app.post<{ Params: { id: string }; Body: { force?: boolean } }>("/shows/:id/counterfactual", { config: { rateLimit: { max: 3, timeWindow: "1 minute" } } }, async (req) => {
+    const show = await getShow(req.params.id);
+    const force = Boolean(req.body?.force);
+    // A stored comparison for this version is free to read; a new one is a Claude call.
+    if (!force && show.counterfactual && show.counterfactual.planVersion === show.version) return show.counterfactual;
+    assertEditable(show);
+    return withClaude(req, () => counterfactualFor(req.params.id, force));
+  });
 
   /** Ask House Mix: a grounded answer streamed as NDJSON (tool calls as they happen, then the checked answer). */
   app.post<{ Params: { id: string }; Body: { question?: string } }>("/shows/:id/ask", { config: { rateLimit: { max: 6, timeWindow: "1 minute" } } }, async (req, reply) => {
@@ -203,9 +230,11 @@ export async function buildApp(): Promise<FastifyInstance> {
     });
     const write = (o: unknown) => reply.raw.write(`${JSON.stringify(o)}\n`);
     try {
-      const answer = await askShow(req.params.id, question, (e) => write(e));
+      await editable(req.params.id);
+      const answer = await withClaude(req, () => askShow(req.params.id, question, (e) => write(e)));
       write({ type: "answer", answer });
-    } catch (e) {
+    } catch (caught) {
+      const e = claudeProblem(caught) ?? caught;
       const err = e as HttpError;
       if (!(e instanceof HttpError)) app.log.error(e);
       write({ type: "error", code: err.code ?? "server_error", message: e instanceof HttpError ? err.message : "House Mix could not answer that right now." });
@@ -213,7 +242,7 @@ export async function buildApp(): Promise<FastifyInstance> {
     reply.raw.end();
     return reply;
   });
-  app.post<{ Params: { id: string; askId: string; proposalId: string } }>("/shows/:id/asks/:askId/proposals/:proposalId/add", async (req) => addProposal(req.params.id, req.params.askId, req.params.proposalId));
+  app.post<{ Params: { id: string; askId: string; proposalId: string } }>("/shows/:id/asks/:askId/proposals/:proposalId/add", async (req) => (await editable(req.params.id), addProposal(req.params.id, req.params.askId, req.params.proposalId)));
 
   app.get<{ Params: { shareId: string } }>("/share/:shareId", async (req) => {
     const shows = await getStore().list<Show>("shows", { where: ["shareId", req.params.shareId], limit: 1 });

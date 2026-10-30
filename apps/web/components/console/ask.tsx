@@ -10,6 +10,7 @@ import { EvidenceCall } from "@/components/console/evidence";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { explained } from "@/lib/user-key";
 import { api, ApiError, askStream, type AskStreamEvent } from "@/lib/api";
 
 function suggestions(show: Show): string[] {
@@ -117,7 +118,7 @@ function AnswerCard({ show, answer, onShow }: { show: Show; answer: AskAnswer; o
                       onShow(await api.addProposal(show.id, answer.id, p.id));
                       toast.success(`${p.item.pick.name} added to the queue`, { description: `Pending in ${slotLabel(p.slotKey)}. Approve, swap or reject it like any pick.` });
                     } catch (e) {
-                      toast.error("Could not add it", { description: (e as ApiError).message });
+                      if (!explained(e)) toast.error("Could not add it", { description: (e as ApiError).message });
                     } finally {
                       setAdding(undefined);
                     }
@@ -173,7 +174,7 @@ export function AskSheet({ show, onShow }: { show: Show; onShow: (s: Show) => vo
       onShow({ ...show, asks: [answer, ...show.asks.filter((a) => a.id !== answer.id)].slice(0, 10) });
       setQ("");
     } catch (e) {
-      if (!ctl.signal.aborted) toast.error("No answer", { description: (e as ApiError).message });
+      if (!ctl.signal.aborted && !explained(e)) toast.error("No answer", { description: (e as ApiError).message });
     } finally {
       setLive(undefined);
       abort.current = null;

@@ -482,5 +482,9 @@ export const Health = z.object({
   version: z.string(),
   store: z.string(),
   ttsAvailable: z.boolean(),
+  /** The public site runs Claude features on each visitor's own Anthropic key. */
+  userKeyRequired: z.boolean().optional(),
+  /** Demo shows are read-only; visitors make their own copy to change one. */
+  seedsReadOnly: z.boolean().optional(),
 });
 export type Health = z.infer<typeof Health>;
