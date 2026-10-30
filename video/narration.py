@@ -37,8 +37,17 @@ LIFT = (0.95, 0.3)
 FEMALE = {"open", "sponsor", "proof"}
 
 
+def share(pct: int) -> tuple[str, str]:
+    """A share as the caption writes it and as the voice says it: a quarter when it is one, else the percentage."""
+    if 22 <= pct <= 28:
+        return "a quarter", "a quarter"
+    return f"{pct}%", f"{words(pct)} percent"
+
+
 def lines(f: dict) -> list[tuple[str, str, str, str, float, float, str]]:
     cited, of = f["cited"], f["citedOf"]
+    assert cited == of, "n27 says all of them"
+    assert f["brandsRepeated"] == 0, "n35 says not one sponsor repeats"
     out = [
         ("open", "n1", "6:58. Doors open in two minutes, and the queue is round the block.",
          "Six fifty-eight. Doors open in two minutes, and the queue is round the block.", *OPEN),
@@ -58,18 +67,20 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float, str]]:
          "First, Clue recommends the brands this exact crowd already loves, ranked for this city.", *PRODUCT),
         ("sponsor", "n18", "Then it compares the crowd with each brand’s own audience. When they share no taste, it says so. No invented fit score.",
          "Then it compares the crowd with each brand's own audience. When they share no taste, it says so. No invented fit score.", *PRODUCT),
-        ("sponsor", "n20", "One click, and the sponsor gets a one-pager: the activation, and the evidence behind it.",
-         "One click, and the sponsor gets a one-pager. The activation, and the evidence behind it.", *PRODUCT),
-        ("sponsor", "n21", "And on the night, the partnerships crew gets the cue, right on time.",
-         "And on the night, the partnerships crew gets the cue, right on time.", *PRODUCT),
-        ("hood", "n22", f"Under the hood: every name becomes a confirmed Qloo ID, and agents call {f['tools']} tools from Qloo, through MCP.",
-         f"Under the hood. Every name becomes a confirmed Clue I D, and agents call {words(f['tools'])} tools from Clue, through M C P.", *PRODUCT),
-        ("hood", "n24", "A gate rejects anything Qloo didn’t return. Then a person approves every line.",
-         "A gate rejects anything Clue didn't return. Then a person approves every line.", *PRODUCT),
-        ("proof", "n27", f"Every House Mix pick traces back to a real Qloo call: {cited} of {of}. Claude alone? Nearly half its picks, Qloo couldn’t pin down.",
-         f"Every House Mix pick traces back to a real Clue call. {words(cited)}, of {words(of)}. Claude alone? Nearly half its picks, Clue couldn't pin down.", *PRODUCT),
+        ("run", "n31", "Then it gets the night ready. Every artist Qloo picked becomes real music, timed to each part of the night. Short on songs? The agent asks Qloo for more.",
+         "Then it gets the night ready. Every artist Clue picked becomes real music, timed to each part of the night. Short on songs? The agent asks Clue for more.", *PRODUCT),
+        ("run", "n32", "Every partner gets a message built from Qloo’s evidence, ready to send from your own email.",
+         "Every partner gets a message built from Clue's evidence, ready to send from your own email.", *PRODUCT),
+        ("run", "n21", "And on the night, every crew gets its cue on time, with the music already playing.",
+         "And on the night, every crew gets its cue on time, with the music already playing.", *PRODUCT),
+        ("hood", "n22", f"Under the hood: agents use {f['tools']} Qloo tools over MCP. A gate rejects anything Qloo did not return.",
+         f"Under the hood, the agents use {words(f['tools'])} Clue tools, over M C P. A gate rejects anything Clue did not return.", *PRODUCT),
+        ("proof", "n27", "Every House Mix pick traces back to a real Qloo call. All of them. Claude alone? Nearly half its picks, Qloo couldn’t pin down.",
+         "Every House Mix pick traces back to a real Clue call. All of them. Claude alone? Nearly half its picks, Clue couldn't pin down.", *PRODUCT),
         ("recap", "n29", "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.",
          "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.", *LIFT),
+        ("proof", "n35", f"Why Qloo? Move the same show to another city, and only {share(f['awayPct'])[0]} of its top 10 survives. Across {f['valueShows']} shows, not one sponsor repeats. Claude alone pitched {f['l0TopBrand']} to {f['l0TopBrandShows']}.",
+         f"Why Clue? Move the same show to another city, and only {share(f['awayPct'])[1]} of its top ten survives. Across {words(f['valueShows'])} shows, not one sponsor repeats. Claude alone pitched {f['l0TopBrand']} to {words(f['l0TopBrandShows'])}.", *PRODUCT),
     ]
     return [(*line, "female" if line[0] in FEMALE else "male") for line in out]
 

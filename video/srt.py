@@ -55,12 +55,13 @@ def main() -> None:
     with open(f"{HOME}/HouseMix-film.srt", "w") as f:
         for n, (a, b, text) in enumerate(cues, 1):
             f.write(f"{n}\n{stamp(a)} --> {stamp(b)}\n{text}\n\n")
-    # Chapters: each at least 10 s (YouTube's rule), the first at 0:00.
+    # Chapters: each at least 10 s (YouTube's rule), the first at 0:00; one that comes too soon joins the one before.
     marks = sorted((t / pace, name) for name, t in cut["chapters"].items())
     lines, last = [], None
     for t, name in marks:
         t = 0.0 if not lines else t
         if last is not None and t - last < 10:
+            lines[-1] += f" · {name}"
             continue
         lines.append(f"{int(t // 60)}:{int(t % 60):02d} {name}")
         last = t

@@ -327,7 +327,9 @@ export function LivePage({ show }: { show: Show }) {
                   ? `Synthesized cue · ${PROFILE_LABEL[style.profile]} · ${style.bpm} BPM, styled on tonight's Qloo crowd read. Not the recording.`
                   : stage && !stage.audible
                     ? "A set by a person: no music cue. The house mic is theirs."
-                    : "Press Start the show. Audio plays only after you press it."}
+                    : playing
+                      ? "Between sets: quiet until the next one starts."
+                      : "Press Start the show. Audio plays only after you press it."}
             </Hud>
             {nextUp.length ? (
               <div>

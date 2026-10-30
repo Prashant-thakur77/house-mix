@@ -321,21 +321,25 @@ def label_filter(text: str) -> str:
 
 
 def zoom_filter(zooms: list, w: int, h: int) -> str:
-    """Pushes in on a box and back out, eased, for each (from, to, zoom, centre x, centre y) in segment seconds; or a
-    slow drift, so a screen is never quite still."""
+    """Pushes in on a box and back out, eased, for each (from, to, zoom, centre x, centre y) in segment seconds (windows
+    in order, not overlapping); or a slow drift, so a screen is never quite still."""
     if not zooms:
         return ""
     if zooms[0][0] == "drift":
         frames = max(1, round(zooms[0][1] * FPS))
         return f"scale={2 * w}:{2 * h},zoompan=z='1+0.035*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:s={w}x{h}:fps={FPS}"
-    t0, t1, z, cx, cy = zooms[0]
     ramp = 0.6
     t = f"(on/{FPS})"
-    k = f"(if(lt({t},{t0}),0,if(lt({t},{t0 + ramp}),({t}-{t0})/{ramp},if(lt({t},{t1 - ramp}),1,if(lt({t},{t1}),({t1}-{t})/{ramp},0)))))"
-    zz = f"(1+({z}-1)*{k}*{k}*(3-2*{k}))"
+    terms, cx_e, cy_e = [], str(zooms[-1][3]), str(zooms[-1][4])
+    for t0, t1, z, cx, cy in zooms:
+        k = f"(if(lt({t},{t0}),0,if(lt({t},{t0 + ramp}),({t}-{t0})/{ramp},if(lt({t},{t1 - ramp}),1,if(lt({t},{t1}),({t1}-{t})/{ramp},0)))))"
+        terms.append(f"({z}-1)*{k}*{k}*(3-2*{k})")
+    for t0, t1, z, cx, cy in reversed(zooms[:-1]):
+        cx_e, cy_e = f"if(lt({t},{t1}),{cx},{cx_e})", f"if(lt({t},{t1}),{cy},{cy_e})"
+    zz = f"(1+{'+'.join(terms)})"
     return (
-        f"scale={2 * w}:{2 * h},zoompan=z='{zz}':x='max(0,min(iw-iw/zoom,{2 * cx}-iw/zoom/2))':"
-        f"y='max(0,min(ih-ih/zoom,{2 * cy}-ih/zoom/2))':d=1:s={w}x{h}:fps={FPS}"
+        f"scale={2 * w}:{2 * h},zoompan=z='{zz}':x='max(0,min(iw-iw/zoom,2*({cx_e})-iw/zoom/2))':"
+        f"y='max(0,min(ih-ih/zoom,2*({cy_e})-ih/zoom/2))':d=1:s={w}x{h}:fps={FPS}"
     )
 
 
@@ -371,7 +375,8 @@ CROWD = [(-1.0, 60.0, 1.45, 960, 372)]  # a held push-in (it starts already at f
 
 
 def build_edl() -> list[dict]:
-    hero, intake, crowd, sponsor, night, plan = (marks(c) for c in ("hero", "intake", "crowd", "sponsor", "night", "plan"))
+    hero, intake, crowd, sponsor, night, plan, listen, outreach = (
+        marks(c) for c in ("hero", "intake", "crowd", "sponsor", "night", "plan", "listen", "outreach"))
     tl = {s["name"]: s for s in json.load(open(f"{HOME}/build/timeline.json"))["scenes"]}
     arch = tl["arch"]
     live = "Live site · house-mix.vercel.app · recorded 30 Oct 2026"
@@ -405,30 +410,37 @@ def build_edl() -> list[dict]:
             zoom=[(0.4, 6.5, 1.6, 1620, 430)]),
         seg(kind="screen", src=f"{CLIPS}/sponsor.mp4", a=sponsor["compare"] - 0.2, b=sponsor["export"] - 0.4, nar=["n18"], shade=True,
             zoom=[(0.4, 7.5, 1.6, 1620, 560)], sfx=[(4.2, "click", 0.4)]),
-        seg(kind="screen", src=f"{CLIPS}/onepager.mp4", a=0.0, b=5.5, nar=["n20"], label="Real output · the sponsor one-pager (PDF)"),
-        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.4, speed=1.6, nar=["n21"], shade=True,
-            label="Run the night · cues for the partnerships crew", zoom=[(0.4, 9.0, 1.4, 1460, 620)], sfx=[((night["called"] - night["play"] + 0.3) / 1.6, "click", 0.6)]),
-        # 4. Every kind of night: comedy, a festival, a restaurant, each a seeded show planned on live Qloo.
+        # 4. The whole night, for real: the checklist, the music (Qloo fills a short set), outreach, and the night itself.
+        seg(kind="screen", src=f"{CLIPS}/listen.mp4", a=listen["ready"] - 0.4, b=listen["end"], speed=1.3, nar=["n31"], shade=True,
+            label="Seeded festival · planned on live Qloo · real 30-second previews",
+            zoom=[(0.0, (listen["hear"] - listen["ready"] + 0.4) / 1.3, 1.4, 900, 420),
+                  ((listen["fill"] - listen["ready"] - 0.6) / 1.3, 30.0, 1.45, 820, 700)],
+            sfx=[((listen["play"] - listen["ready"] + 0.4) / 1.3, "click", 0.5)]),
+        seg(kind="screen", src=f"{CLIPS}/outreach.mp4", a=outreach["sheet"] - 0.6, b=outreach["end"], nar=["n32"], shade=True,
+            label="Outreach pack · opens in your own email", zoom=[(0.5, 30.0, 1.55, 1680, 560)]),
+        seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.4, speed=1.2, nar=["n21"], shade=True,
+            label="Run the night · the song playing, the partnerships crew's cues", sfx=[((night["called"] - night["play"] + 0.3) / 1.2, "click", 0.6)]),
+        # 5. Every kind of night: comedy, a festival, a restaurant, each a seeded show planned on live Qloo.
         seg(kind="screen", src=f"{CLIPS}/modes.mp4", a=0.4, b=7.4, speed=1.4, pip=7, shade=True, label="Five modes · the intake"),
         seg(kind="screen", src=f"{CLIPS}/comedy.mp4", a=0.4, b=7.6, speed=1.25, pip=8, shade=True, label="Comedy · Taylor Tomlinson at The Comedy Store", zoom=[(0.2, 9.0, 1.3, 760, 520)]),
         seg(kind="screen", src=f"{CLIPS}/festival.mp4", a=0.4, b=7.6, speed=1.25, pip=9, shade=True, label="Festival · Victoria Park, London", zoom=[(0.2, 9.0, 1.3, 760, 520)]),
         seg(kind="screen", src=f"{CLIPS}/dining.mp4", a=0.4, b=10.8, speed=1.45, pip=10, shade=True, label="Dining · Dishoom Shoreditch, Ezra Collective jazz night", zoom=[(0.2, 12.0, 1.3, 760, 520)]),
         seg(kind="screen", src=f"{CLIPS}/gfx-turn.mp4", a=0.0, b=3.0, pip=11, sfx=[(0.1, "hit", 0.4)]),
-        # 5. Under the hood: the 3D stack, its lines landing where the layers rise.
+        # 6. Under the hood: the 3D stack, its lines landing where the layers rise.
         seg(kind="screen", src=f"{CLIPS}/gfx-arch.mp4", a=0.0, b=arch["dur"], nar=[(l["id"], l["start"]) for l in arch["lines"]], keep_speed=True),
-        # 6. Proof, and the honest result.
+        # 7. Proof, what Qloo adds, and the honest result.
         face(12),
         seg(kind="screen", src=f"{CLIPS}/gfx-proof.mp4", a=0.0, b=tl["proof"]["dur"], nar=["n27"], keep_speed=True, sfx=[(3.0, "hit", 0.4), (5.6, "hit", 0.3)]),
+        seg(kind="screen", src=f"{CLIPS}/gfx-value.mp4", a=0.0, b=tl["value"]["dur"], nar=["n35"], keep_speed=True, sfx=[(1.2, "hit", 0.35), (5.0, "hit", 0.3)]),
         seg(kind="screen", src=f"{CLIPS}/gfx-judge.mp4", a=0.0, b=6.5, pip=13),
-        # 7. The recap, the callback, the end card.
-        seg(kind="screen", src=f"{CLIPS}/gfx-recap.mp4", a=0.0, b=tl["recap"]["dur"], nar=["n29"], keep_speed=True, sfx=[(-1.4, "riser", 0.35), (0.3, "hit", 0.4)]),
+        # 8. The callback and the end card.
         seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=5.0, pip=14),
         seg(kind="screen", src=f"{CLIPS}/gfx-end.mp4", a=0.0, b=6.0, voice=15, fade_out=1.2, sfx=[(0.0, "hit", 0.5)]),
     ]
 
 
-CHAPTERS = {0: "Doors at 6:58", 7: "Live on the site", 11: "For sponsors", 17: "Every kind of night", 22: "Under the hood", 23: "Proof", 26: None}
-XFADE = {3: 0.4, 6: 0.3, 7: 0.4, 11: 0.4, 17: 0.4, 22: 0.4, 23: 0.4, 26: 0.35, 28: 0.4}
+CHAPTERS = {0: "Doors at 6:58", 7: "Live on the site", 11: "For sponsors", 15: "The whole night", 18: "Every kind of night", 23: "Under the hood", 24: "Proof", 28: None}
+XFADE = {3: 0.4, 6: 0.3, 7: 0.4, 11: 0.4, 15: 0.4, 18: 0.4, 23: 0.4, 24: 0.4, 28: 0.35, 29: 0.4}
 
 
 def chapters(edl: list[dict]) -> list[tuple[str | None, int, bool]]:
@@ -640,7 +652,7 @@ def main() -> None:
         t += lengths[i]
     total = t
     turn = starts[6]
-    recap = starts[26]
+    recap = starts[28]
     end = starts[-1]
     pace = min(1.04, max(1.0, total / TARGET))
     json.dump({"total": total, "pace": pace, "starts": starts, "chapters": {CHAPTERS[i]: starts[i] for i in CHAPTERS if CHAPTERS[i]}}, open(f"{B}/cut.json", "w"), indent=1)

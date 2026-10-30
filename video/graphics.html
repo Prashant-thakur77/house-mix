@@ -182,7 +182,7 @@
             </div>
             <div class="hud in" id="src" style="margin-top:56px;font-size:20px">Source: eval/REPORT.md · evidence eval · ${facts.criticDrops} unsupported items removed by the Critic first</div></div>`);
           root.append(el);
-          const a = said('n27', /^(182|one|hundred)/i, 3.2), b = said('n27', /^nearly/i, 5.4);
+          const a = said('n27', /^all/i, 3.2), b = said('n27', /^nearly/i, 5.4);
           return (t) => {
             enter(el.querySelector('#h'), t, 0);
             enter(el.querySelector('#c1'), t, a - 0.9);
@@ -190,6 +190,33 @@
             enter(el.querySelector('#src'), t, b + 0.6);
             el.querySelector('#v1').textContent = Math.round(facts.cited * prog(t, a - 0.6, 0.9));
             el.querySelector('#v2').textContent = Math.round(facts.l0Ambiguous * prog(t, b - 0.3, 0.9));
+          };
+        },
+
+        /** What Qloo adds, from the free checks: the same show in another city, and sponsors across shows. */
+        value() {
+          const el = h(`<div class="stage">
+            <div class="hud in" id="h"><span class="slash">//</span> Why Qloo · free checks on live Qloo · ${facts.date}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:70px">
+              <div class="card in" id="c1"><div class="num" style="font-size:190px"><span id="v1">100</span>%</div>
+                <div class="display" style="font-size:58px;margin-top:26px">of Qloo’s top 10 survives</div>
+                <div style="font-size:30px;color:var(--muted);margin-top:12px">when the same show moves to another city · ${facts.awayChanged} of ${facts.awayShows} lists changed</div></div>
+              <div class="card in" id="c2"><div class="num" style="font-size:190px">${facts.brandsRepeated}/${facts.brands}</div>
+                <div class="display" style="font-size:58px;margin-top:26px">sponsors repeated</div>
+                <div style="font-size:30px;color:var(--muted);margin-top:12px">across ${facts.valueShows} different shows</div>
+                <div class="in" id="c3" style="font-size:34px;margin-top:22px"><span class="red">Claude alone: ${facts.l0BrandsRepeated}/${facts.l0Brands}</span> · ${facts.l0TopBrand} on ${facts.l0TopBrandShows} shows</div></div>
+            </div>
+            <div class="hud in" id="src" style="margin-top:56px;font-size:20px">Also: ${facts.explained}/${facts.explainedOf} picks carry Qloo’s own reason · the same call twice, same answer ${facts.repeatSame}/${facts.repeatCalls} · Source: eval/REPORT.md</div></div>`);
+          root.append(el);
+          const a = said('n35', /^move/i, 1.2), b = said('n35', /^across/i, 5.0), c = said('n35', /^claude/i, 7.4);
+          return (t) => {
+            enter(el.querySelector('#h'), t, 0);
+            enter(el.querySelector('#c1'), t, a - 0.3);
+            enter(el.querySelector('#c2'), t, b - 0.4);
+            enter(el.querySelector('#c3'), t, c - 0.15);
+            enter(el.querySelector('#src'), t, c + 1.0);
+            // Counts down from 100% to what survives as the line says it.
+            el.querySelector('#v1').textContent = Math.round(100 - (100 - facts.awayPct) * prog(t, a + 0.6, 1.4));
           };
         },
 

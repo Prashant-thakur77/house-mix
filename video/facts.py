@@ -2,7 +2,7 @@
 
     python3 video/facts.py   ->  ~/Videos/housemix/build/facts.json
 
-Sources: eval/results/*.json (written by the eval scripts against live Qloo) and the live-contract check.
+Sources: eval/results/*.json (qloo_value.json for what Qloo adds) (written by the eval scripts against live Qloo) and the live-contract check.
 """
 
 from __future__ import annotations
@@ -25,6 +25,9 @@ def facts() -> dict:
     for r in (ev, judge, v1):
         assert r.get("qlooMode") == "live", "film numbers come from live Qloo runs only"
     openers = judge["perSlot"].get("openers", {"wins": 0, "losses": 0})
+    value = read("qloo_value")
+    brands, l0brands = value["specificity"]["houseMixBrands"], value["specificity"]["l0Brands"]
+    top = l0brands["top"][0] if l0brands["top"] else ""  # e.g. "spotify (4 shows)"
     return {
         "tools": verify["tools"],
         "toolsPassed": verify["passed"],
@@ -44,6 +47,20 @@ def facts() -> dict:
         "openersLosses": openers["losses"],
         "judgeModel": judge["model"],
         "date": judge["generatedAt"][:10],
+        "awayPct": round(100 * value["location"]["meanAwayOverlap"]),
+        "awayChanged": value["location"]["changed"],
+        "awayShows": value["location"]["shows"],
+        "brandsRepeated": brands["repeated"],
+        "brands": brands["picks"],
+        "l0BrandsRepeated": l0brands["repeated"],
+        "l0Brands": l0brands["picks"],
+        "l0TopBrand": top.split(" (")[0].title(),
+        "l0TopBrandShows": int(top.split("(")[1].split()[0]) if "(" in top else 0,
+        "valueShows": value["ops"]["plans"],
+        "explained": value["explainability"]["explained"],
+        "explainedOf": value["explainability"]["picks"],
+        "repeatSame": value["repeatability"]["sameOrder"],
+        "repeatCalls": value["repeatability"]["calls"],
     }
 
 

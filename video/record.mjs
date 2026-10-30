@@ -321,15 +321,68 @@ const flows = {
     mark("end");
   },
 
+  /** Getting the night ready on the festival: the checklist, then its playlist as real songs, played, down to the
+   * artists Qloo added when the picks ran short. */
+  async listen() {
+    const scroller = '[class*="overflow-y-auto"]';
+    await start(`${SITE}/shows/seed-festival`);
+    await scrollTo(page.locator("#ready-title"), 120, scroller);
+    mark("ready");
+    await wait(2200);
+    await scrollTo(page.locator("#hear-title"), 110, scroller);
+    mark("hear");
+    await wait(1200);
+    await press(page.getByRole("button", { name: /play the set/i }).first());
+    await page.getByRole("region", { name: "Now previewing" }).waitFor();
+    mark("play");
+    await wait(2200);
+    await press(page.getByRole("button", { name: /^Show all \d+ songs/ }));
+    const fill = page.getByText("added by Qloo", { exact: true }).first();
+    await scrollTo(fill, 330, scroller);
+    await press(fill, { click: false });
+    mark("fill");
+    await wait(2600);
+    mark("end");
+  },
+
+  /** The outreach pack on the fixture: a message per partner from its evidence; a sponsor's with its one-pager. */
+  async outreach() {
+    await start(`${SITE}/shows/seed-sports`);
+    await wait(600);
+    await press(page.getByRole("button", { name: /^Outreach/ }));
+    const sheet = page.getByRole("dialog", { name: "Outreach pack" });
+    await sheet.waitFor();
+    mark("sheet");
+    await wait(1600);
+    const first = sheet.getByRole("article").first();
+    await press(first.getByRole("button", { name: /open in email/i }), { click: false });
+    mark("email");
+    await wait(1500);
+    const brand = sheet.getByRole("article").filter({ has: page.getByRole("button", { name: /one-pager/i }) }).first();
+    await scrollTo(brand, 140, '[data-slot="sheet-content"] [class*="overflow-y-auto"]');
+    await press(brand.getByRole("button", { name: /one-pager/i }), { click: false });
+    mark("onepager");
+    await wait(2200);
+    mark("end");
+  },
+
   /** Run the night on the fixture: the partnerships crew's cue arrives and is called. */
   async night() {
     await start(`${SITE}/shows/seed-sports/live`);
     await press(page.getByRole("radio", { name: "Partnerships" }));
     await wait(500);
-    await press(page.getByRole("radio", { name: "300×" }));
-    await press(page.getByRole("button", { name: /start the show/i }));
+    // Jump to a minute before the first song and the first partnerships cue (doors 13:00, the night ends 18:30).
+    const track = page.locator('section[aria-label="The night"] [role="presentation"]');
+    const box = await track.boundingBox();
+    await press(track, { click: false });
+    await page.mouse.click(box.x + box.width * (119 / 330), box.y + box.height / 2);
+    await wait(500);
+    await press(page.getByRole("radio", { name: "60×" }));
+    await press(page.getByRole("button", { name: /^(start the show|resume)$/i }));
     mark("play");
-    await wait(5500);
+    await page.getByText(/^Playing a 30-second preview/).waitFor({ timeout: 15_000 });
+    mark("song");
+    await wait(2500);
     const cue = page.getByRole("button", { name: /^Mark called: Activate/ }).first();
     await press(cue);
     mark("called");
