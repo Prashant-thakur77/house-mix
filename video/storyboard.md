@@ -1,0 +1,45 @@
+# House Mix film: storyboard (judge cut, under 3:00)
+
+The rules allow up to 3 minutes. Target 2:52. Two voices: **F** is Prashant on camera (face bubble over screens, or full frame), **N** is the narrator (Chatterbox built-in voice, one voice for the whole film). Voices never overlap; the narrator starts about 0.5 s after Prashant's last word. Every number comes from `video/facts.py` (which reads `eval/results/*.json` and `docs/QLOO_VERIFY.md`) at build time.
+
+Look: the product's own palette. Signal ink `#0A0A0A`, paper `#F1F1F1`, red `#E8271C` (the one danger and accent colour), violet `#5B2BE0` for the 3D section and the finale, Saira Condensed for display type, Geist Mono for labels, Doto for big numbers. One ease, `cubic-bezier(0.16, 1, 0.3, 1)`; every entrance is a 12 px rise plus a fade.
+
+Music: one theme composed in `music.py` (four-on-the-floor house groove, 122 BPM, sparse kick and pads under the opening, full groove from the title, doubled and brighter for the recap, resolving on the end card). Ducked 12 dB under voices.
+
+| # | Time | Voice | Line (as spoken) | On screen | Motion | Caption pops | Sound |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0:00 | N | Six fifty-eight. Doors open in two minutes, and the queue is round the block. | Black HUD from the landing: the point-cloud figure, clock ticking 18:58 in Doto digits | Slow push 1.0→1.08; clock digits flip | **6:58** | Kick only, low-passed; a crowd murmur bed |
+| 2 | 0:05 | N | Who's actually coming tonight? What will they sing? Where will they drink after? | The figure disperses into a crowd of dots; three questions stack as kinetic type | One question per beat, 12 px rise | **coming**, **sing**, **drink** | Hi-hats enter |
+| 3 | 0:12 | N | And the sponsor paying for all of it wants one answer: do we fit this crowd? | A brand card slides in over the crowd with a pulsing "?" | Card rise; the dots lean toward it | **sponsor**, **fit** | Riser starts |
+| 4 | 0:18 | N | Today, someone guesses. Every night, in every room, from comedy clubs to stadiums. | Five venue glyphs (concert, comedy, sports, festival, dining) light up in a row | Glyph pops in time with "every" | **guesses** | Riser ends on "stadiums" with a low hit |
+| 5 | 0:24 | F | I'm Prashant. I build for the people who run the room. | Prashant, full frame, lower third "Prashant · built House Mix" | Gentle 1.0→1.035 drift | **Prashant** | Groove drops to pads |
+| 6 | 0:29 | F | They plan every night for a crowd they've never met. | Prashant | Punch in 110% on "never met" | **never met** | |
+| 7 | 0:33 | F | So I built something that asks Qloo who's really coming. | Prashant, face bubble shrinks to the corner as the landing page slides in | Bubble move, 600 ms | **Qloo** | Whoosh |
+| 8 | 0:37 | F | This is House Mix. | Wordmark: the LED "HOUSE MIX" sign from the finale, peak meters jumping | Hard cut on "This"; meters on the beat | **House Mix** | Full groove starts on the title |
+| 9 | 0:39 | N | Tonight's crowd, read by Qloo. Every pick, on file. | Kinetic type over the record spinning | Two phrases, two beats | **Qloo**, **on file** | |
+| 10 | 0:43 | N | Watch. A promoter types tonight's fixture: Dodgers against the Giants. | Live site `/new`, Sports mode, typing (sped up ×1.4, tagged) | Cursor halo, typing | **Dodgers**, **Giants** | Clicks |
+| 11 | 0:49 | N | Every name goes to Qloo first. Dodger Stadium has a twin in Iowa, so House Mix asks. It never guesses. | Confirm card "Which Dodger Stadium?": the LA ballpark vs Fort Dodge, Iowa | Zoom 1.0→1.5 on the two candidates; callout box draws on "Fort Dodge, Iowa" | **Iowa**, **never guesses** | Tick on the callout |
+| 12 | 0:57 | N | Then a team of Claude agents goes to work, and every Qloo call lands in the trace. | Agent trace streaming (recorded live plan, sped ×4, tagged) | Pan down the trace; each status chip pops | **every Qloo call** | Soft clicks per call |
+| 13 | 1:04 | N | Here's the crowd: what both fan bases share, and what only one side carries. | Crowd card "Only A / Both crowds / Only B" with Qloo similarity bars | Zoom on the middle column; bars grow | **share**, **one side** | |
+| 14 | 1:10 | N | Open any pick. Left, exactly what Qloo returned. Right, our reading of it. Even which act drove the pick. | Evidence drawer: "Qloo says" vs "Our interpretation", "explained by Khruangbin (0.51)…" | Callouts draw on each half; highlight box on "explained by" held 3 s | **Qloo returned**, **drove** | |
+| 15 | 1:19 | F | Now, the part sponsors care about. | Face bubble over the sponsor slot | Bubble pops | **sponsors** | Riser (short) |
+| 16 | 1:22 | F | If you're the brand paying for tonight, here's how you know you belong. | Face bubble; the brands slot fills behind | | **belong** | Low hit on "belong" |
+| 17 | 1:27 | N | First, Qloo recommends the brands this exact crowd already loves, ranked for this city. | Brands slot (sports seed): Nike Training Club, Burberry, House 99; evidence: recommend → rank, "explained by Arsenal F.C. (0.51) and Chelsea FC (0.49)" | Zoom on the rank chip; callout on both clubs | **this exact crowd**, **ranked** | |
+| 18 | 1:34 | N | Then it compares the crowd with each brand's own audience. When they share no taste, it says so. No invented fit score. | `compare_audiences` evidence: "No sponsor-fit score: the comparison shared no concepts" | Highlight box held 3 s | **says so**, **No invented** | Tick |
+| 19 | 1:42 | N | Each brand gets a real activation: what to run, where, and when in the night. | The action line: "skills and reaction challenge in the family stand concourse, kit giveaway" | Typewriter reveal of the action | **what**, **where**, **when** | |
+| 20 | 1:48 | N | One click, and the sponsor gets their own one-pager, evidence attached. | Export menu → sponsor one-pager PDF opens | Page flips in, zoom on the evidence block | **one-pager** | Paper whoosh |
+| 21 | 1:54 | N | And on the night, the partnerships crew gets the cue, right on time. | Run the night at 300×, crew filter "Partnerships", the activation cue highlights as the playhead reaches it | Playhead sweep; cue row flashes red, then "Mark called" | **on time** | The synthesized cue audio plays under, then a click on "called" |
+| 22 | 2:01 | N | Under the hood. Every name becomes a confirmed Qloo ID. | 3D stack (violet): slab 1 "Intake · Qloo describe" rises | Slab rises on "name"; label draws on | **confirmed** | Whoosh |
+| 23 | 2:06 | N | Agents call ten Qloo tools through MCP, and every call is written to a ledger. | Slab 2 "Agents" and slab 3 "Qloo MCP · 10 tools" rise; packets travel up; satellite "Qloo hackathon API" | Packets glow along traces | **ten Qloo tools**, **ledger** | |
+| 24 | 2:12 | N | A gate rejects any pick Qloo didn't return, and any opener bigger than the headliner. | Slab 4 "Evidence gate": a red packet hits it and stops; callout "not in Qloo's results, blocked" | Red packet stops with a shake | **rejects**, **bigger** | Low hit |
+| 25 | 2:18 | N | Then a person approves every line. | Slab 5 "You" pulses, an "approved" chip | Pulse | **approves** | |
+| 26 | 2:21 | F | We tested it the hard way: seven real shows, against Claude on its own. | Prashant full frame | Drift | **seven real shows** | Music dips |
+| 27 | 2:26 | N | Every House Mix pick traces back to a real Qloo call: {cited} of {cited}. Claude alone? Nearly half its picks, Qloo couldn't pin down. | Stat cards count up: "{cited}/{cited} cited", "{ambiguous}/{l0} ambiguous", source line `eval/REPORT.md` | Count-up 0.8 s each, held 2 s; 0.4 s reveal pause before the first number | **{cited}**, **half** | Hit on each number |
+| 28 | 2:35 | F | And on taste alone, a blind judge still preferred Claude. We're showing you that too. | Prashant; then the judge result card "0–7 → {wins}–{losses}" with "openers now win {openersWins}–{openersLosses}" | Card slides in under him | **still preferred Claude** | |
+| 29 | 2:42 | N | Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time. | Recap: lines stack on the left in big type; on the right a real screenshot per line (confirm card, evidence drawer, sponsor evidence, Run the night), punching in 8% | 70 ms white flash per line | each line's first word | Riser into it, a hit per line, the groove doubles |
+| 30 | 2:49 | F | Doors open at seven. This time, the room is ready. | Prashant, then the crowd of dots re-forms into the figure, now lit | Callback to shot 1: the clock reads 19:00 | **ready** | Groove resolves |
+| 31 | 2:53 | F | House Mix is live. Open a show and check every receipt. | End card: mark, `house-mix.vercel.app`, the repo, "no sign-in", QR code, "Qloo Agentic Hackathon" | Hold 5 s | URL | Last chord, hit on the card |
+
+Labels on screen: "live site, recorded 30 Oct 2026" on product footage; "sped up ×N" on sped takes; "seeded demo show, planned on live Qloo" on the seeded shows; "real output" on the one-pager and the eval cards. No key, terminal secret or personal data on screen.
+
+Short cut for socials (optional, under 1:00): shots 1–4 (first 18 s), 8–9, 11, 17–18, 27, 31.

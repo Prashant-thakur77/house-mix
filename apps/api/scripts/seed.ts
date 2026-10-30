@@ -3,7 +3,7 @@
  * each show with its ledger and run events to fixtures/seed/<qloo mode>/<key>.json.
  * Seed confirmations are an operator's documented choices (`choose`), not automatic picks.
  * Usage: tsx scripts/seed.ts [key ...]   (keys: concert comedy sports festival dining)
- *        tsx scripts/seed.ts --extras [--ask] [key ...]   re-runs only the crowd map and "Without Qloo" (and the sample question) on stored seeds
+ *        tsx scripts/seed.ts --extras [--ask | --ask-only] [key ...]   re-runs the crowd map and "Without Qloo" (and/or only the sample question) on stored seeds
  *        tsx scripts/seed.ts --says [key ...]   rewrites each pick's "Qloo says" line from its stored calls (no Qloo or Claude calls)
  */
 import fs from "node:fs";
@@ -217,10 +217,14 @@ if (extrasOnly) {
     const seed = JSON.parse(fs.readFileSync(file, "utf8")) as { show: Show; ledger: LedgerCall[]; run: RunState };
     const store = getStore();
     await store.put("shows", seed.show.id, seed.show);
+    await store.put("runs", seed.run.runId, seed.run);
     for (const c of seed.ledger) await store.put("ledger", c.callId, c);
-    await heatmapFor(seed.show.id, true);
-    await counterfactualFor(seed.show.id, true);
-    if (process.argv.includes("--ask")) {
+    // --ask-only re-runs just the sample question (the map and "Without Qloo" are kept).
+    if (!process.argv.includes("--ask-only")) {
+      await heatmapFor(seed.show.id, true);
+      await counterfactualFor(seed.show.id, true);
+    }
+    if (process.argv.includes("--ask") || process.argv.includes("--ask-only")) {
       const s = await getShow(seed.show.id);
       await saveShow({ ...s, asks: [] });
       await askShow(seed.show.id, def.ask, () => {});
@@ -233,7 +237,10 @@ if (extrasOnly) {
     ]);
     const asks = new Set(show.asks.map((a) => `ask_${show.id}_${a.id}`));
     const isExtra = (c: LedgerCall) => c.runId === `map_${show.id}` || c.runId.startsWith(`cf_${show.id}_`) || (c.runId.startsWith(`ask_${show.id}_`) && !asks.has(c.runId));
-    const ledger = [...seed.ledger.filter((c) => !isExtra(c)), ...(await store.list<LedgerCall>("ledger")).filter((c) => isExtra(c) && cited.has(c.callId))];
+    // Fresh calls a new sample question made are kept too (referencedLedger drops any it doesn't cite).
+    const have = new Set(seed.ledger.map((c) => c.callId));
+    const fresh = (await store.list<LedgerCall>("ledger")).filter((c) => (isExtra(c) && cited.has(c.callId)) || (asks.has(c.runId) && !have.has(c.callId)));
+    const ledger = [...seed.ledger.filter((c) => !isExtra(c)), ...fresh];
     exportSeed(def.key, show, referencedLedger(show, seed.run, ledger), seed.run);
     console.log(
       `${def.key}: extras refreshed · ${show.counterfactual?.summary.llmResolved}/${show.counterfactual?.summary.llmPicks} Claude-alone picks found · map ${show.heatmap?.layers.length} layers, ${show.heatmap?.overlap.length} overlap`,
@@ -261,14 +268,15 @@ for (const def of SEEDS.filter((s) => !only.length || only.includes(s.key))) {
   await saveShow(show);
   // Precompute the Qloo-only crowd map, the "Without Qloo" comparison and one sample question,
   // so the hosted demo shows them without spending its Claude budget.
+  // Ask reads the plan's calls through its run record, so the run is stored before the sample question.
+  const store = getStore();
+  const run: RunState = { runId, showId: show.id, status: "done", events, startedAt: new Date(t0).toISOString(), finishedAt: new Date().toISOString() };
+  await store.put("runs", runId, run);
   await heatmapFor(show.id, true);
   await counterfactualFor(show.id, true);
   await askShow(show.id, def.ask, () => {});
   show = await getShow(show.id);
-  const store = getStore();
   const ledger = (await store.list<LedgerCall>("ledger")).filter((c) => c.runId === runId || c.runId === `resolve_${show.id}` || extraRuns(show.id, c.runId));
-  await store.put("runs", runId, { runId, showId: show.id, status: "done", events, startedAt: new Date(t0).toISOString(), finishedAt: new Date().toISOString() });
-  const run: RunState = { runId, showId: show.id, status: "done", events, startedAt: new Date(t0).toISOString(), finishedAt: new Date().toISOString() };
   exportSeed(def.key, show, referencedLedger(show, run, ledger), run);
   console.log(
     `${def.key}: ${show.title} · ${plan.slots.reduce((n, s) => n + s.items.length, 0)} items · ${plan.stats.qlooCalls} calls · $${plan.stats.costUsd} · ${Math.round((Date.now() - t0) / 1000)}s`,

@@ -148,32 +148,118 @@
   ],
   "asks": [
    {
-    "id": "a_cc8d0eb7-6",
+    "id": "a_1aeb6fc7-7",
     "question": "Which drinks brand fits the jazz-night crowd best, and what should we pour with it?",
-    "lines": [],
-    "dropped": [
+    "lines": [
      {
-      "text": "Sipsmith Gin fits best. It ranked #1 of 10 for tonight's crowd (affinity 0.94, popularity 0.83) and was also the #1 recommendation.",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Sipsmith Gin ranked #1 of 10 for adults 25-29 in London, with affinity 0.94 and popularity 0.83.",
+      "callIds": [
+       "c_2def5da5-be1"
+      ]
      },
      {
-      "text": "Pour it with Beavertown Brewery (ranked #2, affinity 0.92), then Ghia (#4, 0.91) and Seedlip Drinks (#5, 0.91). Ghia and Seedlip add non-alcoholic options.",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Pour it with Beavertown Brewery (#2, affinity 0.92), then Ghia (#4, 0.91) and Seedlip Drinks (#5, 0.91). Ghia and Seedlip are the non-alcoholic options.",
+      "callIds": [
+       "c_2def5da5-be1",
+       "c_7e8cc21c-51f"
+      ]
      },
      {
-      "text": "Sipsmith is explained by Dishoom Shoreditch (0.54) and Ezra Collective (0.46), and it also appeared in the compare_audiences results. Beavertown leans slightly to Ezra Collective (0.52).",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Sipsmith was also the top brand recommendation. It appears in the audience comparison as the group B entity.",
+      "callIds": [
+       "c_7e8cc21c-51f",
+       "c_c482fce6-286"
+      ]
      },
      {
-      "text": "These are relative affinity signals for the room, not facts about individual guests. All four brands are still pending your approval, and the plan shows a flat trend.",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Caveat: the scores are close (0.91 to 0.94), so treat the order as a soft preference. Qloo gave no food-pairing data, so I can't say which dishes suit each drink.",
+      "callIds": [
+       "c_2def5da5-be1"
+      ]
      }
     ],
-    "calls": [],
+    "dropped": [],
+    "calls": [
+     {
+      "callId": "c_2def5da5-be1",
+      "tool": "qloo_rank",
+      "inputs": {
+       "options": [
+        "8F6D8F25-8506-41C6-BEBF-82242279A815",
+        "016F7629-169D-4310-AFC8-486D80C67A48",
+        "B53EC632-ECCE-41AB-AD51-AF9073372EAC",
+        "03E484EE-FAD4-41FB-9139-2A053C849654",
+        "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+        "3474E1EC-0D8E-4643-9A43-EA58DD15662B",
+        "444AB5F4-059C-4E9C-B719-08BF3E7F2BDF",
+        "9D73C5CB-5228-4C88-A6C7-53DBD9EB020F",
+        "CF3483AA-CA87-4670-B87A-DADD90605AE1",
+        "B6D79D9A-E3C5-493C-9825-3E49032D5201"
+       ],
+       "option_type": "brand",
+       "signals": [
+        "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+        "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+       ],
+       "signal_location": "London",
+       "demographic": "adults 25-29"
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/insights",
+      "source": "live",
+      "durationMs": 3962
+     },
+     {
+      "callId": "c_7e8cc21c-51f",
+      "tool": "qloo_recommend",
+      "inputs": {
+       "target_type": "brand",
+       "signals": [
+        "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+        "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+       ],
+       "signal_location": "London",
+       "demographic": "adults 25-29",
+       "include_tags": [
+        "urn:tag:genre:brand:wine_and_spirits"
+       ],
+       "limit": 10
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/insights",
+      "source": "live",
+      "durationMs": 1738
+     },
+     {
+      "callId": "c_c482fce6-286",
+      "tool": "qloo_compare_audiences",
+      "inputs": {
+       "group_a": [
+        "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+        "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+       ],
+       "group_b": [
+        "8F6D8F25-8506-41C6-BEBF-82242279A815"
+       ],
+       "target_type": "brand",
+       "limit": 10
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/analysis/compare",
+      "source": "live",
+      "durationMs": 1802
+     }
+    ],
     "proposals": [],
     "planVersion": 1,
-    "costUsd": 0.0741,
-    "at": "2026-10-30T06:27:26.033Z"
+    "costUsd": 0.0863,
+    "at": "2026-10-30T13:51:59.473Z"
    }
   ],
   "status": "planned",
@@ -181,7 +267,7 @@
   "negativeSignals": [],
   "qlooMode": "live",
   "createdAt": "2026-10-30T06:23:51.962Z",
-  "updatedAt": "2026-10-30T06:27:26.035Z",
+  "updatedAt": "2026-10-30T13:51:59.475Z",
   "plan": {
    "runId": "r_seed_dining",
    "headline": "Jazz supper for adults 25-29: UK jazz-led sets, Dalston-led guide, craft drinks; flat trend, no brands wildcard",
@@ -5349,46 +5435,6 @@
  },
  "ledger": [
   {
-   "callId": "c_0720bd88-783",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Alabaster DePlume",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
-     "name": "Alabaster Deplume",
-     "popularity": 0.9206608391726353,
-     "properties": {
-      "short_description": "Alabaster Deplume is a British jazz saxophonist and poet known for his experimental and improvisational style.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/73C4184C-8EE2-4706-804A-646F9E9E0CC5-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
-   ],
-   "inputIds": [
-    "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 773,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:17.128Z"
-  },
-  {
    "callId": "c_07bfb819-61d",
    "runId": "r_seed_dining",
    "agent": "programmer",
@@ -6242,111 +6288,6 @@
    "at": "2026-10-30T06:24:58.634Z"
   },
   {
-   "callId": "c_140d52da-e85",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Nubya Garcia",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "B3C36B49-259E-4A4F-80E6-AE9F19F6004C",
-     "name": "Nubya Garcia",
-     "popularity": 0.8782366376416529,
-     "properties": {
-      "short_description": "British jazz saxophonist and composer known for her vibrant contemporary jazz style.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/B3C36B49-259E-4A4F-80E6-AE9F19F6004C-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "B3C36B49-259E-4A4F-80E6-AE9F19F6004C"
-   ],
-   "inputIds": [
-    "B3C36B49-259E-4A4F-80E6-AE9F19F6004C"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 2037,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:10.827Z"
-  },
-  {
-   "callId": "c_1f09a10e-130",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Dishoom Kings Cross",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Dishoom Kings Cross",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "0DF5149A-22B3-46FB-A69F-5C2C50E471ED",
-       "name": "Dishoom King's Cross",
-       "type": "place",
-       "disambiguation": "Buzzy Bombay-style eatery offering Indian street food and modern dishes in a converted Victorian railway godown with vintage colonial decor.",
-       "popularity": 0.9981921183492001
-      },
-      {
-       "qlooId": "8BF58D7F-F428-4902-A85C-076CC0CC3578",
-       "name": "Harry Potter Shop King's Cross",
-       "type": "place",
-       "disambiguation": "Harry Potter-themed official shop at King's Cross Station with Platform 9 3/4 photo opportunity and extensive Wizarding World merchandise.",
-       "popularity": 0.9976999377066462
-      },
-      {
-       "qlooId": "10892A4C-86BE-4C5C-AD3A-8B9E2C7BAB71",
-       "name": "Granger & Co. King's Cross",
-       "type": "place",
-       "disambiguation": "Sunny Australian-inspired all-day restaurant serving vibrant breakfast and international dishes in an airy space with central bar and leather banquettes.",
-       "popularity": 0.9946937354876358
-      },
-      {
-       "qlooId": "B5328092-4B25-4692-B2FC-828B824E435F",
-       "name": "Premier Inn London Kings Cross hotel",
-       "type": "place",
-       "disambiguation": "Situated directly across from King's Cross Station, this hotel offers comfortable accommodations and easy transit access for travelers.",
-       "popularity": 0.9922449046302497
-      },
-      {
-       "qlooId": "71BBF179-41DA-4E58-991D-51307F156C71",
-       "name": "Crowne Plaza London - Kings Cross by IHG",
-       "type": "place",
-       "disambiguation": "Situated within walking distance of transport hubs, this hotel offers a quiet base with an on-site restaurant and fitness center.",
-       "popularity": 0.9917079634085051
-      }
-     ]
-    }
-   ],
-   "durationMs": 614,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:15.291Z"
-  },
-  {
    "callId": "c_2def5da5-be1",
    "runId": "r_seed_dining",
    "agent": "sponsor_fit",
@@ -6560,49 +6501,6 @@
    "attempts": 2,
    "source": "live",
    "at": "2026-10-30T06:25:05.897Z"
-  },
-  {
-   "callId": "c_30f664c4-cc1",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Cafe OTO",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Cafe OTO",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "F6BF0FAD-D9A7-4423-ACB4-1C24E0EB486B",
-       "name": "Cafe OTO",
-       "type": "place",
-       "disambiguation": "Daytime café serving coffee and drinks that becomes an intimate hub for avant-garde live music and late-night performances.",
-       "popularity": 0.9875890614802342
-      },
-      {
-       "qlooId": "7F6A5D38-9929-4E35-9013-FF7157326AC0",
-       "name": "Cafe OTO",
-       "type": "place",
-       "disambiguation": "Relaxed neighborhood coffee shop in Makassar offering espresso drinks with indoor and outdoor seating plus takeaway."
-      }
-     ]
-    }
-   ],
-   "durationMs": 581,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:18.372Z"
   },
   {
    "callId": "c_31715a3e-01d",
@@ -6845,59 +6743,6 @@
    "attempts": 0,
    "source": "live",
    "at": "2026-10-30T06:25:09.301Z"
-  },
-  {
-   "callId": "c_397926ff-d4d",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Brick Lane Beigel Bake",
-    "type": "place"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [
-    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
-   ],
-   "results": [
-    {
-     "entity_id": "054A2C23-580E-4633-B0E1-E605E2204814",
-     "name": "Beigel Bake",
-     "popularity": 0.9894357603968054,
-     "properties": {
-      "description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
-      "image": {
-       "url": "https://images.qloo.com/i/054A2C23-580E-4633-B0E1-E605E2204814-420x-auto.jpg"
-      },
-      "geocode": {
-       "name": "London Borough of Tower Hamlets",
-       "city": "London",
-       "admin1_region": "England",
-       "admin2_region": "Greater London",
-       "country_code": "GB",
-       "country": "United Kingdom",
-       "metro": "London"
-      },
-      "address": "159 Brick Ln London E1 6SB United Kingdom",
-      "price_level": 1,
-      "business_rating": 4.4
-     }
-    }
-   ],
-   "resultIds": [
-    "054A2C23-580E-4633-B0E1-E605E2204814"
-   ],
-   "inputIds": [
-    "054A2C23-580E-4633-B0E1-E605E2204814"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 969,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:15.646Z"
   },
   {
    "callId": "c_40f49e14-3eb",
@@ -7853,364 +7698,6 @@
    "at": "2026-10-30T06:24:52.845Z"
   },
   {
-   "callId": "c_5580bfcb-9ee",
-   "runId": "map_seed-dining",
-   "agent": "crowd_map",
-   "tool": "qloo_where_popular",
-   "args": {
-    "entity": "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-    "entity_type": "place",
-    "within": "London",
-    "limit": 20
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "location": {
-      "latitude": 51.457214,
-      "longitude": -0.15930176,
-      "geohash": "gcpusr"
-     },
-     "query": {
-      "affinity": 1,
-      "affinity_rank": 0.954127,
-      "popularity": 0.9880478087649402,
-      "entity_place_affinity_rank": 0.954127,
-      "entity_place_affinity": 1
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.528625,
-      "longitude": -0.09338379,
-      "geohash": "gcpvju"
-     },
-     "query": {
-      "affinity": 0.9960159362549801,
-      "affinity_rank": 0.838746,
-      "popularity": 1,
-      "entity_place_affinity_rank": 0.838746,
-      "entity_place_affinity": 0.9960159362549801
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.473694,
-      "longitude": -0.08239746,
-      "geohash": "gcpuy4"
-     },
-     "query": {
-      "affinity": 0.9920318725099602,
-      "affinity_rank": 0.818937,
-      "popularity": 0.9681274900398407,
-      "entity_place_affinity_rank": 0.818937,
-      "entity_place_affinity": 0.9920318725099602
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.490173,
-      "longitude": -0.18127441,
-      "geohash": "gcpugv"
-     },
-     "query": {
-      "affinity": 0.9880478087649402,
-      "affinity_rank": 0.764356,
-      "popularity": 0.8884462151394422,
-      "entity_place_affinity_rank": 0.764356,
-      "entity_place_affinity": 0.9880478087649402
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.506653,
-      "longitude": -0.18127441,
-      "geohash": "gcpv5b"
-     },
-     "query": {
-      "affinity": 0.9840637450199203,
-      "affinity_rank": 0.75813,
-      "popularity": 0.8406374501992032,
-      "entity_place_affinity_rank": 0.75813,
-      "entity_place_affinity": 0.9840637450199203
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.479187,
-      "longitude": -0.005493164,
-      "geohash": "gcpuzg"
-     },
-     "query": {
-      "affinity": 0.9800796812749004,
-      "affinity_rank": 0.7419555,
-      "popularity": 0.8725099601593626,
-      "entity_place_affinity_rank": 0.7419555,
-      "entity_place_affinity": 0.9800796812749004
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.523132,
-      "longitude": -0.08239746,
-      "geohash": "gcpvn5"
-     },
-     "query": {
-      "affinity": 0.9760956175298805,
-      "affinity_rank": 0.7403265,
-      "popularity": 0.9760956175298805,
-      "entity_place_affinity_rank": 0.7403265,
-      "entity_place_affinity": 0.9760956175298805
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.528625,
-      "longitude": -0.17028809,
-      "geohash": "gcpvhh"
-     },
-     "query": {
-      "affinity": 0.9721115537848606,
-      "affinity_rank": 0.7297055,
-      "popularity": 0.8565737051792829,
-      "entity_place_affinity_rank": 0.7297055,
-      "entity_place_affinity": 0.9721115537848606
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.57257,
-      "longitude": -0.43395996,
-      "geohash": "gcptqh"
-     },
-     "query": {
-      "affinity": 0.9681274900398407,
-      "affinity_rank": 0.715717,
-      "popularity": 0.7131474103585658,
-      "entity_place_affinity_rank": 0.715717,
-      "entity_place_affinity": 0.9681274900398407
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.506653,
-      "longitude": -0.09338379,
-      "geohash": "gcpvjb"
-     },
-     "query": {
-      "affinity": 0.9641434262948207,
-      "affinity_rank": 0.701711,
-      "popularity": 0.9123505976095617,
-      "entity_place_affinity_rank": 0.701711,
-      "entity_place_affinity": 0.9641434262948207
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.352844,
-      "longitude": 0.09338379,
-      "geohash": "u10h4h"
-     },
-     "query": {
-      "affinity": 0.9601593625498008,
-      "affinity_rank": 0.6608995,
-      "popularity": 0.6693227091633466,
-      "entity_place_affinity_rank": 0.6608995,
-      "entity_place_affinity": 0.9601593625498008
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.528625,
-      "longitude": -0.14831543,
-      "geohash": "gcpvhs"
-     },
-     "query": {
-      "affinity": 0.9561752988047809,
-      "affinity_rank": 0.657945,
-      "popularity": 0.8207171314741036,
-      "entity_place_affinity_rank": 0.657945,
-      "entity_place_affinity": 0.9561752988047809
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.512146,
-      "longitude": -0.17028809,
-      "geohash": "gcpvh1"
-     },
-     "query": {
-      "affinity": 0.952191235059761,
-      "affinity_rank": 0.651538,
-      "popularity": 0.8007968127490039,
-      "entity_place_affinity_rank": 0.651538,
-      "entity_place_affinity": 0.952191235059761
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.495667,
-      "longitude": -0.1373291,
-      "geohash": "gcpuuy"
-     },
-     "query": {
-      "affinity": 0.9482071713147411,
-      "affinity_rank": 0.6484325,
-      "popularity": 0.8924302788844621,
-      "entity_place_affinity_rank": 0.6484325,
-      "entity_place_affinity": 0.9482071713147411
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.53412,
-      "longitude": -0.18127441,
-      "geohash": "gcpv5v"
-     },
-     "query": {
-      "affinity": 0.9442231075697212,
-      "affinity_rank": 0.647143,
-      "popularity": 0.7091633466135459,
-      "entity_place_affinity_rank": 0.647143,
-      "entity_place_affinity": 0.9442231075697212
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.495667,
-      "longitude": -0.19226074,
-      "geohash": "gcpugw"
-     },
-     "query": {
-      "affinity": 0.9402390438247012,
-      "affinity_rank": 0.640997,
-      "popularity": 0.7768924302788844,
-      "entity_place_affinity_rank": 0.640997,
-      "entity_place_affinity": 0.9402390438247012
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.48468,
-      "longitude": -0.17028809,
-      "geohash": "gcpuuh"
-     },
-     "query": {
-      "affinity": 0.9362549800796812,
-      "affinity_rank": 0.6363989999999999,
-      "popularity": 0.952191235059761,
-      "entity_place_affinity_rank": 0.6363989999999999,
-      "entity_place_affinity": 0.9362549800796812
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.4682,
-      "longitude": -0.4888916,
-      "geohash": "gcpsuc"
-     },
-     "query": {
-      "affinity": 0.9322709163346613,
-      "affinity_rank": 0.620267,
-      "popularity": 0.7131474103585658,
-      "entity_place_affinity_rank": 0.620267,
-      "entity_place_affinity": 0.9322709163346613
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.50116,
-      "longitude": -0.19226074,
-      "geohash": "gcpugx"
-     },
-     "query": {
-      "affinity": 0.9282868525896414,
-      "affinity_rank": 0.6195539999999999,
-      "popularity": 0.8924302788844621,
-      "entity_place_affinity_rank": 0.6195539999999999,
-      "entity_place_affinity": 0.9282868525896414
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.528625,
-      "longitude": -0.1373291,
-      "geohash": "gcpvhu"
-     },
-     "query": {
-      "affinity": 0.9243027888446215,
-      "affinity_rank": 0.611094,
-      "popularity": 0.900398406374502,
-      "entity_place_affinity_rank": 0.611094,
-      "entity_place_affinity": 0.9243027888446215
-     }
-    }
-   ],
-   "resultIds": [
-    "gcpusr",
-    "gcpvju",
-    "gcpuy4",
-    "gcpugv",
-    "gcpv5b",
-    "gcpuzg",
-    "gcpvn5",
-    "gcpvhh",
-    "gcptqh",
-    "gcpvjb",
-    "u10h4h",
-    "gcpvhs",
-    "gcpvh1",
-    "gcpuuy",
-    "gcpv5v",
-    "gcpugw",
-    "gcpuuh",
-    "gcpsuc",
-    "gcpugx",
-    "gcpvhu"
-   ],
-   "inputIds": [
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 1986,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:26:45.583Z"
-  },
-  {
-   "callId": "c_6c599008-a46",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Kingfisher",
-    "type": "brand"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Kingfisher",
-     "kind": "not_found",
-     "field": "entity",
-     "candidates": []
-    }
-   ],
-   "durationMs": 452,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:13.627Z"
-  },
-  {
    "callId": "c_6ed11d1c-547",
    "runId": "r_seed_dining",
    "agent": "wildcard",
@@ -8610,46 +8097,6 @@
    "at": "2026-10-30T06:26:00.519Z"
   },
   {
-   "callId": "c_6ff968a3-a9f",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Jungle",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
-     "name": "Jungle",
-     "popularity": 0.9954218972980086,
-     "properties": {
-      "short_description": "Jungle is a British modern soul musical collective known for their vibrant funk and soul sound.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/061CE350-5D95-49F0-8C09-3D13B2E2D056-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "061CE350-5D95-49F0-8C09-3D13B2E2D056"
-   ],
-   "inputIds": [
-    "061CE350-5D95-49F0-8C09-3D13B2E2D056"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 719,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:12.416Z"
-  },
-  {
    "callId": "c_70b2e814-eb5",
    "runId": "r_seed_dining",
    "agent": "crowd_reader",
@@ -8694,173 +8141,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:24:01.783Z"
-  },
-  {
-   "callId": "c_72773c39-b7e",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Nina Simone",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
-     "name": "Nina Simone",
-     "popularity": 0.9990857289371852,
-     "properties": {
-      "short_description": "Nina Simone was an American singer, songwriter, pianist, and civil rights activist known for her unique blend of jazz, blues, and soul music.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/AEB7DA4D-D5A8-43F1-9881-74DA17D8D521-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
-   ],
-   "inputIds": [
-    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 699,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:17.054Z"
-  },
-  {
-   "callId": "c_73cef2aa-db0",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
-     "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
-     "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
-     "801B1C91-94A5-4F72-AF59-F0C0B59FFC13"
-    ],
-    "option_type": "place",
-    "signals": [
-     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-    ],
-    "signal_location": "London",
-    "demographic": "adults 25-29"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
-     "name": "Dalston Superstore",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9941991403740053,
-     "affinity": 0.9800932736777038,
-     "properties": {
-      "description": "Funky LGBTQ-friendly venue with a full bar, art exhibitions, DJs and live music, plus food and arcade games.",
-      "short_description": "Funky LGBTQ-friendly venue with a full bar, art exhibitions, DJs and live music, plus food and arcade games.",
-      "image": {
-       "url": "https://images.qloo.com/i/487A6A57-5F82-45BC-90B4-BE3FDC75733F-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Hackney",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "117 Kingsland High St London E8 2PB United Kingdom",
-      "price_level": 2,
-      "business_rating": 3.700000047683716
-     }
-    },
-    {
-     "entity_id": "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
-     "name": "Railway Tavern",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.95909421674744,
-     "affinity": 0.979837625251809,
-     "properties": {
-      "description": "No-frills pub beside Tulse Hill station offering live music, DJ and open-mic nights, large garden with covered balcony, beach huts and outdoor games.",
-      "short_description": "No-frills pub beside Tulse Hill station offering live music, DJ and open-mic nights, large garden with covered balcony, beach huts and outdoor games.",
-      "image": {
-       "url": "https://images.qloo.com/i/14B4484F-7786-4B98-9CF1-74B4BA2DE911-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Lambeth",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "The Railway 7 Station Rise Norwood, London SE27 9BW United Kingdom",
-      "price_level": 2,
-      "business_rating": 4.300000190734863
-     }
-    },
-    {
-     "entity_id": "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
-     "name": "Dalston Jazz Bar",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.8317626270336811,
-     "affinity": 0.9790194969538805,
-     "properties": {
-      "description": "Jazz-focused bar and restaurant offering live music, cocktails and dining in a vintage transport-sign–adorned Dalston local institution.",
-      "short_description": "Jazz-focused bar and restaurant offering live music, cocktails and dining in a vintage transport-sign–adorned Dalston local institution.",
-      "image": {
-       "url": "https://images.qloo.com/i/7A70DF2C-BF12-4F00-8E62-69486544D9F1-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Hackney",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "4 Bradbury St London N16 8JN United Kingdom",
-      "price_level": 3,
-      "business_rating": 4
-     }
-    }
-   ],
-   "resultIds": [
-    "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
-    "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
-    "7A70DF2C-BF12-4F00-8E62-69486544D9F1"
-   ],
-   "inputIds": [
-    "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
-    "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
-    "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
-    "801B1C91-94A5-4F72-AF59-F0C0B59FFC13",
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 706,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:19.312Z"
   },
   {
    "callId": "c_78c3cefc-9eb",
@@ -9040,71 +8320,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:24:32.535Z"
-  },
-  {
-   "callId": "c_7aa3f145-0da",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Chai and Rooh Afza soft drinks",
-    "type": "brand"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Chai and Rooh Afza soft drinks",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "64013B49-7A7A-4CE1-A49C-7A18653B3CE8",
-       "name": "Asahi Soft Drinks",
-       "type": "brand",
-       "disambiguation": "Asahi Soft Drinks is a Japanese beverage company known for a wide range of soft drinks including teas, craft cola, and mineral water products.",
-       "popularity": 0.9741231713312201
-      },
-      {
-       "qlooId": "DA87D8EB-BA23-4E2E-97EC-C4AAC4A8A86C",
-       "name": "Innocent Drinks",
-       "type": "brand",
-       "disambiguation": "Innocent Drinks is a company that produces healthy smoothies, juices, and other drinks, focusing on natural ingredients and sustainability.",
-       "popularity": 0.9446440982522758
-      },
-      {
-       "qlooId": "EA635F72-50DC-438D-A1EF-690E09F4CDDF",
-       "name": "Remedy Drinks",
-       "type": "brand",
-       "disambiguation": "Remedy Drinks produces all-natural, sugar-free live cultured sparkling beverages rich in antioxidants and organic acids.",
-       "popularity": 0.7489617060229526
-      },
-      {
-       "qlooId": "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
-       "name": "Seedlip Drinks",
-       "type": "brand",
-       "disambiguation": "Seedlip is the world's first distilled non-alcoholic spirits brand offering unique, complex blends like Spice 94 for sophisticated alcohol-free drinking.",
-       "popularity": 0.7429777423674798
-      },
-      {
-       "qlooId": "07865873-2869-4E32-9D70-FFD5EEC50D62",
-       "name": "Heidi Drinks Love",
-       "type": "brand",
-       "disambiguation": "Heidi Drinks Love is a popular social media brand known for its large Instagram following and personal storytelling content.",
-       "popularity": 0.697479276499805
-      }
-     ]
-    }
-   ],
-   "durationMs": 457,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:13.632Z"
   },
   {
    "callId": "c_7b43202a-8e2",
@@ -10235,234 +9450,6 @@
    "at": "2026-10-30T06:24:58.328Z"
   },
   {
-   "callId": "c_7eaf71bc-28b",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "8F6D8F25-8506-41C6-BEBF-82242279A815",
-     "016F7629-169D-4310-AFC8-486D80C67A48",
-     "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
-     "326CC4F3-DA0A-4DD3-B104-4E751B785093"
-    ],
-    "option_type": "brand",
-    "signals": [
-     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-    ],
-    "signal_location": "London",
-    "demographic": "adults 25-29"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "8F6D8F25-8506-41C6-BEBF-82242279A815",
-     "name": "Sipsmith Gin",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.8337543015036192,
-     "affinity": 0.9431018021964135,
-     "properties": {
-      "description": "Sipsmith is a renowned London-based microdistillery that sparked a national gin renaissance by returning to traditional, small-batch distillation techniques. The brand is celebrated for its flagship London Dry Gin, which adheres to a consistent, high-quality recipe crafted in copper stills. Committed to both excellence and ethical business practices, Sipsmith is a certified B Corp that combines a reverence for history with a focus on modern innovation. Its offerings are popular among consumers who appreciate authentic craftsmanship, premium ingredients, and the elevated experience of a well-made cocktail.",
-      "short_description": "Sipsmith is a London-based microdistillery known for its award-winning, premium quality London Dry Gin and other craft gins.",
-      "image": {
-       "url": "https://images.qloo.com/i/8F6D8F25-8506-41C6-BEBF-82242279A815-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "016F7629-169D-4310-AFC8-486D80C67A48",
-     "name": "Beavertown Brewery",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.7881032699903375,
-     "affinity": 0.9182081828767102,
-     "properties": {
-      "description": "An innovative British brewery that has transformed the craft beer scene through its blend of high-quality brewing and boundary-pushing artistic presentation. Since its founding in London, it has become recognized for its distinctively vibrant cans featuring surreal illustrations. The brewery maintains a rebellious \"Never Normal\" identity, appealing to consumers who value creativity alongside their beverage choices. Its product range spans from classic IPAs to innovative alcohol-free options, catering to a diverse audience within the modern craft sector.",
-      "short_description": "Beavertown Brewery is a British craft brewery based in London, known for its diverse range of beers including IPAs, lagers, and alcohol-free options.",
-      "image": {
-       "url": "https://images.qloo.com/i/016F7629-169D-4310-AFC8-486D80C67A48-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
-     "name": "Seedlip Drinks",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.7429777423674798,
-     "affinity": 0.9104945069016271,
-     "properties": {
-      "description": "Seedlip is a pioneering non-alcoholic spirits brand that revolutionized the market by offering complex, distilled botanical blends inspired by 17th-century herbal remedies. Founded on a Lincolnshire farm, the brand focuses on providing sophisticated alternatives for cocktail lovers who choose not to consume alcohol. Its products are crafted with unique botanical combinations, catering to the rising demand for premium, non-intoxicating beverage options in social and home settings. As a high-end choice in the non-alcoholic category, it is widely recognized for quality and its role in modernizing the drinking experience.",
-      "short_description": "Seedlip is the world's first distilled non-alcoholic spirits brand offering unique, complex blends like Spice 94 for sophisticated alcohol-free drinking.",
-      "image": {
-       "url": "https://images.qloo.com/i/AC723E40-9E66-40DC-8160-AC5CB4FCBF9E-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "326CC4F3-DA0A-4DD3-B104-4E751B785093",
-     "name": "Monkey 47 Gin",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.7922225424217253,
-     "affinity": 0.8450271730512926,
-     "properties": {
-      "description": "Originating from the Black Forest in Germany, this brand is a globally recognized, super-premium gin defined by its unconventional blend of 47 botanicals. The distilling process emphasizes artisanal precision, resulting in a complex and spicy profile that has achieved cult status among mixologists and spirits enthusiasts. The brand successfully combines historical distillation techniques with modern, experimental flavor narratives. It is widely considered a benchmark for craft gins, appealing to consumers who prioritize provenance, ingredient quality, and the art of the cocktail.",
-      "short_description": "Monkey 47 is a handcrafted dry gin from Germany's Black Forest, made with 47 botanicals including lingonberries, known for its complex, spicy, and elegant flavor.",
-      "image": {
-       "url": "https://images.qloo.com/i/326CC4F3-DA0A-4DD3-B104-4E751B785093-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "8F6D8F25-8506-41C6-BEBF-82242279A815",
-    "016F7629-169D-4310-AFC8-486D80C67A48",
-    "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
-    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
-   ],
-   "inputIds": [
-    "8F6D8F25-8506-41C6-BEBF-82242279A815",
-    "016F7629-169D-4310-AFC8-486D80C67A48",
-    "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
-    "326CC4F3-DA0A-4DD3-B104-4E751B785093",
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 655,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:14.676Z"
-  },
-  {
-   "callId": "c_7ecaab69-599",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
-     "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
-     "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
-     "97FCD59C-4F36-4605-B458-79167FBCED33",
-     "061CE350-5D95-49F0-8C09-3D13B2E2D056"
-    ],
-    "option_type": "artist",
-    "signals": [
-     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-    ],
-    "signal_location": "London",
-    "demographic": "adults 25-29"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
-     "name": "Alfa Mist",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9521295768371245,
-     "affinity": 0.9660175973649474,
-     "properties": {
-      "description": "Alfa Mist is a British musician, producer, and composer who creates a unique fusion of jazz, hip hop, and soul music. He is recognized for his intricate piano work, smooth production, and emotive compositions that blend live instrumentation with electronic elements. His music often features a mellow, introspective vibe with influences from both classic jazz and contemporary urban sounds.",
-      "image": {
-       "url": "https://images.qloo.com/i/B3176305-C5BA-4B25-BD83-FB86B6E706C1-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
-     "name": "Yussef Dayes",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.7751705561999882,
-     "affinity": 0.961743575775379,
-     "properties": {
-      "description": "Yussef Dayes is a British jazz drummer and composer recognized for his innovative fusion of jazz with elements of funk, soul, and Afrobeat. He is noted for his dynamic drumming style and contributions to the modern jazz scene, often collaborating with other artists and leading his own projects such as the Yussef Dayes Quartet.",
-      "image": {
-       "url": "https://images.qloo.com/i/8AD89B8C-43AF-420E-BA13-62DB30D5F8C4-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
-     "name": "Jungle",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9956025663711014,
-     "affinity": 0.9581837239623084,
-     "properties": {
-      "description": "Jungle is a British modern soul musical collective formed by Josh Lloyd-Watson and Tom McFarland. They are known for their distinctive blend of funk, soul, and electronic music, characterized by groovy basslines, lush instrumentation, and smooth vocal harmonies. Their music often features upbeat rhythms and a retro yet contemporary vibe, appealing to fans of neo soul and indie pop. Jungle is also recognized for their visually striking music videos and energetic live performances.",
-      "image": {
-       "url": "https://images.qloo.com/i/061CE350-5D95-49F0-8C09-3D13B2E2D056-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
-     "name": "Kamaal Williams",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.880364901795018,
-     "affinity": 0.95567451060035,
-     "properties": {
-      "description": "Kamaal Williams is a British musician, producer, and keyboardist known for his innovative fusion of jazz, funk, soul, and electronic music. He gained recognition as part of the duo Yussef Kamaal before embarking on a solo career that explores contemporary jazz with modern production techniques.",
-      "image": {
-       "url": "https://images.qloo.com/i/2020C5A8-9B6B-4A0C-9B7A-68AD51957415-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "97FCD59C-4F36-4605-B458-79167FBCED33",
-     "name": "KOKOROKO",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9545838821933429,
-     "affinity": 0.9456432112589072,
-     "properties": {
-      "description": "Kokoroko is a London-based Afrobeat collective formed in the mid-2010s, blending West African musical traditions with jazz, funk, and soul influences. The band is noted for its rich horn arrangements, rhythmic complexity, and vibrant live performances. Their music often features extended instrumental sections and a strong emphasis on groove and melody, reflecting the Afrobeat legacy of artists like Fela Kuti while incorporating contemporary jazz elements.",
-      "image": {
-       "url": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
-    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
-    "061CE350-5D95-49F0-8C09-3D13B2E2D056",
-    "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
-    "97FCD59C-4F36-4605-B458-79167FBCED33"
-   ],
-   "inputIds": [
-    "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
-    "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
-    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
-    "97FCD59C-4F36-4605-B458-79167FBCED33",
-    "061CE350-5D95-49F0-8C09-3D13B2E2D056",
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 693,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:13.174Z"
-  },
-  {
    "callId": "c_8453675a-d58",
    "runId": "r_seed_dining",
    "agent": "wildcard",
@@ -11298,48 +10285,6 @@
    "at": "2026-10-30T06:24:48.196Z"
   },
   {
-   "callId": "c_9858badd-b36",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Monkey 47",
-    "type": "brand"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [
-    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
-   ],
-   "results": [
-    {
-     "entity_id": "326CC4F3-DA0A-4DD3-B104-4E751B785093",
-     "name": "Monkey 47 Gin",
-     "popularity": 0.7922225424217253,
-     "properties": {
-      "description": "Originating from the Black Forest in Germany, this brand is a globally recognized, super-premium gin defined by its unconventional blend of 47 botanicals. The distilling process emphasizes artisanal precision, resulting in a complex and spicy profile that has achieved cult status among mixologists and spirits enthusiasts. The brand successfully combines historical distillation techniques with modern, experimental flavor narratives. It is widely considered a benchmark for craft gins, appealing to consumers who prioritize provenance, ingredient quality, and the art of the cocktail.",
-      "short_description": "Monkey 47 is a handcrafted dry gin from Germany's Black Forest, made with 47 botanicals including lingonberries, known for its complex, spicy, and elegant flavor.",
-      "image": {
-       "url": "https://images.qloo.com/i/326CC4F3-DA0A-4DD3-B104-4E751B785093-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
-   ],
-   "inputIds": [
-    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 845,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:14.020Z"
-  },
-  {
    "callId": "c_99d89244-e7a",
    "runId": "r_seed_dining",
    "agent": "programmer",
@@ -11741,529 +10686,6 @@
    "at": "2026-10-30T06:24:55.990Z"
   },
   {
-   "callId": "c_9a7c740a-d6d",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
-     "EA824110-BAB1-46B6-B02B-9566676A4B1C",
-     "1C8515B7-ED92-4A22-9830-30141CF35578",
-     "054A2C23-580E-4633-B0E1-E605E2204814"
-    ],
-    "option_type": "place",
-    "signals": [
-     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-    ],
-    "signal_location": "London",
-    "demographic": "adults 25-29"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
-     "name": "The Victoria Dalston",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.989489807403214,
-     "affinity": 0.988415497933297,
-     "properties": {
-      "description": "Historic Victorian pub and live music room showcasing up-and-coming bands, craft beers, cocktails, and community-focused club nights.",
-      "short_description": "Historic Victorian pub and live music room showcasing up-and-coming bands, craft beers, cocktails, and community-focused club nights.",
-      "image": {
-       "url": "https://images.qloo.com/i/780D6C77-855B-4FB2-B6DE-C11D2BE05694-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Hackney",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "The Victoria 451 Queensbridge Rd London E8 3AS United Kingdom",
-      "price_level": 2,
-      "business_rating": 4.300000190734863
-     }
-    },
-    {
-     "entity_id": "EA824110-BAB1-46B6-B02B-9566676A4B1C",
-     "name": "Four Quarters Peckham",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9831696507671889,
-     "affinity": 0.9832129482150965,
-     "properties": {
-      "description": "No-frills arcade bar with retro video games, craft ales, and US-style grill in Peckham.",
-      "short_description": "No-frills arcade bar with retro video games, craft ales, and US-style grill in Peckham.",
-      "image": {
-       "url": "https://images.qloo.com/i/EA824110-BAB1-46B6-B02B-9566676A4B1C-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Peckham",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "187 Rye Ln London SE15 4TW United Kingdom",
-      "price_level": 2,
-      "business_rating": 4.400000095367432
-     }
-    },
-    {
-     "entity_id": "1C8515B7-ED92-4A22-9830-30141CF35578",
-     "name": "The Shacklewell Arms",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9937905375764133,
-     "affinity": 0.9814944577816588,
-     "properties": {
-      "description": "Wooden-floored live-music pub with performance stage, fairy-lit outdoor terrace and late-night club atmosphere, serving drinks and food.",
-      "short_description": "Wooden-floored live-music pub with performance stage, fairy-lit outdoor terrace and late-night club atmosphere, serving drinks and food.",
-      "image": {
-       "url": "https://images.qloo.com/i/1C8515B7-ED92-4A22-9830-30141CF35578-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "Hackney",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "71 Shacklewell Ln London E8 2EB United Kingdom",
-      "price_level": 2,
-      "business_rating": 4.400000095367432
-     }
-    },
-    {
-     "entity_id": "054A2C23-580E-4633-B0E1-E605E2204814",
-     "name": "Beigel Bake",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9894357603968054,
-     "affinity": 0.8958034600010372,
-     "properties": {
-      "description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
-      "short_description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
-      "image": {
-       "url": "https://images.qloo.com/i/054A2C23-580E-4633-B0E1-E605E2204814-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "London",
-       "name": "London Borough of Tower Hamlets",
-       "metro": "London",
-       "country": "United Kingdom",
-       "country_code": "GB",
-       "admin1_region": "England",
-       "admin2_region": "Greater London"
-      },
-      "address": "159 Brick Ln London E1 6SB United Kingdom",
-      "price_level": 1,
-      "business_rating": 4.400000095367432
-     }
-    }
-   ],
-   "resultIds": [
-    "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
-    "EA824110-BAB1-46B6-B02B-9566676A4B1C",
-    "1C8515B7-ED92-4A22-9830-30141CF35578",
-    "054A2C23-580E-4633-B0E1-E605E2204814"
-   ],
-   "inputIds": [
-    "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
-    "EA824110-BAB1-46B6-B02B-9566676A4B1C",
-    "1C8515B7-ED92-4A22-9830-30141CF35578",
-    "054A2C23-580E-4633-B0E1-E605E2204814",
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 707,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:16.354Z"
-  },
-  {
-   "callId": "c_9da12550-45b",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Yussef Dayes",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
-     "name": "Yussef Dayes",
-     "popularity": 0.8067109520226982,
-     "properties": {
-      "short_description": "British jazz drummer and composer known for blending jazz with contemporary styles.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/8AD89B8C-43AF-420E-BA13-62DB30D5F8C4-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4"
-   ],
-   "inputIds": [
-    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 2182,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:10.972Z"
-  },
-  {
-   "callId": "c_9e7d0928-fd5",
-   "runId": "map_seed-dining",
-   "agent": "crowd_map",
-   "tool": "qloo_where_popular",
-   "args": {
-    "entity": "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
-    "within": "London",
-    "limit": 20
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "location": {
-      "latitude": 51.58905,
-      "longitude": -0.07141113,
-      "geohash": "gcpvqr"
-     },
-     "query": {
-      "affinity": 1,
-      "affinity_rank": 0.921642,
-      "popularity": 0.7186574531095755,
-      "entity_artist_affinity_rank": 0.921642,
-      "entity_artist_affinity": 1
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.5506,
-      "longitude": -0.07141113,
-      "geohash": "gcpvq2"
-     },
-     "query": {
-      "affinity": 0.9990128331688055,
-      "affinity_rank": 0.9215415294117646,
-      "popularity": 0.9881539980256664,
-      "entity_artist_affinity_rank": 0.9215415294117646,
-      "entity_artist_affinity": 0.9990128331688055
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.457214,
-      "longitude": -0.016479492,
-      "geohash": "gcpuxx"
-     },
-     "query": {
-      "affinity": 0.998025666337611,
-      "affinity_rank": 0.9115423636363637,
-      "popularity": 0.7917077986179665,
-      "entity_artist_affinity_rank": 0.9115423636363637,
-      "entity_artist_affinity": 0.998025666337611
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.545105,
-      "longitude": -0.07141113,
-      "geohash": "gcpvnr"
-     },
-     "query": {
-      "affinity": 0.9970384995064165,
-      "affinity_rank": 0.910425117647059,
-      "popularity": 0.9861796643632774,
-      "entity_artist_affinity_rank": 0.910425117647059,
-      "entity_artist_affinity": 0.9970384995064165
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.523132,
-      "longitude": -0.07141113,
-      "geohash": "gcpvn7"
-     },
-     "query": {
-      "affinity": 0.9960513326752222,
-      "affinity_rank": 0.9094895882352942,
-      "popularity": 0.9960513326752222,
-      "entity_artist_affinity_rank": 0.9094895882352942,
-      "entity_artist_affinity": 0.9960513326752222
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.583557,
-      "longitude": -0.10437012,
-      "geohash": "gcpvmw"
-     },
-     "query": {
-      "affinity": 0.9950641658440277,
-      "affinity_rank": 0.9088175454545454,
-      "popularity": 0.8015794669299111,
-      "entity_artist_affinity_rank": 0.9088175454545454,
-      "entity_artist_affinity": 0.9950641658440277
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.53961,
-      "longitude": -0.14831543,
-      "geohash": "gcpvhw"
-     },
-     "query": {
-      "affinity": 0.9940769990128332,
-      "affinity_rank": 0.9084166470588237,
-      "popularity": 0.9950641658440277,
-      "entity_artist_affinity_rank": 0.9084166470588237,
-      "entity_artist_affinity": 0.9940769990128332
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.53961,
-      "longitude": -0.060424805,
-      "geohash": "gcpvnw"
-     },
-     "query": {
-      "affinity": 0.9930898321816387,
-      "affinity_rank": 0.9068090588235295,
-      "popularity": 0.9802566633761106,
-      "entity_artist_affinity_rank": 0.9068090588235295,
-      "entity_artist_affinity": 0.9930898321816387
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.473694,
-      "longitude": -0.14831543,
-      "geohash": "gcpuud"
-     },
-     "query": {
-      "affinity": 0.9921026653504442,
-      "affinity_rank": 0.9067242999999998,
-      "popularity": 0.7127344521224087,
-      "entity_artist_affinity_rank": 0.9067242999999998,
-      "entity_artist_affinity": 0.9921026653504442
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.506653,
-      "longitude": -0.10437012,
-      "geohash": "gcpvj8"
-     },
-     "query": {
-      "affinity": 0.9911154985192497,
-      "affinity_rank": 0.9042764705882352,
-      "popularity": 0.9940769990128332,
-      "entity_artist_affinity_rank": 0.9042764705882352,
-      "entity_artist_affinity": 0.9911154985192497
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.506653,
-      "longitude": -0.12634277,
-      "geohash": "gcpvj0"
-     },
-     "query": {
-      "affinity": 0.9901283316880553,
-      "affinity_rank": 0.9036545294117647,
-      "popularity": 1,
-      "entity_artist_affinity_rank": 0.9036545294117647,
-      "entity_artist_affinity": 0.9901283316880553
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.51764,
-      "longitude": -0.1373291,
-      "geohash": "gcpvhf"
-     },
-     "query": {
-      "affinity": 0.9891411648568608,
-      "affinity_rank": 0.9025344705882354,
-      "popularity": 0.9891411648568608,
-      "entity_artist_affinity_rank": 0.9025344705882354,
-      "entity_artist_affinity": 0.9891411648568608
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.506653,
-      "longitude": -0.115356445,
-      "geohash": "gcpvj2"
-     },
-     "query": {
-      "affinity": 0.9881539980256664,
-      "affinity_rank": 0.9021664117647059,
-      "popularity": 0.9921026653504442,
-      "entity_artist_affinity_rank": 0.9021664117647059,
-      "entity_artist_affinity": 0.9881539980256664
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.528625,
-      "longitude": -0.08239746,
-      "geohash": "gcpvnh"
-     },
-     "query": {
-      "affinity": 0.9871668311944719,
-      "affinity_rank": 0.9014748823529413,
-      "popularity": 0.9970384995064165,
-      "entity_artist_affinity_rank": 0.9014748823529413,
-      "entity_artist_affinity": 0.9871668311944719
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.512146,
-      "longitude": -0.12634277,
-      "geohash": "gcpvj1"
-     },
-     "query": {
-      "affinity": 0.9861796643632774,
-      "affinity_rank": 0.9010793529411766,
-      "popularity": 0.9990128331688055,
-      "entity_artist_affinity_rank": 0.9010793529411766,
-      "entity_artist_affinity": 0.9861796643632774
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.462708,
-      "longitude": -0.115356445,
-      "geohash": "gcpuv2"
-     },
-     "query": {
-      "affinity": 0.9851924975320829,
-      "affinity_rank": 0.9008829999999999,
-      "popularity": 0.9901283316880553,
-      "entity_artist_affinity_rank": 0.9008829999999999,
-      "entity_artist_affinity": 0.9851924975320829
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.462708,
-      "longitude": -0.016479492,
-      "geohash": "gcpuz8"
-     },
-     "query": {
-      "affinity": 0.9842053307008884,
-      "affinity_rank": 0.9003279999999999,
-      "popularity": 0.8657453109575518,
-      "entity_artist_affinity_rank": 0.9003279999999999,
-      "entity_artist_affinity": 0.9842053307008884
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.561584,
-      "longitude": -0.049438477,
-      "geohash": "gcpvqf"
-     },
-     "query": {
-      "affinity": 0.983218163869694,
-      "affinity_rank": 0.8986662000000001,
-      "popularity": 0.773938795656466,
-      "entity_artist_affinity_rank": 0.8986662000000001,
-      "entity_artist_affinity": 0.983218163869694
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.523132,
-      "longitude": -0.049438477,
-      "geohash": "gcpvng"
-     },
-     "query": {
-      "affinity": 0.9822309970384995,
-      "affinity_rank": 0.8981663999999998,
-      "popularity": 0.7541954590325765,
-      "entity_artist_affinity_rank": 0.8981663999999998,
-      "entity_artist_affinity": 0.9822309970384995
-     }
-    },
-    {
-     "location": {
-      "latitude": 51.523132,
-      "longitude": -0.08239746,
-      "geohash": "gcpvn5"
-     },
-     "query": {
-      "affinity": 0.981243830207305,
-      "affinity_rank": 0.8969170588235293,
-      "popularity": 0.9930898321816387,
-      "entity_artist_affinity_rank": 0.8969170588235293,
-      "entity_artist_affinity": 0.981243830207305
-     }
-    }
-   ],
-   "resultIds": [
-    "gcpvqr",
-    "gcpvq2",
-    "gcpuxx",
-    "gcpvnr",
-    "gcpvn7",
-    "gcpvmw",
-    "gcpvhw",
-    "gcpvnw",
-    "gcpuud",
-    "gcpvj8",
-    "gcpvj0",
-    "gcpvhf",
-    "gcpvj2",
-    "gcpvnh",
-    "gcpvj1",
-    "gcpuv2",
-    "gcpuz8",
-    "gcpvqf",
-    "gcpvng",
-    "gcpvn5"
-   ],
-   "inputIds": [
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 1667,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:26:47.251Z"
-  },
-  {
    "callId": "c_a0078ecd-632",
    "runId": "r_seed_dining",
    "agent": "programmer",
@@ -12529,168 +10951,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:24:58.376Z"
-  },
-  {
-   "callId": "c_af3d3574-455",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "57478178-BBBC-49A4-8755-5D942B388316",
-     "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
-     "AC007829-3D79-438E-9F02-11228C82AD38",
-     "EE57C132-8460-4E80-9EC3-8504A78982F6",
-     "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
-     "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
-    ],
-    "option_type": "artist",
-    "signals": [
-     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-    ],
-    "signal_location": "London",
-    "demographic": "adults 25-29"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "57478178-BBBC-49A4-8755-5D942B388316",
-     "name": "Jordan Rakei",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9614159605214007,
-     "affinity": 0.9666137665781399,
-     "properties": {
-      "description": "Jordan Rakei is a New Zealand-born Australian singer, songwriter, and producer who blends elements of soul, R&B, jazz, and electronic music. He is recognized for his smooth vocals, intricate production, and emotionally rich songwriting. Rakei's music often features a fusion of live instrumentation and electronic beats, creating a modern yet timeless sound that appeals to fans of neo soul and alternative R&B.",
-      "image": {
-       "url": "https://images.qloo.com/i/57478178-BBBC-49A4-8755-5D942B388316-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
-     "name": "Mansur Brown",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.8616414027223457,
-     "affinity": 0.9661429854055109,
-     "properties": {
-      "description": "Mansur Brown is an American guitarist and composer recognized for his unique blend of jazz, soul, and funk. His music often features smooth, groovy instrumental tracks that showcase his skillful guitar playing and rich melodic sensibility. Brown's style is characterized by warm tones, intricate rhythms, and a fusion of traditional and contemporary sounds, making him a notable figure in modern jazz and soul music scenes.",
-      "image": {
-       "url": "https://images.qloo.com/i/886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "AC007829-3D79-438E-9F02-11228C82AD38",
-     "name": "Hiatus Kaiyote",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9863981020912386,
-     "affinity": 0.9596404915923329,
-     "properties": {
-      "description": "Hiatus Kaiyote is an Australian band formed in Melbourne, known for their innovative fusion of neo soul, future soul, jazz fusion, and elements of R&B, electronic, and funk music. The band consists of vocalist and guitarist Nai Palm, bassist Paul Bender, keyboardist Simon Mavin, and drummer Perrin Moss. They are acclaimed for their complex rhythms, rich harmonies, and Nai Palm's distinctive vocal style. Their music often features experimental production and genre-blending that pushes the boundaries of contemporary soul and jazz.",
-      "image": {
-       "url": "https://images.qloo.com/i/AC007829-3D79-438E-9F02-11228C82AD38-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
-     "name": "Alabaster dePlume",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9366271487459777,
-     "affinity": 0.8855813146593167,
-     "properties": {
-      "description": "Alabaster Deplume is a British saxophonist, poet, and composer whose work blends jazz, free improvisation, and spoken word poetry. He is recognized for his unique approach to music that combines expressive saxophone playing with poetic lyricism and experimental soundscapes. His music often explores themes of human connection, vulnerability, and social commentary, delivered through a blend of instrumental and vocal performances.",
-      "image": {
-       "url": "https://images.qloo.com/i/73C4184C-8EE2-4706-804A-646F9E9E0CC5-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
-     "name": "Nina Simone",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.999128377537044,
-     "affinity": 0.8316825441817209,
-     "properties": {
-      "description": "Born Eunice Kathleen Waymon in 1933, Nina Simone was a classically trained pianist who became one of the 20th century's most distinctive vocalists. She combined classical technique with jazz, blues, gospel and pop, producing landmark recordings and powerful civil-rights anthems. Her repertoire ranged from torch songs and standards to uncompromising protest pieces; signature recordings include \"Mississippi Goddam\", \"Feeling Good\", \"Sinnerman\" and \"I Put a Spell on You\". Simone toured and lived for long periods in Europe later in life, and remained an influential, often polarizing figure until her death in 2003.",
-      "image": {
-       "url": "https://images.qloo.com/i/AEB7DA4D-D5A8-43F1-9881-74DA17D8D521-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "57478178-BBBC-49A4-8755-5D942B388316",
-    "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
-    "AC007829-3D79-438E-9F02-11228C82AD38",
-    "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
-    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
-   ],
-   "inputIds": [
-    "57478178-BBBC-49A4-8755-5D942B388316",
-    "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
-    "AC007829-3D79-438E-9F02-11228C82AD38",
-    "EE57C132-8460-4E80-9EC3-8504A78982F6",
-    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
-    "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
-    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
-    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 661,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:17.790Z"
-  },
-  {
-   "callId": "c_b4dcf4fc-ad9",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Bill Evans",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "EE57C132-8460-4E80-9EC3-8504A78982F6",
-     "name": "Bill Evans",
-     "popularity": 0.9955703398321925,
-     "properties": {
-      "short_description": "Bill Evans was an influential American jazz pianist known for his lyrical playing and harmonic innovations.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/EE57C132-8460-4E80-9EC3-8504A78982F6-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "EE57C132-8460-4E80-9EC3-8504A78982F6"
-   ],
-   "inputIds": [
-    "EE57C132-8460-4E80-9EC3-8504A78982F6"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 707,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:17.062Z"
   },
   {
    "callId": "c_b4ecf933-928",
@@ -14662,46 +12922,6 @@
    "at": "2026-10-30T06:24:40.376Z"
   },
   {
-   "callId": "c_e22dbdf8-8b5",
-   "runId": "cf_seed-dining_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Kokoroko",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "97FCD59C-4F36-4605-B458-79167FBCED33",
-     "name": "Kokoroko",
-     "popularity": 0.9385987699511826,
-     "properties": {
-      "short_description": "Kokoroko is a British Afrobeat band known for their vibrant fusion of jazz and African rhythms.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "97FCD59C-4F36-4605-B458-79167FBCED33"
-   ],
-   "inputIds": [
-    "97FCD59C-4F36-4605-B458-79167FBCED33"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 782,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:27:12.479Z"
-  },
-  {
    "callId": "c_e4cd432d-286",
    "runId": "r_seed_dining",
    "agent": "crowd_reader",
@@ -14924,6 +13144,1926 @@
    "at": "2026-10-30T06:24:51.976Z"
   },
   {
+   "callId": "c_eddab3c1-ab1",
+   "runId": "resolve_seed-dining",
+   "agent": "resolver",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "London",
+    "type": "locality"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "London",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "4F18635D-75D6-43EC-B8B9-8DFAEB8C5A29",
+       "name": "London",
+       "type": "locality",
+       "popularity": 0.9998790917799683
+      },
+      {
+       "qlooId": "BCF60CA0-BC94-4761-B812-68986F7CB846",
+       "name": "London",
+       "type": "locality",
+       "popularity": 0.9767231746512595
+      },
+      {
+       "qlooId": "F6DE5E16-24AF-42B8-8E51-FDFFE7A4465C",
+       "name": "London",
+       "type": "locality",
+       "popularity": 0.9371655924436348
+      },
+      {
+       "qlooId": "8AA0C925-8CF7-4AD5-8442-B651210BF06E",
+       "name": "London",
+       "type": "locality",
+       "popularity": 0.6866557184937759
+      }
+     ]
+    }
+   ],
+   "durationMs": 13,
+   "cached": true,
+   "attempts": 0,
+   "source": "live",
+   "at": "2026-10-30T06:23:49.220Z"
+  },
+  {
+   "callId": "c_0720bd88-783",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Alabaster DePlume",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
+     "name": "Alabaster Deplume",
+     "popularity": 0.9206608391726353,
+     "properties": {
+      "short_description": "Alabaster Deplume is a British jazz saxophonist and poet known for his experimental and improvisational style.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/73C4184C-8EE2-4706-804A-646F9E9E0CC5-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
+   ],
+   "inputIds": [
+    "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 773,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:17.128Z"
+  },
+  {
+   "callId": "c_140d52da-e85",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Nubya Garcia",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "B3C36B49-259E-4A4F-80E6-AE9F19F6004C",
+     "name": "Nubya Garcia",
+     "popularity": 0.8782366376416529,
+     "properties": {
+      "short_description": "British jazz saxophonist and composer known for her vibrant contemporary jazz style.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/B3C36B49-259E-4A4F-80E6-AE9F19F6004C-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "B3C36B49-259E-4A4F-80E6-AE9F19F6004C"
+   ],
+   "inputIds": [
+    "B3C36B49-259E-4A4F-80E6-AE9F19F6004C"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 2037,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:10.827Z"
+  },
+  {
+   "callId": "c_1f09a10e-130",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Dishoom Kings Cross",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Dishoom Kings Cross",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "0DF5149A-22B3-46FB-A69F-5C2C50E471ED",
+       "name": "Dishoom King's Cross",
+       "type": "place",
+       "disambiguation": "Buzzy Bombay-style eatery offering Indian street food and modern dishes in a converted Victorian railway godown with vintage colonial decor.",
+       "popularity": 0.9981921183492001
+      },
+      {
+       "qlooId": "8BF58D7F-F428-4902-A85C-076CC0CC3578",
+       "name": "Harry Potter Shop King's Cross",
+       "type": "place",
+       "disambiguation": "Harry Potter-themed official shop at King's Cross Station with Platform 9 3/4 photo opportunity and extensive Wizarding World merchandise.",
+       "popularity": 0.9976999377066462
+      },
+      {
+       "qlooId": "10892A4C-86BE-4C5C-AD3A-8B9E2C7BAB71",
+       "name": "Granger & Co. King's Cross",
+       "type": "place",
+       "disambiguation": "Sunny Australian-inspired all-day restaurant serving vibrant breakfast and international dishes in an airy space with central bar and leather banquettes.",
+       "popularity": 0.9946937354876358
+      },
+      {
+       "qlooId": "B5328092-4B25-4692-B2FC-828B824E435F",
+       "name": "Premier Inn London Kings Cross hotel",
+       "type": "place",
+       "disambiguation": "Situated directly across from King's Cross Station, this hotel offers comfortable accommodations and easy transit access for travelers.",
+       "popularity": 0.9922449046302497
+      },
+      {
+       "qlooId": "71BBF179-41DA-4E58-991D-51307F156C71",
+       "name": "Crowne Plaza London - Kings Cross by IHG",
+       "type": "place",
+       "disambiguation": "Situated within walking distance of transport hubs, this hotel offers a quiet base with an on-site restaurant and fitness center.",
+       "popularity": 0.9917079634085051
+      }
+     ]
+    }
+   ],
+   "durationMs": 614,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:15.291Z"
+  },
+  {
+   "callId": "c_30f664c4-cc1",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Cafe OTO",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Cafe OTO",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "F6BF0FAD-D9A7-4423-ACB4-1C24E0EB486B",
+       "name": "Cafe OTO",
+       "type": "place",
+       "disambiguation": "Daytime café serving coffee and drinks that becomes an intimate hub for avant-garde live music and late-night performances.",
+       "popularity": 0.9875890614802342
+      },
+      {
+       "qlooId": "7F6A5D38-9929-4E35-9013-FF7157326AC0",
+       "name": "Cafe OTO",
+       "type": "place",
+       "disambiguation": "Relaxed neighborhood coffee shop in Makassar offering espresso drinks with indoor and outdoor seating plus takeaway."
+      }
+     ]
+    }
+   ],
+   "durationMs": 581,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:18.372Z"
+  },
+  {
+   "callId": "c_397926ff-d4d",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Brick Lane Beigel Bake",
+    "type": "place"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [
+    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
+   ],
+   "results": [
+    {
+     "entity_id": "054A2C23-580E-4633-B0E1-E605E2204814",
+     "name": "Beigel Bake",
+     "popularity": 0.9894357603968054,
+     "properties": {
+      "description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
+      "image": {
+       "url": "https://images.qloo.com/i/054A2C23-580E-4633-B0E1-E605E2204814-420x-auto.jpg"
+      },
+      "geocode": {
+       "name": "London Borough of Tower Hamlets",
+       "city": "London",
+       "admin1_region": "England",
+       "admin2_region": "Greater London",
+       "country_code": "GB",
+       "country": "United Kingdom",
+       "metro": "London"
+      },
+      "address": "159 Brick Ln London E1 6SB United Kingdom",
+      "price_level": 1,
+      "business_rating": 4.4
+     }
+    }
+   ],
+   "resultIds": [
+    "054A2C23-580E-4633-B0E1-E605E2204814"
+   ],
+   "inputIds": [
+    "054A2C23-580E-4633-B0E1-E605E2204814"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 969,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:15.646Z"
+  },
+  {
+   "callId": "c_5580bfcb-9ee",
+   "runId": "map_seed-dining",
+   "agent": "crowd_map",
+   "tool": "qloo_where_popular",
+   "args": {
+    "entity": "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+    "entity_type": "place",
+    "within": "London",
+    "limit": 20
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "location": {
+      "latitude": 51.457214,
+      "longitude": -0.15930176,
+      "geohash": "gcpusr"
+     },
+     "query": {
+      "affinity": 1,
+      "affinity_rank": 0.954127,
+      "popularity": 0.9880478087649402,
+      "entity_place_affinity_rank": 0.954127,
+      "entity_place_affinity": 1
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.528625,
+      "longitude": -0.09338379,
+      "geohash": "gcpvju"
+     },
+     "query": {
+      "affinity": 0.9960159362549801,
+      "affinity_rank": 0.838746,
+      "popularity": 1,
+      "entity_place_affinity_rank": 0.838746,
+      "entity_place_affinity": 0.9960159362549801
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.473694,
+      "longitude": -0.08239746,
+      "geohash": "gcpuy4"
+     },
+     "query": {
+      "affinity": 0.9920318725099602,
+      "affinity_rank": 0.818937,
+      "popularity": 0.9681274900398407,
+      "entity_place_affinity_rank": 0.818937,
+      "entity_place_affinity": 0.9920318725099602
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.490173,
+      "longitude": -0.18127441,
+      "geohash": "gcpugv"
+     },
+     "query": {
+      "affinity": 0.9880478087649402,
+      "affinity_rank": 0.764356,
+      "popularity": 0.8884462151394422,
+      "entity_place_affinity_rank": 0.764356,
+      "entity_place_affinity": 0.9880478087649402
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.506653,
+      "longitude": -0.18127441,
+      "geohash": "gcpv5b"
+     },
+     "query": {
+      "affinity": 0.9840637450199203,
+      "affinity_rank": 0.75813,
+      "popularity": 0.8406374501992032,
+      "entity_place_affinity_rank": 0.75813,
+      "entity_place_affinity": 0.9840637450199203
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.479187,
+      "longitude": -0.005493164,
+      "geohash": "gcpuzg"
+     },
+     "query": {
+      "affinity": 0.9800796812749004,
+      "affinity_rank": 0.7419555,
+      "popularity": 0.8725099601593626,
+      "entity_place_affinity_rank": 0.7419555,
+      "entity_place_affinity": 0.9800796812749004
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.523132,
+      "longitude": -0.08239746,
+      "geohash": "gcpvn5"
+     },
+     "query": {
+      "affinity": 0.9760956175298805,
+      "affinity_rank": 0.7403265,
+      "popularity": 0.9760956175298805,
+      "entity_place_affinity_rank": 0.7403265,
+      "entity_place_affinity": 0.9760956175298805
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.528625,
+      "longitude": -0.17028809,
+      "geohash": "gcpvhh"
+     },
+     "query": {
+      "affinity": 0.9721115537848606,
+      "affinity_rank": 0.7297055,
+      "popularity": 0.8565737051792829,
+      "entity_place_affinity_rank": 0.7297055,
+      "entity_place_affinity": 0.9721115537848606
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.57257,
+      "longitude": -0.43395996,
+      "geohash": "gcptqh"
+     },
+     "query": {
+      "affinity": 0.9681274900398407,
+      "affinity_rank": 0.715717,
+      "popularity": 0.7131474103585658,
+      "entity_place_affinity_rank": 0.715717,
+      "entity_place_affinity": 0.9681274900398407
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.506653,
+      "longitude": -0.09338379,
+      "geohash": "gcpvjb"
+     },
+     "query": {
+      "affinity": 0.9641434262948207,
+      "affinity_rank": 0.701711,
+      "popularity": 0.9123505976095617,
+      "entity_place_affinity_rank": 0.701711,
+      "entity_place_affinity": 0.9641434262948207
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.352844,
+      "longitude": 0.09338379,
+      "geohash": "u10h4h"
+     },
+     "query": {
+      "affinity": 0.9601593625498008,
+      "affinity_rank": 0.6608995,
+      "popularity": 0.6693227091633466,
+      "entity_place_affinity_rank": 0.6608995,
+      "entity_place_affinity": 0.9601593625498008
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.528625,
+      "longitude": -0.14831543,
+      "geohash": "gcpvhs"
+     },
+     "query": {
+      "affinity": 0.9561752988047809,
+      "affinity_rank": 0.657945,
+      "popularity": 0.8207171314741036,
+      "entity_place_affinity_rank": 0.657945,
+      "entity_place_affinity": 0.9561752988047809
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.512146,
+      "longitude": -0.17028809,
+      "geohash": "gcpvh1"
+     },
+     "query": {
+      "affinity": 0.952191235059761,
+      "affinity_rank": 0.651538,
+      "popularity": 0.8007968127490039,
+      "entity_place_affinity_rank": 0.651538,
+      "entity_place_affinity": 0.952191235059761
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.495667,
+      "longitude": -0.1373291,
+      "geohash": "gcpuuy"
+     },
+     "query": {
+      "affinity": 0.9482071713147411,
+      "affinity_rank": 0.6484325,
+      "popularity": 0.8924302788844621,
+      "entity_place_affinity_rank": 0.6484325,
+      "entity_place_affinity": 0.9482071713147411
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.53412,
+      "longitude": -0.18127441,
+      "geohash": "gcpv5v"
+     },
+     "query": {
+      "affinity": 0.9442231075697212,
+      "affinity_rank": 0.647143,
+      "popularity": 0.7091633466135459,
+      "entity_place_affinity_rank": 0.647143,
+      "entity_place_affinity": 0.9442231075697212
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.495667,
+      "longitude": -0.19226074,
+      "geohash": "gcpugw"
+     },
+     "query": {
+      "affinity": 0.9402390438247012,
+      "affinity_rank": 0.640997,
+      "popularity": 0.7768924302788844,
+      "entity_place_affinity_rank": 0.640997,
+      "entity_place_affinity": 0.9402390438247012
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.48468,
+      "longitude": -0.17028809,
+      "geohash": "gcpuuh"
+     },
+     "query": {
+      "affinity": 0.9362549800796812,
+      "affinity_rank": 0.6363989999999999,
+      "popularity": 0.952191235059761,
+      "entity_place_affinity_rank": 0.6363989999999999,
+      "entity_place_affinity": 0.9362549800796812
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.4682,
+      "longitude": -0.4888916,
+      "geohash": "gcpsuc"
+     },
+     "query": {
+      "affinity": 0.9322709163346613,
+      "affinity_rank": 0.620267,
+      "popularity": 0.7131474103585658,
+      "entity_place_affinity_rank": 0.620267,
+      "entity_place_affinity": 0.9322709163346613
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.50116,
+      "longitude": -0.19226074,
+      "geohash": "gcpugx"
+     },
+     "query": {
+      "affinity": 0.9282868525896414,
+      "affinity_rank": 0.6195539999999999,
+      "popularity": 0.8924302788844621,
+      "entity_place_affinity_rank": 0.6195539999999999,
+      "entity_place_affinity": 0.9282868525896414
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.528625,
+      "longitude": -0.1373291,
+      "geohash": "gcpvhu"
+     },
+     "query": {
+      "affinity": 0.9243027888446215,
+      "affinity_rank": 0.611094,
+      "popularity": 0.900398406374502,
+      "entity_place_affinity_rank": 0.611094,
+      "entity_place_affinity": 0.9243027888446215
+     }
+    }
+   ],
+   "resultIds": [
+    "gcpusr",
+    "gcpvju",
+    "gcpuy4",
+    "gcpugv",
+    "gcpv5b",
+    "gcpuzg",
+    "gcpvn5",
+    "gcpvhh",
+    "gcptqh",
+    "gcpvjb",
+    "u10h4h",
+    "gcpvhs",
+    "gcpvh1",
+    "gcpuuy",
+    "gcpv5v",
+    "gcpugw",
+    "gcpuuh",
+    "gcpsuc",
+    "gcpugx",
+    "gcpvhu"
+   ],
+   "inputIds": [
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 1986,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:26:45.583Z"
+  },
+  {
+   "callId": "c_6c599008-a46",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Kingfisher",
+    "type": "brand"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Kingfisher",
+     "kind": "not_found",
+     "field": "entity",
+     "candidates": []
+    }
+   ],
+   "durationMs": 452,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:13.627Z"
+  },
+  {
+   "callId": "c_6ff968a3-a9f",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Jungle",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+     "name": "Jungle",
+     "popularity": 0.9954218972980086,
+     "properties": {
+      "short_description": "Jungle is a British modern soul musical collective known for their vibrant funk and soul sound.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/061CE350-5D95-49F0-8C09-3D13B2E2D056-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "061CE350-5D95-49F0-8C09-3D13B2E2D056"
+   ],
+   "inputIds": [
+    "061CE350-5D95-49F0-8C09-3D13B2E2D056"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 719,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:12.416Z"
+  },
+  {
+   "callId": "c_72773c39-b7e",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Nina Simone",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
+     "name": "Nina Simone",
+     "popularity": 0.9990857289371852,
+     "properties": {
+      "short_description": "Nina Simone was an American singer, songwriter, pianist, and civil rights activist known for her unique blend of jazz, blues, and soul music.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/AEB7DA4D-D5A8-43F1-9881-74DA17D8D521-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
+   ],
+   "inputIds": [
+    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 699,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:17.054Z"
+  },
+  {
+   "callId": "c_73cef2aa-db0",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
+     "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
+     "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
+     "801B1C91-94A5-4F72-AF59-F0C0B59FFC13"
+    ],
+    "option_type": "place",
+    "signals": [
+     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+    ],
+    "signal_location": "London",
+    "demographic": "adults 25-29"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
+     "name": "Dalston Superstore",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9941991403740053,
+     "affinity": 0.9800932736777038,
+     "properties": {
+      "description": "Funky LGBTQ-friendly venue with a full bar, art exhibitions, DJs and live music, plus food and arcade games.",
+      "short_description": "Funky LGBTQ-friendly venue with a full bar, art exhibitions, DJs and live music, plus food and arcade games.",
+      "image": {
+       "url": "https://images.qloo.com/i/487A6A57-5F82-45BC-90B4-BE3FDC75733F-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Hackney",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "117 Kingsland High St London E8 2PB United Kingdom",
+      "price_level": 2,
+      "business_rating": 3.700000047683716
+     }
+    },
+    {
+     "entity_id": "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
+     "name": "Railway Tavern",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.95909421674744,
+     "affinity": 0.979837625251809,
+     "properties": {
+      "description": "No-frills pub beside Tulse Hill station offering live music, DJ and open-mic nights, large garden with covered balcony, beach huts and outdoor games.",
+      "short_description": "No-frills pub beside Tulse Hill station offering live music, DJ and open-mic nights, large garden with covered balcony, beach huts and outdoor games.",
+      "image": {
+       "url": "https://images.qloo.com/i/14B4484F-7786-4B98-9CF1-74B4BA2DE911-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Lambeth",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "The Railway 7 Station Rise Norwood, London SE27 9BW United Kingdom",
+      "price_level": 2,
+      "business_rating": 4.300000190734863
+     }
+    },
+    {
+     "entity_id": "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
+     "name": "Dalston Jazz Bar",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.8317626270336811,
+     "affinity": 0.9790194969538805,
+     "properties": {
+      "description": "Jazz-focused bar and restaurant offering live music, cocktails and dining in a vintage transport-sign–adorned Dalston local institution.",
+      "short_description": "Jazz-focused bar and restaurant offering live music, cocktails and dining in a vintage transport-sign–adorned Dalston local institution.",
+      "image": {
+       "url": "https://images.qloo.com/i/7A70DF2C-BF12-4F00-8E62-69486544D9F1-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Hackney",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "4 Bradbury St London N16 8JN United Kingdom",
+      "price_level": 3,
+      "business_rating": 4
+     }
+    }
+   ],
+   "resultIds": [
+    "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
+    "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
+    "7A70DF2C-BF12-4F00-8E62-69486544D9F1"
+   ],
+   "inputIds": [
+    "7A70DF2C-BF12-4F00-8E62-69486544D9F1",
+    "487A6A57-5F82-45BC-90B4-BE3FDC75733F",
+    "14B4484F-7786-4B98-9CF1-74B4BA2DE911",
+    "801B1C91-94A5-4F72-AF59-F0C0B59FFC13",
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 706,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:19.312Z"
+  },
+  {
+   "callId": "c_7aa3f145-0da",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Chai and Rooh Afza soft drinks",
+    "type": "brand"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Chai and Rooh Afza soft drinks",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "64013B49-7A7A-4CE1-A49C-7A18653B3CE8",
+       "name": "Asahi Soft Drinks",
+       "type": "brand",
+       "disambiguation": "Asahi Soft Drinks is a Japanese beverage company known for a wide range of soft drinks including teas, craft cola, and mineral water products.",
+       "popularity": 0.9741231713312201
+      },
+      {
+       "qlooId": "DA87D8EB-BA23-4E2E-97EC-C4AAC4A8A86C",
+       "name": "Innocent Drinks",
+       "type": "brand",
+       "disambiguation": "Innocent Drinks is a company that produces healthy smoothies, juices, and other drinks, focusing on natural ingredients and sustainability.",
+       "popularity": 0.9446440982522758
+      },
+      {
+       "qlooId": "EA635F72-50DC-438D-A1EF-690E09F4CDDF",
+       "name": "Remedy Drinks",
+       "type": "brand",
+       "disambiguation": "Remedy Drinks produces all-natural, sugar-free live cultured sparkling beverages rich in antioxidants and organic acids.",
+       "popularity": 0.7489617060229526
+      },
+      {
+       "qlooId": "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+       "name": "Seedlip Drinks",
+       "type": "brand",
+       "disambiguation": "Seedlip is the world's first distilled non-alcoholic spirits brand offering unique, complex blends like Spice 94 for sophisticated alcohol-free drinking.",
+       "popularity": 0.7429777423674798
+      },
+      {
+       "qlooId": "07865873-2869-4E32-9D70-FFD5EEC50D62",
+       "name": "Heidi Drinks Love",
+       "type": "brand",
+       "disambiguation": "Heidi Drinks Love is a popular social media brand known for its large Instagram following and personal storytelling content.",
+       "popularity": 0.697479276499805
+      }
+     ]
+    }
+   ],
+   "durationMs": 457,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:13.632Z"
+  },
+  {
+   "callId": "c_7eaf71bc-28b",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "8F6D8F25-8506-41C6-BEBF-82242279A815",
+     "016F7629-169D-4310-AFC8-486D80C67A48",
+     "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+     "326CC4F3-DA0A-4DD3-B104-4E751B785093"
+    ],
+    "option_type": "brand",
+    "signals": [
+     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+    ],
+    "signal_location": "London",
+    "demographic": "adults 25-29"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "8F6D8F25-8506-41C6-BEBF-82242279A815",
+     "name": "Sipsmith Gin",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.8337543015036192,
+     "affinity": 0.9431018021964135,
+     "properties": {
+      "description": "Sipsmith is a renowned London-based microdistillery that sparked a national gin renaissance by returning to traditional, small-batch distillation techniques. The brand is celebrated for its flagship London Dry Gin, which adheres to a consistent, high-quality recipe crafted in copper stills. Committed to both excellence and ethical business practices, Sipsmith is a certified B Corp that combines a reverence for history with a focus on modern innovation. Its offerings are popular among consumers who appreciate authentic craftsmanship, premium ingredients, and the elevated experience of a well-made cocktail.",
+      "short_description": "Sipsmith is a London-based microdistillery known for its award-winning, premium quality London Dry Gin and other craft gins.",
+      "image": {
+       "url": "https://images.qloo.com/i/8F6D8F25-8506-41C6-BEBF-82242279A815-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "016F7629-169D-4310-AFC8-486D80C67A48",
+     "name": "Beavertown Brewery",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.7881032699903375,
+     "affinity": 0.9182081828767102,
+     "properties": {
+      "description": "An innovative British brewery that has transformed the craft beer scene through its blend of high-quality brewing and boundary-pushing artistic presentation. Since its founding in London, it has become recognized for its distinctively vibrant cans featuring surreal illustrations. The brewery maintains a rebellious \"Never Normal\" identity, appealing to consumers who value creativity alongside their beverage choices. Its product range spans from classic IPAs to innovative alcohol-free options, catering to a diverse audience within the modern craft sector.",
+      "short_description": "Beavertown Brewery is a British craft brewery based in London, known for its diverse range of beers including IPAs, lagers, and alcohol-free options.",
+      "image": {
+       "url": "https://images.qloo.com/i/016F7629-169D-4310-AFC8-486D80C67A48-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+     "name": "Seedlip Drinks",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.7429777423674798,
+     "affinity": 0.9104945069016271,
+     "properties": {
+      "description": "Seedlip is a pioneering non-alcoholic spirits brand that revolutionized the market by offering complex, distilled botanical blends inspired by 17th-century herbal remedies. Founded on a Lincolnshire farm, the brand focuses on providing sophisticated alternatives for cocktail lovers who choose not to consume alcohol. Its products are crafted with unique botanical combinations, catering to the rising demand for premium, non-intoxicating beverage options in social and home settings. As a high-end choice in the non-alcoholic category, it is widely recognized for quality and its role in modernizing the drinking experience.",
+      "short_description": "Seedlip is the world's first distilled non-alcoholic spirits brand offering unique, complex blends like Spice 94 for sophisticated alcohol-free drinking.",
+      "image": {
+       "url": "https://images.qloo.com/i/AC723E40-9E66-40DC-8160-AC5CB4FCBF9E-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "326CC4F3-DA0A-4DD3-B104-4E751B785093",
+     "name": "Monkey 47 Gin",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.7922225424217253,
+     "affinity": 0.8450271730512926,
+     "properties": {
+      "description": "Originating from the Black Forest in Germany, this brand is a globally recognized, super-premium gin defined by its unconventional blend of 47 botanicals. The distilling process emphasizes artisanal precision, resulting in a complex and spicy profile that has achieved cult status among mixologists and spirits enthusiasts. The brand successfully combines historical distillation techniques with modern, experimental flavor narratives. It is widely considered a benchmark for craft gins, appealing to consumers who prioritize provenance, ingredient quality, and the art of the cocktail.",
+      "short_description": "Monkey 47 is a handcrafted dry gin from Germany's Black Forest, made with 47 botanicals including lingonberries, known for its complex, spicy, and elegant flavor.",
+      "image": {
+       "url": "https://images.qloo.com/i/326CC4F3-DA0A-4DD3-B104-4E751B785093-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "8F6D8F25-8506-41C6-BEBF-82242279A815",
+    "016F7629-169D-4310-AFC8-486D80C67A48",
+    "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
+   ],
+   "inputIds": [
+    "8F6D8F25-8506-41C6-BEBF-82242279A815",
+    "016F7629-169D-4310-AFC8-486D80C67A48",
+    "AC723E40-9E66-40DC-8160-AC5CB4FCBF9E",
+    "326CC4F3-DA0A-4DD3-B104-4E751B785093",
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 655,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:14.676Z"
+  },
+  {
+   "callId": "c_7ecaab69-599",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
+     "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
+     "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
+     "97FCD59C-4F36-4605-B458-79167FBCED33",
+     "061CE350-5D95-49F0-8C09-3D13B2E2D056"
+    ],
+    "option_type": "artist",
+    "signals": [
+     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+    ],
+    "signal_location": "London",
+    "demographic": "adults 25-29"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
+     "name": "Alfa Mist",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9521295768371245,
+     "affinity": 0.9660175973649474,
+     "properties": {
+      "description": "Alfa Mist is a British musician, producer, and composer who creates a unique fusion of jazz, hip hop, and soul music. He is recognized for his intricate piano work, smooth production, and emotive compositions that blend live instrumentation with electronic elements. His music often features a mellow, introspective vibe with influences from both classic jazz and contemporary urban sounds.",
+      "image": {
+       "url": "https://images.qloo.com/i/B3176305-C5BA-4B25-BD83-FB86B6E706C1-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+     "name": "Yussef Dayes",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.7751705561999882,
+     "affinity": 0.961743575775379,
+     "properties": {
+      "description": "Yussef Dayes is a British jazz drummer and composer recognized for his innovative fusion of jazz with elements of funk, soul, and Afrobeat. He is noted for his dynamic drumming style and contributions to the modern jazz scene, often collaborating with other artists and leading his own projects such as the Yussef Dayes Quartet.",
+      "image": {
+       "url": "https://images.qloo.com/i/8AD89B8C-43AF-420E-BA13-62DB30D5F8C4-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+     "name": "Jungle",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9956025663711014,
+     "affinity": 0.9581837239623084,
+     "properties": {
+      "description": "Jungle is a British modern soul musical collective formed by Josh Lloyd-Watson and Tom McFarland. They are known for their distinctive blend of funk, soul, and electronic music, characterized by groovy basslines, lush instrumentation, and smooth vocal harmonies. Their music often features upbeat rhythms and a retro yet contemporary vibe, appealing to fans of neo soul and indie pop. Jungle is also recognized for their visually striking music videos and energetic live performances.",
+      "image": {
+       "url": "https://images.qloo.com/i/061CE350-5D95-49F0-8C09-3D13B2E2D056-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
+     "name": "Kamaal Williams",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.880364901795018,
+     "affinity": 0.95567451060035,
+     "properties": {
+      "description": "Kamaal Williams is a British musician, producer, and keyboardist known for his innovative fusion of jazz, funk, soul, and electronic music. He gained recognition as part of the duo Yussef Kamaal before embarking on a solo career that explores contemporary jazz with modern production techniques.",
+      "image": {
+       "url": "https://images.qloo.com/i/2020C5A8-9B6B-4A0C-9B7A-68AD51957415-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+     "name": "KOKOROKO",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9545838821933429,
+     "affinity": 0.9456432112589072,
+     "properties": {
+      "description": "Kokoroko is a London-based Afrobeat collective formed in the mid-2010s, blending West African musical traditions with jazz, funk, and soul influences. The band is noted for its rich horn arrangements, rhythmic complexity, and vibrant live performances. Their music often features extended instrumental sections and a strong emphasis on groove and melody, reflecting the Afrobeat legacy of artists like Fela Kuti while incorporating contemporary jazz elements.",
+      "image": {
+       "url": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
+    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+    "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+    "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
+    "97FCD59C-4F36-4605-B458-79167FBCED33"
+   ],
+   "inputIds": [
+    "B3176305-C5BA-4B25-BD83-FB86B6E706C1",
+    "2020C5A8-9B6B-4A0C-9B7A-68AD51957415",
+    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
+    "97FCD59C-4F36-4605-B458-79167FBCED33",
+    "061CE350-5D95-49F0-8C09-3D13B2E2D056",
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 693,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:13.174Z"
+  },
+  {
+   "callId": "c_9858badd-b36",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Monkey 47",
+    "type": "brand"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [
+    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
+   ],
+   "results": [
+    {
+     "entity_id": "326CC4F3-DA0A-4DD3-B104-4E751B785093",
+     "name": "Monkey 47 Gin",
+     "popularity": 0.7922225424217253,
+     "properties": {
+      "description": "Originating from the Black Forest in Germany, this brand is a globally recognized, super-premium gin defined by its unconventional blend of 47 botanicals. The distilling process emphasizes artisanal precision, resulting in a complex and spicy profile that has achieved cult status among mixologists and spirits enthusiasts. The brand successfully combines historical distillation techniques with modern, experimental flavor narratives. It is widely considered a benchmark for craft gins, appealing to consumers who prioritize provenance, ingredient quality, and the art of the cocktail.",
+      "short_description": "Monkey 47 is a handcrafted dry gin from Germany's Black Forest, made with 47 botanicals including lingonberries, known for its complex, spicy, and elegant flavor.",
+      "image": {
+       "url": "https://images.qloo.com/i/326CC4F3-DA0A-4DD3-B104-4E751B785093-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
+   ],
+   "inputIds": [
+    "326CC4F3-DA0A-4DD3-B104-4E751B785093"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 845,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:14.020Z"
+  },
+  {
+   "callId": "c_9a7c740a-d6d",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
+     "EA824110-BAB1-46B6-B02B-9566676A4B1C",
+     "1C8515B7-ED92-4A22-9830-30141CF35578",
+     "054A2C23-580E-4633-B0E1-E605E2204814"
+    ],
+    "option_type": "place",
+    "signals": [
+     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+    ],
+    "signal_location": "London",
+    "demographic": "adults 25-29"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
+     "name": "The Victoria Dalston",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.989489807403214,
+     "affinity": 0.988415497933297,
+     "properties": {
+      "description": "Historic Victorian pub and live music room showcasing up-and-coming bands, craft beers, cocktails, and community-focused club nights.",
+      "short_description": "Historic Victorian pub and live music room showcasing up-and-coming bands, craft beers, cocktails, and community-focused club nights.",
+      "image": {
+       "url": "https://images.qloo.com/i/780D6C77-855B-4FB2-B6DE-C11D2BE05694-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Hackney",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "The Victoria 451 Queensbridge Rd London E8 3AS United Kingdom",
+      "price_level": 2,
+      "business_rating": 4.300000190734863
+     }
+    },
+    {
+     "entity_id": "EA824110-BAB1-46B6-B02B-9566676A4B1C",
+     "name": "Four Quarters Peckham",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9831696507671889,
+     "affinity": 0.9832129482150965,
+     "properties": {
+      "description": "No-frills arcade bar with retro video games, craft ales, and US-style grill in Peckham.",
+      "short_description": "No-frills arcade bar with retro video games, craft ales, and US-style grill in Peckham.",
+      "image": {
+       "url": "https://images.qloo.com/i/EA824110-BAB1-46B6-B02B-9566676A4B1C-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Peckham",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "187 Rye Ln London SE15 4TW United Kingdom",
+      "price_level": 2,
+      "business_rating": 4.400000095367432
+     }
+    },
+    {
+     "entity_id": "1C8515B7-ED92-4A22-9830-30141CF35578",
+     "name": "The Shacklewell Arms",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9937905375764133,
+     "affinity": 0.9814944577816588,
+     "properties": {
+      "description": "Wooden-floored live-music pub with performance stage, fairy-lit outdoor terrace and late-night club atmosphere, serving drinks and food.",
+      "short_description": "Wooden-floored live-music pub with performance stage, fairy-lit outdoor terrace and late-night club atmosphere, serving drinks and food.",
+      "image": {
+       "url": "https://images.qloo.com/i/1C8515B7-ED92-4A22-9830-30141CF35578-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "Hackney",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "71 Shacklewell Ln London E8 2EB United Kingdom",
+      "price_level": 2,
+      "business_rating": 4.400000095367432
+     }
+    },
+    {
+     "entity_id": "054A2C23-580E-4633-B0E1-E605E2204814",
+     "name": "Beigel Bake",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9894357603968054,
+     "affinity": 0.8958034600010372,
+     "properties": {
+      "description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
+      "short_description": "24-hour Brick Lane bakery serving traditional Jewish-style filled bagels, famed for hand-carved salt beef and smoked salmon with cream cheese.",
+      "image": {
+       "url": "https://images.qloo.com/i/054A2C23-580E-4633-B0E1-E605E2204814-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "London",
+       "name": "London Borough of Tower Hamlets",
+       "metro": "London",
+       "country": "United Kingdom",
+       "country_code": "GB",
+       "admin1_region": "England",
+       "admin2_region": "Greater London"
+      },
+      "address": "159 Brick Ln London E1 6SB United Kingdom",
+      "price_level": 1,
+      "business_rating": 4.400000095367432
+     }
+    }
+   ],
+   "resultIds": [
+    "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
+    "EA824110-BAB1-46B6-B02B-9566676A4B1C",
+    "1C8515B7-ED92-4A22-9830-30141CF35578",
+    "054A2C23-580E-4633-B0E1-E605E2204814"
+   ],
+   "inputIds": [
+    "780D6C77-855B-4FB2-B6DE-C11D2BE05694",
+    "EA824110-BAB1-46B6-B02B-9566676A4B1C",
+    "1C8515B7-ED92-4A22-9830-30141CF35578",
+    "054A2C23-580E-4633-B0E1-E605E2204814",
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 707,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:16.354Z"
+  },
+  {
+   "callId": "c_9da12550-45b",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Yussef Dayes",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4",
+     "name": "Yussef Dayes",
+     "popularity": 0.8067109520226982,
+     "properties": {
+      "short_description": "British jazz drummer and composer known for blending jazz with contemporary styles.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/8AD89B8C-43AF-420E-BA13-62DB30D5F8C4-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4"
+   ],
+   "inputIds": [
+    "8AD89B8C-43AF-420E-BA13-62DB30D5F8C4"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 2182,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:10.972Z"
+  },
+  {
+   "callId": "c_9e7d0928-fd5",
+   "runId": "map_seed-dining",
+   "agent": "crowd_map",
+   "tool": "qloo_where_popular",
+   "args": {
+    "entity": "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A",
+    "within": "London",
+    "limit": 20
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "location": {
+      "latitude": 51.58905,
+      "longitude": -0.07141113,
+      "geohash": "gcpvqr"
+     },
+     "query": {
+      "affinity": 1,
+      "affinity_rank": 0.921642,
+      "popularity": 0.7186574531095755,
+      "entity_artist_affinity_rank": 0.921642,
+      "entity_artist_affinity": 1
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.5506,
+      "longitude": -0.07141113,
+      "geohash": "gcpvq2"
+     },
+     "query": {
+      "affinity": 0.9990128331688055,
+      "affinity_rank": 0.9215415294117646,
+      "popularity": 0.9881539980256664,
+      "entity_artist_affinity_rank": 0.9215415294117646,
+      "entity_artist_affinity": 0.9990128331688055
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.457214,
+      "longitude": -0.016479492,
+      "geohash": "gcpuxx"
+     },
+     "query": {
+      "affinity": 0.998025666337611,
+      "affinity_rank": 0.9115423636363637,
+      "popularity": 0.7917077986179665,
+      "entity_artist_affinity_rank": 0.9115423636363637,
+      "entity_artist_affinity": 0.998025666337611
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.545105,
+      "longitude": -0.07141113,
+      "geohash": "gcpvnr"
+     },
+     "query": {
+      "affinity": 0.9970384995064165,
+      "affinity_rank": 0.910425117647059,
+      "popularity": 0.9861796643632774,
+      "entity_artist_affinity_rank": 0.910425117647059,
+      "entity_artist_affinity": 0.9970384995064165
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.523132,
+      "longitude": -0.07141113,
+      "geohash": "gcpvn7"
+     },
+     "query": {
+      "affinity": 0.9960513326752222,
+      "affinity_rank": 0.9094895882352942,
+      "popularity": 0.9960513326752222,
+      "entity_artist_affinity_rank": 0.9094895882352942,
+      "entity_artist_affinity": 0.9960513326752222
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.583557,
+      "longitude": -0.10437012,
+      "geohash": "gcpvmw"
+     },
+     "query": {
+      "affinity": 0.9950641658440277,
+      "affinity_rank": 0.9088175454545454,
+      "popularity": 0.8015794669299111,
+      "entity_artist_affinity_rank": 0.9088175454545454,
+      "entity_artist_affinity": 0.9950641658440277
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.53961,
+      "longitude": -0.14831543,
+      "geohash": "gcpvhw"
+     },
+     "query": {
+      "affinity": 0.9940769990128332,
+      "affinity_rank": 0.9084166470588237,
+      "popularity": 0.9950641658440277,
+      "entity_artist_affinity_rank": 0.9084166470588237,
+      "entity_artist_affinity": 0.9940769990128332
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.53961,
+      "longitude": -0.060424805,
+      "geohash": "gcpvnw"
+     },
+     "query": {
+      "affinity": 0.9930898321816387,
+      "affinity_rank": 0.9068090588235295,
+      "popularity": 0.9802566633761106,
+      "entity_artist_affinity_rank": 0.9068090588235295,
+      "entity_artist_affinity": 0.9930898321816387
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.473694,
+      "longitude": -0.14831543,
+      "geohash": "gcpuud"
+     },
+     "query": {
+      "affinity": 0.9921026653504442,
+      "affinity_rank": 0.9067242999999998,
+      "popularity": 0.7127344521224087,
+      "entity_artist_affinity_rank": 0.9067242999999998,
+      "entity_artist_affinity": 0.9921026653504442
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.506653,
+      "longitude": -0.10437012,
+      "geohash": "gcpvj8"
+     },
+     "query": {
+      "affinity": 0.9911154985192497,
+      "affinity_rank": 0.9042764705882352,
+      "popularity": 0.9940769990128332,
+      "entity_artist_affinity_rank": 0.9042764705882352,
+      "entity_artist_affinity": 0.9911154985192497
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.506653,
+      "longitude": -0.12634277,
+      "geohash": "gcpvj0"
+     },
+     "query": {
+      "affinity": 0.9901283316880553,
+      "affinity_rank": 0.9036545294117647,
+      "popularity": 1,
+      "entity_artist_affinity_rank": 0.9036545294117647,
+      "entity_artist_affinity": 0.9901283316880553
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.51764,
+      "longitude": -0.1373291,
+      "geohash": "gcpvhf"
+     },
+     "query": {
+      "affinity": 0.9891411648568608,
+      "affinity_rank": 0.9025344705882354,
+      "popularity": 0.9891411648568608,
+      "entity_artist_affinity_rank": 0.9025344705882354,
+      "entity_artist_affinity": 0.9891411648568608
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.506653,
+      "longitude": -0.115356445,
+      "geohash": "gcpvj2"
+     },
+     "query": {
+      "affinity": 0.9881539980256664,
+      "affinity_rank": 0.9021664117647059,
+      "popularity": 0.9921026653504442,
+      "entity_artist_affinity_rank": 0.9021664117647059,
+      "entity_artist_affinity": 0.9881539980256664
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.528625,
+      "longitude": -0.08239746,
+      "geohash": "gcpvnh"
+     },
+     "query": {
+      "affinity": 0.9871668311944719,
+      "affinity_rank": 0.9014748823529413,
+      "popularity": 0.9970384995064165,
+      "entity_artist_affinity_rank": 0.9014748823529413,
+      "entity_artist_affinity": 0.9871668311944719
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.512146,
+      "longitude": -0.12634277,
+      "geohash": "gcpvj1"
+     },
+     "query": {
+      "affinity": 0.9861796643632774,
+      "affinity_rank": 0.9010793529411766,
+      "popularity": 0.9990128331688055,
+      "entity_artist_affinity_rank": 0.9010793529411766,
+      "entity_artist_affinity": 0.9861796643632774
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.462708,
+      "longitude": -0.115356445,
+      "geohash": "gcpuv2"
+     },
+     "query": {
+      "affinity": 0.9851924975320829,
+      "affinity_rank": 0.9008829999999999,
+      "popularity": 0.9901283316880553,
+      "entity_artist_affinity_rank": 0.9008829999999999,
+      "entity_artist_affinity": 0.9851924975320829
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.462708,
+      "longitude": -0.016479492,
+      "geohash": "gcpuz8"
+     },
+     "query": {
+      "affinity": 0.9842053307008884,
+      "affinity_rank": 0.9003279999999999,
+      "popularity": 0.8657453109575518,
+      "entity_artist_affinity_rank": 0.9003279999999999,
+      "entity_artist_affinity": 0.9842053307008884
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.561584,
+      "longitude": -0.049438477,
+      "geohash": "gcpvqf"
+     },
+     "query": {
+      "affinity": 0.983218163869694,
+      "affinity_rank": 0.8986662000000001,
+      "popularity": 0.773938795656466,
+      "entity_artist_affinity_rank": 0.8986662000000001,
+      "entity_artist_affinity": 0.983218163869694
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.523132,
+      "longitude": -0.049438477,
+      "geohash": "gcpvng"
+     },
+     "query": {
+      "affinity": 0.9822309970384995,
+      "affinity_rank": 0.8981663999999998,
+      "popularity": 0.7541954590325765,
+      "entity_artist_affinity_rank": 0.8981663999999998,
+      "entity_artist_affinity": 0.9822309970384995
+     }
+    },
+    {
+     "location": {
+      "latitude": 51.523132,
+      "longitude": -0.08239746,
+      "geohash": "gcpvn5"
+     },
+     "query": {
+      "affinity": 0.981243830207305,
+      "affinity_rank": 0.8969170588235293,
+      "popularity": 0.9930898321816387,
+      "entity_artist_affinity_rank": 0.8969170588235293,
+      "entity_artist_affinity": 0.981243830207305
+     }
+    }
+   ],
+   "resultIds": [
+    "gcpvqr",
+    "gcpvq2",
+    "gcpuxx",
+    "gcpvnr",
+    "gcpvn7",
+    "gcpvmw",
+    "gcpvhw",
+    "gcpvnw",
+    "gcpuud",
+    "gcpvj8",
+    "gcpvj0",
+    "gcpvhf",
+    "gcpvj2",
+    "gcpvnh",
+    "gcpvj1",
+    "gcpuv2",
+    "gcpuz8",
+    "gcpvqf",
+    "gcpvng",
+    "gcpvn5"
+   ],
+   "inputIds": [
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 1667,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:26:47.251Z"
+  },
+  {
+   "callId": "c_af3d3574-455",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "57478178-BBBC-49A4-8755-5D942B388316",
+     "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+     "AC007829-3D79-438E-9F02-11228C82AD38",
+     "EE57C132-8460-4E80-9EC3-8504A78982F6",
+     "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
+     "73C4184C-8EE2-4706-804A-646F9E9E0CC5"
+    ],
+    "option_type": "artist",
+    "signals": [
+     "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+     "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+    ],
+    "signal_location": "London",
+    "demographic": "adults 25-29"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "57478178-BBBC-49A4-8755-5D942B388316",
+     "name": "Jordan Rakei",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9614159605214007,
+     "affinity": 0.9666137665781399,
+     "properties": {
+      "description": "Jordan Rakei is a New Zealand-born Australian singer, songwriter, and producer who blends elements of soul, R&B, jazz, and electronic music. He is recognized for his smooth vocals, intricate production, and emotionally rich songwriting. Rakei's music often features a fusion of live instrumentation and electronic beats, creating a modern yet timeless sound that appeals to fans of neo soul and alternative R&B.",
+      "image": {
+       "url": "https://images.qloo.com/i/57478178-BBBC-49A4-8755-5D942B388316-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+     "name": "Mansur Brown",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.8616414027223457,
+     "affinity": 0.9661429854055109,
+     "properties": {
+      "description": "Mansur Brown is an American guitarist and composer recognized for his unique blend of jazz, soul, and funk. His music often features smooth, groovy instrumental tracks that showcase his skillful guitar playing and rich melodic sensibility. Brown's style is characterized by warm tones, intricate rhythms, and a fusion of traditional and contemporary sounds, making him a notable figure in modern jazz and soul music scenes.",
+      "image": {
+       "url": "https://images.qloo.com/i/886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AC007829-3D79-438E-9F02-11228C82AD38",
+     "name": "Hiatus Kaiyote",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9863981020912386,
+     "affinity": 0.9596404915923329,
+     "properties": {
+      "description": "Hiatus Kaiyote is an Australian band formed in Melbourne, known for their innovative fusion of neo soul, future soul, jazz fusion, and elements of R&B, electronic, and funk music. The band consists of vocalist and guitarist Nai Palm, bassist Paul Bender, keyboardist Simon Mavin, and drummer Perrin Moss. They are acclaimed for their complex rhythms, rich harmonies, and Nai Palm's distinctive vocal style. Their music often features experimental production and genre-blending that pushes the boundaries of contemporary soul and jazz.",
+      "image": {
+       "url": "https://images.qloo.com/i/AC007829-3D79-438E-9F02-11228C82AD38-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
+     "name": "Alabaster dePlume",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9366271487459777,
+     "affinity": 0.8855813146593167,
+     "properties": {
+      "description": "Alabaster Deplume is a British saxophonist, poet, and composer whose work blends jazz, free improvisation, and spoken word poetry. He is recognized for his unique approach to music that combines expressive saxophone playing with poetic lyricism and experimental soundscapes. His music often explores themes of human connection, vulnerability, and social commentary, delivered through a blend of instrumental and vocal performances.",
+      "image": {
+       "url": "https://images.qloo.com/i/73C4184C-8EE2-4706-804A-646F9E9E0CC5-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
+     "name": "Nina Simone",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.999128377537044,
+     "affinity": 0.8316825441817209,
+     "properties": {
+      "description": "Born Eunice Kathleen Waymon in 1933, Nina Simone was a classically trained pianist who became one of the 20th century's most distinctive vocalists. She combined classical technique with jazz, blues, gospel and pop, producing landmark recordings and powerful civil-rights anthems. Her repertoire ranged from torch songs and standards to uncompromising protest pieces; signature recordings include \"Mississippi Goddam\", \"Feeling Good\", \"Sinnerman\" and \"I Put a Spell on You\". Simone toured and lived for long periods in Europe later in life, and remained an influential, often polarizing figure until her death in 2003.",
+      "image": {
+       "url": "https://images.qloo.com/i/AEB7DA4D-D5A8-43F1-9881-74DA17D8D521-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "57478178-BBBC-49A4-8755-5D942B388316",
+    "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+    "AC007829-3D79-438E-9F02-11228C82AD38",
+    "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
+    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521"
+   ],
+   "inputIds": [
+    "57478178-BBBC-49A4-8755-5D942B388316",
+    "886EB4B7-325F-4DA8-A5A9-BEE6CA8EF130",
+    "AC007829-3D79-438E-9F02-11228C82AD38",
+    "EE57C132-8460-4E80-9EC3-8504A78982F6",
+    "AEB7DA4D-D5A8-43F1-9881-74DA17D8D521",
+    "73C4184C-8EE2-4706-804A-646F9E9E0CC5",
+    "14BAC327-D468-4B60-84DC-78FF93F3BB71",
+    "4CCBC47E-4257-4B3F-A9DE-A793C2B7C65A"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 661,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:17.790Z"
+  },
+  {
+   "callId": "c_b4dcf4fc-ad9",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Bill Evans",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "EE57C132-8460-4E80-9EC3-8504A78982F6",
+     "name": "Bill Evans",
+     "popularity": 0.9955703398321925,
+     "properties": {
+      "short_description": "Bill Evans was an influential American jazz pianist known for his lyrical playing and harmonic innovations.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/EE57C132-8460-4E80-9EC3-8504A78982F6-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "EE57C132-8460-4E80-9EC3-8504A78982F6"
+   ],
+   "inputIds": [
+    "EE57C132-8460-4E80-9EC3-8504A78982F6"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 707,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:17.062Z"
+  },
+  {
+   "callId": "c_e22dbdf8-8b5",
+   "runId": "cf_seed-dining_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Kokoroko",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "97FCD59C-4F36-4605-B458-79167FBCED33",
+     "name": "Kokoroko",
+     "popularity": 0.9385987699511826,
+     "properties": {
+      "short_description": "Kokoroko is a British Afrobeat band known for their vibrant fusion of jazz and African rhythms.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/97FCD59C-4F36-4605-B458-79167FBCED33-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "97FCD59C-4F36-4605-B458-79167FBCED33"
+   ],
+   "inputIds": [
+    "97FCD59C-4F36-4605-B458-79167FBCED33"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 782,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:27:12.479Z"
+  },
+  {
    "callId": "c_e8225dbf-8b7",
    "runId": "cf_seed-dining_v1",
    "agent": "counterfactual",
@@ -15097,60 +15237,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:27:12.397Z"
-  },
-  {
-   "callId": "c_eddab3c1-ab1",
-   "runId": "resolve_seed-dining",
-   "agent": "resolver",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "London",
-    "type": "locality"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "London",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "4F18635D-75D6-43EC-B8B9-8DFAEB8C5A29",
-       "name": "London",
-       "type": "locality",
-       "popularity": 0.9998790917799683
-      },
-      {
-       "qlooId": "BCF60CA0-BC94-4761-B812-68986F7CB846",
-       "name": "London",
-       "type": "locality",
-       "popularity": 0.9767231746512595
-      },
-      {
-       "qlooId": "F6DE5E16-24AF-42B8-8E51-FDFFE7A4465C",
-       "name": "London",
-       "type": "locality",
-       "popularity": 0.9371655924436348
-      },
-      {
-       "qlooId": "8AA0C925-8CF7-4AD5-8442-B651210BF06E",
-       "name": "London",
-       "type": "locality",
-       "popularity": 0.6866557184937759
-      }
-     ]
-    }
-   ],
-   "durationMs": 13,
-   "cached": true,
-   "attempts": 0,
-   "source": "live",
-   "at": "2026-10-30T06:23:49.220Z"
   },
   {
    "callId": "c_f354d0b9-681",

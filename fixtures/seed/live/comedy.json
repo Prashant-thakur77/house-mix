@@ -156,28 +156,122 @@
   ],
   "asks": [
    {
-    "id": "a_65f0f48d-4",
+    "id": "a_bca1811e-6",
     "question": "Which podcast should we promote in the interval for this crowd?",
-    "lines": [],
-    "dropped": [
+    "lines": [
      {
-      "text": "Promote Bad Friends in the interval (20:30–20:45). It ranked #1 of 10 for the adults 35-54 crowd, with affinity 0.92 and popularity 0.98.",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Promote Bad Friends in the interval (20:30–20:45). It ranked #1 of 10 for this crowd.",
+      "callIds": [
+       "c_5b0c5dc3-cb9"
+      ]
      },
      {
-      "text": "Sincerely Fortune (#2, 0.92) and How Neal Feel (#3, 0.92) are effectively tied with it, so they are good clip backups. Bad Friends was also recommended #1 of 10 off Taylor Tomlinson (affinity 0.94).",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Bad Friends has affinity 0.92 and popularity 0.98. It was also #1 in the recommend call, at 0.94.",
+      "callIds": [
+       "c_5b0c5dc3-cb9",
+       "c_f4c0768d-e26"
+      ]
      },
      {
-      "text": "Caveat: the margins are tiny, and the support act has thin Qloo data. This is an aggregate taste signal, not a prediction for individual guests.",
-      "reason": "Cites no Qloo call from this plan or this answer."
+      "text": "Sincerely Fortune (0.92) and How Neal Feel (0.92) are the other two picks in the plan, ranked #2 and #3. The scores are nearly tied, so the order is a close call.",
+      "callIds": [
+       "c_5b0c5dc3-cb9"
+      ]
+     },
+     {
+      "text": "Caveat: this is an aggregate affinity signal for adults 35-54, not a fact about any individual. Support-act data is thin: the Atsuko Okatsuka trend reads +0.000.",
+      "callIds": [
+       "c_5b0c5dc3-cb9",
+       "c_d0d90a4c-81a"
+      ]
      }
     ],
-    "calls": [],
+    "dropped": [],
+    "calls": [
+     {
+      "callId": "c_5b0c5dc3-cb9",
+      "tool": "qloo_rank",
+      "inputs": {
+       "options": [
+        "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
+        "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
+        "8098607A-2BD8-4448-AE69-043DE4CF73CE",
+        "C651CC33-3EB6-499F-B0E3-50B26AF3DE1E",
+        "1CCD8280-7DE8-4C06-B507-C19331208ADB",
+        "11B17C73-11A7-4D03-A3B8-64BDC534B603",
+        "D4A9C252-5787-4FAF-87D8-B91743B2FE2D",
+        "9BFDA741-03C8-4B27-B5CB-E8631550A9C2",
+        "080F4FD2-DC4B-4E74-89E3-E8FD4807FA40",
+        "681840B4-2DEC-47EE-AF3D-27EC6FF2E618"
+       ],
+       "option_type": "podcast",
+       "signals": [
+        "77395141-8BEE-42B4-8091-9382A8EEF563",
+        "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+       ],
+       "signal_location": "Los Angeles",
+       "demographic": "adults 35-54"
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/insights",
+      "source": "live",
+      "durationMs": 2429
+     },
+     {
+      "callId": "c_d0d90a4c-81a",
+      "tool": "qloo_trends",
+      "inputs": {
+       "entities": [
+        "77395141-8BEE-42B4-8091-9382A8EEF563",
+        "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+       ],
+       "entity_type": "person",
+       "start_date": "2026-04-18",
+       "end_date": "2026-07-17",
+       "limit": 10
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/trending",
+      "source": "live",
+      "durationMs": 355
+     },
+     {
+      "callId": "c_f4c0768d-e26",
+      "tool": "qloo_recommend",
+      "inputs": {
+       "target_type": "podcast",
+       "signals": [
+        "77395141-8BEE-42B4-8091-9382A8EEF563",
+        "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+       ],
+       "signal_tags": [
+        "urn:tag:occupation:qloo:stand_up_comedian",
+        "urn:tag:keyword:media:friend",
+        "urn:tag:cost_description:place:inexpensive",
+        "urn:tag:genre:place:restaurant:bar",
+        "urn:tag:genre:brand:fashion"
+       ],
+       "signal_tags_operator": "union",
+       "signal_location": "Los Angeles",
+       "demographic": "adults 35-54",
+       "limit": 10
+      },
+      "status": "ok",
+      "summary": "",
+      "scores": {},
+      "endpoint": "/v2/insights",
+      "source": "live",
+      "durationMs": 7097
+     }
+    ],
     "proposals": [],
     "planVersion": 1,
-    "costUsd": 0.0721,
-    "at": "2026-10-30T06:19:27.015Z"
+    "costUsd": 0.086,
+    "at": "2026-10-30T13:51:50.981Z"
    }
   ],
   "status": "planned",
@@ -185,7 +279,7 @@
   "negativeSignals": [],
   "qlooMode": "live",
   "createdAt": "2026-10-30T06:13:00.947Z",
-  "updatedAt": "2026-10-30T06:19:27.017Z",
+  "updatedAt": "2026-10-30T13:51:50.982Z",
   "plan": {
    "runId": "r_seed_comedy",
    "headline": "Adults 35-54 stand-up crowd: folk room music, comedian openers, bars and podcasts; support-act data thin",
@@ -4445,86 +4539,6 @@
    "at": "2026-10-30T06:16:37.432Z"
   },
   {
-   "callId": "c_0ee56a16-8b6",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Conan O'Brien Needs a Friend",
-    "type": "podcast"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [
-    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
-   ],
-   "results": [
-    {
-     "entity_id": "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
-     "name": "Conan O’Brien Needs A Friend",
-     "popularity": 0.9990460006558746,
-     "properties": {
-      "short_description": "Conan O'Brien explores friendship through candid conversations with celebrities, comedians, and personal friends in a playful podcast format.",
-      "image": {
-       "url": "https://images.qloo.com/i/DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
-   ],
-   "inputIds": [
-    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 742,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:16.331Z"
-  },
-  {
-   "callId": "c_137aeb7a-d32",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Call Her Daddy",
-    "type": "podcast"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
-     "name": "Call Her Daddy",
-     "popularity": 0.9982410637092687,
-     "properties": {
-      "short_description": "Alex Cooper tackles candid topics and interviews guests, sparking laughter and tears in a relatable podcast for women.",
-      "image": {
-       "url": "https://images.qloo.com/i/056BCF4A-7C1D-4F19-AC0C-B1093EDE153C-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C"
-   ],
-   "inputIds": [
-    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 762,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:16.351Z"
-  },
-  {
    "callId": "c_166a9f5c-ba8",
    "runId": "r_seed_comedy",
    "agent": "programmer",
@@ -4885,90 +4899,6 @@
    "at": "2026-10-30T06:17:12.201Z"
   },
   {
-   "callId": "c_24ed2c68-9fe",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "831C1BF8-B78B-4603-8530-C4CD64477074",
-     "853277C9-2A52-43A6-BFA1-7B89C019B927",
-     "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
-     "04BC87CE-0350-4237-871F-5A21C5B8E027"
-    ],
-    "option_type": "person",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "831C1BF8-B78B-4603-8530-C4CD64477074",
-     "name": "Fahim Anwar",
-     "type": "urn:entity",
-     "subtype": "urn:entity:person",
-     "popularity": 0.6220306367619399,
-     "affinity": 0.9446342050368913
-    },
-    {
-     "entity_id": "853277C9-2A52-43A6-BFA1-7B89C019B927",
-     "name": "Annie Lederman",
-     "type": "urn:entity",
-     "subtype": "urn:entity:person",
-     "popularity": 0.7863091290592622,
-     "affinity": 0.9432744523946786
-    },
-    {
-     "entity_id": "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
-     "name": "Nikki Glaser",
-     "type": "urn:entity",
-     "subtype": "urn:entity:person",
-     "popularity": 0.9154499298768224,
-     "affinity": 0.9414255776686046,
-     "properties": {
-      "image": {
-       "url": "https://images.qloo.com/i/B45CAFC8-DC2D-4556-97A6-E32A288546CA-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "04BC87CE-0350-4237-871F-5A21C5B8E027",
-     "name": "Sam Jay",
-     "type": "urn:entity",
-     "subtype": "urn:entity:person",
-     "popularity": 0.5277557321620769,
-     "affinity": 0.9100499744288226
-    }
-   ],
-   "resultIds": [
-    "831C1BF8-B78B-4603-8530-C4CD64477074",
-    "853277C9-2A52-43A6-BFA1-7B89C019B927",
-    "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
-    "04BC87CE-0350-4237-871F-5A21C5B8E027"
-   ],
-   "inputIds": [
-    "831C1BF8-B78B-4603-8530-C4CD64477074",
-    "853277C9-2A52-43A6-BFA1-7B89C019B927",
-    "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
-    "04BC87CE-0350-4237-871F-5A21C5B8E027",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 608,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:15.588Z"
-  },
-  {
    "callId": "c_25800382-6a3",
    "runId": "r_seed_comedy",
    "agent": "sponsor_fit",
@@ -5266,45 +5196,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:53.336Z"
-  },
-  {
-   "callId": "c_27f622ac-e25",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Crime Junkie",
-    "type": "podcast"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "A543F312-1893-4330-8125-7441966EF9EE",
-     "name": "Crime Junkie",
-     "popularity": 0.9999105625614882,
-     "properties": {
-      "short_description": "Join Ashley Flowers and Brit Prawat as they explore infamous and underreported true crime cases every Monday.",
-      "image": {
-       "url": "https://images.qloo.com/i/A543F312-1893-4330-8125-7441966EF9EE-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "A543F312-1893-4330-8125-7441966EF9EE"
-   ],
-   "inputIds": [
-    "A543F312-1893-4330-8125-7441966EF9EE"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 730,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:16.319Z"
   },
   {
    "callId": "c_2865b777-7a4",
@@ -5705,46 +5596,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:48.978Z"
-  },
-  {
-   "callId": "c_2874cbd2-fbe",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Noah Kahan",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
-     "name": "Noah Kahan",
-     "popularity": 0.9825951128669314,
-     "properties": {
-      "short_description": "Noah Kahan is an American singer-songwriter known for his introspective indie folk and folk pop music.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/0A8052C7-2F56-43B5-B133-F59F8F2917E0-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
-   ],
-   "inputIds": [
-    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 1783,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:13.247Z"
   },
   {
    "callId": "c_2b805379-e7c",
@@ -6319,111 +6170,6 @@
    "at": "2026-10-30T06:17:51.406Z"
   },
   {
-   "callId": "c_31985913-f79",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Mini sliders and fries",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Mini sliders and fries",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "4002FC67-1852-48A0-AC25-5D7CDAAD1CB6",
-       "name": "Sly's Sliders and Fries",
-       "type": "place",
-       "disambiguation": "Bite-sized artisan sliders with creative toppings, hand-cut fries, and vegan options served in a casual, affordable counter-service setting in downtown Savannah.",
-       "popularity": 0.9545644832790449
-      },
-      {
-       "qlooId": "31C47CCE-C64D-49EA-AEC1-0027C63E679D",
-       "name": "Mini Moe’s Smash Fresh Burgers, Fries & Poutines",
-       "type": "place",
-       "disambiguation": "Fast-food burger joint serving classic and creative burgers with bold interiors, halal and vegetarian options, plus delivery and outdoor seating.",
-       "popularity": 0.8954851619608626
-      },
-      {
-       "qlooId": "46D67B4D-7A28-4060-B68E-F071F1E69508",
-       "name": "GLOBALLS Brighton - UV Mini Golf & Games",
-       "type": "place",
-       "disambiguation": "Glow-in-the-dark indoor mini golf with immersive themed courses, arcade games, and a cocktail bar near Brighton Marina, ideal for families, dates and group events.",
-       "popularity": 0.99008005271719
-      },
-      {
-       "qlooId": "5F9A87BA-898E-4422-8293-081A78036FF7",
-       "name": "Mini Punjab's Bandra",
-       "type": "place",
-       "disambiguation": "Bright first-floor spot serving Punjabi tandoori and comfort dishes with rural Indian–themed decor and cozy seating.",
-       "popularity": 0.9617215327359561
-      },
-      {
-       "qlooId": "C0743FAF-A56F-4616-AD6C-4E84FEBE2F8A",
-       "name": "Five Guys Burgers and Fries Bluewater",
-       "type": "place",
-       "disambiguation": "Fast-casual outlet serving made-to-order burgers, fries and hot dogs with free peanuts and late-night service.",
-       "popularity": 0.9352035826293292
-      }
-     ]
-    }
-   ],
-   "durationMs": 695,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:17.696Z"
-  },
-  {
-   "callId": "c_32d7f773-d6b",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Clairo",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E",
-     "name": "Clairo",
-     "popularity": 0.9946999267908411,
-     "properties": {
-      "short_description": "Clairo is an American singer-songwriter known for her intimate bedroom pop style.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/9B2140E4-8DEB-452C-BB75-C3B7B6AD198E-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
-   ],
-   "inputIds": [
-    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 1799,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:13.264Z"
-  },
-  {
    "callId": "c_3ab495ab-c72",
    "runId": "r_seed_comedy",
    "agent": "crowd_reader",
@@ -6985,104 +6731,6 @@
    "at": "2026-10-30T06:17:55.208Z"
   },
   {
-   "callId": "c_425b2b71-e66",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Hinge",
-    "type": "brand"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "D0391D14-6A86-422F-A062-9951BAEFDFE6",
-     "name": "Hinge",
-     "popularity": 0.912851112881626,
-     "properties": {
-      "description": "Hinge is a prominent dating application that distinguishes itself by prioritizing meaningful, long-term connections over casual hookups. By employing a unique profile structure centered around personal prompts and specific interactions, it encourages users to showcase their authentic selves. The platform is owned by Match Group and serves a global user base looking to navigate the dating world with greater intention. Its central philosophy revolves around the goal of being a tool that users eventually delete upon finding a successful partner.",
-      "short_description": "Hinge is a dating app designed to help people find meaningful relationships and get off dating apps by showcasing personality through text, photos, and video.",
-      "image": {
-       "url": "https://images.qloo.com/i/D0391D14-6A86-422F-A062-9951BAEFDFE6-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "D0391D14-6A86-422F-A062-9951BAEFDFE6"
-   ],
-   "inputIds": [
-    "D0391D14-6A86-422F-A062-9951BAEFDFE6"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 676,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:18.756Z"
-  },
-  {
-   "callId": "c_44099703-e99",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Formosa Cafe",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Formosa Cafe",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "C9A4950C-75FA-48BF-B9D8-231B7ED84E15",
-       "name": "Formosa Cafe",
-       "type": "place",
-       "disambiguation": "Casual Asian-inspired cafe and family restaurant in Northbridge offering coffee, cocktails, small plates, vegan options, and indoor and outdoor dining.",
-       "popularity": 0.4507494332493469
-      },
-      {
-       "qlooId": "27033881-67FA-4D94-930A-6761AFC3FDE3",
-       "name": "Formosa Cafe",
-       "type": "place",
-       "disambiguation": "Historic Bologna café and burger restaurant serving coffee, cocktails, dine-in and delivery; moderately expensive.",
-       "popularity": 0.29862271140644425
-      },
-      {
-       "qlooId": "59A8DC29-40A8-4C19-9607-7685154DBB62",
-       "name": "Formosa Cafe",
-       "type": "place",
-       "disambiguation": "Casual, inexpensive Taiwanese cafe in Brooklyn offering organic dishes, coffee, and alcohol with outdoor seating.",
-       "popularity": 0.2327981008141968
-      },
-      {
-       "qlooId": "ACBD5EB4-0560-485C-A6A7-201352B051B5",
-       "name": "Formosa Cafe",
-       "type": "place",
-       "disambiguation": "Casual Chinese-American eatery on Del Paso Boulevard serving inexpensive quick bites, small plates, coffee, alcohol, and vegetarian and organic options.",
-       "popularity": 0.14884174107880796
-      }
-     ]
-    }
-   ],
-   "durationMs": 501,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:19.972Z"
-  },
-  {
    "callId": "c_48fb8942-e44",
    "runId": "resolve_seed-comedy",
    "agent": "resolver",
@@ -7120,177 +6768,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:00.866Z"
-  },
-  {
-   "callId": "c_4bfb8c57-2d2",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Pink Dot",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Pink Dot",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "B6B3CA8E-0573-4715-9B30-DAC01E029E7D",
-       "name": "Pink Dot",
-       "type": "place",
-       "disambiguation": "Late-night West Hollywood convenience market offering groceries, prepared foods, sandwiches, liquor and fast delivery to Sunset Strip customers.",
-       "popularity": 0.6528128030857683
-      },
-      {
-       "qlooId": "8DEA9699-A8CB-41AF-BEEA-9137DCB76AE5",
-       "name": "Pink Dot",
-       "type": "place",
-       "disambiguation": "Women-owned shop selling gifts, bags, cosmetics, and costume jewelry in a basement retail space near Electronic City."
-      },
-      {
-       "qlooId": "86689BE3-72FC-4BB2-B357-9FD32F70D4E3",
-       "name": "Pink Dot",
-       "type": "place",
-       "disambiguation": "Casual dessert and soft-drinks spot inside Tokyo Tower, offering sweets and refreshing beverages with delivery from the tower food court."
-      }
-     ]
-    }
-   ],
-   "durationMs": 511,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:19.983Z"
-  },
-  {
-   "callId": "c_51dce6c5-72c",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "D07A3760-545D-4499-9E57-3EB056D43AF0",
-     "AECCB030-6878-446D-A150-BD8A49EEEE4F",
-     "88E644E8-FE21-4D9A-8861-CF54254C8238",
-     "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
-     "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
-     "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
-    ],
-    "option_type": "artist",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "D07A3760-545D-4499-9E57-3EB056D43AF0",
-     "name": "Lucius",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9778424394943279,
-     "affinity": 0.9608573688234123,
-     "properties": {
-      "description": "Lucius is an American five-piece indie-pop band formed in Brooklyn in 2011, anchored by lead vocalists Jess Wolfe and Holly Laessig. After meeting at Berklee College of Music, Wolfe and Laessig moved into a Ditmas Park Victorian house that became a creative hub where drummer Dan Molad and guitarists Peter Lalish and Andrew Burri joined to complete the lineup. The group gained attention for its twin-lead, tightly arranged harmonies, cinematic pop arrangements, and theatrical live shows. They self-recorded an early EP in the Ditmas Park house and released their full-length debut Wildewoman in 2013; later albums include Good Grief (2016) and Second Nature (2022). Lucius has toured extensively, appeared on major festivals and TV, and earned critical praise for songwriting, vocal production, and dynamic stagecraft.",
-      "image": {
-       "url": "https://images.qloo.com/i/D07A3760-545D-4499-9E57-3EB056D43AF0-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "AECCB030-6878-446D-A150-BD8A49EEEE4F",
-     "name": "Rayland Baxter",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9430758442613819,
-     "affinity": 0.9525991791792944,
-     "properties": {
-      "description": "Rayland Baxter is an American singer-songwriter and musician recognized for his distinctive blend of alternative country, Americana, and folk rock. He has developed a reputation for heartfelt lyrics and a warm, engaging vocal style. His music often features acoustic instrumentation and storytelling that reflects personal and observational themes. Baxter has released several albums and is noted for his contributions to the contemporary Americana scene.",
-      "image": {
-       "url": "https://images.qloo.com/i/AECCB030-6878-446D-A150-BD8A49EEEE4F-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "88E644E8-FE21-4D9A-8861-CF54254C8238",
-     "name": "The Milk Carton Kids",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9729502126627738,
-     "affinity": 0.9484725912880551,
-     "properties": {
-      "description": "The Milk Carton Kids are an American indie folk duo consisting of Kenneth Pattengale and Joey Ryan. They are known for their intricate acoustic guitar playing and close vocal harmonies, often drawing comparisons to traditional folk and Americana music. Their music features introspective lyrics and a minimalist, acoustic sound that highlights their vocal interplay and storytelling.",
-      "image": {
-       "url": "https://images.qloo.com/i/88E644E8-FE21-4D9A-8861-CF54254C8238-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
-     "name": "Phoebe Bridgers",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9942197668246073,
-     "affinity": 0.8873322556261252,
-     "properties": {
-      "description": "Phoebe Bridgers is an American singer-songwriter celebrated for intimate, literate songs that blend indie rock and folk. She first gained attention with early EPs and her 2017 debut album 'Stranger in the Alps', established herself as a distinctive voice with melancholic, image-rich lyrics and sparse-but-layered arrangements, and expanded her profile through acclaimed side projects (boygenius, Better Oblivion Community Center) and her 2020 album 'Punisher'. Her work is noted for its candid exploration of grief, relationships and existential anxiety, delivered with a breathy, emotive vocal style and frequent use of close harmonies and cinematic production.",
-      "image": {
-       "url": "https://images.qloo.com/i/AFBC71A7-9439-4AB0-AB68-D14B11AAF836-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
-     "name": "Noah Kahan",
-     "type": "urn:entity",
-     "subtype": "urn:entity:artist",
-     "popularity": 0.9842583672479668,
-     "affinity": 0.8447988445055468,
-     "properties": {
-      "description": "Noah Kahan is an American singer-songwriter from Strafford, Vermont, whose work blends intimate acoustic songwriting with modern pop sensibilities. He rose from early independent releases and viral streaming traction to wider recognition through emotionally direct singles and full-length albums. Kahan's writing is notable for vivid small-town imagery, candid reflections on mental health and identity, and hook-driven folk-pop melodies that have earned him festival billing and large-scale touring audiences.",
-      "image": {
-       "url": "https://images.qloo.com/i/0A8052C7-2F56-43B5-B133-F59F8F2917E0-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "D07A3760-545D-4499-9E57-3EB056D43AF0",
-    "AECCB030-6878-446D-A150-BD8A49EEEE4F",
-    "88E644E8-FE21-4D9A-8861-CF54254C8238",
-    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
-    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
-   ],
-   "inputIds": [
-    "D07A3760-545D-4499-9E57-3EB056D43AF0",
-    "AECCB030-6878-446D-A150-BD8A49EEEE4F",
-    "88E644E8-FE21-4D9A-8861-CF54254C8238",
-    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
-    "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
-    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 702,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:13.967Z"
   },
   {
    "callId": "c_5607fb61-e79",
@@ -7887,71 +7364,6 @@
    "at": "2026-10-30T06:13:45.421Z"
   },
   {
-   "callId": "c_6b09a575-c96",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Local LA MC from the room's own roster",
-    "type": "person"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Local LA MC from the room's own roster",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "D2BC56C2-2E51-45CB-A4D4-AE452280E418",
-       "name": "Mariah Carey",
-       "type": "person",
-       "disambiguation": "American singer and songwriter (born 1969)",
-       "popularity": 0.9986247159739512
-      },
-      {
-       "qlooId": "FF55AAFB-5C17-41E8-9439-10D7D45A8EA8",
-       "name": "Redimi2",
-       "type": "person",
-       "disambiguation": "Dominican rapper",
-       "popularity": 0.9639382046292169
-      },
-      {
-       "qlooId": "21954FA9-2484-4F62-9ECA-02AE41B9248D",
-       "name": "Juelz Santana",
-       "type": "person",
-       "disambiguation": "American rapper",
-       "popularity": 0.9594535828051446
-      },
-      {
-       "qlooId": "831BB8BF-BA88-41D5-9FEA-F22D461B4AA6",
-       "name": "Caleb McLaughlin",
-       "type": "person",
-       "disambiguation": "American actor",
-       "popularity": 0.9966025592241876
-      },
-      {
-       "qlooId": "4D77B050-EF53-4390-9ABD-696368A610B2",
-       "name": "MC Lan",
-       "type": "person",
-       "disambiguation": "Brazilian singer",
-       "popularity": 0.9709831378219415
-      }
-     ]
-    }
-   ],
-   "durationMs": 595,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:14.563Z"
-  },
-  {
    "callId": "c_6d1d48bf-8cc",
    "runId": "r_seed_comedy",
    "agent": "crowd_reader",
@@ -8047,296 +7459,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:00.566Z"
-  },
-  {
-   "callId": "c_70464352-fe1",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "010F92D3-310A-4A19-A54D-1850761E1B67",
-     "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
-     "869E1659-E583-459A-9FFE-84FB33AD8BE6"
-    ],
-    "option_type": "place",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "010F92D3-310A-4A19-A54D-1850761E1B67",
-     "name": "The Original Farmers Market",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9996443298375507,
-     "affinity": 0.9237403809032124,
-     "properties": {
-      "description": "Historic open-air market offering diverse international food stalls, trendy shops and gourmet grocers adjacent to a major shopping complex.",
-      "short_description": "Historic open-air market offering diverse international food stalls, trendy shops and gourmet grocers adjacent to a major shopping complex.",
-      "image": {
-       "url": "https://images.qloo.com/i/010F92D3-310A-4A19-A54D-1850761E1B67-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Los Angeles",
-       "name": "Fairfax",
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "6333 W 3rd St Los Angeles, CA 90036",
-      "price_level": null,
-      "business_rating": 4.599999904632568
-     }
-    },
-    {
-     "entity_id": "869E1659-E583-459A-9FFE-84FB33AD8BE6",
-     "name": "Scholl Canyon Golf Course",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9739900174621977,
-     "affinity": 0.9202399684121061,
-     "properties": {
-      "description": "Unfussy mountain sports complex with a mid-range 18-hole golf course, driving range, instruction services, and ten tennis courts.",
-      "short_description": "Unfussy mountain sports complex with a mid-range 18-hole golf course, driving range, instruction services, and ten tennis courts.",
-      "image": {
-       "url": "https://images.qloo.com/i/869E1659-E583-459A-9FFE-84FB33AD8BE6-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Glendale",
-       "name": null,
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "3800 E Glenoaks Blvd Glendale, CA 91206",
-      "price_level": 1,
-      "business_rating": 4.199999809265137
-     }
-    },
-    {
-     "entity_id": "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
-     "name": "Nat's Early Bite",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.9397784481340039,
-     "affinity": 0.9184362202436575,
-     "properties": {
-      "description": "Diner serving hearty American classics and traditional Mexican dishes with breakfast served all afternoon.",
-      "short_description": "Diner serving hearty American classics and traditional Mexican dishes with breakfast served all afternoon.",
-      "image": {
-       "url": "https://images.qloo.com/i/BFC4CA12-7019-410E-A217-C1CB3CA39B92-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Los Angeles",
-       "name": "Van Nuys",
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "14115 Burbank Blvd Sherman Oaks, CA 91401",
-      "price_level": 1,
-      "business_rating": 4.599999904632568
-     }
-    }
-   ],
-   "resultIds": [
-    "010F92D3-310A-4A19-A54D-1850761E1B67",
-    "869E1659-E583-459A-9FFE-84FB33AD8BE6",
-    "BFC4CA12-7019-410E-A217-C1CB3CA39B92"
-   ],
-   "inputIds": [
-    "010F92D3-310A-4A19-A54D-1850761E1B67",
-    "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
-    "869E1659-E583-459A-9FFE-84FB33AD8BE6",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 368,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:20.446Z"
-  },
-  {
-   "callId": "c_7442403e-662",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Pizza by the slice",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Pizza by the slice",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "30EA08BE-C4F5-4E31-9274-67A948B8B0FB",
-       "name": "Pizza By The Slice",
-       "type": "place",
-       "disambiguation": "Casual pizza shop at Branson Landing offering comfort-style pizza slices, salads, and quick dine-in, curbside pickup, takeout, and delivery service.",
-       "popularity": 0.27431864554858826
-      },
-      {
-       "qlooId": "54B4F184-7F1B-407C-8AA0-BE7FC48C7332",
-       "name": "Pizza by the Slice",
-       "type": "place",
-       "disambiguation": "Casual San Francisco spot serving pizza by the slice with delivery for quick counter-service meals.",
-       "popularity": 0.18610427320520292
-      },
-      {
-       "qlooId": "2B901173-E123-4C83-BAFF-BADAEAF8EAB9",
-       "name": "PIZZA by the SLICE",
-       "type": "place",
-       "disambiguation": "New York–style thin, crispy pizza slices with homemade sauce and cheese blends, offering delivery, takeaway, and late‑night service on Nowy Świat in Warsaw."
-      },
-      {
-       "qlooId": "BE0E50A3-4266-4D73-BBBF-A1B01685A057",
-       "name": "Pizza By The Slice",
-       "type": "place",
-       "disambiguation": "Casual North Beach slice shop serving pizza by the slice with beer, wine, coffee, and quick bites for dine-in, takeout, and delivery."
-      },
-      {
-       "qlooId": "79ABD899-90FD-491D-9434-B8DBAA6BCF11",
-       "name": "Pizza by the slice",
-       "type": "place",
-       "disambiguation": "Casual pizzeria on Fondamenta Ponte Piccolo in Venice offering pizza, beer, and dine-in seating."
-      }
-     ]
-    }
-   ],
-   "durationMs": 695,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:17.696Z"
-  },
-  {
-   "callId": "c_76951fb5-21f",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Rising act from the room's supplied local list (confirm name)",
-    "type": "person"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Rising act from the room's supplied local list (confirm name)",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "F9A62834-56D4-4974-A557-7B72554998EE",
-       "name": "Stephen King",
-       "type": "person",
-       "disambiguation": "American writer (born 1947)",
-       "popularity": 0.992112501494874
-      },
-      {
-       "qlooId": "7A869304-EC14-4656-B972-E82F1CAB662D",
-       "name": "Peyton List",
-       "type": "person",
-       "disambiguation": "American actress (born 1998)",
-       "popularity": 0.9961731227101249
-      },
-      {
-       "qlooId": "85F624D5-A8BD-467A-9F28-1A255B0F397E",
-       "name": "Florence Amaka Nwofor",
-       "type": "person",
-       "disambiguation": "Nigerian Academic and Librarian"
-      },
-      {
-       "qlooId": "C95B2ABA-C764-40A4-BB28-E70DE54F5581",
-       "name": "The Bucket List Family",
-       "type": "person",
-       "popularity": 0.9729400637088095
-      },
-      {
-       "qlooId": "DE04FB53-4162-46C8-BAB3-5BA399DFB80B",
-       "name": "Emma Watson",
-       "type": "person",
-       "disambiguation": "English actress and activist (born 1990)",
-       "popularity": 0.9996629738750394
-      }
-     ]
-    }
-   ],
-   "durationMs": 604,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:14.572Z"
-  },
-  {
-   "callId": "c_7888b91b-1d4",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Spotify",
-    "type": "brand"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "99CBD9B1-F023-4034-97E7-E95A4A85BDD2",
-     "name": "Spotify",
-     "popularity": 0.9984489159363292,
-     "properties": {
-      "description": "Founded in Sweden in 2006, the platform revolutionized the music industry by transitioning it to a streaming-first model. It offers a massive catalog of music, podcasts, and audiobooks, driven by sophisticated algorithms that provide highly personalized recommendations. With a massive global user base, it serves as a central hub for digital audio discovery and consumption. The service balances a free, ad-supported tier with a premium subscription model to ensure broad market accessibility.",
-      "short_description": "Spotify is a global audio streaming platform offering music, podcasts, and personalized listening experiences.",
-      "image": {
-       "url": "https://images.qloo.com/i/99CBD9B1-F023-4034-97E7-E95A4A85BDD2-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
-   ],
-   "inputIds": [
-    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 740,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:18.820Z"
   },
   {
    "callId": "c_7cb5f1b7-1ae",
@@ -8857,42 +7979,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:54.526Z"
-  },
-  {
-   "callId": "c_81c350d0-b01",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Sam Jay",
-    "type": "person"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "04BC87CE-0350-4237-871F-5A21C5B8E027",
-     "name": "Sam Jay",
-     "popularity": 0.5277557321620769,
-     "properties": {
-      "short_description": "American comedian and writer"
-     }
-    }
-   ],
-   "resultIds": [
-    "04BC87CE-0350-4237-871F-5A21C5B8E027"
-   ],
-   "inputIds": [
-    "04BC87CE-0350-4237-871F-5A21C5B8E027"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 1010,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:14.978Z"
   },
   {
    "callId": "c_84e8dfc1-d38",
@@ -9839,335 +8925,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:17:45.548Z"
-  },
-  {
-   "callId": "c_97a6310e-a79",
-   "runId": "map_seed-comedy",
-   "agent": "crowd_map",
-   "tool": "qloo_where_popular",
-   "args": {
-    "entity": "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "entity_type": "person",
-    "within": "Los Angeles",
-    "limit": 20
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "location": {
-      "latitude": 34.153748,
-      "longitude": -118.37219,
-      "geohash": "9q5f63"
-     },
-     "query": {
-      "affinity": 1,
-      "affinity_rank": 0.9973982853461519,
-      "popularity": 0.92,
-      "entity_person_affinity_rank": 0.9973982853461519,
-      "entity_person_affinity": 1
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.186707,
-      "longitude": -118.482056,
-      "geohash": "9q5drz"
-     },
-     "query": {
-      "affinity": 0.9989189189189189,
-      "affinity_rank": 0.9954538489043265,
-      "popularity": 0.6735135135135135,
-      "entity_person_affinity_rank": 0.9954538489043265,
-      "entity_person_affinity": 0.9989189189189189
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.12079,
-      "longitude": -118.29529,
-      "geohash": "9q5fh5"
-     },
-     "query": {
-      "affinity": 0.9978378378378379,
-      "affinity_rank": 0.9912432110033708,
-      "popularity": 0.9945945945945946,
-      "entity_person_affinity_rank": 0.9912432110033708,
-      "entity_person_affinity": 0.9978378378378379
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.027405,
-      "longitude": -118.40515,
-      "geohash": "9q5c9d"
-     },
-     "query": {
-      "affinity": 0.9967567567567568,
-      "affinity_rank": 0.9908972691807543,
-      "popularity": 0.7978378378378378,
-      "entity_person_affinity_rank": 0.9908972691807543,
-      "entity_person_affinity": 0.9967567567567568
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.170227,
-      "longitude": -118.361206,
-      "geohash": "9q5f6s"
-     },
-     "query": {
-      "affinity": 0.9956756756756757,
-      "affinity_rank": 0.9900496452389577,
-      "popularity": 0.8767567567567568,
-      "entity_person_affinity_rank": 0.9900496452389577,
-      "entity_person_affinity": 0.9956756756756757
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.10431,
-      "longitude": -118.32825,
-      "geohash": "9q5f52"
-     },
-     "query": {
-      "affinity": 0.9945945945945946,
-      "affinity_rank": 0.9894765408274032,
-      "popularity": 0.9881081081081081,
-      "entity_person_affinity_rank": 0.9894765408274032,
-      "entity_person_affinity": 0.9945945945945946
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.164734,
-      "longitude": -118.37219,
-      "geohash": "9q5f67"
-     },
-     "query": {
-      "affinity": 0.9935135135135135,
-      "affinity_rank": 0.9885549739497541,
-      "popularity": 0.9686486486486486,
-      "entity_person_affinity_rank": 0.9885549739497541,
-      "entity_person_affinity": 0.9935135135135135
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.131775,
-      "longitude": -118.31726,
-      "geohash": "9q5f5t"
-     },
-     "query": {
-      "affinity": 0.9924324324324324,
-      "affinity_rank": 0.988337604745587,
-      "popularity": 0.9762162162162162,
-      "entity_person_affinity_rank": 0.988337604745587,
-      "entity_person_affinity": 0.9924324324324324
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.098816,
-      "longitude": -118.306274,
-      "geohash": "9q5cgz"
-     },
-     "query": {
-      "affinity": 0.9913513513513513,
-      "affinity_rank": 0.9880709701774254,
-      "popularity": 0.918918918918919,
-      "entity_person_affinity_rank": 0.9880709701774254,
-      "entity_person_affinity": 0.9913513513513513
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.10431,
-      "longitude": -118.33923,
-      "geohash": "9q5f50"
-     },
-     "query": {
-      "affinity": 0.9902702702702703,
-      "affinity_rank": 0.9879343843430893,
-      "popularity": 0.9967567567567568,
-      "entity_person_affinity_rank": 0.9879343843430893,
-      "entity_person_affinity": 0.9902702702702703
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.043884,
-      "longitude": -118.56995,
-      "geohash": "9q59tv"
-     },
-     "query": {
-      "affinity": 0.9891891891891892,
-      "affinity_rank": 0.9878255303828357,
-      "popularity": 0.9167567567567567,
-      "entity_person_affinity_rank": 0.9878255303828357,
-      "entity_person_affinity": 0.9891891891891892
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.098816,
-      "longitude": -118.273315,
-      "geohash": "9q5cux"
-     },
-     "query": {
-      "affinity": 0.9881081081081081,
-      "affinity_rank": 0.9878023884862713,
-      "popularity": 0.9005405405405406,
-      "entity_person_affinity_rank": 0.9878023884862713,
-      "entity_person_affinity": 0.9881081081081081
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.14276,
-      "longitude": -118.394165,
-      "geohash": "9q5f1z"
-     },
-     "query": {
-      "affinity": 0.987027027027027,
-      "affinity_rank": 0.9876400333302472,
-      "popularity": 0.972972972972973,
-      "entity_person_affinity_rank": 0.9876400333302472,
-      "entity_person_affinity": 0.987027027027027
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.20868,
-      "longitude": -118.427124,
-      "geohash": "9q5f95"
-     },
-     "query": {
-      "affinity": 0.985945945945946,
-      "affinity_rank": 0.9876164863343548,
-      "popularity": 0.3935135135135135,
-      "entity_person_affinity_rank": 0.9876164863343548,
-      "entity_person_affinity": 0.985945945945946
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.131775,
-      "longitude": -118.2843,
-      "geohash": "9q5fhm"
-     },
-     "query": {
-      "affinity": 0.9848648648648649,
-      "affinity_rank": 0.9875108528684966,
-      "popularity": 0.9394594594594594,
-      "entity_person_affinity_rank": 0.9875108528684966,
-      "entity_person_affinity": 0.9848648648648649
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.098816,
-      "longitude": -118.361206,
-      "geohash": "9q5cfx"
-     },
-     "query": {
-      "affinity": 0.9837837837837838,
-      "affinity_rank": 0.9869246861924686,
-      "popularity": 0.9643243243243244,
-      "entity_person_affinity_rank": 0.9869246861924686,
-      "entity_person_affinity": 0.9837837837837838
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.148254,
-      "longitude": -118.427124,
-      "geohash": "9q5f30"
-     },
-     "query": {
-      "affinity": 0.9827027027027027,
-      "affinity_rank": 0.9868765469470611,
-      "popularity": 0.894054054054054,
-      "entity_person_affinity_rank": 0.9868765469470611,
-      "entity_person_affinity": 0.9827027027027027
-     }
-    },
-    {
-     "location": {
-      "latitude": 33.994446,
-      "longitude": -118.482056,
-      "geohash": "9q59ru"
-     },
-     "query": {
-      "affinity": 0.9816216216216216,
-      "affinity_rank": 0.9868741173259278,
-      "popularity": 0.9297297297297298,
-      "entity_person_affinity_rank": 0.9868741173259278,
-      "entity_person_affinity": 0.9816216216216216
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.15924,
-      "longitude": -118.37219,
-      "geohash": "9q5f66"
-     },
-     "query": {
-      "affinity": 0.9805405405405405,
-      "affinity_rank": 0.9868607567331806,
-      "popularity": 0.8918918918918919,
-      "entity_person_affinity_rank": 0.9868607567331806,
-      "entity_person_affinity": 0.9805405405405405
-     }
-    },
-    {
-     "location": {
-      "latitude": 34.10431,
-      "longitude": -118.31726,
-      "geohash": "9q5f58"
-     },
-     "query": {
-      "affinity": 0.9794594594594594,
-      "affinity_rank": 0.9868116870456508,
-      "popularity": 0.9416216216216217,
-      "entity_person_affinity_rank": 0.9868116870456508,
-      "entity_person_affinity": 0.9794594594594594
-     }
-    }
-   ],
-   "resultIds": [
-    "9q5f63",
-    "9q5drz",
-    "9q5fh5",
-    "9q5c9d",
-    "9q5f6s",
-    "9q5f52",
-    "9q5f67",
-    "9q5f5t",
-    "9q5cgz",
-    "9q5f50",
-    "9q59tv",
-    "9q5cux",
-    "9q5f1z",
-    "9q5f95",
-    "9q5fhm",
-    "9q5cfx",
-    "9q5f30",
-    "9q59ru",
-    "9q5f66",
-    "9q5f58"
-   ],
-   "inputIds": [
-    "77395141-8BEE-42B4-8091-9382A8EEF563"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 1938,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:18:51.484Z"
   },
   {
    "callId": "c_97b00562-5e4",
@@ -11200,131 +9957,6 @@
    "at": "2026-10-30T06:15:57.496Z"
   },
   {
-   "callId": "c_b556a317-f19",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "C38669CA-B6D2-4B15-B369-49131D13027E",
-     "69CC97CF-1B77-4C08-96B4-10B338354AFC",
-     "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6"
-    ],
-    "option_type": "place",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "C38669CA-B6D2-4B15-B369-49131D13027E",
-     "name": "Bar Bandini",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.862417680465926,
-     "affinity": 0.918438978978414,
-     "properties": {
-      "description": "Sexy Echo Park nightspot offering an eclectic selection of natural wines, sour beers and saisons on tap with small plates and late hours.",
-      "short_description": "Sexy Echo Park nightspot offering an eclectic selection of natural wines, sour beers and saisons on tap with small plates and late hours.",
-      "image": {
-       "url": "https://images.qloo.com/i/C38669CA-B6D2-4B15-B369-49131D13027E-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Los Angeles",
-       "name": "Echo Park",
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "2150 Sunset Blvd Los Angeles, CA 90026",
-      "price_level": 3,
-      "business_rating": 4.300000190734863
-     }
-    },
-    {
-     "entity_id": "69CC97CF-1B77-4C08-96B4-10B338354AFC",
-     "name": "Power House Bar",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.8904885069319465,
-     "affinity": 0.916104371397874,
-     "properties": {
-      "description": "Old Hollywood dive bar offering classic cocktails, live music, karaoke, jukeboxes and darts in a lively, LGBTQ+-friendly neighborhood setting.",
-      "short_description": "Old Hollywood dive bar offering classic cocktails, live music, karaoke, jukeboxes and darts in a lively, LGBTQ+-friendly neighborhood setting.",
-      "image": {
-       "url": "https://images.qloo.com/i/69CC97CF-1B77-4C08-96B4-10B338354AFC-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Los Angeles",
-       "name": "Hollywood",
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "1714 Highland Ave Los Angeles, CA 90028",
-      "price_level": 1,
-      "business_rating": 4.5
-     }
-    },
-    {
-     "entity_id": "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6",
-     "name": "The Famous Bar",
-     "type": "urn:entity",
-     "subtype": "urn:entity:place",
-     "popularity": 0.8973704924146605,
-     "affinity": 0.9139475007271398,
-     "properties": {
-      "description": "Craft cocktail lounge in a historic wood-and-brick building offering housemade cocktails, food, happy hour, and private dining steps from the Americana at Brand.",
-      "short_description": "Craft cocktail lounge in a historic wood-and-brick building offering housemade cocktails, food, happy hour, and private dining steps from the Americana at Brand.",
-      "image": {
-       "url": "https://images.qloo.com/i/C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6-420x-auto.jpg"
-      },
-      "geocode": {
-       "city": "Glendale",
-       "name": null,
-       "metro": "Los Angeles",
-       "country": "United States",
-       "country_code": "US",
-       "admin1_region": "California",
-       "admin2_region": "Los Angeles County"
-      },
-      "address": "154 S Brand Blvd Glendale, CA 91204",
-      "price_level": 2,
-      "business_rating": 4.400000095367432
-     }
-    }
-   ],
-   "resultIds": [
-    "C38669CA-B6D2-4B15-B369-49131D13027E",
-    "69CC97CF-1B77-4C08-96B4-10B338354AFC",
-    "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6"
-   ],
-   "inputIds": [
-    "C38669CA-B6D2-4B15-B369-49131D13027E",
-    "69CC97CF-1B77-4C08-96B4-10B338354AFC",
-    "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 376,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:18.078Z"
-  },
-  {
    "callId": "c_b78956dd-959",
    "runId": "resolve_seed-comedy",
    "agent": "resolver",
@@ -12110,216 +10742,6 @@
    "at": "2026-10-30T06:13:12.320Z"
   },
   {
-   "callId": "c_d695e22f-d85",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Liquid Death",
-    "type": "brand"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "4DF7C265-52D9-4A99-8803-F62C2302D561",
-     "name": "Liquid Death",
-     "popularity": 0.9201996914783611,
-     "properties": {
-      "description": "A beverage company that challenges industry norms by selling mountain water and flavored sparkling drinks in sustainable aluminum cans. Known for its distinctively edgy and provocative marketing, the brand aims to make environmental sustainability accessible and entertaining. By replacing single-use plastic bottles with infinitely recyclable aluminum, it captures a loyal following among younger, eco-conscious demographics. Its product range has expanded from still water to include various flavored carbonated waters, teas, and energy drinks.",
-      "short_description": "Liquid Death is a canned water brand known for its mountain water sold in large recyclable cans with a bold, edgy marketing style.",
-      "image": {
-       "url": "https://images.qloo.com/i/4DF7C265-52D9-4A99-8803-F62C2302D561-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "4DF7C265-52D9-4A99-8803-F62C2302D561"
-   ],
-   "inputIds": [
-    "4DF7C265-52D9-4A99-8803-F62C2302D561"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 742,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:18.822Z"
-  },
-  {
-   "callId": "c_e3c1e8d9-770",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Craft cocktail special named for the show",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "Craft cocktail special named for the show",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "C314A263-81D4-4799-910D-457BC09C6250",
-       "name": "Pizza Craft Pizzeria & Italian Specialities",
-       "type": "place",
-       "disambiguation": "Authentic Italian pizzeria with wood-fired pizzas, handmade pastas, and a speakeasy-style cocktail bar in downtown Fort Lauderdale.",
-       "popularity": 0.9331211941899654
-      },
-      {
-       "qlooId": "CC749E49-2561-418A-B950-8C5D59744193",
-       "name": "Arundel Wharf - Seafood - Cocktail Bar - Craft Beer",
-       "type": "place",
-       "disambiguation": "Maritime-themed seafood restaurant on a Kennebunkport wharf with outdoor patio and panoramic Kennebunk River views.",
-       "popularity": 0.9532196228893344
-      },
-      {
-       "qlooId": "88768FC6-6190-4B13-AEC3-4C4B123A7D19",
-       "name": "The Pergola, Venue for Special Events",
-       "type": "place",
-       "disambiguation": "Octagon-shaped air-conditioned reception hall in CCP Compound offering garden, terrace, and indoor spaces for 150–250 guests with secure parking.",
-       "popularity": 0.9471994178524505
-      },
-      {
-       "qlooId": "8117910B-14CF-440B-B1A1-C622D9A68C70",
-       "name": "Houston Center for Contemporary Craft",
-       "type": "place",
-       "disambiguation": "Gallery showcasing contemporary craft with rotating exhibitions, resident artist studios, a craft garden, and a museum shop in Houston's Museum District.",
-       "popularity": 0.9452394245238199
-      },
-      {
-       "qlooId": "52969C61-2676-4385-BA94-389537A90B57",
-       "name": "Chef’s Special Cocktail Bar",
-       "type": "place",
-       "disambiguation": "Lively tavern in Bucktown serving Americanized Chinese cuisine and craft cocktails with a retro vibe and fun atmosphere.",
-       "popularity": 0.9150540785802613
-      }
-     ]
-    }
-   ],
-   "durationMs": 701,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:17.702Z"
-  },
-  {
-   "callId": "c_e82cbfa6-a67",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "Phoebe Bridgers",
-    "type": "artist"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
-     "name": "Phoebe Bridgers",
-     "popularity": 0.9944367786620605,
-     "properties": {
-      "short_description": "Phoebe Bridgers is an American singer-songwriter known for her emotive indie rock and folk music.",
-      "duration": {},
-      "image": {
-       "url": "https://images.qloo.com/i/AFBC71A7-9439-4AB0-AB68-D14B11AAF836-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836"
-   ],
-   "inputIds": [
-    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836"
-   ],
-   "issues": [],
-   "endpoint": "/entities",
-   "durationMs": 1758,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:13.222Z"
-  },
-  {
-   "callId": "c_ec554a47-f1f",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_describe",
-   "args": {
-    "entity": "The Rainbow Bar & Grill",
-    "type": "place"
-   },
-   "status": "needs_input",
-   "summary": "Choose the intended Qloo entity.",
-   "warnings": [],
-   "results": [],
-   "resultIds": [],
-   "inputIds": [],
-   "issues": [
-    {
-     "input": "The Rainbow Bar & Grill",
-     "kind": "ambiguous",
-     "field": "entity",
-     "candidates": [
-      {
-       "qlooId": "EB6EA33E-62A0-4446-BDA9-0BB64F04F28C",
-       "name": "Rainbow Bar & Grill",
-       "type": "place",
-       "disambiguation": "Legendary Sunset Strip rock bar serving pizza and Italian fare, famed for 1970s–80s rock stars and memorabilia-filled atmosphere.",
-       "popularity": 0.9988547977954765
-      },
-      {
-       "qlooId": "CDFE93E1-3559-4A6E-8ED1-E3647674BE02",
-       "name": "Applebee's Grill + Bar - North Rainbow Blvd",
-       "type": "place",
-       "disambiguation": "Full-service casual American bar and grill offering happy hour deals, carside to-go, and family-friendly dining.",
-       "popularity": 0.9432352278016315
-      },
-      {
-       "qlooId": "FCB434A3-6DC7-491A-B97A-25BB93036DA3",
-       "name": "Chili's Grill & Bar",
-       "type": "place",
-       "disambiguation": "Family-friendly chain serving classic Tex-Mex and American dishes in a Southwestern-inspired casual setting with a full bar.",
-       "popularity": 0.9494251887280604
-      },
-      {
-       "qlooId": "7A15F4B1-AFA1-40FC-B3C3-9CA467EADAD3",
-       "name": "Applebee's Grill + Bar",
-       "type": "place",
-       "disambiguation": "Full-service chain bar and grill serving hearty American comfort food in a casual neighborhood setting with dine-in, takeout, curbside, and delivery.",
-       "popularity": 0.9166526441615674
-      },
-      {
-       "qlooId": "DF7E7A83-9324-41C1-A08E-D1AB3B3537DD",
-       "name": "Applebee's Grill + Bar - South Rainbow Blvd",
-       "type": "place",
-       "disambiguation": "Full-service neighborhood bar and grill serving hearty American comfort food in an informal, family-friendly setting with drinks and value-focused specials.",
-       "popularity": 0.8788557710130489
-      }
-     ]
-    }
-   ],
-   "durationMs": 604,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:20.076Z"
-  },
-  {
    "callId": "c_eddb29d5-f1c",
    "runId": "r_seed_comedy",
    "agent": "programmer",
@@ -12405,115 +10827,6 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:14:06.053Z"
-  },
-  {
-   "callId": "c_f099b41c-8f9",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "D0391D14-6A86-422F-A062-9951BAEFDFE6",
-     "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
-     "590FAAAE-9230-4C17-BB56-550EAF403BA3",
-     "4DF7C265-52D9-4A99-8803-F62C2302D561",
-     "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
-    ],
-    "option_type": "brand",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "D0391D14-6A86-422F-A062-9951BAEFDFE6",
-     "name": "Hinge",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.912851112881626,
-     "affinity": 0.9603682450021869,
-     "properties": {
-      "description": "Hinge is a prominent dating application that distinguishes itself by prioritizing meaningful, long-term connections over casual hookups. By employing a unique profile structure centered around personal prompts and specific interactions, it encourages users to showcase their authentic selves. The platform is owned by Match Group and serves a global user base looking to navigate the dating world with greater intention. Its central philosophy revolves around the goal of being a tool that users eventually delete upon finding a successful partner.",
-      "short_description": "Hinge is a dating app designed to help people find meaningful relationships and get off dating apps by showcasing personality through text, photos, and video.",
-      "image": {
-       "url": "https://images.qloo.com/i/D0391D14-6A86-422F-A062-9951BAEFDFE6-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "590FAAAE-9230-4C17-BB56-550EAF403BA3",
-     "name": "Splendid Spoon",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.8337882049804207,
-     "affinity": 0.9457020205675543,
-     "properties": {
-      "description": "Splendid Spoon is a plant-based meal subscription service designed to eliminate the friction of meal planning for busy individuals. Founded to provide nutrient-dense, ready-to-eat soups, bowls, and smoothies, the brand focuses on convenience without sacrificing health outcomes. Its business model relies on a subscription-based delivery system that integrates seamlessly into the daily routines of health-conscious consumers. By prioritizing whole-food ingredients and sustainable practices, the company has positioned itself as a convenient wellness partner for urban professionals and working parents.",
-      "short_description": "Splendid Spoon is a plant-based meal subscription service offering ready-to-eat smoothies, soups, grain bowls, and detox programs for healthy eating.",
-      "image": {
-       "url": "https://images.qloo.com/i/590FAAAE-9230-4C17-BB56-550EAF403BA3-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
-     "name": "The Giving Keys",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.9417792544625452,
-     "affinity": 0.9452688575711976,
-     "properties": {
-      "description": "The Giving Keys is a social enterprise that produces hand-stamped jewelry featuring inspirational words, intended for wearers to eventually pass on to others in need. Founded in 2008, the brand leverages the concept of the pay-it-forward movement to foster human connection and support employment resources for individuals transitioning out of homelessness. Their product range focuses on affordable, sentimental items like necklaces, bracelets, and keychains that serve as daily, tangible reminders of personal growth. By combining unique, message-driven design with a commitment to social mission, the brand has cultivated a deeply loyal community focused on kindness and intentional living.",
-      "short_description": "The Giving Keys is a pay-it-forward jewelry brand that creates hand-stamped key necklaces with inspirational words, supporting a kindness movement.",
-      "image": {
-       "url": "https://images.qloo.com/i/FD2F276A-0105-4605-87D7-C8FF26C7A6A5-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "4DF7C265-52D9-4A99-8803-F62C2302D561",
-     "name": "Liquid Death",
-     "type": "urn:entity",
-     "subtype": "urn:entity:brand",
-     "popularity": 0.9201996914783611,
-     "affinity": 0.8658126564480229,
-     "properties": {
-      "description": "A beverage company that challenges industry norms by selling mountain water and flavored sparkling drinks in sustainable aluminum cans. Known for its distinctively edgy and provocative marketing, the brand aims to make environmental sustainability accessible and entertaining. By replacing single-use plastic bottles with infinitely recyclable aluminum, it captures a loyal following among younger, eco-conscious demographics. Its product range has expanded from still water to include various flavored carbonated waters, teas, and energy drinks.",
-      "short_description": "Liquid Death is a canned water brand known for its mountain water sold in large recyclable cans with a bold, edgy marketing style.",
-      "image": {
-       "url": "https://images.qloo.com/i/4DF7C265-52D9-4A99-8803-F62C2302D561-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "D0391D14-6A86-422F-A062-9951BAEFDFE6",
-    "590FAAAE-9230-4C17-BB56-550EAF403BA3",
-    "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
-    "4DF7C265-52D9-4A99-8803-F62C2302D561"
-   ],
-   "inputIds": [
-    "D0391D14-6A86-422F-A062-9951BAEFDFE6",
-    "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
-    "590FAAAE-9230-4C17-BB56-550EAF403BA3",
-    "4DF7C265-52D9-4A99-8803-F62C2302D561",
-    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 648,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:19.470Z"
   },
   {
    "callId": "c_f0e4f05a-bb1",
@@ -13029,161 +11342,6 @@
    "at": "2026-10-30T06:14:00.054Z"
   },
   {
-   "callId": "c_f3dc0696-53e",
-   "runId": "cf_seed-comedy_v1",
-   "agent": "counterfactual",
-   "tool": "qloo_rank",
-   "args": {
-    "options": [
-     "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
-     "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
-     "8098607A-2BD8-4448-AE69-043DE4CF73CE",
-     "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
-     "A543F312-1893-4330-8125-7441966EF9EE",
-     "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
-    ],
-    "option_type": "podcast",
-    "signals": [
-     "77395141-8BEE-42B4-8091-9382A8EEF563",
-     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-    ],
-    "signal_location": "Los Angeles",
-    "demographic": "adults 35-54"
-   },
-   "status": "ok",
-   "summary": "",
-   "warnings": [],
-   "results": [
-    {
-     "entity_id": "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
-     "name": "Bad Friends",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9827385743672301,
-     "affinity": 0.9199228118994232,
-     "properties": {
-      "description": "Andrew Santino and Bobby Lee present BAD FRIENDS. New episodes every Monday!\nGet Tickets to the \"Scary Times USA\" live show: https://www.moment.co/badfriends\n\nFOLLOW BAD FRIENDS!\nhttps://www.instagram.com/badfriendspod\nhttps://patreon.com/badfriends\nhttps://www.tiktok.com/@badfriendspodofficial\nhttp://www.badfriendspod.com\n\nAndrew Santino:\nhttps://www.instagram.com/cheetosantino\nhttps://twitter.com/CheetoSantino\nhttps://www.youtube.com/andrewsantinowhiskeyginger\n\nBobby Lee:\nhttps://www.instagram.com/bobbyleelive\nhttps://twitter.com/bobbyleelive\nhttp://bit.ly/SubscribeToTigerBelly\n\nA 7EQUIS production:\nwww.7equis.com\nhttps://www.instagram.com/7equis",
-      "short_description": "Andrew Santino and Bobby Lee share humorous anecdotes and discussions about their lives and friendship.",
-      "release_date": "2024-07-12",
-      "content_rating": "Explicit",
-      "image": {
-       "url": "https://images.qloo.com/i/1FAB43D9-D122-416D-BBFB-81C511B4A47F-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
-     "name": "Sincerely Fortune",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9474107861550846,
-     "affinity": 0.9189764924667492,
-     "properties": {
-      "description": "Comedian and actress Fortune Feimster is known to audiences as a fun, silly performer who likes to dance with ice cream. But in this podcast, she discusses a new topic every week in a more real, sincere way.",
-      "short_description": "Fortune Feimster explores various topics each week with sincerity, moving beyond her comedic persona.",
-      "release_date": "2023-10-07",
-      "content_rating": "Explicit",
-      "image": {
-       "url": "https://images.qloo.com/i/D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "8098607A-2BD8-4448-AE69-043DE4CF73CE",
-     "name": "How Neal Feel",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9413886652952926,
-     "affinity": 0.918459933507564,
-     "properties": {
-      "description": "Every week, comedian Neal Brennan and his co-host Bianca Sia cover a range of topics: current events, race, gender, sex, technology. The good stuff.",
-      "short_description": "Comedian Neal Brennan and co-host Bianca Sia discuss current events, race, gender, sex, and technology.",
-      "release_date": "2022-12-09",
-      "content_rating": "Explicit",
-      "image": {
-       "url": "https://images.qloo.com/i/8098607A-2BD8-4448-AE69-043DE4CF73CE-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
-     "name": "Call Her Daddy",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9982410637092687,
-     "affinity": 0.8802915868103606,
-     "properties": {
-      "description": "The most-listened to podcast by women. Alex Cooper’s Call Her Daddy has been creating conversation since 2018. Cooper cuts through the BS with topics and guests - asking the burning questions you want the answers to. There will be laughter, there will be tears. There will be everything in between. New episodes drop on Wednesday and Sunday. Want more? Join the Daddy Gang @callherdaddy",
-      "short_description": "Alex Cooper tackles candid topics and interviews guests, sparking laughter and tears in a relatable podcast for women.",
-      "release_date": "2024-06-21",
-      "content_rating": "Explicit",
-      "image": {
-       "url": "https://images.qloo.com/i/056BCF4A-7C1D-4F19-AC0C-B1093EDE153C-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
-     "name": "Conan O’Brien Needs A Friend",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9990460006558746,
-     "affinity": 0.869810637365461,
-     "properties": {
-      "description": "After 25 years at the Late Night desk, Conan realized that the only people at his holiday party are the men and women who work for him. Over the years and despite thousands of interviews, Conan has never made a real and lasting friendship with any of his celebrity guests. So, he started a podcast to do just that. Deeper, unboundedly playful, and free from FCC regulations, Conan O’Brien Needs a Friend is a weekly opportunity for Conan to hang out with the people he enjoys most and perhaps find some real friendship along the way.",
-      "short_description": "Conan O'Brien explores friendship through candid conversations with celebrities, comedians, and personal friends in a playful podcast format.",
-      "release_date": "2024-07-08",
-      "content_rating": "Explicit",
-      "image": {
-       "url": "https://images.qloo.com/i/DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7-420x-auto.jpg"
-      }
-     }
-    },
-    {
-     "entity_id": "A543F312-1893-4330-8125-7441966EF9EE",
-     "name": "Crime Junkie",
-     "type": "urn:entity",
-     "subtype": "urn:entity:podcast",
-     "popularity": 0.9999105625614882,
-     "affinity": 0.7733363429772028,
-     "properties": {
-      "description": "Does hearing about a true crime case always leave you scouring the internet for the truth behind the story? Dive into your next mystery with Crime Junkie. Every Monday, join your host Ashley Flowers as she unravels all the details of infamous and underreported true crime cases with her best friend Brit Prawat. From cold cases to missing persons and heroes in our community who seek justice, Crime Junkie is your destination for theories and stories you won’t hear anywhere else. \n\nWhether you're a seasoned true crime enthusiast or new to the genre, you'll find yourself on the edge of your seat awaiting a new episode every Monday.\n\nIf you can never get enough true crime... Congratulations, you’ve found your people. Follow to join a community of Crime Junkies! \n\nCrime Junkie is presented by audiochuck Media Company.",
-      "short_description": "Join Ashley Flowers and Brit Prawat as they explore infamous and underreported true crime cases every Monday.",
-      "release_date": "2024-06-24",
-      "content_rating": "Clean",
-      "image": {
-       "url": "https://images.qloo.com/i/A543F312-1893-4330-8125-7441966EF9EE-420x-auto.jpg"
-      }
-     }
-    }
-   ],
-   "resultIds": [
-    "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
-    "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
-    "8098607A-2BD8-4448-AE69-043DE4CF73CE",
-    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
-    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
-    "A543F312-1893-4330-8125-7441966EF9EE"
-   ],
-   "inputIds": [
-    "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
-    "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
-    "8098607A-2BD8-4448-AE69-043DE4CF73CE",
-    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
-    "A543F312-1893-4330-8125-7441966EF9EE",
-    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
-    "77395141-8BEE-42B4-8091-9382A8EEF563",
-    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
-   ],
-   "issues": [],
-   "endpoint": "/v2/insights",
-   "durationMs": 646,
-   "cached": false,
-   "attempts": 1,
-   "source": "live",
-   "at": "2026-10-30T06:19:16.999Z"
-  },
-  {
    "callId": "c_f4c0768d-e26",
    "runId": "r_seed_comedy",
    "agent": "programmer",
@@ -13484,6 +11642,1942 @@
    "attempts": 1,
    "source": "live",
    "at": "2026-10-30T06:13:47.710Z"
+  },
+  {
+   "callId": "c_0ee56a16-8b6",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Conan O'Brien Needs a Friend",
+    "type": "podcast"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [
+    "Qloo selected the only candidate matching every supplied name and location term; reuse its Qloo ID to override future name resolution."
+   ],
+   "results": [
+    {
+     "entity_id": "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
+     "name": "Conan O’Brien Needs A Friend",
+     "popularity": 0.9990460006558746,
+     "properties": {
+      "short_description": "Conan O'Brien explores friendship through candid conversations with celebrities, comedians, and personal friends in a playful podcast format.",
+      "image": {
+       "url": "https://images.qloo.com/i/DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
+   ],
+   "inputIds": [
+    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 742,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:16.331Z"
+  },
+  {
+   "callId": "c_137aeb7a-d32",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Call Her Daddy",
+    "type": "podcast"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+     "name": "Call Her Daddy",
+     "popularity": 0.9982410637092687,
+     "properties": {
+      "short_description": "Alex Cooper tackles candid topics and interviews guests, sparking laughter and tears in a relatable podcast for women.",
+      "image": {
+       "url": "https://images.qloo.com/i/056BCF4A-7C1D-4F19-AC0C-B1093EDE153C-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C"
+   ],
+   "inputIds": [
+    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 762,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:16.351Z"
+  },
+  {
+   "callId": "c_24ed2c68-9fe",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "831C1BF8-B78B-4603-8530-C4CD64477074",
+     "853277C9-2A52-43A6-BFA1-7B89C019B927",
+     "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
+     "04BC87CE-0350-4237-871F-5A21C5B8E027"
+    ],
+    "option_type": "person",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "831C1BF8-B78B-4603-8530-C4CD64477074",
+     "name": "Fahim Anwar",
+     "type": "urn:entity",
+     "subtype": "urn:entity:person",
+     "popularity": 0.6220306367619399,
+     "affinity": 0.9446342050368913
+    },
+    {
+     "entity_id": "853277C9-2A52-43A6-BFA1-7B89C019B927",
+     "name": "Annie Lederman",
+     "type": "urn:entity",
+     "subtype": "urn:entity:person",
+     "popularity": 0.7863091290592622,
+     "affinity": 0.9432744523946786
+    },
+    {
+     "entity_id": "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
+     "name": "Nikki Glaser",
+     "type": "urn:entity",
+     "subtype": "urn:entity:person",
+     "popularity": 0.9154499298768224,
+     "affinity": 0.9414255776686046,
+     "properties": {
+      "image": {
+       "url": "https://images.qloo.com/i/B45CAFC8-DC2D-4556-97A6-E32A288546CA-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "04BC87CE-0350-4237-871F-5A21C5B8E027",
+     "name": "Sam Jay",
+     "type": "urn:entity",
+     "subtype": "urn:entity:person",
+     "popularity": 0.5277557321620769,
+     "affinity": 0.9100499744288226
+    }
+   ],
+   "resultIds": [
+    "831C1BF8-B78B-4603-8530-C4CD64477074",
+    "853277C9-2A52-43A6-BFA1-7B89C019B927",
+    "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
+    "04BC87CE-0350-4237-871F-5A21C5B8E027"
+   ],
+   "inputIds": [
+    "831C1BF8-B78B-4603-8530-C4CD64477074",
+    "853277C9-2A52-43A6-BFA1-7B89C019B927",
+    "B45CAFC8-DC2D-4556-97A6-E32A288546CA",
+    "04BC87CE-0350-4237-871F-5A21C5B8E027",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 608,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:15.588Z"
+  },
+  {
+   "callId": "c_27f622ac-e25",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Crime Junkie",
+    "type": "podcast"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "A543F312-1893-4330-8125-7441966EF9EE",
+     "name": "Crime Junkie",
+     "popularity": 0.9999105625614882,
+     "properties": {
+      "short_description": "Join Ashley Flowers and Brit Prawat as they explore infamous and underreported true crime cases every Monday.",
+      "image": {
+       "url": "https://images.qloo.com/i/A543F312-1893-4330-8125-7441966EF9EE-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "A543F312-1893-4330-8125-7441966EF9EE"
+   ],
+   "inputIds": [
+    "A543F312-1893-4330-8125-7441966EF9EE"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 730,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:16.319Z"
+  },
+  {
+   "callId": "c_2874cbd2-fbe",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Noah Kahan",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
+     "name": "Noah Kahan",
+     "popularity": 0.9825951128669314,
+     "properties": {
+      "short_description": "Noah Kahan is an American singer-songwriter known for his introspective indie folk and folk pop music.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/0A8052C7-2F56-43B5-B133-F59F8F2917E0-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
+   ],
+   "inputIds": [
+    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 1783,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:13.247Z"
+  },
+  {
+   "callId": "c_31985913-f79",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Mini sliders and fries",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Mini sliders and fries",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "4002FC67-1852-48A0-AC25-5D7CDAAD1CB6",
+       "name": "Sly's Sliders and Fries",
+       "type": "place",
+       "disambiguation": "Bite-sized artisan sliders with creative toppings, hand-cut fries, and vegan options served in a casual, affordable counter-service setting in downtown Savannah.",
+       "popularity": 0.9545644832790449
+      },
+      {
+       "qlooId": "31C47CCE-C64D-49EA-AEC1-0027C63E679D",
+       "name": "Mini Moe’s Smash Fresh Burgers, Fries & Poutines",
+       "type": "place",
+       "disambiguation": "Fast-food burger joint serving classic and creative burgers with bold interiors, halal and vegetarian options, plus delivery and outdoor seating.",
+       "popularity": 0.8954851619608626
+      },
+      {
+       "qlooId": "46D67B4D-7A28-4060-B68E-F071F1E69508",
+       "name": "GLOBALLS Brighton - UV Mini Golf & Games",
+       "type": "place",
+       "disambiguation": "Glow-in-the-dark indoor mini golf with immersive themed courses, arcade games, and a cocktail bar near Brighton Marina, ideal for families, dates and group events.",
+       "popularity": 0.99008005271719
+      },
+      {
+       "qlooId": "5F9A87BA-898E-4422-8293-081A78036FF7",
+       "name": "Mini Punjab's Bandra",
+       "type": "place",
+       "disambiguation": "Bright first-floor spot serving Punjabi tandoori and comfort dishes with rural Indian–themed decor and cozy seating.",
+       "popularity": 0.9617215327359561
+      },
+      {
+       "qlooId": "C0743FAF-A56F-4616-AD6C-4E84FEBE2F8A",
+       "name": "Five Guys Burgers and Fries Bluewater",
+       "type": "place",
+       "disambiguation": "Fast-casual outlet serving made-to-order burgers, fries and hot dogs with free peanuts and late-night service.",
+       "popularity": 0.9352035826293292
+      }
+     ]
+    }
+   ],
+   "durationMs": 695,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:17.696Z"
+  },
+  {
+   "callId": "c_32d7f773-d6b",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Clairo",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E",
+     "name": "Clairo",
+     "popularity": 0.9946999267908411,
+     "properties": {
+      "short_description": "Clairo is an American singer-songwriter known for her intimate bedroom pop style.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/9B2140E4-8DEB-452C-BB75-C3B7B6AD198E-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
+   ],
+   "inputIds": [
+    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 1799,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:13.264Z"
+  },
+  {
+   "callId": "c_425b2b71-e66",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Hinge",
+    "type": "brand"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "D0391D14-6A86-422F-A062-9951BAEFDFE6",
+     "name": "Hinge",
+     "popularity": 0.912851112881626,
+     "properties": {
+      "description": "Hinge is a prominent dating application that distinguishes itself by prioritizing meaningful, long-term connections over casual hookups. By employing a unique profile structure centered around personal prompts and specific interactions, it encourages users to showcase their authentic selves. The platform is owned by Match Group and serves a global user base looking to navigate the dating world with greater intention. Its central philosophy revolves around the goal of being a tool that users eventually delete upon finding a successful partner.",
+      "short_description": "Hinge is a dating app designed to help people find meaningful relationships and get off dating apps by showcasing personality through text, photos, and video.",
+      "image": {
+       "url": "https://images.qloo.com/i/D0391D14-6A86-422F-A062-9951BAEFDFE6-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "D0391D14-6A86-422F-A062-9951BAEFDFE6"
+   ],
+   "inputIds": [
+    "D0391D14-6A86-422F-A062-9951BAEFDFE6"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 676,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:18.756Z"
+  },
+  {
+   "callId": "c_44099703-e99",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Formosa Cafe",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Formosa Cafe",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "C9A4950C-75FA-48BF-B9D8-231B7ED84E15",
+       "name": "Formosa Cafe",
+       "type": "place",
+       "disambiguation": "Casual Asian-inspired cafe and family restaurant in Northbridge offering coffee, cocktails, small plates, vegan options, and indoor and outdoor dining.",
+       "popularity": 0.4507494332493469
+      },
+      {
+       "qlooId": "27033881-67FA-4D94-930A-6761AFC3FDE3",
+       "name": "Formosa Cafe",
+       "type": "place",
+       "disambiguation": "Historic Bologna café and burger restaurant serving coffee, cocktails, dine-in and delivery; moderately expensive.",
+       "popularity": 0.29862271140644425
+      },
+      {
+       "qlooId": "59A8DC29-40A8-4C19-9607-7685154DBB62",
+       "name": "Formosa Cafe",
+       "type": "place",
+       "disambiguation": "Casual, inexpensive Taiwanese cafe in Brooklyn offering organic dishes, coffee, and alcohol with outdoor seating.",
+       "popularity": 0.2327981008141968
+      },
+      {
+       "qlooId": "ACBD5EB4-0560-485C-A6A7-201352B051B5",
+       "name": "Formosa Cafe",
+       "type": "place",
+       "disambiguation": "Casual Chinese-American eatery on Del Paso Boulevard serving inexpensive quick bites, small plates, coffee, alcohol, and vegetarian and organic options.",
+       "popularity": 0.14884174107880796
+      }
+     ]
+    }
+   ],
+   "durationMs": 501,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:19.972Z"
+  },
+  {
+   "callId": "c_4bfb8c57-2d2",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Pink Dot",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Pink Dot",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "B6B3CA8E-0573-4715-9B30-DAC01E029E7D",
+       "name": "Pink Dot",
+       "type": "place",
+       "disambiguation": "Late-night West Hollywood convenience market offering groceries, prepared foods, sandwiches, liquor and fast delivery to Sunset Strip customers.",
+       "popularity": 0.6528128030857683
+      },
+      {
+       "qlooId": "8DEA9699-A8CB-41AF-BEEA-9137DCB76AE5",
+       "name": "Pink Dot",
+       "type": "place",
+       "disambiguation": "Women-owned shop selling gifts, bags, cosmetics, and costume jewelry in a basement retail space near Electronic City."
+      },
+      {
+       "qlooId": "86689BE3-72FC-4BB2-B357-9FD32F70D4E3",
+       "name": "Pink Dot",
+       "type": "place",
+       "disambiguation": "Casual dessert and soft-drinks spot inside Tokyo Tower, offering sweets and refreshing beverages with delivery from the tower food court."
+      }
+     ]
+    }
+   ],
+   "durationMs": 511,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:19.983Z"
+  },
+  {
+   "callId": "c_51dce6c5-72c",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "D07A3760-545D-4499-9E57-3EB056D43AF0",
+     "AECCB030-6878-446D-A150-BD8A49EEEE4F",
+     "88E644E8-FE21-4D9A-8861-CF54254C8238",
+     "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+     "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
+     "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E"
+    ],
+    "option_type": "artist",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "D07A3760-545D-4499-9E57-3EB056D43AF0",
+     "name": "Lucius",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9778424394943279,
+     "affinity": 0.9608573688234123,
+     "properties": {
+      "description": "Lucius is an American five-piece indie-pop band formed in Brooklyn in 2011, anchored by lead vocalists Jess Wolfe and Holly Laessig. After meeting at Berklee College of Music, Wolfe and Laessig moved into a Ditmas Park Victorian house that became a creative hub where drummer Dan Molad and guitarists Peter Lalish and Andrew Burri joined to complete the lineup. The group gained attention for its twin-lead, tightly arranged harmonies, cinematic pop arrangements, and theatrical live shows. They self-recorded an early EP in the Ditmas Park house and released their full-length debut Wildewoman in 2013; later albums include Good Grief (2016) and Second Nature (2022). Lucius has toured extensively, appeared on major festivals and TV, and earned critical praise for songwriting, vocal production, and dynamic stagecraft.",
+      "image": {
+       "url": "https://images.qloo.com/i/D07A3760-545D-4499-9E57-3EB056D43AF0-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AECCB030-6878-446D-A150-BD8A49EEEE4F",
+     "name": "Rayland Baxter",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9430758442613819,
+     "affinity": 0.9525991791792944,
+     "properties": {
+      "description": "Rayland Baxter is an American singer-songwriter and musician recognized for his distinctive blend of alternative country, Americana, and folk rock. He has developed a reputation for heartfelt lyrics and a warm, engaging vocal style. His music often features acoustic instrumentation and storytelling that reflects personal and observational themes. Baxter has released several albums and is noted for his contributions to the contemporary Americana scene.",
+      "image": {
+       "url": "https://images.qloo.com/i/AECCB030-6878-446D-A150-BD8A49EEEE4F-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "88E644E8-FE21-4D9A-8861-CF54254C8238",
+     "name": "The Milk Carton Kids",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9729502126627738,
+     "affinity": 0.9484725912880551,
+     "properties": {
+      "description": "The Milk Carton Kids are an American indie folk duo consisting of Kenneth Pattengale and Joey Ryan. They are known for their intricate acoustic guitar playing and close vocal harmonies, often drawing comparisons to traditional folk and Americana music. Their music features introspective lyrics and a minimalist, acoustic sound that highlights their vocal interplay and storytelling.",
+      "image": {
+       "url": "https://images.qloo.com/i/88E644E8-FE21-4D9A-8861-CF54254C8238-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+     "name": "Phoebe Bridgers",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9942197668246073,
+     "affinity": 0.8873322556261252,
+     "properties": {
+      "description": "Phoebe Bridgers is an American singer-songwriter celebrated for intimate, literate songs that blend indie rock and folk. She first gained attention with early EPs and her 2017 debut album 'Stranger in the Alps', established herself as a distinctive voice with melancholic, image-rich lyrics and sparse-but-layered arrangements, and expanded her profile through acclaimed side projects (boygenius, Better Oblivion Community Center) and her 2020 album 'Punisher'. Her work is noted for its candid exploration of grief, relationships and existential anxiety, delivered with a breathy, emotive vocal style and frequent use of close harmonies and cinematic production.",
+      "image": {
+       "url": "https://images.qloo.com/i/AFBC71A7-9439-4AB0-AB68-D14B11AAF836-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
+     "name": "Noah Kahan",
+     "type": "urn:entity",
+     "subtype": "urn:entity:artist",
+     "popularity": 0.9842583672479668,
+     "affinity": 0.8447988445055468,
+     "properties": {
+      "description": "Noah Kahan is an American singer-songwriter from Strafford, Vermont, whose work blends intimate acoustic songwriting with modern pop sensibilities. He rose from early independent releases and viral streaming traction to wider recognition through emotionally direct singles and full-length albums. Kahan's writing is notable for vivid small-town imagery, candid reflections on mental health and identity, and hook-driven folk-pop melodies that have earned him festival billing and large-scale touring audiences.",
+      "image": {
+       "url": "https://images.qloo.com/i/0A8052C7-2F56-43B5-B133-F59F8F2917E0-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "D07A3760-545D-4499-9E57-3EB056D43AF0",
+    "AECCB030-6878-446D-A150-BD8A49EEEE4F",
+    "88E644E8-FE21-4D9A-8861-CF54254C8238",
+    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+    "0A8052C7-2F56-43B5-B133-F59F8F2917E0"
+   ],
+   "inputIds": [
+    "D07A3760-545D-4499-9E57-3EB056D43AF0",
+    "AECCB030-6878-446D-A150-BD8A49EEEE4F",
+    "88E644E8-FE21-4D9A-8861-CF54254C8238",
+    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+    "0A8052C7-2F56-43B5-B133-F59F8F2917E0",
+    "9B2140E4-8DEB-452C-BB75-C3B7B6AD198E",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 702,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:13.967Z"
+  },
+  {
+   "callId": "c_6b09a575-c96",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Local LA MC from the room's own roster",
+    "type": "person"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Local LA MC from the room's own roster",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "D2BC56C2-2E51-45CB-A4D4-AE452280E418",
+       "name": "Mariah Carey",
+       "type": "person",
+       "disambiguation": "American singer and songwriter (born 1969)",
+       "popularity": 0.9986247159739512
+      },
+      {
+       "qlooId": "FF55AAFB-5C17-41E8-9439-10D7D45A8EA8",
+       "name": "Redimi2",
+       "type": "person",
+       "disambiguation": "Dominican rapper",
+       "popularity": 0.9639382046292169
+      },
+      {
+       "qlooId": "21954FA9-2484-4F62-9ECA-02AE41B9248D",
+       "name": "Juelz Santana",
+       "type": "person",
+       "disambiguation": "American rapper",
+       "popularity": 0.9594535828051446
+      },
+      {
+       "qlooId": "831BB8BF-BA88-41D5-9FEA-F22D461B4AA6",
+       "name": "Caleb McLaughlin",
+       "type": "person",
+       "disambiguation": "American actor",
+       "popularity": 0.9966025592241876
+      },
+      {
+       "qlooId": "4D77B050-EF53-4390-9ABD-696368A610B2",
+       "name": "MC Lan",
+       "type": "person",
+       "disambiguation": "Brazilian singer",
+       "popularity": 0.9709831378219415
+      }
+     ]
+    }
+   ],
+   "durationMs": 595,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:14.563Z"
+  },
+  {
+   "callId": "c_70464352-fe1",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "010F92D3-310A-4A19-A54D-1850761E1B67",
+     "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
+     "869E1659-E583-459A-9FFE-84FB33AD8BE6"
+    ],
+    "option_type": "place",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "010F92D3-310A-4A19-A54D-1850761E1B67",
+     "name": "The Original Farmers Market",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9996443298375507,
+     "affinity": 0.9237403809032124,
+     "properties": {
+      "description": "Historic open-air market offering diverse international food stalls, trendy shops and gourmet grocers adjacent to a major shopping complex.",
+      "short_description": "Historic open-air market offering diverse international food stalls, trendy shops and gourmet grocers adjacent to a major shopping complex.",
+      "image": {
+       "url": "https://images.qloo.com/i/010F92D3-310A-4A19-A54D-1850761E1B67-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Los Angeles",
+       "name": "Fairfax",
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "6333 W 3rd St Los Angeles, CA 90036",
+      "price_level": null,
+      "business_rating": 4.599999904632568
+     }
+    },
+    {
+     "entity_id": "869E1659-E583-459A-9FFE-84FB33AD8BE6",
+     "name": "Scholl Canyon Golf Course",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9739900174621977,
+     "affinity": 0.9202399684121061,
+     "properties": {
+      "description": "Unfussy mountain sports complex with a mid-range 18-hole golf course, driving range, instruction services, and ten tennis courts.",
+      "short_description": "Unfussy mountain sports complex with a mid-range 18-hole golf course, driving range, instruction services, and ten tennis courts.",
+      "image": {
+       "url": "https://images.qloo.com/i/869E1659-E583-459A-9FFE-84FB33AD8BE6-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Glendale",
+       "name": null,
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "3800 E Glenoaks Blvd Glendale, CA 91206",
+      "price_level": 1,
+      "business_rating": 4.199999809265137
+     }
+    },
+    {
+     "entity_id": "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
+     "name": "Nat's Early Bite",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.9397784481340039,
+     "affinity": 0.9184362202436575,
+     "properties": {
+      "description": "Diner serving hearty American classics and traditional Mexican dishes with breakfast served all afternoon.",
+      "short_description": "Diner serving hearty American classics and traditional Mexican dishes with breakfast served all afternoon.",
+      "image": {
+       "url": "https://images.qloo.com/i/BFC4CA12-7019-410E-A217-C1CB3CA39B92-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Los Angeles",
+       "name": "Van Nuys",
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "14115 Burbank Blvd Sherman Oaks, CA 91401",
+      "price_level": 1,
+      "business_rating": 4.599999904632568
+     }
+    }
+   ],
+   "resultIds": [
+    "010F92D3-310A-4A19-A54D-1850761E1B67",
+    "869E1659-E583-459A-9FFE-84FB33AD8BE6",
+    "BFC4CA12-7019-410E-A217-C1CB3CA39B92"
+   ],
+   "inputIds": [
+    "010F92D3-310A-4A19-A54D-1850761E1B67",
+    "BFC4CA12-7019-410E-A217-C1CB3CA39B92",
+    "869E1659-E583-459A-9FFE-84FB33AD8BE6",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 368,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:20.446Z"
+  },
+  {
+   "callId": "c_7442403e-662",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Pizza by the slice",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Pizza by the slice",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "30EA08BE-C4F5-4E31-9274-67A948B8B0FB",
+       "name": "Pizza By The Slice",
+       "type": "place",
+       "disambiguation": "Casual pizza shop at Branson Landing offering comfort-style pizza slices, salads, and quick dine-in, curbside pickup, takeout, and delivery service.",
+       "popularity": 0.27431864554858826
+      },
+      {
+       "qlooId": "54B4F184-7F1B-407C-8AA0-BE7FC48C7332",
+       "name": "Pizza by the Slice",
+       "type": "place",
+       "disambiguation": "Casual San Francisco spot serving pizza by the slice with delivery for quick counter-service meals.",
+       "popularity": 0.18610427320520292
+      },
+      {
+       "qlooId": "2B901173-E123-4C83-BAFF-BADAEAF8EAB9",
+       "name": "PIZZA by the SLICE",
+       "type": "place",
+       "disambiguation": "New York–style thin, crispy pizza slices with homemade sauce and cheese blends, offering delivery, takeaway, and late‑night service on Nowy Świat in Warsaw."
+      },
+      {
+       "qlooId": "BE0E50A3-4266-4D73-BBBF-A1B01685A057",
+       "name": "Pizza By The Slice",
+       "type": "place",
+       "disambiguation": "Casual North Beach slice shop serving pizza by the slice with beer, wine, coffee, and quick bites for dine-in, takeout, and delivery."
+      },
+      {
+       "qlooId": "79ABD899-90FD-491D-9434-B8DBAA6BCF11",
+       "name": "Pizza by the slice",
+       "type": "place",
+       "disambiguation": "Casual pizzeria on Fondamenta Ponte Piccolo in Venice offering pizza, beer, and dine-in seating."
+      }
+     ]
+    }
+   ],
+   "durationMs": 695,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:17.696Z"
+  },
+  {
+   "callId": "c_76951fb5-21f",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Rising act from the room's supplied local list (confirm name)",
+    "type": "person"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Rising act from the room's supplied local list (confirm name)",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "F9A62834-56D4-4974-A557-7B72554998EE",
+       "name": "Stephen King",
+       "type": "person",
+       "disambiguation": "American writer (born 1947)",
+       "popularity": 0.992112501494874
+      },
+      {
+       "qlooId": "7A869304-EC14-4656-B972-E82F1CAB662D",
+       "name": "Peyton List",
+       "type": "person",
+       "disambiguation": "American actress (born 1998)",
+       "popularity": 0.9961731227101249
+      },
+      {
+       "qlooId": "85F624D5-A8BD-467A-9F28-1A255B0F397E",
+       "name": "Florence Amaka Nwofor",
+       "type": "person",
+       "disambiguation": "Nigerian Academic and Librarian"
+      },
+      {
+       "qlooId": "C95B2ABA-C764-40A4-BB28-E70DE54F5581",
+       "name": "The Bucket List Family",
+       "type": "person",
+       "popularity": 0.9729400637088095
+      },
+      {
+       "qlooId": "DE04FB53-4162-46C8-BAB3-5BA399DFB80B",
+       "name": "Emma Watson",
+       "type": "person",
+       "disambiguation": "English actress and activist (born 1990)",
+       "popularity": 0.9996629738750394
+      }
+     ]
+    }
+   ],
+   "durationMs": 604,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:14.572Z"
+  },
+  {
+   "callId": "c_7888b91b-1d4",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Spotify",
+    "type": "brand"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "99CBD9B1-F023-4034-97E7-E95A4A85BDD2",
+     "name": "Spotify",
+     "popularity": 0.9984489159363292,
+     "properties": {
+      "description": "Founded in Sweden in 2006, the platform revolutionized the music industry by transitioning it to a streaming-first model. It offers a massive catalog of music, podcasts, and audiobooks, driven by sophisticated algorithms that provide highly personalized recommendations. With a massive global user base, it serves as a central hub for digital audio discovery and consumption. The service balances a free, ad-supported tier with a premium subscription model to ensure broad market accessibility.",
+      "short_description": "Spotify is a global audio streaming platform offering music, podcasts, and personalized listening experiences.",
+      "image": {
+       "url": "https://images.qloo.com/i/99CBD9B1-F023-4034-97E7-E95A4A85BDD2-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
+   ],
+   "inputIds": [
+    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 740,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:18.820Z"
+  },
+  {
+   "callId": "c_81c350d0-b01",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Sam Jay",
+    "type": "person"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "04BC87CE-0350-4237-871F-5A21C5B8E027",
+     "name": "Sam Jay",
+     "popularity": 0.5277557321620769,
+     "properties": {
+      "short_description": "American comedian and writer"
+     }
+    }
+   ],
+   "resultIds": [
+    "04BC87CE-0350-4237-871F-5A21C5B8E027"
+   ],
+   "inputIds": [
+    "04BC87CE-0350-4237-871F-5A21C5B8E027"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 1010,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:14.978Z"
+  },
+  {
+   "callId": "c_97a6310e-a79",
+   "runId": "map_seed-comedy",
+   "agent": "crowd_map",
+   "tool": "qloo_where_popular",
+   "args": {
+    "entity": "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "entity_type": "person",
+    "within": "Los Angeles",
+    "limit": 20
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "location": {
+      "latitude": 34.153748,
+      "longitude": -118.37219,
+      "geohash": "9q5f63"
+     },
+     "query": {
+      "affinity": 1,
+      "affinity_rank": 0.9973982853461519,
+      "popularity": 0.92,
+      "entity_person_affinity_rank": 0.9973982853461519,
+      "entity_person_affinity": 1
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.186707,
+      "longitude": -118.482056,
+      "geohash": "9q5drz"
+     },
+     "query": {
+      "affinity": 0.9989189189189189,
+      "affinity_rank": 0.9954538489043265,
+      "popularity": 0.6735135135135135,
+      "entity_person_affinity_rank": 0.9954538489043265,
+      "entity_person_affinity": 0.9989189189189189
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.12079,
+      "longitude": -118.29529,
+      "geohash": "9q5fh5"
+     },
+     "query": {
+      "affinity": 0.9978378378378379,
+      "affinity_rank": 0.9912432110033708,
+      "popularity": 0.9945945945945946,
+      "entity_person_affinity_rank": 0.9912432110033708,
+      "entity_person_affinity": 0.9978378378378379
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.027405,
+      "longitude": -118.40515,
+      "geohash": "9q5c9d"
+     },
+     "query": {
+      "affinity": 0.9967567567567568,
+      "affinity_rank": 0.9908972691807543,
+      "popularity": 0.7978378378378378,
+      "entity_person_affinity_rank": 0.9908972691807543,
+      "entity_person_affinity": 0.9967567567567568
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.170227,
+      "longitude": -118.361206,
+      "geohash": "9q5f6s"
+     },
+     "query": {
+      "affinity": 0.9956756756756757,
+      "affinity_rank": 0.9900496452389577,
+      "popularity": 0.8767567567567568,
+      "entity_person_affinity_rank": 0.9900496452389577,
+      "entity_person_affinity": 0.9956756756756757
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.10431,
+      "longitude": -118.32825,
+      "geohash": "9q5f52"
+     },
+     "query": {
+      "affinity": 0.9945945945945946,
+      "affinity_rank": 0.9894765408274032,
+      "popularity": 0.9881081081081081,
+      "entity_person_affinity_rank": 0.9894765408274032,
+      "entity_person_affinity": 0.9945945945945946
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.164734,
+      "longitude": -118.37219,
+      "geohash": "9q5f67"
+     },
+     "query": {
+      "affinity": 0.9935135135135135,
+      "affinity_rank": 0.9885549739497541,
+      "popularity": 0.9686486486486486,
+      "entity_person_affinity_rank": 0.9885549739497541,
+      "entity_person_affinity": 0.9935135135135135
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.131775,
+      "longitude": -118.31726,
+      "geohash": "9q5f5t"
+     },
+     "query": {
+      "affinity": 0.9924324324324324,
+      "affinity_rank": 0.988337604745587,
+      "popularity": 0.9762162162162162,
+      "entity_person_affinity_rank": 0.988337604745587,
+      "entity_person_affinity": 0.9924324324324324
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.098816,
+      "longitude": -118.306274,
+      "geohash": "9q5cgz"
+     },
+     "query": {
+      "affinity": 0.9913513513513513,
+      "affinity_rank": 0.9880709701774254,
+      "popularity": 0.918918918918919,
+      "entity_person_affinity_rank": 0.9880709701774254,
+      "entity_person_affinity": 0.9913513513513513
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.10431,
+      "longitude": -118.33923,
+      "geohash": "9q5f50"
+     },
+     "query": {
+      "affinity": 0.9902702702702703,
+      "affinity_rank": 0.9879343843430893,
+      "popularity": 0.9967567567567568,
+      "entity_person_affinity_rank": 0.9879343843430893,
+      "entity_person_affinity": 0.9902702702702703
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.043884,
+      "longitude": -118.56995,
+      "geohash": "9q59tv"
+     },
+     "query": {
+      "affinity": 0.9891891891891892,
+      "affinity_rank": 0.9878255303828357,
+      "popularity": 0.9167567567567567,
+      "entity_person_affinity_rank": 0.9878255303828357,
+      "entity_person_affinity": 0.9891891891891892
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.098816,
+      "longitude": -118.273315,
+      "geohash": "9q5cux"
+     },
+     "query": {
+      "affinity": 0.9881081081081081,
+      "affinity_rank": 0.9878023884862713,
+      "popularity": 0.9005405405405406,
+      "entity_person_affinity_rank": 0.9878023884862713,
+      "entity_person_affinity": 0.9881081081081081
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.14276,
+      "longitude": -118.394165,
+      "geohash": "9q5f1z"
+     },
+     "query": {
+      "affinity": 0.987027027027027,
+      "affinity_rank": 0.9876400333302472,
+      "popularity": 0.972972972972973,
+      "entity_person_affinity_rank": 0.9876400333302472,
+      "entity_person_affinity": 0.987027027027027
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.20868,
+      "longitude": -118.427124,
+      "geohash": "9q5f95"
+     },
+     "query": {
+      "affinity": 0.985945945945946,
+      "affinity_rank": 0.9876164863343548,
+      "popularity": 0.3935135135135135,
+      "entity_person_affinity_rank": 0.9876164863343548,
+      "entity_person_affinity": 0.985945945945946
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.131775,
+      "longitude": -118.2843,
+      "geohash": "9q5fhm"
+     },
+     "query": {
+      "affinity": 0.9848648648648649,
+      "affinity_rank": 0.9875108528684966,
+      "popularity": 0.9394594594594594,
+      "entity_person_affinity_rank": 0.9875108528684966,
+      "entity_person_affinity": 0.9848648648648649
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.098816,
+      "longitude": -118.361206,
+      "geohash": "9q5cfx"
+     },
+     "query": {
+      "affinity": 0.9837837837837838,
+      "affinity_rank": 0.9869246861924686,
+      "popularity": 0.9643243243243244,
+      "entity_person_affinity_rank": 0.9869246861924686,
+      "entity_person_affinity": 0.9837837837837838
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.148254,
+      "longitude": -118.427124,
+      "geohash": "9q5f30"
+     },
+     "query": {
+      "affinity": 0.9827027027027027,
+      "affinity_rank": 0.9868765469470611,
+      "popularity": 0.894054054054054,
+      "entity_person_affinity_rank": 0.9868765469470611,
+      "entity_person_affinity": 0.9827027027027027
+     }
+    },
+    {
+     "location": {
+      "latitude": 33.994446,
+      "longitude": -118.482056,
+      "geohash": "9q59ru"
+     },
+     "query": {
+      "affinity": 0.9816216216216216,
+      "affinity_rank": 0.9868741173259278,
+      "popularity": 0.9297297297297298,
+      "entity_person_affinity_rank": 0.9868741173259278,
+      "entity_person_affinity": 0.9816216216216216
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.15924,
+      "longitude": -118.37219,
+      "geohash": "9q5f66"
+     },
+     "query": {
+      "affinity": 0.9805405405405405,
+      "affinity_rank": 0.9868607567331806,
+      "popularity": 0.8918918918918919,
+      "entity_person_affinity_rank": 0.9868607567331806,
+      "entity_person_affinity": 0.9805405405405405
+     }
+    },
+    {
+     "location": {
+      "latitude": 34.10431,
+      "longitude": -118.31726,
+      "geohash": "9q5f58"
+     },
+     "query": {
+      "affinity": 0.9794594594594594,
+      "affinity_rank": 0.9868116870456508,
+      "popularity": 0.9416216216216217,
+      "entity_person_affinity_rank": 0.9868116870456508,
+      "entity_person_affinity": 0.9794594594594594
+     }
+    }
+   ],
+   "resultIds": [
+    "9q5f63",
+    "9q5drz",
+    "9q5fh5",
+    "9q5c9d",
+    "9q5f6s",
+    "9q5f52",
+    "9q5f67",
+    "9q5f5t",
+    "9q5cgz",
+    "9q5f50",
+    "9q59tv",
+    "9q5cux",
+    "9q5f1z",
+    "9q5f95",
+    "9q5fhm",
+    "9q5cfx",
+    "9q5f30",
+    "9q59ru",
+    "9q5f66",
+    "9q5f58"
+   ],
+   "inputIds": [
+    "77395141-8BEE-42B4-8091-9382A8EEF563"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 1938,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:18:51.484Z"
+  },
+  {
+   "callId": "c_b556a317-f19",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "C38669CA-B6D2-4B15-B369-49131D13027E",
+     "69CC97CF-1B77-4C08-96B4-10B338354AFC",
+     "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6"
+    ],
+    "option_type": "place",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "C38669CA-B6D2-4B15-B369-49131D13027E",
+     "name": "Bar Bandini",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.862417680465926,
+     "affinity": 0.918438978978414,
+     "properties": {
+      "description": "Sexy Echo Park nightspot offering an eclectic selection of natural wines, sour beers and saisons on tap with small plates and late hours.",
+      "short_description": "Sexy Echo Park nightspot offering an eclectic selection of natural wines, sour beers and saisons on tap with small plates and late hours.",
+      "image": {
+       "url": "https://images.qloo.com/i/C38669CA-B6D2-4B15-B369-49131D13027E-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Los Angeles",
+       "name": "Echo Park",
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "2150 Sunset Blvd Los Angeles, CA 90026",
+      "price_level": 3,
+      "business_rating": 4.300000190734863
+     }
+    },
+    {
+     "entity_id": "69CC97CF-1B77-4C08-96B4-10B338354AFC",
+     "name": "Power House Bar",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.8904885069319465,
+     "affinity": 0.916104371397874,
+     "properties": {
+      "description": "Old Hollywood dive bar offering classic cocktails, live music, karaoke, jukeboxes and darts in a lively, LGBTQ+-friendly neighborhood setting.",
+      "short_description": "Old Hollywood dive bar offering classic cocktails, live music, karaoke, jukeboxes and darts in a lively, LGBTQ+-friendly neighborhood setting.",
+      "image": {
+       "url": "https://images.qloo.com/i/69CC97CF-1B77-4C08-96B4-10B338354AFC-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Los Angeles",
+       "name": "Hollywood",
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "1714 Highland Ave Los Angeles, CA 90028",
+      "price_level": 1,
+      "business_rating": 4.5
+     }
+    },
+    {
+     "entity_id": "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6",
+     "name": "The Famous Bar",
+     "type": "urn:entity",
+     "subtype": "urn:entity:place",
+     "popularity": 0.8973704924146605,
+     "affinity": 0.9139475007271398,
+     "properties": {
+      "description": "Craft cocktail lounge in a historic wood-and-brick building offering housemade cocktails, food, happy hour, and private dining steps from the Americana at Brand.",
+      "short_description": "Craft cocktail lounge in a historic wood-and-brick building offering housemade cocktails, food, happy hour, and private dining steps from the Americana at Brand.",
+      "image": {
+       "url": "https://images.qloo.com/i/C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6-420x-auto.jpg"
+      },
+      "geocode": {
+       "city": "Glendale",
+       "name": null,
+       "metro": "Los Angeles",
+       "country": "United States",
+       "country_code": "US",
+       "admin1_region": "California",
+       "admin2_region": "Los Angeles County"
+      },
+      "address": "154 S Brand Blvd Glendale, CA 91204",
+      "price_level": 2,
+      "business_rating": 4.400000095367432
+     }
+    }
+   ],
+   "resultIds": [
+    "C38669CA-B6D2-4B15-B369-49131D13027E",
+    "69CC97CF-1B77-4C08-96B4-10B338354AFC",
+    "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6"
+   ],
+   "inputIds": [
+    "C38669CA-B6D2-4B15-B369-49131D13027E",
+    "69CC97CF-1B77-4C08-96B4-10B338354AFC",
+    "C1440FA3-04A6-4014-B3FB-4DD6E77CF2A6",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 376,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:18.078Z"
+  },
+  {
+   "callId": "c_d695e22f-d85",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Liquid Death",
+    "type": "brand"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "4DF7C265-52D9-4A99-8803-F62C2302D561",
+     "name": "Liquid Death",
+     "popularity": 0.9201996914783611,
+     "properties": {
+      "description": "A beverage company that challenges industry norms by selling mountain water and flavored sparkling drinks in sustainable aluminum cans. Known for its distinctively edgy and provocative marketing, the brand aims to make environmental sustainability accessible and entertaining. By replacing single-use plastic bottles with infinitely recyclable aluminum, it captures a loyal following among younger, eco-conscious demographics. Its product range has expanded from still water to include various flavored carbonated waters, teas, and energy drinks.",
+      "short_description": "Liquid Death is a canned water brand known for its mountain water sold in large recyclable cans with a bold, edgy marketing style.",
+      "image": {
+       "url": "https://images.qloo.com/i/4DF7C265-52D9-4A99-8803-F62C2302D561-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "4DF7C265-52D9-4A99-8803-F62C2302D561"
+   ],
+   "inputIds": [
+    "4DF7C265-52D9-4A99-8803-F62C2302D561"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 742,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:18.822Z"
+  },
+  {
+   "callId": "c_e3c1e8d9-770",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Craft cocktail special named for the show",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "Craft cocktail special named for the show",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "C314A263-81D4-4799-910D-457BC09C6250",
+       "name": "Pizza Craft Pizzeria & Italian Specialities",
+       "type": "place",
+       "disambiguation": "Authentic Italian pizzeria with wood-fired pizzas, handmade pastas, and a speakeasy-style cocktail bar in downtown Fort Lauderdale.",
+       "popularity": 0.9331211941899654
+      },
+      {
+       "qlooId": "CC749E49-2561-418A-B950-8C5D59744193",
+       "name": "Arundel Wharf - Seafood - Cocktail Bar - Craft Beer",
+       "type": "place",
+       "disambiguation": "Maritime-themed seafood restaurant on a Kennebunkport wharf with outdoor patio and panoramic Kennebunk River views.",
+       "popularity": 0.9532196228893344
+      },
+      {
+       "qlooId": "88768FC6-6190-4B13-AEC3-4C4B123A7D19",
+       "name": "The Pergola, Venue for Special Events",
+       "type": "place",
+       "disambiguation": "Octagon-shaped air-conditioned reception hall in CCP Compound offering garden, terrace, and indoor spaces for 150–250 guests with secure parking.",
+       "popularity": 0.9471994178524505
+      },
+      {
+       "qlooId": "8117910B-14CF-440B-B1A1-C622D9A68C70",
+       "name": "Houston Center for Contemporary Craft",
+       "type": "place",
+       "disambiguation": "Gallery showcasing contemporary craft with rotating exhibitions, resident artist studios, a craft garden, and a museum shop in Houston's Museum District.",
+       "popularity": 0.9452394245238199
+      },
+      {
+       "qlooId": "52969C61-2676-4385-BA94-389537A90B57",
+       "name": "Chef’s Special Cocktail Bar",
+       "type": "place",
+       "disambiguation": "Lively tavern in Bucktown serving Americanized Chinese cuisine and craft cocktails with a retro vibe and fun atmosphere.",
+       "popularity": 0.9150540785802613
+      }
+     ]
+    }
+   ],
+   "durationMs": 701,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:17.702Z"
+  },
+  {
+   "callId": "c_e82cbfa6-a67",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "Phoebe Bridgers",
+    "type": "artist"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "AFBC71A7-9439-4AB0-AB68-D14B11AAF836",
+     "name": "Phoebe Bridgers",
+     "popularity": 0.9944367786620605,
+     "properties": {
+      "short_description": "Phoebe Bridgers is an American singer-songwriter known for her emotive indie rock and folk music.",
+      "duration": {},
+      "image": {
+       "url": "https://images.qloo.com/i/AFBC71A7-9439-4AB0-AB68-D14B11AAF836-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836"
+   ],
+   "inputIds": [
+    "AFBC71A7-9439-4AB0-AB68-D14B11AAF836"
+   ],
+   "issues": [],
+   "endpoint": "/entities",
+   "durationMs": 1758,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:13.222Z"
+  },
+  {
+   "callId": "c_ec554a47-f1f",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_describe",
+   "args": {
+    "entity": "The Rainbow Bar & Grill",
+    "type": "place"
+   },
+   "status": "needs_input",
+   "summary": "Choose the intended Qloo entity.",
+   "warnings": [],
+   "results": [],
+   "resultIds": [],
+   "inputIds": [],
+   "issues": [
+    {
+     "input": "The Rainbow Bar & Grill",
+     "kind": "ambiguous",
+     "field": "entity",
+     "candidates": [
+      {
+       "qlooId": "EB6EA33E-62A0-4446-BDA9-0BB64F04F28C",
+       "name": "Rainbow Bar & Grill",
+       "type": "place",
+       "disambiguation": "Legendary Sunset Strip rock bar serving pizza and Italian fare, famed for 1970s–80s rock stars and memorabilia-filled atmosphere.",
+       "popularity": 0.9988547977954765
+      },
+      {
+       "qlooId": "CDFE93E1-3559-4A6E-8ED1-E3647674BE02",
+       "name": "Applebee's Grill + Bar - North Rainbow Blvd",
+       "type": "place",
+       "disambiguation": "Full-service casual American bar and grill offering happy hour deals, carside to-go, and family-friendly dining.",
+       "popularity": 0.9432352278016315
+      },
+      {
+       "qlooId": "FCB434A3-6DC7-491A-B97A-25BB93036DA3",
+       "name": "Chili's Grill & Bar",
+       "type": "place",
+       "disambiguation": "Family-friendly chain serving classic Tex-Mex and American dishes in a Southwestern-inspired casual setting with a full bar.",
+       "popularity": 0.9494251887280604
+      },
+      {
+       "qlooId": "7A15F4B1-AFA1-40FC-B3C3-9CA467EADAD3",
+       "name": "Applebee's Grill + Bar",
+       "type": "place",
+       "disambiguation": "Full-service chain bar and grill serving hearty American comfort food in a casual neighborhood setting with dine-in, takeout, curbside, and delivery.",
+       "popularity": 0.9166526441615674
+      },
+      {
+       "qlooId": "DF7E7A83-9324-41C1-A08E-D1AB3B3537DD",
+       "name": "Applebee's Grill + Bar - South Rainbow Blvd",
+       "type": "place",
+       "disambiguation": "Full-service neighborhood bar and grill serving hearty American comfort food in an informal, family-friendly setting with drinks and value-focused specials.",
+       "popularity": 0.8788557710130489
+      }
+     ]
+    }
+   ],
+   "durationMs": 604,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:20.076Z"
+  },
+  {
+   "callId": "c_f099b41c-8f9",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "D0391D14-6A86-422F-A062-9951BAEFDFE6",
+     "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
+     "590FAAAE-9230-4C17-BB56-550EAF403BA3",
+     "4DF7C265-52D9-4A99-8803-F62C2302D561",
+     "99CBD9B1-F023-4034-97E7-E95A4A85BDD2"
+    ],
+    "option_type": "brand",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "D0391D14-6A86-422F-A062-9951BAEFDFE6",
+     "name": "Hinge",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.912851112881626,
+     "affinity": 0.9603682450021869,
+     "properties": {
+      "description": "Hinge is a prominent dating application that distinguishes itself by prioritizing meaningful, long-term connections over casual hookups. By employing a unique profile structure centered around personal prompts and specific interactions, it encourages users to showcase their authentic selves. The platform is owned by Match Group and serves a global user base looking to navigate the dating world with greater intention. Its central philosophy revolves around the goal of being a tool that users eventually delete upon finding a successful partner.",
+      "short_description": "Hinge is a dating app designed to help people find meaningful relationships and get off dating apps by showcasing personality through text, photos, and video.",
+      "image": {
+       "url": "https://images.qloo.com/i/D0391D14-6A86-422F-A062-9951BAEFDFE6-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "590FAAAE-9230-4C17-BB56-550EAF403BA3",
+     "name": "Splendid Spoon",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.8337882049804207,
+     "affinity": 0.9457020205675543,
+     "properties": {
+      "description": "Splendid Spoon is a plant-based meal subscription service designed to eliminate the friction of meal planning for busy individuals. Founded to provide nutrient-dense, ready-to-eat soups, bowls, and smoothies, the brand focuses on convenience without sacrificing health outcomes. Its business model relies on a subscription-based delivery system that integrates seamlessly into the daily routines of health-conscious consumers. By prioritizing whole-food ingredients and sustainable practices, the company has positioned itself as a convenient wellness partner for urban professionals and working parents.",
+      "short_description": "Splendid Spoon is a plant-based meal subscription service offering ready-to-eat smoothies, soups, grain bowls, and detox programs for healthy eating.",
+      "image": {
+       "url": "https://images.qloo.com/i/590FAAAE-9230-4C17-BB56-550EAF403BA3-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
+     "name": "The Giving Keys",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.9417792544625452,
+     "affinity": 0.9452688575711976,
+     "properties": {
+      "description": "The Giving Keys is a social enterprise that produces hand-stamped jewelry featuring inspirational words, intended for wearers to eventually pass on to others in need. Founded in 2008, the brand leverages the concept of the pay-it-forward movement to foster human connection and support employment resources for individuals transitioning out of homelessness. Their product range focuses on affordable, sentimental items like necklaces, bracelets, and keychains that serve as daily, tangible reminders of personal growth. By combining unique, message-driven design with a commitment to social mission, the brand has cultivated a deeply loyal community focused on kindness and intentional living.",
+      "short_description": "The Giving Keys is a pay-it-forward jewelry brand that creates hand-stamped key necklaces with inspirational words, supporting a kindness movement.",
+      "image": {
+       "url": "https://images.qloo.com/i/FD2F276A-0105-4605-87D7-C8FF26C7A6A5-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "4DF7C265-52D9-4A99-8803-F62C2302D561",
+     "name": "Liquid Death",
+     "type": "urn:entity",
+     "subtype": "urn:entity:brand",
+     "popularity": 0.9201996914783611,
+     "affinity": 0.8658126564480229,
+     "properties": {
+      "description": "A beverage company that challenges industry norms by selling mountain water and flavored sparkling drinks in sustainable aluminum cans. Known for its distinctively edgy and provocative marketing, the brand aims to make environmental sustainability accessible and entertaining. By replacing single-use plastic bottles with infinitely recyclable aluminum, it captures a loyal following among younger, eco-conscious demographics. Its product range has expanded from still water to include various flavored carbonated waters, teas, and energy drinks.",
+      "short_description": "Liquid Death is a canned water brand known for its mountain water sold in large recyclable cans with a bold, edgy marketing style.",
+      "image": {
+       "url": "https://images.qloo.com/i/4DF7C265-52D9-4A99-8803-F62C2302D561-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "D0391D14-6A86-422F-A062-9951BAEFDFE6",
+    "590FAAAE-9230-4C17-BB56-550EAF403BA3",
+    "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
+    "4DF7C265-52D9-4A99-8803-F62C2302D561"
+   ],
+   "inputIds": [
+    "D0391D14-6A86-422F-A062-9951BAEFDFE6",
+    "FD2F276A-0105-4605-87D7-C8FF26C7A6A5",
+    "590FAAAE-9230-4C17-BB56-550EAF403BA3",
+    "4DF7C265-52D9-4A99-8803-F62C2302D561",
+    "99CBD9B1-F023-4034-97E7-E95A4A85BDD2",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 648,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:19.470Z"
+  },
+  {
+   "callId": "c_f3dc0696-53e",
+   "runId": "cf_seed-comedy_v1",
+   "agent": "counterfactual",
+   "tool": "qloo_rank",
+   "args": {
+    "options": [
+     "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
+     "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
+     "8098607A-2BD8-4448-AE69-043DE4CF73CE",
+     "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+     "A543F312-1893-4330-8125-7441966EF9EE",
+     "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7"
+    ],
+    "option_type": "podcast",
+    "signals": [
+     "77395141-8BEE-42B4-8091-9382A8EEF563",
+     "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+    ],
+    "signal_location": "Los Angeles",
+    "demographic": "adults 35-54"
+   },
+   "status": "ok",
+   "summary": "",
+   "warnings": [],
+   "results": [
+    {
+     "entity_id": "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
+     "name": "Bad Friends",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9827385743672301,
+     "affinity": 0.9199228118994232,
+     "properties": {
+      "description": "Andrew Santino and Bobby Lee present BAD FRIENDS. New episodes every Monday!\nGet Tickets to the \"Scary Times USA\" live show: https://www.moment.co/badfriends\n\nFOLLOW BAD FRIENDS!\nhttps://www.instagram.com/badfriendspod\nhttps://patreon.com/badfriends\nhttps://www.tiktok.com/@badfriendspodofficial\nhttp://www.badfriendspod.com\n\nAndrew Santino:\nhttps://www.instagram.com/cheetosantino\nhttps://twitter.com/CheetoSantino\nhttps://www.youtube.com/andrewsantinowhiskeyginger\n\nBobby Lee:\nhttps://www.instagram.com/bobbyleelive\nhttps://twitter.com/bobbyleelive\nhttp://bit.ly/SubscribeToTigerBelly\n\nA 7EQUIS production:\nwww.7equis.com\nhttps://www.instagram.com/7equis",
+      "short_description": "Andrew Santino and Bobby Lee share humorous anecdotes and discussions about their lives and friendship.",
+      "release_date": "2024-07-12",
+      "content_rating": "Explicit",
+      "image": {
+       "url": "https://images.qloo.com/i/1FAB43D9-D122-416D-BBFB-81C511B4A47F-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
+     "name": "Sincerely Fortune",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9474107861550846,
+     "affinity": 0.9189764924667492,
+     "properties": {
+      "description": "Comedian and actress Fortune Feimster is known to audiences as a fun, silly performer who likes to dance with ice cream. But in this podcast, she discusses a new topic every week in a more real, sincere way.",
+      "short_description": "Fortune Feimster explores various topics each week with sincerity, moving beyond her comedic persona.",
+      "release_date": "2023-10-07",
+      "content_rating": "Explicit",
+      "image": {
+       "url": "https://images.qloo.com/i/D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "8098607A-2BD8-4448-AE69-043DE4CF73CE",
+     "name": "How Neal Feel",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9413886652952926,
+     "affinity": 0.918459933507564,
+     "properties": {
+      "description": "Every week, comedian Neal Brennan and his co-host Bianca Sia cover a range of topics: current events, race, gender, sex, technology. The good stuff.",
+      "short_description": "Comedian Neal Brennan and co-host Bianca Sia discuss current events, race, gender, sex, and technology.",
+      "release_date": "2022-12-09",
+      "content_rating": "Explicit",
+      "image": {
+       "url": "https://images.qloo.com/i/8098607A-2BD8-4448-AE69-043DE4CF73CE-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+     "name": "Call Her Daddy",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9982410637092687,
+     "affinity": 0.8802915868103606,
+     "properties": {
+      "description": "The most-listened to podcast by women. Alex Cooper’s Call Her Daddy has been creating conversation since 2018. Cooper cuts through the BS with topics and guests - asking the burning questions you want the answers to. There will be laughter, there will be tears. There will be everything in between. New episodes drop on Wednesday and Sunday. Want more? Join the Daddy Gang @callherdaddy",
+      "short_description": "Alex Cooper tackles candid topics and interviews guests, sparking laughter and tears in a relatable podcast for women.",
+      "release_date": "2024-06-21",
+      "content_rating": "Explicit",
+      "image": {
+       "url": "https://images.qloo.com/i/056BCF4A-7C1D-4F19-AC0C-B1093EDE153C-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
+     "name": "Conan O’Brien Needs A Friend",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9990460006558746,
+     "affinity": 0.869810637365461,
+     "properties": {
+      "description": "After 25 years at the Late Night desk, Conan realized that the only people at his holiday party are the men and women who work for him. Over the years and despite thousands of interviews, Conan has never made a real and lasting friendship with any of his celebrity guests. So, he started a podcast to do just that. Deeper, unboundedly playful, and free from FCC regulations, Conan O’Brien Needs a Friend is a weekly opportunity for Conan to hang out with the people he enjoys most and perhaps find some real friendship along the way.",
+      "short_description": "Conan O'Brien explores friendship through candid conversations with celebrities, comedians, and personal friends in a playful podcast format.",
+      "release_date": "2024-07-08",
+      "content_rating": "Explicit",
+      "image": {
+       "url": "https://images.qloo.com/i/DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7-420x-auto.jpg"
+      }
+     }
+    },
+    {
+     "entity_id": "A543F312-1893-4330-8125-7441966EF9EE",
+     "name": "Crime Junkie",
+     "type": "urn:entity",
+     "subtype": "urn:entity:podcast",
+     "popularity": 0.9999105625614882,
+     "affinity": 0.7733363429772028,
+     "properties": {
+      "description": "Does hearing about a true crime case always leave you scouring the internet for the truth behind the story? Dive into your next mystery with Crime Junkie. Every Monday, join your host Ashley Flowers as she unravels all the details of infamous and underreported true crime cases with her best friend Brit Prawat. From cold cases to missing persons and heroes in our community who seek justice, Crime Junkie is your destination for theories and stories you won’t hear anywhere else. \n\nWhether you're a seasoned true crime enthusiast or new to the genre, you'll find yourself on the edge of your seat awaiting a new episode every Monday.\n\nIf you can never get enough true crime... Congratulations, you’ve found your people. Follow to join a community of Crime Junkies! \n\nCrime Junkie is presented by audiochuck Media Company.",
+      "short_description": "Join Ashley Flowers and Brit Prawat as they explore infamous and underreported true crime cases every Monday.",
+      "release_date": "2024-06-24",
+      "content_rating": "Clean",
+      "image": {
+       "url": "https://images.qloo.com/i/A543F312-1893-4330-8125-7441966EF9EE-420x-auto.jpg"
+      }
+     }
+    }
+   ],
+   "resultIds": [
+    "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
+    "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
+    "8098607A-2BD8-4448-AE69-043DE4CF73CE",
+    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
+    "A543F312-1893-4330-8125-7441966EF9EE"
+   ],
+   "inputIds": [
+    "1FAB43D9-D122-416D-BBFB-81C511B4A47F",
+    "D7ABF4A2-1D5D-4BC7-8ED2-A5F7E9BE05A7",
+    "8098607A-2BD8-4448-AE69-043DE4CF73CE",
+    "056BCF4A-7C1D-4F19-AC0C-B1093EDE153C",
+    "A543F312-1893-4330-8125-7441966EF9EE",
+    "DE544BD4-35A1-4FDA-BC2C-3749E7F5E6C7",
+    "77395141-8BEE-42B4-8091-9382A8EEF563",
+    "CE9D8F14-BCBD-412D-A75F-A6142783BC9E"
+   ],
+   "issues": [],
+   "endpoint": "/v2/insights",
+   "durationMs": 646,
+   "cached": false,
+   "attempts": 1,
+   "source": "live",
+   "at": "2026-10-30T06:19:16.999Z"
   }
  ],
  "run": {

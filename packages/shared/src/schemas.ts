@@ -327,6 +327,8 @@ export const Show = z.object({
   id: z.string(),
   shareId: z.string(),
   seed: z.boolean().default(false),
+  /** SHA-256 of the seed file a seeded show was imported from; a changed file replaces the stored copy. */
+  seedHash: z.string().optional(),
   input: ShowInput,
   title: z.string(),
   entities: z.array(Entity),

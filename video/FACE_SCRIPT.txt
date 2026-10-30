@@ -1,0 +1,44 @@
+House Mix film: what you say to camera
+======================================
+
+How to record
+- Laptop or phone camera, landscape (horizontal), lens at eye level.
+- Light in front of you (window or lamp behind the camera), quiet room, plain wall.
+- Look into the lens, not at the screen.
+- Leave 2 seconds of silence before and after each line.
+- Say each line twice (two takes). This film is energetic: stand if you can, smile on
+  the first line, lean in on "the part sponsors care about", and hit the last words of
+  each line clearly. Fast is fine; rushed is not.
+- Say the number first, softly ("line one"), so I can find it.
+- One file is fine for everything. Save it in ~/Downloads with "housemix-face" in the
+  name (housemix-face.mp4 or .mov) and tell me when it is there.
+
+The lines
+
+1.  I'm Prashant. I build for the people who run the room.
+
+2.  They plan every night for a crowd they've never met.
+
+3.  So I built something that asks Qloo who's really coming.
+
+4.  This is House Mix.
+    (Say it like a reveal. Short pause before "House Mix".)
+
+5.  Now, the part sponsors care about.
+
+6.  If you're the brand paying for tonight, here's how you know you belong.
+
+7.  We tested it the hard way: seven real shows, against Claude on its own.
+
+8.  And on taste alone, a blind judge still preferred Claude.
+    We're showing you that too.
+    (Say this one straight and confident. Honesty is the point.)
+
+9.  Doors open at seven. This time, the room is ready.
+
+10. House Mix is live. Open a show and check every receipt.
+
+About 45 seconds of talking in total. The narrator explains the screens between your lines.
+
+If you can't record video: voice only is fine (phone voice memo, same rules, quiet room).
+I'll put your voice over the product instead of a face bubble.
