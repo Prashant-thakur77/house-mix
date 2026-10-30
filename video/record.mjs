@@ -345,6 +345,24 @@ const flows = {
     mark("end");
   },
 
+  /** The restaurant's music for the whole service: three playlists timed to the floor, the peak set played. */
+  async dinner() {
+    const scroller = '[class*="overflow-y-auto"]';
+    await start(`${SITE}/shows/seed-dining`);
+    await scrollTo(page.locator("#hear-title"), 110, scroller);
+    mark("hear");
+    await wait(1600);
+    await press(page.getByRole("button", { name: /play the set/i }).nth(1));
+    await page.getByRole("region", { name: "Now previewing" }).waitFor();
+    mark("play");
+    await wait(1800);
+    const hear = page.locator('section[aria-labelledby="hear-title"]');
+    await scrollTo(hear.getByText("Late lounge set", { exact: true }), 160, scroller);
+    mark("lounge");
+    await wait(2200);
+    mark("end");
+  },
+
   /** The outreach pack on the fixture: a message per partner from its evidence; a sponsor's with its one-pager. */
   async outreach() {
     await start(`${SITE}/shows/seed-sports`);

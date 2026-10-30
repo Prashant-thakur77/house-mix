@@ -48,6 +48,7 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float, str]]:
     cited, of = f["cited"], f["citedOf"]
     assert cited == of, "n27 says all of them"
     assert f["brandsRepeated"] == 0, "n35 says not one sponsor repeats"
+    assert f["tooBig"] == 0, "n39 says no opener bigger than the headliner"
     out = [
         ("open", "n1", "6:58. Doors open in two minutes, and the queue is round the block.",
          "Six fifty-eight. Doors open in two minutes, and the queue is round the block.", *OPEN),
@@ -67,20 +68,32 @@ def lines(f: dict) -> list[tuple[str, str, str, str, float, float, str]]:
          "First, Clue recommends the brands this exact crowd already loves, ranked for this city.", *PRODUCT),
         ("sponsor", "n18", "Then it compares the crowd with each brand’s own audience. When they share no taste, it says so. No invented fit score.",
          "Then it compares the crowd with each brand's own audience. When they share no taste, it says so. No invented fit score.", *PRODUCT),
+        ("sponsor", "n20", "One click, and the sponsor gets a one-pager: the activation, and the evidence behind it.",
+         "One click, and the sponsor gets a one-pager. The activation, and the evidence behind it.", *PRODUCT),
+        ("sponsor", "n36", "Ask it anything: which drinks brand fits the jazz-night crowd? It answers only from Qloo, and every line cites its call.",
+         "Ask it anything. Which drinks brand fits the jazz night crowd? It answers only from Clue, and every line cites its call.", *PRODUCT),
         ("run", "n31", "Then it gets the night ready. Every artist Qloo picked becomes real music, timed to each part of the night. Short on songs? The agent asks Qloo for more.",
          "Then it gets the night ready. Every artist Clue picked becomes real music, timed to each part of the night. Short on songs? The agent asks Clue for more.", *PRODUCT),
+        ("run", "n37", "At dinner, the music follows the floor: arrivals, the peak, then the late lounge, timed to the minute.",
+         "At dinner, the music follows the floor. Arrivals, the peak, then the late lounge, timed to the minute.", *PRODUCT),
+        ("run", "n38", "Then hand it to the venue: the playlist for their licensed music service, and a cue sheet for the sound desk.",
+         "Then hand it to the venue. The playlist for their licensed music service, and a cue sheet for the sound desk.", *PRODUCT),
         ("run", "n32", "Every partner gets a message built from Qloo’s evidence, ready to send from your own email.",
          "Every partner gets a message built from Clue's evidence, ready to send from your own email.", *PRODUCT),
         ("run", "n21", "And on the night, every crew gets its cue on time, with the music already playing.",
          "And on the night, every crew gets its cue on time, with the music already playing.", *PRODUCT),
         ("hood", "n22", f"Under the hood: agents use {f['tools']} Qloo tools over MCP. A gate rejects anything Qloo did not return.",
          f"Under the hood, the agents use {words(f['tools'])} Clue tools, over M C P. A gate rejects anything Clue did not return.", *PRODUCT),
+        ("hood", "n24", "Then a person approves every line, before anything runs.",
+         "Then a person approves every line, before anything runs.", *PRODUCT),
         ("proof", "n27", "Every House Mix pick traces back to a real Qloo call. All of them. Claude alone? Nearly half its picks, Qloo couldn’t pin down.",
          "Every House Mix pick traces back to a real Clue call. All of them. Claude alone? Nearly half its picks, Clue couldn't pin down.", *PRODUCT),
-        ("recap", "n29", "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.",
-         "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every cue, on time.", *LIFT),
+        ("recap", "n29", "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every song, ready. Every cue, on time.",
+         "Every name, confirmed. Every pick, cited. Every sponsor, matched honestly. Every song, ready. Every cue, on time.", *LIFT),
         ("proof", "n35", f"Why Qloo? Move the same show to another city, and only {share(f['awayPct'])[0]} of its top 10 survives. Across {f['valueShows']} shows, not one sponsor repeats. Claude alone pitched {f['l0TopBrand']} to {f['l0TopBrandShows']}.",
          f"Why Clue? Move the same show to another city, and only {share(f['awayPct'])[1]} of its top ten survives. Across {words(f['valueShows'])} shows, not one sponsor repeats. Claude alone pitched {f['l0TopBrand']} to {words(f['l0TopBrandShows'])}.", *PRODUCT),
+        ("proof", "n39", f"And no opener bigger than the headliner: {f['tooBig']} of {f['acts']}. Claude alone got {f['l0TooBig']} of {f['l0Acts']} wrong.",
+         f"And no opener bigger than the headliner. {words(f['tooBig'])} of {words(f['acts'])}. Claude alone got {words(f['l0TooBig'])} of {words(f['l0Acts'])} wrong.", *PRODUCT),
     ]
     return [(*line, "female" if line[0] in FEMALE else "male") for line in out]
 

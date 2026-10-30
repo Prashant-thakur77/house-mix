@@ -37,6 +37,8 @@ GCP_PROJECT=house-mix-qloo-1029 REGION=us-central1 QLOO_MODE=live LOCAL_BUILD=1 
 API_URL=https://house-mix-api-120659974854.us-central1.run.app infra/deploy-web.sh
 ```
 
+Builds Vercel starts on its own from a push read `NEXT_PUBLIC_API_URL` from the project's settings (set for Production and Preview, non-sensitive: it is a public URL). Without it `next.config.ts` stops the build on purpose, so a site pointing at localhost can never go live. If the API URL changes: `vercel env rm NEXT_PUBLIC_API_URL production`, then `vercel env add NEXT_PUBLIC_API_URL production --value <url> --visibility config --no-sensitive --yes` (and the same for preview).
+
 Budget: the hosted API refuses new plans, comparisons and questions after `HM_SPEND_LIMIT_USD`. It is deployed at 2.3 USD (29 Oct) so the build's total stays under the agreed 15 USD; raise it on redeploy (`HM_SPEND_LIMIT_USD=… infra/deploy-api.sh`) when you want more headroom. A live plan costs about 0.5 USD, a "Without Qloo" comparison about 0.03 USD, an Ask question 0.07–0.25 USD; the full eval (10 A/B plans + L0 + backtest ranking) about 6–8 USD with Haiku workers.
 
 After the live re-seed, refresh the seeds' extras with live data too: `QLOO_MODE=live npx tsx --env-file=../../.env.local scripts/seed.ts --extras --ask` (from `apps/api`), then `--clean` to drop unreferenced ledger calls.

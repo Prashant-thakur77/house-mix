@@ -197,24 +197,31 @@
         value() {
           const el = h(`<div class="stage">
             <div class="hud in" id="h"><span class="slash">//</span> Why Qloo · free checks on live Qloo · ${facts.date}</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:70px">
-              <div class="card in" id="c1"><div class="num" style="font-size:190px"><span id="v1">100</span>%</div>
-                <div class="display" style="font-size:58px;margin-top:26px">of Qloo’s top 10 survives</div>
-                <div style="font-size:30px;color:var(--muted);margin-top:12px">when the same show moves to another city · ${facts.awayChanged} of ${facts.awayShows} lists changed</div></div>
-              <div class="card in" id="c2"><div class="num" style="font-size:190px">${facts.brandsRepeated}/${facts.brands}</div>
-                <div class="display" style="font-size:58px;margin-top:26px">sponsors repeated</div>
-                <div style="font-size:30px;color:var(--muted);margin-top:12px">across ${facts.valueShows} different shows</div>
-                <div class="in" id="c3" style="font-size:34px;margin-top:22px"><span class="red">Claude alone: ${facts.l0BrandsRepeated}/${facts.l0Brands}</span> · ${facts.l0TopBrand} on ${facts.l0TopBrandShows} shows</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:64px">
+              <div class="card in" id="c1"><div class="num" style="font-size:150px"><span id="v1">100</span>%</div>
+                <div class="display" style="font-size:50px;margin-top:24px">of Qloo’s top 10 survives</div>
+                <div style="font-size:27px;color:var(--muted);margin-top:12px">when the same show moves to another city · ${facts.awayChanged} of ${facts.awayShows} lists changed</div></div>
+              <div class="card in" id="c2"><div class="num" style="font-size:150px">${facts.brandsRepeated}/${facts.brands}</div>
+                <div class="display" style="font-size:50px;margin-top:24px">sponsors repeated</div>
+                <div style="font-size:27px;color:var(--muted);margin-top:12px">across ${facts.valueShows} different shows</div>
+                <div class="in" id="c3" style="font-size:30px;margin-top:20px"><span class="red">Claude alone: ${facts.l0BrandsRepeated}/${facts.l0Brands}</span> · ${facts.l0TopBrand} on ${facts.l0TopBrandShows} shows</div></div>
+              <div class="card in" id="c4"><div class="num" style="font-size:150px">${facts.tooBig}/${facts.acts}</div>
+                <div class="display" style="font-size:50px;margin-top:24px">openers bigger than the headliner</div>
+                <div style="font-size:27px;color:var(--muted);margin-top:12px">by Qloo popularity · ${facts.tooBigV1} on the first run, before the rule</div>
+                <div class="in" id="c5" style="font-size:30px;margin-top:20px"><span class="red">Claude alone: ${facts.l0TooBig}/${facts.l0Acts}</span> · of those Qloo could pin down</div></div>
             </div>
-            <div class="hud in" id="src" style="margin-top:56px;font-size:20px">Also: ${facts.explained}/${facts.explainedOf} picks carry Qloo’s own reason · the same call twice, same answer ${facts.repeatSame}/${facts.repeatCalls} · Source: eval/REPORT.md</div></div>`);
+            <div class="hud in" id="src" style="margin-top:52px;font-size:20px">Also: ${facts.explained}/${facts.explainedOf} picks carry Qloo’s own reason · the same call twice, same answer ${facts.repeatSame}/${facts.repeatCalls} · Source: eval/REPORT.md</div></div>`);
           root.append(el);
           const a = said('n35', /^move/i, 1.2), b = said('n35', /^across/i, 5.0), c = said('n35', /^claude/i, 7.4);
+          const d = said('n39', /^opener/i, 0.6), e = said('n39', /^claude/i, 4.0);
           return (t) => {
             enter(el.querySelector('#h'), t, 0);
             enter(el.querySelector('#c1'), t, a - 0.3);
             enter(el.querySelector('#c2'), t, b - 0.4);
             enter(el.querySelector('#c3'), t, c - 0.15);
-            enter(el.querySelector('#src'), t, c + 1.0);
+            enter(el.querySelector('#c4'), t, d - 0.4);
+            enter(el.querySelector('#c5'), t, e - 0.15);
+            enter(el.querySelector('#src'), t, e + 1.0);
             // Counts down from 100% to what survives as the line says it.
             el.querySelector('#v1').textContent = Math.round(100 - (100 - facts.awayPct) * prog(t, a + 0.6, 1.4));
           };
@@ -249,10 +256,11 @@
             ['Every name,', 'confirmed.', 'confirm.jpg', /^name/i, 0.0],
             ['Every pick,', 'cited.', 'evidence.jpg', /^pick/i, 1.3],
             ['Every sponsor,', 'matched honestly.', 'sponsor.jpg', /^sponsor/i, 2.6],
-            ['Every cue,', 'on time.', 'night.jpg', /^(cue|queue)/i, 4.3],
+            ['Every song,', 'ready.', 'listen.jpg', /^song/i, 4.3],
+            ['Every cue,', 'on time.', 'night.jpg', /^(cue|queue)/i, 5.6],
           ];
           const el = h(`<div class="stage"><div class="hud"><span class="slash">//</span> What nobody else does</div>
-            <div id="ls" style="position:absolute;left:120px;top:200px;display:grid;gap:34px"></div><div class="flash" id="fl"></div></div>`);
+            <div id="ls" style="position:absolute;left:120px;top:190px;display:grid;gap:26px"></div><div class="flash" id="fl"></div></div>`);
           root.append(el);
           const ls = el.querySelector('#ls');
           const at = lines.map(([, , , re, fb]) => said('n29', re, fb) - 0.15);

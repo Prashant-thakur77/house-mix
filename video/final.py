@@ -41,7 +41,7 @@ GAP = 0.45  # between two narrator lines in one segment
 VOICE_CLEAN = "afftdn=nr=12:nf=-38:tn=1,deesser=i=0.4:f=0.55"
 SFX = f"{HOME}/sfx"
 QR = f"{STILLS}/qr.png"
-TARGET = 178.0  # seconds: under the three-minute rule with a little room
+TARGET = 0.0  # no length cap (Prashant's call, 30 Oct 2026): the cut plays at its natural pace. Set seconds to fit a limit.
 
 # His lines, as written in FACE_SCRIPT.txt.
 SCRIPT = {
@@ -375,8 +375,8 @@ CROWD = [(-1.0, 60.0, 1.45, 960, 372)]  # a held push-in (it starts already at f
 
 
 def build_edl() -> list[dict]:
-    hero, intake, crowd, sponsor, night, plan, listen, outreach = (
-        marks(c) for c in ("hero", "intake", "crowd", "sponsor", "night", "plan", "listen", "outreach"))
+    hero, intake, crowd, sponsor, night, plan, listen, outreach, ask, dinner = (
+        marks(c) for c in ("hero", "intake", "crowd", "sponsor", "night", "plan", "listen", "outreach", "ask", "dinner"))
     tl = {s["name"]: s for s in json.load(open(f"{HOME}/build/timeline.json"))["scenes"]}
     arch = tl["arch"]
     live = "Live site · house-mix.vercel.app · recorded 30 Oct 2026"
@@ -410,12 +410,19 @@ def build_edl() -> list[dict]:
             zoom=[(0.4, 6.5, 1.6, 1620, 430)]),
         seg(kind="screen", src=f"{CLIPS}/sponsor.mp4", a=sponsor["compare"] - 0.2, b=sponsor["export"] - 0.4, nar=["n18"], shade=True,
             zoom=[(0.4, 7.5, 1.6, 1620, 560)], sfx=[(4.2, "click", 0.4)]),
+        seg(kind="screen", src=f"{CLIPS}/onepager.mp4", a=0.0, b=5.5, nar=["n20"], shade=True, label="Real output · the sponsor one-pager (PDF)"),
+        seg(kind="screen", src=f"{CLIPS}/ask.mp4", a=ask["ask"] - 0.4, b=ask["end"], nar=["n36"], shade=True,
+            label="Ask House Mix · seeded dinner service · answered from live Qloo", zoom=[(0.3, 30.0, 1.5, 1640, 470)]),
         # 4. The whole night, for real: the checklist, the music (Qloo fills a short set), outreach, and the night itself.
         seg(kind="screen", src=f"{CLIPS}/listen.mp4", a=listen["ready"] - 0.4, b=listen["end"], speed=1.3, nar=["n31"], shade=True,
             label="Seeded festival · planned on live Qloo · real 30-second previews",
             zoom=[(0.0, (listen["hear"] - listen["ready"] + 0.4) / 1.3, 1.4, 900, 420),
                   ((listen["fill"] - listen["ready"] - 0.6) / 1.3, 30.0, 1.45, 820, 700)],
             sfx=[((listen["play"] - listen["ready"] + 0.4) / 1.3, "click", 0.5)]),
+        seg(kind="screen", src=f"{CLIPS}/dinner.mp4", a=dinner["hear"] - 0.4, b=dinner["end"], nar=["n37"], shade=True,
+            label="Seeded dinner service · Dishoom Shoreditch · three playlists timed to the floor",
+            sfx=[((dinner["play"] - dinner["hear"] + 0.4), "click", 0.5)]),
+        seg(kind="screen", src=f"{CLIPS}/cuesheet.mp4", a=0.0, b=9.0, nar=["n38"], keep_speed=True, shade=True, label="Real output · the cue sheet (PDF) · plus playlist CSV and M3U"),
         seg(kind="screen", src=f"{CLIPS}/outreach.mp4", a=outreach["sheet"] - 0.6, b=outreach["end"], nar=["n32"], shade=True,
             label="Outreach pack · opens in your own email", zoom=[(0.5, 30.0, 1.55, 1680, 560)]),
         seg(kind="screen", src=f"{CLIPS}/night.mp4", a=night["play"] - 0.3, b=night["called"] + 1.4, speed=1.2, nar=["n21"], shade=True,
@@ -431,16 +438,17 @@ def build_edl() -> list[dict]:
         # 7. Proof, what Qloo adds, and the honest result.
         face(12),
         seg(kind="screen", src=f"{CLIPS}/gfx-proof.mp4", a=0.0, b=tl["proof"]["dur"], nar=["n27"], keep_speed=True, sfx=[(3.0, "hit", 0.4), (5.6, "hit", 0.3)]),
-        seg(kind="screen", src=f"{CLIPS}/gfx-value.mp4", a=0.0, b=tl["value"]["dur"], nar=["n35"], keep_speed=True, sfx=[(1.2, "hit", 0.35), (5.0, "hit", 0.3)]),
+        seg(kind="screen", src=f"{CLIPS}/gfx-value.mp4", a=0.0, b=tl["value"]["dur"], nar=[(l["id"], l["start"]) for l in tl["value"]["lines"]], keep_speed=True, sfx=[(1.2, "hit", 0.35), (5.0, "hit", 0.3)]),
         seg(kind="screen", src=f"{CLIPS}/gfx-judge.mp4", a=0.0, b=6.5, pip=13),
-        # 8. The callback and the end card.
+        # 8. The recap, the callback and the end card.
+        seg(kind="screen", src=f"{CLIPS}/gfx-recap.mp4", a=0.0, b=tl["recap"]["dur"], nar=["n29"], keep_speed=True, sfx=[(-1.4, "riser", 0.35), (0.3, "hit", 0.4)]),
         seg(kind="screen", src=f"{CLIPS}/hero.mp4", a=0.4, b=5.0, pip=14),
         seg(kind="screen", src=f"{CLIPS}/gfx-end.mp4", a=0.0, b=6.0, voice=15, fade_out=1.2, sfx=[(0.0, "hit", 0.5)]),
     ]
 
 
-CHAPTERS = {0: "Doors at 6:58", 7: "Live on the site", 11: "For sponsors", 15: "The whole night", 18: "Every kind of night", 23: "Under the hood", 24: "Proof", 28: None}
-XFADE = {3: 0.4, 6: 0.3, 7: 0.4, 11: 0.4, 15: 0.4, 18: 0.4, 23: 0.4, 24: 0.4, 28: 0.35, 29: 0.4}
+CHAPTERS = {0: "Doors at 6:58", 7: "Live on the site", 11: "For sponsors", 17: "The whole night", 22: "Every kind of night", 27: "Under the hood", 28: "Proof", 32: None}
+XFADE = {3: 0.4, 6: 0.3, 7: 0.4, 11: 0.4, 17: 0.4, 22: 0.4, 27: 0.4, 28: 0.4, 32: 0.35, 34: 0.4}
 
 
 def chapters(edl: list[dict]) -> list[tuple[str | None, int, bool]]:
@@ -652,9 +660,9 @@ def main() -> None:
         t += lengths[i]
     total = t
     turn = starts[6]
-    recap = starts[28]
+    recap = starts[32]
     end = starts[-1]
-    pace = min(1.04, max(1.0, total / TARGET))
+    pace = min(1.04, max(1.0, total / TARGET)) if TARGET else 1.0
     json.dump({"total": total, "pace": pace, "starts": starts, "chapters": {CHAPTERS[i]: starts[i] for i in CHAPTERS if CHAPTERS[i]}}, open(f"{B}/cut.json", "w"), indent=1)
     subprocess.run([os.path.expanduser("~/Videos/debrief/.venv-music/bin/python"), os.path.join(os.path.dirname(os.path.abspath(__file__)), "music.py"),
                     f"{total:.2f}", f"{turn:.2f}", f"{recap:.2f}", f"{end:.2f}"], check=True)
